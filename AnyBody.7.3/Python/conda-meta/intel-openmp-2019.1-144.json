@@ -1,0 +1,60 @@
+{
+  "arch": "x86_64",
+  "build": "144",
+  "build_number": 144,
+  "channel": "https://repo.anaconda.com/pkgs/main/win-64",
+  "constrains": [],
+  "depends": [],
+  "extracted_package_dir": "C:\\Anaconda3_64\\pkgs\\intel-openmp-2019.1-144",
+  "features": "",
+  "files": [
+    "Library/bin/libiomp5md.dll",
+    "Library/bin/libiomp5md.pdb",
+    "Library/bin/libiompstubs5md.dll"
+  ],
+  "fn": "intel-openmp-2019.1-144.conda",
+  "license": "proprietary - Intel",
+  "license_family": "Proprietary",
+  "link": {
+    "source": "C:\\Anaconda3_64\\pkgs\\intel-openmp-2019.1-144",
+    "type": 1
+  },
+  "md5": "467a0210e83fd12000ff4f16db89f46e",
+  "name": "intel-openmp",
+  "package_tarball_full_path": "C:\\Anaconda3_64\\pkgs\\intel-openmp-2019.1-144.conda",
+  "paths_data": {
+    "paths": [
+      {
+        "_path": "Library/bin/libiomp5md.dll",
+        "path_type": "hardlink",
+        "sha256": "52371de6bf3b569e3571242c6b9b23945cff8afe0bb1d6bce6ec7d72d5645eef",
+        "sha256_in_prefix": "52371de6bf3b569e3571242c6b9b23945cff8afe0bb1d6bce6ec7d72d5645eef",
+        "size_in_bytes": 1717464
+      },
+      {
+        "_path": "Library/bin/libiomp5md.pdb",
+        "path_type": "hardlink",
+        "sha256": "263f1468e00fa2cb6bd8c9dfb62ed4432401edde5f8d8665160f6ba5def7b471",
+        "sha256_in_prefix": "263f1468e00fa2cb6bd8c9dfb62ed4432401edde5f8d8665160f6ba5def7b471",
+        "size_in_bytes": 4615168
+      },
+      {
+        "_path": "Library/bin/libiompstubs5md.dll",
+        "path_type": "hardlink",
+        "sha256": "657ca1a733dc1fffb9a224a1c81110597186ef83c4f0a40bf4d13be3dc8c4837",
+        "sha256_in_prefix": "657ca1a733dc1fffb9a224a1c81110597186ef83c4f0a40bf4d13be3dc8c4837",
+        "size_in_bytes": 111320
+      }
+    ],
+    "paths_version": 1
+  },
+  "platform": "win32",
+  "requested_spec": "defaults/win-64::intel-openmp==2019.1=144",
+  "sha256": "5a1d68adac5ceff78c57e82502d5a21507c555fe1bfd9680ca8284fae2af54bb",
+  "size": 1432672,
+  "subdir": "win-64",
+  "timestamp": 1542661547851,
+  "track_features": "",
+  "url": "https://repo.anaconda.com/pkgs/main/win-64/intel-openmp-2019.1-144.conda",
+  "version": "2019.1"
+}

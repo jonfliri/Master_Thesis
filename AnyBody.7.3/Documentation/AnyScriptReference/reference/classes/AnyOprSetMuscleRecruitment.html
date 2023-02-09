@@ -1,0 +1,948 @@
+
+
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AnyOprSetMuscleRecruitment &#8212; AnyScript Reference 7.3.4 documentation</title>
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/cloud.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/table_styling.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noticia+Text|Open+Sans|Droid+Sans+Mono" type="text/css" />
+    
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/script/filter-class-list.js"></script>
+    <script src="../../_static/fa/all.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+    
+    
+     
+        <script src="../../_static/jquery.cookie.js"></script>
+    
+
+    
+     
+        <script src="../../_static/cloud.base.js"></script>
+    
+
+    
+     
+        <script src="../../_static/cloud.js"></script>
+    
+
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="AnyOprSetMuscleRecruitmentNormalization" href="AnyOprSetMuscleRecruitmentNormalization.html" />
+    <link rel="prev" title="AnyOprSetMechStudyRefFrame" href="AnyOprSetMechStudyRefFrame.html" /> 
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head><body>
+    <div class="relbar-top">
+        
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../contents.html" title="Table Of Contents"
+             accesskey="C">toc</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="AnyOprSetMuscleRecruitmentNormalization.html" title="AnyOprSetMuscleRecruitmentNormalization"
+             accesskey="N">next</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="AnyOprSetMechStudyRefFrame.html" title="AnyOprSetMechStudyRefFrame"
+             accesskey="P">previous</a> &nbsp; &nbsp;</li>
+    <li><a href="../../index.html">AnyScript Reference 7.3.4 documentation</a> &#187;</li>
+
+          <li class="nav-item nav-item-1"><a href="../../index.html" >The AnyScript Reference manual!</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../class-overview.html" accesskey="U"><strong>Class reference</strong></a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">AnyOprSetMuscleRecruitment</a></li> 
+      </ul>
+    </div>
+    </div>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="anyoprsetmusclerecruitment">
+<span id="id1"></span><h1>AnyOprSetMuscleRecruitment<a class="headerlink" href="#anyoprsetmusclerecruitment" title="Permalink to this headline">¶</a></h1>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>Abstract</p>
+</dd>
+<dt class="field-even">Parent class</dt>
+<dd class="field-even"><p><a class="reference internal" href="AnyOprSetMechSolver.html#anyoprsetmechsolver"><span class="std std-ref">AnyOprSetMechSolver</span></a></p>
+</dd>
+</dl>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>Class specifying the optimization criterion for a muscle recruitment problem,
+typically solved within an AnyBodyStudy by operations of class
+<a class="reference internal" href="AnyMechOprInvMuscleDynAnl.html#anymechoprinvmuscledynanl"><span class="std std-ref">AnyMechOprInvMuscleDynAnl</span></a>.</p>
+<p>The muscle recruitment problem specified by the members of this class
+can generally be formulated as</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{array}{ll}
+\text{minimize} &amp; \text{``Primary Term''} + \text{``Auxiliary Terms''}\\
+\\
+\text{subject to} &amp; \text{``Equilibrium equations''}\\
+&amp; \text{``Muscle forces cannot push''}\\
+&amp; \text{``Limits on exerted muscle forces''}
+\end{array}\end{split}\]</div>
+<p>The primary specification is the type of the criterion.
+The table below provide an overview of the criterion types available, where
+the left column is possible values for the Type member variable.
+The auxiliary terms of the objective function, that can be either linear or quadratic,
+is not available for all criterion types. The availability is also indicated in the table.</p>
+<table class="styled-table docutils align-default" id="id5">
+<caption><span class="caption-text">Overview of different solver criteria.</span><a class="headerlink" href="#id5" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 21%" />
+<col style="width: 26%" />
+<col style="width: 24%" />
+<col style="width: 29%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="left-align head"></th>
+<th class="left-align head"></th>
+<th class="left-align head"></th>
+<th class="left-align head"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="left-align"><p><code class="docutils literal notranslate"><span class="pre">MR_MinMaxStrict</span></code></p></td>
+<td class="left-align"><p><span class="math notranslate nohighlight">\(\max |x_i|\)</span> <a class="footnote-reference brackets" href="#f1" id="id2">1</a></p></td>
+<td class="left-align"><p>N/A</p></td>
+<td class="left-align"><p>N/A</p></td>
+</tr>
+<tr class="row-odd"><td class="left-align"><p><code class="docutils literal notranslate"><span class="pre">MR_MinMaxAux</span></code></p></td>
+<td class="left-align"><p><span class="math notranslate nohighlight">\(\max |x_i|\)</span> <a class="footnote-reference brackets" href="#f2" id="id3">2</a></p></td>
+<td class="left-align"><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td class="left-align"><ul class="simple">
+<li></li>
+</ul>
+</td>
+</tr>
+<tr class="row-even"><td class="left-align"><p><code class="docutils literal notranslate"><span class="pre">MR_Linear</span></code></p></td>
+<td class="left-align"><p><span class="math notranslate nohighlight">\(\sum |x_i|\)</span></p></td>
+<td class="left-align"><p>N/A</p></td>
+<td class="left-align"><p>N/A</p></td>
+</tr>
+<tr class="row-odd"><td class="left-align"><p><code class="docutils literal notranslate"><span class="pre">MR_Quadratic</span></code></p></td>
+<td class="left-align"><p><span class="math notranslate nohighlight">\(\sum x_i^2\)</span></p></td>
+<td class="left-align"><p>N/A</p></td>
+<td class="left-align"><p>N/A</p></td>
+</tr>
+<tr class="row-even"><td class="left-align"><p><code class="docutils literal notranslate"><span class="pre">MR_QuadraticAux</span></code></p></td>
+<td class="left-align"><p><span class="math notranslate nohighlight">\(\sum x_i^2\)</span></p></td>
+<td class="left-align"><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td class="left-align"><ul class="simple">
+<li></li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td class="left-align"><p><code class="docutils literal notranslate"><span class="pre">MR_Polynomial</span></code></p></td>
+<td class="left-align"><p><span class="math notranslate nohighlight">\(\sum |x_i|^p\)</span> <a class="footnote-reference brackets" href="#f3" id="id4">3</a></p></td>
+<td class="left-align"><p>N/A</p></td>
+<td class="left-align"><p>N/A</p></td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Footnotes</p>
+<dl class="footnote brackets">
+<dt class="label" id="f1"><span class="brackets"><a class="fn-backref" href="#id2">1</a></span></dt>
+<dd><p>Solution is unique and equivalent to <span class="math notranslate nohighlight">\(\lim_{p\rightarrow \infty}(\sum |x_i|^p )^{1/p}\)</span></p>
+</dd>
+<dt class="label" id="f2"><span class="brackets"><a class="fn-backref" href="#id3">2</a></span></dt>
+<dd><p>With the primary term alone, the solution is indeterminant.</p>
+</dd>
+<dt class="label" id="f3"><span class="brackets"><a class="fn-backref" href="#id4">3</a></span></dt>
+<dd><p>The power <span class="math notranslate nohighlight">\(p\)</span> is limited to <span class="math notranslate nohighlight">\(p\in[2,5]\)</span></p>
+</dd>
+</dl>
+<p> </p>
+</div>
+<div class="section" id="optional-initialization-members">
+<h2>Optional initialization members<a class="headerlink" href="#optional-initialization-members" title="Permalink to this headline">¶</a></h2>
+<!-- Hack to trick sphinx into adding member target link -->
+  <!--<div class="section" id="type">
+<span id="anyoprsetmusclerecruitment-type"></span><h3>Type<a class="headerlink" href="#type" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries odd section collapsed" id="Type">
+<span id="anyoprsetmusclerecruitment-type" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title"> Type </span><span class="member-title-equal">=</span><span class="member-title-default"> MR_Polynomial </span><a class="headerlink" href="#Type" title="Permalink to this headline">¶</a>
+<span class="member-descr">Muscle recruitment criterion type.</span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyEnumMuscleRecruitmentType.html#anyenummusclerecruitmenttype"><span class="std std-ref">AnyEnumMuscleRecruitmentType</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">MR_Polynomial</span></code></div>
+</div>
+<p>Muscle recruitment criterion type.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+ </div> <!--</div>
+<div class="section" id="power">
+<span id="anyoprsetmusclerecruitment-power"></span><h3>Power<a class="headerlink" href="#power" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries even section collapsed" id="Power">
+<span id="anyoprsetmusclerecruitment-power" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title"> Power </span><span class="member-title-equal">=</span><span class="member-title-default"> 3.0 </span><a class="headerlink" href="#Power" title="Permalink to this headline">¶</a>
+<span class="member-descr">Power for the MR_Polynomial criterion.</span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyVar.html#anyvar"><span class="std std-ref">AnyVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">3.0</span></code></div>
+</div>
+<p>Power for the MR_Polynomial criterion.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+ </div> <!--</div>
+<div class="section" id="upperboundonoff">
+<span id="anyoprsetmusclerecruitment-upperboundonoff"></span><h3>UpperBoundOnOff<a class="headerlink" href="#upperboundonoff" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries odd section collapsed" id="UpperBoundOnOff">
+<span id="anyoprsetmusclerecruitment-upperboundonoff" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title"> UpperBoundOnOff </span><span class="member-title-equal">=</span><span class="member-title-default"> On </span><a class="headerlink" href="#UpperBoundOnOff" title="Permalink to this headline">¶</a>
+<span class="member-descr">Switch for whether the upper bound on muscle activity is active in the criterion.</span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnySwitchVar.html#anyswitchvar"><span class="std std-ref">AnySwitchVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">On</span></code></div>
+</div>
+<p>Switch for whether the upper bound on muscle activity is active in the criterion.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+ </div> <!--</div>
+<div class="section" id="upperbound">
+<span id="anyoprsetmusclerecruitment-upperbound"></span><h3>UpperBound<a class="headerlink" href="#upperbound" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries even section collapsed" id="UpperBound">
+<span id="anyoprsetmusclerecruitment-upperbound" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title"> UpperBound </span><span class="member-title-equal">=</span><span class="member-title-default"> 1.0 </span><a class="headerlink" href="#UpperBound" title="Permalink to this headline">¶</a>
+<span class="member-descr">Value of the upper bound on muscle activity. Typically it is 1.0 implying...</span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyVar.html#anyvar"><span class="std std-ref">AnyVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">1.0</span></code></div>
+</div>
+<p>Value of the upper bound on muscle activity. Typically it is 1.0 implying complete saturation of the muscle capability.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+ </div> <!--</div>
+<div class="section" id="lowerboundonoff">
+<span id="anyoprsetmusclerecruitment-lowerboundonoff"></span><h3>LowerBoundOnOff<a class="headerlink" href="#lowerboundonoff" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries odd section collapsed" id="LowerBoundOnOff">
+<span id="anyoprsetmusclerecruitment-lowerboundonoff" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title"> LowerBoundOnOff </span><span class="member-title-equal">=</span><span class="member-title-default"> Off </span><a class="headerlink" href="#LowerBoundOnOff" title="Permalink to this headline">¶</a>
+<span class="member-descr">Switch for whether the lower bound on muscle activity is active in the criterion.</span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnySwitchVar.html#anyswitchvar"><span class="std std-ref">AnySwitchVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">Off</span></code></div>
+</div>
+<p>Switch for whether the lower bound on muscle activity is active in the criterion.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+ </div> <!--</div>
+<div class="section" id="lowerbound">
+<span id="anyoprsetmusclerecruitment-lowerbound"></span><h3>LowerBound<a class="headerlink" href="#lowerbound" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries even section collapsed" id="LowerBound">
+<span id="anyoprsetmusclerecruitment-lowerbound" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title"> LowerBound </span><span class="member-title-equal">=</span><span class="member-title-default"> 0.0 </span><a class="headerlink" href="#LowerBound" title="Permalink to this headline">¶</a>
+<span class="member-descr">Value of the lower bound on muscle activity. Typically it is 0.0 llowing...</span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyVar.html#anyvar"><span class="std std-ref">AnyVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">0.0</span></code></div>
+</div>
+<p>Value of the lower bound on muscle activity. Typically it is 0.0 llowing muscles to fully relax.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+ </div> <!--</div>
+<div class="section" id="primaryterm">
+<h3>PrimaryTerm<a class="headerlink" href="#primaryterm" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries odd section collapsed" >
+
+<h3 class="html-toggle-button" style=""><span class="member-title"> PrimaryTerm </span><span class="member-title-equal">=</span><span class="member-title-default"> {} </span><a class="headerlink" href="#PrimaryTerm" title="Permalink to this headline">¶</a>
+<span class="member-descr">Folder with settings for primary term of the muscle recruitment criterion....</span>
+</h3><!-- Hack to trick sphinx into adding member target link -->
+<!--<div class="section" id="primaryterm-type">
+<span id="anyoprsetmusclerecruitment-primaryterm-type"></span><h4>PrimaryTerm.Type<a class="headerlink" href="#primaryterm-type" title="Permalink to this headline">¶</a></h4>
+-->
+
+<div class="html-toggle member-entries odd section collapsed" id="PrimaryTerm.Type">
+<span id="anyoprsetmusclerecruitment-primaryterm-type" style=""></span>
+<h4 class="html-toggle-button" style=""><span class="member-title"> &nbsp;&nbsp;.Type </span><span class="member-title-equal">=</span><span class="member-title-default"> MR_CurrentStrength </span><a class="headerlink" href="#PrimaryTerm.Type" title="Permalink to this headline">¶</a>
+<span class="member-descr">Normalization type used to define the muscle quantities entering the term.</span>
+</h4><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyEnumMuscleRecruitmentNormalizationType.html#anyenummusclerecruitmentnormalizationtype"><span class="std std-ref">AnyEnumMuscleRecruitmentNormalizationType</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">MR_CurrentStrength</span></code></div>
+</div>
+<p>Normalization type used to define the muscle quantities entering the term.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+</div><!--</div>
+<div class="section" id="primaryterm-weight">
+<span id="anyoprsetmusclerecruitment-primaryterm-weight"></span><h4>PrimaryTerm.Weight<a class="headerlink" href="#primaryterm-weight" title="Permalink to this headline">¶</a></h4>
+-->
+
+<div class="html-toggle member-entries even section collapsed" id="PrimaryTerm.Weight">
+<span id="anyoprsetmusclerecruitment-primaryterm-weight" style=""></span>
+<h4 class="html-toggle-button" style=""><span class="member-title"> &nbsp;&nbsp;.Weight </span><span class="member-title-equal">=</span><span class="member-title-default"> 1.0 </span><a class="headerlink" href="#PrimaryTerm.Weight" title="Permalink to this headline">¶</a>
+<span class="member-descr">Weight (or scaling) of the term in the total criterion.</span>
+</h4><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyVar.html#anyvar"><span class="std std-ref">AnyVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">1.0</span></code></div>
+</div>
+<p>Weight (or scaling) of the term in the total criterion.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+</div><!--</div>
+<div class="section" id="primaryterm-lowerlimit">
+<span id="anyoprsetmusclerecruitment-primaryterm-lowerlimit"></span><h4>PrimaryTerm.LowerLimit<a class="headerlink" href="#primaryterm-lowerlimit" title="Permalink to this headline">¶</a></h4>
+-->
+
+<div class="html-toggle member-entries odd section collapsed" id="PrimaryTerm.LowerLimit">
+<span id="anyoprsetmusclerecruitment-primaryterm-lowerlimit" style=""></span>
+<h4 class="html-toggle-button" style=""><span class="member-title"> &nbsp;&nbsp;.LowerLimit </span><span class="member-title-equal">=</span><span class="member-title-default"> 1.0 </span><a class="headerlink" href="#PrimaryTerm.LowerLimit" title="Permalink to this headline">¶</a>
+<span class="member-descr">Lower bound for muscle quantities entering the term.</span>
+</h4><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyVar.html#anyvar"><span class="std std-ref">AnyVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">1.0</span></code></div>
+</div>
+<p>Lower bound for muscle quantities entering the term.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+</div><!--</div>
+<div class="section" id="primaryterm-nfactor-searchname">
+<span id="anyoprsetmusclerecruitment-primaryterm-nfactor-searchname"></span><h4>PrimaryTerm.Nfactor_SearchName<a class="headerlink" href="#primaryterm-nfactor-searchname" title="Permalink to this headline">¶</a></h4>
+-->
+
+<div class="html-toggle member-entries even section collapsed" id="PrimaryTerm.Nfactor_SearchName">
+<span id="anyoprsetmusclerecruitment-primaryterm-nfactor_searchname" style=""></span>
+<h4 class="html-toggle-button" style=""><span class="member-title"> &nbsp;&nbsp;.Nfactor_SearchName </span><span class="member-title-equal">=</span><span class="member-title-default"> "" </span><a class="headerlink" href="#PrimaryTerm.Nfactor_SearchName" title="Permalink to this headline">¶</a>
+<span class="member-descr">An additional normalization factor associated with each muscle multiplied...</span>
+</h4><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyStringVar.html#anystringvar"><span class="std std-ref">AnyStringVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">&quot;&quot;</span></code></div>
+</div>
+<p>An additional normalization factor associated with each muscle multiplied with the general factor associated with Type attribute. It is given as search string that is used to locate the actual value in the muscle objects (AnyMuscle).</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+</div><!--</div>
+<div class="section" id="primaryterm-weight-searchname">
+<span id="anyoprsetmusclerecruitment-primaryterm-weight-searchname"></span><h4>PrimaryTerm.Weight_SearchName<a class="headerlink" href="#primaryterm-weight-searchname" title="Permalink to this headline">¶</a></h4>
+-->
+
+<div class="html-toggle member-entries odd section collapsed" id="PrimaryTerm.Weight_SearchName">
+<span id="anyoprsetmusclerecruitment-primaryterm-weight_searchname" style=""></span>
+<h4 class="html-toggle-button" style=""><span class="member-title"> &nbsp;&nbsp;.Weight_SearchName </span><span class="member-title-equal">=</span><span class="member-title-default"> "" </span><a class="headerlink" href="#PrimaryTerm.Weight_SearchName" title="Permalink to this headline">¶</a>
+<span class="member-descr">An additional weight factor associated with each muscle multiplied with the...</span>
+</h4><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyStringVar.html#anystringvar"><span class="std std-ref">AnyStringVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">&quot;&quot;</span></code></div>
+</div>
+<p>An additional weight factor associated with each muscle multiplied with the general Weight factor. It is given as search string that is used to locate the actual value in the muscle objects (AnyMuscle).</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+ </div></div> <!--</div>
+</div>
+<div class="section" id="auxlinearterm">
+<h3>AuxLinearTerm<a class="headerlink" href="#auxlinearterm" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries even section collapsed" >
+
+<h3 class="html-toggle-button" style=""><span class="member-title"> AuxLinearTerm </span><span class="member-title-equal">=</span><span class="member-title-default"> {} </span><a class="headerlink" href="#AuxLinearTerm" title="Permalink to this headline">¶</a>
+<span class="member-descr">Folder with settings for the auxillary linear term that is appended to the...</span>
+</h3><!-- Hack to trick sphinx into adding member target link -->
+<!--<div class="section" id="auxlinearterm-type">
+<span id="anyoprsetmusclerecruitment-auxlinearterm-type"></span><h4>AuxLinearTerm.Type<a class="headerlink" href="#auxlinearterm-type" title="Permalink to this headline">¶</a></h4>
+-->
+
+<div class="html-toggle member-entries odd section collapsed" id="AuxLinearTerm.Type">
+<span id="anyoprsetmusclerecruitment-auxlinearterm-type" style=""></span>
+<h4 class="html-toggle-button" style=""><span class="member-title"> &nbsp;&nbsp;.Type </span><span class="member-title-equal">=</span><span class="member-title-default"> MR_CurrentStrength </span><a class="headerlink" href="#AuxLinearTerm.Type" title="Permalink to this headline">¶</a>
+<span class="member-descr">Normalization type used to define the muscle quantities entering the term.</span>
+</h4><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyEnumMuscleRecruitmentNormalizationType.html#anyenummusclerecruitmentnormalizationtype"><span class="std std-ref">AnyEnumMuscleRecruitmentNormalizationType</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">MR_CurrentStrength</span></code></div>
+</div>
+<p>Normalization type used to define the muscle quantities entering the term.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+</div><!--</div>
+<div class="section" id="auxlinearterm-weight">
+<span id="anyoprsetmusclerecruitment-auxlinearterm-weight"></span><h4>AuxLinearTerm.Weight<a class="headerlink" href="#auxlinearterm-weight" title="Permalink to this headline">¶</a></h4>
+-->
+
+<div class="html-toggle member-entries even section collapsed" id="AuxLinearTerm.Weight">
+<span id="anyoprsetmusclerecruitment-auxlinearterm-weight" style=""></span>
+<h4 class="html-toggle-button" style=""><span class="member-title"> &nbsp;&nbsp;.Weight </span><span class="member-title-equal">=</span><span class="member-title-default"> 0.0 </span><a class="headerlink" href="#AuxLinearTerm.Weight" title="Permalink to this headline">¶</a>
+<span class="member-descr">Weight (or scaling) of the term in the total criterion.</span>
+</h4><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyVar.html#anyvar"><span class="std std-ref">AnyVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">0.0</span></code></div>
+</div>
+<p>Weight (or scaling) of the term in the total criterion.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+</div><!--</div>
+<div class="section" id="auxlinearterm-lowerlimit">
+<span id="anyoprsetmusclerecruitment-auxlinearterm-lowerlimit"></span><h4>AuxLinearTerm.LowerLimit<a class="headerlink" href="#auxlinearterm-lowerlimit" title="Permalink to this headline">¶</a></h4>
+-->
+
+<div class="html-toggle member-entries odd section collapsed" id="AuxLinearTerm.LowerLimit">
+<span id="anyoprsetmusclerecruitment-auxlinearterm-lowerlimit" style=""></span>
+<h4 class="html-toggle-button" style=""><span class="member-title"> &nbsp;&nbsp;.LowerLimit </span><span class="member-title-equal">=</span><span class="member-title-default"> 1.0 </span><a class="headerlink" href="#AuxLinearTerm.LowerLimit" title="Permalink to this headline">¶</a>
+<span class="member-descr">Lower bound for muscle quantities entering the term.</span>
+</h4><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyVar.html#anyvar"><span class="std std-ref">AnyVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">1.0</span></code></div>
+</div>
+<p>Lower bound for muscle quantities entering the term.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+</div><!--</div>
+<div class="section" id="auxlinearterm-nfactor-searchname">
+<span id="anyoprsetmusclerecruitment-auxlinearterm-nfactor-searchname"></span><h4>AuxLinearTerm.Nfactor_SearchName<a class="headerlink" href="#auxlinearterm-nfactor-searchname" title="Permalink to this headline">¶</a></h4>
+-->
+
+<div class="html-toggle member-entries even section collapsed" id="AuxLinearTerm.Nfactor_SearchName">
+<span id="anyoprsetmusclerecruitment-auxlinearterm-nfactor_searchname" style=""></span>
+<h4 class="html-toggle-button" style=""><span class="member-title"> &nbsp;&nbsp;.Nfactor_SearchName </span><span class="member-title-equal">=</span><span class="member-title-default"> "" </span><a class="headerlink" href="#AuxLinearTerm.Nfactor_SearchName" title="Permalink to this headline">¶</a>
+<span class="member-descr">An additional normalization factor associated with each muscle multiplied...</span>
+</h4><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyStringVar.html#anystringvar"><span class="std std-ref">AnyStringVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">&quot;&quot;</span></code></div>
+</div>
+<p>An additional normalization factor associated with each muscle multiplied with the general factor associated with Type attribute. It is given as search string that is used to locate the actual value in the muscle objects (AnyMuscle).</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+</div><!--</div>
+<div class="section" id="auxlinearterm-weight-searchname">
+<span id="anyoprsetmusclerecruitment-auxlinearterm-weight-searchname"></span><h4>AuxLinearTerm.Weight_SearchName<a class="headerlink" href="#auxlinearterm-weight-searchname" title="Permalink to this headline">¶</a></h4>
+-->
+
+<div class="html-toggle member-entries odd section collapsed" id="AuxLinearTerm.Weight_SearchName">
+<span id="anyoprsetmusclerecruitment-auxlinearterm-weight_searchname" style=""></span>
+<h4 class="html-toggle-button" style=""><span class="member-title"> &nbsp;&nbsp;.Weight_SearchName </span><span class="member-title-equal">=</span><span class="member-title-default"> "" </span><a class="headerlink" href="#AuxLinearTerm.Weight_SearchName" title="Permalink to this headline">¶</a>
+<span class="member-descr">An additional weight factor associated with each muscle multiplied with the...</span>
+</h4><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyStringVar.html#anystringvar"><span class="std std-ref">AnyStringVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">&quot;&quot;</span></code></div>
+</div>
+<p>An additional weight factor associated with each muscle multiplied with the general Weight factor. It is given as search string that is used to locate the actual value in the muscle objects (AnyMuscle).</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+ </div></div> <!--</div>
+</div>
+<div class="section" id="auxquadraticterm">
+<h3>AuxQuadraticTerm<a class="headerlink" href="#auxquadraticterm" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries odd section collapsed" >
+
+<h3 class="html-toggle-button" style=""><span class="member-title"> AuxQuadraticTerm </span><span class="member-title-equal">=</span><span class="member-title-default"> {} </span><a class="headerlink" href="#AuxQuadraticTerm" title="Permalink to this headline">¶</a>
+<span class="member-descr">Folder with settings for the auxillary quadratic term that is appended to...</span>
+</h3><!-- Hack to trick sphinx into adding member target link -->
+<!--<div class="section" id="auxquadraticterm-type">
+<span id="anyoprsetmusclerecruitment-auxquadraticterm-type"></span><h4>AuxQuadraticTerm.Type<a class="headerlink" href="#auxquadraticterm-type" title="Permalink to this headline">¶</a></h4>
+-->
+
+<div class="html-toggle member-entries odd section collapsed" id="AuxQuadraticTerm.Type">
+<span id="anyoprsetmusclerecruitment-auxquadraticterm-type" style=""></span>
+<h4 class="html-toggle-button" style=""><span class="member-title"> &nbsp;&nbsp;.Type </span><span class="member-title-equal">=</span><span class="member-title-default"> MR_CurrentStrength </span><a class="headerlink" href="#AuxQuadraticTerm.Type" title="Permalink to this headline">¶</a>
+<span class="member-descr">Normalization type used to define the muscle quantities entering the term.</span>
+</h4><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyEnumMuscleRecruitmentNormalizationType.html#anyenummusclerecruitmentnormalizationtype"><span class="std std-ref">AnyEnumMuscleRecruitmentNormalizationType</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">MR_CurrentStrength</span></code></div>
+</div>
+<p>Normalization type used to define the muscle quantities entering the term.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+</div><!--</div>
+<div class="section" id="auxquadraticterm-weight">
+<span id="anyoprsetmusclerecruitment-auxquadraticterm-weight"></span><h4>AuxQuadraticTerm.Weight<a class="headerlink" href="#auxquadraticterm-weight" title="Permalink to this headline">¶</a></h4>
+-->
+
+<div class="html-toggle member-entries even section collapsed" id="AuxQuadraticTerm.Weight">
+<span id="anyoprsetmusclerecruitment-auxquadraticterm-weight" style=""></span>
+<h4 class="html-toggle-button" style=""><span class="member-title"> &nbsp;&nbsp;.Weight </span><span class="member-title-equal">=</span><span class="member-title-default"> 0.0 </span><a class="headerlink" href="#AuxQuadraticTerm.Weight" title="Permalink to this headline">¶</a>
+<span class="member-descr">Weight (or scaling) of the term in the total criterion.</span>
+</h4><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyVar.html#anyvar"><span class="std std-ref">AnyVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">0.0</span></code></div>
+</div>
+<p>Weight (or scaling) of the term in the total criterion.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+</div><!--</div>
+<div class="section" id="auxquadraticterm-lowerlimit">
+<span id="anyoprsetmusclerecruitment-auxquadraticterm-lowerlimit"></span><h4>AuxQuadraticTerm.LowerLimit<a class="headerlink" href="#auxquadraticterm-lowerlimit" title="Permalink to this headline">¶</a></h4>
+-->
+
+<div class="html-toggle member-entries odd section collapsed" id="AuxQuadraticTerm.LowerLimit">
+<span id="anyoprsetmusclerecruitment-auxquadraticterm-lowerlimit" style=""></span>
+<h4 class="html-toggle-button" style=""><span class="member-title"> &nbsp;&nbsp;.LowerLimit </span><span class="member-title-equal">=</span><span class="member-title-default"> 1.0 </span><a class="headerlink" href="#AuxQuadraticTerm.LowerLimit" title="Permalink to this headline">¶</a>
+<span class="member-descr">Lower bound for muscle quantities entering the term.</span>
+</h4><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyVar.html#anyvar"><span class="std std-ref">AnyVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">1.0</span></code></div>
+</div>
+<p>Lower bound for muscle quantities entering the term.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+</div><!--</div>
+<div class="section" id="auxquadraticterm-nfactor-searchname">
+<span id="anyoprsetmusclerecruitment-auxquadraticterm-nfactor-searchname"></span><h4>AuxQuadraticTerm.Nfactor_SearchName<a class="headerlink" href="#auxquadraticterm-nfactor-searchname" title="Permalink to this headline">¶</a></h4>
+-->
+
+<div class="html-toggle member-entries even section collapsed" id="AuxQuadraticTerm.Nfactor_SearchName">
+<span id="anyoprsetmusclerecruitment-auxquadraticterm-nfactor_searchname" style=""></span>
+<h4 class="html-toggle-button" style=""><span class="member-title"> &nbsp;&nbsp;.Nfactor_SearchName </span><span class="member-title-equal">=</span><span class="member-title-default"> "" </span><a class="headerlink" href="#AuxQuadraticTerm.Nfactor_SearchName" title="Permalink to this headline">¶</a>
+<span class="member-descr">An additional normalization factor associated with each muscle multiplied...</span>
+</h4><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyStringVar.html#anystringvar"><span class="std std-ref">AnyStringVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">&quot;&quot;</span></code></div>
+</div>
+<p>An additional normalization factor associated with each muscle multiplied with the general factor associated with Type attribute. It is given as search string that is used to locate the actual value in the muscle objects (AnyMuscle).</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+</div><!--</div>
+<div class="section" id="auxquadraticterm-weight-searchname">
+<span id="anyoprsetmusclerecruitment-auxquadraticterm-weight-searchname"></span><h4>AuxQuadraticTerm.Weight_SearchName<a class="headerlink" href="#auxquadraticterm-weight-searchname" title="Permalink to this headline">¶</a></h4>
+-->
+
+<div class="html-toggle member-entries odd section collapsed" id="AuxQuadraticTerm.Weight_SearchName">
+<span id="anyoprsetmusclerecruitment-auxquadraticterm-weight_searchname" style=""></span>
+<h4 class="html-toggle-button" style=""><span class="member-title"> &nbsp;&nbsp;.Weight_SearchName </span><span class="member-title-equal">=</span><span class="member-title-default"> "" </span><a class="headerlink" href="#AuxQuadraticTerm.Weight_SearchName" title="Permalink to this headline">¶</a>
+<span class="member-descr">An additional weight factor associated with each muscle multiplied with the...</span>
+</h4><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyStringVar.html#anystringvar"><span class="std std-ref">AnyStringVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">&quot;&quot;</span></code></div>
+</div>
+<p>An additional weight factor associated with each muscle multiplied with the general Weight factor. It is given as search string that is used to locate the actual value in the muscle objects (AnyMuscle).</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+ </div></div> <!--</div>
+</div>
+<div class="section" id="upperboundvar">
+<h3>UpperBoundVar<a class="headerlink" href="#upperboundvar" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries even section collapsed" >
+
+<h3 class="html-toggle-button" style=""><span class="member-title"> UpperBoundVar </span><span class="member-title-equal">=</span><span class="member-title-default"> {} </span><a class="headerlink" href="#UpperBoundVar" title="Permalink to this headline">¶</a>
+<span class="member-descr">Folder with settings for variable-scaling for the upper bounds.</span>
+</h3><!-- Hack to trick sphinx into adding member target link -->
+<!--<div class="section" id="upperboundvar-type">
+<span id="anyoprsetmusclerecruitment-upperboundvar-type"></span><h4>UpperBoundVar.Type<a class="headerlink" href="#upperboundvar-type" title="Permalink to this headline">¶</a></h4>
+-->
+
+<div class="html-toggle member-entries odd section collapsed" id="UpperBoundVar.Type">
+<span id="anyoprsetmusclerecruitment-upperboundvar-type" style=""></span>
+<h4 class="html-toggle-button" style=""><span class="member-title"> &nbsp;&nbsp;.Type </span><span class="member-title-equal">=</span><span class="member-title-default"> MR_CurrentStrength </span><a class="headerlink" href="#UpperBoundVar.Type" title="Permalink to this headline">¶</a>
+<span class="member-descr">Normalization type used to define the muscle quantities entering the term.</span>
+</h4><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyEnumMuscleRecruitmentNormalizationType.html#anyenummusclerecruitmentnormalizationtype"><span class="std std-ref">AnyEnumMuscleRecruitmentNormalizationType</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">MR_CurrentStrength</span></code></div>
+</div>
+<p>Normalization type used to define the muscle quantities entering the term.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+</div><!--</div>
+<div class="section" id="upperboundvar-weight">
+<span id="anyoprsetmusclerecruitment-upperboundvar-weight"></span><h4>UpperBoundVar.Weight<a class="headerlink" href="#upperboundvar-weight" title="Permalink to this headline">¶</a></h4>
+-->
+
+<div class="html-toggle member-entries even section collapsed" id="UpperBoundVar.Weight">
+<span id="anyoprsetmusclerecruitment-upperboundvar-weight" style=""></span>
+<h4 class="html-toggle-button" style=""><span class="member-title"> &nbsp;&nbsp;.Weight </span><span class="member-title-equal">=</span><span class="member-title-default"> 1.0 </span><a class="headerlink" href="#UpperBoundVar.Weight" title="Permalink to this headline">¶</a>
+<span class="member-descr">Weight (or scaling) of the term in the total criterion.</span>
+</h4><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyVar.html#anyvar"><span class="std std-ref">AnyVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">1.0</span></code></div>
+</div>
+<p>Weight (or scaling) of the term in the total criterion.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+</div><!--</div>
+<div class="section" id="upperboundvar-lowerlimit">
+<span id="anyoprsetmusclerecruitment-upperboundvar-lowerlimit"></span><h4>UpperBoundVar.LowerLimit<a class="headerlink" href="#upperboundvar-lowerlimit" title="Permalink to this headline">¶</a></h4>
+-->
+
+<div class="html-toggle member-entries odd section collapsed" id="UpperBoundVar.LowerLimit">
+<span id="anyoprsetmusclerecruitment-upperboundvar-lowerlimit" style=""></span>
+<h4 class="html-toggle-button" style=""><span class="member-title"> &nbsp;&nbsp;.LowerLimit </span><span class="member-title-equal">=</span><span class="member-title-default"> 1.0 </span><a class="headerlink" href="#UpperBoundVar.LowerLimit" title="Permalink to this headline">¶</a>
+<span class="member-descr">Lower bound for muscle quantities entering the term.</span>
+</h4><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyVar.html#anyvar"><span class="std std-ref">AnyVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">1.0</span></code></div>
+</div>
+<p>Lower bound for muscle quantities entering the term.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+</div><!--</div>
+<div class="section" id="upperboundvar-nfactor-searchname">
+<span id="anyoprsetmusclerecruitment-upperboundvar-nfactor-searchname"></span><h4>UpperBoundVar.Nfactor_SearchName<a class="headerlink" href="#upperboundvar-nfactor-searchname" title="Permalink to this headline">¶</a></h4>
+-->
+
+<div class="html-toggle member-entries even section collapsed" id="UpperBoundVar.Nfactor_SearchName">
+<span id="anyoprsetmusclerecruitment-upperboundvar-nfactor_searchname" style=""></span>
+<h4 class="html-toggle-button" style=""><span class="member-title"> &nbsp;&nbsp;.Nfactor_SearchName </span><span class="member-title-equal">=</span><span class="member-title-default"> "" </span><a class="headerlink" href="#UpperBoundVar.Nfactor_SearchName" title="Permalink to this headline">¶</a>
+<span class="member-descr">An additional normalization factor associated with each muscle multiplied...</span>
+</h4><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyStringVar.html#anystringvar"><span class="std std-ref">AnyStringVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">&quot;&quot;</span></code></div>
+</div>
+<p>An additional normalization factor associated with each muscle multiplied with the general factor associated with Type attribute. It is given as search string that is used to locate the actual value in the muscle objects (AnyMuscle).</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+</div><!--</div>
+<div class="section" id="upperboundvar-weight-searchname">
+<span id="anyoprsetmusclerecruitment-upperboundvar-weight-searchname"></span><h4>UpperBoundVar.Weight_SearchName<a class="headerlink" href="#upperboundvar-weight-searchname" title="Permalink to this headline">¶</a></h4>
+-->
+
+<div class="html-toggle member-entries odd section collapsed" id="UpperBoundVar.Weight_SearchName">
+<span id="anyoprsetmusclerecruitment-upperboundvar-weight_searchname" style=""></span>
+<h4 class="html-toggle-button" style=""><span class="member-title"> &nbsp;&nbsp;.Weight_SearchName </span><span class="member-title-equal">=</span><span class="member-title-default"> "" </span><a class="headerlink" href="#UpperBoundVar.Weight_SearchName" title="Permalink to this headline">¶</a>
+<span class="member-descr">An additional weight factor associated with each muscle multiplied with the...</span>
+</h4><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyStringVar.html#anystringvar"><span class="std std-ref">AnyStringVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">&quot;&quot;</span></code></div>
+</div>
+<p>An additional weight factor associated with each muscle multiplied with the general Weight factor. It is given as search string that is used to locate the actual value in the muscle objects (AnyMuscle).</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+ </div></div> <!--</div>
+</div>
+<div class="section" id="lowerboundvar">
+<h3>LowerBoundVar<a class="headerlink" href="#lowerboundvar" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries odd section collapsed" >
+
+<h3 class="html-toggle-button" style=""><span class="member-title"> LowerBoundVar </span><span class="member-title-equal">=</span><span class="member-title-default"> {} </span><a class="headerlink" href="#LowerBoundVar" title="Permalink to this headline">¶</a>
+<span class="member-descr">Folder with settings for variable-scaling for the lower bounds.</span>
+</h3><!-- Hack to trick sphinx into adding member target link -->
+<!--<div class="section" id="lowerboundvar-type">
+<span id="anyoprsetmusclerecruitment-lowerboundvar-type"></span><h4>LowerBoundVar.Type<a class="headerlink" href="#lowerboundvar-type" title="Permalink to this headline">¶</a></h4>
+-->
+
+<div class="html-toggle member-entries odd section collapsed" id="LowerBoundVar.Type">
+<span id="anyoprsetmusclerecruitment-lowerboundvar-type" style=""></span>
+<h4 class="html-toggle-button" style=""><span class="member-title"> &nbsp;&nbsp;.Type </span><span class="member-title-equal">=</span><span class="member-title-default"> MR_CurrentStrength </span><a class="headerlink" href="#LowerBoundVar.Type" title="Permalink to this headline">¶</a>
+<span class="member-descr">Normalization type used to define the muscle quantities entering the term.</span>
+</h4><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyEnumMuscleRecruitmentNormalizationType.html#anyenummusclerecruitmentnormalizationtype"><span class="std std-ref">AnyEnumMuscleRecruitmentNormalizationType</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">MR_CurrentStrength</span></code></div>
+</div>
+<p>Normalization type used to define the muscle quantities entering the term.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+</div><!--</div>
+<div class="section" id="lowerboundvar-weight">
+<span id="anyoprsetmusclerecruitment-lowerboundvar-weight"></span><h4>LowerBoundVar.Weight<a class="headerlink" href="#lowerboundvar-weight" title="Permalink to this headline">¶</a></h4>
+-->
+
+<div class="html-toggle member-entries even section collapsed" id="LowerBoundVar.Weight">
+<span id="anyoprsetmusclerecruitment-lowerboundvar-weight" style=""></span>
+<h4 class="html-toggle-button" style=""><span class="member-title"> &nbsp;&nbsp;.Weight </span><span class="member-title-equal">=</span><span class="member-title-default"> 1.0 </span><a class="headerlink" href="#LowerBoundVar.Weight" title="Permalink to this headline">¶</a>
+<span class="member-descr">Weight (or scaling) of the term in the total criterion.</span>
+</h4><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyVar.html#anyvar"><span class="std std-ref">AnyVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">1.0</span></code></div>
+</div>
+<p>Weight (or scaling) of the term in the total criterion.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+</div><!--</div>
+<div class="section" id="lowerboundvar-lowerlimit">
+<span id="anyoprsetmusclerecruitment-lowerboundvar-lowerlimit"></span><h4>LowerBoundVar.LowerLimit<a class="headerlink" href="#lowerboundvar-lowerlimit" title="Permalink to this headline">¶</a></h4>
+-->
+
+<div class="html-toggle member-entries odd section collapsed" id="LowerBoundVar.LowerLimit">
+<span id="anyoprsetmusclerecruitment-lowerboundvar-lowerlimit" style=""></span>
+<h4 class="html-toggle-button" style=""><span class="member-title"> &nbsp;&nbsp;.LowerLimit </span><span class="member-title-equal">=</span><span class="member-title-default"> 1.0 </span><a class="headerlink" href="#LowerBoundVar.LowerLimit" title="Permalink to this headline">¶</a>
+<span class="member-descr">Lower bound for muscle quantities entering the term.</span>
+</h4><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyVar.html#anyvar"><span class="std std-ref">AnyVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">1.0</span></code></div>
+</div>
+<p>Lower bound for muscle quantities entering the term.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+</div><!--</div>
+<div class="section" id="lowerboundvar-nfactor-searchname">
+<span id="anyoprsetmusclerecruitment-lowerboundvar-nfactor-searchname"></span><h4>LowerBoundVar.Nfactor_SearchName<a class="headerlink" href="#lowerboundvar-nfactor-searchname" title="Permalink to this headline">¶</a></h4>
+-->
+
+<div class="html-toggle member-entries even section collapsed" id="LowerBoundVar.Nfactor_SearchName">
+<span id="anyoprsetmusclerecruitment-lowerboundvar-nfactor_searchname" style=""></span>
+<h4 class="html-toggle-button" style=""><span class="member-title"> &nbsp;&nbsp;.Nfactor_SearchName </span><span class="member-title-equal">=</span><span class="member-title-default"> "" </span><a class="headerlink" href="#LowerBoundVar.Nfactor_SearchName" title="Permalink to this headline">¶</a>
+<span class="member-descr">An additional normalization factor associated with each muscle multiplied...</span>
+</h4><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyStringVar.html#anystringvar"><span class="std std-ref">AnyStringVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">&quot;&quot;</span></code></div>
+</div>
+<p>An additional normalization factor associated with each muscle multiplied with the general factor associated with Type attribute. It is given as search string that is used to locate the actual value in the muscle objects (AnyMuscle).</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+</div><!--</div>
+<div class="section" id="lowerboundvar-weight-searchname">
+<span id="anyoprsetmusclerecruitment-lowerboundvar-weight-searchname"></span><h4>LowerBoundVar.Weight_SearchName<a class="headerlink" href="#lowerboundvar-weight-searchname" title="Permalink to this headline">¶</a></h4>
+-->
+
+<div class="html-toggle member-entries odd section collapsed" id="LowerBoundVar.Weight_SearchName">
+<span id="anyoprsetmusclerecruitment-lowerboundvar-weight_searchname" style=""></span>
+<h4 class="html-toggle-button" style=""><span class="member-title"> &nbsp;&nbsp;.Weight_SearchName </span><span class="member-title-equal">=</span><span class="member-title-default"> "" </span><a class="headerlink" href="#LowerBoundVar.Weight_SearchName" title="Permalink to this headline">¶</a>
+<span class="member-descr">An additional weight factor associated with each muscle multiplied with the...</span>
+</h4><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyStringVar.html#anystringvar"><span class="std std-ref">AnyStringVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">&quot;&quot;</span></code></div>
+</div>
+<p>An additional weight factor associated with each muscle multiplied with the general Weight factor. It is given as search string that is used to locate the actual value in the muscle objects (AnyMuscle).</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+ </div></div> <!--</div>
+</div>
+<div class="section" id="iterativerefinementsteps">
+<span id="anyoprsetmusclerecruitment-iterativerefinementsteps"></span><h3>IterativeRefinementSteps<a class="headerlink" href="#iterativerefinementsteps" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries even section collapsed" id="IterativeRefinementSteps">
+<span id="anyoprsetmusclerecruitment-iterativerefinementsteps" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title"> IterativeRefinementSteps </span><span class="member-title-equal">=</span><span class="member-title-default"> 1 </span><a class="headerlink" href="#IterativeRefinementSteps" title="Permalink to this headline">¶</a>
+<span class="member-descr">Number of iterative refinement step performed by the optimization solver....</span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyIntVar.html#anyintvar"><span class="std std-ref">AnyIntVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">1</span></code></div>
+</div>
+<p>Number of iterative refinement step performed by the optimization solver. Iterative refinement increases accuracy at the cost of efficiency.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+ </div> <!--</div>
+<div class="section" id="newrecruitmentsolversonoff">
+<span id="anyoprsetmusclerecruitment-newrecruitmentsolversonoff"></span><h3>NewRecruitmentSolversOnOff<a class="headerlink" href="#newrecruitmentsolversonoff" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries odd section collapsed" id="NewRecruitmentSolversOnOff">
+<span id="anyoprsetmusclerecruitment-newrecruitmentsolversonoff" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title"> NewRecruitmentSolversOnOff </span><span class="member-title-equal">=</span><span class="member-title-default"> On </span><a class="headerlink" href="#NewRecruitmentSolversOnOff" title="Permalink to this headline">¶</a>
+<span class="member-descr">Switch for using the new generation of optimization solvers for muscle...</span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnySwitchVar.html#anyswitchvar"><span class="std std-ref">AnySwitchVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">On</span></code></div>
+</div>
+<p>Switch for using the new generation of optimization solvers for muscle recruitment. The older version may occasionally be more efficient, but they cannot deal with all types of problems.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+ </div> <!--</div>
+<div class="section" id="multifrontalcholeskyonoff">
+<span id="anyoprsetmusclerecruitment-multifrontalcholeskyonoff"></span><h3>MultifrontalCholeskyOnOff<a class="headerlink" href="#multifrontalcholeskyonoff" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries even section collapsed" id="MultifrontalCholeskyOnOff">
+<span id="anyoprsetmusclerecruitment-multifrontalcholeskyonoff" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title"> MultifrontalCholeskyOnOff </span><span class="member-title-equal">=</span><span class="member-title-default"> Off </span><a class="headerlink" href="#MultifrontalCholeskyOnOff" title="Permalink to this headline">¶</a>
+<span class="member-descr">Switch for using multi-frontal methods in the sparse Cholesky factorization...</span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnySwitchVar.html#anyswitchvar"><span class="std std-ref">AnySwitchVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">Off</span></code></div>
+</div>
+<p>Switch for using multi-frontal methods in the sparse Cholesky factorization inside the muscle recruitment solvers. The multi-frontal method can be faster for larger problems, but this solver is still an experimental implementation.</p>
+</div></blockquote>
+</div>
+</div>
+</div>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+        <p class="logo"><a href="../../index.html" title="index">
+          <img class="logo" src="../../_static/anyscript_maual.svg" alt="Logo"/>
+        </a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+<h3><a href="../../contents.html">Reference Manual</a></h3>
+<p class="caption"><span class="caption-text">API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../class-overview.html"><strong>Class reference</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../function-overview.html"><strong>Function reference</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../globals-overview.html">Globals reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../environment.html">Environment variables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../messages/index.html">Errors, warnings and messages</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Language</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../anyscript/language.html">AnyScript™ language</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../anyscript/preprocessor.html">The preprocessor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../anyscript/inside-anybody.html">Inside the AnyBody Modeling System</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../anyscript/technical-notes.html">Technical notes</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../demos/index.html">Demo examples</a></li>
+</ul>
+<div class="sphinxprev">
+    <h4>Other resources</h4>
+    <p class="topless"><a href="../../../index.html"
+                          title="Back to all manuals">&larr; Back to all manuals</a></p>
+</div>
+        </div>
+      </div>
+    
+    
+        <div class="sidebar-toggle-group no-js">
+            
+            <button class="sidebar-toggle" id="sidebar-hide" title="Hide the sidebar menu">
+                 «
+                <span class="show-for-small">hide menu</span>
+                
+            </button>
+            <button class="sidebar-toggle" id="sidebar-show" title="Show the sidebar menu">
+                
+                <span class="show-for-small">menu</span>
+                <span class="hide-for-small">sidebar</span>
+                 »
+            </button>
+        </div>
+    
+      <div class="clearer"></div>
+    </div>
+    <div class="relbar-bottom">
+        
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../contents.html" title="Table Of Contents"
+             >toc</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="AnyOprSetMuscleRecruitmentNormalization.html" title="AnyOprSetMuscleRecruitmentNormalization"
+             >next</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="AnyOprSetMechStudyRefFrame.html" title="AnyOprSetMechStudyRefFrame"
+             >previous</a> &nbsp; &nbsp;</li>
+    <li><a href="../../index.html">AnyScript Reference 7.3.4 documentation</a> &#187;</li>
+
+          <li class="nav-item nav-item-1"><a href="../../index.html" >The AnyScript Reference manual!</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../class-overview.html" ><strong>Class reference</strong></a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">AnyOprSetMuscleRecruitment</a></li> 
+      </ul>
+    </div>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2021, AnyBody Technology A/S.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.5.4.
+    </div>
+    <!-- cloud_sptheme 1.4 -->
+  </body>
+</html>

@@ -1,0 +1,1225 @@
+
+
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AnyOptStudy &#8212; AnyScript Reference 7.3.4 documentation</title>
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/cloud.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/table_styling.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noticia+Text|Open+Sans|Droid+Sans+Mono" type="text/css" />
+    
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/script/filter-class-list.js"></script>
+    <script src="../../_static/fa/all.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+    
+    
+     
+        <script src="../../_static/jquery.cookie.js"></script>
+    
+
+    
+     
+        <script src="../../_static/cloud.base.js"></script>
+    
+
+    
+     
+        <script src="../../_static/cloud.js"></script>
+    
+
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="AnyOptStudyOpr" href="AnyOptStudyOpr.html" />
+    <link rel="prev" title="AnyOptKinStudyOpr" href="AnyOptKinStudyOpr.html" /> 
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head><body>
+    <div class="relbar-top">
+        
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../contents.html" title="Table Of Contents"
+             accesskey="C">toc</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="AnyOptStudyOpr.html" title="AnyOptStudyOpr"
+             accesskey="N">next</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="AnyOptKinStudyOpr.html" title="AnyOptKinStudyOpr"
+             accesskey="P">previous</a> &nbsp; &nbsp;</li>
+    <li><a href="../../index.html">AnyScript Reference 7.3.4 documentation</a> &#187;</li>
+
+          <li class="nav-item nav-item-1"><a href="../../index.html" >The AnyScript Reference manual!</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../class-overview.html" accesskey="U"><strong>Class reference</strong></a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">AnyOptStudy</a></li> 
+      </ul>
+    </div>
+    </div>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="anyoptstudy">
+<span id="id1"></span><h1>AnyOptStudy<a class="headerlink" href="#anyoptstudy" title="Permalink to this headline">¶</a></h1>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>Creatable</p>
+</dd>
+<dt class="field-even">Parent class</dt>
+<dd class="field-even"><p><a class="reference internal" href="AnyDesStudy.html#anydesstudy"><span class="std std-ref">AnyDesStudy</span></a></p>
+</dd>
+<dt class="field-odd">Child classes</dt>
+<dd class="field-odd"><p><a class="reference internal" href="AnyOptKinStudy.html#anyoptkinstudy"><span class="std std-ref">AnyOptKinStudy</span></a></p>
+</dd>
+</dl>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>This study does optimization. It varies design parameters systematically
+with the aim of optimizing a certain criterion. Additionally, constraints
+can be applied to the process.</p>
+<p>Mathematically, the optimization can be formulated as</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{equation}
+\begin{array}[c]{lcl}
+minimize &amp; F(\VEC{x}) &amp; ~ \\
+~~~~\VEC{x} &amp;&amp;\\
+&amp;&amp;\\
+subject~to &amp; g_j(\VEC{x}) \leq 0, &amp; j=1,m \\
+        &amp; h_k(\VEC{x}) = 0,    &amp; k=1,l \\
+        &amp; x_i^{(l)} \leq x_i \leq x_i^{(u)},    &amp; i=1,n \\
+\end{array}
+\end{equation}\end{split}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\VEC{x}\)</span> is a vector of the <span class="math notranslate nohighlight">\(n\)</span> design variable defined by AnyDesVar objects.
+<span class="math notranslate nohighlight">\(F\)</span> is the so-called objective function, which is defined by correct type specification of one
+of the AnyDesMeasure objects. The constraints, <span class="math notranslate nohighlight">\(g_j\)</span> and <span class="math notranslate nohighlight">\(h_k\)</span>, are also defined proper type specification
+of the remaining AnyDesMeasure objects. The final row is the simple bounds on the design variable <span class="math notranslate nohighlight">\(x_i\)</span>;
+the lower and upper bounds, <span class="math notranslate nohighlight">\(x_i^{(l)}\)</span> and <span class="math notranslate nohighlight">\(x_i^{(u)}\)</span>, are defined for each design variable
+in the AnyDesVar objects.</p>
+<p>Please notice that none of the current solvers handle equality constraints, so this option
+in the AnyDesMeasure is currently only a preparation of the system for future use.</p>
+<p>The optimization processes inside <code class="docutils literal notranslate"><span class="pre">AnyOptStudy</span></code> is handled as a sequential process doing
+repetitive step, each improving (or trying to improve) the design. The basic independent
+parameter (abscissa value) in the optimization operation is the iteration step and the output of
+design variable values and design measures are stored for each such design step in the Output folder.</p>
+<p>The optimization solver is configured in the operation member, Optimization. Current <code class="docutils literal notranslate"><span class="pre">AnyOptStudy</span></code>
+provides the following solvers.</p>
+<dl>
+<dt>Simple search:</dt><dd><p>(<code class="docutils literal notranslate"><span class="pre">Optimization.Solver</span> <span class="pre">=</span> <span class="pre">OptSimpleSearch</span></code>)
+This method employs a simple scheme searching in the direction of each of the design variables in turn.
+A golden-section line search is used in each direction.</p>
+</dd>
+<dt>Steepest descent based feasible direction search method:</dt><dd><p>(<code class="docutils literal notranslate"><span class="pre">Optimization.Solver</span> <span class="pre">=</span> <span class="pre">OptFeasibleDirSearch1</span></code>)
+This method is based on the steepest descent search method approach for unconstrained optimization problems.
+In order to account for constraints, the search direction is modified to avoid constraint violations.
+A golden-section line search is used in the obtained search direction to improve the design point.</p>
+<p>The method is uses numerical sensitivity analysis for finding gradient;
+the perturbation is configurable in the solver settings.
+Furthermore, settings for convergence control and constraint activation handling is available in the settings.</p>
+</dd>
+<dt>Conjugate direction based feasible direction search method:</dt><dd><p>(<code class="docutils literal notranslate"><span class="pre">Optimization.Solver</span> <span class="pre">=</span> <span class="pre">OptFeasibleDirSearch2</span></code>)
+This method is the same as the previously mentioned, but with the small modification
+that it employ the well-known conjugate direction modifications of the search direction
+to increase the speed of convergence in ill-conditioned problems.
+This modification is only applied to regions where steepest descent method is previously used,
+i.e., regions with no active constraints.</p>
+</dd>
+<dt>Complex method:</dt><dd><p>(<code class="docutils literal notranslate"><span class="pre">Optimization.Solver</span> <span class="pre">=</span> <span class="pre">OptComplexPenalty</span></code>)
+The Complex method is a simple and robust 0th-order algorithm that searches for the optimum by systematically shrinking a population of design points until they meet at the optimum.
+This approach is very different compared to the gradient-based search algorithms and it is often lesser sensitive to non-smooth problems than gradient-based methods.
+Therefore, it can be a powerful alternative to the above-mentioned optimizers.</p>
+<p>For the Complex solver, an initial population is randomly generated around the initial design point.
+The initial population is generated within a box around the initial design point.
+The population and box sizes can be given in the solver settings.
+Notice that the population size must be at least one more than the number of design variables.</p>
+<p>The method operates by moving the worst design point according to some scheme.
+The alpha parameter spoecifies a dimensionless step-length and futhermore a parameter specifies
+the maximal number of attempts moving a given point before a new random point is selected to substitute it.
+Both these parameters a also in the solver setting, but their default values are recommended values that typically needs no adjustment.</p>
+<p>The Complex method is inherently an unconstrained method, but constraints can be enforced via penalization.
+Constraint penalization can be added manually (i.e. by the user) to the objective function value or a polynomial penalization function built-in the Complex solver can be used.
+The built-in polynomial penalization is governed by a factor and the exponent, which can be set in the solver settings.</p>
+</dd>
+</dl>
+<div class="future admonition">
+<p class="admonition-title">Future versions</p>
+<p>We acknowledge that the currently available facilities in the AnyOptStudy are limited and
+we must emphazise that they may not solve any possible optimization problem. Optimization
+is a complicated field and indeed mechanical and biomechanical problems can be particularly
+difficult to deal with. The AnyOptStudy has been made available in AnyBody version 2.0 for
+the first time and depending on the experiences, we will aim at developing it further in
+future releases.</p>
+<p>An alternative option to the facilities in AnyOptStudy is to use AnyBody’s console
+application together with an external optimization routine.</p>
+<p>We are always prepared to consider extentions of these optimization facilities arising
+from actual demands and will be grateful for any requests and comments from the users.</p>
+</div>
+<p> </p>
+<table class="colwidths-given plain docutils align-default" id="id3">
+<caption><span class="caption-text">Demo examples related to AnyOptStudy</span><a class="headerlink" href="#id3" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 75%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Demo</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference download internal" download="" href="../../_downloads/7d34a30e1c595891f2def63d28414f39/ClassExamples.AnyDesStudy.zip"><code class="xref download docutils literal notranslate"><span class="pre">ClassExamples.AnyDesStudy</span></code></a></p></td>
+<td><p>Demostration of design studies including, parameter studies and…</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference download internal" download="" href="../../_downloads/f27d46b0219fc1689537d192bc62efc2/ClassExamples.AnyOptStudy.zip"><code class="xref download docutils literal notranslate"><span class="pre">ClassExamples.AnyOptStudy</span></code></a></p></td>
+<td><p>Demostration of design studies including, parameter studies and…</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference download internal" download="" href="../../_downloads/c6f7025607f895c084b2ea62346ab11c/ClassExamples.AnyDesEvalStudy.zip"><code class="xref download docutils literal notranslate"><span class="pre">ClassExamples.AnyDesEvalStudy</span></code></a></p></td>
+<td><p>Demostration of the use of design evaluation studies together with…</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="expected-members">
+<h2>Expected members<a class="headerlink" href="#expected-members" title="Permalink to this headline">¶</a></h2>
+<!-- Hack to trick sphinx into adding member target link -->
+<!--<div class="section" id="anydesmeasure">
+<span id="anyoptstudy-anydesmeasure"></span><h3>AnyDesMeasure<a class="headerlink" href="#anydesmeasure" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries odd section collapsed" id="AnyDesMeasure">
+<span id="anyoptstudy-anydesmeasure" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title"> AnyDesMeasure (1..Inf) </span><span class="member-title-equal"></span><span class="member-title-default"></span><a class="headerlink" href="#AnyDesMeasure" title="Permalink to this headline">¶</a>
+<span class="member-descr">Design performance measures are defined as AnyDesMeasure objects.</span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyDesMeasure.html#anydesmeasure"><span class="std std-ref">AnyDesMeasure</span></a></div>
+<div class="line"><strong>Number:</strong> 1..Inf</div>
+</div>
+<p>Design performance measures are defined as AnyDesMeasure objects.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+</div><!--</div>
+<div class="section" id="anydesvar">
+<span id="anyoptstudy-anydesvar"></span><h3>AnyDesVar<a class="headerlink" href="#anydesvar" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries even section collapsed" id="AnyDesVar">
+<span id="anyoptstudy-anydesvar" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title"> AnyDesVar (0..Inf) </span><span class="member-title-equal"></span><span class="member-title-default"></span><a class="headerlink" href="#AnyDesVar" title="Permalink to this headline">¶</a>
+<span class="member-descr">Design variables of the study are defined as AnyDesVar objects.</span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyDesVar.html#anydesvar"><span class="std std-ref">AnyDesVar</span></a></div>
+<div class="line"><strong>Number:</strong> 0..Inf</div>
+</div>
+<p>Design variables of the study are defined as AnyDesVar objects.</p>
+</div></blockquote>
+</div>
+</div>
+<div class="section" id="optional-initialization-members">
+<h2>Optional initialization members<a class="headerlink" href="#optional-initialization-members" title="Permalink to this headline">¶</a></h2>
+<!-- Hack to trick sphinx into adding member target link -->
+  <!--<div class="section" id="logfile">
+<span id="anyoptstudy-logfile"></span><h3>LogFile<a class="headerlink" href="#logfile" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries odd section collapsed" id="LogFile">
+<span id="anyoptstudy-logfile" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title"> LogFile </span><span class="member-title-equal">=</span><span class="member-title-default"> "" </span><a class="headerlink" href="#LogFile" title="Permalink to this headline">¶</a>
+<span class="member-descr">Optional log file for use by the numerical routines in the operations. It...</span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyFileVar.html#anyfilevar"><span class="std std-ref">AnyFileVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">&quot;&quot;</span></code></div>
+</div>
+<p>Optional log file for use by the numerical routines in the operations. It may not be used by all type of AnyDesStudy; the file will be empty when not used by the study.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+ </div> <!--</div>
+<div class="section" id="analysis">
+<h3>Analysis<a class="headerlink" href="#analysis" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries even section collapsed" >
+
+<h3 class="html-toggle-button" style=""><span class="member-title"> Analysis </span><span class="member-title-equal">=</span><span class="member-title-default"> {} </span><a class="headerlink" href="#Analysis" title="Permalink to this headline">¶</a>
+<span class="member-descr">This analysis operation.</span>
+</h3><!-- Hack to trick sphinx into adding member target link -->
+<!--<div class="section" id="analysis-settings">
+<span id="anyoptstudy-analysis-settings"></span><h4>Analysis.Settings<a class="headerlink" href="#analysis-settings" title="Permalink to this headline">¶</a></h4>
+-->
+
+<div class="html-toggle member-entries odd section collapsed" id="Analysis.Settings">
+<span id="anyoptstudy-analysis-settings" style=""></span>
+<h4 class="html-toggle-button" style=""><span class="member-title"> &nbsp;&nbsp;.Settings </span><span class="member-title-equal">=</span><span class="member-title-default"> {} </span><a class="headerlink" href="#Analysis.Settings" title="Permalink to this headline">¶</a>
+<span class="member-descr">General settings for the operation.</span>
+</h4><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyOprSetUI.html#anyoprsetui"><span class="std std-ref">AnyOprSetUI</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">{}</span></code></div>
+</div>
+<p>General settings for the operation.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+</div><!--</div>
+<div class="section" id="analysis-settings-echo">
+<span id="anyoptstudy-analysis-settings-echo"></span><h4>Analysis.Settings.Echo<a class="headerlink" href="#analysis-settings-echo" title="Permalink to this headline">¶</a></h4>
+-->
+
+<div class="html-toggle member-entries even section collapsed" id="Analysis.Settings.Echo">
+<span id="anyoptstudy-analysis-settings-echo" style=""></span>
+<h4 class="html-toggle-button" style=""><span class="member-title"> &nbsp;&nbsp;.Settings.Echo </span><span class="member-title-equal">=</span><span class="member-title-default"> On </span><a class="headerlink" href="#Analysis.Settings.Echo" title="Permalink to this headline">¶</a>
+<span class="member-descr">Switch for definition of operation output to the output log and views.</span>
+</h4><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnySwitchVar.html#anyswitchvar"><span class="std std-ref">AnySwitchVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">On</span></code></div>
+</div>
+<p>Switch for definition of operation output to the output log and views.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+</div><!--</div>
+<div class="section" id="analysis-settings-modelsceneupdate">
+<span id="anyoptstudy-analysis-settings-modelsceneupdate"></span><h4>Analysis.Settings.ModelSceneUpdate<a class="headerlink" href="#analysis-settings-modelsceneupdate" title="Permalink to this headline">¶</a></h4>
+-->
+
+<div class="html-toggle member-entries odd section collapsed" id="Analysis.Settings.ModelSceneUpdate">
+<span id="anyoptstudy-analysis-settings-modelsceneupdate" style=""></span>
+<h4 class="html-toggle-button" style=""><span class="member-title"> &nbsp;&nbsp;.Settings.ModelSceneUpdate </span><span class="member-title-equal">=</span><span class="member-title-default"> On </span><a class="headerlink" href="#Analysis.Settings.ModelSceneUpdate" title="Permalink to this headline">¶</a>
+<span class="member-descr">Switch for definition of operation output to the output log and views.</span>
+</h4><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnySwitchVar.html#anyswitchvar"><span class="std std-ref">AnySwitchVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">On</span></code></div>
+</div>
+<p>Switch for definition of operation output to the output log and views.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+</div><!--</div>
+<div class="section" id="analysis-settings-displaypriority">
+<span id="anyoptstudy-analysis-settings-displaypriority"></span><h4>Analysis.Settings.DisplayPriority<a class="headerlink" href="#analysis-settings-displaypriority" title="Permalink to this headline">¶</a></h4>
+-->
+
+<div class="html-toggle member-entries even section collapsed" id="Analysis.Settings.DisplayPriority">
+<span id="anyoptstudy-analysis-settings-displaypriority" style=""></span>
+<h4 class="html-toggle-button" style=""><span class="member-title"> &nbsp;&nbsp;.Settings.DisplayPriority </span><span class="member-title-equal">=</span><span class="member-title-default"> PriorityNormal </span><a class="headerlink" href="#Analysis.Settings.DisplayPriority" title="Permalink to this headline">¶</a>
+<span class="member-descr">Value for defining the interface display priority for the Operation.</span>
+</h4><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyDisplayPriority.html#anydisplaypriority"><span class="std std-ref">AnyDisplayPriority</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">PriorityNormal</span></code></div>
+</div>
+<p>Value for defining the interface display priority for the Operation.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+</div><!--</div>
+<div class="section" id="analysis-settings-selectonload">
+<span id="anyoptstudy-analysis-settings-selectonload"></span><h4>Analysis.Settings.SelectOnLoad<a class="headerlink" href="#analysis-settings-selectonload" title="Permalink to this headline">¶</a></h4>
+-->
+
+<div class="html-toggle member-entries odd section collapsed" id="Analysis.Settings.SelectOnLoad">
+<span id="anyoptstudy-analysis-settings-selectonload" style=""></span>
+<h4 class="html-toggle-button" style=""><span class="member-title"> &nbsp;&nbsp;.Settings.SelectOnLoad </span><span class="member-title-equal">=</span><span class="member-title-default"> Off </span><a class="headerlink" href="#Analysis.Settings.SelectOnLoad" title="Permalink to this headline">¶</a>
+<span class="member-descr">Value for defining if the Operation should be displayed as the default...</span>
+</h4><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnySwitchVar.html#anyswitchvar"><span class="std std-ref">AnySwitchVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">Off</span></code></div>
+</div>
+<p>Value for defining if the Operation should be displayed as the default Operation for the loaded model.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+ </div></div> <!--</div>
+</div>
+<div class="section" id="maxiterationstep">
+<span id="anyoptstudy-maxiterationstep"></span><h3>MaxIterationStep<a class="headerlink" href="#maxiterationstep" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries odd section collapsed" id="MaxIterationStep">
+<span id="anyoptstudy-maxiterationstep" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title"> MaxIterationStep </span><span class="member-title-equal">=</span><span class="member-title-default"> 100 </span><a class="headerlink" href="#MaxIterationStep" title="Permalink to this headline">¶</a>
+<span class="member-descr">Maximal number of iterations allowed.</span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyIntVar.html#anyintvar"><span class="std std-ref">AnyIntVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">100</span></code></div>
+</div>
+<p>Maximal number of iterations allowed.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+ </div> <!--</div>
+<div class="section" id="optimization">
+<h3>Optimization<a class="headerlink" href="#optimization" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries even section collapsed" >
+
+<h3 class="html-toggle-button" style=""><span class="member-title"> Optimization </span><span class="member-title-equal">=</span><span class="member-title-default"> {} </span><a class="headerlink" href="#Optimization" title="Permalink to this headline">¶</a>
+<span class="member-descr">Operation that executes the optimization.</span>
+</h3><!-- Hack to trick sphinx into adding member target link -->
+<!--<div class="section" id="optimization-settings">
+<span id="anyoptstudy-optimization-settings"></span><h4>Optimization.Settings<a class="headerlink" href="#optimization-settings" title="Permalink to this headline">¶</a></h4>
+-->
+
+<div class="html-toggle member-entries odd section collapsed" id="Optimization.Settings">
+<span id="anyoptstudy-optimization-settings" style=""></span>
+<h4 class="html-toggle-button" style=""><span class="member-title"> &nbsp;&nbsp;.Settings </span><span class="member-title-equal">=</span><span class="member-title-default"> {} </span><a class="headerlink" href="#Optimization.Settings" title="Permalink to this headline">¶</a>
+<span class="member-descr">General settings for the operation.</span>
+</h4><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyOprSetUI.html#anyoprsetui"><span class="std std-ref">AnyOprSetUI</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">{}</span></code></div>
+</div>
+<p>General settings for the operation.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+</div><!--</div>
+<div class="section" id="optimization-settings-echo">
+<span id="anyoptstudy-optimization-settings-echo"></span><h4>Optimization.Settings.Echo<a class="headerlink" href="#optimization-settings-echo" title="Permalink to this headline">¶</a></h4>
+-->
+
+<div class="html-toggle member-entries even section collapsed" id="Optimization.Settings.Echo">
+<span id="anyoptstudy-optimization-settings-echo" style=""></span>
+<h4 class="html-toggle-button" style=""><span class="member-title"> &nbsp;&nbsp;.Settings.Echo </span><span class="member-title-equal">=</span><span class="member-title-default"> On </span><a class="headerlink" href="#Optimization.Settings.Echo" title="Permalink to this headline">¶</a>
+<span class="member-descr">Switch for definition of operation output to the output log and views.</span>
+</h4><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnySwitchVar.html#anyswitchvar"><span class="std std-ref">AnySwitchVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">On</span></code></div>
+</div>
+<p>Switch for definition of operation output to the output log and views.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+</div><!--</div>
+<div class="section" id="optimization-settings-modelsceneupdate">
+<span id="anyoptstudy-optimization-settings-modelsceneupdate"></span><h4>Optimization.Settings.ModelSceneUpdate<a class="headerlink" href="#optimization-settings-modelsceneupdate" title="Permalink to this headline">¶</a></h4>
+-->
+
+<div class="html-toggle member-entries odd section collapsed" id="Optimization.Settings.ModelSceneUpdate">
+<span id="anyoptstudy-optimization-settings-modelsceneupdate" style=""></span>
+<h4 class="html-toggle-button" style=""><span class="member-title"> &nbsp;&nbsp;.Settings.ModelSceneUpdate </span><span class="member-title-equal">=</span><span class="member-title-default"> On </span><a class="headerlink" href="#Optimization.Settings.ModelSceneUpdate" title="Permalink to this headline">¶</a>
+<span class="member-descr">Switch for definition of operation output to the output log and views.</span>
+</h4><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnySwitchVar.html#anyswitchvar"><span class="std std-ref">AnySwitchVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">On</span></code></div>
+</div>
+<p>Switch for definition of operation output to the output log and views.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+</div><!--</div>
+<div class="section" id="optimization-settings-displaypriority">
+<span id="anyoptstudy-optimization-settings-displaypriority"></span><h4>Optimization.Settings.DisplayPriority<a class="headerlink" href="#optimization-settings-displaypriority" title="Permalink to this headline">¶</a></h4>
+-->
+
+<div class="html-toggle member-entries even section collapsed" id="Optimization.Settings.DisplayPriority">
+<span id="anyoptstudy-optimization-settings-displaypriority" style=""></span>
+<h4 class="html-toggle-button" style=""><span class="member-title"> &nbsp;&nbsp;.Settings.DisplayPriority </span><span class="member-title-equal">=</span><span class="member-title-default"> PriorityNormal </span><a class="headerlink" href="#Optimization.Settings.DisplayPriority" title="Permalink to this headline">¶</a>
+<span class="member-descr">Value for defining the interface display priority for the Operation.</span>
+</h4><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyDisplayPriority.html#anydisplaypriority"><span class="std std-ref">AnyDisplayPriority</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">PriorityNormal</span></code></div>
+</div>
+<p>Value for defining the interface display priority for the Operation.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+</div><!--</div>
+<div class="section" id="optimization-settings-selectonload">
+<span id="anyoptstudy-optimization-settings-selectonload"></span><h4>Optimization.Settings.SelectOnLoad<a class="headerlink" href="#optimization-settings-selectonload" title="Permalink to this headline">¶</a></h4>
+-->
+
+<div class="html-toggle member-entries odd section collapsed" id="Optimization.Settings.SelectOnLoad">
+<span id="anyoptstudy-optimization-settings-selectonload" style=""></span>
+<h4 class="html-toggle-button" style=""><span class="member-title"> &nbsp;&nbsp;.Settings.SelectOnLoad </span><span class="member-title-equal">=</span><span class="member-title-default"> Off </span><a class="headerlink" href="#Optimization.Settings.SelectOnLoad" title="Permalink to this headline">¶</a>
+<span class="member-descr">Value for defining if the Operation should be displayed as the default...</span>
+</h4><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnySwitchVar.html#anyswitchvar"><span class="std std-ref">AnySwitchVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">Off</span></code></div>
+</div>
+<p>Value for defining if the Operation should be displayed as the default Operation for the loaded model.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+</div><!--</div>
+<div class="section" id="optimization-solver">
+<span id="anyoptstudy-optimization-solver"></span><h4>Optimization.Solver<a class="headerlink" href="#optimization-solver" title="Permalink to this headline">¶</a></h4>
+-->
+
+<div class="html-toggle member-entries even section collapsed" id="Optimization.Solver">
+<span id="anyoptstudy-optimization-solver" style=""></span>
+<h4 class="html-toggle-button" style=""><span class="member-title"> &nbsp;&nbsp;.Solver </span><span class="member-title-equal">=</span><span class="member-title-default"> ... </span><a class="headerlink" href="#Optimization.Solver" title="Permalink to this headline">¶</a>
+<span class="member-descr">Solver type setting.</span>
+</h4><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyEnumOptSolver.html#anyenumoptsolver"><span class="std std-ref">AnyEnumOptSolver</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">OptFeasibleDirSearch1</span></code></div>
+</div>
+<p>Solver type setting.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+</div><!--</div>
+<div class="section" id="optimization-convergenceobjectivetol">
+<span id="anyoptstudy-optimization-convergenceobjectivetol"></span><h4>Optimization.ConvergenceObjectiveTol<a class="headerlink" href="#optimization-convergenceobjectivetol" title="Permalink to this headline">¶</a></h4>
+-->
+
+<div class="html-toggle member-entries odd section collapsed" id="Optimization.ConvergenceObjectiveTol">
+<span id="anyoptstudy-optimization-convergenceobjectivetol" style=""></span>
+<h4 class="html-toggle-button" style=""><span class="member-title"> &nbsp;&nbsp;.ConvergenceObjectiveTol </span><span class="member-title-equal">=</span><span class="member-title-default"> 1e-05 </span><a class="headerlink" href="#Optimization.ConvergenceObjectiveTol" title="Permalink to this headline">¶</a>
+<span class="member-descr">Absolute tolerance on objective function change in convergence criterion.</span>
+</h4><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyVar.html#anyvar"><span class="std std-ref">AnyVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">1e-05</span></code></div>
+</div>
+<p>Absolute tolerance on objective function change in convergence criterion.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+</div><!--</div>
+<div class="section" id="optimization-convergencedesigntol">
+<span id="anyoptstudy-optimization-convergencedesigntol"></span><h4>Optimization.ConvergenceDesignTol<a class="headerlink" href="#optimization-convergencedesigntol" title="Permalink to this headline">¶</a></h4>
+-->
+
+<div class="html-toggle member-entries even section collapsed" id="Optimization.ConvergenceDesignTol">
+<span id="anyoptstudy-optimization-convergencedesigntol" style=""></span>
+<h4 class="html-toggle-button" style=""><span class="member-title"> &nbsp;&nbsp;.ConvergenceDesignTol </span><span class="member-title-equal">=</span><span class="member-title-default"> 1e-05 </span><a class="headerlink" href="#Optimization.ConvergenceDesignTol" title="Permalink to this headline">¶</a>
+<span class="member-descr">Relative tolerance on design variable change in convergence criterion.</span>
+</h4><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyVar.html#anyvar"><span class="std std-ref">AnyVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">1e-05</span></code></div>
+</div>
+<p>Relative tolerance on design variable change in convergence criterion.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+</div><!--</div>
+<div class="section" id="optimization-convergencedesigntolarr">
+<span id="anyoptstudy-optimization-convergencedesigntolarr"></span><h4>Optimization.ConvergenceDesignTolArr<a class="headerlink" href="#optimization-convergencedesigntolarr" title="Permalink to this headline">¶</a></h4>
+-->
+
+<div class="html-toggle member-entries odd section collapsed" id="Optimization.ConvergenceDesignTolArr">
+<span id="anyoptstudy-optimization-convergencedesigntolarr" style=""></span>
+<h4 class="html-toggle-button" style=""><span class="member-title"> &nbsp;&nbsp;.ConvergenceDesignTolArr </span><span class="member-title-equal">=</span><span class="member-title-default"> ... </span><a class="headerlink" href="#Optimization.ConvergenceDesignTolArr" title="Permalink to this headline">¶</a>
+<span class="member-descr">Similar to ConvergenceDesignTol, but an array with one element for each...</span>
+</h4><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyVector.html#anyvector"><span class="std std-ref">AnyVector</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">ConfigVar</span></a></div>
+<div class="line"><strong>Default:</strong> <em>Depends on other values</em></div>
+</div>
+<p>Similar to ConvergenceDesignTol, but an array with one element for each design variable. Default is all values equal to ConvergenceDesignTol.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+</div><!--</div>
+<div class="section" id="optimization-constraintactivationtol">
+<span id="anyoptstudy-optimization-constraintactivationtol"></span><h4>Optimization.ConstraintActivationTol<a class="headerlink" href="#optimization-constraintactivationtol" title="Permalink to this headline">¶</a></h4>
+-->
+
+<div class="html-toggle member-entries even section collapsed" id="Optimization.ConstraintActivationTol">
+<span id="anyoptstudy-optimization-constraintactivationtol" style=""></span>
+<h4 class="html-toggle-button" style=""><span class="member-title"> &nbsp;&nbsp;.ConstraintActivationTol </span><span class="member-title-equal">=</span><span class="member-title-default"> 0.0001 </span><a class="headerlink" href="#Optimization.ConstraintActivationTol" title="Permalink to this headline">¶</a>
+<span class="member-descr">Absolute tolerance for activating constraints.</span>
+</h4><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyVar.html#anyvar"><span class="std std-ref">AnyVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">0.0001</span></code></div>
+</div>
+<p>Absolute tolerance for activating constraints.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+</div><!--</div>
+<div class="section" id="optimization-constraintactivationtolarr">
+<span id="anyoptstudy-optimization-constraintactivationtolarr"></span><h4>Optimization.ConstraintActivationTolArr<a class="headerlink" href="#optimization-constraintactivationtolarr" title="Permalink to this headline">¶</a></h4>
+-->
+
+<div class="html-toggle member-entries odd section collapsed" id="Optimization.ConstraintActivationTolArr">
+<span id="anyoptstudy-optimization-constraintactivationtolarr" style=""></span>
+<h4 class="html-toggle-button" style=""><span class="member-title"> &nbsp;&nbsp;.ConstraintActivationTolArr </span><span class="member-title-equal">=</span><span class="member-title-default"> ... </span><a class="headerlink" href="#Optimization.ConstraintActivationTolArr" title="Permalink to this headline">¶</a>
+<span class="member-descr">Similar to ConstraintActivationTol, but an array with one element for each...</span>
+</h4><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyVector.html#anyvector"><span class="std std-ref">AnyVector</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">ConfigVar</span></a></div>
+<div class="line"><strong>Default:</strong> <em>Depends on other values</em></div>
+</div>
+<p>Similar to ConstraintActivationTol, but an array with one element for each constraint. Default is all values equal to ConstraintActivationTol.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+</div><!--</div>
+<div class="section" id="optimization-numsensitivityperturbation">
+<span id="anyoptstudy-optimization-numsensitivityperturbation"></span><h4>Optimization.NumSensitivityPerturbation<a class="headerlink" href="#optimization-numsensitivityperturbation" title="Permalink to this headline">¶</a></h4>
+-->
+
+<div class="html-toggle member-entries even section collapsed" id="Optimization.NumSensitivityPerturbation">
+<span id="anyoptstudy-optimization-numsensitivityperturbation" style=""></span>
+<h4 class="html-toggle-button" style=""><span class="member-title"> &nbsp;&nbsp;.NumSensitivityPerturbation </span><span class="member-title-equal">=</span><span class="member-title-default"> 1e-05 </span><a class="headerlink" href="#Optimization.NumSensitivityPerturbation" title="Permalink to this headline">¶</a>
+<span class="member-descr">Absolute perturbation use in numerical sensitivity analyses.</span>
+</h4><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyVar.html#anyvar"><span class="std std-ref">AnyVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">1e-05</span></code></div>
+</div>
+<p>Absolute perturbation use in numerical sensitivity analyses.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+</div><!--</div>
+<div class="section" id="optimization-numsensitivityperturbationarr">
+<span id="anyoptstudy-optimization-numsensitivityperturbationarr"></span><h4>Optimization.NumSensitivityPerturbationArr<a class="headerlink" href="#optimization-numsensitivityperturbationarr" title="Permalink to this headline">¶</a></h4>
+-->
+
+<div class="html-toggle member-entries odd section collapsed" id="Optimization.NumSensitivityPerturbationArr">
+<span id="anyoptstudy-optimization-numsensitivityperturbationarr" style=""></span>
+<h4 class="html-toggle-button" style=""><span class="member-title"> &nbsp;&nbsp;.NumSensitivityPerturbationArr </span><span class="member-title-equal">=</span><span class="member-title-default"> ... </span><a class="headerlink" href="#Optimization.NumSensitivityPerturbationArr" title="Permalink to this headline">¶</a>
+<span class="member-descr">Similar to NumSensitivityPerturbation, but an array with one element for...</span>
+</h4><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyVector.html#anyvector"><span class="std std-ref">AnyVector</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">ConfigVar</span></a></div>
+<div class="line"><strong>Default:</strong> <em>Depends on other values</em></div>
+</div>
+<p>Similar to NumSensitivityPerturbation, but an array with one element for each design variable. Default is all values equal to NumSensitivityPerturbation.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+</div><!--</div>
+<div class="section" id="optimization-populationsize">
+<span id="anyoptstudy-optimization-populationsize"></span><h4>Optimization.PopulationSize<a class="headerlink" href="#optimization-populationsize" title="Permalink to this headline">¶</a></h4>
+-->
+
+<div class="html-toggle member-entries even section collapsed" id="Optimization.PopulationSize">
+<span id="anyoptstudy-optimization-populationsize" style=""></span>
+<h4 class="html-toggle-button" style=""><span class="member-title"> &nbsp;&nbsp;.PopulationSize </span><span class="member-title-equal">=</span><span class="member-title-default"> 1 </span><a class="headerlink" href="#Optimization.PopulationSize" title="Permalink to this headline">¶</a>
+<span class="member-descr">Size of the population for population-based solvers, i.e., the number of...</span>
+</h4><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyIntVar.html#anyintvar"><span class="std std-ref">AnyIntVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">1</span></code></div>
+</div>
+<p>Size of the population for population-based solvers, i.e., the number of design points in the population.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+</div><!--</div>
+<div class="section" id="optimization-populationboxsize">
+<span id="anyoptstudy-optimization-populationboxsize"></span><h4>Optimization.PopulationBoxSize<a class="headerlink" href="#optimization-populationboxsize" title="Permalink to this headline">¶</a></h4>
+-->
+
+<div class="html-toggle member-entries odd section collapsed" id="Optimization.PopulationBoxSize">
+<span id="anyoptstudy-optimization-populationboxsize" style=""></span>
+<h4 class="html-toggle-button" style=""><span class="member-title"> &nbsp;&nbsp;.PopulationBoxSize </span><span class="member-title-equal">=</span><span class="member-title-default"> 1.0 </span><a class="headerlink" href="#Optimization.PopulationBoxSize" title="Permalink to this headline">¶</a>
+<span class="member-descr">Size of the box in the design space within which the initial population is...</span>
+</h4><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyVar.html#anyvar"><span class="std std-ref">AnyVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">1.0</span></code></div>
+</div>
+<p>Size of the box in the design space within which the initial population is generated. This single constant will set the same size of the box for all design variables. Alternatively, individual box dimension sizes can be set with PopulationBoxSizeArr.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+</div><!--</div>
+<div class="section" id="optimization-populationboxsizearr">
+<span id="anyoptstudy-optimization-populationboxsizearr"></span><h4>Optimization.PopulationBoxSizeArr<a class="headerlink" href="#optimization-populationboxsizearr" title="Permalink to this headline">¶</a></h4>
+-->
+
+<div class="html-toggle member-entries even section collapsed" id="Optimization.PopulationBoxSizeArr">
+<span id="anyoptstudy-optimization-populationboxsizearr" style=""></span>
+<h4 class="html-toggle-button" style=""><span class="member-title"> &nbsp;&nbsp;.PopulationBoxSizeArr </span><span class="member-title-equal">=</span><span class="member-title-default"> ... </span><a class="headerlink" href="#Optimization.PopulationBoxSizeArr" title="Permalink to this headline">¶</a>
+<span class="member-descr">Size of the box in the design space within which the initial population is...</span>
+</h4><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyVector.html#anyvector"><span class="std std-ref">AnyVector</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">ConfigVar</span></a></div>
+<div class="line"><strong>Default:</strong> <em>Depends on other values</em></div>
+</div>
+<p>Size of the box in the design space within which the initial population is generated. The vector must for each design variable hold one element, which is the size of the box for that dimension of the design space.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+</div><!--</div>
+<div class="section" id="optimization-complexalpha">
+<span id="anyoptstudy-optimization-complexalpha"></span><h4>Optimization.ComplexAlpha<a class="headerlink" href="#optimization-complexalpha" title="Permalink to this headline">¶</a></h4>
+-->
+
+<div class="html-toggle member-entries odd section collapsed" id="Optimization.ComplexAlpha">
+<span id="anyoptstudy-optimization-complexalpha" style=""></span>
+<h4 class="html-toggle-button" style=""><span class="member-title"> &nbsp;&nbsp;.ComplexAlpha </span><span class="member-title-equal">=</span><span class="member-title-default"> 1.3 </span><a class="headerlink" href="#Optimization.ComplexAlpha" title="Permalink to this headline">¶</a>
+<span class="member-descr">The Complex solver's alpha parameter, which defines how far the worst design...</span>
+</h4><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyVar.html#anyvar"><span class="std std-ref">AnyVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">1.3</span></code></div>
+</div>
+<p>The Complex solver’s alpha parameter, which defines how far the worst design point is moved through the design population. It must be above 1.0 and the recommended value is 1.3.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+</div><!--</div>
+<div class="section" id="optimization-complexmaxnumrepeat">
+<span id="anyoptstudy-optimization-complexmaxnumrepeat"></span><h4>Optimization.ComplexMaxNumRepeat<a class="headerlink" href="#optimization-complexmaxnumrepeat" title="Permalink to this headline">¶</a></h4>
+-->
+
+<div class="html-toggle member-entries even section collapsed" id="Optimization.ComplexMaxNumRepeat">
+<span id="anyoptstudy-optimization-complexmaxnumrepeat" style=""></span>
+<h4 class="html-toggle-button" style=""><span class="member-title"> &nbsp;&nbsp;.ComplexMaxNumRepeat </span><span class="member-title-equal">=</span><span class="member-title-default"> 4 </span><a class="headerlink" href="#Optimization.ComplexMaxNumRepeat" title="Permalink to this headline">¶</a>
+<span class="member-descr">Maximal number of attempts in the Complex solver for moving the worst design...</span>
+</h4><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyIntVar.html#anyintvar"><span class="std std-ref">AnyIntVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">4</span></code></div>
+</div>
+<p>Maximal number of attempts in the Complex solver for moving the worst design point, which continues to be the worst after being moved.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+</div><!--</div>
+<div class="section" id="optimization-complexpenalty">
+<span id="anyoptstudy-optimization-complexpenalty"></span><h4>Optimization.ComplexPenalty<a class="headerlink" href="#optimization-complexpenalty" title="Permalink to this headline">¶</a></h4>
+-->
+
+<div class="html-toggle member-entries odd section collapsed" id="Optimization.ComplexPenalty">
+<span id="anyoptstudy-optimization-complexpenalty" style=""></span>
+<h4 class="html-toggle-button" style=""><span class="member-title"> &nbsp;&nbsp;.ComplexPenalty </span><span class="member-title-equal">=</span><span class="member-title-default"> 1000.0 </span><a class="headerlink" href="#Optimization.ComplexPenalty" title="Permalink to this headline">¶</a>
+<span class="member-descr">Penalty factor used in the Complex solver to convert constraint violations...</span>
+</h4><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyVar.html#anyvar"><span class="std std-ref">AnyVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">1000.0</span></code></div>
+</div>
+<p>Penalty factor used in the Complex solver to convert constraint violations to added value in the objective function.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+</div><!--</div>
+<div class="section" id="optimization-complexpenaltypowerexponent">
+<span id="anyoptstudy-optimization-complexpenaltypowerexponent"></span><h4>Optimization.ComplexPenaltyPowerExponent<a class="headerlink" href="#optimization-complexpenaltypowerexponent" title="Permalink to this headline">¶</a></h4>
+-->
+
+<div class="html-toggle member-entries even section collapsed" id="Optimization.ComplexPenaltyPowerExponent">
+<span id="anyoptstudy-optimization-complexpenaltypowerexponent" style=""></span>
+<h4 class="html-toggle-button" style=""><span class="member-title"> &nbsp;&nbsp;.ComplexPenaltyPowerExponent </span><span class="member-title-equal">=</span><span class="member-title-default"> 2.0 </span><a class="headerlink" href="#Optimization.ComplexPenaltyPowerExponent" title="Permalink to this headline">¶</a>
+<span class="member-descr">Exponent used in the Complex solver to convert constraint violations to...</span>
+</h4><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyVar.html#anyvar"><span class="std std-ref">AnyVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">2.0</span></code></div>
+</div>
+<p>Exponent used in the Complex solver to convert constraint violations to added value in the objective function..</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+</div><!--</div>
+<div class="section" id="optimization-complexanalysisfailedpenalty">
+<span id="anyoptstudy-optimization-complexanalysisfailedpenalty"></span><h4>Optimization.ComplexAnalysisFailedPenalty<a class="headerlink" href="#optimization-complexanalysisfailedpenalty" title="Permalink to this headline">¶</a></h4>
+-->
+
+<div class="html-toggle member-entries odd section collapsed" id="Optimization.ComplexAnalysisFailedPenalty">
+<span id="anyoptstudy-optimization-complexanalysisfailedpenalty" style=""></span>
+<h4 class="html-toggle-button" style=""><span class="member-title"> &nbsp;&nbsp;.ComplexAnalysisFailedPenalty </span><span class="member-title-equal">=</span><span class="member-title-default"> 1000000.0 </span><a class="headerlink" href="#Optimization.ComplexAnalysisFailedPenalty" title="Permalink to this headline">¶</a>
+<span class="member-descr">Penalty constant used in the Complex solver for Analysis operations that...</span>
+</h4><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyVar.html#anyvar"><span class="std std-ref">AnyVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">1000000.0</span></code></div>
+</div>
+<p>Penalty constant used in the Complex solver for Analysis operations that fails. It indicates to the solver that this design point is unusable.</p>
+</div></blockquote>
+</div>
+</div>
+</div>
+<div class="html-toggle section" id="denied-access-members">
+<h2>Denied-Access members<a class="headerlink" href="#denied-access-members" title="Permalink to this headline">¶</a></h2>
+<!-- Hack to trick sphinx into adding member target link -->
+<!--<div class="section" id="updconfig">
+<span id="anyoptstudy-updconfig"></span><h3>UpdConfig<a class="headerlink" href="#updconfig" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries odd section collapsed" id="UpdConfig">
+<span id="anyoptstudy-updconfig" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title">UpdConfig</span><span class="member-title-equal"></span><span class="member-title-default"></span><a class="headerlink" href="#UpdConfig" title="Permalink to this headline">¶</a>
+<span class="member-descr"></span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyIntVar.html#anyintvar"><span class="std std-ref">AnyIntVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">0</span></code></div>
+</div>
+<p>&lt;No description&gt;</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+</div><!--</div>
+<div class="section" id="upddesign">
+<span id="anyoptstudy-upddesign"></span><h3>UpdDesign<a class="headerlink" href="#upddesign" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries even section collapsed" id="UpdDesign">
+<span id="anyoptstudy-upddesign" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title">UpdDesign</span><span class="member-title-equal"></span><span class="member-title-default"></span><a class="headerlink" href="#UpdDesign" title="Permalink to this headline">¶</a>
+<span class="member-descr">Counter of updates of design variable (i.e. the DesignVar Evaluation Moment).</span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyIntVar.html#anyintvar"><span class="std std-ref">AnyIntVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">DesignVar</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">0</span></code></div>
+</div>
+<p>Counter of updates of design variable (i.e. the DesignVar Evaluation Moment).</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+</div><!--</div>
+<div class="section" id="updoutput">
+<span id="anyoptstudy-updoutput"></span><h3>UpdOutput<a class="headerlink" href="#updoutput" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries odd section collapsed" id="UpdOutput">
+<span id="anyoptstudy-updoutput" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title">UpdOutput</span><span class="member-title-equal"></span><span class="member-title-default"></span><a class="headerlink" href="#UpdOutput" title="Permalink to this headline">¶</a>
+<span class="member-descr"></span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyIntVar.html#anyintvar"><span class="std std-ref">AnyIntVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">OutputVar</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">0</span></code></div>
+</div>
+<p>&lt;No description&gt;</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+</div><!--</div>
+<div class="section" id="output">
+<span id="anyoptstudy-output"></span><h3>Output<a class="headerlink" href="#output" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries even section collapsed" id="Output">
+<span id="anyoptstudy-output" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title">Output</span><span class="member-title-equal"></span><span class="member-title-default"></span><a class="headerlink" href="#Output" title="Permalink to this headline">¶</a>
+<span class="member-descr">Folder that holds the result of the latest executed analysis (operation).</span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyOutputFolder.html#anyoutputfolder"><span class="std std-ref">AnyOutputFolder</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">{}</span></code></div>
+</div>
+<p>Folder that holds the result of the latest executed analysis (operation).</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+</div><!--</div>
+<div class="section" id="output-abscissa">
+<span id="anyoptstudy-output-abscissa"></span><h3>Output.Abscissa<a class="headerlink" href="#output-abscissa" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries odd section collapsed" id="Output.Abscissa">
+<span id="anyoptstudy-output-abscissa" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title">Output.Abscissa</span><span class="member-title-equal"></span><span class="member-title-default"></span><a class="headerlink" href="#Output.Abscissa" title="Permalink to this headline">¶</a>
+<span class="member-descr">Folder where the values of the abscissa/input parameters are stored.</span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyAbscissaFolder.html#anyabscissafolder"><span class="std std-ref">AnyAbscissaFolder</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">{}</span></code></div>
+</div>
+<p>Folder where the values of the abscissa/input parameters are stored.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+</div><!--</div>
+<div class="section" id="output-abscissa-statecountcurrent">
+<span id="anyoptstudy-output-abscissa-statecountcurrent"></span><h3>Output.Abscissa.StateCountCurrent<a class="headerlink" href="#output-abscissa-statecountcurrent" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries even section collapsed" id="Output.Abscissa.StateCountCurrent">
+<span id="anyoptstudy-output-abscissa-statecountcurrent" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title">Output.Abscissa.StateCountCurrent</span><span class="member-title-equal"></span><span class="member-title-default"></span><a class="headerlink" href="#Output.Abscissa.StateCountCurrent" title="Permalink to this headline">¶</a>
+<span class="member-descr">Counter (integer) that indicates the number (the state) of the current data...</span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyIntVar.html#anyintvar"><span class="std std-ref">AnyIntVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">RuntimeVar</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">0</span></code></div>
+</div>
+<p>Counter (integer) that indicates the number (the state) of the current data save operation of the abscissae data and thereby for the AnyOutputFolder (the owner).</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+</div><!--</div>
+<div class="section" id="output-abscissa-statecountdata">
+<span id="anyoptstudy-output-abscissa-statecountdata"></span><h3>Output.Abscissa.StateCountData<a class="headerlink" href="#output-abscissa-statecountdata" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries odd section collapsed" id="Output.Abscissa.StateCountData">
+<span id="anyoptstudy-output-abscissa-statecountdata" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title">Output.Abscissa.StateCountData</span><span class="member-title-equal"></span><span class="member-title-default"></span><a class="headerlink" href="#Output.Abscissa.StateCountData" title="Permalink to this headline">¶</a>
+<span class="member-descr">Structure of state indicators for each data point in the AnyOutputFolder...</span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyInt.html#anyint"><span class="std std-ref">AnyInt</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">RuntimeVar</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">&quot;Dependent&quot;</span></code></div>
+</div>
+<p>Structure of state indicators for each data point in the AnyOutputFolder data structure. Values equal to StateCountCurrent indicates that the data point is updated, whereas lower values implies that the data point was stored during an earlier operation.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+</div><!--</div>
+<div class="section" id="output-abscissa-iterationstep">
+<span id="anyoptstudy-output-abscissa-iterationstep"></span><h3>Output.Abscissa.IterationStep<a class="headerlink" href="#output-abscissa-iterationstep" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries even section collapsed" id="Output.Abscissa.IterationStep">
+<span id="anyoptstudy-output-abscissa-iterationstep" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title">Output.Abscissa.IterationStep</span><span class="member-title-equal"></span><span class="member-title-default"></span><a class="headerlink" href="#Output.Abscissa.IterationStep" title="Permalink to this headline">¶</a>
+<span class="member-descr"></span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyOutputFloat.html#anyoutputfloat"><span class="std std-ref">AnyOutputFloat</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">0.0</span></code></div>
+</div>
+<p>&lt;No description&gt;</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+</div><!--</div>
+<div class="section" id="analysis-updconfig">
+<span id="anyoptstudy-analysis-updconfig"></span><h3>Analysis.UpdConfig<a class="headerlink" href="#analysis-updconfig" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries odd section collapsed" id="Analysis.UpdConfig">
+<span id="anyoptstudy-analysis-updconfig" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title">Analysis.UpdConfig</span><span class="member-title-equal"></span><span class="member-title-default"></span><a class="headerlink" href="#Analysis.UpdConfig" title="Permalink to this headline">¶</a>
+<span class="member-descr"></span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyIntVar.html#anyintvar"><span class="std std-ref">AnyIntVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">0</span></code></div>
+</div>
+<p>&lt;No description&gt;</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+</div><!--</div>
+<div class="section" id="analysis-upddesign">
+<span id="anyoptstudy-analysis-upddesign"></span><h3>Analysis.UpdDesign<a class="headerlink" href="#analysis-upddesign" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries even section collapsed" id="Analysis.UpdDesign">
+<span id="anyoptstudy-analysis-upddesign" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title">Analysis.UpdDesign</span><span class="member-title-equal"></span><span class="member-title-default"></span><a class="headerlink" href="#Analysis.UpdDesign" title="Permalink to this headline">¶</a>
+<span class="member-descr">Counter of updates of design variable (i.e. the DesignVar Evaluation Moment).</span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyIntVar.html#anyintvar"><span class="std std-ref">AnyIntVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">DesignVar</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">0</span></code></div>
+</div>
+<p>Counter of updates of design variable (i.e. the DesignVar Evaluation Moment).</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+</div><!--</div>
+<div class="section" id="analysis-updoutput">
+<span id="anyoptstudy-analysis-updoutput"></span><h3>Analysis.UpdOutput<a class="headerlink" href="#analysis-updoutput" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries odd section collapsed" id="Analysis.UpdOutput">
+<span id="anyoptstudy-analysis-updoutput" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title">Analysis.UpdOutput</span><span class="member-title-equal"></span><span class="member-title-default"></span><a class="headerlink" href="#Analysis.UpdOutput" title="Permalink to this headline">¶</a>
+<span class="member-descr"></span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyIntVar.html#anyintvar"><span class="std std-ref">AnyIntVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">OutputVar</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">0</span></code></div>
+</div>
+<p>&lt;No description&gt;</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+</div><!--</div>
+<div class="section" id="iterationstep">
+<span id="anyoptstudy-iterationstep"></span><h3>IterationStep<a class="headerlink" href="#iterationstep" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries even section collapsed" id="IterationStep">
+<span id="anyoptstudy-iterationstep" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title">IterationStep</span><span class="member-title-equal"></span><span class="member-title-default"></span><a class="headerlink" href="#IterationStep" title="Permalink to this headline">¶</a>
+<span class="member-descr">Current iteration step.</span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyFloatVar.html#anyfloatvar"><span class="std std-ref">AnyFloatVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">DesignMeasureVar</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">0.0</span></code></div>
+</div>
+<p>Current iteration step.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+</div><!--</div>
+<div class="section" id="anyoptstudy-optimization">
+<span id="id2"></span><h3>Optimization<a class="headerlink" href="#anyoptstudy-optimization" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries odd section collapsed" id="Optimization">
+<span id="anyoptstudy-optimization" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title">Optimization</span><span class="member-title-equal"></span><span class="member-title-default"></span><a class="headerlink" href="#Optimization" title="Permalink to this headline">¶</a>
+<span class="member-descr">Operation that executes the optimization.</span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyOptStudyOpr.html#anyoptstudyopr"><span class="std std-ref">AnyOptStudyOpr</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">{}</span></code></div>
+</div>
+<p>Operation that executes the optimization.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+</div><!--</div>
+<div class="section" id="optimization-updconfig">
+<span id="anyoptstudy-optimization-updconfig"></span><h3>Optimization.UpdConfig<a class="headerlink" href="#optimization-updconfig" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries even section collapsed" id="Optimization.UpdConfig">
+<span id="anyoptstudy-optimization-updconfig" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title">Optimization.UpdConfig</span><span class="member-title-equal"></span><span class="member-title-default"></span><a class="headerlink" href="#Optimization.UpdConfig" title="Permalink to this headline">¶</a>
+<span class="member-descr"></span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyIntVar.html#anyintvar"><span class="std std-ref">AnyIntVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">0</span></code></div>
+</div>
+<p>&lt;No description&gt;</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+</div><!--</div>
+<div class="section" id="optimization-upddesign">
+<span id="anyoptstudy-optimization-upddesign"></span><h3>Optimization.UpdDesign<a class="headerlink" href="#optimization-upddesign" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries odd section collapsed" id="Optimization.UpdDesign">
+<span id="anyoptstudy-optimization-upddesign" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title">Optimization.UpdDesign</span><span class="member-title-equal"></span><span class="member-title-default"></span><a class="headerlink" href="#Optimization.UpdDesign" title="Permalink to this headline">¶</a>
+<span class="member-descr">Counter of updates of design variable (i.e. the DesignVar Evaluation Moment).</span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyIntVar.html#anyintvar"><span class="std std-ref">AnyIntVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">DesignVar</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">0</span></code></div>
+</div>
+<p>Counter of updates of design variable (i.e. the DesignVar Evaluation Moment).</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+</div><!--</div>
+<div class="section" id="optimization-updoutput">
+<span id="anyoptstudy-optimization-updoutput"></span><h3>Optimization.UpdOutput<a class="headerlink" href="#optimization-updoutput" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries even section collapsed" id="Optimization.UpdOutput">
+<span id="anyoptstudy-optimization-updoutput" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title">Optimization.UpdOutput</span><span class="member-title-equal"></span><span class="member-title-default"></span><a class="headerlink" href="#Optimization.UpdOutput" title="Permalink to this headline">¶</a>
+<span class="member-descr"></span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyIntVar.html#anyintvar"><span class="std std-ref">AnyIntVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">OutputVar</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">0</span></code></div>
+</div>
+<p>&lt;No description&gt;</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+</div><!--</div>
+<div class="section" id="optimization-solverdata">
+<span id="anyoptstudy-optimization-solverdata"></span><h3>Optimization.SolverData<a class="headerlink" href="#optimization-solverdata" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries odd section collapsed" id="Optimization.SolverData">
+<span id="anyoptstudy-optimization-solverdata" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title">Optimization.SolverData</span><span class="member-title-equal"></span><span class="member-title-default"></span><a class="headerlink" href="#Optimization.SolverData" title="Permalink to this headline">¶</a>
+<span class="member-descr"></span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyOptStudyOprSolverData.html#anyoptstudyoprsolverdata"><span class="std std-ref">AnyOptStudyOprSolverData</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">ConfigVar</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">{}</span></code></div>
+</div>
+<p>&lt;No description&gt;</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+</div><!--</div>
+<div class="section" id="optimization-solverdata-objective">
+<span id="anyoptstudy-optimization-solverdata-objective"></span><h3>Optimization.SolverData.Objective<a class="headerlink" href="#optimization-solverdata-objective" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries even section collapsed" id="Optimization.SolverData.Objective">
+<span id="anyoptstudy-optimization-solverdata-objective" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title">Optimization.SolverData.Objective</span><span class="member-title-equal"></span><span class="member-title-default"></span><a class="headerlink" href="#Optimization.SolverData.Objective" title="Permalink to this headline">¶</a>
+<span class="member-descr">Objective function data.</span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyFloat.html#anyfloat"><span class="std std-ref">AnyFloat</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">DesignMeasureVar</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">&quot;Dependent&quot;</span></code></div>
+</div>
+<p>Objective function data.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+</div><!--</div>
+<div class="section" id="optimization-solverdata-constraints">
+<span id="anyoptstudy-optimization-solverdata-constraints"></span><h3>Optimization.SolverData.Constraints<a class="headerlink" href="#optimization-solverdata-constraints" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries odd section collapsed" id="Optimization.SolverData.Constraints">
+<span id="anyoptstudy-optimization-solverdata-constraints" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title">Optimization.SolverData.Constraints</span><span class="member-title-equal"></span><span class="member-title-default"></span><a class="headerlink" href="#Optimization.SolverData.Constraints" title="Permalink to this headline">¶</a>
+<span class="member-descr">Constraint violation data.</span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyFloat.html#anyfloat"><span class="std std-ref">AnyFloat</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">DesignMeasureVar</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">&quot;Dependent&quot;</span></code></div>
+</div>
+<p>Constraint violation data.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+</div><!--</div>
+<div class="section" id="optimization-solverdata-desvars">
+<span id="anyoptstudy-optimization-solverdata-desvars"></span><h3>Optimization.SolverData.DesVars<a class="headerlink" href="#optimization-solverdata-desvars" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries even section collapsed" id="Optimization.SolverData.DesVars">
+<span id="anyoptstudy-optimization-solverdata-desvars" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title">Optimization.SolverData.DesVars</span><span class="member-title-equal"></span><span class="member-title-default"></span><a class="headerlink" href="#Optimization.SolverData.DesVars" title="Permalink to this headline">¶</a>
+<span class="member-descr">Design variable data.</span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyFloat.html#anyfloat"><span class="std std-ref">AnyFloat</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">DesignMeasureVar</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">&quot;Dependent&quot;</span></code></div>
+</div>
+<p>Design variable data.</p>
+</div></blockquote>
+</div>
+</div>
+</div>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+        <p class="logo"><a href="../../index.html" title="index">
+          <img class="logo" src="../../_static/anyscript_maual.svg" alt="Logo"/>
+        </a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+<h3><a href="../../contents.html">Reference Manual</a></h3>
+<p class="caption"><span class="caption-text">API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../class-overview.html"><strong>Class reference</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../function-overview.html"><strong>Function reference</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../globals-overview.html">Globals reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../environment.html">Environment variables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../messages/index.html">Errors, warnings and messages</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Language</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../anyscript/language.html">AnyScript™ language</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../anyscript/preprocessor.html">The preprocessor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../anyscript/inside-anybody.html">Inside the AnyBody Modeling System</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../anyscript/technical-notes.html">Technical notes</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../demos/index.html">Demo examples</a></li>
+</ul>
+<div class="sphinxprev">
+    <h4>Other resources</h4>
+    <p class="topless"><a href="../../../index.html"
+                          title="Back to all manuals">&larr; Back to all manuals</a></p>
+</div>
+        </div>
+      </div>
+    
+    
+        <div class="sidebar-toggle-group no-js">
+            
+            <button class="sidebar-toggle" id="sidebar-hide" title="Hide the sidebar menu">
+                 «
+                <span class="show-for-small">hide menu</span>
+                
+            </button>
+            <button class="sidebar-toggle" id="sidebar-show" title="Show the sidebar menu">
+                
+                <span class="show-for-small">menu</span>
+                <span class="hide-for-small">sidebar</span>
+                 »
+            </button>
+        </div>
+    
+      <div class="clearer"></div>
+    </div>
+    <div class="relbar-bottom">
+        
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../contents.html" title="Table Of Contents"
+             >toc</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="AnyOptStudyOpr.html" title="AnyOptStudyOpr"
+             >next</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="AnyOptKinStudyOpr.html" title="AnyOptKinStudyOpr"
+             >previous</a> &nbsp; &nbsp;</li>
+    <li><a href="../../index.html">AnyScript Reference 7.3.4 documentation</a> &#187;</li>
+
+          <li class="nav-item nav-item-1"><a href="../../index.html" >The AnyScript Reference manual!</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../class-overview.html" ><strong>Class reference</strong></a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">AnyOptStudy</a></li> 
+      </ul>
+    </div>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2021, AnyBody Technology A/S.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.5.4.
+    </div>
+    <!-- cloud_sptheme 1.4 -->
+  </body>
+</html>

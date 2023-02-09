@@ -1,0 +1,578 @@
+
+
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AnyOprSetForceDepKin &#8212; AnyScript Reference 7.3.4 documentation</title>
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/cloud.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/table_styling.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noticia+Text|Open+Sans|Droid+Sans+Mono" type="text/css" />
+    
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/script/filter-class-list.js"></script>
+    <script src="../../_static/fa/all.js"></script>
+
+    
+    
+     
+        <script src="../../_static/jquery.cookie.js"></script>
+    
+
+    
+     
+        <script src="../../_static/cloud.base.js"></script>
+    
+
+    
+     
+        <script src="../../_static/cloud.js"></script>
+    
+
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="AnyOprSetKinematics" href="AnyOprSetKinematics.html" />
+    <link rel="prev" title="AnyOprSet" href="AnyOprSet.html" /> 
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head><body>
+    <div class="relbar-top">
+        
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../contents.html" title="Table Of Contents"
+             accesskey="C">toc</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="AnyOprSetKinematics.html" title="AnyOprSetKinematics"
+             accesskey="N">next</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="AnyOprSet.html" title="AnyOprSet"
+             accesskey="P">previous</a> &nbsp; &nbsp;</li>
+    <li><a href="../../index.html">AnyScript Reference 7.3.4 documentation</a> &#187;</li>
+
+          <li class="nav-item nav-item-1"><a href="../../index.html" >The AnyScript Reference manual!</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../class-overview.html" accesskey="U"><strong>Class reference</strong></a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">AnyOprSetForceDepKin</a></li> 
+      </ul>
+    </div>
+    </div>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="anyoprsetforcedepkin">
+<span id="id1"></span><h1>AnyOprSetForceDepKin<a class="headerlink" href="#anyoprsetforcedepkin" title="Permalink to this headline">¶</a></h1>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>Abstract</p>
+</dd>
+<dt class="field-even">Parent class</dt>
+<dd class="field-even"><p><a class="reference internal" href="AnyOprSetMechSolver.html#anyoprsetmechsolver"><span class="std std-ref">AnyOprSetMechSolver</span></a></p>
+</dd>
+</dl>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>This folder-class holds parameters used for coupled inverse dynamics and force-dependent
+kinematics analysis.</p>
+<p>Force dependent kinematics essentially implies that the system is kinematically indeterminate,
+i.e., the system has less kinematical motion drivers than degrees of freedom.
+Under general circumstances this would call for a forward dynamic solver solving the differential equations over time;
+however, under special mechanical circumstances the kinematic force dependency is not influencing the gross motion
+of the system significantly and for such cases AnyBody’s inverse dynamic solvers is extended with a solver
+that couples the inverse dynamics solver with a quasi-static analysis of selected degrees of freedom.</p>
+<p>The selected degrees of freedom are kinematic constraints (see class AnyKinEq) with type specification (CType) set to
+“force-dependent”. These degrees of freedom will be assumed to be static in all time steps and solved accordingly.
+“Static” implies that velocities and accelerations are set to zero and the solver will attempt to find a position
+where the residual force in that direction of motion vanishes.
+This is only possible if the mechanical system, in particular the degrees of freedom in question, are sufficiently
+supported by elatic structure to provide a stationary position with minimal potential energy.</p>
+<p>Moreover, the “static” assumption must hold for the given analysis and it is up to the user to evaluate this requirement.
+Generally, this is aimed at degrees of freedom with very small motion compared to the gross motion of the system for
+instance due to relatively stiff supporting structures. In other word, this is aimed for the “borderland” between idealized
+kinematic constraints (which can be regarded as infinitely stiff) and real free motion that can be measured
+(e.g by MOCAP) and inputted as kinematical driver.</p>
+<p>An practical relevant example is the small displacements in human joints; these are impossible
+to measure accurately enough for motion specification during a MOCAP experiment, they are insignificant to the over-all
+dynamics of the gfroos motion (the motion of system inertia), but they are in some cases important for proper estimation
+of local effect such as moment arms of muscles and ligaments.</p>
+<p>The “static” assumption does of course also hold true for actual static cases, such as analysis of static postures.</p>
+<p> </p>
+<table class="colwidths-given plain docutils align-default" id="id2">
+<caption><span class="caption-text">Demo examples related to AnyOprSetForceDepKin</span><a class="headerlink" href="#id2" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 75%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Demo</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference download internal" download="" href="../../_downloads/cea8928679199e1ab1074886f8a76fd3/ClassExamples.AnyOprSetForceDepKin.zip"><code class="xref download docutils literal notranslate"><span class="pre">ClassExamples.AnyOprSetForceDepKin</span></code></a></p></td>
+<td><p>Force-dependent kinematics analysis of the simple 2D demo arm model.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="optional-initialization-members">
+<h2>Optional initialization members<a class="headerlink" href="#optional-initialization-members" title="Permalink to this headline">¶</a></h2>
+<!-- Hack to trick sphinx into adding member target link -->
+  <!--<div class="section" id="forcetol">
+<span id="anyoprsetforcedepkin-forcetol"></span><h3>ForceTol<a class="headerlink" href="#forcetol" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries odd section collapsed" id="ForceTol">
+<span id="anyoprsetforcedepkin-forcetol" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title"> ForceTol </span><span class="member-title-equal">=</span><span class="member-title-default"> 0.001 </span><a class="headerlink" href="#ForceTol" title="Permalink to this headline">¶</a>
+<span class="member-descr">Tolerance used in stopping criterion.</span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyVar.html#anyvar"><span class="std std-ref">AnyVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">DesignVar</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">0.001</span></code></div>
+</div>
+<p>Tolerance used in stopping criterion.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+ </div> <!--</div>
+<div class="section" id="useadaptiveforcetolonoff">
+<span id="anyoprsetforcedepkin-useadaptiveforcetolonoff"></span><h3>UseAdaptiveForceTolOnOff<a class="headerlink" href="#useadaptiveforcetolonoff" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries even section collapsed" id="UseAdaptiveForceTolOnOff">
+<span id="anyoprsetforcedepkin-useadaptiveforcetolonoff" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title"> UseAdaptiveForceTolOnOff </span><span class="member-title-equal">=</span><span class="member-title-default"> Off </span><a class="headerlink" href="#UseAdaptiveForceTolOnOff" title="Permalink to this headline">¶</a>
+<span class="member-descr">Switch for whether the stopping criterion uses. Off: the actual force...</span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnySwitchVar.html#anyswitchvar"><span class="std std-ref">AnySwitchVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">DesignVar</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">Off</span></code></div>
+</div>
+<p>Switch for whether the stopping criterion uses. Off: the actual force residual for the force dependent degrees of freedom, or On: the force residual converted using last known stiffness to a displacement value, i.e. a more direct measure of kinematic accuracy.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+ </div> <!--</div>
+<div class="section" id="maxiteration">
+<span id="anyoprsetforcedepkin-maxiteration"></span><h3>MaxIteration<a class="headerlink" href="#maxiteration" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries odd section collapsed" id="MaxIteration">
+<span id="anyoprsetforcedepkin-maxiteration" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title"> MaxIteration </span><span class="member-title-equal">=</span><span class="member-title-default"> 100 </span><a class="headerlink" href="#MaxIteration" title="Permalink to this headline">¶</a>
+<span class="member-descr">Maximal number of steps allowed in the iteration.</span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyIntVar.html#anyintvar"><span class="std std-ref">AnyIntVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">DesignVar</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">100</span></code></div>
+</div>
+<p>Maximal number of steps allowed in the iteration.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+ </div> <!--</div>
+<div class="section" id="perturbation">
+<span id="anyoprsetforcedepkin-perturbation"></span><h3>Perturbation<a class="headerlink" href="#perturbation" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries even section collapsed" id="Perturbation">
+<span id="anyoprsetforcedepkin-perturbation" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title"> Perturbation </span><span class="member-title-equal">=</span><span class="member-title-default"> 1e-05 </span><a class="headerlink" href="#Perturbation" title="Permalink to this headline">¶</a>
+<span class="member-descr">Perturbation value used to numerical jacobian computation.</span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyVar.html#anyvar"><span class="std std-ref">AnyVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">DesignVar</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">1e-05</span></code></div>
+</div>
+<p>Perturbation value used to numerical jacobian computation.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+ </div> <!--</div>
+<div class="section" id="perturbationsymmetriconoff">
+<span id="anyoprsetforcedepkin-perturbationsymmetriconoff"></span><h3>PerturbationSymmetricOnOff<a class="headerlink" href="#perturbationsymmetriconoff" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries odd section collapsed" id="PerturbationSymmetricOnOff">
+<span id="anyoprsetforcedepkin-perturbationsymmetriconoff" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title"> PerturbationSymmetricOnOff </span><span class="member-title-equal">=</span><span class="member-title-default"> On </span><a class="headerlink" href="#PerturbationSymmetricOnOff" title="Permalink to this headline">¶</a>
+<span class="member-descr">Switch for using symmetric differentiation scheme for calculation of...</span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnySwitchVar.html#anyswitchvar"><span class="std std-ref">AnySwitchVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">DesignVar</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">On</span></code></div>
+</div>
+<p>Switch for using symmetric differentiation scheme for calculation of numerical Jacobian.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+ </div> <!--</div>
+<div class="section" id="localsearchonoff">
+<span id="anyoprsetforcedepkin-localsearchonoff"></span><h3>LocalSearchOnOff<a class="headerlink" href="#localsearchonoff" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries even section collapsed" id="LocalSearchOnOff">
+<span id="anyoprsetforcedepkin-localsearchonoff" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title"> LocalSearchOnOff </span><span class="member-title-equal">=</span><span class="member-title-default"> On </span><a class="headerlink" href="#LocalSearchOnOff" title="Permalink to this headline">¶</a>
+<span class="member-descr">Switch for using a search method (golden-section search) for each Newton...</span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnySwitchVar.html#anyswitchvar"><span class="std std-ref">AnySwitchVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">DesignVar</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">On</span></code></div>
+</div>
+<p>Switch for using a search method (golden-section search) for each Newton iteration instead of a simpler relaxation scheme.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+ </div> <!--</div>
+<div class="section" id="maxnewtonstep">
+<span id="anyoprsetforcedepkin-maxnewtonstep"></span><h3>MaxNewtonStep<a class="headerlink" href="#maxnewtonstep" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries odd section collapsed" id="MaxNewtonStep">
+<span id="anyoprsetforcedepkin-maxnewtonstep" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title"> MaxNewtonStep </span><span class="member-title-equal">=</span><span class="member-title-default"> 0.001 </span><a class="headerlink" href="#MaxNewtonStep" title="Permalink to this headline">¶</a>
+<span class="member-descr">Maximal size of component of the update vector of the newton iteration...</span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyVar.html#anyvar"><span class="std std-ref">AnyVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">DesignVar</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">0.001</span></code></div>
+</div>
+<p>Maximal size of component of the update vector of the newton iteration during the solution of a FDK step.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+ </div> <!--</div>
+<div class="section" id="solvertype">
+<span id="anyoprsetforcedepkin-solvertype"></span><h3>SolverType<a class="headerlink" href="#solvertype" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries even section collapsed" id="SolverType">
+<span id="anyoprsetforcedepkin-solvertype" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title"> SolverType </span><span class="member-title-equal">=</span><span class="member-title-default"> FDK_Solver_Newton </span><a class="headerlink" href="#SolverType" title="Permalink to this headline">¶</a>
+<span class="member-descr">Solver method used for the FDK iterations.</span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyFDKSolverType.html#anyfdksolvertype"><span class="std std-ref">AnyFDKSolverType</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">FDK_Solver_Newton</span></code></div>
+</div>
+<p>Solver method used for the FDK iterations.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+ </div> <!--</div>
+<div class="section" id="complexpowerexp">
+<span id="anyoprsetforcedepkin-complexpowerexp"></span><h3>ComplexPowerExp<a class="headerlink" href="#complexpowerexp" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries odd section collapsed" id="ComplexPowerExp">
+<span id="anyoprsetforcedepkin-complexpowerexp" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title"> ComplexPowerExp </span><span class="member-title-equal">=</span><span class="member-title-default"> 2.0 </span><a class="headerlink" href="#ComplexPowerExp" title="Permalink to this headline">¶</a>
+<span class="member-descr"></span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyVar.html#anyvar"><span class="std std-ref">AnyVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">DesignVar</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">2.0</span></code></div>
+</div>
+<p>&lt;No description&gt;</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+ </div> <!--</div>
+<div class="section" id="complexalpha">
+<span id="anyoprsetforcedepkin-complexalpha"></span><h3>ComplexAlpha<a class="headerlink" href="#complexalpha" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries even section collapsed" id="ComplexAlpha">
+<span id="anyoprsetforcedepkin-complexalpha" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title"> ComplexAlpha </span><span class="member-title-equal">=</span><span class="member-title-default"> 1.3 </span><a class="headerlink" href="#ComplexAlpha" title="Permalink to this headline">¶</a>
+<span class="member-descr"></span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyVar.html#anyvar"><span class="std std-ref">AnyVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">DesignVar</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">1.3</span></code></div>
+</div>
+<p>&lt;No description&gt;</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+ </div> <!--</div>
+<div class="section" id="complexmaxnumrepeat">
+<span id="anyoprsetforcedepkin-complexmaxnumrepeat"></span><h3>ComplexMaxNumRepeat<a class="headerlink" href="#complexmaxnumrepeat" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries odd section collapsed" id="ComplexMaxNumRepeat">
+<span id="anyoprsetforcedepkin-complexmaxnumrepeat" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title"> ComplexMaxNumRepeat </span><span class="member-title-equal">=</span><span class="member-title-default"> 4 </span><a class="headerlink" href="#ComplexMaxNumRepeat" title="Permalink to this headline">¶</a>
+<span class="member-descr">Maximal number of attempts in the Complex solver for moving the worst design...</span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyIntVar.html#anyintvar"><span class="std std-ref">AnyIntVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">DesignVar</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">4</span></code></div>
+</div>
+<p>Maximal number of attempts in the Complex solver for moving the worst design point, which continues to be the worst after being moved.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+ </div> <!--</div>
+<div class="section" id="complexpopulationsize">
+<span id="anyoprsetforcedepkin-complexpopulationsize"></span><h3>ComplexPopulationSize<a class="headerlink" href="#complexpopulationsize" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries even section collapsed" id="ComplexPopulationSize">
+<span id="anyoprsetforcedepkin-complexpopulationsize" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title"> ComplexPopulationSize </span><span class="member-title-equal">=</span><span class="member-title-default"> 0 </span><a class="headerlink" href="#ComplexPopulationSize" title="Permalink to this headline">¶</a>
+<span class="member-descr">Size of the population for the Complex solver, i.e., the number of design...</span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyIntVar.html#anyintvar"><span class="std std-ref">AnyIntVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">DesignVar</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">0</span></code></div>
+</div>
+<p>Size of the population for the Complex solver, i.e., the number of design points in the population.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+ </div> <!--</div>
+<div class="section" id="complexanalysisfailedpenalty">
+<span id="anyoprsetforcedepkin-complexanalysisfailedpenalty"></span><h3>ComplexAnalysisFailedPenalty<a class="headerlink" href="#complexanalysisfailedpenalty" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries odd section collapsed" id="ComplexAnalysisFailedPenalty">
+<span id="anyoprsetforcedepkin-complexanalysisfailedpenalty" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title"> ComplexAnalysisFailedPenalty </span><span class="member-title-equal">=</span><span class="member-title-default"> 1e+16 </span><a class="headerlink" href="#ComplexAnalysisFailedPenalty" title="Permalink to this headline">¶</a>
+<span class="member-descr">Penalty factor used in the Complex solver to change degrees of freedem if...</span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyVar.html#anyvar"><span class="std std-ref">AnyVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">DesignVar</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">1e+16</span></code></div>
+</div>
+<p>Penalty factor used in the Complex solver to change degrees of freedem if the kinematic analysis failes.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+ </div> <!--</div>
+<div class="section" id="complexconvergenceobjectivetol">
+<span id="anyoprsetforcedepkin-complexconvergenceobjectivetol"></span><h3>ComplexConvergenceObjectiveTol<a class="headerlink" href="#complexconvergenceobjectivetol" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries even section collapsed" id="ComplexConvergenceObjectiveTol">
+<span id="anyoprsetforcedepkin-complexconvergenceobjectivetol" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title"> ComplexConvergenceObjectiveTol </span><span class="member-title-equal">=</span><span class="member-title-default"> 1.0 </span><a class="headerlink" href="#ComplexConvergenceObjectiveTol" title="Permalink to this headline">¶</a>
+<span class="member-descr">Convergence tolerance of the objective function for the Complex solver.</span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyVar.html#anyvar"><span class="std std-ref">AnyVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">DesignVar</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">1.0</span></code></div>
+</div>
+<p>Convergence tolerance of the objective function for the Complex solver.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+ </div> <!--</div>
+<div class="section" id="complexconvergencedesigntol">
+<span id="anyoprsetforcedepkin-complexconvergencedesigntol"></span><h3>ComplexConvergenceDesignTol<a class="headerlink" href="#complexconvergencedesigntol" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries odd section collapsed" id="ComplexConvergenceDesignTol">
+<span id="anyoprsetforcedepkin-complexconvergencedesigntol" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title"> ComplexConvergenceDesignTol </span><span class="member-title-equal">=</span><span class="member-title-default"> 1e-05 </span><a class="headerlink" href="#ComplexConvergenceDesignTol" title="Permalink to this headline">¶</a>
+<span class="member-descr">Convergence tolerance of the FDK degrees of freedeom for the Complex solver.</span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyVar.html#anyvar"><span class="std std-ref">AnyVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">DesignVar</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">1e-05</span></code></div>
+</div>
+<p>Convergence tolerance of the FDK degrees of freedeom for the Complex solver.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+ </div> <!--</div>
+<div class="section" id="complexpopulationboxsize">
+<span id="anyoprsetforcedepkin-complexpopulationboxsize"></span><h3>ComplexPopulationBoxSize<a class="headerlink" href="#complexpopulationboxsize" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries even section collapsed" id="ComplexPopulationBoxSize">
+<span id="anyoprsetforcedepkin-complexpopulationboxsize" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title"> ComplexPopulationBoxSize </span><span class="member-title-equal">=</span><span class="member-title-default"> 0.005 </span><a class="headerlink" href="#ComplexPopulationBoxSize" title="Permalink to this headline">¶</a>
+<span class="member-descr">Size of the box in the design space of the complex solver within which the...</span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyVar.html#anyvar"><span class="std std-ref">AnyVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">DesignVar</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">0.005</span></code></div>
+</div>
+<p>Size of the box in the design space of the complex solver within which the initial population is generated. This single constant will set the same size of the box for all design variables.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+ </div> <!--</div>
+<div class="section" id="complexrefinementconvergenceobjectivetol">
+<span id="anyoprsetforcedepkin-complexrefinementconvergenceobjectivetol"></span><h3>ComplexRefinementConvergenceObjectiveTol<a class="headerlink" href="#complexrefinementconvergenceobjectivetol" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries odd section collapsed" id="ComplexRefinementConvergenceObjectiveTol">
+<span id="anyoprsetforcedepkin-complexrefinementconvergenceobjectivetol" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title"> ComplexRefinementConvergenceObjectiveTol </span><span class="member-title-equal">=</span><span class="member-title-default"> 1.0 </span><a class="headerlink" href="#ComplexRefinementConvergenceObjectiveTol" title="Permalink to this headline">¶</a>
+<span class="member-descr">Convergence tolerance on the objective function of the refinement step of...</span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyVar.html#anyvar"><span class="std std-ref">AnyVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">DesignVar</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">1.0</span></code></div>
+</div>
+<p>Convergence tolerance on the objective function of the refinement step of the Complex solver.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+ </div> <!--</div>
+<div class="section" id="complexrefinementconvergencedesigntol">
+<span id="anyoprsetforcedepkin-complexrefinementconvergencedesigntol"></span><h3>ComplexRefinementConvergenceDesignTol<a class="headerlink" href="#complexrefinementconvergencedesigntol" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries even section collapsed" id="ComplexRefinementConvergenceDesignTol">
+<span id="anyoprsetforcedepkin-complexrefinementconvergencedesigntol" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title"> ComplexRefinementConvergenceDesignTol </span><span class="member-title-equal">=</span><span class="member-title-default"> 1e-09 </span><a class="headerlink" href="#ComplexRefinementConvergenceDesignTol" title="Permalink to this headline">¶</a>
+<span class="member-descr">Convergence tolerance on the FDK degrees of freedom of the refinement step...</span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyVar.html#anyvar"><span class="std std-ref">AnyVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">DesignVar</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">1e-09</span></code></div>
+</div>
+<p>Convergence tolerance on the FDK degrees of freedom of the refinement step of the Complex solver.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+ </div> <!--</div>
+<div class="section" id="complexrefinementpopulationboxsize">
+<span id="anyoprsetforcedepkin-complexrefinementpopulationboxsize"></span><h3>ComplexRefinementPopulationBoxSize<a class="headerlink" href="#complexrefinementpopulationboxsize" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries odd section collapsed" id="ComplexRefinementPopulationBoxSize">
+<span id="anyoprsetforcedepkin-complexrefinementpopulationboxsize" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title"> ComplexRefinementPopulationBoxSize </span><span class="member-title-equal">=</span><span class="member-title-default"> 1e-05 </span><a class="headerlink" href="#ComplexRefinementPopulationBoxSize" title="Permalink to this headline">¶</a>
+<span class="member-descr">Size of the box in the design space of the refinement step of the complex...</span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyVar.html#anyvar"><span class="std std-ref">AnyVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">DesignVar</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">1e-05</span></code></div>
+</div>
+<p>Size of the box in the design space of the refinement step of the complex solver within which the initial population is generated. This single constant will set the same size of the box for all design variables.</p>
+</div></blockquote>
+</div>
+</div>
+</div>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+        <p class="logo"><a href="../../index.html" title="index">
+          <img class="logo" src="../../_static/anyscript_maual.svg" alt="Logo"/>
+        </a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+<h3><a href="../../contents.html">Reference Manual</a></h3>
+<p class="caption"><span class="caption-text">API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../class-overview.html"><strong>Class reference</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../function-overview.html"><strong>Function reference</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../globals-overview.html">Globals reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../environment.html">Environment variables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../messages/index.html">Errors, warnings and messages</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Language</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../anyscript/language.html">AnyScript™ language</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../anyscript/preprocessor.html">The preprocessor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../anyscript/inside-anybody.html">Inside the AnyBody Modeling System</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../anyscript/technical-notes.html">Technical notes</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../demos/index.html">Demo examples</a></li>
+</ul>
+<div class="sphinxprev">
+    <h4>Other resources</h4>
+    <p class="topless"><a href="../../../index.html"
+                          title="Back to all manuals">&larr; Back to all manuals</a></p>
+</div>
+        </div>
+      </div>
+    
+    
+        <div class="sidebar-toggle-group no-js">
+            
+            <button class="sidebar-toggle" id="sidebar-hide" title="Hide the sidebar menu">
+                 «
+                <span class="show-for-small">hide menu</span>
+                
+            </button>
+            <button class="sidebar-toggle" id="sidebar-show" title="Show the sidebar menu">
+                
+                <span class="show-for-small">menu</span>
+                <span class="hide-for-small">sidebar</span>
+                 »
+            </button>
+        </div>
+    
+      <div class="clearer"></div>
+    </div>
+    <div class="relbar-bottom">
+        
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../contents.html" title="Table Of Contents"
+             >toc</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="AnyOprSetKinematics.html" title="AnyOprSetKinematics"
+             >next</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="AnyOprSet.html" title="AnyOprSet"
+             >previous</a> &nbsp; &nbsp;</li>
+    <li><a href="../../index.html">AnyScript Reference 7.3.4 documentation</a> &#187;</li>
+
+          <li class="nav-item nav-item-1"><a href="../../index.html" >The AnyScript Reference manual!</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../class-overview.html" ><strong>Class reference</strong></a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">AnyOprSetForceDepKin</a></li> 
+      </ul>
+    </div>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2021, AnyBody Technology A/S.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.5.4.
+    </div>
+    <!-- cloud_sptheme 1.4 -->
+  </body>
+</html>

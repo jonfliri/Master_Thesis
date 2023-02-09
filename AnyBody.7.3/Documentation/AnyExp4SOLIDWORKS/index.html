@@ -1,0 +1,836 @@
+
+
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AnyBody Exporter for SOLIDWORKS &#8212; AnyBody Exporter for SOLIDWORKS 1.3.0 documentation</title>
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/cloud.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="_static/table_styling.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noticia+Text|Open+Sans|Droid+Sans+Mono" type="text/css" />
+    
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+
+    
+    
+     
+        <script src="_static/jquery.cookie.js"></script>
+    
+
+    
+     
+        <script src="_static/cloud.base.js"></script>
+    
+
+    
+     
+        <script src="_static/cloud.js"></script>
+    
+
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head><body>
+    <div class="relbar-top">
+        
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="#" title="Table Of Contents"
+             accesskey="C">toc</a> &nbsp; &nbsp;</li>
+    <li><a href="#">AnyBody Exporter for SOLIDWORKS 1.3.0 documentation</a> &#187;</li>
+
+        <li class="nav-item nav-item-this"><a href="">AnyBody Exporter for SOLIDWORKS</a></li> 
+      </ul>
+    </div>
+    </div>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="anybody-exporter-for-solidworks">
+<h1>AnyBody Exporter for SOLIDWORKS<a class="headerlink" href="#anybody-exporter-for-solidworks" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>The AnyBody Exporter™ for SOLIDWORKS® Translator (AnyExp4SOLIDWORKS™) is
+an add-in for SOLIDWORKS that can translate a SOLIDWORKS CAD assembly
+into its corresponding AnyScript model, which can then be used in the
+AnyBody Modeling System. This allows users to design environments for
+the human body in the state-of-the-art design environment of SOLIDWORKS
+and it is also possible to use AnyBody to analyze and optimize products
+developed in SOLIDWORKS, either in terms of their interaction with the
+human body or in terms of their stand-alone function. Typical
+applications would be medical devices, tools, sports equipment,
+workplaces and furniture.</p>
+<p>The AnyExp4SOLIDWORKS application translates SOLIDWORKS assemblies into
+AnyBody models as fast and accurately as possible, preserving
+constraints between the parts as well as their visual appearance. The
+result is a functional model in AnyBody, which can analyze movements and
+forces in the product either alone or in connection with a
+musculoskeletal model.</p>
+<div class="figure align-default">
+<a class="reference internal image-reference" href="_images/image1.PNG"><img alt="_images/image1.PNG" src="_images/image1.PNG" style="width: 6.49872in; height: 3.52014in;" /></a>
+</div>
+<p>This manual provides a brief introduction to the AnyExp4SOLIDWORKS
+add-in and its usage, but for a more detailed example of how to use the
+add-in to perform a complete translation process including details about
+how to link the translated SOLIDWORKS model to the AnyBody human model,
+we recommend that you look at the chapter
+<a class="reference external" href="../Tutorials/AnyExp4SOLIDWORKS/index.html" title="(in AnyBody Tutorials v7.3)"><span class="xref std std-doc">Making Models using SOLIDWORKS</span></a>
+in the AnyBody Tutorials.</p>
+</div>
+<div class="section" id="system-requirements-and-installation">
+<h2>System Requirements and Installation<a class="headerlink" href="#system-requirements-and-installation" title="Permalink to this headline">¶</a></h2>
+<p>AnyExp4SOLIDWORKS needs both SOLIDWORKS and the AnyBody Modeling System
+in order to functions. Therefore, general system requirement and
+recommendation follows these packages.</p>
+<ul class="simple">
+<li><p>AnyExp4SOLIDWORKS is installed through the installer for the AnyBody
+Modeling System. Please find details about the installation procedure
+in the Installation guide.</p></li>
+<li><p>Please find the requirements and recommendation for the AnyBody
+Modeling System in the Release Notes or Installation Guide for the
+packages. See for instance the <span class="menuselection">Windows Start Menu ‣ AnyBody
+Technology ‣ AnyBody.7.2 ‣ Doc</span></p></li>
+<li><p>AnyExp4SOLIDWORKS is delivered in the form of a DLL (Dynamic Link
+Library), which can be loaded as an add-in from SOLIDWORKS by opening
+the AnyExp4SOLIDWORKS DLL.</p></li>
+<li><p>After you have loaded the AnyExp4SOLIDWORKS module successfully, you
+can see that <span class="guilabel">AnyExp4SOLIDWORKS</span> module appears in SOLIDWORKS’ menu
+bar.</p></li>
+</ul>
+</div>
+<div class="section" id="translating-a-cad-model">
+<h2>Translating a CAD model<a class="headerlink" href="#translating-a-cad-model" title="Permalink to this headline">¶</a></h2>
+<p>We imagine that an assembly of an exercise machine has been created in
+SOLIDWORKS as shown in the figure below. An assembly in SOLIDWORKS is a
+set of parts connected by mates, which are really kinematic constraints
+that, for instance, keep a shaft in a bearing or make two faces
+parallel. This forms a mechanism. The translation process generates an
+AnyBody segment from each of the parts and connects the segments with
+joints corresponding to the mates. To carry out the translation, please
+perform the following steps.</p>
+<div class="figure align-default">
+<a class="reference internal image-reference" href="_images/image2.PNG"><img alt="_images/image2.PNG" src="_images/image2.PNG" style="width: 6.5in; height: 3.52083in;" /></a>
+</div>
+<ol class="arabic">
+<li><p>In the AnyExp4SOLIDWORKS pull-down menu, choose the <span class="menuselection">Export to
+AnyScript</span> operation.</p>
+<div class="figure align-default">
+<a class="reference internal image-reference" href="_images/image3.PNG"><img alt="_images/image3.PNG" src="_images/image3.PNG" style="width: 5.82081in; height: 1.36458in;" /></a>
+</div>
+</li>
+<li><p>A dialog with export options appears.</p>
+<div class="figure align-default">
+<a class="reference internal image-reference" href="_images/image4.PNG"><img alt="_images/image4.PNG" src="_images/image4.PNG" style="width: 3.46807in; height: 2.38976in;" /></a>
+</div>
+</li>
+<li><p>Next, type the name of the AnyScript (<code class="docutils literal notranslate"><span class="pre">.any</span></code>) file to be created. Then
+click the <span class="guilabel">Save</span> button.</p>
+<div class="figure align-default">
+<a class="reference internal image-reference" href="_images/image5.PNG"><img alt="_images/image5.PNG" src="_images/image5.PNG" style="width: 6.07291in; height: 4.03681in;" /></a>
+</div>
+</li>
+</ol>
+<p>The model is now saved as AnyScript files and other related files, which
+are ready for usage in the AnyBody Modeling System. The selected file
+name is root file needed for inclusion into AnyBody models. All other
+related files have that same first name but with an extension before the
+actual file extension. All files are in the same folder as the root
+folder. More information about the files can be found in section
+“Concepts of Translation”.</p>
+<div class="section" id="opening-the-translated-model-in-anybody">
+<h3>Opening the translated model in AnyBody<a class="headerlink" href="#opening-the-translated-model-in-anybody" title="Permalink to this headline">¶</a></h3>
+<p>The structure of the model is one main AnyScript file and a number of
+AnyScript files containing the actual model. In addition, STL files
+corresponding to the various parts are also generated. The main file is
+called <code class="file docutils literal notranslate"><em><span class="pre">YourModelName</span></em><span class="pre">.main.any</span></code>, if you open and load the main file in
+the AnyBody Modeling System, a model visually very similar to the
+SOLIDWORKS model you exported should appear.</p>
+<p>However, the main file contains very little code and is actually just a
+reference to the principal export file called <code class="file docutils literal notranslate"><em><span class="pre">YourModelName</span></em><span class="pre">.any</span></code>. The
+latter contains the actual model but is intended to be used as one
+element in a model also including, for instance, the human model. The
+advantage of this setup is that it is easy to develop an AnyBody model
+originating in the main file while working with the SOLIDWORKS model and
+updating it with repeated exports. Every time the model is exported from
+SOLIDWORKS, the exported files are overwritten, so please remember to
+make your own copy of the main file before you start developing it in
+AnyBody. This will prevent you from accidentally losing your work.
+Please notice also that the naming of elements in the AnyScript files
+depends on the naming of the components in the SOLIDWORKS model. So
+references to the SOLIDWORKS-generated parts of the model may need to be
+updated if the SOLIDWORKS model has been changed.</p>
+<div class="figure align-default">
+<a class="reference internal image-reference" href="_images/image6.PNG"><img alt="_images/image6.PNG" src="_images/image6.PNG" style="width: 6.48718in; height: 3.51389in;" /></a>
+</div>
+</div>
+<div class="section" id="making-a-simple-anybody-analysis-of-the-model">
+<h3>Making a simple AnyBody analysis of the model<a class="headerlink" href="#making-a-simple-anybody-analysis-of-the-model" title="Permalink to this headline">¶</a></h3>
+<p>For the inverse dynamics analysis or kinematic analysis in AnyBody
+Modeling System, the number of all kinematic constraints (from joints,
+drivers and general constraints) should in principle be as same as the
+number of degrees of freedom. A model imported from SOLIDWORKS will
+usually be lacking a few drivers to determine the motion of the model’s
+natural degrees-of-freedom like, for instance, the rotation of the
+flywheel in the exercise machine example shown in the figure. So in
+general, you must add some “drivers” to define your own motion for the
+model. Before adding the human model to your assembly model, it is
+recommended that you define a set of simple drivers in your model to
+test whether it works well or not. This set of kinematic driver
+constraints must match the degrees of freedom free for motion in your
+CAD assembly model.</p>
+<p>This topic is covered in more details in
+<a class="reference external" href="../Tutorials/AnyExp4SOLIDWORKS/lesson2.html" title="(in AnyBody Tutorials v7.3)"><span class="xref std std-doc">lesson 2 of the “Making Models using SOLIDWORKS” tutorial.</span></a></p>
+</div>
+<div class="section" id="adding-the-human-to-the-model">
+<h3>Adding the human to the model<a class="headerlink" href="#adding-the-human-to-the-model" title="Permalink to this headline">¶</a></h3>
+<p>When you want to define the kinematic connections (constraints) between
+human and assembly models, it is highly recommended that you define some
+‘Reference Coordinate System’ objects inside your SOLIDWORKS assembly
+model. These should be defined at the positions where your SOLIDWORKS
+model should be connected to the AnyBody human model, and they will be
+converted into ‘AnyRefNode’ objects, which is the AnyScript equivalent,
+by the translator. In order to enable easy access to these resulting
+AnyRefNodes, the translator implements a feature that looks for objects
+with a specific naming prefix (by default the prefix is <code class="docutils literal notranslate"><span class="pre">ANY_</span></code>, but this
+can be changed in the translation options). The objects with names
+matching this prefix will be made available in a special folder (called
+<code class="docutils literal notranslate"><span class="pre">_ANY_INTERFACE_</span></code>) found at the top level of the exported assembly for
+easy access. In addition, you should define similar objects
+(‘AnyRefNode’ objects) inside the AnyBody human model segments at the
+locations where you want the contact to occur, such as the hands, feet,
+pelvis and thorax. An example of how this is done can also be found in
+<a class="reference external" href="../Tutorials/AnyExp4SOLIDWORKS/lesson3.html" title="(in AnyBody Tutorials v7.3)"><span class="xref std std-doc">lesson 3 of the “Making Models using SOLIDWORKS” tutorial</span></a>.</p>
+<p><a class="reference internal" href="_images/image7.png"><img alt="image7" src="_images/image7.png" style="width: 2.51in; height: 2.2in;" /></a> <a class="reference internal" href="_images/image8.png"><img alt="image8" src="_images/image8.png" style="width: 2.59in; height: 2.2in;" /></a></p>
+</div>
+<div class="section" id="redundant-mates-in-solidworks-models">
+<h3>Redundant mates in SOLIDWORKS models<a class="headerlink" href="#redundant-mates-in-solidworks-models" title="Permalink to this headline">¶</a></h3>
+<p>Redundancy of kinematic constraints is a general issue in all rigid body
+mechanical modeling, whether you work with AnyBody alone, SOLIDWORKS
+alone, or in this case a combination of SOLIDWORKS and AnyBody. Unlike
+AnyBody, SOLIDWORKS is not a kinetic mechanism analysis system per se.
+This means that SOLIDWORKS can be more forgiving in terms of redundancy
+of constraints than AnyBody is.</p>
+<p>Redundant constraints are kinematic constraints (i.e. the equations
+governing the motion, i.e. equations associated with the mates) that are
+not independent, i.e., one or more kinematic equations describe the same
+motion. Such equations may prescribe the same motion, i.e., some of them
+are redundant, and they may, due to small numerical differences in the
+model, be slightly contradictory, so the full set of kinematic equations
+cannot be solved. In this case the model is kinematically
+over-determinate.</p>
+<p>In pure kinematic analysis, redundant constraints can be handled by
+solvers that allow small violations of constraints, and AnyBody as well
+as SOLIDWORKS has this functionality. But in dynamic (kinetic) analysis,
+redundant kinematic constraints will create a statically indeterminate
+system to which there is physically reasonable solution. This implies
+that the reaction forces arising from the redundant constraints (mates)
+are not well-defined. In mechanical design in general, such redundant
+constraints can create problems with tolerances, locking, increased
+wear, temperature sensitivity, chaotic vibrations and other undesirable
+behaviors, so they represent poor engineering also in material products.
+<strong>Therefore, it is always advisable to avoid redundant kinematic
+constraints!</strong></p>
+<p>SOLIDWORKS deals well with kinematic redundancy in solving the
+kinematics. And for this reason, it is very typical to create mate
+combinations in SOLIDWORKS models that introduce such redundant
+kinematic constraints without ever experiencing any problems.</p>
+<p>There are typically two ways redundant constraints appear in your model:
+One is simple over constraining of a single joint between two parts by
+using two or more mates that actually specifies the same conditions, at
+least partially. The second one is when closing mechanical loops, where
+the closing conditions are can be too many or only possible to fulfill
+under certain conditions. For instance, a planar four-bar linkage with
+four hinge joints actually has less than zero degrees of freedom and it
+can only move due to the fact that it is planar and that all the hinge
+joints have parallel axes.</p>
+<p>AnyBody can also handle some level of kinematic redundancy in the
+kinematic analysis, but when adding the human to an already redundant
+kinematic model, it may lead to failure of the kinematic analysis.
+Moreover, dynamic analysis, which is the obvious target of translating a
+model to AnyBody, will accept the redundancy, but not necessarily in a
+meaningful way; among the infinitely many solutions for the redundant
+reaction forces one will be picked more or less randomly in each time
+step, and forces in the model will typically fluctuate.</p>
+<p>Therefore, it is recommended to avoid redundancy in the mate
+configuration for your SOLIDWORKS model, in particular if it is to be
+used for dynamical analysis. It is usually easier to fix the problem in
+SOLIDWORKS before exporting the model.</p>
+<p>In some cases, such as if the (redundant) reaction forces “inside the
+machine” are of no direct interest to you, redundancy may be acceptable
+in your model, since it may not affect the results important for you.
+However, one way to check this is to remove the redundancy, so again it
+is advisable to avoid redundant constraints entirely.</p>
+<p>The next section shows how to make typical mechanical joints minimizing
+the risk of introducing redundancy issues using standard SOLIDWORKS
+mates and combinations hereof. Please notice that this approach may
+still introduce redundancy of the type related to closed kinematic loop
+configurations.</p>
+<p>How to deal with redundancy is discussed in more details and
+demonstrated in <a class="reference external" href="../Tutorials/AnyExp4SOLIDWORKS/lesson2.html" title="(in AnyBody Tutorials v7.3)"><span class="xref std std-doc">lesson 2 of the “Making Models using SOLIDWORKS” tutorial.</span></a></p>
+</div>
+<div class="section" id="how-to-make-good-mate-definitions-according-to-your-purpose">
+<h3>How to make good mate definitions according to your purpose<a class="headerlink" href="#how-to-make-good-mate-definitions-according-to-your-purpose" title="Permalink to this headline">¶</a></h3>
+<p>The table below shows how to use standard SOLIDWORKS mates to make
+typical mechanical joints of AnyBody without introducing redundant
+constraints; and thereby keep the number of constraints as low as
+possible. It is recommended to follow these guidelines when building
+your SOLIDWORKS model, or when preparing an existing model for
+translation.</p>
+<p>Please notice that this approach may not prevent redundancy related to
+closed kinematical loop configurations.</p>
+<p>If you are familiar with AnyScript, then there are several ways to make
+good mate definitions according to your purpose and aiming at avoiding
+redundant mates. The table below indicates some mate combinations (in
+the right column) that can be used to create the same behavior as the
+standard AnyBody joints mentioned by type in the left-hand column.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 52%" />
+<col style="width: 48%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>AnyScript Joint Type</strong></p></th>
+<th class="head"><p><strong>Compatible SOLIDWORKS mate
+types and mate entities</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="../AnyScriptReference/reference/classes/AnyStdJoint.html#anystdjoint" title="(in AnyScript Reference v7.3)"><span>AnyStdJoint</span></a></p></td>
+<td><p>COINCIDENT (COORDINATE-COORDINATE
+with ‘Align axes’ option)</p>
+<p>LOCK (ALL)</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="../AnyScriptReference/reference/classes/AnyTransSphericalJoint.html#anytranssphericaljoint" title="(in AnyScript Reference v7.3)"><span>AnyTransSphericalJoint</span></a></p></td>
+<td><p>COINCIDENT (POINT-LINE)</p>
+<p>CONCENTRIC (POINT-CONE)</p>
+<p>CONCENTRIC (POINT-CYLINDER)</p>
+<p>CONCENTRIC (LINE-SPHERE)</p>
+<p>CONCENTRIC (CYLINDER-SPHERE)</p>
+</td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="../AnyScriptReference/reference/classes/AnySphericalJoint.html#anysphericaljoint" title="(in AnyScript Reference v7.3)"><span>AnySphericalJoint</span></a></p></td>
+<td><p>COINCIDENT (POINT-POINT)</p>
+<p>COINCIDENT (POINT-COORDINATE)</p>
+<p>CONCENTRIC (POINT-SPHERE)</p>
+<p>CONCENTRIC (SPHERE-SPHERE)</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="../AnyScriptReference/reference/classes/AnyCylindricalJoint.html#anycylindricaljoint" title="(in AnyScript Reference v7.3)"><span>AnyCylindricalJoint</span></a></p></td>
+<td><p>COINCIDENT (CIRCLE-CYLINDER)</p>
+<p>COINCIDENT (LINE-LINE)</p>
+<p>CONCENTRIC (CIRCLE-CIRCLE)</p>
+<p>CONCENTRIC (CIRCLE-CONE)</p>
+<p>CONCENTRIC (CIRCLE-CYLINDER)</p>
+<p>CONCENTRIC (CIRCLE-LINE)</p>
+<p>CONCENTRIC (CONE-CONE)</p>
+<p>CONCENTRIC (CONE-CYLINDER)</p>
+<p>CONCENTRIC (CONE-LINE)</p>
+<p>CONCENTRIC (CYLINDER-CYLINDER)</p>
+<p>CONCENTRIC (CYLINDER-LINE)</p>
+</td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="../AnyScriptReference/reference/classes/AnyPrismaticJoint.html#anyprismaticjoint" title="(in AnyScript Reference v7.3)"><span>AnyPrismaticJoint</span></a></p></td>
+<td><p>A mate combination for
+AnyCylindricalJoint</p>
+<ul class="simple">
+<li></li>
+</ul>
+<p>COINCIDENT (POINT-PLANE)</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="../AnyScriptReference/reference/classes/AnyRevoluteJoint.html#anyrevolutejoint" title="(in AnyScript Reference v7.3)"><span>AnyRevoluteJoint</span></a></p></td>
+<td><p>COINCIDENT (CIRCLE-CIRCLE)</p>
+<p>COINCIDENT (CIRCLE-CONE)</p>
+<p>COINCIDENT (CONE-CONE)</p>
+<p>DISTANCE (CONE-CONE, these two
+CONEs should have same angles)</p>
+<p>HINGE (ALL)</p>
+</td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="../AnyScriptReference/reference/classes/AnyUniversalJoint.html#anyuniversaljoint" title="(in AnyScript Reference v7.3)"><span>AnyUniversalJoint</span></a></p></td>
+<td><p>A mate combination for
+AnySphericalJoint</p>
+<ul class="simple">
+<li></li>
+</ul>
+<p>PERPENDICULAR (CYLINDER-CYLINDER)</p>
+<p>PERPENDICULAR (CYLINDER-LINE)</p>
+<p>PERPENDICULAR (LINE-LINE)</p>
+<p>PERPENDICULAR (CONE-CONE)</p>
+<p>PERPENDICULAR (CONE-CYLINDER)</p>
+<p>PERPENDICULAR (CONE-LINE)</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="concepts-of-translation">
+<h2>Concepts of Translation<a class="headerlink" href="#concepts-of-translation" title="Permalink to this headline">¶</a></h2>
+<p>In this section, an overview of the translator functionality is given.
+The basic concepts are described, followed by overview tables of the
+translator’s capabilities.</p>
+<p>Every SOLIDWORKS assembly model may comprise several parts, mates, and
+sub-assemblies. All information about an assembly is organized in the
+Feature Tree of SOLIDWORKS. The basic concept of AnyExp4SOLIDWORKS is to
+translate the tree structure of an assembly as directly as possible, so
+that all information can be found in same location in the associated
+tree-structure in AnyBody.</p>
+<p>SOLIDWORKS features are generally translated as follows</p>
+<ul class="simple">
+<li><p>A SOLIDWORKS assembly is translated to an AnyFolder object in
+AnyScript. Each assembly will produce its own AnyScript file and the
+files of super-assemblies will include sub-assemblies.</p></li>
+<li><p>A SOLIDWORKS part is translated to an <a class="reference external" href="../AnyScriptReference/reference/classes/AnySeg.html#anyseg" title="(in AnyScript Reference v7.3)"><span>AnySeg</span></a> object in AnyScript.
+Each part will have an associated STL file capturing the geometric
+appearance of the part in the SOLIDWORKS model.</p></li>
+<li><p>A SOLIDWORKS mate is translated to a combination of several
+constraints in AnyBody. (Mechanical mates are translated into the
+corresponding standard joints in AnyBody)</p></li>
+<li><p>A SOLIDWORKS reference geometry object such as point, axis, plane and
+coordinate system will be translated to an <a class="reference external" href="../AnyScriptReference/reference/classes/AnyRefNode.html#anyrefnode" title="(in AnyScript Reference v7.3)"><span>AnyRefNode</span></a> object and will
+be located in corresponding <a class="reference external" href="../AnyScriptReference/reference/classes/AnySeg.html#anyseg" title="(in AnyScript Reference v7.3)"><span>AnySeg</span></a> objects.</p></li>
+</ul>
+<p>All assemblies are converted into <a class="reference external" href="../AnyScriptReference/reference/classes/AnyFolder.html#anyfolder" title="(in AnyScript Reference v7.3)"><span>AnyFolder</span></a>s, which are the AnyScript
+structures for holding other objects. But in order to handle the
+position of the assembly (i.e. the Origin), a reference frame, also
+called Origin, is added to the assembly folder in the AnyBody model. For
+the top assembly, this reference frame is fixed, whereas all
+sub-assemblies have a movable Origin. The movable Origins are defined as
+‘dummy’ segments, i.e. an <a class="reference external" href="../AnyScriptReference/reference/classes/AnySeg.html#anyseg" title="(in AnyScript Reference v7.3)"><span>AnySeg</span></a> with zero mass, in the AnyBody model.
+All user-defined reference frames of the assemblies and any other
+components are added as so-called nodes (class <a class="reference external" href="../AnyScriptReference/reference/classes/AnyRefNode.html#anyrefnode" title="(in AnyScript Reference v7.3)"><span>AnyRefNode</span></a>) on fixed or
+movable assembly reference frames in the AnyBody model.</p>
+<p>All parts are converted into <a class="reference external" href="../AnyScriptReference/reference/classes/AnySeg.html#anyseg" title="(in AnyScript Reference v7.3)"><span>AnySeg</span></a> objects and each of these <a class="reference external" href="../AnyScriptReference/reference/classes/AnySeg.html#anyseg" title="(in AnyScript Reference v7.3)"><span>AnySeg</span></a>
+object replicates the initial position and rotation at the time of
+translation, mass, moments of inertia, and color. Furthermore, the
+reference point, reference axis, reference plane and all reference
+coordinate system objects, which are defined in that part, will be also
+translated into that <a class="reference external" href="../AnyScriptReference/reference/classes/AnySeg.html#anyseg" title="(in AnyScript Reference v7.3)"><span>AnySeg</span></a> object. As mentioned the graphical
+appearance is captured by the translator exporting STL files for each
+part. In AnyScript, these are entered with colors matching as well as
+possible the color in SOLIDWORKS.</p>
+<p>Regarding kinematics, all mates in SOLIDWORKS can be considered as
+kinematic constraints. So all the mates in the assembly are translated
+into similar (several, if needed) kinematic constraints as they can be
+implemented by AnyScript. AnyExp4SOLIDWORKS can translate almost all of
+standard mates of SOLIDWORKS into equivalent AnyBody kinematic
+constraints; however only a subset of the more advanced mates are
+covered. In particular, mates related to general surfaces and curves are
+not handled by the translator. Mate types that are not handled by the
+converter is simply skipped during the translation process, allowing you
+to use the remaining part of the model; in some cases the allows you to
+handle the missing constraints manually in AnyBody.</p>
+<p>AnyExp4SOLIDWORKS adds a few elements to the model structure. These will
+appear in the AnyBody Model tree and the will be named <code class="docutils literal notranslate"><span class="pre">_ANY_&lt;NAME&gt;_</span></code>,
+where <code class="docutils literal notranslate"><span class="pre">&lt;NAME&gt;</span></code> is the name of the element. The following list covers the
+important elements that must be mentioned:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Feature name</strong></p></th>
+<th class="head"><p><strong>Description</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">_ANY_CTYPE_</span></code></p></td>
+<td><p>This an AnyScript enum variable
+that holds the type specification
+of all the kinematic constraints
+exported from AnyExp4SOLIDWORKS.
+The value can be chosen during
+the translation process, but with
+this single value it is also easy
+to change for the whole model in
+AnyBody afterwards.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">_ANY_INTERFACE_</span></code></p></td>
+<td><p>This is a folder containing
+user-specified interface points
+(reference frames). Many
+references systems exists in the
+assembly and they may be buried
+deep in the Feature Tree of
+SOLIDWORKS therefore deep in
+AnyBody’s Model Tree. However,
+important reference frames are
+automatically made available in
+the top-level <code class="docutils literal notranslate"><span class="pre">_ANY_INTERFACE_</span></code>
+folder in AnyBody. This is done
+simply by naming the important
+reference frames with an agreed
+prefix (the default prefix is
+<code class="docutils literal notranslate"><span class="pre">_ANY</span></code>) in the assembly; this
+prefix is found the translator
+and AnyScript references are made
+in the <code class="docutils literal notranslate"><span class="pre">_ANY_INTERFACE_</span></code> folder.</p></td>
+</tr>
+</tbody>
+</table>
+<p>Finally, let us take a look at the options available in the Options
+Dialog during export. The table below summarizes these options.</p>
+<div class="figure align-default">
+<a class="reference internal image-reference" href="_images/image4.PNG"><img alt="_images/image4.PNG" src="_images/image4.PNG" style="width: 3.91829in; height: 2.7in;" /></a>
+</div>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Option name</strong></p></th>
+<th class="head"><p><strong>Description</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Indent Character</p></td>
+<td><p>Option for indentation of
+formatted AnyScript code; options
+are to use spaces or tab
+characters</p></td>
+</tr>
+<tr class="row-odd"><td><p>Number of Spaces</p></td>
+<td><p>Number of spaces used for
+indentation when Indent Character
+is set to “Use spaces”</p></td>
+</tr>
+<tr class="row-even"><td><p>Constraint Type</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Hard</span></code> or <code class="docutils literal notranslate"><span class="pre">Soft</span></code> kinematic
+constraints can be selected
+during export. It is easy to
+change in the AnyScript code
+subsequently to export, if
+needed. Hard constraints are the
+default choice, but Soft
+constraints can occasionally help
+deal with redundant constraints.</p></td>
+</tr>
+<tr class="row-odd"><td><p>RefName Prefix</p></td>
+<td><p>Prefix string used to identify
+all reference coordinate systems
+that will be exported specially
+for use for interfacing with the
+AnyBody model.</p></td>
+</tr>
+<tr class="row-even"><td><p>Include Mass Properties of Hidden
+Bodies</p></td>
+<td><p>Switch for whether hidden bodies
+are included or excluded from the
+exported mass properties. Default
+is like in SOLIDWORKS to exclude.
+Notice that suppressed bodies are
+always excluded.</p></td>
+</tr>
+<tr class="row-odd"><td><p>STL file Output Format</p></td>
+<td><p>Options are binary or text based
+output formats.</p></td>
+</tr>
+<tr class="row-even"><td><p>Unicode names</p></td>
+<td><p>Options are</p>
+<ul class="simple">
+<li><p><em>Simple encoding</em> using
+“__&lt;Unicode&gt;__” for Unicode
+characters. This simple
+encoding provides the best
+possible backwards
+compatibility with older
+AnyBody versions</p></li>
+<li><p><em>HTML style encoding</em> using
+“&amp;#&lt;Unicode&gt;;” for Unicode
+characters. This encoding is
+allowed from AnyBody version
+5.3, also in AnyScript
+identifiers.</p></li>
+<li><p><em>HTML style encoding
+preserving Unicode file names</em>
+is like the previous option,
+except file names are retained
+with original Unicode
+characters and the exported
+AnyScript uses proper encoding
+to link to these files.</p></li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="overview-of-translation-coverage">
+<h3>Overview of Translation Coverage<a class="headerlink" href="#overview-of-translation-coverage" title="Permalink to this headline">¶</a></h3>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 23%" />
+<col style="width: 52%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Mate Type</strong></p></th>
+<th class="head"><p><strong>Extent of Coverage</strong></p></th>
+<th class="head"><p><strong>Exceptions</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td></td>
+<td><p><strong>Standard Mates</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>COINCIDENT</p></td>
+<td><p>Mostly covered</p></td>
+<td><p>POINT-CURVE</p>
+<p>POINT-CONE</p>
+<p>POINT-SURFACE</p>
+<p>IN-PLACE MATE</p>
+</td>
+</tr>
+<tr class="row-even"><td><p>PARALLEL</p></td>
+<td><p>Fully covered</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>PERPENDICULAR</p></td>
+<td><p>Fully covered</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>TANGENT</p></td>
+<td><p>Fully covered</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>CONCENTRIC</p></td>
+<td><p>Fully covered</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>LOCK</p></td>
+<td><p>Fully covered</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>DISTANCE</p></td>
+<td><p>Mostly covered</p></td>
+<td><p>POINT-CURVE</p></td>
+</tr>
+<tr class="row-even"><td><p>ANGLE</p></td>
+<td><p>Fully covered</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p><strong>Advanced Mates</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>All</p></td>
+<td><p>Not Covered</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p><strong>Mechanical Mates</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>HINGE</p></td>
+<td><p>Fully covered</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>GEAR</p></td>
+<td><p>Not covered (see comments below)</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>SCREW</p></td>
+<td><p>Not covered (see comments below)</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>UNIVERSAL</p></td>
+<td><p>Not covered (see comments below)</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>RACK PINION</p></td>
+<td><p>Not covered (see comments below)</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>CAM</p></td>
+<td><p>Not covered</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>SLOT</p></td>
+<td><p>Not covered</p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>The GEAR, SCREW, UNIVERSAL, RACK PINION mates are, as indicated in the
+table, not covered by the translator itself; however, the kinematic
+constraints associated with such connections are not difficult to
+realize in AnyBody. They can be implemented in AnyScript using standard
+kinematic constraints. The CAM mate, on the contrary, is typically not
+realizable, at least not in a simple way, because the limited capability
+of handling surfaces in the kinematic engine of AnyBody.</p>
+<p>Furthermore, it can be noticed that some SOLIDWORKS mates inherently
+contain the possibility for singular positions. Such singularities arise
+when the mathematical equations degenerate under certain conditions.
+Like a distance constraint, i.e. a single constraints, but if the wanted
+distance is zero, it is suddenly something else; a spherical constraint,
+i.e. three constraints, is needed to handle this. Conditions for such
+singularities may arise during as motion and close to the singularities
+the kinematic equations may be poorly conditioned and difficult to solve
+accurately and can be the source of translated models that perform
+poorly when motion is applied.</p>
+</div>
+<div class="section" id="some-exceptions">
+<h3>Some exceptions<a class="headerlink" href="#some-exceptions" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="suppressed-and-inactive-components-mates-and-features">
+<h4>Suppressed and inactive components, mates and features<a class="headerlink" href="#suppressed-and-inactive-components-mates-and-features" title="Permalink to this headline">¶</a></h4>
+<p>In SOLIDWORKS, you can suppress some components, mates and other
+features as you want. And some of these objects may become inactive due
+to the relationships with other objects in the model even they are not
+suppressed by users manually. Then all of these suppressed or inactive
+objects will be displayed in gray color at the feature tree.
+AnyExp4SOLIDWORKS tries to detect these suppressed or inactive objects
+and those will not be translated. Instead, if AnyExp4SOLIDWORKS can
+detect these things, then some warning messages will be written in the
+log file which will be created in the same folder where the resultant
+AnyScript files are located.</p>
+</div>
+<div class="section" id="center-of-mass-reference-geometry">
+<h4>Center of Mass reference geometry<a class="headerlink" href="#center-of-mass-reference-geometry" title="Permalink to this headline">¶</a></h4>
+<p>A new reference geometry type ‘Center of Mass’ has been introduced since
+SOLIDWORKS 2013 version. This object in the feature tree will not be
+translated into the resultant AnyScript files. So whenever
+AnyExp4SOLIDWORKS detects these Center of Mass objects in the feature
+tree then a warning message will be written in the log file.</p>
+<p>But there are easy alternative ways to create your own center of mass
+objects using AnyScript. For assemblies, you can use an <a class="reference external" href="../AnyScriptReference/reference/classes/AnyKinCoM.html#anykincom" title="(in AnyScript Reference v7.3)"><span>AnyKinCoM</span></a> class
+object to create the center of mass from several different parts. For
+parts, you can just create an extra <a class="reference external" href="../AnyScriptReference/reference/classes/AnyRefNode.html#anyrefnode" title="(in AnyScript Reference v7.3)"><span>AnyRefNode</span></a> class object using the
+<a class="reference external" href="../AnyScriptReference/reference/classes/AnySeg.html#anyseg-scom" title="(in AnyScript Reference v7.3)"><span class="xref std std-ref">sCoM</span></a> value of the <a class="reference external" href="../AnyScriptReference/reference/classes/AnySeg.html#anyseg" title="(in AnyScript Reference v7.3)"><span>AnySeg</span></a> object.</p>
+<p>If your SOLIDWORKS model contains any Center of Mass objects in the
+assemblies and if these are used for any mates, then those mates will
+not work properly in AnyBody. That’s because the Center of Mass in the
+assemblies are moving points so those are not fixed in the assembly
+coordinate system. But currently AnyExp4SOLIDWORKS assumes that all the
+mates are defined using some fixed reference geometries in either
+assemblies or parts. So if you find that some of those mates are
+translated into your AnyScript files, then it will be better to delete
+them in the AnyScript files and create your own constraints manually
+using AnyScript.</p>
+</div>
+</div>
+</div>
+</div>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script><div class="sphinx-toc sphinxlocaltoc">
+    <h3><a href="#">Page contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">AnyBody Exporter for SOLIDWORKS</a><ul>
+<li><a class="reference internal" href="#introduction">Introduction</a></li>
+<li><a class="reference internal" href="#system-requirements-and-installation">System Requirements and Installation</a></li>
+<li><a class="reference internal" href="#translating-a-cad-model">Translating a CAD model</a><ul>
+<li><a class="reference internal" href="#opening-the-translated-model-in-anybody">Opening the translated model in AnyBody</a></li>
+<li><a class="reference internal" href="#making-a-simple-anybody-analysis-of-the-model">Making a simple AnyBody analysis of the model</a></li>
+<li><a class="reference internal" href="#adding-the-human-to-the-model">Adding the human to the model</a></li>
+<li><a class="reference internal" href="#redundant-mates-in-solidworks-models">Redundant mates in SOLIDWORKS models</a></li>
+<li><a class="reference internal" href="#how-to-make-good-mate-definitions-according-to-your-purpose">How to make good mate definitions according to your purpose</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#concepts-of-translation">Concepts of Translation</a><ul>
+<li><a class="reference internal" href="#overview-of-translation-coverage">Overview of Translation Coverage</a></li>
+<li><a class="reference internal" href="#some-exceptions">Some exceptions</a><ul>
+<li><a class="reference internal" href="#suppressed-and-inactive-components-mates-and-features">Suppressed and inactive components, mates and features</a></li>
+<li><a class="reference internal" href="#center-of-mass-reference-geometry">Center of Mass reference geometry</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </div><div class="sphinxprev">
+    <h4>Other resources</h4>
+    <p class="topless"><a href="../index.html"
+                          title="Back to all manuals">&larr; Back to all manuals</a></p>
+</div>
+        </div>
+      </div>
+    
+    
+        <div class="sidebar-toggle-group no-js">
+            
+            <button class="sidebar-toggle" id="sidebar-hide" title="Hide the sidebar menu">
+                 «
+                <span class="show-for-small">hide menu</span>
+                
+            </button>
+            <button class="sidebar-toggle" id="sidebar-show" title="Show the sidebar menu">
+                
+                <span class="show-for-small">menu</span>
+                <span class="hide-for-small">sidebar</span>
+                 »
+            </button>
+        </div>
+    
+      <div class="clearer"></div>
+    </div>
+    <div class="relbar-bottom">
+        
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="#" title="Table Of Contents"
+             >toc</a> &nbsp; &nbsp;</li>
+    <li><a href="#">AnyBody Exporter for SOLIDWORKS 1.3.0 documentation</a> &#187;</li>
+
+        <li class="nav-item nav-item-this"><a href="">AnyBody Exporter for SOLIDWORKS</a></li> 
+      </ul>
+    </div>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2021, AnyBody Technology A/S.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.5.4.
+    </div>
+    <!-- cloud_sptheme 1.4 -->
+  </body>
+</html>

@@ -1,0 +1,95 @@
+{
+  "arch": "x86_64",
+  "build": "py37_1",
+  "build_number": 1,
+  "channel": "https://repo.anaconda.com/pkgs/main/win-64",
+  "constrains": [],
+  "depends": [
+    "python >=3.7,<3.8.0a0",
+    "six"
+  ],
+  "extracted_package_dir": "C:\\Anaconda3_64\\pkgs\\configobj-5.0.6-py37_1",
+  "features": "",
+  "files": [
+    "Lib/site-packages/__pycache__/_version.cpython-37.pyc",
+    "Lib/site-packages/__pycache__/configobj.cpython-37.pyc",
+    "Lib/site-packages/__pycache__/validate.cpython-37.pyc",
+    "Lib/site-packages/_version.py",
+    "Lib/site-packages/configobj-5.0.6-py3.7.egg-info",
+    "Lib/site-packages/configobj.py",
+    "Lib/site-packages/validate.py"
+  ],
+  "fn": "configobj-5.0.6-py37_1.conda",
+  "license": "BSD License",
+  "license_family": "BSD",
+  "link": {
+    "source": "C:\\Anaconda3_64\\pkgs\\configobj-5.0.6-py37_1",
+    "type": 1
+  },
+  "md5": "5688a77b35b219300b2c1d6f85fe02cb",
+  "name": "configobj",
+  "package_tarball_full_path": "C:\\Anaconda3_64\\pkgs\\configobj-5.0.6-py37_1.conda",
+  "paths_data": {
+    "paths": [
+      {
+        "_path": "Lib/site-packages/__pycache__/_version.cpython-37.pyc",
+        "path_type": "hardlink",
+        "sha256": "15c8bbe6c4fc844567df4cb5535a6c6c948dffd1db5b009c015e3cd5314259be",
+        "sha256_in_prefix": "15c8bbe6c4fc844567df4cb5535a6c6c948dffd1db5b009c015e3cd5314259be",
+        "size_in_bytes": 137
+      },
+      {
+        "_path": "Lib/site-packages/__pycache__/configobj.cpython-37.pyc",
+        "path_type": "hardlink",
+        "sha256": "aabf9a9c461cf0896ca9c8724a18f0c757bc1ce0a852fbc5d45ab4386552bae9",
+        "sha256_in_prefix": "aabf9a9c461cf0896ca9c8724a18f0c757bc1ce0a852fbc5d45ab4386552bae9",
+        "size_in_bytes": 59057
+      },
+      {
+        "_path": "Lib/site-packages/__pycache__/validate.cpython-37.pyc",
+        "path_type": "hardlink",
+        "sha256": "345181d75b54e51166f405a18cf6c5db8879806e1f6c78dee380fd61e17ba1b8",
+        "sha256_in_prefix": "345181d75b54e51166f405a18cf6c5db8879806e1f6c78dee380fd61e17ba1b8",
+        "size_in_bytes": 44247
+      },
+      {
+        "_path": "Lib/site-packages/_version.py",
+        "path_type": "hardlink",
+        "sha256": "2a9eec47870e0d13e2ee50600eefaad1b755848f72d922793b44b20e9509b971",
+        "sha256_in_prefix": "2a9eec47870e0d13e2ee50600eefaad1b755848f72d922793b44b20e9509b971",
+        "size_in_bytes": 21
+      },
+      {
+        "_path": "Lib/site-packages/configobj-5.0.6-py3.7.egg-info",
+        "path_type": "hardlink",
+        "sha256": "80ecbd1a490b176cf402437ef264a94e062690fcae4f715169f09a82fed16d02",
+        "sha256_in_prefix": "80ecbd1a490b176cf402437ef264a94e062690fcae4f715169f09a82fed16d02",
+        "size_in_bytes": 3086
+      },
+      {
+        "_path": "Lib/site-packages/configobj.py",
+        "path_type": "hardlink",
+        "sha256": "cc0036f344b5292e8d0655812ba2a837f4368245b52d5db05e0a9c531a34ee15",
+        "sha256_in_prefix": "cc0036f344b5292e8d0655812ba2a837f4368245b52d5db05e0a9c531a34ee15",
+        "size_in_bytes": 89627
+      },
+      {
+        "_path": "Lib/site-packages/validate.py",
+        "path_type": "hardlink",
+        "sha256": "54ffdb3ec781fc8dcdc7a3b38c60dfb1e8a4f4e2092d2bb23de6ea95bb934130",
+        "sha256_in_prefix": "54ffdb3ec781fc8dcdc7a3b38c60dfb1e8a4f4e2092d2bb23de6ea95bb934130",
+        "size_in_bytes": 47237
+      }
+    ],
+    "paths_version": 1
+  },
+  "platform": "win32",
+  "requested_spec": "defaults/win-64::configobj==5.0.6=py37_1",
+  "sha256": "5527b90efc356876bbc7f097ba3c116d16a5badcb22eaabb5eeb3a8aeb20ba85",
+  "size": 54937,
+  "subdir": "win-64",
+  "timestamp": 1536254065318,
+  "track_features": "",
+  "url": "https://repo.anaconda.com/pkgs/main/win-64/configobj-5.0.6-py37_1.conda",
+  "version": "5.0.6"
+}

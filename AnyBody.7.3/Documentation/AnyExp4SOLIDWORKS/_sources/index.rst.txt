@@ -1,0 +1,662 @@
+************************************
+AnyBody Exporter for SOLIDWORKS
+************************************
+
+
+Introduction
+============
+
+The AnyBody Exporter™ for SOLIDWORKS® Translator (AnyExp4SOLIDWORKS™) is
+an add-in for SOLIDWORKS that can translate a SOLIDWORKS CAD assembly
+into its corresponding AnyScript model, which can then be used in the
+AnyBody Modeling System. This allows users to design environments for
+the human body in the state-of-the-art design environment of SOLIDWORKS
+and it is also possible to use AnyBody to analyze and optimize products
+developed in SOLIDWORKS, either in terms of their interaction with the
+human body or in terms of their stand-alone function. Typical
+applications would be medical devices, tools, sports equipment,
+workplaces and furniture.
+
+The AnyExp4SOLIDWORKS application translates SOLIDWORKS assemblies into
+AnyBody models as fast and accurately as possible, preserving
+constraints between the parts as well as their visual appearance. The
+result is a functional model in AnyBody, which can analyze movements and
+forces in the product either alone or in connection with a
+musculoskeletal model.
+
+.. figure:: ./images/image1.PNG
+   :width: 6.49872in
+   :height: 3.52014in
+
+This manual provides a brief introduction to the AnyExp4SOLIDWORKS
+add-in and its usage, but for a more detailed example of how to use the
+add-in to perform a complete translation process including details about
+how to link the translated SOLIDWORKS model to the AnyBody human model,
+we recommend that you look at the chapter
+:doc:`Making Models using SOLIDWORKS <tutorials:AnyExp4SOLIDWORKS/index>`
+in the AnyBody Tutorials.
+
+System Requirements and Installation
+====================================
+
+AnyExp4SOLIDWORKS needs both SOLIDWORKS and the AnyBody Modeling System
+in order to functions. Therefore, general system requirement and
+recommendation follows these packages.
+
+-  AnyExp4SOLIDWORKS is installed through the installer for the AnyBody
+   Modeling System. Please find details about the installation procedure
+   in the Installation guide.
+
+-  Please find the requirements and recommendation for the AnyBody
+   Modeling System in the Release Notes or Installation Guide for the
+   packages. See for instance the :menuselection:`Windows Start Menu --> AnyBody
+   Technology --> AnyBody.7.2 --> Doc`
+
+-  AnyExp4SOLIDWORKS is delivered in the form of a DLL (Dynamic Link
+   Library), which can be loaded as an add-in from SOLIDWORKS by opening
+   the AnyExp4SOLIDWORKS DLL.
+
+-  After you have loaded the AnyExp4SOLIDWORKS module successfully, you
+   can see that :guilabel:`AnyExp4SOLIDWORKS` module appears in SOLIDWORKS’ menu
+   bar.
+
+Translating a CAD model
+=======================
+
+We imagine that an assembly of an exercise machine has been created in
+SOLIDWORKS as shown in the figure below. An assembly in SOLIDWORKS is a
+set of parts connected by mates, which are really kinematic constraints
+that, for instance, keep a shaft in a bearing or make two faces
+parallel. This forms a mechanism. The translation process generates an
+AnyBody segment from each of the parts and connects the segments with
+joints corresponding to the mates. To carry out the translation, please
+perform the following steps.
+
+.. figure:: ./images/image2.PNG
+   :width: 6.5in
+   :height: 3.52083in
+
+
+1. In the AnyExp4SOLIDWORKS pull-down menu, choose the :menuselection:`Export to
+   AnyScript` operation.
+
+   .. figure:: ./images/image3.PNG
+        :width: 5.82081in
+        :height: 1.36458in
+
+2. A dialog with export options appears.
+
+   ..  figure:: ./images/image4.PNG
+        :width: 3.46807in
+        :height: 2.38976in
+
+3. Next, type the name of the AnyScript (``.any``) file to be created. Then
+   click the :guilabel:`Save` button.
+
+   .. figure:: ./images/image5.PNG
+        :width: 6.07291in
+        :height: 4.03681in
+
+The model is now saved as AnyScript files and other related files, which
+are ready for usage in the AnyBody Modeling System. The selected file
+name is root file needed for inclusion into AnyBody models. All other
+related files have that same first name but with an extension before the
+actual file extension. All files are in the same folder as the root
+folder. More information about the files can be found in section
+“Concepts of Translation”.
+
+Opening the translated model in AnyBody
+---------------------------------------
+
+The structure of the model is one main AnyScript file and a number of
+AnyScript files containing the actual model. In addition, STL files
+corresponding to the various parts are also generated. The main file is
+called :file:`{YourModelName}.main.any`, if you open and load the main file in
+the AnyBody Modeling System, a model visually very similar to the
+SOLIDWORKS model you exported should appear.
+
+However, the main file contains very little code and is actually just a
+reference to the principal export file called :file:`{YourModelName}.any`. The
+latter contains the actual model but is intended to be used as one
+element in a model also including, for instance, the human model. The
+advantage of this setup is that it is easy to develop an AnyBody model
+originating in the main file while working with the SOLIDWORKS model and
+updating it with repeated exports. Every time the model is exported from
+SOLIDWORKS, the exported files are overwritten, so please remember to
+make your own copy of the main file before you start developing it in
+AnyBody. This will prevent you from accidentally losing your work.
+Please notice also that the naming of elements in the AnyScript files
+depends on the naming of the components in the SOLIDWORKS model. So
+references to the SOLIDWORKS-generated parts of the model may need to be
+updated if the SOLIDWORKS model has been changed.
+
+.. figure:: ./images/image6.PNG
+   :width: 6.48718in
+   :height: 3.51389in
+
+
+Making a simple AnyBody analysis of the model
+---------------------------------------------
+
+For the inverse dynamics analysis or kinematic analysis in AnyBody
+Modeling System, the number of all kinematic constraints (from joints,
+drivers and general constraints) should in principle be as same as the
+number of degrees of freedom. A model imported from SOLIDWORKS will
+usually be lacking a few drivers to determine the motion of the model’s
+natural degrees-of-freedom like, for instance, the rotation of the
+flywheel in the exercise machine example shown in the figure. So in
+general, you must add some “drivers” to define your own motion for the
+model. Before adding the human model to your assembly model, it is
+recommended that you define a set of simple drivers in your model to
+test whether it works well or not. This set of kinematic driver
+constraints must match the degrees of freedom free for motion in your
+CAD assembly model.
+
+This topic is covered in more details in
+:doc:`lesson 2 of the "Making Models using SOLIDWORKS" tutorial. <tutorials:AnyExp4SOLIDWORKS/lesson2>`
+
+Adding the human to the model
+-----------------------------
+
+When you want to define the kinematic connections (constraints) between
+human and assembly models, it is highly recommended that you define some
+‘Reference Coordinate System’ objects inside your SOLIDWORKS assembly
+model. These should be defined at the positions where your SOLIDWORKS
+model should be connected to the AnyBody human model, and they will be
+converted into ‘AnyRefNode’ objects, which is the AnyScript equivalent,
+by the translator. In order to enable easy access to these resulting
+AnyRefNodes, the translator implements a feature that looks for objects
+with a specific naming prefix (by default the prefix is ``ANY_``, but this
+can be changed in the translation options). The objects with names
+matching this prefix will be made available in a special folder (called
+``_ANY_INTERFACE_``) found at the top level of the exported assembly for
+easy access. In addition, you should define similar objects
+(‘AnyRefNode’ objects) inside the AnyBody human model segments at the
+locations where you want the contact to occur, such as the hands, feet,
+pelvis and thorax. An example of how this is done can also be found in
+:doc:`lesson 3 of the "Making Models using SOLIDWORKS" tutorial <tutorials:AnyExp4SOLIDWORKS/lesson3>`.
+
+|image7| |image8|
+
+
+.. |image7| image:: ./images/image7.png
+   :width: 2.51in
+   :height: 2.2in
+.. |image8| image:: ./images/image8.png
+   :width: 2.59in
+   :height: 2.2in
+
+Redundant mates in SOLIDWORKS models
+------------------------------------
+
+Redundancy of kinematic constraints is a general issue in all rigid body
+mechanical modeling, whether you work with AnyBody alone, SOLIDWORKS
+alone, or in this case a combination of SOLIDWORKS and AnyBody. Unlike
+AnyBody, SOLIDWORKS is not a kinetic mechanism analysis system per se.
+This means that SOLIDWORKS can be more forgiving in terms of redundancy
+of constraints than AnyBody is.
+
+Redundant constraints are kinematic constraints (i.e. the equations
+governing the motion, i.e. equations associated with the mates) that are
+not independent, i.e., one or more kinematic equations describe the same
+motion. Such equations may prescribe the same motion, i.e., some of them
+are redundant, and they may, due to small numerical differences in the
+model, be slightly contradictory, so the full set of kinematic equations
+cannot be solved. In this case the model is kinematically
+over-determinate.
+
+In pure kinematic analysis, redundant constraints can be handled by
+solvers that allow small violations of constraints, and AnyBody as well
+as SOLIDWORKS has this functionality. But in dynamic (kinetic) analysis,
+redundant kinematic constraints will create a statically indeterminate
+system to which there is physically reasonable solution. This implies
+that the reaction forces arising from the redundant constraints (mates)
+are not well-defined. In mechanical design in general, such redundant
+constraints can create problems with tolerances, locking, increased
+wear, temperature sensitivity, chaotic vibrations and other undesirable
+behaviors, so they represent poor engineering also in material products.
+**Therefore, it is always advisable to avoid redundant kinematic
+constraints!**
+
+SOLIDWORKS deals well with kinematic redundancy in solving the
+kinematics. And for this reason, it is very typical to create mate
+combinations in SOLIDWORKS models that introduce such redundant
+kinematic constraints without ever experiencing any problems.
+
+There are typically two ways redundant constraints appear in your model:
+One is simple over constraining of a single joint between two parts by
+using two or more mates that actually specifies the same conditions, at
+least partially. The second one is when closing mechanical loops, where
+the closing conditions are can be too many or only possible to fulfill
+under certain conditions. For instance, a planar four-bar linkage with
+four hinge joints actually has less than zero degrees of freedom and it
+can only move due to the fact that it is planar and that all the hinge
+joints have parallel axes.
+
+AnyBody can also handle some level of kinematic redundancy in the
+kinematic analysis, but when adding the human to an already redundant
+kinematic model, it may lead to failure of the kinematic analysis.
+Moreover, dynamic analysis, which is the obvious target of translating a
+model to AnyBody, will accept the redundancy, but not necessarily in a
+meaningful way; among the infinitely many solutions for the redundant
+reaction forces one will be picked more or less randomly in each time
+step, and forces in the model will typically fluctuate.
+
+Therefore, it is recommended to avoid redundancy in the mate
+configuration for your SOLIDWORKS model, in particular if it is to be
+used for dynamical analysis. It is usually easier to fix the problem in
+SOLIDWORKS before exporting the model.
+
+In some cases, such as if the (redundant) reaction forces "inside the
+machine" are of no direct interest to you, redundancy may be acceptable
+in your model, since it may not affect the results important for you.
+However, one way to check this is to remove the redundancy, so again it
+is advisable to avoid redundant constraints entirely.
+
+The next section shows how to make typical mechanical joints minimizing
+the risk of introducing redundancy issues using standard SOLIDWORKS
+mates and combinations hereof. Please notice that this approach may
+still introduce redundancy of the type related to closed kinematic loop
+configurations.
+
+How to deal with redundancy is discussed in more details and
+demonstrated in :doc:`lesson 2 of the "Making Models using SOLIDWORKS" tutorial. <tutorials:AnyExp4SOLIDWORKS/lesson2>`
+
+
+How to make good mate definitions according to your purpose
+-----------------------------------------------------------
+
+The table below shows how to use standard SOLIDWORKS mates to make
+typical mechanical joints of AnyBody without introducing redundant
+constraints; and thereby keep the number of constraints as low as
+possible. It is recommended to follow these guidelines when building
+your SOLIDWORKS model, or when preparing an existing model for
+translation.
+
+Please notice that this approach may not prevent redundancy related to
+closed kinematical loop configurations.
+
+If you are familiar with AnyScript, then there are several ways to make
+good mate definitions according to your purpose and aiming at avoiding
+redundant mates. The table below indicates some mate combinations (in
+the right column) that can be used to create the same behavior as the
+standard AnyBody joints mentioned by type in the left-hand column.
+
++--------------------------------------+-----------------------------------+
+| **AnyScript Joint Type**             | **Compatible SOLIDWORKS mate      |
+|                                      | types and mate entities**         |
++======================================+===================================+
+| :refman:ref:`AnyStdJoint`            | COINCIDENT (COORDINATE-COORDINATE |
+|                                      | with ‘Align axes’ option)         |
+|                                      |                                   |
+|                                      | LOCK (ALL)                        |
++--------------------------------------+-----------------------------------+
+| :refman:ref:`AnyTransSphericalJoint` | COINCIDENT (POINT-LINE)           |
+|                                      |                                   |
+|                                      | CONCENTRIC (POINT-CONE)           |
+|                                      |                                   |
+|                                      | CONCENTRIC (POINT-CYLINDER)       |
+|                                      |                                   |
+|                                      | CONCENTRIC (LINE-SPHERE)          |
+|                                      |                                   |
+|                                      | CONCENTRIC (CYLINDER-SPHERE)      |
++--------------------------------------+-----------------------------------+
+| :refman:ref:`AnySphericalJoint`      | COINCIDENT (POINT-POINT)          |
+|                                      |                                   |
+|                                      | COINCIDENT (POINT-COORDINATE)     |
+|                                      |                                   |
+|                                      | CONCENTRIC (POINT-SPHERE)         |
+|                                      |                                   |
+|                                      | CONCENTRIC (SPHERE-SPHERE)        |
++--------------------------------------+-----------------------------------+
+| :refman:ref:`AnyCylindricalJoint`    | COINCIDENT (CIRCLE-CYLINDER)      |
+|                                      |                                   |
+|                                      | COINCIDENT (LINE-LINE)            |
+|                                      |                                   |
+|                                      | CONCENTRIC (CIRCLE-CIRCLE)        |
+|                                      |                                   |
+|                                      | CONCENTRIC (CIRCLE-CONE)          |
+|                                      |                                   |
+|                                      | CONCENTRIC (CIRCLE-CYLINDER)      |
+|                                      |                                   |
+|                                      | CONCENTRIC (CIRCLE-LINE)          |
+|                                      |                                   |
+|                                      | CONCENTRIC (CONE-CONE)            |
+|                                      |                                   |
+|                                      | CONCENTRIC (CONE-CYLINDER)        |
+|                                      |                                   |
+|                                      | CONCENTRIC (CONE-LINE)            |
+|                                      |                                   |
+|                                      | CONCENTRIC (CYLINDER-CYLINDER)    |
+|                                      |                                   |
+|                                      | CONCENTRIC (CYLINDER-LINE)        |
++--------------------------------------+-----------------------------------+
+| :refman:ref:`AnyPrismaticJoint`      | A mate combination for            |
+|                                      | AnyCylindricalJoint               |
+|                                      |                                   |
+|                                      | +                                 |
+|                                      |                                   |
+|                                      | COINCIDENT (POINT-PLANE)          |
++--------------------------------------+-----------------------------------+
+| :refman:ref:`AnyRevoluteJoint`       | COINCIDENT (CIRCLE-CIRCLE)        |
+|                                      |                                   |
+|                                      | COINCIDENT (CIRCLE-CONE)          |
+|                                      |                                   |
+|                                      | COINCIDENT (CONE-CONE)            |
+|                                      |                                   |
+|                                      | DISTANCE (CONE-CONE, these two    |
+|                                      | CONEs should have same angles)    |
+|                                      |                                   |
+|                                      | HINGE (ALL)                       |
++--------------------------------------+-----------------------------------+
+| :refman:ref:`AnyUniversalJoint`      | A mate combination for            |
+|                                      | AnySphericalJoint                 |
+|                                      |                                   |
+|                                      | +                                 |
+|                                      |                                   |
+|                                      | PERPENDICULAR (CYLINDER-CYLINDER) |
+|                                      |                                   |
+|                                      | PERPENDICULAR (CYLINDER-LINE)     |
+|                                      |                                   |
+|                                      | PERPENDICULAR (LINE-LINE)         |
+|                                      |                                   |
+|                                      | PERPENDICULAR (CONE-CONE)         |
+|                                      |                                   |
+|                                      | PERPENDICULAR (CONE-CYLINDER)     |
+|                                      |                                   |
+|                                      | PERPENDICULAR (CONE-LINE)         |
++--------------------------------------+-----------------------------------+
+
+Concepts of Translation
+=======================
+
+In this section, an overview of the translator functionality is given.
+The basic concepts are described, followed by overview tables of the
+translator's capabilities.
+
+Every SOLIDWORKS assembly model may comprise several parts, mates, and
+sub-assemblies. All information about an assembly is organized in the
+Feature Tree of SOLIDWORKS. The basic concept of AnyExp4SOLIDWORKS is to
+translate the tree structure of an assembly as directly as possible, so
+that all information can be found in same location in the associated
+tree-structure in AnyBody.
+
+SOLIDWORKS features are generally translated as follows
+
+-  A SOLIDWORKS assembly is translated to an AnyFolder object in
+   AnyScript. Each assembly will produce its own AnyScript file and the
+   files of super-assemblies will include sub-assemblies.
+
+-  A SOLIDWORKS part is translated to an :refman:ref:`AnySeg` object in AnyScript.
+   Each part will have an associated STL file capturing the geometric
+   appearance of the part in the SOLIDWORKS model.
+
+-  A SOLIDWORKS mate is translated to a combination of several
+   constraints in AnyBody. (Mechanical mates are translated into the
+   corresponding standard joints in AnyBody)
+
+-  A SOLIDWORKS reference geometry object such as point, axis, plane and
+   coordinate system will be translated to an :refman:ref:`AnyRefNode` object and will
+   be located in corresponding :refman:ref:`AnySeg` objects.
+
+All assemblies are converted into :refman:ref:`AnyFolder`\ s, which are the AnyScript
+structures for holding other objects. But in order to handle the
+position of the assembly (i.e. the Origin), a reference frame, also
+called Origin, is added to the assembly folder in the AnyBody model. For
+the top assembly, this reference frame is fixed, whereas all
+sub-assemblies have a movable Origin. The movable Origins are defined as
+'dummy' segments, i.e. an :refman:ref:`AnySeg` with zero mass, in the AnyBody model.
+All user-defined reference frames of the assemblies and any other
+components are added as so-called nodes (class :refman:ref:`AnyRefNode`) on fixed or
+movable assembly reference frames in the AnyBody model.
+
+All parts are converted into :refman:ref:`AnySeg` objects and each of these :refman:ref:`AnySeg`
+object replicates the initial position and rotation at the time of
+translation, mass, moments of inertia, and color. Furthermore, the
+reference point, reference axis, reference plane and all reference
+coordinate system objects, which are defined in that part, will be also
+translated into that :refman:ref:`AnySeg` object. As mentioned the graphical
+appearance is captured by the translator exporting STL files for each
+part. In AnyScript, these are entered with colors matching as well as
+possible the color in SOLIDWORKS.
+
+Regarding kinematics, all mates in SOLIDWORKS can be considered as
+kinematic constraints. So all the mates in the assembly are translated
+into similar (several, if needed) kinematic constraints as they can be
+implemented by AnyScript. AnyExp4SOLIDWORKS can translate almost all of
+standard mates of SOLIDWORKS into equivalent AnyBody kinematic
+constraints; however only a subset of the more advanced mates are
+covered. In particular, mates related to general surfaces and curves are
+not handled by the translator. Mate types that are not handled by the
+converter is simply skipped during the translation process, allowing you
+to use the remaining part of the model; in some cases the allows you to
+handle the missing constraints manually in AnyBody.
+
+AnyExp4SOLIDWORKS adds a few elements to the model structure. These will
+appear in the AnyBody Model tree and the will be named ``_ANY_<NAME>_``,
+where ``<NAME>`` is the name of the element. The following list covers the
+important elements that must be mentioned:
+
++-----------------------------------+-----------------------------------+
+| **Feature name**                  | **Description**                   |
++===================================+===================================+
+| ``_ANY_CTYPE_``                   | This an AnyScript enum variable   |
+|                                   | that holds the type specification |
+|                                   | of all the kinematic constraints  |
+|                                   | exported from AnyExp4SOLIDWORKS.  |
+|                                   | The value can be chosen during    |
+|                                   | the translation process, but with |
+|                                   | this single value it is also easy |
+|                                   | to change for the whole model in  |
+|                                   | AnyBody afterwards.               |
++-----------------------------------+-----------------------------------+
+| ``_ANY_INTERFACE_``               | This is a folder containing       |
+|                                   | user-specified interface points   |
+|                                   | (reference frames). Many          |
+|                                   | references systems exists in the  |
+|                                   | assembly and they may be buried   |
+|                                   | deep in the Feature Tree of       |
+|                                   | SOLIDWORKS therefore deep in      |
+|                                   | AnyBody’s Model Tree. However,    |
+|                                   | important reference frames are    |
+|                                   | automatically made available in   |
+|                                   | the top-level ``_ANY_INTERFACE_`` |
+|                                   | folder in AnyBody. This is done   |
+|                                   | simply by naming the important    |
+|                                   | reference frames with an agreed   |
+|                                   | prefix (the default prefix is     |
+|                                   | ``_ANY``) in the assembly; this   |
+|                                   | prefix is found the translator    |
+|                                   | and AnyScript references are made |
+|                                   | in the ``_ANY_INTERFACE_`` folder.|
++-----------------------------------+-----------------------------------+
+
+Finally, let us take a look at the options available in the Options
+Dialog during export. The table below summarizes these options.
+
+.. figure::  ./images/image4.PNG
+   :width: 3.91829in
+   :height: 2.7in
+
+
++-----------------------------------+-----------------------------------+
+| **Option name**                   | **Description**                   |
++===================================+===================================+
+| Indent Character                  | Option for indentation of         |
+|                                   | formatted AnyScript code; options |
+|                                   | are to use spaces or tab          |
+|                                   | characters                        |
++-----------------------------------+-----------------------------------+
+| Number of Spaces                  | Number of spaces used for         |
+|                                   | indentation when Indent Character |
+|                                   | is set to “Use spaces”            |
++-----------------------------------+-----------------------------------+
+| Constraint Type                   | ``Hard`` or ``Soft`` kinematic    |
+|                                   | constraints can be selected       |
+|                                   | during export. It is easy to      |
+|                                   | change in the AnyScript code      |
+|                                   | subsequently to export, if        |
+|                                   | needed. Hard constraints are the  |
+|                                   | default choice, but Soft          |
+|                                   | constraints can occasionally help |
+|                                   | deal with redundant constraints.  |
++-----------------------------------+-----------------------------------+
+| RefName Prefix                    | Prefix string used to identify    |
+|                                   | all reference coordinate systems  |
+|                                   | that will be exported specially   |
+|                                   | for use for interfacing with the  |
+|                                   | AnyBody model.                    |
++-----------------------------------+-----------------------------------+
+| Include Mass Properties of Hidden | Switch for whether hidden bodies  |
+| Bodies                            | are included or excluded from the |
+|                                   | exported mass properties. Default |
+|                                   | is like in SOLIDWORKS to exclude. |
+|                                   | Notice that suppressed bodies are |
+|                                   | always excluded.                  |
++-----------------------------------+-----------------------------------+
+| STL file Output Format            | Options are binary or text based  |
+|                                   | output formats.                   |
++-----------------------------------+-----------------------------------+
+| Unicode names                     | Options are                       |
+|                                   |                                   |
+|                                   | -  *Simple encoding* using        |
+|                                   |    “__<Unicode>__” for Unicode    |
+|                                   |    characters. This simple        |
+|                                   |    encoding provides the best     |
+|                                   |    possible backwards             |
+|                                   |    compatibility with older       |
+|                                   |    AnyBody versions               |
+|                                   |                                   |
+|                                   | -  *HTML style encoding* using    |
+|                                   |    “&#<Unicode>;” for Unicode     |
+|                                   |    characters. This encoding is   |
+|                                   |    allowed from AnyBody version   |
+|                                   |    5.3, also in AnyScript         |
+|                                   |    identifiers.                   |
+|                                   |                                   |
+|                                   | -  *HTML style encoding           |
+|                                   |    preserving Unicode file names* |
+|                                   |    is like the previous option,   |
+|                                   |    except file names are retained |
+|                                   |    with original Unicode          |
+|                                   |    characters and the exported    |
+|                                   |    AnyScript uses proper encoding |
+|                                   |    to link to these files.        |
++-----------------------------------+-----------------------------------+
+
+Overview of Translation Coverage
+--------------------------------
+
++---------------+----------------------------------+----------------+
+| **Mate Type** | **Extent of Coverage**           | **Exceptions** |
++===============+==================================+================+
+|               | **Standard Mates**               |                |
++---------------+----------------------------------+----------------+
+| COINCIDENT    | Mostly covered                   | POINT-CURVE    |
+|               |                                  |                |
+|               |                                  | POINT-CONE     |
+|               |                                  |                |
+|               |                                  | POINT-SURFACE  |
+|               |                                  |                |
+|               |                                  | IN-PLACE MATE  |
++---------------+----------------------------------+----------------+
+| PARALLEL      | Fully covered                    |                |
++---------------+----------------------------------+----------------+
+| PERPENDICULAR | Fully covered                    |                |
++---------------+----------------------------------+----------------+
+| TANGENT       | Fully covered                    |                |
++---------------+----------------------------------+----------------+
+| CONCENTRIC    | Fully covered                    |                |
++---------------+----------------------------------+----------------+
+| LOCK          | Fully covered                    |                |
++---------------+----------------------------------+----------------+
+| DISTANCE      | Mostly covered                   | POINT-CURVE    |
++---------------+----------------------------------+----------------+
+| ANGLE         | Fully covered                    |                |
++---------------+----------------------------------+----------------+
+|               |                                  |                |
++---------------+----------------------------------+----------------+
+|               | **Advanced Mates**               |                |
++---------------+----------------------------------+----------------+
+| All           | Not Covered                      |                |
++---------------+----------------------------------+----------------+
+|               |                                  |                |
++---------------+----------------------------------+----------------+
+|               | **Mechanical Mates**             |                |
++---------------+----------------------------------+----------------+
+| HINGE         | Fully covered                    |                |
++---------------+----------------------------------+----------------+
+| GEAR          | Not covered (see comments below) |                |
++---------------+----------------------------------+----------------+
+| SCREW         | Not covered (see comments below) |                |
++---------------+----------------------------------+----------------+
+| UNIVERSAL     | Not covered (see comments below) |                |
++---------------+----------------------------------+----------------+
+| RACK PINION   | Not covered (see comments below) |                |
++---------------+----------------------------------+----------------+
+| CAM           | Not covered                      |                |
++---------------+----------------------------------+----------------+
+| SLOT          | Not covered                      |                |
++---------------+----------------------------------+----------------+
+
+The GEAR, SCREW, UNIVERSAL, RACK PINION mates are, as indicated in the
+table, not covered by the translator itself; however, the kinematic
+constraints associated with such connections are not difficult to
+realize in AnyBody. They can be implemented in AnyScript using standard
+kinematic constraints. The CAM mate, on the contrary, is typically not
+realizable, at least not in a simple way, because the limited capability
+of handling surfaces in the kinematic engine of AnyBody.
+
+Furthermore, it can be noticed that some SOLIDWORKS mates inherently
+contain the possibility for singular positions. Such singularities arise
+when the mathematical equations degenerate under certain conditions.
+Like a distance constraint, i.e. a single constraints, but if the wanted
+distance is zero, it is suddenly something else; a spherical constraint,
+i.e. three constraints, is needed to handle this. Conditions for such
+singularities may arise during as motion and close to the singularities
+the kinematic equations may be poorly conditioned and difficult to solve
+accurately and can be the source of translated models that perform
+poorly when motion is applied.
+
+Some exceptions
+---------------
+
+Suppressed and inactive components, mates and features
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+In SOLIDWORKS, you can suppress some components, mates and other
+features as you want. And some of these objects may become inactive due
+to the relationships with other objects in the model even they are not
+suppressed by users manually. Then all of these suppressed or inactive
+objects will be displayed in gray color at the feature tree.
+AnyExp4SOLIDWORKS tries to detect these suppressed or inactive objects
+and those will not be translated. Instead, if AnyExp4SOLIDWORKS can
+detect these things, then some warning messages will be written in the
+log file which will be created in the same folder where the resultant
+AnyScript files are located.
+
+Center of Mass reference geometry
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+A new reference geometry type ‘Center of Mass’ has been introduced since
+SOLIDWORKS 2013 version. This object in the feature tree will not be
+translated into the resultant AnyScript files. So whenever
+AnyExp4SOLIDWORKS detects these Center of Mass objects in the feature
+tree then a warning message will be written in the log file.
+
+But there are easy alternative ways to create your own center of mass
+objects using AnyScript. For assemblies, you can use an :refman:ref:`AnyKinCoM` class
+object to create the center of mass from several different parts. For
+parts, you can just create an extra :refman:ref:`AnyRefNode` class object using the
+:refman:ref:`sCoM <AnySeg.sCom>` value of the :refman:ref:`AnySeg` object.
+
+If your SOLIDWORKS model contains any Center of Mass objects in the
+assemblies and if these are used for any mates, then those mates will
+not work properly in AnyBody. That’s because the Center of Mass in the
+assemblies are moving points so those are not fixed in the assembly
+coordinate system. But currently AnyExp4SOLIDWORKS assumes that all the
+mates are defined using some fixed reference geometries in either
+assemblies or parts. So if you find that some of those mates are
+translated into your AnyScript files, then it will be better to delete
+them in the AnyScript files and create your own constraints manually
+using AnyScript.

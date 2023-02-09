@@ -1,0 +1,237 @@
+
+
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AnyFunction &#8212; AnyScript Reference 7.3.4 documentation</title>
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/cloud.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/table_styling.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noticia+Text|Open+Sans|Droid+Sans+Mono" type="text/css" />
+    
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/script/filter-class-list.js"></script>
+    <script src="../../_static/fa/all.js"></script>
+
+    
+    
+     
+        <script src="../../_static/jquery.cookie.js"></script>
+    
+
+    
+     
+        <script src="../../_static/cloud.base.js"></script>
+    
+
+    
+     
+        <script src="../../_static/cloud.js"></script>
+    
+
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="AnyFunctionArgList" href="AnyFunctionArgList.html" />
+    <link rel="prev" title="AnyFunZeros" href="AnyFunZeros.html" /> 
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head><body>
+    <div class="relbar-top">
+        
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../contents.html" title="Table Of Contents"
+             accesskey="C">toc</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="AnyFunctionArgList.html" title="AnyFunctionArgList"
+             accesskey="N">next</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="AnyFunZeros.html" title="AnyFunZeros"
+             accesskey="P">previous</a> &nbsp; &nbsp;</li>
+    <li><a href="../../index.html">AnyScript Reference 7.3.4 documentation</a> &#187;</li>
+
+          <li class="nav-item nav-item-1"><a href="../../index.html" >The AnyScript Reference manual!</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../class-overview.html" accesskey="U"><strong>Class reference</strong></a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">AnyFunction</a></li> 
+      </ul>
+    </div>
+    </div>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="anyfunction">
+<span id="id1"></span><h1>AnyFunction<a class="headerlink" href="#anyfunction" title="Permalink to this headline">¶</a></h1>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>Abstract</p>
+</dd>
+<dt class="field-even">Parent class</dt>
+<dd class="field-even"><p><a class="reference internal" href="AnyFunctionBase.html#anyfunctionbase"><span class="std std-ref">AnyFunctionBase</span></a></p>
+</dd>
+<dt class="field-odd">Child classes</dt>
+<dd class="field-odd"><p><a class="reference internal" href="AnyFun3D.html#anyfun3d"><span class="std std-ref">AnyFun3D</span></a>, <a class="reference internal" href="AnyFunAssertion.html#anyfunassertion"><span class="std std-ref">AnyFunAssertion</span></a>, <a class="reference internal" href="AnyFunElemOpr.html#anyfunelemopr"><span class="std std-ref">AnyFunElemOpr</span></a>, <a class="reference internal" href="AnyFunEx.html#anyfunex"><span class="std std-ref">AnyFunEx</span></a>, <a class="reference internal" href="AnyFunInfo.html#anyfuninfo"><span class="std std-ref">AnyFunInfo</span></a>, <a class="reference internal" href="AnyFunInit.html#anyfuninit"><span class="std std-ref">AnyFunInit</span></a>, <a class="reference internal" href="AnyFunLinFilterBase.html#anyfunlinfilterbase"><span class="std std-ref">AnyFunLinFilterBase</span></a>, <a class="reference internal" href="AnyFunLogical.html#anyfunlogical"><span class="std std-ref">AnyFunLogical</span></a>, <a class="reference internal" href="AnyFunObjBase.html#anyfunobjbase"><span class="std std-ref">AnyFunObjBase</span></a>, <a class="reference internal" href="AnyFunVecOpr.html#anyfunvecopr"><span class="std std-ref">AnyFunVecOpr</span></a>, <a class="reference internal" href="AnyOutputFun.html#anyoutputfun"><span class="std std-ref">AnyOutputFun</span></a>, <a class="reference internal" href="AnyParamFun.html#anyparamfun"><span class="std std-ref">AnyParamFun</span></a>, <a class="reference internal" href="AnySearchFun.html#anysearchfun"><span class="std std-ref">AnySearchFun</span></a></p>
+</dd>
+</dl>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>AnyFunction is the base class for all functions in AnyScript. A function is
+an object that can return a value (AnyValue) for a given set parameters
+(AnyValue or AnyObjects). A function can be called in an AnyScript expression
+and it will be evaluated whenever the expression is evaluated.</p>
+<p>The parameters, that govern the return value, can be members of the class or
+they can be supplied in the function argument list.
+The class members can be initialized when declaring an object of the class,
+whereas the function arguments are supplied upon evaluation, i.e., they
+function using their current value.
+The function argument list is supplied to the function as a comma-separated list
+in parentheses after the function name. A function call could for instance look like</p>
+<p>AnyVar var = funcname(var1,var2);</p>
+<p>It is important to notice that an AnyFunction derived class is a class of
+functions. It is not until an object of the class is created that there
+exists an actual function and the name of the object is also the name of
+the function when calling it. An example is the class AnyFunSin, that is a
+class of all sine functions (though there is only one definition in this
+particular case). A globally declared object called ‘sin’ is the actual sine
+function that we can use in mathematical expressions as like $sin(arg)$.</p>
+<p>For many standard mathematical functions that are defined by the system, like sine,
+the function object is the important one and the function class has only little
+relevance in the daily work. There is a one to one relationship, one class and
+one function/object, and typically the function object is predefined in the
+global scope of AnyScript.
+However, some function classes contain members, that can be initialized,
+and of these you can make different functions/objects.
+For such function classes it is more meaningful to speak of a ‘class of functions’
+and there will typically not be any predefined objects of such classes in
+the global scope.</p>
+<p>Functions are typically mathematical functions, but generally they can be
+defined with any type of values (AnyValue) as output.
+In addition AnyFunction can be polymorfic, which means that a function may
+have more than one argument list definition. They may even return
+different value types as output. For instance
+Accepted function definitions are made by the class AnyMonoFunction
+(meaning monomorphic function definition) that contains the return type
+(an AnyValue) and the argument list (AnyValues in a special folder).
+An AnyFunction can hold as many AnyMonoFunctions as needed and each of them
+defines one version of the AnyFunction. It should be emphasized again that
+the function name is the name of the object of the AnyFunction class;
+thus, the names of the AnyMonoFunctions inside the AnyFunction play no role
+when applying the function in an AnyScript expression.</p>
+<p> </p>
+</div>
+</div>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+        <p class="logo"><a href="../../index.html" title="index">
+          <img class="logo" src="../../_static/anyscript_maual.svg" alt="Logo"/>
+        </a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+<h3><a href="../../contents.html">Reference Manual</a></h3>
+<p class="caption"><span class="caption-text">API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../class-overview.html"><strong>Class reference</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../function-overview.html"><strong>Function reference</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../globals-overview.html">Globals reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../environment.html">Environment variables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../messages/index.html">Errors, warnings and messages</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Language</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../anyscript/language.html">AnyScript™ language</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../anyscript/preprocessor.html">The preprocessor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../anyscript/inside-anybody.html">Inside the AnyBody Modeling System</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../anyscript/technical-notes.html">Technical notes</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../demos/index.html">Demo examples</a></li>
+</ul>
+<div class="sphinxprev">
+    <h4>Other resources</h4>
+    <p class="topless"><a href="../../../index.html"
+                          title="Back to all manuals">&larr; Back to all manuals</a></p>
+</div>
+        </div>
+      </div>
+    
+    
+        <div class="sidebar-toggle-group no-js">
+            
+            <button class="sidebar-toggle" id="sidebar-hide" title="Hide the sidebar menu">
+                 «
+                <span class="show-for-small">hide menu</span>
+                
+            </button>
+            <button class="sidebar-toggle" id="sidebar-show" title="Show the sidebar menu">
+                
+                <span class="show-for-small">menu</span>
+                <span class="hide-for-small">sidebar</span>
+                 »
+            </button>
+        </div>
+    
+      <div class="clearer"></div>
+    </div>
+    <div class="relbar-bottom">
+        
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../contents.html" title="Table Of Contents"
+             >toc</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="AnyFunctionArgList.html" title="AnyFunctionArgList"
+             >next</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="AnyFunZeros.html" title="AnyFunZeros"
+             >previous</a> &nbsp; &nbsp;</li>
+    <li><a href="../../index.html">AnyScript Reference 7.3.4 documentation</a> &#187;</li>
+
+          <li class="nav-item nav-item-1"><a href="../../index.html" >The AnyScript Reference manual!</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../class-overview.html" ><strong>Class reference</strong></a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">AnyFunction</a></li> 
+      </ul>
+    </div>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2021, AnyBody Technology A/S.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.5.4.
+    </div>
+    <!-- cloud_sptheme 1.4 -->
+  </body>
+</html>

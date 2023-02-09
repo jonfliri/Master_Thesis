@@ -1,0 +1,999 @@
+
+
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AnyScript Objects Messages (OBJ) &#8212; AnyScript Reference 7.3.4 documentation</title>
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/cloud.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/table_styling.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noticia+Text|Open+Sans|Droid+Sans+Mono" type="text/css" />
+    
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/script/filter-class-list.js"></script>
+    <script src="../../_static/fa/all.js"></script>
+
+    
+    
+     
+        <script src="../../_static/jquery.cookie.js"></script>
+    
+
+    
+     
+        <script src="../../_static/cloud.base.js"></script>
+    
+
+    
+     
+        <script src="../../_static/cloud.js"></script>
+    
+
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Macro Parser Messages (MPRS)" href="MPRS.html" />
+    <link rel="prev" title="Kernel Messages (SCR)" href="SCR.html" /> 
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head><body>
+    <div class="relbar-top">
+        
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../contents.html" title="Table Of Contents"
+             accesskey="C">toc</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="MPRS.html" title="Macro Parser Messages (MPRS)"
+             accesskey="N">next</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="SCR.html" title="Kernel Messages (SCR)"
+             accesskey="P">previous</a> &nbsp; &nbsp;</li>
+    <li><a href="../../index.html">AnyScript Reference 7.3.4 documentation</a> &#187;</li>
+
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Errors, warnings and messages</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">AnyScript Objects Messages (<code class="docutils literal notranslate"><span class="pre">OBJ</span></code>)</a></li> 
+      </ul>
+    </div>
+    </div>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="anyscript-objects-messages-obj">
+<h1>AnyScript Objects Messages (<code class="docutils literal notranslate"><span class="pre">OBJ</span></code>)<a class="headerlink" href="#anyscript-objects-messages-obj" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="obj">
+<h2><code class="docutils literal notranslate"><span class="pre">OBJ</span></code><a class="headerlink" href="#obj" title="Permalink to this headline">¶</a></h2>
+<div class="html-toggle list-entries odd section" id="obj1">
+<span id="id1"></span><h3>OBJ1<a class="headerlink" href="#obj1" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">Severity</dt>
+<dd class="field-odd"><p>Fatal error</p>
+</dd>
+<dt class="field-even">Error</dt>
+<dd class="field-even"><p>‘Error message’ : incomplete C++ coded error</p>
+</dd>
+</dl>
+<p>This message is a general “object error” in which the full message text is varying from case to case and no further explanation is available here.</p>
+<blockquote>
+<div><p>Some of these messages are actually messages that has not been inserted into AnyBody’s standard message format with their own message ID and with additional explanations.  We appologize for these cases.</p>
+</div></blockquote>
+</div></blockquote>
+</div>
+<div class="html-toggle list-entries even section" id="obj2">
+<span id="id2"></span><h3>OBJ2<a class="headerlink" href="#obj2" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">Severity</dt>
+<dd class="field-odd"><p>Fatal error</p>
+</dd>
+<dt class="field-even">Error</dt>
+<dd class="field-even"><p>Obligatory initialization of member ‘ClassName’ ‘ObjectName’ is missing</p>
+</dd>
+</dl>
+<p>The object referred to in the error message requires initialization. It is a predefined member object and without this initialization the model cannot behave properly; loading the model is therefore terminated. To avoid this error make proper initialization, for instance in the object’s construction scope indicated by the file reference in the error message.</p>
+</div></blockquote>
+</div>
+<div class="html-toggle list-entries odd section" id="obj3">
+<span id="id3"></span><h3>OBJ3<a class="headerlink" href="#obj3" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">Severity</dt>
+<dd class="field-odd"><p>Fatal error</p>
+</dd>
+<dt class="field-even">Error</dt>
+<dd class="field-even"><p>Member expectations are not satisfied :
+‘Expectation information’</p>
+</dd>
+</dl>
+<p>Some classes (folders only) may require certain objects to be declared inside them. For instance a drawing object may need one or more reference frames to attach the drawing to. This error occurs, if such “member expectation” are not satisfied.
+Notice that these expected members often could be made as AnyScript references to already existing objects, that have been declared in other parts of the model.</p>
+</div></blockquote>
+</div>
+<div class="html-toggle list-entries even section" id="obj4">
+<span id="id4"></span><h3>OBJ4<a class="headerlink" href="#obj4" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">Severity</dt>
+<dd class="field-odd"><p>Fatal error</p>
+</dd>
+<dt class="field-even">Error</dt>
+<dd class="field-even"><p>Wrong owner class for ‘ClassName’.  Accepted owner(s): ‘list of accepted owners’</p>
+</dd>
+</dl>
+<p>This error occurs in objects that requires a specific owner class, if this demand is not satisfied. To avoid this error, consider the folder in which you have declared ‘ObjectName’, it may be misplaced.</p>
+</div></blockquote>
+</div>
+<div class="html-toggle list-entries odd section" id="obj5">
+<span id="id5"></span><h3>OBJ5<a class="headerlink" href="#obj5" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">Severity</dt>
+<dd class="field-odd"><p>Fatal error</p>
+</dd>
+<dt class="field-even">Error</dt>
+<dd class="field-even"><p>Numerical value of ‘ObjectName’ is out of range :  ‘Allowed Range’</p>
+</dd>
+</dl>
+<p>A value is outside the allowed range. This is typically a fatal error, but it may be sent with lower severity. An additional message may indicate any actions taken to avoid severe problems, e.g. auotmatical adjustment of values.The ‘Allowed Range’ is specified by:</p>
+<blockquote>
+<div><p>Closed bounded interval limits: [min..max]
+Open bounded interval limits:   ]min..max[
+Unbounded upper limit:          ]min..max[
+Unbounded lower limit:          ]-Inf..max]</p>
+</div></blockquote>
+</div></blockquote>
+</div>
+<div class="html-toggle list-entries even section" id="obj6">
+<span id="id6"></span><h3>OBJ6<a class="headerlink" href="#obj6" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">Severity</dt>
+<dd class="field-odd"><p>Fatal error</p>
+</dd>
+<dt class="field-even">Error</dt>
+<dd class="field-even"><p>Numerical value of ‘ObjectName’ is out of range :  ‘Allowed Range’</p>
+</dd>
+</dl>
+<p>A value is outside the allowed range. This is typically a fatal error, but it may be sent with lower severity. An additional message may indicate any actions taken to avoid severe problems, e.g. auotmatical adjustment of values.The ‘Allowed Range’ is specified by:</p>
+<blockquote>
+<div><p>Closed bounded interval limits: [min..max]
+Open bounded interval limits:   ]min..max[
+Unbounded upper limit:          ]min..max[
+Unbounded lower limit:          ]-Inf..max]</p>
+</div></blockquote>
+</div></blockquote>
+</div>
+<div class="html-toggle list-entries odd section" id="obj7">
+<span id="id7"></span><h3>OBJ7<a class="headerlink" href="#obj7" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">Severity</dt>
+<dd class="field-odd"><p>Important warning</p>
+</dd>
+<dt class="field-even">Error</dt>
+<dd class="field-even"><p>Initialization without effect :  ‘additional explanation’</p>
+</dd>
+</dl>
+<p>This message implies that a redundant initialization has taken place. The ‘additional explanation’ will explain the reason in the particular case. In rare cases, this message is an error-indicator, but typically it is just a warning.</p>
+</div></blockquote>
+</div>
+<div class="html-toggle list-entries even section" id="obj8">
+<span id="id8"></span><h3>OBJ8<a class="headerlink" href="#obj8" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">Severity</dt>
+<dd class="field-odd"><p>Fatal error</p>
+</dd>
+<dt class="field-even">Error</dt>
+<dd class="field-even"><p>Type restricted object-pointer has been linked with object ‘ObjectName’ of unacceptable class ‘ClassName’
+Allowed classes are: ‘ClassName’, …</p>
+</dd>
+</dl>
+<p>A object-pointer (AnyObjectPtr) objects may be type-restricted. In that case, this error occurs if the pointer get initilized with references to objects of classes not allowed:</p>
+</div></blockquote>
+</div>
+<div class="html-toggle list-entries odd section" id="obj9">
+<span id="id9"></span><h3>OBJ9<a class="headerlink" href="#obj9" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">Severity</dt>
+<dd class="field-odd"><p>Fatal error</p>
+</dd>
+<dt class="field-even">Error</dt>
+<dd class="field-even"><p>AnyOperationMacro cannot be nested inside another AnyOperationMacro or AnyOperationSequence.</p>
+</dd>
+</dl>
+<p>Sorry - there is no detailed description or explanation related to this message.</p>
+</div></blockquote>
+</div>
+<div class="html-toggle list-entries even section" id="obj10">
+<span id="id10"></span><h3>OBJ10<a class="headerlink" href="#obj10" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">Severity</dt>
+<dd class="field-odd"><p>Fatal error</p>
+</dd>
+<dt class="field-even">Error</dt>
+<dd class="field-even"><p>AnyOperationAssignment is trying to use not AnyValue for assignment:</p>
+</dd>
+</dl>
+<p>AnyOperationAssignment members Source and Target must contain pointers to AnyValue derived objects.</p>
+</div></blockquote>
+</div>
+<div class="html-toggle list-entries odd section" id="obj11">
+<span id="id11"></span><h3>OBJ11<a class="headerlink" href="#obj11" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">Severity</dt>
+<dd class="field-odd"><p>Fatal error</p>
+</dd>
+<dt class="field-even">Error</dt>
+<dd class="field-even"><p></p></dd>
+</dl>
+<p>Sorry - there is no detailed description or explanation related to this message.</p>
+</div></blockquote>
+</div>
+<div class="html-toggle list-entries even section" id="obj12">
+<span id="id12"></span><h3>OBJ12<a class="headerlink" href="#obj12" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">Severity</dt>
+<dd class="field-odd"><p>Fatal error</p>
+</dd>
+<dt class="field-even">Error</dt>
+<dd class="field-even"><p></p></dd>
+</dl>
+<p>Sorry - there is no detailed description or explanation related to this message.</p>
+</div></blockquote>
+</div>
+</div>
+<div class="section" id="obj-file">
+<h2><code class="docutils literal notranslate"><span class="pre">OBJ.FILE</span></code><a class="headerlink" href="#obj-file" title="Permalink to this headline">¶</a></h2>
+<div class="html-toggle list-entries odd section" id="obj-file1">
+<span id="id13"></span><h3>OBJ.FILE1<a class="headerlink" href="#obj-file1" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">Severity</dt>
+<dd class="field-odd"><p>Fatal error</p>
+</dd>
+<dt class="field-even">Error</dt>
+<dd class="field-even"><p>Problem with file :  ‘FileName(LineNo)’ :  ‘Additional explanation’</p>
+</dd>
+</dl>
+<p>This message is sent by AnyFile objects or other objects operating on files. This is a generic message that cover several different issues depending on the actual type of file and the situation. An ‘additional explanation’ will typically accompany the basic part of the message explaining the particular issue. For text files, references may include the line number of the error if applicable.</p>
+</div></blockquote>
+</div>
+<div class="html-toggle list-entries even section" id="obj-file2">
+<span id="id14"></span><h3>OBJ.FILE2<a class="headerlink" href="#obj-file2" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">Severity</dt>
+<dd class="field-odd"><p>Error</p>
+</dd>
+<dt class="field-even">Error</dt>
+<dd class="field-even"><p>Shell-execution failed :  ‘Shell execution error message’
+Command :            ‘FileName(LineNo)’ ‘argument-string’
+Working directory :  ‘FileName(LineNo)’</p>
+</dd>
+</dl>
+<p>This message is sent by shell execution operations when the execution fails. The ‘Shell execution error message’ contain the reason as recieved from the shell.</p>
+</div></blockquote>
+</div>
+<div class="html-toggle list-entries odd section" id="obj-file3">
+<span id="id15"></span><h3>OBJ.FILE3<a class="headerlink" href="#obj-file3" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">Severity</dt>
+<dd class="field-odd"><p>Important warning</p>
+</dd>
+<dt class="field-even">Error</dt>
+<dd class="field-even"><p>Deprecated file format :  ‘File format extension’ :  ‘Additional explanation message’</p>
+</dd>
+</dl>
+<p>This warning indicates that the specified file format is deprecated for this particular usage. Support for deprecated file formats may be removed in future versions of AnyBody.</p>
+<p>This message might only be sent once for a single model, even though multiple cases of the deprecated file format may be present in the model.</p>
+</div></blockquote>
+</div>
+</div>
+<div class="section" id="obj-cht">
+<h2><code class="docutils literal notranslate"><span class="pre">OBJ.CHT</span></code><a class="headerlink" href="#obj-cht" title="Permalink to this headline">¶</a></h2>
+<div class="html-toggle list-entries odd section" id="obj-cht1">
+<span id="id16"></span><h3>OBJ.CHT1<a class="headerlink" href="#obj-cht1" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">Severity</dt>
+<dd class="field-odd"><p>Fatal error</p>
+</dd>
+<dt class="field-even">Error</dt>
+<dd class="field-even"><p>Invalid series selection  :  ‘Additional message with reason’</p>
+</dd>
+</dl>
+<p>This error is caused by a selection made while defining a data series for a chart object (AnyChart). This can either happen while loading a model with an AnyChart object declared in the AnyScript code, or while making series selections in the AnyChart View that uses an AnyChart object as a component.</p>
+<p>Look to the last part of the message for the reason in the particular case.</p>
+</div></blockquote>
+</div>
+</div>
+<div class="section" id="obj-operationreplay">
+<h2><code class="docutils literal notranslate"><span class="pre">OBJ.OperationReplay</span></code><a class="headerlink" href="#obj-operationreplay" title="Permalink to this headline">¶</a></h2>
+<div class="html-toggle list-entries odd section" id="obj-operationreplay1">
+<span id="id17"></span><h3>OBJ.OperationReplay1<a class="headerlink" href="#obj-operationreplay1" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">Severity</dt>
+<dd class="field-odd"><p>Fatal error</p>
+</dd>
+<dt class="field-even">Error</dt>
+<dd class="field-even"><p>Replaying data failed in time step ‘integer’. Data is not ready.</p>
+</dd>
+</dl>
+<p>This error arise when the Replaying operations fail to copy data from the output data back to the model.
+The reason can be that an operation calculating the output has not been run prior to replay, or that loaded data in incomplete.</p>
+</div></blockquote>
+</div>
+</div>
+<div class="section" id="obj-mch">
+<h2><code class="docutils literal notranslate"><span class="pre">OBJ.MCH</span></code><a class="headerlink" href="#obj-mch" title="Permalink to this headline">¶</a></h2>
+<div class="html-toggle list-entries odd section" id="obj-mch1">
+<span id="id18"></span><h3>OBJ.MCH1<a class="headerlink" href="#obj-mch1" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">Severity</dt>
+<dd class="field-odd"><p>Fatal error</p>
+</dd>
+<dt class="field-even">Error</dt>
+<dd class="field-even"><p>Mechanical system problem :  ‘Problem description’
+‘ClassName’ :  ‘ObjectName’</p>
+</dd>
+</dl>
+<p>This error message is send by mechanical studies when it cannot handle various objects in the model. This can be due to issues in the model or limitations in the solver/problem formulation the study can handle. The additional Problem Description provide more details on the particular issue and related objects in the model may be listed in the following lines.</p>
+</div></blockquote>
+</div>
+</div>
+<div class="section" id="obj-mch-kin">
+<h2><code class="docutils literal notranslate"><span class="pre">OBJ.MCH.KIN</span></code><a class="headerlink" href="#obj-mch-kin" title="Permalink to this headline">¶</a></h2>
+<div class="html-toggle list-entries odd section" id="obj-mch-kin1">
+<span id="id19"></span><h3>OBJ.MCH.KIN1<a class="headerlink" href="#obj-mch-kin1" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">Severity</dt>
+<dd class="field-odd"><p>Fatal error</p>
+</dd>
+<dt class="field-even">Error</dt>
+<dd class="field-even"><p>Model is kinematically indeterminate :  ‘additional message’</p>
+</dd>
+</dl>
+<p>This error may arise during the kinematical analysis a kinematically indeterminate system. This implies that the model has fewer independent kinematic constraints than degrees of freedom.</p>
+</div></blockquote>
+</div>
+<div class="html-toggle list-entries even section" id="obj-mch-kin2">
+<span id="id20"></span><h3>OBJ.MCH.KIN2<a class="headerlink" href="#obj-mch-kin2" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">Severity</dt>
+<dd class="field-odd"><p>Fatal error</p>
+</dd>
+<dt class="field-even">Error</dt>
+<dd class="field-even"><p>Model is kinematically over-constrained :  ‘additional message’</p>
+</dd>
+</dl>
+<p>This error may arise during the kinematical analysis of a kinematically over-constrained system. This implies that the model has more independent kinematical constraints than degrees of freedom and therefore not all constraints can be satisfied.</p>
+<p>This message may also be sent as a warning, when there are excessive kinematical constraints in the model, but the additional constraints are dependent, so that the independent set of constraints is solvable. The excessive dependent constraints are referred to as redundant kinematical constraints.</p>
+<p>This kinematic solver may not always be numerically able to distinguish between redundant and unsolvable constraints Therefore, it is advisable to avoid excessive constraints whenever possible.</p>
+</div></blockquote>
+</div>
+<div class="html-toggle list-entries odd section" id="obj-mch-kin3">
+<span id="id21"></span><h3>OBJ.MCH.KIN3<a class="headerlink" href="#obj-mch-kin3" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">Severity</dt>
+<dd class="field-odd"><p>Fatal error</p>
+</dd>
+<dt class="field-even">Error</dt>
+<dd class="field-even"><p>Kinematic analysis failed in time step ‘integer’</p>
+</dd>
+</dl>
+<p>This error may arise when the kinematical analysis fails to complete. This implies that the kinematic constraints does not have a solution or that the solver could not find the solution under the given numerical circumstances.
+In the latter case, more other settings of the kinematic solver may allow for a solution. Additionally, a better choice of initial positions may improve the solver’s ability to solve the constraints.</p>
+</div></blockquote>
+</div>
+<div class="html-toggle list-entries even section" id="obj-mch-kin4">
+<span id="id22"></span><h3>OBJ.MCH.KIN4<a class="headerlink" href="#obj-mch-kin4" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">Severity</dt>
+<dd class="field-odd"><p>Fatal error</p>
+</dd>
+<dt class="field-even">Error</dt>
+<dd class="field-even"><p>Failed to resolve kinematic constraints :  final kin. error :  ‘number’</p>
+</dd>
+</dl>
+<p>This error may arise when the kinematical analysis fails to complete. This implies that the kinematic constraints does not have a solution or simply that the solution was not be found with under the given numerical circumstances.
+In the latter case, more appropriate settings of the kinematic solver may allow for a solution.Additionally, a better choice of initial positions will improve the solver ability to solve the constraints.</p>
+</div></blockquote>
+</div>
+<div class="html-toggle list-entries odd section" id="obj-mch-kin5">
+<span id="id23"></span><h3>OBJ.MCH.KIN5<a class="headerlink" href="#obj-mch-kin5" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">Severity</dt>
+<dd class="field-odd"><p>Warning</p>
+</dd>
+<dt class="field-even">Error</dt>
+<dd class="field-even"><p>Failed to consistently set approximate positions this kinematic measure  :  ‘additional message’</p>
+</dd>
+</dl>
+<p>“Approximate positions” are a set of values of the kinematic measure, which are numerically close to real/current value. They function to determine the real values uniquely in kinematic measures that may have multiple value, for instance angular values that repeat for each 2 time Pi. They are continously updated during a kinematic analysis so that they always a close to the current value  and in the begining of a kinematic analysis all constraints (hereunder drivers) will suggest approximate values to the measures they are applied to. This warning indicates that the update of “approximate positions” has not been carried out completely.
+“Approximate positions” may be pushed back through measure organizers (AnyKinMeasureOrg or derived)  to the measures that the organizer uses. However, for some types of measure organizers it is not mathematically meaningful to do this and in such cases this warning will be sent. AnyKinMeasureLinComb is an example of such a measure organizer. While the “approximate position” of the output an AnyKinMeasureLinComb may be known, it is not meaningful to convert this back into vales for the input measures (except in special cases). The update of the “approximate position” will then fail in the intial step of a kinematic analysis in cases where the AnyKinMeasureLinComb (or similar measure organizer) is driven/constrained.
+Typically, this warning can be disregarded, but in some very special cases this issue may be the cause of kinematic problems. For instance, if angular measures with initial values larger than 2*Pi are used in measure organizers without the capability of setting apprimate positions.</p>
+</div></blockquote>
+</div>
+<div class="html-toggle list-entries even section" id="obj-mch-kin6">
+<span id="id24"></span><h3>OBJ.MCH.KIN6<a class="headerlink" href="#obj-mch-kin6" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">Severity</dt>
+<dd class="field-odd"><p>Important warning</p>
+</dd>
+<dt class="field-even">Error</dt>
+<dd class="field-even"><p>Close to singular position  :  ‘additional message’</p>
+</dd>
+</dl>
+<p>A singular position is a position where one or more singularities occur in the mathematical description of the motion.Being close to such positions may cause the kinematic analysis or the computation of derived quatities to become inaccurate or in worst case fail. The “additional message” may give further details about the concrete nature of the problem.</p>
+<p>The object sending this message will typically filter multiple occurances, so that the message is send only once during an analysis, even though the problem occurs several times independently. It is thereby expected and a advisable to deal with the first occurance of the problem before any continuation of the analysis.</p>
+</div></blockquote>
+</div>
+<div class="html-toggle list-entries odd section" id="obj-mch-kin7">
+<span id="id25"></span><h3>OBJ.MCH.KIN7<a class="headerlink" href="#obj-mch-kin7" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">Severity</dt>
+<dd class="field-odd"><p>Important warning</p>
+</dd>
+<dt class="field-even">Error</dt>
+<dd class="field-even"><p>Penetration of surface :  ‘ObjectName’ :  ‘additional message’</p>
+</dd>
+</dl>
+<p>This warning indicates that a unwanted penetration has occured. The “additional message” will give details on the particular reason.</p>
+<p>The object sending this message will typically filter multiple occurances, so that the message is send only once during an analysis, even though the problem occurs several times independently. It is thereby expected and a advisable to deal with the first occurance of the problem before any continuation of the analysis.</p>
+</div></blockquote>
+</div>
+<div class="html-toggle list-entries even section" id="obj-mch-kin8">
+<span id="id26"></span><h3>OBJ.MCH.KIN8<a class="headerlink" href="#obj-mch-kin8" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">Severity</dt>
+<dd class="field-odd"><p>Fatal error</p>
+</dd>
+<dt class="field-even">Error</dt>
+<dd class="field-even"><p>Incorrect number of elements in kinematic constraint specification :  ‘Additional explanation’
+Current specification is ‘ValueType’, required is ‘ValueType’. See object :  ‘ObjectName’ :  ‘FileName(LineNo)’</p>
+</dd>
+</dl>
+<p>This message is send from AnyKinEq objects, when the dimensionality of driver or other kinematic specifications do not match the number of coordinates to be driven. It is for instance send from AnyKinDriver objects when wrong number of elements is specified for ‘DriverPos0’, ‘DriverVel0’ , or ‘DriverAcc0’ and when driver or kinematics weight functions do not return the required number of elements.</p>
+</div></blockquote>
+</div>
+<div class="html-toggle list-entries odd section" id="obj-mch-kin9">
+<span id="id27"></span><h3>OBJ.MCH.KIN9<a class="headerlink" href="#obj-mch-kin9" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">Severity</dt>
+<dd class="field-odd"><p>Important warning</p>
+</dd>
+<dt class="field-even">Error</dt>
+<dd class="field-even"><p>Problems finding closest point on surface :  ‘ObjectName’ :  ‘additional message’</p>
+</dd>
+</dl>
+<p>This warning indicates that there are problems in the calculation of the closest point. These problems could arise from the existence of multiple closest points or that the required accuracy was not met. The “additional message” will provide details on the particular reason.</p>
+<p>The computations is continued using the choice of one point from the set of closest points or the calculated approximation of the closest point. Multiple closest points are typically related to reference points being inside an object, especially near edges. To avoid this, change the geometry or the location of the reference points.</p>
+</div></blockquote>
+</div>
+<div class="html-toggle list-entries even section" id="obj-mch-kin10">
+<span id="id28"></span><h3>OBJ.MCH.KIN10<a class="headerlink" href="#obj-mch-kin10" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">Severity</dt>
+<dd class="field-odd"><p>Important warning</p>
+</dd>
+<dt class="field-even">Error</dt>
+<dd class="field-even"><p>A segment appears to be missing in this study. The missing segment :  ‘ObjectName’</p>
+</dd>
+</dl>
+<p>This warning indicates that a segment has been forgotten in the definition of the study. Some mechanical object appear to be dependening on (attached to) this segment, but the segment is not part of the study. The study will use the values of the segment, such as positions, that are given prior to the studies operations being executed.</p>
+<p>While this is allowed, it should be used with extreme care. It is recommended to include all segments and associated contraints of segments into the study.</p>
+</div></blockquote>
+</div>
+</div>
+<div class="section" id="obj-mch-dyn">
+<h2><code class="docutils literal notranslate"><span class="pre">OBJ.MCH.DYN</span></code><a class="headerlink" href="#obj-mch-dyn" title="Permalink to this headline">¶</a></h2>
+<div class="html-toggle list-entries odd section" id="obj-mch-dyn1">
+<span id="id29"></span><h3>OBJ.MCH.DYN1<a class="headerlink" href="#obj-mch-dyn1" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">Severity</dt>
+<dd class="field-odd"><p>Fatal error</p>
+</dd>
+<dt class="field-even">Error</dt>
+<dd class="field-even"><p>Model is kinetically indeterminate :  ‘additional message’</p>
+</dd>
+</dl>
+<p>This error implies that the model contains fewer unknown forces than equations and it is therefore not solvable.
+The additional message may provide further information about the particular problem.</p>
+</div></blockquote>
+</div>
+<div class="html-toggle list-entries even section" id="obj-mch-dyn2">
+<span id="id30"></span><h3>OBJ.MCH.DYN2<a class="headerlink" href="#obj-mch-dyn2" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">Severity</dt>
+<dd class="field-odd"><p>Important warning</p>
+</dd>
+<dt class="field-even">Error</dt>
+<dd class="field-even"><p>Model contains redundant constraint reactions :  ‘list-of-redundant-reactions’</p>
+</dd>
+</dl>
+<p>This message is send when the model contains reactions which are not uniquely defined. In other words, the reaction forces are not independent.
+This happens when there are more reaction forces the degrees of freedom in the system, but it does also happen if two similar reactions are defined or if two subsets of reaction forces span the same space.</p>
+<p>This message may be handled as an error as well as a warning, that allows you to continue, if possible. In any case it is however recommended to stop and make sure the system is properly defined. Generally, it is not advisable to work with systems containing redundant constraints, because they may lead to indeterminacies depending on the system and the solver. The solver will typically try to select a subset of reactions to edal with, negleting the rest and this choice may be rather arbitrary</p>
+<p>The message may be accompanied by a list of the reaction forces that is neglected by the solver. This does not mean that these are the actual cause of the error, but the error is related to the function they have and othes reactions with similar functions.</p>
+</div></blockquote>
+</div>
+</div>
+<div class="section" id="obj-mch-surf">
+<h2><code class="docutils literal notranslate"><span class="pre">OBJ.MCH.SURF</span></code><a class="headerlink" href="#obj-mch-surf" title="Permalink to this headline">¶</a></h2>
+<div class="html-toggle list-entries odd section" id="obj-mch-surf1">
+<span id="id31"></span><h3>OBJ.MCH.SURF1<a class="headerlink" href="#obj-mch-surf1" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">Severity</dt>
+<dd class="field-odd"><p>Important warning</p>
+</dd>
+<dt class="field-even">Error</dt>
+<dd class="field-even"><p>Degenerated triangles found in surface file :  ‘additional message’</p>
+</dd>
+</dl>
+<p>This warning indicates that there are problems with degenerated triangles in the surface file. These degenerated tringles can cause problems for calculations on the surface, e.g. using the class AnyForceSurfaceContact. The “additional message” will give details.</p>
+<p>To avoid this, please check the surface and collapse edges with a length smaller than 1e-4.</p>
+</div></blockquote>
+</div>
+<div class="html-toggle list-entries even section" id="obj-mch-surf2">
+<span id="id32"></span><h3>OBJ.MCH.SURF2<a class="headerlink" href="#obj-mch-surf2" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">Severity</dt>
+<dd class="field-odd"><p>Message/notice</p>
+</dd>
+<dt class="field-even">Error</dt>
+<dd class="field-even"><p>Open Surface found :  ‘additional message’</p>
+</dd>
+</dl>
+<p>This notice indicates that the surface is an open surface and has a boundary or maybe a hole.</p>
+</div></blockquote>
+</div>
+</div>
+<div class="section" id="obj-mch-mus">
+<h2><code class="docutils literal notranslate"><span class="pre">OBJ.MCH.MUS</span></code><a class="headerlink" href="#obj-mch-mus" title="Permalink to this headline">¶</a></h2>
+<div class="html-toggle list-entries odd section" id="obj-mch-mus1">
+<span id="id33"></span><h3>OBJ.MCH.MUS1<a class="headerlink" href="#obj-mch-mus1" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">Severity</dt>
+<dd class="field-odd"><p>Important warning</p>
+</dd>
+<dt class="field-even">Error</dt>
+<dd class="field-even"><p>The muscles in the model are not loaded due to kinetically over-constrained mechanical system.</p>
+</dd>
+</dl>
+<p>This message is send when the model contains the same number of (or more) independent reaction forces than degrees of freedom. This implies that these reaction forces carries all directions of the applied load, and thus the muscles will not be loaded at all.</p>
+<p>This is typically an error in the model, though it from a mathematical point is a acceptable situation, but with a trivial solution. The solution (if consideredas an error) is to remove reaction forces or to switch off their force carrying capability.This implies to open for the loads in the associated degrees of freedom to be carried by the muscles.</p>
+<p>For more information on how to switch off existing reaction forces, please refer to the AnyScript class <a class="reference internal" href="../classes/AnyReacForce.html#anyreacforce"><span class="std std-ref">AnyReacForce</span></a> and its use class <a class="reference internal" href="../classes/AnyKinEq.html#anykineq"><span class="std std-ref">AnyKinEq</span></a> and derived classes.</p>
+</div></blockquote>
+</div>
+<div class="html-toggle list-entries even section" id="obj-mch-mus2">
+<span id="id34"></span><h3>OBJ.MCH.MUS2<a class="headerlink" href="#obj-mch-mus2" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">Severity</dt>
+<dd class="field-odd"><p>Important warning</p>
+</dd>
+<dt class="field-even">Error</dt>
+<dd class="field-even"><p>Muscle without strength  :  ‘additional message’</p>
+</dd>
+</dl>
+<p>This warning indicates that a muscle has lost its strength, for instance because it has been strected beyond its for producing range. This may indeed be intensionally and it is as such no error. The “additional message” provides more information about the reason in the particular case.</p>
+<p>This error is handled by the muscle so that it is send only once during a simulation analysis.  This implies that the issue may occur several times independently of each other without additional notice. It may be advisable to inspect the strength variation of the particular muscle in the output of the analysis.</p>
+</div></blockquote>
+</div>
+<div class="html-toggle list-entries odd section" id="obj-mch-mus3">
+<span id="id35"></span><h3>OBJ.MCH.MUS3<a class="headerlink" href="#obj-mch-mus3" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">Severity</dt>
+<dd class="field-odd"><p>Important warning</p>
+</dd>
+<dt class="field-even">Error</dt>
+<dd class="field-even"><p>Overloaded muscle configuration.</p>
+</dd>
+</dl>
+<p>This warning indicates that the upper bounds for the muscle configuration could not be satisfied with the current muscle recruitment settings. For debugging and inspection purposes, the solution to the inverse kinematic analysis for this timestep has been replaced with the MinMaxStrict solution disregarding upper bounds on muscle activities.  As a result, the solution will exhibit discontinuities, and should only be used with great care.  To eliminate this warning, the load on the model should be decreased.</p>
+</div></blockquote>
+</div>
+<div class="html-toggle list-entries even section" id="obj-mch-mus4">
+<span id="id36"></span><h3>OBJ.MCH.MUS4<a class="headerlink" href="#obj-mch-mus4" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">Severity</dt>
+<dd class="field-odd"><p>Fatal error</p>
+</dd>
+<dt class="field-even">Error</dt>
+<dd class="field-even"><p>Muscle recruitment solver :  ‘additional message’</p>
+</dd>
+</dl>
+<p>The muscle recruitment problem is solved by numerical optimization. If the numerical solver routines fails to solve the problem, this message is generated including the additional message explaining the problem.</p>
+</div></blockquote>
+</div>
+<div class="html-toggle list-entries odd section" id="obj-mch-mus5">
+<span id="id37"></span><h3>OBJ.MCH.MUS5<a class="headerlink" href="#obj-mch-mus5" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">Severity</dt>
+<dd class="field-odd"><p>Fatal error</p>
+</dd>
+<dt class="field-even">Error</dt>
+<dd class="field-even"><p>Muscle recruitment problem is indeterminate :  ‘additional message’</p>
+</dd>
+</dl>
+<p>Muscle recruitment problems can become indeterminate for various reasons. An additional message may describe the particular circumstances.</p>
+<p>Some typical reasons are
+1) The primary term in the muscle recruitment objective function must always be active, i.e., PrimaryTerm.Weight must always be positive.</p>
+<ol class="arabic simple" start="2">
+<li><p>A min-max muscle recruitment criterion is inheriently indeterminate if not supplied with additional conditions. The MR_MinMaxStrict remidies this by enfocing the min-max condition iteratively and MR_MinMaxAux allows you to specify auxillary terms in the muscle recruitment objective. In the latter case, it is naturally important that all the auxially terms are not zero; for instance should AuxLinearTerm.Weight and AuxQuadrticTerm.Weight not both be zero.</p></li>
+</ol>
+</div></blockquote>
+</div>
+<div class="html-toggle list-entries even section" id="obj-mch-mus6">
+<span id="id38"></span><h3>OBJ.MCH.MUS6<a class="headerlink" href="#obj-mch-mus6" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">Severity</dt>
+<dd class="field-odd"><p>Important notice</p>
+</dd>
+<dt class="field-even">Error</dt>
+<dd class="field-even"><p>Muscle calibration :  ‘additional message’</p>
+</dd>
+</dl>
+<p>The supplied additional message is typically one of the following:
+1) The tendon/fiber length of the muscle was calibrated according to the executed muscle calibration and the muscle model properties have been updated.
+2) Muscle was not calibrated. This type of muscle model is not supported by this calibration operation.
+3) Calibration failed.
+4) Insufficient room for the tendon of muscle. The muscle fiber length has been automatically reduced. (Operation TendonLengthAdjustment only)
+5) Insufficient Lmt interval for simultaneous muscle fiber and tendon calibration; the difference between Rmin and Rmax must be larger. Currently, no room for tendon, Rmax will be used to set fiber length and tendon set to minimum value (Operation FiberAndTendonLengthAdjustment only)</p>
+</div></blockquote>
+</div>
+<div class="html-toggle list-entries odd section" id="obj-mch-mus7">
+<span id="id39"></span><h3>OBJ.MCH.MUS7<a class="headerlink" href="#obj-mch-mus7" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">Severity</dt>
+<dd class="field-odd"><p>Important notice</p>
+</dd>
+<dt class="field-even">Error</dt>
+<dd class="field-even"><p>Ligament calibration :  ‘additional message’</p>
+</dd>
+</dl>
+<p>The supplied additional message is typically one of the following:
+1) The length of ligament was calibrated and the ligament model properties have been updated.
+2) Ligament was not calibrated. This type of ligament is not supported by this calibration operation.
+3) Calibration failed.</p>
+</div></blockquote>
+</div>
+<div class="html-toggle list-entries even section" id="obj-mch-mus8">
+<span id="id40"></span><h3>OBJ.MCH.MUS8<a class="headerlink" href="#obj-mch-mus8" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">Severity</dt>
+<dd class="field-odd"><p>Error</p>
+</dd>
+<dt class="field-even">Error</dt>
+<dd class="field-even"><p>Metabolic model :  ‘additional message’</p>
+</dd>
+</dl>
+<p>This type of message indicates an issue occuring in a muscle model, typically associated with a given muscle that it was applied to. If the message is muscle-specific, the muscle is indicated in the message.For similar issues occuring during an operation, the message may only be sent for a selected subset of the muscles in the model due to the typically large amount of muscles.</p>
+</div></blockquote>
+</div>
+<div class="html-toggle list-entries odd section" id="obj-mch-mus9">
+<span id="id41"></span><h3>OBJ.MCH.MUS9<a class="headerlink" href="#obj-mch-mus9" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">Severity</dt>
+<dd class="field-odd"><p>Error</p>
+</dd>
+<dt class="field-even">Error</dt>
+<dd class="field-even"><p>Metabolic model :  ‘additional message’</p>
+</dd>
+</dl>
+<p>This type of message indicates an issue occuring in a metabolic model, typically associated with a given muscle that it was applied to. If the message is muscle specific, the muscle is indicated in the message.For similar issues occuring during an operation, the message may only be sent for a selected subset of the muscles in the model due to the typically large amount of muscles.</p>
+</div></blockquote>
+</div>
+</div>
+<div class="section" id="obj-des">
+<h2><code class="docutils literal notranslate"><span class="pre">OBJ.DES</span></code><a class="headerlink" href="#obj-des" title="Permalink to this headline">¶</a></h2>
+<div class="html-toggle list-entries odd section" id="obj-des1">
+<span id="id42"></span><h3>OBJ.DES1<a class="headerlink" href="#obj-des1" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">Severity</dt>
+<dd class="field-odd"><p>Fatal error</p>
+</dd>
+<dt class="field-even">Error</dt>
+<dd class="field-even"><p>Wrong initialization of ‘ClassName’ linking to value ‘ObjectName’ :
+‘additional message’</p>
+</dd>
+</dl>
+<p>An AnyVarRef can only be equal to a single, independent, scalar quantity. The reason is that a AnyVarRef also function as a link in the opposite direction of the normal initialization, i.e., an AnyVarRef can (during runtime) transfer values from itself to the AnyValue object it is linked to (its dependency) This is only possible if there is a one-to-one correspondence and the evaluation moments of left and right-hand side match completely. The dependency is typically created by an AnyScript initialization of the AnyVarRef with the depedency given by the left-hand side of the expression. but it can also be created internally, e.g. by an owner object of the AnyVarRef.</p>
+<blockquote>
+<div><p>Typical errors:</p>
+<ul class="simple">
+<li><p>The right-hand side is an expression of multiple other AnyValues.</p></li>
+<li><p>The right-hand side is an :ref`AnyValue` with multiple elements (without proper indicies to refer to a particular element).</p></li>
+<li><p>The right-hand side Evaluation Moment does not match the left-hand side .
+(This could cause unpredictable overwriting of values after they are updated by the AnyVarRef object and it is therefore not allowed.)</p></li>
+</ul>
+</div></blockquote>
+<p>Please see the reference page on the <a class="reference internal" href="../classes/AnyVarRef.html#anyvarref"><span class="std std-ref">AnyVarRef</span></a> class for further details.</p>
+</div></blockquote>
+</div>
+<div class="html-toggle list-entries even section" id="obj-des2">
+<span id="id43"></span><h3>OBJ.DES2<a class="headerlink" href="#obj-des2" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">Severity</dt>
+<dd class="field-odd"><p>Fatal error</p>
+</dd>
+<dt class="field-even">Error</dt>
+<dd class="field-even"><p>Optimization failed :  ‘additional message’</p>
+</dd>
+</dl>
+<p>When this error arise, the optimization process has broken down before convergence. This is typically due to some sort of numerical issue and the particular reason is therefore problem and solver dependent. It could be the optimization problem that does not behave well, or the solver or solver settings not being well-suited for the problem.</p>
+</div></blockquote>
+</div>
+<div class="html-toggle list-entries odd section" id="obj-des3">
+<span id="id44"></span><h3>OBJ.DES3<a class="headerlink" href="#obj-des3" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">Severity</dt>
+<dd class="field-odd"><p>Fatal error</p>
+</dd>
+<dt class="field-even">Error</dt>
+<dd class="field-even"><p>Design initialization :  ‘additional message’</p>
+</dd>
+</dl>
+<p>This message accompanies issues occuring while manipulating design values, i.e., the values of design variable objects (class AnyDesVar). This can for instance be while loading design values from (or saving to) external files</p>
+</div></blockquote>
+</div>
+<div class="html-toggle list-entries even section" id="obj-des4">
+<span id="id45"></span><h3>OBJ.DES4<a class="headerlink" href="#obj-des4" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">Severity</dt>
+<dd class="field-odd"><p>Fatal error</p>
+</dd>
+<dt class="field-even">Error</dt>
+<dd class="field-even"><p>Design variable bounds must be specified</p>
+</dd>
+</dl>
+<p>Some types design analysis may require the bounds (Min and Max) of the design variable to be specified by the user. These values may be bounding the parameter space to be analyzed or used for scaling the problem.
+This error message accompanies missing bound specification.</p>
+</div></blockquote>
+</div>
+</div>
+<div class="section" id="obj-anydata">
+<h2><code class="docutils literal notranslate"><span class="pre">OBJ.ANYDATA</span></code><a class="headerlink" href="#obj-anydata" title="Permalink to this headline">¶</a></h2>
+<div class="html-toggle list-entries odd section" id="obj-anydata1">
+<span id="id46"></span><h3>OBJ.ANYDATA1<a class="headerlink" href="#obj-anydata1" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">Severity</dt>
+<dd class="field-odd"><p>Fatal error</p>
+</dd>
+<dt class="field-even">Error</dt>
+<dd class="field-even"><p>ANYDATA file object :  ‘MessageString’</p>
+</dd>
+</dl>
+<p>ANYDATA format is an hdf(h5)-based binary file format. Errors and other important issues related to reading and writing this type of files are accompanied with this message. A detailed decription std::string explain the actual issue</p>
+</div></blockquote>
+</div>
+</div>
+<div class="section" id="obj-c3d">
+<h2><code class="docutils literal notranslate"><span class="pre">OBJ.C3D</span></code><a class="headerlink" href="#obj-c3d" title="Permalink to this headline">¶</a></h2>
+<div class="html-toggle list-entries odd section" id="obj-c3d1">
+<span id="id47"></span><h3>OBJ.C3D1<a class="headerlink" href="#obj-c3d1" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">Severity</dt>
+<dd class="field-odd"><p>Fatal error</p>
+</dd>
+<dt class="field-even">Error</dt>
+<dd class="field-even"><p>Model is kinetically indeterminate :  ‘additional message’</p>
+</dd>
+</dl>
+<p>This error implies that the model contains fewer unknown forces than equations and it is therefore not solvable.
+The additional message may provide further information about the particular problem.</p>
+</div></blockquote>
+</div>
+</div>
+<div class="section" id="obj-math">
+<h2><code class="docutils literal notranslate"><span class="pre">OBJ.MATH</span></code><a class="headerlink" href="#obj-math" title="Permalink to this headline">¶</a></h2>
+<div class="html-toggle list-entries odd section" id="obj-math1">
+<span id="id48"></span><h3>OBJ.MATH1<a class="headerlink" href="#obj-math1" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">Severity</dt>
+<dd class="field-odd"><p>Fatal error</p>
+</dd>
+<dt class="field-even">Error</dt>
+<dd class="field-even"><p>Convergence failed :  ‘additional message’</p>
+</dd>
+</dl>
+<p>A numerical routine failed to converge. The “additional message” may provide more detail about the particular reason.</p>
+</div></blockquote>
+</div>
+<div class="html-toggle list-entries even section" id="obj-math2">
+<span id="id49"></span><h3>OBJ.MATH2<a class="headerlink" href="#obj-math2" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">Severity</dt>
+<dd class="field-odd"><p>Fatal error</p>
+</dd>
+<dt class="field-even">Error</dt>
+<dd class="field-even"><p>Solver setting error :  ‘additional message’</p>
+</dd>
+</dl>
+<p>Settings specified for the referred solver object are not functional. The “additional message” may provide more detail about the particular reason.</p>
+</div></blockquote>
+</div>
+</div>
+<div class="section" id="obj-lib-oos">
+<h2><code class="docutils literal notranslate"><span class="pre">OBJ.LIB.OOS</span></code><a class="headerlink" href="#obj-lib-oos" title="Permalink to this headline">¶</a></h2>
+<div class="html-toggle list-entries odd section" id="obj-lib-oos1">
+<span id="id50"></span><h3>OBJ.LIB.OOS1<a class="headerlink" href="#obj-lib-oos1" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">Severity</dt>
+<dd class="field-odd"><p>Fatal error</p>
+</dd>
+<dt class="field-even">Error</dt>
+<dd class="field-even"><p>Unexpected exception in the library OOSol :
+OOSol exception : ‘exception description’.</p>
+</dd>
+</dl>
+<p>A routine in the OOSol library failed unexpectedly. The “exception description” may provide more detail about the particular reason.</p>
+<p>Such failures can be and is most typically due to wrong input to the library routines. This implies that the error could be in the calling AnyObject, either its body or its parameters.</p>
+<p>OOSol functionality is for instance used in AnyKinSPLine, whch is part of muscle wrapping functionality. This type of error, if send from a muscle object, can therefore indicate that the muscle wrapping setup is poor; for instance too few wrapping points on curve compared to the surface curvatures.</p>
+<div class="error-seealso admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference external" href="https://github.com/AnyBody/support/wiki/Errors#OBJ.LIB.OOS1">AnyScript WIki for possible causes/resolution to this error</a>.</p>
+</div>
+</div></blockquote>
+</div>
+</div>
+</div>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+        <p class="logo"><a href="../../index.html" title="index">
+          <img class="logo" src="../../_static/anyscript_maual.svg" alt="Logo"/>
+        </a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+<h3><a href="../../contents.html">Reference Manual</a></h3>
+<p class="caption"><span class="caption-text">API</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../class-overview.html"><strong>Class reference</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../function-overview.html"><strong>Function reference</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../globals-overview.html">Globals reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../environment.html">Environment variables</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Errors, warnings and messages</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="SYS.html">System Messages (<code class="docutils literal notranslate"><span class="pre">SYS</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SCR.html">Kernel Messages (<code class="docutils literal notranslate"><span class="pre">SCR</span></code>)</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">AnyScript Objects Messages (<code class="docutils literal notranslate"><span class="pre">OBJ</span></code>)</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Language</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../anyscript/language.html">AnyScript™ language</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../anyscript/preprocessor.html">The preprocessor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../anyscript/inside-anybody.html">Inside the AnyBody Modeling System</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../anyscript/technical-notes.html">Technical notes</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../demos/index.html">Demo examples</a></li>
+</ul>
+<div class="sphinxprev">
+    <h4>Other resources</h4>
+    <p class="topless"><a href="../../../index.html"
+                          title="Back to all manuals">&larr; Back to all manuals</a></p>
+</div>
+        </div>
+      </div>
+    
+    
+        <div class="sidebar-toggle-group no-js">
+            
+            <button class="sidebar-toggle" id="sidebar-hide" title="Hide the sidebar menu">
+                 «
+                <span class="show-for-small">hide menu</span>
+                
+            </button>
+            <button class="sidebar-toggle" id="sidebar-show" title="Show the sidebar menu">
+                
+                <span class="show-for-small">menu</span>
+                <span class="hide-for-small">sidebar</span>
+                 »
+            </button>
+        </div>
+    
+      <div class="clearer"></div>
+    </div>
+    <div class="relbar-bottom">
+        
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../contents.html" title="Table Of Contents"
+             >toc</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="MPRS.html" title="Macro Parser Messages (MPRS)"
+             >next</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="SCR.html" title="Kernel Messages (SCR)"
+             >previous</a> &nbsp; &nbsp;</li>
+    <li><a href="../../index.html">AnyScript Reference 7.3.4 documentation</a> &#187;</li>
+
+          <li class="nav-item nav-item-1"><a href="index.html" >Errors, warnings and messages</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">AnyScript Objects Messages (<code class="docutils literal notranslate"><span class="pre">OBJ</span></code>)</a></li> 
+      </ul>
+    </div>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2021, AnyBody Technology A/S.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.5.4.
+    </div>
+    <!-- cloud_sptheme 1.4 -->
+  </body>
+</html>

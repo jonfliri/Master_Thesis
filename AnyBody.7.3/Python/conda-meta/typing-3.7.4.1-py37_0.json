@@ -1,0 +1,101 @@
+{
+  "arch": "x86_64",
+  "build": "py37_0",
+  "build_number": 0,
+  "channel": "https://repo.anaconda.com/pkgs/main/win-64",
+  "constrains": [],
+  "depends": [
+    "python >=3.7,<3.8.0a0"
+  ],
+  "extracted_package_dir": "C:\\Anaconda3_64\\pkgs\\typing-3.7.4.1-py37_0",
+  "features": "",
+  "files": [
+    "Lib/site-packages/__pycache__/typing.cpython-37.pyc",
+    "Lib/site-packages/typing-3.7.4.1.dist-info/INSTALLER",
+    "Lib/site-packages/typing-3.7.4.1.dist-info/LICENSE",
+    "Lib/site-packages/typing-3.7.4.1.dist-info/METADATA",
+    "Lib/site-packages/typing-3.7.4.1.dist-info/RECORD",
+    "Lib/site-packages/typing-3.7.4.1.dist-info/WHEEL",
+    "Lib/site-packages/typing-3.7.4.1.dist-info/top_level.txt",
+    "Lib/site-packages/typing.py"
+  ],
+  "fn": "typing-3.7.4.1-py37_0.conda",
+  "license": "PSF",
+  "link": {
+    "source": "C:\\Anaconda3_64\\pkgs\\typing-3.7.4.1-py37_0",
+    "type": 1
+  },
+  "md5": "2e6728f7b5f087a16fc8835ad346e420",
+  "name": "typing",
+  "package_tarball_full_path": "C:\\Anaconda3_64\\pkgs\\typing-3.7.4.1-py37_0.conda",
+  "paths_data": {
+    "paths": [
+      {
+        "_path": "Lib/site-packages/__pycache__/typing.cpython-37.pyc",
+        "path_type": "hardlink",
+        "sha256": "770b1d287ab935f0d225eb9e2bfcf9b304941b874f8cc74eb2ca7744e82a9ffe",
+        "sha256_in_prefix": "770b1d287ab935f0d225eb9e2bfcf9b304941b874f8cc74eb2ca7744e82a9ffe",
+        "size_in_bytes": 73628
+      },
+      {
+        "_path": "Lib/site-packages/typing-3.7.4.1.dist-info/INSTALLER",
+        "path_type": "hardlink",
+        "sha256": "d0edee15f91b406f3f99726e44eb990be6e34fd0345b52b910c568e0eef6a2a8",
+        "sha256_in_prefix": "d0edee15f91b406f3f99726e44eb990be6e34fd0345b52b910c568e0eef6a2a8",
+        "size_in_bytes": 5
+      },
+      {
+        "_path": "Lib/site-packages/typing-3.7.4.1.dist-info/LICENSE",
+        "path_type": "hardlink",
+        "sha256": "ff17ce94e102024deb68773eb1cc74ca76da4e658f373531f0ac22d68a6bb1ad",
+        "sha256_in_prefix": "ff17ce94e102024deb68773eb1cc74ca76da4e658f373531f0ac22d68a6bb1ad",
+        "size_in_bytes": 12755
+      },
+      {
+        "_path": "Lib/site-packages/typing-3.7.4.1.dist-info/METADATA",
+        "path_type": "hardlink",
+        "sha256": "6c32b7db7759d3ab32e400d6664c01a60aba8d2f67c040988c0da8cac7c68de8",
+        "sha256_in_prefix": "6c32b7db7759d3ab32e400d6664c01a60aba8d2f67c040988c0da8cac7c68de8",
+        "size_in_bytes": 1798
+      },
+      {
+        "_path": "Lib/site-packages/typing-3.7.4.1.dist-info/RECORD",
+        "path_type": "hardlink",
+        "sha256": "df7a5968ba16b37fefad0b585b30a5fec89db2876d46cb8ff3e20daaa10164f7",
+        "sha256_in_prefix": "df7a5968ba16b37fefad0b585b30a5fec89db2876d46cb8ff3e20daaa10164f7",
+        "size_in_bytes": 590
+      },
+      {
+        "_path": "Lib/site-packages/typing-3.7.4.1.dist-info/WHEEL",
+        "path_type": "hardlink",
+        "sha256": "61463343a510768ab15e38a63a2b53ab29e5b410a4c18eaa9537d3876233a905",
+        "sha256_in_prefix": "61463343a510768ab15e38a63a2b53ab29e5b410a4c18eaa9537d3876233a905",
+        "size_in_bytes": 97
+      },
+      {
+        "_path": "Lib/site-packages/typing-3.7.4.1.dist-info/top_level.txt",
+        "path_type": "hardlink",
+        "sha256": "a06f1008c4d171f7201a91156ddc015360ccf0cb618e66520da690e96587c78a",
+        "sha256_in_prefix": "a06f1008c4d171f7201a91156ddc015360ccf0cb618e66520da690e96587c78a",
+        "size_in_bytes": 7
+      },
+      {
+        "_path": "Lib/site-packages/typing.py",
+        "path_type": "hardlink",
+        "sha256": "25f1a06b4f1e27f009fa7fc45f9107b438cd348e61efdad8497b9c89b3bac8d8",
+        "sha256_in_prefix": "25f1a06b4f1e27f009fa7fc45f9107b438cd348e61efdad8497b9c89b3bac8d8",
+        "size_in_bytes": 80432
+      }
+    ],
+    "paths_version": 1
+  },
+  "platform": "win32",
+  "requested_spec": "defaults/win-64::typing==3.7.4.1=py37_0",
+  "sha256": "19d2fa1e9921c6059c4c408b1e28f022c94b600c744ddb49f33cb5abe2d52b43",
+  "size": 50460,
+  "subdir": "win-64",
+  "timestamp": 1592230055366,
+  "track_features": "",
+  "url": "https://repo.anaconda.com/pkgs/main/win-64/typing-3.7.4.1-py37_0.conda",
+  "version": "3.7.4.1"
+}

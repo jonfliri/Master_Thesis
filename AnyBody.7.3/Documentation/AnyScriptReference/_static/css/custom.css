@@ -1,0 +1,193 @@
+div .multicolumn-toc { column-count: 2; }
+
+div .multicolumn-toc > ul {
+    margin: 0;
+    list-style-type: none;
+    padding: 0;
+}
+
+div
+
+
+th > p:first-child,
+td > p:first-child,
+li > p:first-child,
+dt > p:first-child,
+dd > p:first-child,
+dl > p:first-child {
+    margin-top: 0px;
+}
+
+th > p:last-child,
+td > p:last-child,
+li > p:last-child,
+dt > p:last-child,
+dd > p:last-child,
+dl > p:last-child {
+    margin-bottom: 0px;
+}
+
+table.classtable, table.functiontable {
+  width: 100%;
+}
+
+table.classtable tbody tr:nth-child(1),
+table.classtable tbody tr:nth-child(2) {
+    display: none;
+ }
+
+ /* table.classtable tbody tr.class-type-abstract {
+    display: none;
+ } */
+
+
+.html-toggle.collapsed > .html-toggle-button:after {  content: "+";}
+.html-toggle.expanded > .html-toggle-button:after { content: "-";}
+.html-toggle.expanded > blockquote {
+  background-color:#E7F0FE;
+  margin: 0.705em 0 0.705em 0;
+  padding: .5em 1em;
+  border: 1px solid rgba(0,0,0,.05);
+  border-width: 1px 0;
+  font-size:80%;
+} /* adds colored box to expanded text*/
+
+.html-toggle.expanded > .html-toggle-button {
+  font-weight:bold;
+  }
+
+  classtable table {
+    width: 90%;
+    margin: 5%;
+  }
+
+.html-toggle-button:after
+{
+    position: relative;
+    top: -0.15em;
+    margin: 0;
+    padding: 0.15em 0.3em;
+    text-shadow: none;
+    font-size: 100%;
+    font-style: normal;
+    font-weight: bold;
+    border: 1px solid transparent;
+    float: right;
+}
+/* attempt to crop out white space above demo-entities/*
+/* // @mixin lhCrop($line-height) {
+//   &::before {
+//     content: '';
+//     display: block;
+//     height: 0;
+//     width: 0;
+//     margin-top: calc((1 - #{$line-height}) * 0.5em);
+//   }
+// } */
+/* need to add this section to where the white space occurs/*
+/* //   .text-to-crop {
+//   @include lhCrop(1.2, 0.75); //using Roboto font family
+// } */
+
+span.list-descr {
+  position: absolute;
+  left: 30%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 65%;
+}
+
+span.list-title {
+    position: relative;
+    left:1%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width:27%;
+  }
+
+span.member-title,
+span.member-title-equal,
+span.member-title-default {
+    font-family: "Droid Sans Mono", monospace;
+    font-size: 90%;
+}
+
+  /* td {
+    word-break: break-word;
+  } */
+
+span.member-descr {
+    position: absolute;
+    left: 55%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 43%;
+    color: #b6b6b6;
+    font-size: 80%;
+}
+
+
+div .list-entries > h3, div .member-entries > h3 {
+   font-size: 100%;
+   margin:0 !important;
+   padding: 4px !important;
+ }
+
+ div .list-entries > h4, div .member-entries  > h4 {
+   font-size: 100%;
+   margin:0;
+   padding: 4px !important;
+ }
+
+
+
+
+.list-entries.odd > h3, .member-entries.odd > h3 {
+  background-color: rgb(240,240,240);
+}
+.list-entries.odd > h4, .member-entries.odd > h4 {
+  background-color: rgb(240,240,240);
+}
+
+.highlighted {
+    background-color: rgb(251, 229, 78) !important;
+}
+
+
+
+div .multicolumn-toc > ul > .toctree-l1 {
+    margin: 0;
+    -webkit-column-break-inside: avoid;
+    page-break-inside: avoid;
+    break-inside: avoid-column;
+}
+
+div .multicolumn-toc > ul > li a:hover:not(.header) {
+background-color: #eee; /* Add a hover effect to all links, except for headers */
+}
+
+.filter-search-input {
+    background-image: url('_static/css/searchicon.png'); /* Add a search icon to input */
+    background-position: 10px 12px; /* Position the search icon */
+    background-repeat: no-repeat; /* Do not repeat the icon image */
+    width: 100%; /* Full-width */
+    font-size: 16px; /* Increase font-size */
+    padding: 12px 20px 12px 40px; /* Add some padding */
+    border: 1px solid #ddd; /* Add a grey border */
+    margin-bottom: 12px; /* Add some space below the input */
+  }
+
+
+  div .multicolumn-toc > ul > li > a {
+    border: 1px solid #ddd; /* Add a border to all links */
+    margin-top: -1px; /* Prevent double borders */
+    background-color: #f6f6f6; /* Grey background color */
+    padding: 12px; /* Add some padding */
+    text-decoration: none; /* Remove default text underline */
+    font-size: 18px; /* Increase the font-size */
+    color: #0909f0e3; /* Add a black text color */
+    display: block; /* Make it into a block element to fill the whole list */
+  }

@@ -1,0 +1,592 @@
+{
+  "arch": "x86_64",
+  "build": "py37ha925a31_0",
+  "build_number": 0,
+  "channel": "https://repo.anaconda.com/pkgs/main/win-64",
+  "constrains": [],
+  "depends": [
+    "python >=3.7,<3.8.0a0",
+    "six >=1.7.2",
+    "vc >=14.1,<15.0a0",
+    "vs2015_runtime >=14.16.27012,<15.0a0"
+  ],
+  "extracted_package_dir": "C:\\Anaconda3_64\\pkgs\\thrift-0.13.0-py37ha925a31_0",
+  "features": "",
+  "files": [
+    "Lib/site-packages/thrift-0.13.0-py3.7.egg-info/PKG-INFO",
+    "Lib/site-packages/thrift-0.13.0-py3.7.egg-info/SOURCES.txt",
+    "Lib/site-packages/thrift-0.13.0-py3.7.egg-info/dependency_links.txt",
+    "Lib/site-packages/thrift-0.13.0-py3.7.egg-info/not-zip-safe",
+    "Lib/site-packages/thrift-0.13.0-py3.7.egg-info/requires.txt",
+    "Lib/site-packages/thrift-0.13.0-py3.7.egg-info/top_level.txt",
+    "Lib/site-packages/thrift/TMultiplexedProcessor.py",
+    "Lib/site-packages/thrift/TRecursive.py",
+    "Lib/site-packages/thrift/TSCons.py",
+    "Lib/site-packages/thrift/TSerialization.py",
+    "Lib/site-packages/thrift/TTornado.py",
+    "Lib/site-packages/thrift/Thrift.py",
+    "Lib/site-packages/thrift/__init__.py",
+    "Lib/site-packages/thrift/__pycache__/TMultiplexedProcessor.cpython-37.pyc",
+    "Lib/site-packages/thrift/__pycache__/TRecursive.cpython-37.pyc",
+    "Lib/site-packages/thrift/__pycache__/TSCons.cpython-37.pyc",
+    "Lib/site-packages/thrift/__pycache__/TSerialization.cpython-37.pyc",
+    "Lib/site-packages/thrift/__pycache__/TTornado.cpython-37.pyc",
+    "Lib/site-packages/thrift/__pycache__/Thrift.cpython-37.pyc",
+    "Lib/site-packages/thrift/__pycache__/__init__.cpython-37.pyc",
+    "Lib/site-packages/thrift/__pycache__/compat.cpython-37.pyc",
+    "Lib/site-packages/thrift/compat.py",
+    "Lib/site-packages/thrift/protocol/TBase.py",
+    "Lib/site-packages/thrift/protocol/TBinaryProtocol.py",
+    "Lib/site-packages/thrift/protocol/TCompactProtocol.py",
+    "Lib/site-packages/thrift/protocol/THeaderProtocol.py",
+    "Lib/site-packages/thrift/protocol/TJSONProtocol.py",
+    "Lib/site-packages/thrift/protocol/TMultiplexedProtocol.py",
+    "Lib/site-packages/thrift/protocol/TProtocol.py",
+    "Lib/site-packages/thrift/protocol/TProtocolDecorator.py",
+    "Lib/site-packages/thrift/protocol/__init__.py",
+    "Lib/site-packages/thrift/protocol/__pycache__/TBase.cpython-37.pyc",
+    "Lib/site-packages/thrift/protocol/__pycache__/TBinaryProtocol.cpython-37.pyc",
+    "Lib/site-packages/thrift/protocol/__pycache__/TCompactProtocol.cpython-37.pyc",
+    "Lib/site-packages/thrift/protocol/__pycache__/THeaderProtocol.cpython-37.pyc",
+    "Lib/site-packages/thrift/protocol/__pycache__/TJSONProtocol.cpython-37.pyc",
+    "Lib/site-packages/thrift/protocol/__pycache__/TMultiplexedProtocol.cpython-37.pyc",
+    "Lib/site-packages/thrift/protocol/__pycache__/TProtocol.cpython-37.pyc",
+    "Lib/site-packages/thrift/protocol/__pycache__/TProtocolDecorator.cpython-37.pyc",
+    "Lib/site-packages/thrift/protocol/__pycache__/__init__.cpython-37.pyc",
+    "Lib/site-packages/thrift/protocol/fastbinary.cp37-win_amd64.pyd",
+    "Lib/site-packages/thrift/server/THttpServer.py",
+    "Lib/site-packages/thrift/server/TNonblockingServer.py",
+    "Lib/site-packages/thrift/server/TProcessPoolServer.py",
+    "Lib/site-packages/thrift/server/TServer.py",
+    "Lib/site-packages/thrift/server/__init__.py",
+    "Lib/site-packages/thrift/server/__pycache__/THttpServer.cpython-37.pyc",
+    "Lib/site-packages/thrift/server/__pycache__/TNonblockingServer.cpython-37.pyc",
+    "Lib/site-packages/thrift/server/__pycache__/TProcessPoolServer.cpython-37.pyc",
+    "Lib/site-packages/thrift/server/__pycache__/TServer.cpython-37.pyc",
+    "Lib/site-packages/thrift/server/__pycache__/__init__.cpython-37.pyc",
+    "Lib/site-packages/thrift/transport/THeaderTransport.py",
+    "Lib/site-packages/thrift/transport/THttpClient.py",
+    "Lib/site-packages/thrift/transport/TSSLSocket.py",
+    "Lib/site-packages/thrift/transport/TSocket.py",
+    "Lib/site-packages/thrift/transport/TTransport.py",
+    "Lib/site-packages/thrift/transport/TTwisted.py",
+    "Lib/site-packages/thrift/transport/TZlibTransport.py",
+    "Lib/site-packages/thrift/transport/__init__.py",
+    "Lib/site-packages/thrift/transport/__pycache__/THeaderTransport.cpython-37.pyc",
+    "Lib/site-packages/thrift/transport/__pycache__/THttpClient.cpython-37.pyc",
+    "Lib/site-packages/thrift/transport/__pycache__/TSSLSocket.cpython-37.pyc",
+    "Lib/site-packages/thrift/transport/__pycache__/TSocket.cpython-37.pyc",
+    "Lib/site-packages/thrift/transport/__pycache__/TTransport.cpython-37.pyc",
+    "Lib/site-packages/thrift/transport/__pycache__/TTwisted.cpython-37.pyc",
+    "Lib/site-packages/thrift/transport/__pycache__/TZlibTransport.cpython-37.pyc",
+    "Lib/site-packages/thrift/transport/__pycache__/__init__.cpython-37.pyc",
+    "Lib/site-packages/thrift/transport/__pycache__/sslcompat.cpython-37.pyc",
+    "Lib/site-packages/thrift/transport/sslcompat.py"
+  ],
+  "fn": "thrift-0.13.0-py37ha925a31_0.conda",
+  "license": "Apache 2.0",
+  "link": {
+    "source": "C:\\Anaconda3_64\\pkgs\\thrift-0.13.0-py37ha925a31_0",
+    "type": 1
+  },
+  "md5": "77fa2311865d34c5e0819d82556a11a8",
+  "name": "thrift",
+  "package_tarball_full_path": "C:\\Anaconda3_64\\pkgs\\thrift-0.13.0-py37ha925a31_0.conda",
+  "paths_data": {
+    "paths": [
+      {
+        "_path": "Lib/site-packages/thrift-0.13.0-py3.7.egg-info/PKG-INFO",
+        "path_type": "hardlink",
+        "sha256": "dff43df8098f6f11f4d442ece7e3f63a6a5f5e3591e623e8d7379b4b2934ccdb",
+        "sha256_in_prefix": "dff43df8098f6f11f4d442ece7e3f63a6a5f5e3591e623e8d7379b4b2934ccdb",
+        "size_in_bytes": 2333
+      },
+      {
+        "_path": "Lib/site-packages/thrift-0.13.0-py3.7.egg-info/SOURCES.txt",
+        "path_type": "hardlink",
+        "sha256": "458905d2b4cbe782b517c73f9650e66a1c80faadc4b7982c0441e5a5176e2538",
+        "sha256_in_prefix": "458905d2b4cbe782b517c73f9650e66a1c80faadc4b7982c0441e5a5176e2538",
+        "size_in_bytes": 1316
+      },
+      {
+        "_path": "Lib/site-packages/thrift-0.13.0-py3.7.egg-info/dependency_links.txt",
+        "path_type": "hardlink",
+        "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+        "sha256_in_prefix": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+        "size_in_bytes": 1
+      },
+      {
+        "_path": "Lib/site-packages/thrift-0.13.0-py3.7.egg-info/not-zip-safe",
+        "path_type": "hardlink",
+        "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+        "sha256_in_prefix": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+        "size_in_bytes": 1
+      },
+      {
+        "_path": "Lib/site-packages/thrift-0.13.0-py3.7.egg-info/requires.txt",
+        "path_type": "hardlink",
+        "sha256": "2bc3627d4fcf068f8b76ddbf7733b50a6710e28b9a4bd8ca275efca058aad746",
+        "sha256_in_prefix": "2bc3627d4fcf068f8b76ddbf7733b50a6710e28b9a4bd8ca275efca058aad746",
+        "size_in_bytes": 89
+      },
+      {
+        "_path": "Lib/site-packages/thrift-0.13.0-py3.7.egg-info/top_level.txt",
+        "path_type": "hardlink",
+        "sha256": "0779c573d9366464c7c412292979af5e801dfd29878804fea278ed3f216b1c18",
+        "sha256_in_prefix": "0779c573d9366464c7c412292979af5e801dfd29878804fea278ed3f216b1c18",
+        "size_in_bytes": 7
+      },
+      {
+        "_path": "Lib/site-packages/thrift/TMultiplexedProcessor.py",
+        "path_type": "hardlink",
+        "sha256": "62a707bc87b4e92c25398a8b007fc68ad4617f6d81a73fb690c1332f22fc2bc3",
+        "sha256_in_prefix": "62a707bc87b4e92c25398a8b007fc68ad4617f6d81a73fb690c1332f22fc2bc3",
+        "size_in_bytes": 3337
+      },
+      {
+        "_path": "Lib/site-packages/thrift/TRecursive.py",
+        "path_type": "hardlink",
+        "sha256": "9a4b88412bddcea8ac5af835c56c9573e441aa1bb6eafe9010790d53264393e0",
+        "sha256_in_prefix": "9a4b88412bddcea8ac5af835c56c9573e441aa1bb6eafe9010790d53264393e0",
+        "size_in_bytes": 3333
+      },
+      {
+        "_path": "Lib/site-packages/thrift/TSCons.py",
+        "path_type": "hardlink",
+        "sha256": "3d6f7b338937b8583c8a14f6d187e24beb795b11ae7792fafe044bc72d1781dc",
+        "sha256_in_prefix": "3d6f7b338937b8583c8a14f6d187e24beb795b11ae7792fafe044bc72d1781dc",
+        "size_in_bytes": 1309
+      },
+      {
+        "_path": "Lib/site-packages/thrift/TSerialization.py",
+        "path_type": "hardlink",
+        "sha256": "f59874acca211301b590802ebeb065a508de52ad6021f2276e31997bc0f31bdc",
+        "sha256_in_prefix": "f59874acca211301b590802ebeb065a508de52ad6021f2276e31997bc0f31bdc",
+        "size_in_bytes": 1389
+      },
+      {
+        "_path": "Lib/site-packages/thrift/TTornado.py",
+        "path_type": "hardlink",
+        "sha256": "032de5b82380b25d7283f46ce81e20fea1f2a6466586b7b332f559a24d86b90b",
+        "sha256_in_prefix": "032de5b82380b25d7283f46ce81e20fea1f2a6466586b7b332f559a24d86b90b",
+        "size_in_bytes": 6407
+      },
+      {
+        "_path": "Lib/site-packages/thrift/Thrift.py",
+        "path_type": "hardlink",
+        "sha256": "5f462dda96a390dc217a04c1462d2b85ae2ca00e74d321a443483141460dec3c",
+        "sha256_in_prefix": "5f462dda96a390dc217a04c1462d2b85ae2ca00e74d321a443483141460dec3c",
+        "size_in_bytes": 5843
+      },
+      {
+        "_path": "Lib/site-packages/thrift/__init__.py",
+        "path_type": "hardlink",
+        "sha256": "4483dc4e2110743c7c39245cfd5626a1e46f9b4007e129bbf2b7c923d52056ea",
+        "sha256_in_prefix": "4483dc4e2110743c7c39245cfd5626a1e46f9b4007e129bbf2b7c923d52056ea",
+        "size_in_bytes": 817
+      },
+      {
+        "_path": "Lib/site-packages/thrift/__pycache__/TMultiplexedProcessor.cpython-37.pyc",
+        "path_type": "hardlink",
+        "sha256": "3c6522d6f3d21129de022ff7b4ffd0ceae412817c859ee2c95fb4d3d0988f819",
+        "sha256_in_prefix": "3c6522d6f3d21129de022ff7b4ffd0ceae412817c859ee2c95fb4d3d0988f819",
+        "size_in_bytes": 2772
+      },
+      {
+        "_path": "Lib/site-packages/thrift/__pycache__/TRecursive.cpython-37.pyc",
+        "path_type": "hardlink",
+        "sha256": "1c5a9431edce20bedb9d7ddd584eb79d02072eb56645075ccea01e376dc45c17",
+        "sha256_in_prefix": "1c5a9431edce20bedb9d7ddd584eb79d02072eb56645075ccea01e376dc45c17",
+        "size_in_bytes": 1544
+      },
+      {
+        "_path": "Lib/site-packages/thrift/__pycache__/TSCons.cpython-37.pyc",
+        "path_type": "hardlink",
+        "sha256": "542301b03a6524d8f81ad799b92f4a9188d27f1f56f13358583292cb7f2ab193",
+        "sha256_in_prefix": "542301b03a6524d8f81ad799b92f4a9188d27f1f56f13358583292cb7f2ab193",
+        "size_in_bytes": 908
+      },
+      {
+        "_path": "Lib/site-packages/thrift/__pycache__/TSerialization.cpython-37.pyc",
+        "path_type": "hardlink",
+        "sha256": "36e8b517e3b01315f82251e37e351d59d6dd62b2896864750576b8b35a45f68c",
+        "sha256_in_prefix": "36e8b517e3b01315f82251e37e351d59d6dd62b2896864750576b8b35a45f68c",
+        "size_in_bytes": 665
+      },
+      {
+        "_path": "Lib/site-packages/thrift/__pycache__/TTornado.cpython-37.pyc",
+        "path_type": "hardlink",
+        "sha256": "6f6c32bb4984e5f680750862dd653a104c7906aa6e11c44f67c94d1b90fb0eb6",
+        "sha256_in_prefix": "6f6c32bb4984e5f680750862dd653a104c7906aa6e11c44f67c94d1b90fb0eb6",
+        "size_in_bytes": 5952
+      },
+      {
+        "_path": "Lib/site-packages/thrift/__pycache__/Thrift.cpython-37.pyc",
+        "path_type": "hardlink",
+        "sha256": "28d3c79acddc91f1c164bc361ce3684e135ffa3997ebc6c2e6ba6392a399cb7f",
+        "sha256_in_prefix": "28d3c79acddc91f1c164bc361ce3684e135ffa3997ebc6c2e6ba6392a399cb7f",
+        "size_in_bytes": 5527
+      },
+      {
+        "_path": "Lib/site-packages/thrift/__pycache__/__init__.cpython-37.pyc",
+        "path_type": "hardlink",
+        "sha256": "9187b2be924c75fd249c91152983519e6ee5ddecad1de88d333a4d69f34afe94",
+        "sha256_in_prefix": "9187b2be924c75fd249c91152983519e6ee5ddecad1de88d333a4d69f34afe94",
+        "size_in_bytes": 153
+      },
+      {
+        "_path": "Lib/site-packages/thrift/__pycache__/compat.cpython-37.pyc",
+        "path_type": "hardlink",
+        "sha256": "c10e34f7a7df8d5292393c746278a37f50a9caaef6fd1223d0d949a1ae4949c9",
+        "sha256_in_prefix": "c10e34f7a7df8d5292393c746278a37f50a9caaef6fd1223d0d949a1ae4949c9",
+        "size_in_bytes": 900
+      },
+      {
+        "_path": "Lib/site-packages/thrift/compat.py",
+        "path_type": "hardlink",
+        "sha256": "39f0f53149b8d1fb7bf40584f38a6da59ec3ba649f74f7e10e189e5918fe15ed",
+        "sha256_in_prefix": "39f0f53149b8d1fb7bf40584f38a6da59ec3ba649f74f7e10e189e5918fe15ed",
+        "size_in_bytes": 1315
+      },
+      {
+        "_path": "Lib/site-packages/thrift/protocol/TBase.py",
+        "path_type": "hardlink",
+        "sha256": "053643185125c18f69def30b85837a3719540891883b6d9b0e881453f7b83e60",
+        "sha256_in_prefix": "053643185125c18f69def30b85837a3719540891883b6d9b0e881453f7b83e60",
+        "size_in_bytes": 2827
+      },
+      {
+        "_path": "Lib/site-packages/thrift/protocol/TBinaryProtocol.py",
+        "path_type": "hardlink",
+        "sha256": "f1a095bccb090338a02787087edbbfd93141833a58fccc43398210d3c7be21c8",
+        "sha256_in_prefix": "f1a095bccb090338a02787087edbbfd93141833a58fccc43398210d3c7be21c8",
+        "size_in_bytes": 9140
+      },
+      {
+        "_path": "Lib/site-packages/thrift/protocol/TCompactProtocol.py",
+        "path_type": "hardlink",
+        "sha256": "bb692677dae6025681a28dc3a5c9c6907e6e58375a56ba90f7d0581834351972",
+        "sha256_in_prefix": "bb692677dae6025681a28dc3a5c9c6907e6e58375a56ba90f7d0581834351972",
+        "size_in_bytes": 15465
+      },
+      {
+        "_path": "Lib/site-packages/thrift/protocol/THeaderProtocol.py",
+        "path_type": "hardlink",
+        "sha256": "4da41089d7d4fba1c6dd0e0686c2c81875cea42f2255732aa845ebcecc335c16",
+        "sha256_in_prefix": "4da41089d7d4fba1c6dd0e0686c2c81875cea42f2255732aa845ebcecc335c16",
+        "size_in_bytes": 7401
+      },
+      {
+        "_path": "Lib/site-packages/thrift/protocol/TJSONProtocol.py",
+        "path_type": "hardlink",
+        "sha256": "46d8e85c3e8fe5b363efad111fd26bbb53f5d66789d8b83302ed5205e537c6d2",
+        "sha256_in_prefix": "46d8e85c3e8fe5b363efad111fd26bbb53f5d66789d8b83302ed5205e537c6d2",
+        "size_in_bytes": 19403
+      },
+      {
+        "_path": "Lib/site-packages/thrift/protocol/TMultiplexedProtocol.py",
+        "path_type": "hardlink",
+        "sha256": "9759c6665a2b9dfd845e2a299a353e6d37c41a9568712637eb79fead662e3acf",
+        "sha256_in_prefix": "9759c6665a2b9dfd845e2a299a353e6d37c41a9568712637eb79fead662e3acf",
+        "size_in_bytes": 1457
+      },
+      {
+        "_path": "Lib/site-packages/thrift/protocol/TProtocol.py",
+        "path_type": "hardlink",
+        "sha256": "28de03d3d5aeea9604699740fd58ee782d3fa2b5f537f12ed7a25d3edff47a36",
+        "sha256_in_prefix": "28de03d3d5aeea9604699740fd58ee782d3fa2b5f537f12ed7a25d3edff47a36",
+        "size_in_bytes": 13468
+      },
+      {
+        "_path": "Lib/site-packages/thrift/protocol/TProtocolDecorator.py",
+        "path_type": "hardlink",
+        "sha256": "7cea716bc24b0af6be981b22b9be60cb6aa39f0a1e02f629b73d4f9df5012aaf",
+        "sha256_in_prefix": "7cea716bc24b0af6be981b22b9be60cb6aa39f0a1e02f629b73d4f9df5012aaf",
+        "size_in_bytes": 1101
+      },
+      {
+        "_path": "Lib/site-packages/thrift/protocol/__init__.py",
+        "path_type": "hardlink",
+        "sha256": "e6460284deb90f27c57ccb5709f0276a3a152e0e59534330b2addca4d20355d6",
+        "sha256_in_prefix": "e6460284deb90f27c57ccb5709f0276a3a152e0e59534330b2addca4d20355d6",
+        "size_in_bytes": 922
+      },
+      {
+        "_path": "Lib/site-packages/thrift/protocol/__pycache__/TBase.cpython-37.pyc",
+        "path_type": "hardlink",
+        "sha256": "267539af569372b54db1c340302bdd9fb3bd71d7ef9b93db0fe07a0609b0cdb4",
+        "sha256_in_prefix": "267539af569372b54db1c340302bdd9fb3bd71d7ef9b93db0fe07a0609b0cdb4",
+        "size_in_bytes": 2615
+      },
+      {
+        "_path": "Lib/site-packages/thrift/protocol/__pycache__/TBinaryProtocol.cpython-37.pyc",
+        "path_type": "hardlink",
+        "sha256": "96468ec8b752db9955c1b6116d36d41cc05f59baebc00c3233bb86db7df19d30",
+        "sha256_in_prefix": "96468ec8b752db9955c1b6116d36d41cc05f59baebc00c3233bb86db7df19d30",
+        "size_in_bytes": 10735
+      },
+      {
+        "_path": "Lib/site-packages/thrift/protocol/__pycache__/TCompactProtocol.cpython-37.pyc",
+        "path_type": "hardlink",
+        "sha256": "a14244796b85926c2d62e8eae2bad152febc1704e5fc08b4b7ee094cefd4ebd2",
+        "sha256_in_prefix": "a14244796b85926c2d62e8eae2bad152febc1704e5fc08b4b7ee094cefd4ebd2",
+        "size_in_bytes": 15711
+      },
+      {
+        "_path": "Lib/site-packages/thrift/protocol/__pycache__/THeaderProtocol.cpython-37.pyc",
+        "path_type": "hardlink",
+        "sha256": "728c1a1d5ddf8744a77410f0dcb10f4bd6cca0003d0fb8495e207e3040c3cddf",
+        "sha256_in_prefix": "728c1a1d5ddf8744a77410f0dcb10f4bd6cca0003d0fb8495e207e3040c3cddf",
+        "size_in_bytes": 9458
+      },
+      {
+        "_path": "Lib/site-packages/thrift/protocol/__pycache__/TJSONProtocol.cpython-37.pyc",
+        "path_type": "hardlink",
+        "sha256": "c80c70b6735f9b1aefad49f58299696f26544d6d88fb451f37a4ddc66b8539dd",
+        "sha256_in_prefix": "c80c70b6735f9b1aefad49f58299696f26544d6d88fb451f37a4ddc66b8539dd",
+        "size_in_bytes": 22714
+      },
+      {
+        "_path": "Lib/site-packages/thrift/protocol/__pycache__/TMultiplexedProtocol.cpython-37.pyc",
+        "path_type": "hardlink",
+        "sha256": "ce6e2aa38c4a5262e173d151194e5ac5c8377f7cd4ee8349610dc29d89008860",
+        "sha256_in_prefix": "ce6e2aa38c4a5262e173d151194e5ac5c8377f7cd4ee8349610dc29d89008860",
+        "size_in_bytes": 919
+      },
+      {
+        "_path": "Lib/site-packages/thrift/protocol/__pycache__/TProtocol.cpython-37.pyc",
+        "path_type": "hardlink",
+        "sha256": "b32677d8df770c855ec7d801acea8d31832fd7761b64515b7eeb1963d25862f9",
+        "sha256_in_prefix": "b32677d8df770c855ec7d801acea8d31832fd7761b64515b7eeb1963d25862f9",
+        "size_in_bytes": 14150
+      },
+      {
+        "_path": "Lib/site-packages/thrift/protocol/__pycache__/TProtocolDecorator.cpython-37.pyc",
+        "path_type": "hardlink",
+        "sha256": "286888d6fbb7b6f796eb9b8cc586b0b05e338e2daf5ab7d3bb8c84d28ea4fd8b",
+        "sha256_in_prefix": "286888d6fbb7b6f796eb9b8cc586b0b05e338e2daf5ab7d3bb8c84d28ea4fd8b",
+        "size_in_bytes": 572
+      },
+      {
+        "_path": "Lib/site-packages/thrift/protocol/__pycache__/__init__.cpython-37.pyc",
+        "path_type": "hardlink",
+        "sha256": "dc32f7d3473d65debcbd2e84916648536e36a0e9f208cd9caddda301fd8467b4",
+        "sha256_in_prefix": "dc32f7d3473d65debcbd2e84916648536e36a0e9f208cd9caddda301fd8467b4",
+        "size_in_bytes": 258
+      },
+      {
+        "_path": "Lib/site-packages/thrift/protocol/fastbinary.cp37-win_amd64.pyd",
+        "path_type": "hardlink",
+        "sha256": "4812fe9304ad83d525b4b0a6506c149fab5ed7ac2ba13dcc4f53ffd3cd9a7149",
+        "sha256_in_prefix": "4812fe9304ad83d525b4b0a6506c149fab5ed7ac2ba13dcc4f53ffd3cd9a7149",
+        "size_in_bytes": 45056
+      },
+      {
+        "_path": "Lib/site-packages/thrift/server/THttpServer.py",
+        "path_type": "hardlink",
+        "sha256": "db1be4f3ba6827053bfb124102628a9c16b97f2765133127c7bafe584d994899",
+        "sha256_in_prefix": "db1be4f3ba6827053bfb124102628a9c16b97f2765133127c7bafe584d994899",
+        "size_in_bytes": 5551
+      },
+      {
+        "_path": "Lib/site-packages/thrift/server/TNonblockingServer.py",
+        "path_type": "hardlink",
+        "sha256": "d8990cc686a659f0bcc5bc320ee14f3ff7a775c041773a8ca60af43493d05300",
+        "sha256_in_prefix": "d8990cc686a659f0bcc5bc320ee14f3ff7a775c041773a8ca60af43493d05300",
+        "size_in_bytes": 12495
+      },
+      {
+        "_path": "Lib/site-packages/thrift/server/TProcessPoolServer.py",
+        "path_type": "hardlink",
+        "sha256": "148fceb7585fe4a374f5d8163cff9e699f9e69408e2eccd7827206fc77fc8d06",
+        "sha256_in_prefix": "148fceb7585fe4a374f5d8163cff9e699f9e69408e2eccd7827206fc77fc8d06",
+        "size_in_bytes": 4054
+      },
+      {
+        "_path": "Lib/site-packages/thrift/server/TServer.py",
+        "path_type": "hardlink",
+        "sha256": "6fc77090d5e73206e7becca55a181eb04205498fd2e4f9020b54474668933abd",
+        "sha256_in_prefix": "6fc77090d5e73206e7becca55a181eb04205498fd2e4f9020b54474668933abd",
+        "size_in_bytes": 11784
+      },
+      {
+        "_path": "Lib/site-packages/thrift/server/__init__.py",
+        "path_type": "hardlink",
+        "sha256": "0c47c40014edc69509343b949182a33251f756f7894144ef8c6b526b7e5cafbc",
+        "sha256_in_prefix": "0c47c40014edc69509343b949182a33251f756f7894144ef8c6b526b7e5cafbc",
+        "size_in_bytes": 830
+      },
+      {
+        "_path": "Lib/site-packages/thrift/server/__pycache__/THttpServer.cpython-37.pyc",
+        "path_type": "hardlink",
+        "sha256": "4801e1f44bf4e24c939adc86b5d391048cb06552115c9a6dacea74978cdce35d",
+        "sha256_in_prefix": "4801e1f44bf4e24c939adc86b5d391048cb06552115c9a6dacea74978cdce35d",
+        "size_in_bytes": 4490
+      },
+      {
+        "_path": "Lib/site-packages/thrift/server/__pycache__/TNonblockingServer.cpython-37.pyc",
+        "path_type": "hardlink",
+        "sha256": "a7e2f498834e5bd3c2a34173e6e93f131d6c88f611db6689abdf1cf805250da1",
+        "sha256_in_prefix": "a7e2f498834e5bd3c2a34173e6e93f131d6c88f611db6689abdf1cf805250da1",
+        "size_in_bytes": 10961
+      },
+      {
+        "_path": "Lib/site-packages/thrift/server/__pycache__/TProcessPoolServer.cpython-37.pyc",
+        "path_type": "hardlink",
+        "sha256": "f3ecb28cbb65d0cb0129175ef4505235d660b2c14aff7e65bc876cde23689922",
+        "sha256_in_prefix": "f3ecb28cbb65d0cb0129175ef4505235d660b2c14aff7e65bc876cde23689922",
+        "size_in_bytes": 3269
+      },
+      {
+        "_path": "Lib/site-packages/thrift/server/__pycache__/TServer.cpython-37.pyc",
+        "path_type": "hardlink",
+        "sha256": "02a674815668c4e95cf176aa431806eb3a00665ddf668130b910273225449369",
+        "sha256_in_prefix": "02a674815668c4e95cf176aa431806eb3a00665ddf668130b910273225449369",
+        "size_in_bytes": 8227
+      },
+      {
+        "_path": "Lib/site-packages/thrift/server/__pycache__/__init__.cpython-37.pyc",
+        "path_type": "hardlink",
+        "sha256": "a6fc39954158138b086cbe7565bc1b0641485c14babe4280527d974a3edb85dd",
+        "sha256_in_prefix": "a6fc39954158138b086cbe7565bc1b0641485c14babe4280527d974a3edb85dd",
+        "size_in_bytes": 173
+      },
+      {
+        "_path": "Lib/site-packages/thrift/transport/THeaderTransport.py",
+        "path_type": "hardlink",
+        "sha256": "f2b71786f1b648195cbb4293542bbcc09051764c4f1e0c2d41d3c7699ad88e22",
+        "sha256_in_prefix": "f2b71786f1b648195cbb4293542bbcc09051764c4f1e0c2d41d3c7699ad88e22",
+        "size_in_bytes": 12979
+      },
+      {
+        "_path": "Lib/site-packages/thrift/transport/THttpClient.py",
+        "path_type": "hardlink",
+        "sha256": "5657d09d66fecb2de9117f0e3265744cdeccaf706207c4a71b565a030f7f2741",
+        "sha256_in_prefix": "5657d09d66fecb2de9117f0e3265744cdeccaf706207c4a71b565a030f7f2741",
+        "size_in_bytes": 7114
+      },
+      {
+        "_path": "Lib/site-packages/thrift/transport/TSSLSocket.py",
+        "path_type": "hardlink",
+        "sha256": "12e2e9879dcbc6b62c00b0f38e1c93db95ed1a1aa83c0d5271a2a2e98fa01fff",
+        "sha256_in_prefix": "12e2e9879dcbc6b62c00b0f38e1c93db95ed1a1aa83c0d5271a2a2e98fa01fff",
+        "size_in_bytes": 16389
+      },
+      {
+        "_path": "Lib/site-packages/thrift/transport/TSocket.py",
+        "path_type": "hardlink",
+        "sha256": "fec4010e7a7d1f6c3afafc76586e86b5871175fbbb49afbdedeb30199a41af31",
+        "sha256_in_prefix": "fec4010e7a7d1f6c3afafc76586e86b5871175fbbb49afbdedeb30199a41af31",
+        "size_in_bytes": 8053
+      },
+      {
+        "_path": "Lib/site-packages/thrift/transport/TTransport.py",
+        "path_type": "hardlink",
+        "sha256": "46ed1d29b3d0e96248594ccf103b89e5b2c70b34d5880a0a05f1c99822a4e419",
+        "sha256_in_prefix": "46ed1d29b3d0e96248594ccf103b89e5b2c70b34d5880a0a05f1c99822a4e419",
+        "size_in_bytes": 13205
+      },
+      {
+        "_path": "Lib/site-packages/thrift/transport/TTwisted.py",
+        "path_type": "hardlink",
+        "sha256": "1f705458618f5f5b7fe59c8d2b0016e081183453aec5cb81ee5fd4d907881979",
+        "sha256_in_prefix": "1f705458618f5f5b7fe59c8d2b0016e081183453aec5cb81ee5fd4d907881979",
+        "size_in_bytes": 10904
+      },
+      {
+        "_path": "Lib/site-packages/thrift/transport/TZlibTransport.py",
+        "path_type": "hardlink",
+        "sha256": "faae1dcdad6e6ae452560fa25e6b359ffffe19987fed2771cd91f90946545bee",
+        "sha256_in_prefix": "faae1dcdad6e6ae452560fa25e6b359ffffe19987fed2771cd91f90946545bee",
+        "size_in_bytes": 8778
+      },
+      {
+        "_path": "Lib/site-packages/thrift/transport/__init__.py",
+        "path_type": "hardlink",
+        "sha256": "829d15ccad9707d51ae8ac79c8c8678e2ecde99b735dc31321461efa6ab7fb60",
+        "sha256_in_prefix": "829d15ccad9707d51ae8ac79c8c8678e2ecde99b735dc31321461efa6ab7fb60",
+        "size_in_bytes": 855
+      },
+      {
+        "_path": "Lib/site-packages/thrift/transport/__pycache__/THeaderTransport.cpython-37.pyc",
+        "path_type": "hardlink",
+        "sha256": "9103c1e2e5d95d914ed8088bbd8b4d564a0a6c2bb70f56a9ca89a85732ff6671",
+        "sha256_in_prefix": "9103c1e2e5d95d914ed8088bbd8b4d564a0a6c2bb70f56a9ca89a85732ff6671",
+        "size_in_bytes": 8568
+      },
+      {
+        "_path": "Lib/site-packages/thrift/transport/__pycache__/THttpClient.cpython-37.pyc",
+        "path_type": "hardlink",
+        "sha256": "a99d21ac285958577c05677c2f5e4d54a70c8a1dedd8e8fe4161395252f75644",
+        "sha256_in_prefix": "a99d21ac285958577c05677c2f5e4d54a70c8a1dedd8e8fe4161395252f75644",
+        "size_in_bytes": 5142
+      },
+      {
+        "_path": "Lib/site-packages/thrift/transport/__pycache__/TSSLSocket.cpython-37.pyc",
+        "path_type": "hardlink",
+        "sha256": "8f24dcfae22465dd243a88b246ad4db9feb95a6bf0021600b0543f1844fcb9f6",
+        "sha256_in_prefix": "8f24dcfae22465dd243a88b246ad4db9feb95a6bf0021600b0543f1844fcb9f6",
+        "size_in_bytes": 11317
+      },
+      {
+        "_path": "Lib/site-packages/thrift/transport/__pycache__/TSocket.cpython-37.pyc",
+        "path_type": "hardlink",
+        "sha256": "37d0bb3d985bd00ee28044c568bf6bf259ba6f3408d0e390d61d0004e5d9ac88",
+        "sha256_in_prefix": "37d0bb3d985bd00ee28044c568bf6bf259ba6f3408d0e390d61d0004e5d9ac88",
+        "size_in_bytes": 6268
+      },
+      {
+        "_path": "Lib/site-packages/thrift/transport/__pycache__/TTransport.cpython-37.pyc",
+        "path_type": "hardlink",
+        "sha256": "8249584d75c5e9475a5af062156ecf4843e15cce666c74fee4a19e9a53038e6d",
+        "sha256_in_prefix": "8249584d75c5e9475a5af062156ecf4843e15cce666c74fee4a19e9a53038e6d",
+        "size_in_bytes": 15262
+      },
+      {
+        "_path": "Lib/site-packages/thrift/transport/__pycache__/TTwisted.cpython-37.pyc",
+        "path_type": "hardlink",
+        "sha256": "421084299c0ddbf6846d7a673062ad294a6c82f64e30d046da97bf8fe576d76a",
+        "sha256_in_prefix": "421084299c0ddbf6846d7a673062ad294a6c82f64e30d046da97bf8fe576d76a",
+        "size_in_bytes": 10497
+      },
+      {
+        "_path": "Lib/site-packages/thrift/transport/__pycache__/TZlibTransport.cpython-37.pyc",
+        "path_type": "hardlink",
+        "sha256": "96bd2cfe2fe4f75519f7521de06783817e20579a5a4786a3ab6516e5ae60a56f",
+        "sha256_in_prefix": "96bd2cfe2fe4f75519f7521de06783817e20579a5a4786a3ab6516e5ae60a56f",
+        "size_in_bytes": 8369
+      },
+      {
+        "_path": "Lib/site-packages/thrift/transport/__pycache__/__init__.cpython-37.pyc",
+        "path_type": "hardlink",
+        "sha256": "812d841d805b61ed9208676cc92519f4807dafc74ac753ec621916953e80274d",
+        "sha256_in_prefix": "812d841d805b61ed9208676cc92519f4807dafc74ac753ec621916953e80274d",
+        "size_in_bytes": 201
+      },
+      {
+        "_path": "Lib/site-packages/thrift/transport/__pycache__/sslcompat.cpython-37.pyc",
+        "path_type": "hardlink",
+        "sha256": "332bd42357a86f6cce4a4c01c89253776e285f2294ffe20f7d2e3807b0587c14",
+        "sha256_in_prefix": "332bd42357a86f6cce4a4c01c89253776e285f2294ffe20f7d2e3807b0587c14",
+        "size_in_bytes": 2241
+      },
+      {
+        "_path": "Lib/site-packages/thrift/transport/sslcompat.py",
+        "path_type": "hardlink",
+        "sha256": "a700697feddc60564e50587710e091ff86390d679cf81e4a1f8fc7dba9ac6ec7",
+        "sha256_in_prefix": "a700697feddc60564e50587710e091ff86390d679cf81e4a1f8fc7dba9ac6ec7",
+        "size_in_bytes": 3662
+      }
+    ],
+    "paths_version": 1
+  },
+  "platform": "win32",
+  "requested_spec": "defaults/win-64::thrift==0.13.0=py37ha925a31_0",
+  "sha256": "3337611322c599c10f19290a3153042ee93d6348d0d0504af2e3f4f943b92e4e",
+  "size": 115094,
+  "subdir": "win-64",
+  "timestamp": 1582543929304,
+  "track_features": "",
+  "url": "https://repo.anaconda.com/pkgs/main/win-64/thrift-0.13.0-py37ha925a31_0.conda",
+  "version": "0.13.0"
+}

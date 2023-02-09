@@ -1,0 +1,1944 @@
+
+
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Demo examples &#8212; AnyScript Reference 7.3.4 documentation</title>
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/cloud.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/table_styling.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noticia+Text|Open+Sans|Droid+Sans+Mono" type="text/css" />
+    
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/script/filter-class-list.js"></script>
+    <script src="../_static/fa/all.js"></script>
+
+    
+    
+     
+        <script src="../_static/jquery.cookie.js"></script>
+    
+
+    
+     
+        <script src="../_static/cloud.base.js"></script>
+    
+
+    
+     
+        <script src="../_static/cloud.js"></script>
+    
+
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Technical notes" href="../anyscript/technical-notes.html" /> 
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head><body>
+    <div class="relbar-top">
+        
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../contents.html" title="Table Of Contents"
+             accesskey="C">toc</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="../anyscript/technical-notes.html" title="Technical notes"
+             accesskey="P">previous</a> &nbsp; &nbsp;</li>
+    <li><a href="../index.html">AnyScript Reference 7.3.4 documentation</a> &#187;</li>
+
+        <li class="nav-item nav-item-this"><a href="">Demo examples</a></li> 
+      </ul>
+    </div>
+    </div>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="demo-examples">
+<h1>Demo examples<a class="headerlink" href="#demo-examples" title="Permalink to this headline">¶</a></h1>
+<p>This chapter contains a selection of small example models which demonstrates
+different parts of the AnyScript language. The models are divided into three
+sections:</p>
+<dl class="simple">
+<dt>Small Demo Models:</dt><dd><p>These are simple examples of very basic biomechanical and mechanical
+applications to demonstrate basic concepts of modeling</p>
+</dd>
+<dt>Class Examples:</dt><dd><p>These are examples demonstrating the use and basic behaviour of AnyScript™ classes</p>
+</dd>
+<dt>Basic AnyScript™:</dt><dd><p>These examples demonstrate basic AnyScript™ features such as the
+preprocessor, mathematical expressions in AnyScript™, the macro language and alike.</p>
+</dd>
+</dl>
+<div class="section" id="small-demo-models">
+<h2>Small Demo Models<a class="headerlink" href="#small-demo-models" title="Permalink to this headline">¶</a></h2>
+<div class="html-toggle list-entries odd section" id="arm2d-simple-planar-arm-model-including-8-muscles">
+<span id="demo-demo-arm2d"></span><h3><span class="list-title">Arm2D</span>  <span class="list-descr">Simple planar arm model including 8 muscles.</span><a class="headerlink" href="#arm2d-simple-planar-arm-model-including-8-muscles" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">Description</dt>
+<dd class="field-odd"><p>Simple planar arm model including 8 muscles.</p>
+</dd>
+<dt class="field-even">Download</dt>
+<dd class="field-even"><p><a class="reference download internal" download="" href="../_downloads/4119e81ed32fbaf553a81a25c6249a92/Demo.Arm2D.zip"><code class="xref download docutils literal notranslate"><span class="pre">Demo.Arm2D.zip</span></code></a></p>
+</dd>
+</dl>
+<p>This is a demonstration of a simple arm model comprising
+two degrees of freedom and a selected number of muscles.
+Features in this model are</p>
+<ul class="simple">
+<li><p>definition of muscles</p></li>
+<li><p>application of muscle recruitment analysis in the AnyBodyStudy&lt;/li&gt;</p></li>
+<li><p>redundancy of the muscle configuration&lt;/li&gt;</p></li>
+</ul>
+<p>The file has the following sections:</p>
+<ul class="simple">
+<li><p>The Arm Model</p>
+<ul>
+<li><p>Reference frames</p></li>
+<li><p>Segments</p></li>
+<li><p>Joints</p></li>
+<li><p>Drivers</p></li>
+<li><p>Loads</p></li>
+<li><p>Muscles</p></li>
+</ul>
+</li>
+<li><p>“The body study”</p></li>
+</ul>
+<p>Notice that all these section could be separate files
+that are assemble in a single main file by #include
+statements. All include statements must be inside the
+<code class="docutils literal notranslate"><span class="pre">Main</span> <span class="pre">=</span> <span class="pre">{};</span></code> statement in this main file.</p>
+</div></blockquote>
+</div>
+<div class="html-toggle list-entries even section" id="arm2d-mus3e-structured-planar-arm-model-w-3-element-muscles">
+<span id="demo-demo-arm2d-mus3e"></span><h3><span class="list-title">Arm2D.Mus3E</span>  <span class="list-descr">Structured Planar Arm Model w. 3-element muscles.</span><a class="headerlink" href="#arm2d-mus3e-structured-planar-arm-model-w-3-element-muscles" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">Description</dt>
+<dd class="field-odd"><p>Structured Planar Arm Model w. 3-element muscles.</p>
+</dd>
+<dt class="field-even">Download</dt>
+<dd class="field-even"><p><a class="reference download internal" download="" href="../_downloads/f33f3dea9cfbe48d30743fd89a563e82/Demo.Arm2D.Mus3E.zip"><code class="xref download docutils literal notranslate"><span class="pre">Demo.Arm2D.Mus3E.zip</span></code></a></p>
+</dd>
+</dl>
+<p>This model is an extension of the simpler Demo.Arm2D example.
+It demostrates how to organize your model in multiple files,
+and moreover it applies the more complicated 3-element muscle
+model.</p>
+</div></blockquote>
+</div>
+<div class="html-toggle list-entries odd section" id="arm2d-2arms-two-arm-extension-of-the-demo-arm2d-mus3e-model">
+<span id="demo-demo-arm2d-2arms"></span><h3><span class="list-title">Arm2D.2Arms</span>  <span class="list-descr">Two-arm Extension of the Demo.Arm2D.Mus3E model.</span><a class="headerlink" href="#arm2d-2arms-two-arm-extension-of-the-demo-arm2d-mus3e-model" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">Description</dt>
+<dd class="field-odd"><p>Two-arm Extension of the Demo.Arm2D.Mus3E model.</p>
+</dd>
+<dt class="field-even">Download</dt>
+<dd class="field-even"><p><a class="reference download internal" download="" href="../_downloads/7b35bc4230073ed2c414247fbfcf802b/Demo.Arm2D.2Arms.zip"><code class="xref download docutils literal notranslate"><span class="pre">Demo.Arm2D.2Arms.zip</span></code></a></p>
+</dd>
+</dl>
+<p>In this model we exploit the file structure of the
+Demo.Arm2D.Mus3E for making a model with two arms.</p>
+</div></blockquote>
+</div>
+<div class="html-toggle list-entries even section" id="slidercrank2d-planar-slider-crank-mechanism">
+<span id="demo-demo-slidercrank2d"></span><h3><span class="list-title">SliderCrank2D</span>  <span class="list-descr">Planar slider crank mechanism.</span><a class="headerlink" href="#slidercrank2d-planar-slider-crank-mechanism" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">Description</dt>
+<dd class="field-odd"><p>Planar slider crank mechanism.</p>
+</dd>
+<dt class="field-even">Download</dt>
+<dd class="field-even"><p><a class="reference download internal" download="" href="../_downloads/2acd92a3af3197a59637a5401a3ed332/Demo.SliderCrank2D.zip"><code class="xref download docutils literal notranslate"><span class="pre">Demo.SliderCrank2D.zip</span></code></a></p>
+</dd>
+</dl>
+<p>Demo: SliderCrank2D</p>
+<p>This file contains a model of a planar slider-crank linkage
+Notice that the mechanism is kinematically over-determined
+according to the joint configuration. Motion is however
+possible because some of the kinematic constraints are not
+independent, i.e. the system contains redundant constraints.</p>
+<p>The model demonstrates the definition of revolute (hinge),
+spherical (ball-and-socket), and prismatic (translational)
+joints.</p>
+<p>Notice how the Coupler ‘s local reference axes are oriented
+quite differently than the other segments. The Coupler is
+the red segment. It has the y-axis, not the x-axis,
+being normal to the mechanism’s plane.
+This is realized by use of relative orientation of a node
+on the segment (AnyRefNode). This feature is needed in systems
+where the axes of joints are not coinciding well on the
+connected segments; in joints rotation/translation axes are
+typically specified by simple a x, y, or z specification
+defining the axis on both segments. Thus proper alignment
+must be obtained rotation of the nodes (e.g. by means of
+AnyRefNode) the joint connects.</p>
+<p>Moreover, the models applies a simple kinematical driver by
+using an AnyKinDriver object.</p>
+</div></blockquote>
+</div>
+<div class="html-toggle list-entries odd section" id="slidercrank3d-model-of-spatial-slider-crank-mechanism-in-3d-demonstrating-several-typical-standard-joints">
+<span id="demo-demo-slidercrank3d"></span><h3><span class="list-title">SliderCrank3D</span>  <span class="list-descr">Model of spatial slider-crank mechanism in 3D demonstrating several typical standard joints.</span><a class="headerlink" href="#slidercrank3d-model-of-spatial-slider-crank-mechanism-in-3d-demonstrating-several-typical-standard-joints" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">Description</dt>
+<dd class="field-odd"><p>Model of spatial slider-crank mechanism in 3D demonstrating several typical standard joints.</p>
+</dd>
+<dt class="field-even">Download</dt>
+<dd class="field-even"><p><a class="reference download internal" download="" href="../_downloads/228a241eb969c446448c0426873e01cc/Demo.SliderCrank3D.zip"><code class="xref download docutils literal notranslate"><span class="pre">Demo.SliderCrank3D.zip</span></code></a></p>
+</dd>
+</dl>
+<p>This is a demonstration of a spatial model of a spatial slider-crank linkage
+comprising the most typical standard joints, in particular:</p>
+<dl class="simple">
+<dt>revolute joint</dt><dd><p>a hinge, class <a class="reference internal" href="../reference/classes/AnyRevoluteJoint.html#anyrevolutejoint"><span class="std std-ref">AnyRevoluteJoint</span></a></p>
+</dd>
+<dt>spherical joint</dt><dd><p>ball and socket, class <a class="reference internal" href="../reference/classes/AnySphericalJoint.html#anysphericaljoint"><span class="std std-ref">AnySphericalJoint</span></a></p>
+</dd>
+<dt>prismatic joint</dt><dd><p>a translational joint restricting rotation about the axis, class <a class="reference internal" href="../reference/classes/AnyPrismaticJoint.html#anyprismaticjoint"><span class="std std-ref">AnyPrismaticJoint</span></a></p>
+</dd>
+<dt>universal joint</dt><dd><p>class <a class="reference internal" href="../reference/classes/AnyUniversalJoint.html#anyuniversaljoint"><span class="std std-ref">AnyUniversalJoint</span></a></p>
+</dd>
+</dl>
+<p>Moreover, the model applies a simple kinematical driver at the crank by using an <a class="reference internal" href="../reference/classes/AnyKinDriver.html#anykindriver"><span class="std std-ref">AnyKinDriver</span></a> object.</p>
+</div></blockquote>
+</div>
+<div class="html-toggle list-entries even section" id="slidercrank3d-2-extension-of-the-demo-slidercrank3d-with-an-additional-linkage">
+<span id="demo-demo-slidercrank3d-2"></span><h3><span class="list-title">SliderCrank3D_2</span>  <span class="list-descr">Extension of the Demo.SliderCrank3D with an additional linkage.</span><a class="headerlink" href="#slidercrank3d-2-extension-of-the-demo-slidercrank3d-with-an-additional-linkage" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">Description</dt>
+<dd class="field-odd"><p>Extension of the Demo.SliderCrank3D with an additional linkage.</p>
+</dd>
+<dt class="field-even">Download</dt>
+<dd class="field-even"><p><a class="reference download internal" download="" href="../_downloads/78bf07e0b685554463c1896ec1362a92/Demo.SliderCrank3D_2.zip"><code class="xref download docutils literal notranslate"><span class="pre">Demo.SliderCrank3D_2.zip</span></code></a></p>
+</dd>
+</dl>
+<p>This model is an extension of the Demo.SliderCrank3D with an additional
+linkage that includes more joint types. The combined example comprise the
+following joints:</p>
+<dl class="simple">
+<dt>revolute joint</dt><dd><p>a hinge, class <a class="reference internal" href="../reference/classes/AnyRevoluteJoint.html#anyrevolutejoint"><span class="std std-ref">AnyRevoluteJoint</span></a></p>
+</dd>
+<dt>spherical joint</dt><dd><p>ball and socket, class <a class="reference internal" href="../reference/classes/AnySphericalJoint.html#anysphericaljoint"><span class="std std-ref">AnySphericalJoint</span></a></p>
+</dd>
+<dt>prismatic joint</dt><dd><p>a translational joint restricting rotation
+about the axis, class <a class="reference internal" href="../reference/classes/AnyPrismaticJoint.html#anyprismaticjoint"><span class="std std-ref">AnyPrismaticJoint</span></a></p>
+</dd>
+<dt>universal joint</dt><dd><p>class <a class="reference internal" href="../reference/classes/AnyUniversalJoint.html#anyuniversaljoint"><span class="std std-ref">AnyUniversalJoint</span></a></p>
+</dd>
+<dt>trans-spherical joint</dt><dd><p>ball in a linear track, class <a class="reference internal" href="../reference/classes/AnyTransSphericalJoint.html#anytranssphericaljoint"><span class="std std-ref">AnyTransSphericalJoint</span></a></p>
+</dd>
+</dl>
+<p>Moreover, the model shows how a model is easily extended by including
+its Main-file, i.e., Demo.SliderCrank3D is extended with full
+reuse of the code.</p>
+<p>The model also applies a simple kinematical driver at the crank by
+using an AnyKinDriver object.</p>
+</div></blockquote>
+</div>
+<div class="html-toggle list-entries odd section" id="moving-inertial-frame-of-reference-demonstration-of-how-to-use-an-inertial-moving-with">
+<span id="demo-demo-movinginertialref"></span><h3><span class="list-title">Moving Inertial Frame of Reference</span>  <span class="list-descr">Demonstration of how to use an inertial moving with…</span><a class="headerlink" href="#moving-inertial-frame-of-reference-demonstration-of-how-to-use-an-inertial-moving-with" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">Description</dt>
+<dd class="field-odd"><p>Demonstration of how to use an inertial moving with no-constant velocity as frame of reference.</p>
+</dd>
+<dt class="field-even">Download</dt>
+<dd class="field-even"><p><a class="reference download internal" download="" href="../_downloads/b19f8aa00420f18bfec0013580de2202/Demo.MovingInertialRef.zip"><code class="xref download docutils literal notranslate"><span class="pre">Demo.MovingInertialRef.zip</span></code></a></p>
+</dd>
+</dl>
+<p>Demo: Moving Inertial Frame Reference</p>
+</div></blockquote>
+</div>
+<div class="html-toggle list-entries even section" id="drivers-demonstrating-of-different-kinematical-driver-types">
+<span id="demo-demo-drivers"></span><h3><span class="list-title">Drivers</span>  <span class="list-descr">Demonstrating of different kinematical driver types.</span><a class="headerlink" href="#drivers-demonstrating-of-different-kinematical-driver-types" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">Description</dt>
+<dd class="field-odd"><p>Demonstrating of different kinematical driver types.</p>
+</dd>
+<dt class="field-even">Download</dt>
+<dd class="field-even"><p><a class="reference download internal" download="" href="../_downloads/ac4a6984348cd0f08ae25b750e1a9268/Demo.Drivers.zip"><code class="xref download docutils literal notranslate"><span class="pre">Demo.Drivers.zip</span></code></a></p>
+</dd>
+</dl>
+<p>This file demonstrates a number of specialized kinematic drivers
+derived from the class AnyKinEq. They are all applied to the rotation
+a single segment.</p>
+<p>Please notice that a new generic driver class, AnyKinDriver, is available.
+This AnyKinDriver can replace most of the older specialized driver classes,
+because it allows pointing to a driver function. It is recommended to use
+this new class.</p>
+<p>The following drivers exist:</p>
+<ol class="arabic">
+<li><dl class="simple">
+<dt>AnyKinEqPolynomialDriver</dt><dd><p>It provides a polynomial function of any order, depending on
+the number of coefficients you supply. The function has the
+form: p = sum_{i=0}^{n} PolyCoef[i] t^i (LaTeX style)</p>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt>AnyKinEqFourierDriver</dt><dd><p>It provides Fourier functions of any order.
+You can chooce between expansions containing</p>
+<ol class="arabic simple">
+<li><p>A cos(omega t) + B sin(omega t)</p></li>
+<li><p>A cos(omega t + B)</p></li>
+<li><p>A sin(omega t + B)</p></li>
+</ol>
+<p>where omega = 2 PI Freq with Freq as the fundamental
+frequency of the expansion.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>AnyKinEqInterPolDriver</dt><dd><p>This driver interpolated between data points assembled
+in the matrix Data. Corresponding time values must be
+supplied in the vector T.
+The interpolation driver have several options that are
+demonstrated several objects in the model below. These
+options are</p>
+<ul class="simple">
+<li><p>Piecewise linear interpolation between the data points
+(notice that accelerations are zero implying that this
+is only good for slow motion with insignificant dynamic
+effets).</p></li>
+<li><p>Bezier interpolation</p></li>
+<li><p>B-spline interpolation with variable order (the lowest
+valid order is 4 in order to ensure continuity in
+the accelerations).</p></li>
+<li><p>Data points provided in external data file</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>AnyKinEgSimpleDriver</dt><dd><p>This provides a simple driver function with constant
+acceleration, i.e., constant second time derivatives.</p>
+</dd>
+</dl>
+</li>
+</ol>
+<p>Notice that this script declares at least one of each
+type of driver. They are all located in the Main.Drivers
+folder. Associated with each driver there is declared a
+study (AnyMechStudy) which contain the mechanical elements,
+the joint and segment, and the particular driver. You can run
+an analysis using a given driver function by excuting the
+kinematic analysis of the associated study.</p>
+<p>Notice that these drivers are derived from AnyKinEq. However,
+in the future drivers will be handled by a single driver
+class and a library of general functions and mathematical
+expressions, which can be used to specifying the motion.</p>
+</div></blockquote>
+</div>
+</div>
+<div class="section" id="class-examples">
+<h2>Class Examples<a class="headerlink" href="#class-examples" title="Permalink to this headline">¶</a></h2>
+<div class="html-toggle list-entries odd section" id="anyinputanydata-deep-demonstration-of-loading-an-anydata-file-with-the-deep-format">
+<span id="demo-classexamples-anyinputanydata-deep"></span><h3><span class="list-title">AnyInputANYDATA.deep</span>  <span class="list-descr">Demonstration of loading an ANYDATA file with the deep format.</span><a class="headerlink" href="#anyinputanydata-deep-demonstration-of-loading-an-anydata-file-with-the-deep-format" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">Description</dt>
+<dd class="field-odd"><p>Demonstration of loading an ANYDATA file with the deep format.</p>
+</dd>
+<dt class="field-even">Download</dt>
+<dd class="field-even"><p><a class="reference download internal" download="" href="../_downloads/b10e86e78bec4293550b0453e6eca926/ClassExamples.AnyInputANYDATA.deep.zip"><code class="xref download docutils literal notranslate"><span class="pre">ClassExamples.AnyInputANYDATA.deep.zip</span></code></a></p>
+</dd>
+</dl>
+<p>This file contains an example that loads a deep structure.anydata.h5 file into an AnyInputANYDATA object.</p>
+</div></blockquote>
+</div>
+<div class="html-toggle list-entries even section" id="anyinputanydata-flat-demonstration-of-loading-an-anydata-file-with-the-flat-format">
+<span id="demo-classexamples-anyinputanydata-flat"></span><h3><span class="list-title">AnyInputANYDATA.flat</span>  <span class="list-descr">Demonstration of loading an ANYDATA file with the flat format.</span><a class="headerlink" href="#anyinputanydata-flat-demonstration-of-loading-an-anydata-file-with-the-flat-format" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">Description</dt>
+<dd class="field-odd"><p>Demonstration of loading an ANYDATA file with the flat format.</p>
+</dd>
+<dt class="field-even">Download</dt>
+<dd class="field-even"><p><a class="reference download internal" download="" href="../_downloads/a362dd48ee0b2254b8c8c7c0b463cc56/ClassExamples.AnyInputANYDATA.flat.zip"><code class="xref download docutils literal notranslate"><span class="pre">ClassExamples.AnyInputANYDATA.flat.zip</span></code></a></p>
+</dd>
+</dl>
+<p>This file contains an example that loads a flat structure.anydata.h5 file into an AnyInputANYDATA object.</p>
+</div></blockquote>
+</div>
+<div class="html-toggle list-entries odd section" id="anyinputbvh">
+<span id="demo-classexamples-anyinputbvh"></span><h3><span class="list-title">AnyInputBVH</span><a class="headerlink" href="#anyinputbvh" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">Download</dt>
+<dd class="field-odd"><p><a class="reference download internal" download="" href="../_downloads/9103ed96698f95a58d01d90da0554930/ClassExamples.AnyInputBVH.zip"><code class="xref download docutils literal notranslate"><span class="pre">ClassExamples.AnyInputBVH.zip</span></code></a></p>
+</dd>
+</dl>
+</div></blockquote>
+</div>
+<div class="html-toggle list-entries even section" id="anyinputdb-msaccess-ms-access-database-interface-demonstration">
+<span id="demo-classexamples-anyinputdb-msaccess"></span><h3><span class="list-title">AnyInputDB.MSAccess</span>  <span class="list-descr">MS Access database interface demonstration.</span><a class="headerlink" href="#anyinputdb-msaccess-ms-access-database-interface-demonstration" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">Description</dt>
+<dd class="field-odd"><p>MS Access database interface demonstration.</p>
+</dd>
+<dt class="field-even">Download</dt>
+<dd class="field-even"><p><a class="reference download internal" download="" href="../_downloads/479ddb4a716b91e50556f8833646a3c3/ClassExamples.AnyInputDB.MSAccess.zip"><code class="xref download docutils literal notranslate"><span class="pre">ClassExamples.AnyInputDB.MSAccess.zip</span></code></a></p>
+</dd>
+</dl>
+</div></blockquote>
+</div>
+<div class="html-toggle list-entries odd section" id="anyinputdb-mysql-mysql-database-interface-demonstration">
+<span id="demo-classexamples-anyinputdb-mysql"></span><h3><span class="list-title">AnyInputDB.MySQL</span>  <span class="list-descr">MySQL database interface demonstration.</span><a class="headerlink" href="#anyinputdb-mysql-mysql-database-interface-demonstration" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">Description</dt>
+<dd class="field-odd"><p>MySQL database interface demonstration.</p>
+</dd>
+<dt class="field-even">Download</dt>
+<dd class="field-even"><p><a class="reference download internal" download="" href="../_downloads/03cb82d728df2a85a132676aa10fcbc0/ClassExamples.AnyInputDB.MySQL.zip"><code class="xref download docutils literal notranslate"><span class="pre">ClassExamples.AnyInputDB.MySQL.zip</span></code></a></p>
+</dd>
+</dl>
+</div></blockquote>
+</div>
+<div class="html-toggle list-entries even section" id="anyinputdb-oraclexe-oraclexe-database-interface-demonstration">
+<span id="demo-classexamples-anyinputdb-oraclexe"></span><h3><span class="list-title">AnyInputDB.OracleXE</span>  <span class="list-descr">OracleXE database interface demonstration.</span><a class="headerlink" href="#anyinputdb-oraclexe-oraclexe-database-interface-demonstration" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">Description</dt>
+<dd class="field-odd"><p>OracleXE database interface demonstration.</p>
+</dd>
+<dt class="field-even">Download</dt>
+<dd class="field-even"><p><a class="reference download internal" download="" href="../_downloads/69f86dd2f93fac96d2577039b5ace902/ClassExamples.AnyInputDB.OracleXE.zip"><code class="xref download docutils literal notranslate"><span class="pre">ClassExamples.AnyInputDB.OracleXE.zip</span></code></a></p>
+</dd>
+</dl>
+</div></blockquote>
+</div>
+<div class="html-toggle list-entries odd section" id="anyinputdb-sqlserver-ms-sql-server-database-interface-demonstration">
+<span id="demo-classexamples-anyinputdb-sqlserver"></span><h3><span class="list-title">AnyInputDB.SQLServer</span>  <span class="list-descr">MS SQL-Server database interface demonstration.</span><a class="headerlink" href="#anyinputdb-sqlserver-ms-sql-server-database-interface-demonstration" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">Description</dt>
+<dd class="field-odd"><p>MS SQL-Server database interface demonstration.</p>
+</dd>
+<dt class="field-even">Download</dt>
+<dd class="field-even"><p><a class="reference download internal" download="" href="../_downloads/e3a1b4fc3171cecaae049d7afa8dd913/ClassExamples.AnyInputDB.SQLServer.zip"><code class="xref download docutils literal notranslate"><span class="pre">ClassExamples.AnyInputDB.SQLServer.zip</span></code></a></p>
+</dd>
+</dl>
+</div></blockquote>
+</div>
+<div class="html-toggle list-entries even section" id="arm2d-msaccess-using-ms-access-data-in-a-simple-model">
+<span id="demo-classexamples-arm2d-msaccess"></span><h3><span class="list-title">Arm2D.MSAccess</span>  <span class="list-descr">Using MS Access data in a simple model.</span><a class="headerlink" href="#arm2d-msaccess-using-ms-access-data-in-a-simple-model" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">Description</dt>
+<dd class="field-odd"><p>Using MS Access data in a simple model.</p>
+</dd>
+<dt class="field-even">Download</dt>
+<dd class="field-even"><p><a class="reference download internal" download="" href="../_downloads/0aec54db8aaba1e8b481f31653d420e1/ClassExamples.Arm2D.MSAccess.zip"><code class="xref download docutils literal notranslate"><span class="pre">ClassExamples.Arm2D.MSAccess.zip</span></code></a></p>
+</dd>
+</dl>
+</div></blockquote>
+</div>
+<div class="html-toggle list-entries odd section" id="arm2d-mysql-using-mysql-data-in-a-simple-model">
+<span id="demo-classexamples-arm2d-mysql"></span><h3><span class="list-title">Arm2D.MySQL</span>  <span class="list-descr">Using MySQL data in a simple model.</span><a class="headerlink" href="#arm2d-mysql-using-mysql-data-in-a-simple-model" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">Description</dt>
+<dd class="field-odd"><p>Using MySQL data in a simple model.</p>
+</dd>
+<dt class="field-even">Download</dt>
+<dd class="field-even"><p><a class="reference download internal" download="" href="../_downloads/d1ed34bbd89c2b0a05e4118bdf3187e9/ClassExamples.Arm2D.MySQL.zip"><code class="xref download docutils literal notranslate"><span class="pre">ClassExamples.Arm2D.MySQL.zip</span></code></a></p>
+</dd>
+</dl>
+</div></blockquote>
+</div>
+<div class="html-toggle list-entries even section" id="arm2d-oraclexe-using-oracle-xe-data-in-a-simple-model">
+<span id="demo-classexamples-arm2d-oraclexe"></span><h3><span class="list-title">Arm2D.OracleXE</span>  <span class="list-descr">Using Oracle XE data in a simple model.</span><a class="headerlink" href="#arm2d-oraclexe-using-oracle-xe-data-in-a-simple-model" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">Description</dt>
+<dd class="field-odd"><p>Using Oracle XE data in a simple model.</p>
+</dd>
+<dt class="field-even">Download</dt>
+<dd class="field-even"><p><a class="reference download internal" download="" href="../_downloads/7e8b9d8644d6731a6467e5c9e847140d/ClassExamples.Arm2D.OracleXE.zip"><code class="xref download docutils literal notranslate"><span class="pre">ClassExamples.Arm2D.OracleXE.zip</span></code></a></p>
+</dd>
+</dl>
+</div></blockquote>
+</div>
+<div class="html-toggle list-entries odd section" id="arm2d-sqlserver-using-ms-sql-server-data-in-a-simple-model">
+<span id="demo-classexamples-arm2d-sqlserver"></span><h3><span class="list-title">Arm2D.SQLServer</span>  <span class="list-descr">Using MS SQL-Server data in a simple model.</span><a class="headerlink" href="#arm2d-sqlserver-using-ms-sql-server-data-in-a-simple-model" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">Description</dt>
+<dd class="field-odd"><p>Using MS SQL-Server data in a simple model.</p>
+</dd>
+<dt class="field-even">Download</dt>
+<dd class="field-even"><p><a class="reference download internal" download="" href="../_downloads/5175e6862957f4e4f2beab103c6f71ea/ClassExamples.Arm2D.SQLServer.zip"><code class="xref download docutils literal notranslate"><span class="pre">ClassExamples.Arm2D.SQLServer.zip</span></code></a></p>
+</dd>
+</dl>
+</div></blockquote>
+</div>
+<div class="html-toggle list-entries even section" id="anyinputc3d-demonstration-of-loading-a-number-of-differently-formatted-c3d-files">
+<span id="demo-classexamples-anyinputc3d"></span><h3><span class="list-title">AnyInputC3D</span>  <span class="list-descr">Demonstration of loading a number of differently formatted C3D files.</span><a class="headerlink" href="#anyinputc3d-demonstration-of-loading-a-number-of-differently-formatted-c3d-files" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">Description</dt>
+<dd class="field-odd"><p>Demonstration of loading a number of differently formatted C3D files.</p>
+</dd>
+<dt class="field-even">Download</dt>
+<dd class="field-even"><p><a class="reference download internal" download="" href="../_downloads/c0250ad6e0352bdf0b44c75c4d26e714/ClassExamples.AnyInputC3D.zip"><code class="xref download docutils literal notranslate"><span class="pre">ClassExamples.AnyInputC3D.zip</span></code></a></p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>The test files used have been downloaded from <a class="reference external" href="http://c3d.org">http://c3d.org</a></dt><dd><p>The sample files sample01.zip are used.
+These files contain the same data but saved in different formats, i.e.
+DEC, PC, and SGI formats in both floating point and integer data types.</p>
+</dd>
+</dl>
+</div></blockquote>
+</div>
+<div class="html-toggle list-entries odd section" id="anyoperationmacro-using-anyoperationmacro-for-executing-macro-command-anymcr-files">
+<span id="demo-classexamples-anyoperationmacro"></span><h3><span class="list-title">AnyOperationMacro</span>  <span class="list-descr">Using AnyOperationMacro for executing macro command (anymcr-files)</span><a class="headerlink" href="#anyoperationmacro-using-anyoperationmacro-for-executing-macro-command-anymcr-files" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">Description</dt>
+<dd class="field-odd"><p>Using AnyOperationMacro for executing macro command (anymcr-files)</p>
+</dd>
+<dt class="field-even">Download</dt>
+<dd class="field-even"><p><a class="reference download internal" download="" href="../_downloads/20c87673bce3f73af2cb08c72611a46f/ClassExamples.AnyOperationMacro.zip"><code class="xref download docutils literal notranslate"><span class="pre">ClassExamples.AnyOperationMacro.zip</span></code></a></p>
+</dd>
+</dl>
+</div></blockquote>
+</div>
+<div class="html-toggle list-entries even section" id="anyoperationreplay-using-anyoperationreplay-for-replaying-time-studies">
+<span id="demo-classexamples-anyoperationreplay"></span><h3><span class="list-title">AnyOperationReplay</span>  <span class="list-descr">Using AnyOperationReplay for replaying time studies.</span><a class="headerlink" href="#anyoperationreplay-using-anyoperationreplay-for-replaying-time-studies" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">Description</dt>
+<dd class="field-odd"><p>Using AnyOperationReplay for replaying time studies.</p>
+</dd>
+<dt class="field-even">Download</dt>
+<dd class="field-even"><p><a class="reference download internal" download="" href="../_downloads/a9cdb20bb4899b0915eebabcd29a78be/ClassExamples.AnyOperationReplay.zip"><code class="xref download docutils literal notranslate"><span class="pre">ClassExamples.AnyOperationReplay.zip</span></code></a></p>
+</dd>
+</dl>
+</div></blockquote>
+</div>
+<div class="html-toggle list-entries odd section" id="anyoperationshellexec-using-anyoperationshellexec-for-executing-external-programs">
+<span id="demo-classexamples-anyoperationshellexec"></span><h3><span class="list-title">AnyOperationShellExec</span>  <span class="list-descr">Using AnyOperationShellExec for executing external programs.</span><a class="headerlink" href="#anyoperationshellexec-using-anyoperationshellexec-for-executing-external-programs" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">Description</dt>
+<dd class="field-odd"><p>Using AnyOperationShellExec for executing external programs.</p>
+</dd>
+<dt class="field-even">Download</dt>
+<dd class="field-even"><p><a class="reference download internal" download="" href="../_downloads/94d5cba801d86285bea01b7ec9aed012/ClassExamples.AnyOperationShellExec.zip"><code class="xref download docutils literal notranslate"><span class="pre">ClassExamples.AnyOperationShellExec.zip</span></code></a></p>
+</dd>
+</dl>
+<p>This example shows how to work with AnyOperationShellExec.
+The example calles notepad.exe to open test.txt.</p>
+<p>Note: you need to change the WorkDir to your proper working directory.</p>
+</div></blockquote>
+</div>
+<div class="html-toggle list-entries even section" id="anybodystudy-mechobjectexclude-excluding-mechanical-objects-from-the-analysis-in-a-mechanical-studies">
+<span id="demo-classexamples-anybodystudy-mechobjectexclude"></span><h3><span class="list-title">AnyBodyStudy.MechObjectExclude</span>  <span class="list-descr">Excluding mechanical objects from the analysis in a mechanical studies</span><a class="headerlink" href="#anybodystudy-mechobjectexclude-excluding-mechanical-objects-from-the-analysis-in-a-mechanical-studies" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">Description</dt>
+<dd class="field-odd"><p>Excluding mechanical objects from the analysis in a mechanical studies</p>
+</dd>
+<dt class="field-even">Download</dt>
+<dd class="field-even"><p><a class="reference download internal" download="" href="../_downloads/e1e9659457d2e76e9a9758352ead0bcb/ClassExamples.AnyBodyStudy.MechObjectExclude.zip"><code class="xref download docutils literal notranslate"><span class="pre">ClassExamples.AnyBodyStudy.MechObjectExclude.zip</span></code></a></p>
+</dd>
+</dl>
+</div></blockquote>
+</div>
+<div class="html-toggle list-entries odd section" id="anychart-using-anychart-in-a-model-i-e-inside-the-model-scene-displayed-in-anybody-s-model-view">
+<span id="demo-classexamples-anychart"></span><h3><span class="list-title">AnyChart</span>  <span class="list-descr">Using AnyChart in a model, i.e., inside the model scene, displayed in AnyBody’s Model View</span><a class="headerlink" href="#anychart-using-anychart-in-a-model-i-e-inside-the-model-scene-displayed-in-anybody-s-model-view" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">Description</dt>
+<dd class="field-odd"><p>Using AnyChart in a model, i.e., inside the model scene, displayed in AnyBody’s Model View</p>
+</dd>
+<dt class="field-even">Download</dt>
+<dd class="field-even"><p><a class="reference download internal" download="" href="../_downloads/e8ee16220cdee699f3c7b95a1b1ff279/ClassExamples.AnyChart.zip"><code class="xref download docutils literal notranslate"><span class="pre">ClassExamples.AnyChart.zip</span></code></a></p>
+</dd>
+</dl>
+<p>This model demonstrates the chart drawing object
+used inside a model.</p>
+</div></blockquote>
+</div>
+<div class="html-toggle list-entries even section" id="anycamera-using-the-anycamera-object">
+<span id="demo-classexamples-anycamera"></span><h3><span class="list-title">AnyCamera</span>  <span class="list-descr">Using the AnyCamera object</span><a class="headerlink" href="#anycamera-using-the-anycamera-object" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">Description</dt>
+<dd class="field-odd"><p>Using the AnyCamera object</p>
+</dd>
+<dt class="field-even">Download</dt>
+<dd class="field-even"><p><a class="reference download internal" download="" href="../_downloads/b5f36e1b79369f16b0fa2bedd5d789e8/ClassExamples.AnyCamera.zip"><code class="xref download docutils literal notranslate"><span class="pre">ClassExamples.AnyCamera.zip</span></code></a></p>
+</dd>
+</dl>
+</div></blockquote>
+</div>
+<div class="html-toggle list-entries odd section" id="anydesstudy-demostration-of-design-studies-including-parameter-studies-and-optimization-studies">
+<span id="demo-classexamples-anydesstudy"></span><h3><span class="list-title">AnyDesStudy</span>  <span class="list-descr">Demostration of design studies including, parameter studies and optimization studies.</span><a class="headerlink" href="#anydesstudy-demostration-of-design-studies-including-parameter-studies-and-optimization-studies" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">Description</dt>
+<dd class="field-odd"><p>Demostration of design studies including, parameter studies and optimization studies.</p>
+</dd>
+<dt class="field-even">Download</dt>
+<dd class="field-even"><p><a class="reference download internal" download="" href="../_downloads/7d34a30e1c595891f2def63d28414f39/ClassExamples.AnyDesStudy.zip"><code class="xref download docutils literal notranslate"><span class="pre">ClassExamples.AnyDesStudy.zip</span></code></a></p>
+</dd>
+</dl>
+</div></blockquote>
+</div>
+<div class="html-toggle list-entries even section" id="anyoptstudy-demostration-of-design-studies-including-parameter-studies-and-optimization-studies">
+<span id="demo-classexamples-anyoptstudy"></span><h3><span class="list-title">AnyOptStudy</span>  <span class="list-descr">Demostration of design studies including, parameter studies and optimization studies.</span><a class="headerlink" href="#anyoptstudy-demostration-of-design-studies-including-parameter-studies-and-optimization-studies" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">Description</dt>
+<dd class="field-odd"><p>Demostration of design studies including, parameter studies and optimization studies.</p>
+</dd>
+<dt class="field-even">Download</dt>
+<dd class="field-even"><p><a class="reference download internal" download="" href="../_downloads/f27d46b0219fc1689537d192bc62efc2/ClassExamples.AnyOptStudy.zip"><code class="xref download docutils literal notranslate"><span class="pre">ClassExamples.AnyOptStudy.zip</span></code></a></p>
+</dd>
+</dl>
+</div></blockquote>
+</div>
+<div class="html-toggle list-entries odd section" id="anydesevalstudy-demostration-of-the-use-of-design-evaluation-studies-together-with-optimization-studies">
+<span id="demo-classexamples-anydesevalstudy"></span><h3><span class="list-title">AnyDesEvalStudy</span>  <span class="list-descr">Demostration of the use of design evaluation studies together with optimization studies.</span><a class="headerlink" href="#anydesevalstudy-demostration-of-the-use-of-design-evaluation-studies-together-with-optimization-studies" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">Description</dt>
+<dd class="field-odd"><p>Demostration of the use of design evaluation studies together with optimization studies.</p>
+</dd>
+<dt class="field-even">Download</dt>
+<dd class="field-even"><p><a class="reference download internal" download="" href="../_downloads/c6f7025607f895c084b2ea62346ab11c/ClassExamples.AnyDesEvalStudy.zip"><code class="xref download docutils literal notranslate"><span class="pre">ClassExamples.AnyDesEvalStudy.zip</span></code></a></p>
+</dd>
+</dl>
+<p>In this model we use the AnyDesEvalStudy to set the
+initial driver angle for the crank in the Demo.SliderCrank2D.any
+example. We want to specify this initial angle so that the
+slider is in a given position.</p>
+<p>We add a new mechanical study with a new kinematic analaysis.
+In this we remove the crank driver and insert a driver for the slider
+which can position the linkage in the wanted position.
+The design-evaluation study uses this new kinematic analysis
+to find the new angle and then it tranfers the angle value from
+crank joint Pos member to the crank driver’s DriverPos member.</p>
+<p>Subsequently, the kinematic analysis of the original MechStudy
+from Demo.SliderCrank2D.any will start from not zero angle,
+but the newly found angle.</p>
+<dl class="simple">
+<dt>Please try to</dt><dd><ol class="arabic simple">
+<li><p>load the model</p></li>
+<li><p>Run Main.MechStudy.Kinematics</p></li>
+<li><p>Run Main.RunAll</p></li>
+</ol>
+</dd>
+</dl>
+<p>… and watch the difference.</p>
+</div></blockquote>
+</div>
+<div class="html-toggle list-entries even section" id="anydrawgroup-creating-drawing-objects-groups-with-anydrawgroup-for-interaction-with-objects-in">
+<span id="demo-classexamples-anydrawgroup"></span><h3><span class="list-title">AnyDrawGroup</span>  <span class="list-descr">Creating drawing objects groups with AnyDrawGroup for interaction with objects in…</span><a class="headerlink" href="#anydrawgroup-creating-drawing-objects-groups-with-anydrawgroup-for-interaction-with-objects-in" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">Description</dt>
+<dd class="field-odd"><p>Creating drawing objects groups with AnyDrawGroup for interaction with objects in the Model View.</p>
+</dd>
+<dt class="field-even">Download</dt>
+<dd class="field-even"><p><a class="reference download internal" download="" href="../_downloads/8a707e7ff4d19c2f4c9507bb9d88769e/ClassExamples.AnyDrawGroup.zip"><code class="xref download docutils literal notranslate"><span class="pre">ClassExamples.AnyDrawGroup.zip</span></code></a></p>
+</dd>
+</dl>
+</div></blockquote>
+</div>
+<div class="html-toggle list-entries odd section" id="anydrawpline-anydrawpline">
+<span id="demo-classexamples-anydrawpline"></span><h3><span class="list-title">AnyDrawPLine</span>  <span class="list-descr">AnyDrawPLine.</span><a class="headerlink" href="#anydrawpline-anydrawpline" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">Description</dt>
+<dd class="field-odd"><p>AnyDrawPLine.</p>
+</dd>
+<dt class="field-even">Download</dt>
+<dd class="field-even"><p><a class="reference download internal" download="" href="../_downloads/85171ad86521c00c966c7b8f86da2c03/ClassExamples.AnyDrawPLine.zip"><code class="xref download docutils literal notranslate"><span class="pre">ClassExamples.AnyDrawPLine.zip</span></code></a></p>
+</dd>
+</dl>
+<p>Small application which will demonstrate how to measure the effective momentarm of a muscle.
+This is done by setting the velocity of the joint to 1 and looking at the velocity of the muscle
+LmtDot. When the velocity of the joint is set to 1 the muscle velocity LmtDot displays the moment arm</p>
+</div></blockquote>
+</div>
+<div class="html-toggle list-entries even section" id="anydrawsurf-anydrawsurf">
+<span id="demo-classexamples-anydrawsurf"></span><h3><span class="list-title">AnyDrawSurf</span>  <span class="list-descr">AnyDrawSurf</span><a class="headerlink" href="#anydrawsurf-anydrawsurf" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">Description</dt>
+<dd class="field-odd"><p>AnyDrawSurf</p>
+</dd>
+<dt class="field-even">Download</dt>
+<dd class="field-even"><p><a class="reference download internal" download="" href="../_downloads/07a928e20022875976c90bc5461d9f99/ClassExamples.AnyDrawSurf.zip"><code class="xref download docutils literal notranslate"><span class="pre">ClassExamples.AnyDrawSurf.zip</span></code></a></p>
+</dd>
+</dl>
+</div></blockquote>
+</div>
+<div class="html-toggle list-entries odd section" id="anydrawvector-anydrawvector">
+<span id="demo-classexamples-anydrawvector"></span><h3><span class="list-title">AnyDrawVector</span>  <span class="list-descr">AnyDrawVector</span><a class="headerlink" href="#anydrawvector-anydrawvector" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">Description</dt>
+<dd class="field-odd"><p>AnyDrawVector</p>
+</dd>
+<dt class="field-even">Download</dt>
+<dd class="field-even"><p><a class="reference download internal" download="" href="../_downloads/13f5806f6673a7a45360c05777641b17/ClassExamples.AnyDrawVector.zip"><code class="xref download docutils literal notranslate"><span class="pre">ClassExamples.AnyDrawVector.zip</span></code></a></p>
+</dd>
+</dl>
+</div></blockquote>
+</div>
+<div class="html-toggle list-entries even section" id="anydrawwidgetbase-anydrawwidgetbase">
+<span id="demo-classexamples-anydrawwidgetbase"></span><h3><span class="list-title">AnyDrawWidgetBase</span>  <span class="list-descr">AnyDrawWidgetBase</span><a class="headerlink" href="#anydrawwidgetbase-anydrawwidgetbase" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">Description</dt>
+<dd class="field-odd"><p>AnyDrawWidgetBase</p>
+</dd>
+<dt class="field-even">Download</dt>
+<dd class="field-even"><p><a class="reference download internal" download="" href="../_downloads/1d49e6b663713bb2df06ce2954a2e0c1/ClassExamples.AnyDrawWidgetBase.zip"><code class="xref download docutils literal notranslate"><span class="pre">ClassExamples.AnyDrawWidgetBase.zip</span></code></a></p>
+</dd>
+</dl>
+</div></blockquote>
+</div>
+<div class="html-toggle list-entries odd section" id="anyforce-anyforce">
+<span id="demo-classexamples-anyforce"></span><h3><span class="list-title">AnyForce</span>  <span class="list-descr">AnyForce</span><a class="headerlink" href="#anyforce-anyforce" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">Description</dt>
+<dd class="field-odd"><p>AnyForce</p>
+</dd>
+<dt class="field-even">Download</dt>
+<dd class="field-even"><p><a class="reference download internal" download="" href="../_downloads/0a15218af96c46a5ca9afea268251de6/ClassExamples.AnyForce.zip"><code class="xref download docutils literal notranslate"><span class="pre">ClassExamples.AnyForce.zip</span></code></a></p>
+</dd>
+</dl>
+<p>Demo: Force and Force Measures</p>
+<p>This file demonstrates the application of forces to a
+mechanical system and how these loads can practically be
+monitored.</p>
+<p>The model consist of a simple, two-link manipulator
+with revolute joints connecting the links and the
+base unit (ground).</p>
+<p>We apply the following loads to the end-effector:</p>
+<ul class="simple">
+<li><p>A global force, i.e. a vector of force in
+global coordinates.</p></li>
+<li><p>A local force, i.e. a vector in given in the
+reference frame of the end-effector.</p></li>
+<li><p>A moment/torque, given as a vector</p></li>
+</ul>
+<p>Moreover, we eliminated gravity and intertia forces
+by specifying very small masses. All quantities have
+be selected simply to illustrate; they are not related
+to any practical application.</p>
+<p>We will measure the effect of the applied loads at two
+points of interest, the end effector and the
+base joint. We do this by the class AnyForceMomentMeasure,
+which provides us with a total equivalent load given as a
+single force and moment vector in global coordinates.</p>
+<p>To validate the results, we compute the effect of the
+loads manually, i.e., by means of the mathematical
+expressions. These expressions can be found in the
+InverseDynamicAnalysis folder in the LoadStudy. Here they
+will evaluated during the analysis, and we can find the
+results in the Chart View.</p>
+<p>This also demonstrates the possibility generating your
+own derived output by expressions.</p>
+<p>We have placed the AnyForceMomentMeasures directly in the
+LoadStudy, so that you can easily compare their results
+with the one in InverseDynamicAnalysis.</p>
+<p>Use for instance an asteriks character in the Chart View
+specification like “LoadStudy.Output.*.M” to compare the
+components of the moments. Or use more than one asteriks,
+like “LoadStudy.Output.*A*.M” to access object with names
+containing an ‘A’, i.e., InverseDynamicAnalysis and
+BaseJointAndDriver.</p>
+</div></blockquote>
+</div>
+<div class="html-toggle list-entries even section" id="anyforcesurfacecontact-shows-how-to-use-the-anyforcesurfacecontact-class">
+<span id="demo-classexamples-anyforcesurfacecontact"></span><h3><span class="list-title">AnyForceSurfaceContact</span>  <span class="list-descr">Shows how to use the AnyForceSurfaceContact class</span><a class="headerlink" href="#anyforcesurfacecontact-shows-how-to-use-the-anyforcesurfacecontact-class" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">Description</dt>
+<dd class="field-odd"><p>Shows how to use the AnyForceSurfaceContact class</p>
+</dd>
+<dt class="field-even">Download</dt>
+<dd class="field-even"><p><a class="reference download internal" download="" href="../_downloads/e2eadfb0983afbc49c56dd90cb02ddcb/ClassExamples.AnyForceSurfaceContact.zip"><code class="xref download docutils literal notranslate"><span class="pre">ClassExamples.AnyForceSurfaceContact.zip</span></code></a></p>
+</dd>
+</dl>
+</div></blockquote>
+</div>
+<div class="html-toggle list-entries odd section" id="anyforcecononmuscleactivity-applying-constraints-on-muscle-activity">
+<span id="demo-classexamples-anyforcecononmuscleactivity"></span><h3><span class="list-title">AnyForceConOnMuscleActivity</span>  <span class="list-descr">Applying constraints on muscle activity.</span><a class="headerlink" href="#anyforcecononmuscleactivity-applying-constraints-on-muscle-activity" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">Description</dt>
+<dd class="field-odd"><p>Applying constraints on muscle activity.</p>
+</dd>
+<dt class="field-even">Download</dt>
+<dd class="field-even"><p><a class="reference download internal" download="" href="../_downloads/f3d0dc46552b22e83427c50de510862d/ClassExamples.AnyForceConOnMuscleActivity.zip"><code class="xref download docutils literal notranslate"><span class="pre">ClassExamples.AnyForceConOnMuscleActivity.zip</span></code></a></p>
+</dd>
+</dl>
+</div></blockquote>
+</div>
+<div class="html-toggle list-entries even section" id="anyforceconstraint-applying-constraints-on-forces-in-particular-reaction-force">
+<span id="demo-classexamples-anyforceconstraint"></span><h3><span class="list-title">AnyForceConstraint</span>  <span class="list-descr">Applying constraints on forces, in particular reaction force.</span><a class="headerlink" href="#anyforceconstraint-applying-constraints-on-forces-in-particular-reaction-force" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">Description</dt>
+<dd class="field-odd"><p>Applying constraints on forces, in particular reaction force.</p>
+</dd>
+<dt class="field-even">Download</dt>
+<dd class="field-even"><p><a class="reference download internal" download="" href="../_downloads/46bcd02383c53ee262d44845c56d467d/ClassExamples.AnyForceConstraint.zip"><code class="xref download docutils literal notranslate"><span class="pre">ClassExamples.AnyForceConstraint.zip</span></code></a></p>
+</dd>
+</dl>
+<p>An example showing different force constraints (AnyForceConstraint-derived classes)</p>
+<p>The example is based on the Demo.Arm2D model, however modified with new drivers.
+The new drivers and force constraints aim at modeling a vertical wall with a sliding box on.
+The box is held by the hand of the simple 2D arm.
+Between box and wall exists a Coulomb-style friction. Although, we have motion between box and wall
+we make the friction model as in-equality constraint between normal and tangential forces
+(in fact a cone constraint), i.e., static Coulomb friction. We take this freedom for
+demonstraing purposes.</p>
+<p>Basically, it constains the following studies:</p>
+<p>ArmModelStudy  :  The original study imported with the original model and not relevant for this example</p>
+<p>ArmModelStudy2 :  The arm model assembled with the wall-box-friction model. The original drivers excluded</p>
+<p>ArmModelStudy2_NoFriction : The same as ArmModelStudy2; however, the box and friction is removed.</p>
+<p>The RunApplication operation runs the inverse dynamics operation of the two studies. Comparing the studies
+we see how the arm exploits the friction for carrying the load on the arm, but only until a certain height
+(moving the hand down). Lower than this height, the two models show the same muscular effort (apart from
+the weight of the box).</p>
+</div></blockquote>
+</div>
+<div class="html-toggle list-entries odd section" id="anyforcemomentmeasure-measuring-forces-as-3d-point-force-and-moment-components">
+<span id="demo-classexamples-anyforcemomentmeasure"></span><h3><span class="list-title">AnyForceMomentMeasure</span>  <span class="list-descr">Measuring forces as 3D point force and moment components.</span><a class="headerlink" href="#anyforcemomentmeasure-measuring-forces-as-3d-point-force-and-moment-components" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">Description</dt>
+<dd class="field-odd"><p>Measuring forces as 3D point force and moment components.</p>
+</dd>
+<dt class="field-even">Download</dt>
+<dd class="field-even"><p><a class="reference download internal" download="" href="../_downloads/1b9c88c453e14d1fddad0be9d6cbbde2/ClassExamples.AnyForceMomentMeasure.zip"><code class="xref download docutils literal notranslate"><span class="pre">ClassExamples.AnyForceMomentMeasure.zip</span></code></a></p>
+</dd>
+</dl>
+</div></blockquote>
+</div>
+<div class="html-toggle list-entries even section" id="anyfunbutterworthfilter-butterworth-filter-function-in-class-anyfunbutterworthfilter">
+<span id="demo-classexamples-anyfunbutterworthfilter"></span><h3><span class="list-title">AnyFunButterworthFilter</span>  <span class="list-descr">Butterworth filter function in class AnyFunButterworthFilter.</span><a class="headerlink" href="#anyfunbutterworthfilter-butterworth-filter-function-in-class-anyfunbutterworthfilter" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">Description</dt>
+<dd class="field-odd"><p>Butterworth filter function in class AnyFunButterworthFilter.</p>
+</dd>
+<dt class="field-even">Download</dt>
+<dd class="field-even"><p><a class="reference download internal" download="" href="../_downloads/993ee7ad771726e02ac56d909f1cafea/ClassExamples.AnyFunButterworthFilter.zip"><code class="xref download docutils literal notranslate"><span class="pre">ClassExamples.AnyFunButterworthFilter.zip</span></code></a></p>
+</dd>
+</dl>
+<p>This model demonstrates the use of the Butterworth filter facility.
+The model filters a dataset, composed of a series of sinus waves with a lowpass, highpass, bandpass and bandstop filter
+and uses the filtered data to create interpolation functions as function of time
+that can be plotted after a kinematic analysis.</p>
+<p>The interpolation functions used throughout the file do not serve any other purpose
+than allowing one to plot the data using the charts. The filters allow you to filter any data given as an AnyFloat
+and it returns to you an AnyFloat with the filtered data.</p>
+</div></blockquote>
+</div>
+<div class="html-toggle list-entries odd section" id="anyfunsquarewave-smooth-step-functions-in-class-anyfunsquarewave-and-anyfunsquarewavethreshold">
+<span id="demo-classexamples-anyfunsquarewave"></span><h3><span class="list-title">AnyFunSquareWave</span>  <span class="list-descr">Smooth step functions in class AnyFunSquareWave and AnyFunSquareWaveThreshold…</span><a class="headerlink" href="#anyfunsquarewave-smooth-step-functions-in-class-anyfunsquarewave-and-anyfunsquarewavethreshold" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">Description</dt>
+<dd class="field-odd"><p>Smooth step functions in class AnyFunSquareWave and AnyFunSquareWaveThreshold e.g. for making kinematic weight functions.</p>
+</dd>
+<dt class="field-even">Download</dt>
+<dd class="field-even"><p><a class="reference download internal" download="" href="../_downloads/38693a2ce20fb397b1f19f8b48af12f1/ClassExamples.AnyFunSquareWave.zip"><code class="xref download docutils literal notranslate"><span class="pre">ClassExamples.AnyFunSquareWave.zip</span></code></a></p>
+</dd>
+</dl>
+</div></blockquote>
+</div>
+<div class="html-toggle list-entries even section" id="anyfunlogical-logical-functions-derived-from-anyfunlogical">
+<span id="demo-classexamples-anyfunlogical"></span><h3><span class="list-title">AnyFunLogical</span>  <span class="list-descr">Logical functions (derived from AnyFunLogical)</span><a class="headerlink" href="#anyfunlogical-logical-functions-derived-from-anyfunlogical" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">Description</dt>
+<dd class="field-odd"><p>Logical functions (derived from AnyFunLogical)</p>
+</dd>
+<dt class="field-even">Download</dt>
+<dd class="field-even"><p><a class="reference download internal" download="" href="../_downloads/3ee98ef5ee3bcf41d2923e3da93e0f4e/ClassExamples.AnyFunLogical.zip"><code class="xref download docutils literal notranslate"><span class="pre">ClassExamples.AnyFunLogical.zip</span></code></a></p>
+</dd>
+</dl>
+<p>Examples of using logical/conditional functions</p>
+<p>We demonstrate the following functions</p>
+<ul class="simple">
+<li><p>iffun(condition,true-return,false-return)</p></li>
+<li><p>logical functions:</p>
+<ul>
+<li><p>Equality testing: <code class="docutils literal notranslate"><span class="pre">eqfun(x1,x2)</span></code></p></li>
+<li><p>Not-equal testing: <code class="docutils literal notranslate"><span class="pre">neqfun(x1,x2)</span></code></p></li>
+<li><p>Greater and smaller than testing: <code class="docutils literal notranslate"><span class="pre">gtfun(x1,x2)</span></code>, <code class="docutils literal notranslate"><span class="pre">gteqfun(x1,x2)</span></code>, <code class="docutils literal notranslate"><span class="pre">ltfun(x1,x2)</span></code>, <code class="docutils literal notranslate"><span class="pre">lteqfun(x1,x2)</span></code></p></li>
+<li><p>and/or functions: <code class="docutils literal notranslate"><span class="pre">andfun(x1,x2)</span></code>, <code class="docutils literal notranslate"><span class="pre">orfun(x1,x2)</span></code></p></li>
+</ul>
+</li>
+</ul>
+<p>Handling of multi-element and multi-dimensional arguments is treated
+in separte sections in the end.</p>
+</div></blockquote>
+</div>
+<div class="html-toggle list-entries odd section" id="anyfunelemopr-element-by-element-functions">
+<span id="demo-classexamples-anyfunelemopr"></span><h3><span class="list-title">AnyFunElemOpr</span>  <span class="list-descr">Element by element functions</span><a class="headerlink" href="#anyfunelemopr-element-by-element-functions" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">Description</dt>
+<dd class="field-odd"><p>Element by element functions</p>
+</dd>
+<dt class="field-even">Download</dt>
+<dd class="field-even"><p><a class="reference download internal" download="" href="../_downloads/b29bba47f98ca3b5f7e4cf3b0ed760ce/ClassExamples.AnyFunElemOpr.zip"><code class="xref download docutils literal notranslate"><span class="pre">ClassExamples.AnyFunElemOpr.zip</span></code></a></p>
+</dd>
+</dl>
+<p>Examples of the usage of functions that operate on each element of an AnyValue.</p>
+<p>We demonstrate the following functions</p>
+<ul class="simple">
+<li><p>ceil</p></li>
+<li><p>floor</p></li>
+<li><p>round</p></li>
+<li><p>pow</p></li>
+<li><p>mult</p></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="html-toggle list-entries even section" id="anyfunex-using-external-python-functions-in-anyscript">
+<span id="demo-classexamples-anyfunex"></span><h3><span class="list-title">AnyFunEx</span>  <span class="list-descr">Using external python functions in AnyScript.</span><a class="headerlink" href="#anyfunex-using-external-python-functions-in-anyscript" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">Description</dt>
+<dd class="field-odd"><p>Using external python functions in AnyScript.</p>
+</dd>
+<dt class="field-even">Download</dt>
+<dd class="field-even"><p><a class="reference download internal" download="" href="../_downloads/dab574979bf9842c1146a535c10d5b04/ClassExamples.AnyFunEx.zip"><code class="xref download docutils literal notranslate"><span class="pre">ClassExamples.AnyFunEx.zip</span></code></a></p>
+</dd>
+</dl>
+</div></blockquote>
+</div>
+<div class="html-toggle list-entries odd section" id="anyfunstringformat-string-formatting-functions">
+<span id="demo-classexamples-anyfunstringformat"></span><h3><span class="list-title">AnyFunStringFormat</span>  <span class="list-descr">String formatting functions</span><a class="headerlink" href="#anyfunstringformat-string-formatting-functions" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">Description</dt>
+<dd class="field-odd"><p>String formatting functions</p>
+</dd>
+<dt class="field-even">Download</dt>
+<dd class="field-even"><p><a class="reference download internal" download="" href="../_downloads/0a48d0e8568dbb267bf5788f7fee74d2/ClassExamples.AnyFunStringFormat.zip"><code class="xref download docutils literal notranslate"><span class="pre">ClassExamples.AnyFunStringFormat.zip</span></code></a></p>
+</dd>
+</dl>
+<p>Examples of the usage of functions for formatting strings.</p>
+<p>We demonstrate the following functions</p>
+<ul class="simple">
+<li><p>strformat (AnyFunStringFormat)</p></li>
+<li><p>strquote  (AnyFunStringQuote)</p></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="html-toggle list-entries even section" id="anyfuninfo-information-functions-anyfuninfo-derived-functions">
+<span id="demo-classexamples-anyfunfuninfo"></span><h3><span class="list-title">AnyFunInfo</span>  <span class="list-descr">Information functions (AnyFunInfo-derived functions)</span><a class="headerlink" href="#anyfuninfo-information-functions-anyfuninfo-derived-functions" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">Description</dt>
+<dd class="field-odd"><p>Information functions (AnyFunInfo-derived functions)</p>
+</dd>
+<dt class="field-even">Download</dt>
+<dd class="field-even"><p><a class="reference download internal" download="" href="../_downloads/9db76853e06aec378d587a56f0067234/ClassExamples.AnyFunFunInfo.zip"><code class="xref download docutils literal notranslate"><span class="pre">ClassExamples.AnyFunFunInfo.zip</span></code></a></p>
+</dd>
+</dl>
+<p>Examples of the usage of functions that access information
+in the AnyScript data structure.</p>
+<p>We demonstrate the following functions</p>
+<ul class="simple">
+<li><p>NameOf(..)</p></li>
+<li><p>CompleteNameOf(..)</p></li>
+<li><p>ClassNameOf(..)</p></li>
+<li><p>DimOf(..)</p></li>
+<li><p>SizesOf(..)</p></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="html-toggle list-entries odd section" id="anyfuninit-information-functions-anyfuninit-derived-functions">
+<span id="demo-classexamples-anyfuninit"></span><h3><span class="list-title">AnyFunInit</span>  <span class="list-descr">Information functions (AnyFunInit-derived functions)</span><a class="headerlink" href="#anyfuninit-information-functions-anyfuninit-derived-functions" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">Description</dt>
+<dd class="field-odd"><p>Information functions (AnyFunInit-derived functions)</p>
+</dd>
+<dt class="field-even">Download</dt>
+<dd class="field-even"><p><a class="reference download internal" download="" href="../_downloads/14b1cc699fc555bed382b7ab8e175383/ClassExamples.AnyFunInit.zip"><code class="xref download docutils literal notranslate"><span class="pre">ClassExamples.AnyFunInit.zip</span></code></a></p>
+</dd>
+</dl>
+<p>Examples of the usage of functions that initialization</p>
+<p>We demonstrate the following functions</p>
+<ul class="simple">
+<li><p>iarr(..)     - Integer array initialzation</p></li>
+<li><p>arrcat(..)   - Array concatenation</p></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="html-toggle list-entries even section" id="anyfuninterpol-interpolation-function-class-anyfuninterpol">
+<span id="demo-classexamples-anyfuninterpol"></span><h3><span class="list-title">AnyFunInterPol</span>  <span class="list-descr">Interpolation function (class AnyFunInterPol).</span><a class="headerlink" href="#anyfuninterpol-interpolation-function-class-anyfuninterpol" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">Description</dt>
+<dd class="field-odd"><p>Interpolation function (class AnyFunInterPol).</p>
+</dd>
+<dt class="field-even">Download</dt>
+<dd class="field-even"><p><a class="reference download internal" download="" href="../_downloads/3f390724b92de127ea30644629664b9d/ClassExamples.AnyFunInterPol.zip"><code class="xref download docutils literal notranslate"><span class="pre">ClassExamples.AnyFunInterPol.zip</span></code></a></p>
+</dd>
+</dl>
+<p>Demo: AnyFunInterpol</p>
+<p>This demostration file illustrates different types of use
+of the interpolation function built into the class AnyFunInterpol.</p>
+<p>The file contains the following examples:
+- Example 1: Simple interpolation function with 3 output elements
+- Example 2: Simple interpolation function importing data from a csv file
+- Example 3: Calling interpolation function with multiple values</p>
+<ul class="simple">
+<li><p>Example 4: Application of interpolation functions as force input to a mechanical model.</p></li>
+<li><dl class="simple">
+<dt>Example 5: A parameter study that varies single data points in the interpolation function data</dt><dd><p>and studies the output of the inverse dynamic analysis from Example 4.</p>
+</dd>
+</dl>
+</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="html-toggle list-entries odd section" id="anyfunexponentialserie-exponential-serie-function-class-anyfunexponentialserie">
+<span id="demo-classexamples-anyfunexponentialserie"></span><h3><span class="list-title">AnyFunExponentialSerie</span>  <span class="list-descr">Exponential Serie function (class AnyFunExponentialSerie).</span><a class="headerlink" href="#anyfunexponentialserie-exponential-serie-function-class-anyfunexponentialserie" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">Description</dt>
+<dd class="field-odd"><p>Exponential Serie function (class AnyFunExponentialSerie).</p>
+</dd>
+<dt class="field-even">Download</dt>
+<dd class="field-even"><p><a class="reference download internal" download="" href="../_downloads/7767a674077f86140cde474240dd467c/ClassExamples.AnyFunExponentialSerie.zip"><code class="xref download docutils literal notranslate"><span class="pre">ClassExamples.AnyFunExponentialSerie.zip</span></code></a></p>
+</dd>
+</dl>
+<p>Demo: AnyFunExponentialSerie</p>
+<p>This demostration model illustrates different usage
+of the Exponential serie function available from the
+class AnyFunExponentialSerie. It is a single parameter function,
+which can be used for driving kinematics.</p>
+</div></blockquote>
+</div>
+<div class="html-toggle list-entries even section" id="anyfunlinfilter-linear-filter-function-in-class-anyfunlinfilter">
+<span id="demo-classexamples-anyfunlinfilter"></span><h3><span class="list-title">AnyFunLinFilter</span>  <span class="list-descr">Linear filter function in class AnyFunLinFilter.</span><a class="headerlink" href="#anyfunlinfilter-linear-filter-function-in-class-anyfunlinfilter" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">Description</dt>
+<dd class="field-odd"><p>Linear filter function in class AnyFunLinFilter.</p>
+</dd>
+<dt class="field-even">Download</dt>
+<dd class="field-even"><p><a class="reference download internal" download="" href="../_downloads/8b00bcb5892afc45f97a3b10dd08565f/ClassExamples.AnyFunLinFilter.zip"><code class="xref download docutils literal notranslate"><span class="pre">ClassExamples.AnyFunLinFilter.zip</span></code></a></p>
+</dd>
+</dl>
+<p>This model demonstrates the use of the Linear filter facility.</p>
+<p>The model filters a dataset, composed of a series of sinus waves with a lowpass
+and uses the filtered data to create interpolation functions as function of time
+that can be plotted after a kinematic analysis.</p>
+<p>The interpolation functions used throughout the file do not serve any other purpose
+than allowing one to plot the data using the charts. The filters allow you to filter any data given as an AnyFloat
+and it returns to you an AnyFloat with the filtered data.</p>
+</div></blockquote>
+</div>
+<div class="html-toggle list-entries odd section" id="anyfunobjbase-object-functions-anyfunobjbase-derived-classes-this-is-a-familiy-of-functions">
+<span id="demo-classexamples-anyfunobjbase"></span><h3><span class="list-title">AnyFunObjBase</span>  <span class="list-descr">Object functions (AnyFunObjBase-derived classes). This is a familiy of functions…</span><a class="headerlink" href="#anyfunobjbase-object-functions-anyfunobjbase-derived-classes-this-is-a-familiy-of-functions" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">Description</dt>
+<dd class="field-odd"><p>Object functions (AnyFunObjBase-derived classes). This is a familiy of functions for systematical data rearrangement, such as conditional selection, searching, sorting, convertion of objects and their values.</p>
+</dd>
+<dt class="field-even">Download</dt>
+<dd class="field-even"><p><a class="reference download internal" download="" href="../_downloads/ba9bc5a5bae66f06b80b5d38fed93fa8/ClassExamples.AnyFunObjBase.zip"><code class="xref download docutils literal notranslate"><span class="pre">ClassExamples.AnyFunObjBase.zip</span></code></a></p>
+</dd>
+</dl>
+</div></blockquote>
+</div>
+<div class="html-toggle list-entries even section" id="anyfunobjselect-object-selection-functions-anyfunobjbase-derived-classes-this-is-a-familiy-of">
+<span id="demo-classexamples-anyfunobjselect"></span><h3><span class="list-title">AnyFunObjSelect</span>  <span class="list-descr">Object selection functions (AnyFunObjBase-derived classes). This is a familiy of…</span><a class="headerlink" href="#anyfunobjselect-object-selection-functions-anyfunobjbase-derived-classes-this-is-a-familiy-of" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">Description</dt>
+<dd class="field-odd"><p>Object selection functions (AnyFunObjBase-derived classes). This is a familiy of functions for systematical data rearrangement, such as conditional selection, searching, sorting, convertion of objects and their values.</p>
+</dd>
+<dt class="field-even">Download</dt>
+<dd class="field-even"><p><a class="reference download internal" download="" href="../_downloads/5dbf2cd111f86ab5f25f8ac1d6e20437/ClassExamples.AnyFunObjSelect.zip"><code class="xref download docutils literal notranslate"><span class="pre">ClassExamples.AnyFunObjSelect.zip</span></code></a></p>
+</dd>
+</dl>
+</div></blockquote>
+</div>
+<div class="html-toggle list-entries odd section" id="anyfunpolynomial-polynomia-function-class-anyfunpolynomial">
+<span id="demo-classexamples-anyfunpolynomial"></span><h3><span class="list-title">AnyFunPolynomial</span>  <span class="list-descr">Polynomia function (class AnyFunPolynomial).</span><a class="headerlink" href="#anyfunpolynomial-polynomia-function-class-anyfunpolynomial" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">Description</dt>
+<dd class="field-odd"><p>Polynomia function (class AnyFunPolynomial).</p>
+</dd>
+<dt class="field-even">Download</dt>
+<dd class="field-even"><p><a class="reference download internal" download="" href="../_downloads/0318a2f1347439bbebf2452f4be289f1/ClassExamples.AnyFunPolynomial.zip"><code class="xref download docutils literal notranslate"><span class="pre">ClassExamples.AnyFunPolynomial.zip</span></code></a></p>
+</dd>
+</dl>
+<p>Demo: AnyFunPolynomial</p>
+<p>This demostration model illustrates different usage
+of the polynomial function available from the
+class AnyFunPolynomial.</p>
+</div></blockquote>
+</div>
+<div class="html-toggle list-entries even section" id="anyfuntransform3d-3d-transformation-function-anyfuntransform3d-derived-classes">
+<span id="demo-classexamples-anyfuntransform3d"></span><h3><span class="list-title">AnyFunTransform3D</span>  <span class="list-descr">3D transformation function (AnyFunTransform3D-derived classes)</span><a class="headerlink" href="#anyfuntransform3d-3d-transformation-function-anyfuntransform3d-derived-classes" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">Description</dt>
+<dd class="field-odd"><p>3D transformation function (AnyFunTransform3D-derived classes)</p>
+</dd>
+<dt class="field-even">Download</dt>
+<dd class="field-even"><p><a class="reference download internal" download="" href="../_downloads/d9af1d54964ce42c343c969266647452/ClassExamples.AnyFunTransform3D.zip"><code class="xref download docutils literal notranslate"><span class="pre">ClassExamples.AnyFunTransform3D.zip</span></code></a></p>
+</dd>
+</dl>
+<p>This model demonstrates simple linear 3D scaling function and expressions with such transform.</p>
+<p>A 3D vector is scaled. The original vector is blue, a linear transformation is drawn in grey.
+A geometric shape, a scapula bone, imported as AnyDrawSurf objects
+The unscaled form is blue, a linearly scaled (Uniform scaling plus a rotation) is drawn in grey color.</p>
+</div></blockquote>
+</div>
+<div class="html-toggle list-entries odd section" id="anyfuntransform3dlinref-3d-transformation-functions-based-on-mechanical-objects-positions">
+<span id="demo-classexamples-anyfuntransform3dlinref"></span><h3><span class="list-title">AnyFunTransform3DLinRef</span>  <span class="list-descr">3D transformation functions based on mechanical objects’ positions</span><a class="headerlink" href="#anyfuntransform3dlinref-3d-transformation-functions-based-on-mechanical-objects-positions" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">Description</dt>
+<dd class="field-odd"><p>3D transformation functions based on mechanical objects’ positions</p>
+</dd>
+<dt class="field-even">Download</dt>
+<dd class="field-even"><p><a class="reference download internal" download="" href="../_downloads/fd67ffdd892f948753e4cc3ca1f9a95b/ClassExamples.AnyFunTransform3DLinRef.zip"><code class="xref download docutils literal notranslate"><span class="pre">ClassExamples.AnyFunTransform3DLinRef.zip</span></code></a></p>
+</dd>
+</dl>
+<p>This model demonstrates 3D transformation functions and expressions with such transform.</p>
+<p>A 3D vector is transformed between different Cartesian frames of reference using transformation
+functions derived from AnyFunTransform3DLinRefBase.</p>
+<p>We demostrate:
+- AnyFunTransform3DLinRef (class)
+- AnyFunTransform3DLinRef2 (class)
+- transf3D (global function)</p>
+</div></blockquote>
+</div>
+<div class="html-toggle list-entries even section" id="anyfuntransform3drbf-3d-transformation-function-based-on-radial-basis-functions-rbf">
+<span id="demo-classexamples-anyfuntransform3drbf"></span><h3><span class="list-title">AnyFunTransform3DRBF</span>  <span class="list-descr">3D transformation function based on radial basis functions (RBF)</span><a class="headerlink" href="#anyfuntransform3drbf-3d-transformation-function-based-on-radial-basis-functions-rbf" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">Description</dt>
+<dd class="field-odd"><p>3D transformation function based on radial basis functions (RBF)</p>
+</dd>
+<dt class="field-even">Download</dt>
+<dd class="field-even"><p><a class="reference download internal" download="" href="../_downloads/b8aff8c8716b7a962851c171fa8f63b3/ClassExamples.AnyFunTransform3DRBF.zip"><code class="xref download docutils literal notranslate"><span class="pre">ClassExamples.AnyFunTransform3DRBF.zip</span></code></a></p>
+</dd>
+</dl>
+<p>This model demonstrates an advanced 3D scaling/transformation function.</p>
+<p>It demonstates radial basis function (RBF) interpolation.</p>
+<p>Two scaling are performed:
+1) A 3D vector is scaled. The original vector is blue, and the RBF-scaled vector is green</p>
+<ol class="arabic simple" start="2">
+<li><p>A geometric shape, a scapula bone, imported as AnyDrawSurf objects
+The unscaled form is blue, a linearly scaled, and an RBF-scaled bone drawn in green color.</p></li>
+<li><p>Test3: Hard-coded values are used to monitor consistency of RBF transforms through out different versions.
+Please see AnyFloat res - has to be very close to 0.</p></li>
+<li><p>Test4: Hard-coded bounding box points are used to monitor consistency of RBF transforms with bounding box switched on.
+Please see AnyFloat res - has to be very close to 0.</p></li>
+<li><p>Test5: Hard-coded points are used to monitor whether pretransforms are working well in AnyFunTransform3DRBF
+Please see AnyFloat res - has to be very close to 0.</p></li>
+</ol>
+</div></blockquote>
+</div>
+<div class="html-toggle list-entries odd section" id="anyfuntransform3dstl-3d-transformation-function-for-transforming-stl-files">
+<span id="demo-classexamples-anyfuntransform3dstl"></span><h3><span class="list-title">AnyFunTransform3DSTL</span>  <span class="list-descr">3D transformation function for transforming STL files</span><a class="headerlink" href="#anyfuntransform3dstl-3d-transformation-function-for-transforming-stl-files" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">Description</dt>
+<dd class="field-odd"><p>3D transformation function for transforming STL files</p>
+</dd>
+<dt class="field-even">Download</dt>
+<dd class="field-even"><p><a class="reference download internal" download="" href="../_downloads/3d1dd2887d0fef74531d4bb4074c44e6/ClassExamples.AnyFunTransform3DSTL.zip"><code class="xref download docutils literal notranslate"><span class="pre">ClassExamples.AnyFunTransform3DSTL.zip</span></code></a></p>
+</dd>
+</dl>
+</div></blockquote>
+</div>
+<div class="html-toggle list-entries even section" id="anyfunvecopr-functions-for-operations-on-vectors-anyfunvecopr-derived-function-classes">
+<span id="demo-classexamples-anyfunvecopr"></span><h3><span class="list-title">AnyFunVecOpr</span>  <span class="list-descr">Functions for operations on vectors (AnyFunVecOpr-derived function classes).</span><a class="headerlink" href="#anyfunvecopr-functions-for-operations-on-vectors-anyfunvecopr-derived-function-classes" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">Description</dt>
+<dd class="field-odd"><p>Functions for operations on vectors (AnyFunVecOpr-derived function classes).</p>
+</dd>
+<dt class="field-even">Download</dt>
+<dd class="field-even"><p><a class="reference download internal" download="" href="../_downloads/a8e092354963b0c8130a248f8cdd3b76/ClassExamples.AnyFunVecOpr.zip"><code class="xref download docutils literal notranslate"><span class="pre">ClassExamples.AnyFunVecOpr.zip</span></code></a></p>
+</dd>
+</dl>
+<p>Examples of the usage of functions on vectors</p>
+<p>We demonstrate the following functions</p>
+<ul class="simple">
+<li><p>sum</p></li>
+<li><p>prod</p></li>
+<li><p>vnorm</p></li>
+<li><p>min</p></li>
+<li><p>max</p></li>
+<li><p>mean</p></li>
+<li><p>secint (Secant-integration function)</p></li>
+</ul>
+<p>In the end, we provide a small example of numerical integration using the
+‘sum’ and the ‘secint’ functions.</p>
+</div></blockquote>
+</div>
+<div class="html-toggle list-entries odd section" id="anykinlinear-measuring-the-linear-motion-translations">
+<span id="demo-classexamples-anykinlinear"></span><h3><span class="list-title">AnyKinLinear</span>  <span class="list-descr">Measuring the linear motion (translations).</span><a class="headerlink" href="#anykinlinear-measuring-the-linear-motion-translations" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">Description</dt>
+<dd class="field-odd"><p>Measuring the linear motion (translations).</p>
+</dd>
+<dt class="field-even">Download</dt>
+<dd class="field-even"><p><a class="reference download internal" download="" href="../_downloads/5c0c41760d8b49840c8a3ba0300832c6/ClassExamples.AnyKinLinear.zip"><code class="xref download docutils literal notranslate"><span class="pre">ClassExamples.AnyKinLinear.zip</span></code></a></p>
+</dd>
+</dl>
+</div></blockquote>
+</div>
+<div class="html-toggle list-entries even section" id="anykincom-measuring-the-center-of-mass-com-of-a-collection-of-segments">
+<span id="demo-classexamples-anykincom"></span><h3><span class="list-title">AnyKinCoM</span>  <span class="list-descr">Measuring the Center of Mass (CoM) of a collection of segments.</span><a class="headerlink" href="#anykincom-measuring-the-center-of-mass-com-of-a-collection-of-segments" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">Description</dt>
+<dd class="field-odd"><p>Measuring the Center of Mass (CoM) of a collection of segments.</p>
+</dd>
+<dt class="field-even">Download</dt>
+<dd class="field-even"><p><a class="reference download internal" download="" href="../_downloads/d5b437826f133c4ca6ada70d05dfeaa0/ClassExamples.AnyKinCoM.zip"><code class="xref download docutils literal notranslate"><span class="pre">ClassExamples.AnyKinCoM.zip</span></code></a></p>
+</dd>
+</dl>
+</div></blockquote>
+</div>
+<div class="html-toggle list-entries odd section" id="anykinlinear2">
+<span id="demo-classexamples-anykinlinear2"></span><h3><span class="list-title">AnyKinLinear2</span><a class="headerlink" href="#anykinlinear2" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">Download</dt>
+<dd class="field-odd"><p><a class="reference download internal" download="" href="../_downloads/1859e0e44c011f6a71a74d4db6305a94/ClassExamples.AnyKinLinear2.zip"><code class="xref download docutils literal notranslate"><span class="pre">ClassExamples.AnyKinLinear2.zip</span></code></a></p>
+</dd>
+</dl>
+</div></blockquote>
+</div>
+<div class="html-toggle list-entries even section" id="anykinmeasurelincomb-linear-combinations-of-kinematic-measures-by-class-anykinmeasurelincomb">
+<span id="demo-classexamples-anykinmeasurelincomb"></span><h3><span class="list-title">AnyKinMeasureLinComb</span>  <span class="list-descr">Linear combinations of kinematic measures by class AnyKinMeasureLinComb.</span><a class="headerlink" href="#anykinmeasurelincomb-linear-combinations-of-kinematic-measures-by-class-anykinmeasurelincomb" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">Description</dt>
+<dd class="field-odd"><p>Linear combinations of kinematic measures by class AnyKinMeasureLinComb.</p>
+</dd>
+<dt class="field-even">Download</dt>
+<dd class="field-even"><p><a class="reference download internal" download="" href="../_downloads/11b8aabd5e9ddcc89b952c6b19003ffd/ClassExamples.AnyKinMeasureLinComb.zip"><code class="xref download docutils literal notranslate"><span class="pre">ClassExamples.AnyKinMeasureLinComb.zip</span></code></a></p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Firstly we make one linear measure, this measures a</dt><dd><p>vector between the global origin (but it could be any
+reference system) and the elbow node</p>
+</dd>
+</dl>
+</div></blockquote>
+</div>
+<div class="html-toggle list-entries odd section" id="anykinmeasurefuncomb1-new-kinematics-measures-defined-as-a-function-of-other-measures-by-class">
+<span id="demo-classexamples-anykinmeasurefuncomb1"></span><h3><span class="list-title">AnyKinMeasureFunComb1</span>  <span class="list-descr">New kinematics measures defined as a function of other measures by class…</span><a class="headerlink" href="#anykinmeasurefuncomb1-new-kinematics-measures-defined-as-a-function-of-other-measures-by-class" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">Description</dt>
+<dd class="field-odd"><p>New kinematics measures defined as a function of other measures by class AnyKinMeasureFunComb1.</p>
+</dd>
+<dt class="field-even">Download</dt>
+<dd class="field-even"><p><a class="reference download internal" download="" href="../_downloads/ed355803636046907ca9a43e92032656/ClassExamples.AnyKinMeasureFunComb1.zip"><code class="xref download docutils literal notranslate"><span class="pre">ClassExamples.AnyKinMeasureFunComb1.zip</span></code></a></p>
+</dd>
+</dl>
+</div></blockquote>
+</div>
+<div class="html-toggle list-entries even section" id="anykinmeasurenormcomb-linear-combinations-of-kinematic-measures-by-class-anykinmeasurenormcomb">
+<span id="demo-classexamples-anykinmeasurenormcomb"></span><h3><span class="list-title">AnyKinMeasureNormComb</span>  <span class="list-descr">Linear combinations of kinematic measures by class AnyKinMeasureNormComb.</span><a class="headerlink" href="#anykinmeasurenormcomb-linear-combinations-of-kinematic-measures-by-class-anykinmeasurenormcomb" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">Description</dt>
+<dd class="field-odd"><p>Linear combinations of kinematic measures by class AnyKinMeasureNormComb.</p>
+</dd>
+<dt class="field-even">Download</dt>
+<dd class="field-even"><p><a class="reference download internal" download="" href="../_downloads/5a34e4c570e9eb203e1266659441a974/ClassExamples.AnyKinMeasureNormComb.zip"><code class="xref download docutils literal notranslate"><span class="pre">ClassExamples.AnyKinMeasureNormComb.zip</span></code></a></p>
+</dd>
+</dl>
+</div></blockquote>
+</div>
+<div class="html-toggle list-entries odd section" id="anykinmeasureorgandanykineq">
+<span id="demo-classexamples-anykinmeasureorgandanykineq"></span><h3><span class="list-title">AnyKinMeasureOrgAndAnyKinEq</span><a class="headerlink" href="#anykinmeasureorgandanykineq" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">Download</dt>
+<dd class="field-odd"><p><a class="reference download internal" download="" href="../_downloads/e8b80f3e221999bb953f28143955cbb0/ClassExamples.AnyKinMeasureOrgAndAnyKinEq.zip"><code class="xref download docutils literal notranslate"><span class="pre">ClassExamples.AnyKinMeasureOrgAndAnyKinEq.zip</span></code></a></p>
+</dd>
+</dl>
+<p>Demo: Organizing kinematic measure and constraints</p>
+<p>In this demonstration model, we shal illustrate how you can
+kinematically drive a single coordinate of motion.
+The idea is to reorganize kinematic measures, in this case picking
+out the quantities you want to constrain. We do this by making a
+new measure that is a reorganization of existing ones. Subsequently,
+we can drive this new measure, i.e., only the selected coordinates.</p>
+<p>The model is simple: It is a single segment attached to ground
+by a hinge (<a class="reference internal" href="../reference/classes/AnyRevoluteJoint.html#anyrevolutejoint"><span class="std std-ref">AnyRevoluteJoint</span></a>). It is extracted from another
+file with a model of the arm, thus the segment is called
+UpperArm. The dimensions in the problems indicate that we
+are dealing with a giant, but please do not think too much
+about this.</p>
+<p>The motion is generated by moving the Y-coordinates of
+the elbow, i.e, we drive a single coordinate of the elbow
+motion.</p>
+</div></blockquote>
+</div>
+<div class="html-toggle list-entries even section" id="anykinpointsurface-anykinpointsurface-a-distance-measure-betwen-points-and-surface">
+<span id="demo-classexamples-anykinpointsurface"></span><h3><span class="list-title">AnyKinPointSurface</span>  <span class="list-descr">AnyKinPointSurface: A distance measure betwen points and surface.</span><a class="headerlink" href="#anykinpointsurface-anykinpointsurface-a-distance-measure-betwen-points-and-surface" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">Description</dt>
+<dd class="field-odd"><p>AnyKinPointSurface: A distance measure betwen points and surface.</p>
+</dd>
+<dt class="field-even">Download</dt>
+<dd class="field-even"><p><a class="reference download internal" download="" href="../_downloads/c951ebb17e65e038a3e70984723befd6/ClassExamples.AnyKinPointSurface.zip"><code class="xref download docutils literal notranslate"><span class="pre">ClassExamples.AnyKinPointSurface.zip</span></code></a></p>
+</dd>
+</dl>
+<p>Small application to test the function of the PointSurfaceMeasure.</p>
+<p>The measure is used to drive a sphere along the z-axis to keep in touch with an
+ellipsoid.
+To measure the distance between two surfaces, for one of the surfaces measuring points
+have to be defined on the surface to apply the AnyKinPointSurface Measure.</p>
+</div></blockquote>
+</div>
+<div class="html-toggle list-entries odd section" id="anykinspsheet-anykinspsheet-a-multi-string-version-of-the-anykinspline-sp-shortest-path-i-e">
+<span id="demo-classexamples-anykinspsheet"></span><h3><span class="list-title">AnyKinSPSheet</span>  <span class="list-descr">AnyKinSPSheet: A multi-string version of the AnyKinSPLine (SP=shortest path, i.e….</span><a class="headerlink" href="#anykinspsheet-anykinspsheet-a-multi-string-version-of-the-anykinspline-sp-shortest-path-i-e" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">Description</dt>
+<dd class="field-odd"><p>AnyKinSPSheet: A multi-string version of the AnyKinSPLine (SP=shortest path, i.e. obstacle wrapping) where the strings are elastically connected.
+This is also referred to as a wrapping sheet, or here just a sheet.</p>
+</dd>
+<dt class="field-even">Download</dt>
+<dd class="field-even"><p><a class="reference download internal" download="" href="../_downloads/a7a53e5e62282bb8533f7cf8fd58570d/ClassExamples.AnyKinSPSheet.zip"><code class="xref download docutils literal notranslate"><span class="pre">ClassExamples.AnyKinSPSheet.zip</span></code></a></p>
+</dd>
+</dl>
+</div></blockquote>
+</div>
+<div class="html-toggle list-entries even section" id="anymechoutputfileforceexport-output-file-containing-loads-on-segments-as-3d-point-forces-and-torques">
+<span id="demo-classexamples-anymechoutputfileforcee"></span><h3><span class="list-title">AnyMechOutputFileForceExport</span>  <span class="list-descr">Output file containing loads on segments as 3D point forces and torques.</span><a class="headerlink" href="#anymechoutputfileforceexport-output-file-containing-loads-on-segments-as-3d-point-forces-and-torques" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">Description</dt>
+<dd class="field-odd"><p>Output file containing loads on segments as 3D point forces and torques.</p>
+</dd>
+<dt class="field-even">Download</dt>
+<dd class="field-even"><p><a class="reference download internal" download="" href="../_downloads/8591448ae39f9ff352b3ef1c5c0403f4/ClassExamples.AnyMechOutputFileForceE.zip"><code class="xref download docutils literal notranslate"><span class="pre">ClassExamples.AnyMechOutputFileForceE.zip</span></code></a></p>
+</dd>
+</dl>
+</div></blockquote>
+</div>
+<div class="html-toggle list-entries odd section" id="anymechstudybase-anymechstudybase-the-empty-base-class-for-mechnical-studies">
+<span id="demo-classexamples-anymechstudybase"></span><h3><span class="list-title">AnyMechStudyBase</span>  <span class="list-descr">AnyMechStudyBase, the empty base class for mechnical studies.</span><a class="headerlink" href="#anymechstudybase-anymechstudybase-the-empty-base-class-for-mechnical-studies" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">Description</dt>
+<dd class="field-odd"><p>AnyMechStudyBase, the empty base class for mechnical studies.</p>
+</dd>
+<dt class="field-even">Download</dt>
+<dd class="field-even"><p><a class="reference download internal" download="" href="../_downloads/a9861bcf69066251e4d81e279093c77c/ClassExamples.AnyMechStudyBase.zip"><code class="xref download docutils literal notranslate"><span class="pre">ClassExamples.AnyMechStudyBase.zip</span></code></a></p>
+</dd>
+</dl>
+<p>This file demonstrates how the, by default, empty base-class for all mechanical studies,
+AnyMechStudyBase, can be constructed and filled with operations of your own choise.
+In the example, the study object is equipped with a single kinematic analysis
+operation.</p>
+<p>The example also shows how to exclude certain mechanical parts of the model.
+…</p>
+</div></blockquote>
+</div>
+<div class="html-toggle list-entries even section" id="anymessage-anymessage-how-to-send-user-defined-message-from-the-model">
+<span id="demo-classexamples-anymessage"></span><h3><span class="list-title">AnyMessage</span>  <span class="list-descr">AnyMessage, how to send user-defined message from the model.</span><a class="headerlink" href="#anymessage-anymessage-how-to-send-user-defined-message-from-the-model" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">Description</dt>
+<dd class="field-odd"><p>AnyMessage, how to send user-defined message from the model.</p>
+</dd>
+<dt class="field-even">Download</dt>
+<dd class="field-even"><p><a class="reference download internal" download="" href="../_downloads/472ec0e29cf5517a2108f744e3084281/ClassExamples.AnyMessage.zip"><code class="xref download docutils literal notranslate"><span class="pre">ClassExamples.AnyMessage.zip</span></code></a></p>
+</dd>
+</dl>
+</div></blockquote>
+</div>
+<div class="html-toggle list-entries odd section" id="anymetabmodel-different-metabolism-models-demonstrated-together-with-a-simple-muscle-definition">
+<span id="demo-classexamples-anymetabmodel"></span><h3><span class="list-title">AnyMetabModel</span>  <span class="list-descr">Different metabolism models demonstrated together with a simple muscle definition…</span><a class="headerlink" href="#anymetabmodel-different-metabolism-models-demonstrated-together-with-a-simple-muscle-definition" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">Description</dt>
+<dd class="field-odd"><p>Different metabolism models demonstrated together with a simple muscle definition from another example.</p>
+</dd>
+<dt class="field-even">Download</dt>
+<dd class="field-even"><p><a class="reference download internal" download="" href="../_downloads/dc0790e552edf04ed88504a51c4ca866/ClassExamples.AnyMetabModel.zip"><code class="xref download docutils literal notranslate"><span class="pre">ClassExamples.AnyMetabModel.zip</span></code></a></p>
+</dd>
+</dl>
+</div></blockquote>
+</div>
+<div class="html-toggle list-entries even section" id="anymusclemodel3e-3-element-hill-type-muscle-model-incl-fiber-and-tendon-calibration">
+<span id="demo-classexamples-anymusclemodel3e"></span><h3><span class="list-title">AnyMuscleModel3E</span>  <span class="list-descr">3 Element (Hill-type) Muscle Model incl. fiber and tendon calibration.</span><a class="headerlink" href="#anymusclemodel3e-3-element-hill-type-muscle-model-incl-fiber-and-tendon-calibration" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">Description</dt>
+<dd class="field-odd"><p>3 Element (Hill-type) Muscle Model incl. fiber and tendon calibration.</p>
+</dd>
+<dt class="field-even">Download</dt>
+<dd class="field-even"><p><a class="reference download internal" download="" href="../_downloads/bc6a222a5e4ce8154b16b9b94df8aa9d/ClassExamples.AnyMuscleModel3E.zip"><code class="xref download docutils literal notranslate"><span class="pre">ClassExamples.AnyMuscleModel3E.zip</span></code></a></p>
+</dd>
+</dl>
+</div></blockquote>
+</div>
+<div class="html-toggle list-entries odd section" id="anyobjectptr-pointers-to-objects-anyobjectptr">
+<span id="demo-classexamples-anyobjectptr"></span><h3><span class="list-title">AnyObjectPtr</span>  <span class="list-descr">Pointers to Objects (AnyObjectPtr)</span><a class="headerlink" href="#anyobjectptr-pointers-to-objects-anyobjectptr" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">Description</dt>
+<dd class="field-odd"><p>Pointers to Objects (AnyObjectPtr)</p>
+</dd>
+<dt class="field-even">Download</dt>
+<dd class="field-even"><p><a class="reference download internal" download="" href="../_downloads/1a9709a15b92d3f7207f9be78edfb151/ClassExamples.AnyObjectPtr.zip"><code class="xref download docutils literal notranslate"><span class="pre">ClassExamples.AnyObjectPtr.zip</span></code></a></p>
+</dd>
+</dl>
+</div></blockquote>
+</div>
+<div class="html-toggle list-entries even section" id="anyoperationsetvalue-operation-of-setting-values-class-anyoperationsetvalue">
+<span id="demo-classexamples-anyoperationsetvalue"></span><h3><span class="list-title">AnyOperationSetValue</span>  <span class="list-descr">Operation of setting values (class AnyOperationSetValue).</span><a class="headerlink" href="#anyoperationsetvalue-operation-of-setting-values-class-anyoperationsetvalue" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">Description</dt>
+<dd class="field-odd"><p>Operation of setting values (class AnyOperationSetValue).</p>
+</dd>
+<dt class="field-even">Download</dt>
+<dd class="field-even"><p><a class="reference download internal" download="" href="../_downloads/f512b7fee26a024afcde63ba5177540e/ClassExamples.AnyOperationSetValue.zip"><code class="xref download docutils literal notranslate"><span class="pre">ClassExamples.AnyOperationSetValue.zip</span></code></a></p>
+</dd>
+</dl>
+</div></blockquote>
+</div>
+<div class="html-toggle list-entries odd section" id="anyoprsetforcedepkin-force-dependent-kinematics-analysis-of-the-simple-2d-demo-arm-model">
+<span id="demo-classexamples-anyoprsetforcedepkin"></span><h3><span class="list-title">AnyOprSetForceDepKin</span>  <span class="list-descr">Force-dependent kinematics analysis of the simple 2D demo arm model.</span><a class="headerlink" href="#anyoprsetforcedepkin-force-dependent-kinematics-analysis-of-the-simple-2d-demo-arm-model" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">Description</dt>
+<dd class="field-odd"><p>Force-dependent kinematics analysis of the simple 2D demo arm model.</p>
+</dd>
+<dt class="field-even">Download</dt>
+<dd class="field-even"><p><a class="reference download internal" download="" href="../_downloads/cea8928679199e1ab1074886f8a76fd3/ClassExamples.AnyOprSetForceDepKin.zip"><code class="xref download docutils literal notranslate"><span class="pre">ClassExamples.AnyOprSetForceDepKin.zip</span></code></a></p>
+</dd>
+</dl>
+</div></blockquote>
+</div>
+<div class="html-toggle list-entries even section" id="anyoutputfile-anyoutputfile-text-based-output-files-from-simulations">
+<span id="demo-classexamples-anyoutputfile"></span><h3><span class="list-title">AnyOutputFile</span>  <span class="list-descr">AnyOutputFile, text-based output files from simulations.</span><a class="headerlink" href="#anyoutputfile-anyoutputfile-text-based-output-files-from-simulations" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">Description</dt>
+<dd class="field-odd"><p>AnyOutputFile, text-based output files from simulations.</p>
+</dd>
+<dt class="field-even">Download</dt>
+<dd class="field-even"><p><a class="reference download internal" download="" href="../_downloads/418696bb488e909993158cbe1944698d/ClassExamples.AnyOutputFile.zip"><code class="xref download docutils literal notranslate"><span class="pre">ClassExamples.AnyOutputFile.zip</span></code></a></p>
+</dd>
+</dl>
+</div></blockquote>
+</div>
+<div class="html-toggle list-entries odd section" id="anyproject-anyproject-model-wrapper-for-ams-gui">
+<span id="demo-classexamples-anyproject"></span><h3><span class="list-title">AnyProject</span>  <span class="list-descr">AnyProject - model wrapper for AMS GUI.</span><a class="headerlink" href="#anyproject-anyproject-model-wrapper-for-ams-gui" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">Description</dt>
+<dd class="field-odd"><p>AnyProject - model wrapper for AMS GUI.</p>
+</dd>
+<dt class="field-even">Download</dt>
+<dd class="field-even"><p><a class="reference download internal" download="" href="../_downloads/83555ca188be2f38219964bd24148bea/ClassExamples.AnyProject.zip"><code class="xref download docutils literal notranslate"><span class="pre">ClassExamples.AnyProject.zip</span></code></a></p>
+</dd>
+</dl>
+<p>This model demonstrates the AnyProject functionality including using AnyProject tasks, setting modelview definitions and the AnyProject Output folder.</p>
+<p>Task examples:
+- Running typical model operations from studies, such as setting initial conditions and inverse dynamics
+- Loading another model
+- Executing class operations such saving or loading from the simulation
+- Using AnyBody commands through links defined in external html files.
+- Displaying values from the model in user-defined external html files.
+- Setting values in the model by using javascript in an external html file which is displayed as an interactive AnyProject Task description.</p>
+<p>Model View definitions:
+- Controlling the selections and visibility of objects in the modelview by setting various modelview definitions.</p>
+<p>AnyProject Output example:
+- Displaying selected data from the model by defining an AnyProjectChart and linking it to a model-defined AnyChart.</p>
+</div></blockquote>
+</div>
+<div class="html-toggle list-entries even section" id="anyreacforce-reaction-forces-class-anyreacforce">
+<span id="demo-classexamples-anyreacforce"></span><h3><span class="list-title">AnyReacForce</span>  <span class="list-descr">Reaction forces (class AnyReacForce).</span><a class="headerlink" href="#anyreacforce-reaction-forces-class-anyreacforce" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">Description</dt>
+<dd class="field-odd"><p>Reaction forces (class AnyReacForce).</p>
+</dd>
+<dt class="field-even">Download</dt>
+<dd class="field-even"><p><a class="reference download internal" download="" href="../_downloads/838f612f2fe3bcb2a10c5e4b45d1a1b0/ClassExamples.AnyReacForce.zip"><code class="xref download docutils literal notranslate"><span class="pre">ClassExamples.AnyReacForce.zip</span></code></a></p>
+</dd>
+</dl>
+</div></blockquote>
+</div>
+<div class="html-toggle list-entries odd section" id="anyrgb-rgb-color-values-anyrgb">
+<span id="demo-classexamples-anyrgb"></span><h3><span class="list-title">AnyRGB</span>  <span class="list-descr">RGB Color values (AnyRGB).</span><a class="headerlink" href="#anyrgb-rgb-color-values-anyrgb" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">Description</dt>
+<dd class="field-odd"><p>RGB Color values (AnyRGB).</p>
+</dd>
+<dt class="field-even">Download</dt>
+<dd class="field-even"><p><a class="reference download internal" download="" href="../_downloads/cd7f8df8ec58977c8e3bd9272657e57d/ClassExamples.AnyRGB.zip"><code class="xref download docutils literal notranslate"><span class="pre">ClassExamples.AnyRGB.zip</span></code></a></p>
+</dd>
+</dl>
+</div></blockquote>
+</div>
+<div class="html-toggle list-entries even section" id="anyseg-segment-rigid-body-with-inertia-properties-anyseg">
+<span id="demo-classexamples-anyseg"></span><h3><span class="list-title">AnySeg</span>  <span class="list-descr">Segment / rigid body with inertia properties (AnySeg)</span><a class="headerlink" href="#anyseg-segment-rigid-body-with-inertia-properties-anyseg" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">Description</dt>
+<dd class="field-odd"><p>Segment / rigid body with inertia properties (AnySeg)</p>
+</dd>
+<dt class="field-even">Download</dt>
+<dd class="field-even"><p><a class="reference download internal" download="" href="../_downloads/dddcf7f57a1df1aa32beeeb2f270491a/ClassExamples.AnySeg.zip"><code class="xref download docutils literal notranslate"><span class="pre">ClassExamples.AnySeg.zip</span></code></a></p>
+</dd>
+</dl>
+</div></blockquote>
+</div>
+<div class="html-toggle list-entries odd section" id="anysearchfun-anysearchfun">
+<span id="demo-classexamples-anysearchfun"></span><h3><span class="list-title">AnySearchFun</span>  <span class="list-descr">AnySearchFun</span><a class="headerlink" href="#anysearchfun-anysearchfun" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">Description</dt>
+<dd class="field-odd"><p>AnySearchFun</p>
+</dd>
+<dt class="field-even">Download</dt>
+<dd class="field-even"><p><a class="reference download internal" download="" href="../_downloads/e9ffc505778213e58e452f653f630a68/ClassExamples.AnySearchFun.zip"><code class="xref download docutils literal notranslate"><span class="pre">ClassExamples.AnySearchFun.zip</span></code></a></p>
+</dd>
+</dl>
+</div></blockquote>
+</div>
+<div class="html-toggle list-entries even section" id="anyshortestpathmuscle-muscle-wrapping-by-class-anyshortestpathmuscle">
+<span id="demo-classexamples-anyshortestpathmuscle"></span><h3><span class="list-title">AnyShortestPathMuscle</span>  <span class="list-descr">Muscle wrapping by class AnyShortestPathMuscle.</span><a class="headerlink" href="#anyshortestpathmuscle-muscle-wrapping-by-class-anyshortestpathmuscle" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">Description</dt>
+<dd class="field-odd"><p>Muscle wrapping by class AnyShortestPathMuscle.</p>
+</dd>
+<dt class="field-even">Download</dt>
+<dd class="field-even"><p><a class="reference download internal" download="" href="../_downloads/f2ea5f4a2522ef640c77f8d32804898d/ClassExamples.AnyShortestPathMuscle.zip"><code class="xref download docutils literal notranslate"><span class="pre">ClassExamples.AnyShortestPathMuscle.zip</span></code></a></p>
+</dd>
+</dl>
+<p>Demo: AnyShortestPathMuscle.any</p>
+<p>The model demonstrates the special class for making muscles that needs to wrap over obstacles.
+This class, AnyShortestPathMuscle, uses the AnyKinSPLine (SP=shortest path) as internal kinematic
+measure.
+Here we demonstartes how to define the shortest-path muscle, enter origin, insertion and via-points,
+and obstacles for wrapping about.
+A final and very important issue is initial positioning of the string.
+The initial positions may determine which way about obstacles the final path will be,
+in case of multiple valid configuration.</p>
+<p>Abut initial positioning notice the following:
+1) InitWrapPosVecArr is new style of defining initial position for the wrapping, which
+is fra more flexible than the old style using InitWrapPosVectors.</p>
+<p>2) Setting InitWrapPosOnlyOnOff=On will only calculate initial position but omit the real wrapping.
+This way the initial positions can be inspected during the motion of the model.</p>
+<ol class="arabic simple" start="3">
+<li><p>InitWrapPosVectors is the old style of definition. It will become deprecated.</p></li>
+</ol>
+<p>Using the #define MUSCLE1_VIA_POINT, the example includes a via point for the muscle</p>
+</div></blockquote>
+</div>
+<div class="html-toggle list-entries odd section" id="anyswitch-anyswitch">
+<span id="demo-classexamples-anyswitch"></span><h3><span class="list-title">AnySwitch</span>  <span class="list-descr">AnySwitch.</span><a class="headerlink" href="#anyswitch-anyswitch" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">Description</dt>
+<dd class="field-odd"><p>AnySwitch.</p>
+</dd>
+<dt class="field-even">Download</dt>
+<dd class="field-even"><p><a class="reference download internal" download="" href="../_downloads/f8bc9f51d65a59c64b3355ef5dd420f3/ClassExamples.AnySwitch.zip"><code class="xref download docutils literal notranslate"><span class="pre">ClassExamples.AnySwitch.zip</span></code></a></p>
+</dd>
+</dl>
+</div></blockquote>
+</div>
+</div>
+<div class="section" id="anyscript-creating-and-referring-to-objects">
+<h2>AnyScript: Creating and referring to objects<a class="headerlink" href="#anyscript-creating-and-referring-to-objects" title="Permalink to this headline">¶</a></h2>
+<div class="html-toggle list-entries even section" id="objectsandreferences-creating-and-referring-to-objects">
+<span id="demo-creatingandreferringtoobjects-demo-creatingandreferringtoobjects"></span><h3><span class="list-title">ObjectsAndReferences</span>  <span class="list-descr">Creating and referring to objects</span><a class="headerlink" href="#objectsandreferences-creating-and-referring-to-objects" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">Description</dt>
+<dd class="field-odd"><p>Creating and referring to objects</p>
+</dd>
+<dt class="field-even">Download</dt>
+<dd class="field-even"><p><a class="reference download internal" download="" href="../_downloads/af151a9039704a0a1e87802a5f949e62/CreatingAndReferringToObjects.Demo.CreatingAndReferringToObjects.zip"><code class="xref download docutils literal notranslate"><span class="pre">CreatingAndReferringToObjects.Demo.CreatingAndReferringToObjects.zip</span></code></a></p>
+</dd>
+</dl>
+<p>Demo: Declaration of and References to Objects</p>
+<p>This demo shows examples of how to declare objects in
+AnyScript. It illsutrates how the objects can be put into
+a tree-like data structure using the folders of
+AnyScript, i.e., AnyFolder.</p>
+<p>After loading you can inspect the data structure in the
+tree view left of this script (at least if you are using
+the AnyBody editor)</p>
+<p>Firstly, we demonstrate declarations of objects. We will
+limit this to declaration of simple numerical variables
+(AnyVar), because the scope here is merely to show the
+rules of declaration and not various special objects.</p>
+<p>Secondly, we demonstrates the referencing to existing
+objects (here just variables and folders), i.e., how
+you name an object so that it can be found in the data
+structure.</p>
+</div></blockquote>
+</div>
+</div>
+<div class="section" id="anyscript-macro-language">
+<span id="macro-demos"></span><h2>AnyScript: Macro language<a class="headerlink" href="#anyscript-macro-language" title="Permalink to this headline">¶</a></h2>
+<div class="html-toggle list-entries odd section" id="anydatamacrodemo">
+<span id="demo-macrodemo-anydatamacrodemo"></span><h3><span class="list-title">AnyDataMacroDemo</span><a class="headerlink" href="#anydatamacrodemo" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">Download</dt>
+<dd class="field-odd"><p><a class="reference download internal" download="" href="../_downloads/d80eb2f81d46b645037fed1df693f767/MacroDemo.AnyDataMacroDemo.zip"><code class="xref download docutils literal notranslate"><span class="pre">MacroDemo.AnyDataMacroDemo.zip</span></code></a></p>
+</dd>
+</dl>
+<p>Examples for using classoperation to save and load a .anydata.h5</p>
+<p>AnyDataMacroDemo.SaveFlat.anymcr: save a flat structure anydata file called arm2d_flat.anydata.</p>
+<p>AnyDataMacroDemo.SaveDeep.anymcr: save a deep structure anydata file called arm2d_deep.anydata.</p>
+<p>AnyDataMacroDemo.LoadData.anymcr: load a flat/deep structure anydata file.</p>
+<p>Notice:</p>
+<p>You need to modify the file path in AnyDataMacroDemo.LoadData.anymcr to the absolute path in your machine.</p>
+</div></blockquote>
+</div>
+<div class="html-toggle list-entries even section" id="macrodemo">
+<span id="demo-macrodemo-macrodemo"></span><h3><span class="list-title">MacroDemo</span><a class="headerlink" href="#macrodemo" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">Download</dt>
+<dd class="field-odd"><p><a class="reference download internal" download="" href="../_downloads/3f1fa76815c41133caf609bf2f569191/MacroDemo.MacroDemo.zip"><code class="xref download docutils literal notranslate"><span class="pre">MacroDemo.MacroDemo.zip</span></code></a></p>
+</dd>
+</dl>
+<p>This small example shows how to make a macro in an AnyScript string
+variable and then save it to a file by the Class Operation “Save AnyStrinf to file”.</p>
+<p>The saved macro can subsequantly be executed from the operation MacroFolder.RunSavedMacro</p>
+<p>From version 4.2, it is possible to execute such a macro defined in an AnyScript string directly.
+This is done in the operation MacroFolder.RunMacroStrDirectly</p>
+</div></blockquote>
+</div>
+<div class="html-toggle list-entries odd section" id="sendtomacrodemo">
+<span id="demo-macrodemo-sendtomacrodemo"></span><h3><span class="list-title">SendToMacroDemo</span><a class="headerlink" href="#sendtomacrodemo" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">Download</dt>
+<dd class="field-odd"><p><a class="reference download internal" download="" href="../_downloads/fdde7da63486abba5e60bafd39badfc6/MacroDemo.SendToMacroDemo.zip"><code class="xref download docutils literal notranslate"><span class="pre">MacroDemo.SendToMacroDemo.zip</span></code></a></p>
+</dd>
+</dl>
+<p>Examples for using classoperation to send all the used files to a new folder.</p>
+<p>Notice:</p>
+<p>You may want to change the folder path in sendTo.anymcr.</p>
+</div></blockquote>
+</div>
+</div>
+<div class="section" id="anyscript-math-expressions">
+<h2>AnyScript: Math expressions<a class="headerlink" href="#anyscript-math-expressions" title="Permalink to this headline">¶</a></h2>
+<div class="html-toggle list-entries even section" id="mathexpressions">
+<span id="demo-mathexpressions-demo-mathexpressions"></span><h3><span class="list-title">MathExpressions</span><a class="headerlink" href="#mathexpressions" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">Download</dt>
+<dd class="field-odd"><p><a class="reference download internal" download="" href="../_downloads/878f95e74cd85e964ec799029e6dff34/MathExpressions.Demo.MathExpressions.zip"><code class="xref download docutils literal notranslate"><span class="pre">MathExpressions.Demo.MathExpressions.zip</span></code></a></p>
+</dd>
+</dl>
+</div></blockquote>
+</div>
+</div>
+<div class="section" id="anyscript-preprocessor">
+<h2>AnyScript: Preprocessor<a class="headerlink" href="#anyscript-preprocessor" title="Permalink to this headline">¶</a></h2>
+<div class="html-toggle list-entries odd section" id="standard-definitions-in-anybody-demonstration-of-standard-definition-that-comes-with-the-anybody">
+<span id="demo-preprocessor-standarddefs"></span><h3><span class="list-title">Standard definitions in AnyBody</span>  <span class="list-descr">Demonstration of standard definition that comes with the AnyBody…</span><a class="headerlink" href="#standard-definitions-in-anybody-demonstration-of-standard-definition-that-comes-with-the-anybody" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">Description</dt>
+<dd class="field-odd"><p>Demonstration of standard definition that comes with the AnyBody system and is available in all models</p>
+</dd>
+<dt class="field-even">Download</dt>
+<dd class="field-even"><p><a class="reference download internal" download="" href="../_downloads/79cd2c34818c78487e23c0cfd4178316/Preprocessor.StandardDefs.zip"><code class="xref download docutils literal notranslate"><span class="pre">Preprocessor.StandardDefs.zip</span></code></a></p>
+</dd>
+</dl>
+<p>This file demonstrates standard definition and paths available in AnyBody.
+These are equivalent to #define aand #path statements set by AnyBody
+during startup or initial model loading.</p>
+<p>All standard definition are in capital letters (as is recommended for
+user-defined definitions too) and <code class="docutils literal notranslate"><span class="pre">ANYBODY_</span></code> as prefix.</p>
+</div></blockquote>
+</div>
+<div class="html-toggle list-entries even section" id="include-statements-demonstration-of-including-files-by-the-include-statement">
+<span id="demo-preprocessor-include"></span><h3><span class="list-title">#include-statements</span>  <span class="list-descr">Demonstration of including files by the #include statement</span><a class="headerlink" href="#include-statements-demonstration-of-including-files-by-the-include-statement" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">Description</dt>
+<dd class="field-odd"><p>Demonstration of including files by the #include statement</p>
+</dd>
+<dt class="field-even">Download</dt>
+<dd class="field-even"><p><a class="reference download internal" download="" href="../_downloads/21f09df06451d424fe6f20eaa35ab272/Preprocessor.Include.zip"><code class="xref download docutils literal notranslate"><span class="pre">Preprocessor.Include.zip</span></code></a></p>
+</dd>
+</dl>
+</div></blockquote>
+</div>
+<div class="html-toggle list-entries odd section" id="define-statements">
+<span id="demo-preprocessor-define-statements"></span><h3><span class="list-title">#define-statements</span><a class="headerlink" href="#define-statements" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">Download</dt>
+<dd class="field-odd"><p><a class="reference download internal" download="" href="../_downloads/c06f7669189d74b2d33e9b8afdead7c9/Preprocessor.define-statements.zip"><code class="xref download docutils literal notranslate"><span class="pre">Preprocessor.define-statements.zip</span></code></a></p>
+</dd>
+</dl>
+<p>Small demo that illustrates simple and more advanced macros</p>
+</div></blockquote>
+</div>
+<div class="html-toggle list-entries even section" id="if-statements">
+<span id="demo-preprocessor-if-statements"></span><h3><span class="list-title">#if-statements</span><a class="headerlink" href="#if-statements" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">Download</dt>
+<dd class="field-odd"><p><a class="reference download internal" download="" href="../_downloads/fb535f16f652ee66dc75bd10e3bede17/Preprocessor.if-statements.zip"><code class="xref download docutils literal notranslate"><span class="pre">Preprocessor.if-statements.zip</span></code></a></p>
+</dd>
+</dl>
+<p>Small demo that illustrates #if preprocessor statements</p>
+</div></blockquote>
+</div>
+<div class="html-toggle list-entries odd section" id="path-statements">
+<span id="demo-preprocessor-path-statements"></span><h3><span class="list-title">#path-statements</span><a class="headerlink" href="#path-statements" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">Download</dt>
+<dd class="field-odd"><p><a class="reference download internal" download="" href="../_downloads/66c8c9373a35bd26125b3fb1afbeac19/Preprocessor.path-statements.zip"><code class="xref download docutils literal notranslate"><span class="pre">Preprocessor.path-statements.zip</span></code></a></p>
+</dd>
+</dl>
+<p>Small demo that illustrates #path preprocessor statements</p>
+</div></blockquote>
+</div>
+</div>
+<div class="section" id="anyscript-class-templates">
+<h2>AnyScript: Class templates<a class="headerlink" href="#anyscript-class-templates" title="Permalink to this headline">¶</a></h2>
+<div class="html-toggle list-entries even section" id="defineargumentmergingoperator">
+<span id="demo-anyscript-defineargumentmergingoperator"></span><h3><span class="list-title">DefineArgumentMergingOperator</span><a class="headerlink" href="#defineargumentmergingoperator" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">Download</dt>
+<dd class="field-odd"><p><a class="reference download internal" download="" href="../_downloads/4cdb5b613e15c18cc1d1f2bbc97f73cc/AnyScript++.DefineArgumentMergingOperator.zip"><code class="xref download docutils literal notranslate"><span class="pre">AnyScript++.DefineArgumentMergingOperator.zip</span></code></a></p>
+</dd>
+</dl>
+</div></blockquote>
+</div>
+<div class="html-toggle list-entries odd section" id="defineargumentstringizingoperator">
+<span id="demo-anyscript-defineargumentstringizingoperator"></span><h3><span class="list-title">DefineArgumentStringizingOperator</span><a class="headerlink" href="#defineargumentstringizingoperator" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">Download</dt>
+<dd class="field-odd"><p><a class="reference download internal" download="" href="../_downloads/d6dd182854d6b5799f5befa1e5130f2a/AnyScript++.DefineArgumentStringizingOperator.zip"><code class="xref download docutils literal notranslate"><span class="pre">AnyScript++.DefineArgumentStringizingOperator.zip</span></code></a></p>
+</dd>
+</dl>
+</div></blockquote>
+</div>
+<div class="html-toggle list-entries even section" id="classtemplateargumentmergingoperator">
+<span id="demo-anyscript-classtemplateargumentmergingoperator"></span><h3><span class="list-title">ClassTemplateArgumentMergingOperator</span><a class="headerlink" href="#classtemplateargumentmergingoperator" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">Download</dt>
+<dd class="field-odd"><p><a class="reference download internal" download="" href="../_downloads/cd732c4b234e8d77f6a76314f3c8bf0b/AnyScript++.ClassTemplateArgumentMergingOperator.zip"><code class="xref download docutils literal notranslate"><span class="pre">AnyScript++.ClassTemplateArgumentMergingOperator.zip</span></code></a></p>
+</dd>
+</dl>
+</div></blockquote>
+</div>
+<div class="html-toggle list-entries odd section" id="classtemplateargumentstringizingoperator">
+<span id="demo-anyscript-classtemplateargumentstringizingoperator"></span><h3><span class="list-title">ClassTemplateArgumentStringizingOperator</span><a class="headerlink" href="#classtemplateargumentstringizingoperator" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">Download</dt>
+<dd class="field-odd"><p><a class="reference download internal" download="" href="../_downloads/42caf427252d64b2b4adbbf6a644c745/AnyScript++.ClassTemplateArgumentStringizingOperator.zip"><code class="xref download docutils literal notranslate"><span class="pre">AnyScript++.ClassTemplateArgumentStringizingOperator.zip</span></code></a></p>
+</dd>
+</dl>
+</div></blockquote>
+</div>
+<div class="html-toggle list-entries even section" id="classdemo1">
+<span id="demo-anyscript-classdemo1"></span><h3><span class="list-title">ClassDemo1</span><a class="headerlink" href="#classdemo1" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">Download</dt>
+<dd class="field-odd"><p><a class="reference download internal" download="" href="../_downloads/620458a57ba932bc6b752621928bc02b/AnyScript++.ClassDemo1.zip"><code class="xref download docutils literal notranslate"><span class="pre">AnyScript++.ClassDemo1.zip</span></code></a></p>
+</dd>
+</dl>
+<p>A simple template containing declarations of data members in a folder structure.</p>
+<p>Notice:
+- Some data members are open to the user for initialization of the class whereas
+others</p>
+</div></blockquote>
+</div>
+<div class="html-toggle list-entries odd section" id="classdemo2">
+<span id="demo-anyscript-classdemo2"></span><h3><span class="list-title">ClassDemo2</span><a class="headerlink" href="#classdemo2" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">Download</dt>
+<dd class="field-odd"><p><a class="reference download internal" download="" href="../_downloads/66f0418a63371112e5e6e811316182ae/AnyScript++.ClassDemo2.zip"><code class="xref download docutils literal notranslate"><span class="pre">AnyScript++.ClassDemo2.zip</span></code></a></p>
+</dd>
+</dl>
+<p>Extended declaration of an object of MyClass.
+//
+//</p>
+</div></blockquote>
+</div>
+<div class="html-toggle list-entries even section" id="anyscript-demo-arm2d-2arms">
+<span id="demo-anyscript-demo-arm2d-2arms"></span><h3><span class="list-title">AnyScript++.Demo.Arm2D.2Arms</span><a class="headerlink" href="#anyscript-demo-arm2d-2arms" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">Download</dt>
+<dd class="field-odd"><p><a class="reference download internal" download="" href="../_downloads/317d0c757fb4537bacaeae60f2c06b6d/AnyScript++.Demo.Arm2D.2Arms.zip"><code class="xref download docutils literal notranslate"><span class="pre">AnyScript++.Demo.Arm2D.2Arms.zip</span></code></a></p>
+</dd>
+</dl>
+</div></blockquote>
+</div>
+</div>
+</div>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+        <p class="logo"><a href="../index.html" title="index">
+          <img class="logo" src="../_static/anyscript_maual.svg" alt="Logo"/>
+        </a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+<h3><a href="../contents.html">Reference Manual</a></h3>
+<p class="caption"><span class="caption-text">API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../reference/class-overview.html"><strong>Class reference</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reference/function-overview.html"><strong>Function reference</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reference/globals-overview.html">Globals reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reference/environment.html">Environment variables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reference/messages/index.html">Errors, warnings and messages</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Language</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../anyscript/language.html">AnyScript™ language</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../anyscript/preprocessor.html">The preprocessor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../anyscript/inside-anybody.html">Inside the AnyBody Modeling System</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../anyscript/technical-notes.html">Technical notes</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Demo examples</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#small-demo-models">Small Demo Models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#class-examples">Class Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#anyscript-creating-and-referring-to-objects">AnyScript: Creating and referring to objects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#anyscript-macro-language">AnyScript: Macro language</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#anyscript-math-expressions">AnyScript: Math expressions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#anyscript-preprocessor">AnyScript: Preprocessor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#anyscript-class-templates">AnyScript: Class templates</a></li>
+</ul>
+</li>
+</ul>
+<div class="sphinxprev">
+    <h4>Other resources</h4>
+    <p class="topless"><a href="../../index.html"
+                          title="Back to all manuals">&larr; Back to all manuals</a></p>
+</div>
+        </div>
+      </div>
+    
+    
+        <div class="sidebar-toggle-group no-js">
+            
+            <button class="sidebar-toggle" id="sidebar-hide" title="Hide the sidebar menu">
+                 «
+                <span class="show-for-small">hide menu</span>
+                
+            </button>
+            <button class="sidebar-toggle" id="sidebar-show" title="Show the sidebar menu">
+                
+                <span class="show-for-small">menu</span>
+                <span class="hide-for-small">sidebar</span>
+                 »
+            </button>
+        </div>
+    
+      <div class="clearer"></div>
+    </div>
+    <div class="relbar-bottom">
+        
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../contents.html" title="Table Of Contents"
+             >toc</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="../anyscript/technical-notes.html" title="Technical notes"
+             >previous</a> &nbsp; &nbsp;</li>
+    <li><a href="../index.html">AnyScript Reference 7.3.4 documentation</a> &#187;</li>
+
+        <li class="nav-item nav-item-this"><a href="">Demo examples</a></li> 
+      </ul>
+    </div>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2021, AnyBody Technology A/S.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.5.4.
+    </div>
+    <!-- cloud_sptheme 1.4 -->
+  </body>
+</html>

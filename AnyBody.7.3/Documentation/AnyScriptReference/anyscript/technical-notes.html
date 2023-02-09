@@ -1,0 +1,212 @@
+
+
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Technical notes &#8212; AnyScript Reference 7.3.4 documentation</title>
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/cloud.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/table_styling.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noticia+Text|Open+Sans|Droid+Sans+Mono" type="text/css" />
+    
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/script/filter-class-list.js"></script>
+    <script src="../_static/fa/all.js"></script>
+
+    
+    
+     
+        <script src="../_static/jquery.cookie.js"></script>
+    
+
+    
+     
+        <script src="../_static/cloud.base.js"></script>
+    
+
+    
+     
+        <script src="../_static/cloud.js"></script>
+    
+
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Demo examples" href="../demos/index.html" />
+    <link rel="prev" title="Settings Messages (SET)" href="../reference/messages/SET.html" /> 
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head><body>
+    <div class="relbar-top">
+        
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../contents.html" title="Table Of Contents"
+             accesskey="C">toc</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="../demos/index.html" title="Demo examples"
+             accesskey="N">next</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="../reference/messages/SET.html" title="Settings Messages (SET)"
+             accesskey="P">previous</a> &nbsp; &nbsp;</li>
+    <li><a href="../index.html">AnyScript Reference 7.3.4 documentation</a> &#187;</li>
+
+        <li class="nav-item nav-item-this"><a href="">Technical notes</a></li> 
+      </ul>
+    </div>
+    </div>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="technical-notes">
+<h1>Technical notes<a class="headerlink" href="#technical-notes" title="Permalink to this headline">¶</a></h1>
+<p>This section is dedicated to elaborate on certain areas of AnyBody’s
+simulation functionality. Typically, this covers several AnyScript object types.</p>
+<p>We use the format of <em>technical notes</em> to explain these topics.
+Typically, a technical note is PDF file or another downloadable file.
+Each topic will contain a short introduction followed by links to documents
+and potentially other related resources.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This section is initiated for AnyBody 7.3
+and it will be extended with more topics in coming version</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Other great resources of information is our
+<a class="reference external" href="https://forum.anyscript.org/">AnyScript forum</a>
+and our <a class="reference external" href="https://github.com/AnyBody/support/wiki">Wiki page</a></p>
+</div>
+<div class="section" id="metabolic-power">
+<h2>Metabolic power<a class="headerlink" href="#metabolic-power" title="Permalink to this headline">¶</a></h2>
+<p>AnyBody calculate the metabolic power consumed by the muscles in model during a dynamic simulation.
+Metabolic power is denoted <code class="docutils literal notranslate"><span class="pre">Pmet</span></code> and it is calculated for each muscle in the model.
+The accumulated value for all muscles is part of the output of the <a class="reference internal" href="../reference/classes/AnyBodyStudy.html#anybodystudy"><span class="std std-ref">AnyBodyStudy</span></a> class.</p>
+<p>The technical note on metabolic power models is formatted as a set of slides describing
+the different models imlemented into AnyBody:</p>
+<p><a class="reference download internal" download="" href="../_downloads/ab8b0994a0fbafcb4ee0b51fedc5bc17/AnyBody - Metabolism Modeling.pdf"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">slides</span> <span class="pre">here</span></code></a></p>
+<p>The different metabolic power models defined in AnyBody are derived from <a class="reference internal" href="../reference/classes/AnyMetabModelBase.html#anymetabmodelbase"><span class="std std-ref">AnyMetabModelBase</span></a>.
+Please find the relevant pages here:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="../reference/classes/AnyMetabModelSimple.html#anymetabmodelsimple"><span class="std std-ref">AnyMetabModelSimple</span></a></p></li>
+<li><p><a class="reference internal" href="../reference/classes/AnyMetabModelB.html#anymetabmodelb"><span class="std std-ref">AnyMetabModelB</span></a></p></li>
+<li><p><a class="reference internal" href="../reference/classes/AnyMetabModelU.html#anymetabmodelu"><span class="std std-ref">AnyMetabModelU</span></a></p></li>
+</ul>
+</div>
+</div>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+        <p class="logo"><a href="../index.html" title="index">
+          <img class="logo" src="../_static/anyscript_maual.svg" alt="Logo"/>
+        </a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+<h3><a href="../contents.html">Reference Manual</a></h3>
+<p class="caption"><span class="caption-text">API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../reference/class-overview.html"><strong>Class reference</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reference/function-overview.html"><strong>Function reference</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reference/globals-overview.html">Globals reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reference/environment.html">Environment variables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reference/messages/index.html">Errors, warnings and messages</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Language</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="language.html">AnyScript™ language</a></li>
+<li class="toctree-l1"><a class="reference internal" href="preprocessor.html">The preprocessor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="inside-anybody.html">Inside the AnyBody Modeling System</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Technical notes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#metabolic-power">Metabolic power</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../demos/index.html">Demo examples</a></li>
+</ul>
+<div class="sphinxprev">
+    <h4>Other resources</h4>
+    <p class="topless"><a href="../../index.html"
+                          title="Back to all manuals">&larr; Back to all manuals</a></p>
+</div>
+        </div>
+      </div>
+    
+    
+        <div class="sidebar-toggle-group no-js">
+            
+            <button class="sidebar-toggle" id="sidebar-hide" title="Hide the sidebar menu">
+                 «
+                <span class="show-for-small">hide menu</span>
+                
+            </button>
+            <button class="sidebar-toggle" id="sidebar-show" title="Show the sidebar menu">
+                
+                <span class="show-for-small">menu</span>
+                <span class="hide-for-small">sidebar</span>
+                 »
+            </button>
+        </div>
+    
+      <div class="clearer"></div>
+    </div>
+    <div class="relbar-bottom">
+        
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../contents.html" title="Table Of Contents"
+             >toc</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="../demos/index.html" title="Demo examples"
+             >next</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="../reference/messages/SET.html" title="Settings Messages (SET)"
+             >previous</a> &nbsp; &nbsp;</li>
+    <li><a href="../index.html">AnyScript Reference 7.3.4 documentation</a> &#187;</li>
+
+        <li class="nav-item nav-item-this"><a href="">Technical notes</a></li> 
+      </ul>
+    </div>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2021, AnyBody Technology A/S.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.5.4.
+    </div>
+    <!-- cloud_sptheme 1.4 -->
+  </body>
+</html>

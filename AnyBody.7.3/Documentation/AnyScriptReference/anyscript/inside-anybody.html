@@ -1,0 +1,466 @@
+
+
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Inside the AnyBody Modeling System &#8212; AnyScript Reference 7.3.4 documentation</title>
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/cloud.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/table_styling.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noticia+Text|Open+Sans|Droid+Sans+Mono" type="text/css" />
+    
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/script/filter-class-list.js"></script>
+    <script src="../_static/fa/all.js"></script>
+
+    
+    
+     
+        <script src="../_static/jquery.cookie.js"></script>
+    
+
+    
+     
+        <script src="../_static/cloud.base.js"></script>
+    
+
+    
+     
+        <script src="../_static/cloud.js"></script>
+    
+
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Class reference" href="../reference/class-overview.html" />
+    <link rel="prev" title="The preprocessor" href="preprocessor.html" /> 
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head><body>
+    <div class="relbar-top">
+        
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../contents.html" title="Table Of Contents"
+             accesskey="C">toc</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="../reference/class-overview.html" title="Class reference"
+             accesskey="N">next</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="preprocessor.html" title="The preprocessor"
+             accesskey="P">previous</a> &nbsp; &nbsp;</li>
+    <li><a href="../index.html">AnyScript Reference 7.3.4 documentation</a> &#187;</li>
+
+          <li class="nav-item nav-item-1"><a href="../index.html" accesskey="U">The AnyScript Reference manual!</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Inside the AnyBody Modeling System</a></li> 
+      </ul>
+    </div>
+    </div>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="inside-the-anybody-modeling-system">
+<h1>Inside the AnyBody Modeling System<a class="headerlink" href="#inside-the-anybody-modeling-system" title="Permalink to this headline">¶</a></h1>
+<p>In this section, we shall attempt to describe the the way AnyBody, or rather
+the AnyScript™ kernel of it, works. We shall do this in very general terms, which
+means that we are not going into detail about particular operations of
+particular classes. We shall focus on general functionalities and
+properties of a model when it is loaded into AnyBody.</p>
+<p>In order to cover these
+issues, we shall firstly consider the loading process, i.e., the
+processes that take place from initiating the loading of a model file
+until it is completely loaded. Afterward, we shall generally consider
+runtime processes. Runtime processes are evoked by executing operations
+(<a class="reference internal" href="../reference/classes/AnyOperation.html#anyoperation"><span class="std std-ref">AnyOperation</span></a> objects).</p>
+<div class="section" id="the-loading-process">
+<h2>The Loading process<a class="headerlink" href="#the-loading-process" title="Permalink to this headline">¶</a></h2>
+<p>The loading process is described best by explaining the sequence of
+procedure that take place. This is done in the list below.</p>
+<dl class="simple">
+<dt>Scanning</dt><dd><p>During the scanning the files are loaded into the computer’s memory. This
+implies that <code class="docutils literal notranslate"><span class="pre">#include</span></code>-statements are resolved and the so-called file tree
+is constructed. The preprocessor resolves all <a class="reference internal" href="preprocessor.html#preprocessor-include"><span class="std std-ref">#include</span></a> statements and other code-macros related to the
+<a class="reference internal" href="preprocessor.html"><span class="doc">preprocessor</span></a>. The nature of the preprocessor is code
+sequence dependent in contrast to normal behaviour in AnyScript™ code.</p>
+</dd>
+<dt>Parsing</dt><dd><p>The parser breaks the text input into pieces and during this stage the
+syntax is checked. Basic syntactical errors are
+reported during this stage. Furthermore, the parser establishes some
+basic relations between the model in memory and the AnyScript™ code, which are
+later used by the system to assist the user getting from the model
+(in memory) to the code.</p>
+</dd>
+<dt>Constructing model tree</dt><dd><p>Having parsed the text input, the parser can construct the data
+structures for the objects declared in the code. It hereby constructs
+the basic model tree that you find available in the Model Tree View
+in AnyBody’s GUI application. However, this is not the final complete tree,
+as we shall see later. This stage also implies basic validation of
+the data structure and related error reporting if necessary.</p>
+</dd>
+</dl>
+<dl>
+<dt>Linking identifiers</dt><dd><p>During this stage, values and references are linked together
+according to the expressions in the code. This implies various checks
+of the validity of the expressions such as check for existence of all
+referred identifiers, cyclic referencing, type validation of
+references.</p>
+</dd>
+<dt>Evaluating constants</dt><dd><p>Having linked and validated all expressions, the mathematical
+expressions for values that are constant throughout the execution of
+the model are evaluated. These values play a special role, because
+they are input to the subsequent configuration stage. During this
+evaluation, the expressions are also checked for dimensional
+compatibility and the like, and <a class="reference internal" href="../reference/classes/AnyValue.html#anyvalue"><span class="std std-ref">AnyValue</span></a>s having undefined
+dimensionality or dimension sizes are automatically set to fit the
+expressions.</p>
+</dd>
+<dt>Configuration</dt><dd><p>The configuration is a complex process, in which
+the objects prepare themselves for performing their functionality.
+This implies that certain objects, that collect and combine
+information from many classes/object, for instance studies (<a class="reference internal" href="../reference/classes/AnyStudy.html#anystudy"><span class="std std-ref">AnyStudy</span></a>
+and derived), establish links to their dependencies and process their
+information. This procedure relies on relationships between objects
+(and their classes) and it is carried out in a well defined sequence.
+If nothing else is implied for a given class there is assumed a
+downwards relationship in the object tree, so that the configuration
+of an object (folder objects only) may depend on its members. This is
+however not sufficiently general and therefore special classes
+(derived from <code class="docutils literal notranslate"><span class="pre">AnyConfigFolder</span></code> are able to state their own
+dependencies and allow the configuration to treat them accordingly.
+This do for instance imply that basic mechanical objects are
+configured before the mechanical studies that use them.</p>
+<p>Notice that the configuration sequence is not visible for the user.
+Notice also that during the configuration, new objects can be created
+into the object tree by existing objects. This has the special
+significance that you may find objects in the object tree, which
+cannot be referred to by references and in mathematical expressions
+as these links are validated before the configuration step.</p>
+</dd>
+<dt>Evaluating model</dt><dd><p>After the configuration, the model is more or less ready. This means that
+initial values of all non-<a class="reference internal" href="#insideams-evalmoments"><span class="std std-ref">const</span></a> AnyValues
+can be set. This is done during the “Evaluating Model” stage. Notice that this
+first evaluation, as for the constant values evaluated before the
+configuration, implies a mathematical check of the expressions including
+automatic definition of undefined dimensionalities and dimension sizes of
+vectors, matrices and higher order tensors supported by the AnyValue types.</p>
+</dd>
+<dt>Post loading process</dt><dd><p>Finally a post process is carried out. This stage makes the final
+preparation of the output data structures in the studies (<a class="reference internal" href="../reference/classes/AnyStudy.html#anystudy"><span class="std std-ref">AnyStudy</span></a>’s Output
+folder). This cannot take place before, because the
+studies must be configured and all mathematical relations must be
+ready before that output is well-defined. This has the important
+implication that you cannot make mathematical expressions that
+directly access data in the output data structures for the simple
+reason that expressions are validated before the output exist. There
+is an indirect workaround to this using the <a class="reference internal" href="../reference/classes/AnyOutputFun.html#anyoutputfun"><span class="std std-ref">AnyOutputFun</span></a>.</p>
+</dd>
+</dl>
+<p>After the loading process as described above is completed successfully,
+the model is ready for execution of the operations it contains. We shall
+refer to this as runtime operations or processes. We shall consider this
+briefly in Section <a class="reference internal" href="#insideams-runtimeprocesses"><span class="std std-ref">Runtime Processes</span></a> but firstly we
+shall turn our attention towards understanding evaluation moments.</p>
+</div>
+<div class="section" id="understanding-evaluations-moments">
+<span id="insideams-evalmoments"></span><h2>Understanding evaluations moments<a class="headerlink" href="#understanding-evaluations-moments" title="Permalink to this headline">¶</a></h2>
+<p>We have in the previous sections just mentioned that some variables are
+evaluated before the configuration of the model and some after. This
+divides the variables into constants and runtime variables. The value of
+these variables can in principle be controlled in two ways, either by
+objects using them, i.e., a system controlled value, or by expressions
+that have been specified in the model, i.e., a (more) user controlled
+value.</p>
+<p>AnyBody has a dynamic evaluation scheme in which mathematical
+expressions defined by in the script will be evaluated during runtime
+processes. This is handled by assigning a so-called evaluation moment to
+each variable. The evaluation moment specifies in principle when a user
+controlled value will be evaluated and when system controlled values are
+ready for use.</p>
+<table class="docutils align-default" id="id1">
+<caption><span class="caption-text">List tables can have captions like this one.</span><a class="headerlink" href="#id1" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>PreProcessVar</p></th>
+<th class="head"><p>Preprocessor variable (constants) that are evaluated during the preprocessor stages, i.e.,
+before and during the objects of the model is constructed. These can only hold simple
+expressions with limitted dependence to other objects in the model. Also error handling forthis
+step of evaluation is simpler.</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Const</p></td>
+<td><p>Constants that are evaluated before the configuration stage and they are therefore input to the configuration.</p></td>
+</tr>
+<tr class="row-odd"><td><p>ConfigVar</p></td>
+<td><p>Configuration dependent variables that are evaluated right after the configuration stage. They are thereby also constants but they are a result of the configuration rather than input to it.</p></td>
+</tr>
+<tr class="row-even"><td><p>RuntimeVar</p></td>
+<td><p>Runtime variables may change value during operations on the model.</p></td>
+</tr>
+</tbody>
+</table>
+<p>“Runtime variables” (or RuntimeVar) is a actually a common name for
+several evaluation moments. These are not covered here in detail,
+because they will be different depending on version and configuration of
+the AnyBody system. It is so that a study class typically defines (or inherits)
+certain evaluation moments that have to do with the specific steps in
+the particular investigation of that study.</p>
+<div class="section" id="runtime-processes">
+<span id="insideams-runtimeprocesses"></span><h3>Runtime Processes<a class="headerlink" href="#runtime-processes" title="Permalink to this headline">¶</a></h3>
+<p>Runtime processes are started by the user by executing operations
+(<a class="reference internal" href="../reference/classes/AnyOperation.html#anyoperation"><span class="std std-ref">AnyOperation</span></a>-derived) from the AnyBody interface, be it the console or the GUI
+application.</p>
+<p>Operations are typically split into several steps that are
+sequentially executed, such as the time steps of a simulation or
+parameter variation steps of a parameter study. Both interfaces of
+AnyBody allow you to do a complete execution of an operation as well as
+stepwise execution. During stepwise execution you will be able to follow
+the changes in the model for each step, whether as displayed image in
+the Model View of the GUI application or as a value variation in dumbed
+values of charts. Each step of an operation may involve one or more
+<a class="reference internal" href="#insideams-evalmoments"><span class="std std-ref">evaluations moments</span></a> and after each “moment”
+has occurred in the operation algorithm, the associated values are updated.</p>
+<p>Runtime processes may be executed sequentially and occasionally also nested into
+each other. <a class="reference internal" href="../reference/classes/AnyDesStudy.html#anydesstudy"><span class="std std-ref">Design studies</span></a> execute other operations in
+order to investigate the impact of design changes. An evaluation moment
+identifying the change of a design parameter is introduced prior to the the
+above mentioned steps in the <a class="reference internal" href="../reference/classes/AnyTimeStudy.html#anytimestudy"><span class="std std-ref">AnyTimeStudy</span></a> and <a class="reference internal" href="../reference/classes/AnyMechStudy.html#anymechstudy"><span class="std std-ref">AnyMechStudy</span></a>, and a later moment
+is introduced to identify the end of the analysis operations. In this way, the
+design study can change design parameters and and their dependent values, then
+execute the analysis operation (or a sequence of several operations) updating
+all its evaluation moments, and finally extract and compute design
+characteristic output (so-called <em>design measures</em>) based on the final
+evaluation moment of the design study.</p>
+</div>
+</div>
+<div class="section" id="using-anybody-from-the-console">
+<h2>Using AnyBody from the console<a class="headerlink" href="#using-anybody-from-the-console" title="Permalink to this headline">¶</a></h2>
+<p>It is possible to use the AnyBody Modeling system without the graphical user interface. The
+AnyBody Console application provides a text based interface to carry out basic operation loading
+models running analysis and saving results etc.</p>
+<div class="figure align-default">
+<img alt="../_images/anybodycon.png" src="../_images/anybodycon.png" />
+</div>
+<p>The console application is controlled with a set of macro commands. The macro commands can be typed
+interactively in the console application or saved to file which the can be passed to the console
+application with the <code class="docutils literal notranslate"><span class="pre">-m</span></code> option.</p>
+<p>The complete list of macro commands and further help on the console application can be found by
+running the console application with the <code class="docutils literal notranslate"><span class="pre">--help</span></code> option:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>anybodycon.exe --help
+</pre></div>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>The <a class="reference external" href="https://www.anybodytech.com/downloads/documentation/#20161124">webcast on using the anybody console application</a></p>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>The <a class="reference external" href="https://anybody-research-group.github.io/anypytools-docs/">AnyPyTools python</a> libraray provides
+an easier way of working with the console applicaiton.</p>
+</div>
+<div class="html-toggle section" id="anybody-argument-parser-tl-dr">
+<h3>AnyBody argument parser (tl;dr)<a class="headerlink" href="#anybody-argument-parser-tl-dr" title="Permalink to this headline">¶</a></h3>
+<p>The AnyBody Argument Parser a text parser that handles arguments for the
+AnyBody executables as well as for certain intern functions. The internal
+functions are parsing arguments to commands in the AnyBody Macro Language,
+arguments to Class Operations of AnyScript™ Objects, and arguments in in special
+HTML-links the AnyBody GUI’s description views.</p>
+<p>The actual arguments for the different case will not be covered here,
+but this is how you find more information:</p>
+<dl class="simple">
+<dt>AnyBodyCon.exe:</dt><dd><p>More details about the arguments for AnyBodyCon.exe can be obtained
+by executing the program with the help option, ‘-?’</p>
+</dd>
+</dl>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>AnyBodyCon.exe -?
+</pre></div>
+</div>
+<dl class="simple">
+<dt>AnyBody.exe:</dt><dd><p>Please refer to the following section in this document for more
+details.</p>
+</dd>
+<dt>Class Operations:</dt><dd><p>Please refer to reference page for the given class in this document
+or to the Object Description for a given object.</p>
+</dd>
+</dl>
+<p>The basic principle of argument parsing in the AnyBody Argument Parser is the
+same as in many console programs, i.e., you can add arguments to the
+program or operation name using a short or a long argument name version.
+For instance, the macro file name can be parsed to the  Console in the
+following three way</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>AnyBodyCon.exe -m &lt;anymcr-file&gt;
+AnyBodyCon.exe /m &lt;anymcr-file&gt;
+AnyBodyCon.exe –macrofile<span class="o">=</span>&lt;anymcr-file&gt;
+</pre></div>
+</div>
+<p>The argument short name is ‘m’ and the lon name is ‘macrofile’</p>
+<p>A special issue regarding The AnyBody Argument Parser is double-quoting
+strings. Many arguments are names, file and directory paths, etc. that
+needs to enclosed in double-quotes, <code class="docutils literal notranslate"><span class="pre">&quot;</span></code>, in order to find spaces in the
+string. The parser handles this and it treats the double-quotes as a
+special characters (delimiters of argument values). This, however, is a
+problem if you need to provide string arguments that must contain
+double-quotes as characters. Working with single arguments for the
+AnyBody executables or standard operations this is typically not an issue,
+except when supplying strings values to  definition or the like (see the
+small example below); but if you work with more advanced applications
+such as executing Class Operations from macro script or executing any
+kind of operation from HTML-links in the AnyBody description views, then you
+will soon face this problem. In general, any application, where
+arguments supplied to one AnyBody Argument Parser contain arguments that is
+subsequently supplied to another argument parser, is a typical case of
+this problem because arguments for the two (or more) levels of parser
+becomes nested.</p>
+<p>In order to by-pass the problem of nested double-quoting, the AnyBody Argument
+Parser is equipped with an option where you can use so-called escaped double-quotes.
+The syntax is like in C and C++, where the escape-character is the back-slash <code class="docutils literal notranslate"><span class="pre">\</span></code>, i.e.,
+the escaped double-quote is <code class="docutils literal notranslate"><span class="pre">*\&quot;</span></code> and to make a back-slash itself type <code class="docutils literal notranslate"><span class="pre">\\</span></code>. To enter the
+special mode, your argument must be preceded by three dashes, i.e., <code class="docutils literal notranslate"><span class="pre">---</span></code> (single- and
+double-dash is used already, as short and long argument indicators).</p>
+<p>Here is an example of the ‘load’ macro command executed with a
+definition of MY_DEF equal to 5</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>load -def <span class="nv">MY_DEF</span><span class="o">=</span> ---<span class="s2">&quot;\&quot;5\&quot;&quot;</span>
+</pre></div>
+</div>
+<p>where the standard appearance of this would be</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>load -def <span class="nv">MY_DEF</span><span class="o">=</span><span class="s2">&quot;5&quot;</span>
+</pre></div>
+</div>
+<p>The difference between these two statements is that the former will lead
+to MY_DEF being a string containing ‘5’ as a single character, whereas
+the latter lead to MY_DEF being an integer with value five.</p>
+<p>Notice the escaped back-slash is particular important when dealing with
+file paths as in the following example of the definition of a path: The
+simple syntax for a path definition in a load command is</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>load -p <span class="nv">MY_PATH</span><span class="o">=</span>C:<span class="se">\T</span>emp<span class="se">\M</span>yFolder
+</pre></div>
+</div>
+<p>where the escaped method is need for a path containing spaces</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>load -def <span class="nv">MY_PATH</span> <span class="o">=</span> ---<span class="s2">&quot;C:\\Temp\\MyFolder&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+        <p class="logo"><a href="../index.html" title="index">
+          <img class="logo" src="../_static/anyscript_maual.svg" alt="Logo"/>
+        </a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+<h3><a href="../contents.html">Reference Manual</a></h3>
+<p class="caption"><span class="caption-text">API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../reference/class-overview.html"><strong>Class reference</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reference/function-overview.html"><strong>Function reference</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reference/globals-overview.html">Globals reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reference/environment.html">Environment variables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reference/messages/index.html">Errors, warnings and messages</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Language</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="language.html">AnyScript™ language</a></li>
+<li class="toctree-l1"><a class="reference internal" href="preprocessor.html">The preprocessor</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Inside the AnyBody Modeling System</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#the-loading-process">The Loading process</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#understanding-evaluations-moments">Understanding evaluations moments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#using-anybody-from-the-console">Using AnyBody from the console</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="technical-notes.html">Technical notes</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../demos/index.html">Demo examples</a></li>
+</ul>
+<div class="sphinxprev">
+    <h4>Other resources</h4>
+    <p class="topless"><a href="../../index.html"
+                          title="Back to all manuals">&larr; Back to all manuals</a></p>
+</div>
+        </div>
+      </div>
+    
+    
+        <div class="sidebar-toggle-group no-js">
+            
+            <button class="sidebar-toggle" id="sidebar-hide" title="Hide the sidebar menu">
+                 «
+                <span class="show-for-small">hide menu</span>
+                
+            </button>
+            <button class="sidebar-toggle" id="sidebar-show" title="Show the sidebar menu">
+                
+                <span class="show-for-small">menu</span>
+                <span class="hide-for-small">sidebar</span>
+                 »
+            </button>
+        </div>
+    
+      <div class="clearer"></div>
+    </div>
+    <div class="relbar-bottom">
+        
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../contents.html" title="Table Of Contents"
+             >toc</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="../reference/class-overview.html" title="Class reference"
+             >next</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="preprocessor.html" title="The preprocessor"
+             >previous</a> &nbsp; &nbsp;</li>
+    <li><a href="../index.html">AnyScript Reference 7.3.4 documentation</a> &#187;</li>
+
+          <li class="nav-item nav-item-1"><a href="../index.html" >The AnyScript Reference manual!</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Inside the AnyBody Modeling System</a></li> 
+      </ul>
+    </div>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2021, AnyBody Technology A/S.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.5.4.
+    </div>
+    <!-- cloud_sptheme 1.4 -->
+  </body>
+</html>

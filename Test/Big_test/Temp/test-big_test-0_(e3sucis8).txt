@@ -1,0 +1,40 @@
+########### MACRO #############
+load "C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Application\Validation\EvaluateMomentArms\EvaluateMomentArms.main.any"
+operation Main.RunApplication
+run
+classoperation Main.HumanModel.EvaluateMomentArms.Right.Arm.GHAbduction.Study.Output.MomentArmCalculations.supraspinatus_1 "Dump"
+classoperation Main.HumanModel.EvaluateMomentArms.Right.Arm.GHAbduction.Study.Output.MomentArmCalculations.supraspinatus_2 "Dump"
+classoperation Main.HumanModel.EvaluateMomentArms.Right.Arm.GHAbduction.Study.Output.MomentArmCalculations.supraspinatus_3 "Dump"
+classoperation Main.HumanModel.EvaluateMomentArms.Right.Arm.GHAbduction.Study.Output.MomentArmCalculations.supraspinatus_4 "Dump"
+classoperation Main.HumanModel.EvaluateMomentArms.Right.Arm.GHAbduction.Study.Output.MomentArmCalculations.supraspinatus_5 "Dump"
+classoperation Main.HumanModel.EvaluateMomentArms.Right.Arm.GHAbduction.Study.Output.MomentArmCalculations.supraspinatus_6 "Dump"
+classoperation Main.HumanModel.EvaluateMomentArms.Right.Arm.GHAbduction.Study.Output.Abscissa.t "Dump"
+
+######### OUTPUT LOG ##########
+
+AnyBody Console Application
+AnyBodyCon.exe version : 7. 3. 4. 8518 (64-bit version) 
+Build : 18813.46800
+Copyright (c) 1999 - 2022 AnyBody Technology A/S
+
+Current path: C:\Master_Thesis\Test\Big_test
+
+#### Macro command > load "C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Application\Validation\EvaluateMomentArms\EvaluateMomentArms.main.any"
+Loading  Main  :  "C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Application\Validation\EvaluateMomentArms\EvaluateMomentArms.main.any"
+Scanning...
+Passing...
+Constructing model tree...
+Linking identifiers...
+Evaluating constants...
+NOTICE(0) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\BodyModels\GenericBodyModel\BodyModel.defaults.preprocess.any(108)  :   MainFileIsReadOnlyNotice : 'notice' triggered : 
+
+------------------------------------------------------------------------------------------------------
+                       Note: Your Main-file appears to be read-only. 
+ 
+  Are you running models directly from the install direcotry?
+  It is good practice to copy models to for example your documents folder.
+  This notice can be disabled with: #define ANYBODY_DISMISS_READONLY_NOTICE 
+-------------------------------------------------------------------------------------------------------
+
+Configuring model...
+Evaluating model...

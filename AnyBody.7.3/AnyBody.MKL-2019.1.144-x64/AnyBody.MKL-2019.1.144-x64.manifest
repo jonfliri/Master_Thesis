@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<assembly xmlns="urn:schemas-microsoft-com:asm.v1" manifestVersion="1.0">
+    <assemblyIdentity type="win32" name="AnyBody.MKL-2019.1.144-x64" version="2019.1.144.0" processorArchitecture="amd64"/>
+  <file name="1033/mkl_msg.dll"/>
+  <file name="1041/mkl_msg.dll"/>
+  <file name="libimalloc.dll"/>
+  <file name="libiomp5md.dll"/>
+  <file name="libiompstubs5md.dll"/>
+  <file name="mkl_avx.dll"/>
+  <file name="mkl_avx2.dll"/>
+  <file name="mkl_avx512.dll"/>
+  <file name="mkl_avx512_mic.dll"/>    
+  <file name="mkl_core.dll"/>
+  <file name="mkl_def.dll"/>
+  <file name="mkl_intel_thread.dll"/>
+  <file name="mkl_mc.dll"/>
+  <file name="mkl_mc3.dll"/>
+  <file name="mkl_rt.dll"/>
+  <file name="mkl_sequential.dll"/>
+  <file name="mkl_tbb_thread.dll"/>
+  <file name="mkl_vml_avx.dll"/>
+  <file name="mkl_vml_avx2.dll"/>
+  <file name="mkl_vml_avx512.dll"/>
+  <file name="mkl_vml_avx512_mic.dll"/>
+  <file name="mkl_vml_cmpt.dll"/>
+  <file name="mkl_vml_def.dll"/>
+  <file name="mkl_vml_mc.dll"/>
+  <file name="mkl_vml_mc2.dll"/>
+  <file name="mkl_vml_mc3.dll"/>
+</assembly>

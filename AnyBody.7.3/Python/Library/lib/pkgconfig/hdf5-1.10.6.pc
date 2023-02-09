@@ -1,0 +1,14 @@
+prefix=F:/AnySource/AMS1-Master/Python64/Library
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+
+Name: hdf5
+Description: HDF5 (Hierarchical Data Format 5) Software Library
+Version: 1.10.6
+
+Cflags: -I${includedir}
+Libs: -L${libdir}  -lhdf5
+Requires: 
+Libs.private:  -lF:/AnySource/AMS1-Master/Python64/Library/lib/z.lib  -lhdf5
+Requires.private: 

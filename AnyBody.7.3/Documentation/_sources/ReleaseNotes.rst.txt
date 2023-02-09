@@ -1,0 +1,1669 @@
+###########################
+AnyBody Release notes
+###########################
+
+
+
+.. **Added**
+..     for new features.
+.. **Changed**
+..     for changes in existing functionality.
+.. **Deprecated**
+..     for soon-to-be removed features.
+.. **Removed**
+..     for now removed features.
+.. **Fixed**
+..     for any bug fixes.
+.. **Security**
+..     in case of vulnerabilities.
+
+*******************************
+AnyBody, v.7.3.4 (06-07-2021)
+*******************************
+The release contains minor updates and bug-fixes for the previous
+release of AnyBody including the AnyBody Managed Model Repository
+(AMMR).
+The included AMMR (v.2.3.4) contains mostly bug fixes.
+
+**Graphical User Interface:**
+
+-  **Model View:** 
+
+   -  The Model View context menu now supports centering the Model View pivot point on a selection, and zooming to a selection.
+
+**Minor updates:**
+
+ - Added an option to specify the start time in an :ref:`refman:AnyInputBVH` class which corresponds with the first frame in the data. 
+   This is useful for synchronizing inertial Mocap data with other recordings. Previously the first frame in a BVH file always corresponded to the time (0 seconds).
+
+**Bugfixes:**
+
+-  Fixed a bug when selecting an AnyChart object in Model View, where only part of the chart would be selected.
+
+-  Fixed a bug in Model View where AnyChart objects would not respect user interface show and hide actions.
+
+-  Fixed a bug in Model View where AnyStyleDrawMaterial1 defined colors would not be updated correctly.
+
+-  Fixed a bug where the AnyBody console application would print Model View debugging information.
+
+-  Fixed a bug where AnyDrawPointCloud point names would not display properly by default.
+
+-  Fixed a bug where selecting certain objects in the Model View could give a non-fatal Unknown Error.
+
+-  Fixed a bug in Chart View where specifying indices for a multidimensional value (matrix/tensor) would select wrong data to be shown on the graph.
+
+-  Fixed a bug which in rare situations could crash AnyBody while writing an Object Description.
+
+*******************************
+AnyBody, v.7.3.3 (29-03-2021)
+*******************************
+The release contains minor updates and bug-fixes for the previous
+release of AnyBody including the AnyBody Managed Model Repository
+(AMMR).
+The included AMMR (v.2.3.3) contains mostly bug fixes as well as a few improvements related to muscle wrapping.
+
+**Graphical User Interface:**
+
+-  **Model View:** 
+
+   -  The Model View context menu in both the Model Tree and the Model View now supports centering the Model View pivot point on an object, and zooming to an object.
+
+**Minor updates:**
+
+ - The robustness of the muscle wrapping algorithm has been improved.
+
+**Bugfixes:**
+
+-  Fixed a bug where going to the Reference Manual from the Model Tree for a reference object would cause a crash.
+
+-  Fixed a bug where finding a Reference Manual entry for Globals entity would not link to the specific entry.
+
+-  Fixed a bug where the Model View undo/redo functionality didn't perform properly.
+
+-  Fixed a bug where Model View object visibility at creation might be wrong in rare situations.
+
+-  Fixed a bug where AnyBody could crash on reload when Chart View was in use.
+
+-  Fixed a performance regression in Chart View drawing speed.
+
+*******************************
+AnyBody, v.7.3.2 (25-01-2021)
+*******************************
+The release contains minor updates and bug-fixes for the previous
+release of AnyBody including the AnyBody Managed Model Repository
+(AMMR).
+The included AMMR (v.2.3.2) contains mostly bug fixes as well as a few improvements related to muscle wrapping.
+
+**Graphical User Interface:**
+
+-  **Model View:** 
+
+   -  It is now possible to specify if an :ref:`refman:AnyCamera`: should render as the current Model View state, the Model state or according to ModelViewDefinitions specified for the camera.
+
+   -  :ref:`AnyStyleFont3DView <refman:AnyStyleFont3DView>` has a new member :ref:`refman:AnyStyleFont3DView.Overlay` for specifying that the text is to be rendered visually in front of other objects.
+
+**Minor updates:**
+
+- Updated :ref:`refman:AnyForceMomentMeasure2` with an option to calculate cross-sectional forces in user-defined cross sections. 
+  'CutSystem' switch enables cutting the system by a plane through the point-of-interest.
+  
+- The muscle wrapping algorithm has been updated to make it more robust on all surface.
+      
+**Bugfixes:**
+
+-  Fixed a bug in :ref:`refman:AnyOutputBVH`: Translational and rotational degrees of freedom were saved without scaling, 
+   which could produce a mismatch of units in the header and motion data sections, respectively. 
+   Now the inverse scalings from the associated :ref:`refman:AnyInputBVH` are applied. 
+   Thereby, :ref:`refman:AnyOutputBVH` saves motion data in the same units as the associated input BVH file and the header section.
+
+-  Fixed a bug where :ref:`refman:AnyMechOutputFileForceExport` produced empty files.
+
+-  Fixed a bug where the Class Name and Object Name columns in Data View and Property View windows were missing.
+
+-  Fixed a bug where copying an object name from the Model Tree would give not only the name but also descriptive text not convenient during model programming.
+
+
+*******************************
+AnyBody, v.7.3.1 (05-10-2020)
+*******************************
+
+The release contains minor updates and bug-fixes for the previous
+release of AnyBody including the AnyBody Managed Model Repository
+(AMMR). 
+The included AMMR (v.2.3.1) also includes new features and model improvements. 
+For example, improvements of the shoulder, wrapping, and the large-scale MoCap model of walking with 49 subjects and ~1000 trials 
+which was added in AMMR 2.3. Please refer to the dedicated release notes in the AMMR documentation (also available at
+https://anyscript.org/ammr-doc/changelog.html).
+
+**Graphical User Interface:**
+
+-  Messages in the **Output View** now link to the new HTML based Reference Manual.
+
+-  **Model View:** The Show/Hide functionality for interacting with the Model View from context menus has been simplified and made more consistent.
+
+**Minor updates:**
+
+-  **AnyBody Exporter™ for SOLIDWORKS®:**
+
+   -  Official support for SOLIDWORKS 2019 and SOLIDWORKS 2020 added.
+   
+
+**Bugfixes:**
+
+-  Fixed a bug introduced with AnyBody 7.3.0 where values and ranges of design variables (:ref:`AnyDesVar`) were swapped when running parameter studies (:ref:`AnyParamStudy`).
+
+-  Fixed a bug where deleting a model containing an AnyChart would cause a crash.
+
+-  Fixed a bug where AnyDrawWidgets would not be rendered correctly in the Model View after a reload.
+
+-  Fixed a bug where :ref:`refman:AnyDrawWidgetRot` would not be updated correctly during dragging of a handle.
+
+-  Updated :ref:`refman:AnyDrawWidgetLin` to only have the center drag handle enabled when both x, y and z axis are enabled.
+
+-  Fixed a bug where AnyDrawObjects containing 3D lines would sometimes not respect color settings applied through :ref:`refman:AnyStyleDrawMaterial1`.
+
+-  Fixed a bug where a long delay might occur in Model View updates when a model was loaded without a Model View active.
+
+-  Improved the Model View redraw strategy when interacting with it through the Model Tree and Component Tree to remove unneeded redraws.
+
+-  Fixed a bug where doing Model View interaction using a multi-selection in the Model Tree would create multiple undo points for the Model View.
+
+-  Fixed a minor bug in the internal muscle model equilibrium handling in class :ref:`refman:AnyMuscleModel3E`. 
+   This bug could produce small mismatch between passive and contractile element forces and lead to excess of related, unneccessary equilibrium warnings.
+
+-  Fixed a bug where :ref:`refman:AnyDrawParamSurf` would not always be correctly updated during param studies.
+
+-  Fixed a bug where the Model View restore/undo/redo would not reliable function for certain draw object.
+
+-  Fixed a bug where right-clicking on an object name in the Script Editor during model loading might cause a crash.
+
+*******************************
+AnyBody, v.7.3.0 (07-07-2020)
+*******************************
+
+AnyBody, v.7.3.0 provides several new features and minor updates. Many
+of these are supporting the new version of the AnyBody Managed Model
+Repository, AMMR v.2.3.
+
+The installed version of AMMR is now version 2.3, which includes many
+improvements and new examples. For example, a large-scale gait MoCap example, and a new graphical interface (plugin) to scale models based on statistical data. 
+In addition, numerous issues have been fixed and improved throughout the model codebase.
+Please see the AMMR documentation for a full changelog (https://anyscript.org/ammr-doc/changelog.html).
+
+AnyBody, v.7.3.x installs separately from previous versions of AnyBody.
+
+
+**New features:**
+
+-  **AnyScript Modeling Language:**
+
+   -  :ref:`refman:AnyKinMeasureQuadComb` is a new so-called kinematic combination measure. 
+      It derives from :ref:`refman:AnyKinMeasureLinComb` that provides a linear combination of other kinematic measures.
+      :ref:`refman:AnyKinMeasureQuadComb` extends this with quadratic terms, i.e. the ability to make products of other measures.
+
+   -  :ref:`refman:AnyOutputBVH`: New output-file class that can save new kinematic data for a BVH model (:ref:`refman:AnyInputBVH`).
+      This is useful if motion is predicted or otherwise modified with AnyBody and needs to be exported for use in another software, e.g. from where the BVH data orginated.
+
+   -  :ref:`refman:AnyInputBVH`: The new mode, introduced in v.7.2.3, for better handling of discontinuous (jumping) angular data 
+      and direct generation of virtual marker data is now default, enabling a direct interface to a human model similar to :ref:`refman:AnyInputC3D`. 
+      Since v.7.2.3, the data organization has been improved slightly. The BVH model example in the AMMR has been updated accordingly.
+
+-  **Muscle and String Wrapping:**
+
+   -  The closest point calculation speed for ellipsoids has been improved. This is particular important for string-wrapping in AnyKinSPLine, 
+      and thereby in muscle wrapping, but it affects any kinematic measure that uses the ellipsoid surface.
+
+   -  More robust prediction for the next step for string-wrapping, i.e. for class :ref:`refman:AnyKinSPLine`. Important for :ref:`refman:AnyMuscleShortestPath`.
+   
+   -  It is possible to enable a new and faster wrapping method compared to the standard one for class :ref:`refman:AnyKinSPLine`.
+      The new algorithm is still experimental. 
+      To activate it for all shortest-path kinematic measures (:ref:`refman:AnyKinSPLine`) and wrapping muscles (:ref:`refman:AnyMuscleShortestPath`), 
+      set this global handle "System.Compatibility.AnyBody73_ExperimentalShortestPathSolver = On;" in the AnyScript main folder.
+      The new method can also be activated for selected measures or muscles in the :ref:`refman:AnyKinSPLine` object.
+      The new algorithm is inspired by, but not a one to one implementation of the article "FAST AND ROBUST MUSCLE PATH WRAPPING FOR ARBITRARY SURFACES" 
+      (https://isbweb.org/~tgcs/iscsb-2019/abstracts/40_P6-3.pdf), written by John E. Lloyd, Ian Stavness and Sidney Fels.
+
+**Graphical User Interface:**
+
+-  **Model View:** Several improvements that significantly improves interaction and configuration of the 3D view of model.
+
+   -  The AnyBody GUI Model View will now preserve the view state (hidden/shown objects, selection and opacity) when reloading a model.
+   
+   -  The AnyBody GUI Model View now supports undo and redo of Model View interactions that change the view state as mentioned above.
+   
+   -  The responsiveness of the Model View has been improved when interacting (rotating, zooming and panning) with it while running simulations.
+   
+   -  The Model View Zoom to Fit action has been improved to only include visible objects and not always include the origin {0,0,0}.
+   
+   -  The Model View will now test OpenGL support level before rendering begins. If insufficient support is detected,
+      this is now reported, and rendering is not attempted.
+      For instance, this typically occur when running AnyBody on a remote desktop.
+      The error message provides information on how to work around the problem.
+	  
+   -  The concept for auto-generated AnyDrawObjects (:ref:`refman:AnyDrawObject`) has been significantly expanded in this version.
+      This concept aims to enable the user to see most key mechanical features of the model without scripting specific drawing statement (i.e. entering drawing objects manually).
+      This new concept is key to browsing, understanding, and debugging your model.
+
+      -  Specifically, the following AnyScript classes now always contain drawing objects (typically named the prefix "view": 
+         :ref:`refman:AnyRefFrame`,
+         :ref:`refman:AnySeg`,
+         :ref:`refman:AnyStdJoint`,
+         :ref:`refman:AnyForceBase`,
+         :ref:`refman:AnyForceSurfaceContact`,
+         :ref:`refman:AnyKinMeasure`,
+         :ref:`refman:AnyMuscleViaPointBase`,
+         :ref:`refman:AnyParamSurf`
+      
+      - The AnyDrawObjects for these classes have by default their visibility set to Off, but they can be controlled through AnyScript and the Model Tree.
+
+      - In the coming major version of AnyBody, it is planned that visibility of auto-generated drawing objects will change so that default visibility
+        will show model features more intuitively. This will minimize the need for manually created drawing objects, 
+        but it will also require current models to be cleaned of excess of manually created drawing.
+        To enable smoother transition, we introduce this new functionality in coming minor versions (including this one) as an option. 
+        To try the new mode, use the global options under "System.Drawing.DefaultVisibility" that control default visibility of the auto-generated drawing objects.
+  	  
+-  **Chart View:** The rendering defaults for the Chart View has been improved, including padding, vertical y-axis title and DPI screen scaling awareness.
+
+-  The **Class View** has a new group of entries for displaying key AnyScript classes. 
+   This provides a new entry point to find the most used classes when programming your model.
+
+-  **Model Tree** has new filter options to show or hide objects based their importance/features and to enable to see hidden objects (for instance deprecated objects).
+   The AnyScript language does not yet support the more advanced filtering features extensively, but this will be improved in coming AnyBody version, which enable to simplify the Model Tree 
+   to provide better overview for more typical interaction. This will also affect the newer Component Tree that provides an alternative overview of the model contents.
+
+**Minor updates:**
+
+-  **AnyScript Modeling Language:**
+
+   -  :ref:`refman:AnyDrawSTL` will now give an error if the file specified by the :ref:`refman:AnyDrawSTL.FileName` member does not exist.
+
+   -  Explicitly setting the :ref:`AnyBodyStudy.Gravity <refman:AnyBodyStudy.Gravity>` variable is no longer required for the 
+      :ref:`refman:AnyKinStudy` class. 
+
+   -  :ref:`refman:AnyDesStudy` and derived classes are now able to save/load changed design variables as ``*.anyset`` files
+      from the "Save design"/"Load design" Class Operations, which makes it easier to save and retrieve data for instance when design-studies 
+      are used to tune or calibrate models.
+
+   -  The :ref:`evalutation moment <InsideAMS_EvalMoments>` of the :ref:`MacrAnyDrawPLineoStr <refman:AnyOperationMacro.MacroStr>` 
+      and :ref:`MacroFile <refman:AnyOperationMacro.FileName>` members of :ref:`refman:AnyOperationMacro` 
+      has been changed so they can be modified after the model has loaded, for instance from the AnyBody GUI or via the "Set Value" Class Operations.
+
+-  **Model View:**
+
+   -  Over-activated muscles will no longer turn purple when the user has defined a custom color 
+      map for muscle activations. (i.e. when :ref:`DrawScaleOnOff==On <refman:AnyDrawMuscle.DrawScaleOnOff>`).
+      It will respect the user-defined color map also for activities above 1.0.
+
+   -  The default format when saving pictures from the modelview has changed from ``bmp`` to ``png``.
+
+   -  :ref:`AnyStyleFont3DView <refman:AnyStyleFont3DView>` has a new member :ref:`refman:AnyStyleFont3DView.Rotation` for setting counter-clockwise rotation in degrees for billboarded text.
+
+   -  Line drawing objects: Default values introduced; obligatory initialization is no longer required:
+
+      -  The member :ref:`AnyDrawLine.Line.Thickness <refman:AnyDrawLine.Line.Thickness>` is no longer a required variable when creating 
+         the :ref:`AnyDrawLine` class.
+
+      -  The members :ref:`AnyDrawPLine.Thickness <refman:AnyDrawPLine.Thickness>` and :ref:`AnyDrawPLine.RGB <refman:AnyDrawPLine.RGB>` now have a default 
+         and need not be initialized explicitly. Color is set to blue if not specified by the user.
+
+   -  Dynamic updating of certain drawing objects: 
+   
+      - The RGB values evaluation moment has been updated to be ModelSceneVar, so the color can be depending on time,
+        kinematic or kinetic variables. 
+        This applies to the following AnyDrawObjects: :ref:`refman:AnyDrawForceSurface`, 
+        ref:`refman:AnyDrawKinMeasure`, :ref:`refman:AnyDrawPLine`, :ref:`refman:AnyDrawSphere`, :ref:`refman:AnyDrawStdJoint`
+
+      - :ref:`AnyDrawPLine.Thickness <refman:AnyDrawPLine.Thickness>` is no longer constant and can depend on time, kinematic or kinetic variables.
+
+-  Model loading speed has been improved by an average of 25%.
+
+-  The collection of variables for output folders in studies has been improved, for instance so that it also 
+   takes into account dependencies of non-floating point variables. Example: A variable that
+   is depending on an integer depending on some output would not be picked up, because the integer 
+   would break the dependency chain for the output collector.
+
+-  The logging to Output window for some mechanical object messages has been improved.
+
+-  The included Python distribution has been updated to include some additional relevant packages, and to make the environment consistent and updateable.
+
+-  AnyBody GUI application now respects the '--noninteractive' command line argument and exits after executing macrofiles with the GUI application with the ``--macro=`` command line argument.
+
+-  :ref:`refman:AnyGUIPlugin`: Functionality for using AnyGUIPlugin in macro files has been added:
+   An optional "blocking" parameter has been added to AnyGUIPlugin "start plugin" class operation (default: FALSE). When set to "TRUE", macro execution is suspended until the active AnyGUIPlugin process is ended.
+
+
+**Bugfixes:**
+
+-  Fixed bugs in the metabolism models (derived from :ref:`refman:AnyMetabModelBase`) especially :ref:`refman:AnyMetabModelB` and :ref:`refman:AnyMetabModelU` has been updated.
+   This also build on a fix in the calculation of the muscle fiber power, Pm, for :ref:`refman:AnyGeneralMuscle`.
+
+-  Fixed a bug in :ref:`refman:AnyMuscleModel3E` that could lead to small negative muscle forces.
+
+-  Fixed an issue where the presence of an :ref:`refman:AnyCamRecorder` in a model would cause 
+   slowdowns when running multiple AMS instances.
+
+-  Fixed a bug where certain nested AnyRefObject structures would cause a crash at load.
+
+-  Fixed a bug where some binary STL files could not be used in AnyBody as they were not correctly identified as binary.
+
+-  Fixed a bug where "Find in Files" search would not look at the last line of files.
+
+-  Fixed an issue that could sometimes result in AnyBody crashing when using the locate in script function.
+
+-  Fixed an issue where an invalid reference could crash AnyBody.
+
+-  Fixed a bug in :ref:`refman:AnyForceMomentMeasure2` and :ref:`refman:AnyForceMomentMeasure`,
+   where force array input was not made an unique array before being used thereby occasionally adding the same forces multiple times.
+
+-  Fixed the fallback when GUI plugins fails to start correctly. A command window is now opened to expose Python errors in the plugin code. 
+
+-  Improved error handling and reporting for Python errors in :ref:`refman:AnyGUIPlugin`.
+
+**Documentation and class examples:**
+
+-  The AnyScript Reference Manual, Installation Guide and Release notes are now distributed as 
+   HTML pages generated by the Sphinx system.
+
+-  Class examples have been updated with fixes and improvements.
+
+**AnyBody Exporter™ for SOLIDWORKS®:**
+
+-  The exporter now includes extended support for overridden mass properties: overridden center of mass and moments of inertia for parts are now supported.
+
+-  New options for Unicode character conversion in AnyScript output, which is also prepared for future full Unicode version of AnyBody.
+
+*******************************
+AnyBody, v.7.2.3 (14-11-2019)
+*******************************
+
+The release contains minor updates and bug-fixes for the previous
+release of AnyBody including the AnyBody Managed Model Repository
+(AMMR). The included AMMR (v.2.2.3) is also a minor release with smaller
+changes and bug-fixes, please refer to the dedicated release notes in
+the AMMR documentation (also available at
+https://anyscript.org/ammr-doc/changelog.html).
+
+**Notice**: The 7.2.x revisions of the AnyBody Modeling System are
+planned to be the last versions with both 32- and 64-bit versions
+available. Later versions are planned to be only available in 64-bit.
+
+**Minor updates:**
+
+-  **AnyInputBVH:** A new mode improving the options to make data
+   interface to the human model comprising:
+
+   -  Better options to deal with discontinuous (jumping) angular data.
+
+   -  Virtual marker data can be generated for a direct interface to a
+      human model similar to AnyInputC3D.
+
+   -  The updated BVH model example in the AMMR shows how to use the new
+      BVH features which insures consistent BVH simulations.
+
+   -  The old mode still exists for backwards compatibility. Modes can
+      be selected by a switch in the class.
+
+-  **Python support:**
+
+   -  Python 3.8 support added.
+
+**Graphical User Interface:**
+
+-  **Script Editor**: Improved the Find in Files feature to now use the
+   current selection as pre-filled search string.
+
+**Bugfixes:**
+
+-  Fixed an issue so that **AnyBody GUI Plugin**\ s no longer require an
+   internet connection for starting.
+
+-  Fixed an issue where dongle-based license would not function
+   correctly.
+
+-  Fixed an issue where ParamOptimization would fail if run without
+   being part of an AnyOperationSequence.
+
+-  Fixed a Model View bug where arrowheads would disappear for certain
+   orientations.
+
+-  Fixed a bug where concurrent licensing might fail and deny startup of
+   subsequent AnyBody instances.
+
+-  Fixed an issue where "locate in model tree" would sometimes not
+   correctly find all objects.
+
+*******************************
+AnyBody, v.7.2.2 (11-09-2019)
+*******************************
+
+The release contains minor updates and bug-fixes for the previous
+release of AnyBody including the AnyBody Managed Model Repository
+(AMMR). The included AMMR (v.2.2.2) is also a minor release with smaller
+changes and bug-fixes, please refer to the dedicated release notes in
+the AMMR documentation (also available at
+https://anyscript.org/ammr-doc/changelog.html).
+
+**Notice**: The 7.2.x revisions of the AnyBody Modeling System are
+planned to be the last versions with both 32- and 64-bit versions
+available. Later versions are planned to be only available in 64-bit.
+
+
+
+**Minor updates:**
+
+-  **AnyScript functions**:
+
+   -  New AnyScript functions for sets: ``set_union()``,
+      ``set_intersection()``, ``set_difference()``.
+
+   -  ObjSearch and ObjSearchRecursive functions no longer return
+      duplicates in their results.
+
+   -  The Class argument for ObjectSearch can be given as <classname>&
+      to include references to classes in the result.
+
+-  New thrift/python interface for querying license status of the
+   connected AMS instance.
+
+-  | Using non-latin characters in filenames and paths for .any files is
+     now supported, as well as using non-latin characters in usernames
+     and computernames.
+   | The names are displayed correctly in the Script editor, File tree
+     and Information window.
+   | The support for non-latin characters has the following limitations:
+
+   -  The computer system locale must match the character set of the
+      non-latin characters.
+
+   -  Non-latin characters are displayed in HTML encoding in the Recent
+      Files dialog (for easy copying into script for includes).
+
+   -  Non-latin characters are displayed as the multibyte components in
+      the Output window
+
+
+
+**Graphical User Interface:**
+
+-  **Model View and Chart View**: New Software OpenGL renderer added to
+   the installed files. This can be used to enable the Model View and
+   Chart View when using AnyBody through a Remove Desktop Connection.
+   Please see the AnyBody Install Guide for further details.
+
+
+
+**Bugfixes:**
+
+-  The way **AnyFunEx** sets up the Python environment has been made
+   more robust and having multiple Python installations on a computer
+   should no longer cause problems.
+
+-  Fixed an issue with the startup of **AnyBody GUI Plugin**\ s.
+
+-  **AnyBody Reference Manual**: Fixed the AnyMetabModel class example
+   to work again.
+
+-  Fixed an issue where "Locate in Model Tree" did not work for editable
+   values.
+
+-  Fixed an issue where double-clicking an .any file did not work if an
+   AnyBody instance was already running with administrator rights.
+
+-  Fixed an issue where the Information Window would not get updated
+   correctly if navigating the Model Tree using arrow keys or when using
+   "Locate in Model Tree".
+
+-  Fixed a bug which caused navigation in the Model Tree to be sluggish.
+
+-  Fixed an issue where "Locate in Model Tree" did not work if #include
+   paths used forward slash.
+
+-  Fixed a bug where the "non-interactive" option for the AnyBody
+   Console could only be specified as the last argument in the command
+   line.
+
+*******************************
+AnyBody, v.7.2.1 (16-05-2019)
+*******************************
+
+The release contains minor updates and bug-fixes for the previous
+release of AnyBody including the AnyBody Managed Model Repository
+(AMMR). The included AMMR (v.2.2.1) is also a minor release with smaller
+changes and bug-fixes, please refer to the dedicated release notes in
+the AMMR documentation (also available at
+https://anyscript.org/ammr-doc/changelog.html).
+
+**Notice**: The 7.2.x revisions of the AnyBody Modeling System are
+planned to be the last versions with both 32- and 64-bit versions
+available. Later versions are planned to be only available in 64-bit.
+
+
+
+**Minor updates:**
+
+-  *Python*:
+
+   -  **AnyFunEx**: The function usage location has been added to the
+      information transferred to the Python function in the context
+      argument.
+
+   -  The Python distribution installed with the 64-bit version of AMS
+      has been extended with the following Python packages: matplotlib,
+      pandas and seaborn.
+
+-  **Computational methods**: The usage of Intel MKL, which is the
+   foundation for many computational methods in AnyBody, has been
+   updated to auto-select the implementation matching the processor of
+   the machine. This typically gives a speed improvement of about 5%.
+   The original implementation can be specified by setting
+   System.Lib.MKL.CBWR to System.Lib.MKL.CBWR_COMPATIBLE.
+
+
+
+**Bugfixes:**
+
+-  **Fixed a bug which would sometimes report a circular dependency
+   erroneously.**
+
+-  **Fixed a bug that could cause duplicate data entries when reading an
+   AnyInputFile, if the number of characters per line suddenly
+   increased.**
+
+-  **Fixed a bug where a second instance of AMS could not start, if an
+   instance started with elevated user rights was already running.**
+
+-  **Fixed a bug which could occasionally cause a crash at startup.**
+
+-  **Fixed an issue which caused the update checker to fail when run at
+   AMS startup.**
+
+-  Class example for AnyFunEx was fixed: Added the
+   HelloAnyFunCEx_x64.dll file to the class example files as this was
+   missing for the 64-bit version.
+
+*******************************
+AnyBody, v.7.2.0 (07-04-2019)
+*******************************
+
+
+AnyBody, v.7.2.0 provides several new features and minor updates. Many
+of these are supporting the new version of the AnyBody Managed Model
+Repository, AMMR v.2.2.
+
+The installed version of AMMR is now version 2.2, which includes many
+improvements and new examples. For example, a new wrapping
+implementation of the deltoid muscle, a new graphical UI for configuring
+body models, and new knee simulator and posture prediction example
+models. In addition, numerous issues have been fixed and improved
+throughout the model codebase. Please see the AMMR documentation for a
+full changelog (https://anyscript.org/ammr-doc/changelog.html).
+
+AnyBody, v.7.2.x installs separately from previous versions of AnyBody.
+
+
+
+**Graphical User Interface:**
+
+-  **Operation drop-down** on the Main Frame toolbar:
+
+   -  The drop-down has been updated to use the new DisplayPriority
+      settings that are now available in all Operation's settings (see
+      the AnyOprSetUI below). This is used for decluttering the
+      drop-down menu and emphasizing the important Operations of the
+      model.
+
+   -  The drop-down menu now contains an "Open Operation Tree" item,
+      which helps you find the Operation Tree if needed.
+
+-  **Model View**:
+
+   -  The Model View will now, by default, maximally use a fraction of
+      the total operation time for rendering updates. This fraction is
+      defined in the AnyBody Settings.
+
+   -  The Model View context menu has been updated to be more consistent
+      with other menus.
+
+   -  Geometry rendering has been updated to be more efficient.
+
+-  **Model Tree:**
+
+   -  Support for selecting multiple objects has been added to the Model
+      Tree. This enables doing Model View interactions and viewing info
+      on multiple objects.
+
+-  **Chart View:**
+
+   -  Multi-selected values in the Chart View now supports that not all
+      values need to be plottable. In this situation, only the plottable
+      values are displayed.
+
+-  **Layouts**:
+
+   -  The Layouts have been updated to support the Component Tree.
+
+-  **Information Window**: Improved the handling of Documentation
+   Comments made in the AnyScript code.
+
+-  **Component Tree** is a new family of tree views that present the
+   model in a flatter structure than the Model Tree. This aims to help
+   to provide an overview of the key elements of a model. This new
+   structure is based on components and key important object types such
+   as muscles, segments, etc. The Component Trees show three categories
+   of elements:
+
+   -  **Components** are defined in the model script using the new
+      AnyScript class called AnyComponentDefinition. Components are
+      defined in the new version of AMMR (e.g. body parts) and can be
+      defined by the model developer for any environment part of the
+      model.
+
+   -  **Objects of key types (classes)** are selected by filters in the
+      Component Tree or by selecting one of the preselected Component
+      Trees.
+
+   -  **Groups:** Objects of similar type and naming are grouped so that
+      for instance several muscles branches of the same physiological
+      muscle may be collected as a group.
+
+   -  **New object icons:** Key object types (classes) have got new
+      icons to make them clearly distinct in the Component and Model
+      Trees. Groups have similar icons but with a three-dot group
+      indicator.
+
+-  The **Component Trees** are by default closed and must be opened from
+   the View menu.
+
+   -  The main Component Tree is found in the menu View->Components.
+      This Tree View has a flexible class filter to select which object
+      types to show in the view.
+
+   -  Preselected Component Trees are found in menu View->Preselected
+      Component Tree.
+
+   -  In future versions, when the view has been fully equipped, it will
+      be open as a default view for model interaction. You can keep the
+      view open by saving your preferred layout.
+
+-  **AnyBody Exporter™ for SOLIDWORKS®** has been updated to optionally
+   exporting a model containing Component definitions for better
+   Component Tree support.
+
+-  **Menus, toolbars and hotkeys:**
+
+   -  **Replay toolbar's** responsiveness has been greatly improved.
+
+   -  Added a hotkey (Alt-W-W) for opening the editor list.
+
+   -  Tooltips have been improved for completeness.
+
+   -  A new "Locate in file tree" menu function has been added to the
+      editor file tabs context menus.
+
+   -  Support has been added for using the Copy hotkey (Ctrl-C) in more
+      windows.
+
+   -  A new hotkey (Ctrl-Shift-C) has been added for copying the
+      complete name of an object in a tree.
+
+**New features:**
+
+-  **Muscle modeling updates**
+
+   -  **Metabolism models**: 2 new metabolic energy models have been
+      added to the system to complement the existing simple, constant
+      efficiency model build into AnyBodyStudy. It is the metabolism
+      models by Bahargava et. al. 2004 and Umberger et. al. 2010 (and
+      2003) that are added. This has been implemented as a new set of
+      classes derived from a metabolic model base class
+      (AnyMetabModelBase). Three derived classes contain the model by
+      Bahargava et. al. (AnyMetabModelB), the models by Umberger et. al.
+      (AnyMetabModelU), and the previously built-in model
+      (AnyMetabModelSimple), respectively.
+
+   -  All metabolic models have default parameters from the literature,
+      but parameters can be modified. For instance, the Umberger 2003
+      model is obtained by setting specific parameter values in
+      AnyMetabModelU, which has default values from Umberger 2010. This
+      also enables you to change the parameters of the built-in model.
+
+   -  AnyBodyStudy holds a new member to set the default metabolic model
+      to be used for all muscles in the study.
+
+   -  Each muscle object does also hold a new member to set it
+      specifically for that muscle enabling to set different parameter
+      values per muscle.
+
+-  **GUI Plugins:** A new plug-in system for making GUIs associated with
+   specific models has been made available in AnyBody. Prototypes were
+   available in previous 7.x.x version and betas, but now it is official
+   and AMMR 2.2 uses it.
+
+   -  **AnyBody GUI Plugin Interface:** The interface is still intended
+      mainly for AnyBody Technology development purposes and is not
+      documented publicly. However, it is fully exposed for AnyBody
+      users and all developed plug-ins provided in AMMR can in principle
+      be modified together with the AMMR model code.
+
+   -  **Human Body Model (BM) Configurator in AMMR**: AMMR 2.2 uses the
+      plug-in interface and contains an AMMR GUI for configurating the
+      body model. The AMMR contains more informaton about this plugin.
+
+-  **Python Distribution:**
+
+   -  The Anybody installer now includes a Python 3.7 distribution
+      suitable for use with the AnyBody GUI Plugin system and for many
+      typical AnyScript Python functions.
+
+   -  The Python distribution supplied in the installer is now used by
+      default, but a user-specified Python can be configured for both
+      AnyBody GUI Plugins and AnyScript Python functions, by setting
+      ANYBODY_PATH_PYTHONHOME and ANYBODY_PATH_PLUGINPYTHONHOME paths in
+      AnyScript.
+
+
+
+**Minor updates:**
+
+-  **Kinematic solvers**:
+
+   -  Kinematic solvers have been updated to use a new Intel MKL
+      version. This has improved the stability, but at the cost of some
+      extra computational time.
+
+   -  The over-determinate kinematic solver has been equipped with a
+      fallback method that allows it to retry with different initial
+      start conditions a few times. This has also improved robustness
+      for modeling using soft kinematics.
+
+-  **AnyBody Exporter™ for SOLIDWORKS®:**
+
+   -  An AnyScript warning will now be generated when the SOLIDWORKS
+      model contains non-convertible mates.
+
+   -  Support for the Component Tree has been added, as the exporter now
+      generates **AnyComponentDefinition** AnyScript objects when
+      appropriate.
+
+-  **Python support:**
+
+   -  Python 3.7 support added.
+
+   -  Python 2.6 support removed.
+
+-  **AnyScript modeling language:**
+
+   -  **AnyComponentDefinition** mentioned above.
+
+   -  **AnyMetabModelSimple**, **AnyMetabModelB**, **AnyMetabModelU**
+      are three new metabolic model classes, see above.
+
+   -  
+
+   -  **AnyDrawSurf** and **AnySurfSTL:** New member function
+      **GetVertices** for returning STL surface vertex coordinates from
+      vertex indices. This function is useful for setting up bone
+      dependent scaling functions, specifying landmarks, etc.
+
+   -  **AnyDrawSurfDynShape**: New class supporting dynamic updates to
+      the surface shape. Its functionality was extracted from
+      AnyDrawSurf, see below\ **.**
+
+   -  **AnyDrawSurf:** DynUpdateOnOff member has been marked as
+      deprecated and is no longer functional.
+
+   -  **AnyInputBVH:** Behavior has been updated to handle 6 channels
+      correctly. A new member **AddTranslationsToOffset** has been added
+      for optionally reverting to the old behavior.
+
+   -  **AnyOperationSetValue**:
+
+      -  The Operation has been made easier to use when setting multiple
+         target value-objects to the same value.
+
+      -  Operation speed has been improved as well.
+
+   -  **AnyOprSetUI** (the settings folder in all operations i.e.
+      AnyOperation) has got new options to control operation
+      priority/visibility in the AMS GUI. This helps the model builder
+      to show/highlight the more important operations to the model user,
+      and hide less important ones\ **:**
+
+      -  A new enum member **DisplayPriority** has been added for
+         controlling the GUI Operation drop-down visibility of the
+         parent AnyOperation.
+
+      -  A new AnySwitch member **SelectOnLoad** has been added for
+         controlling if the parent AnyOperation should be selected on
+         load.
+
+   -  **AnyKinMeasureProd:** This class has been deprecated, as
+      **AnyKinMeasureLinComb** will get the same functionality.
+
+-  Model loading speed has been improved.
+
+-  'repmat(..)' function now supports AnyObjectPtr types.
+
+-  The surface contact error message used upon failure has been improved
+   to report both objects involved (e.g. muscle and surface).
+
+-  The default formatting of the ``strval(..)`` function has been
+   changed to be more readable.
+
+-  The behavior when double-clicking .any files in Windows has been
+   improved to open files in a currently running instance of AnyBody if
+   possible.
+
+
+
+**Bugfixes:**
+
+-  Fixed a bug where occasionally a muscle wrapping AnyKinSPLine would
+   wrap the wrong way. This error was related to reuse of muscle path
+   conditions from previous studies for the initiation of the next, so
+   the error could happen in sequences of studies with different time
+   spans.
+
+-  **Fixed a bug where an incomplete load could cause a crash.**
+
+-  Fixed a bug where many opened files in the editor would degrade
+   performance.
+
+-  Fixed an issue causing crash when shutting down AnyBody.
+
+-  Fixed a bug in AnyFile, where a special sequence of HTML encoded
+   characters in the filename could cause a failure to load.
+
+-  Fixed a bug where a Documentation Comment in the top-level object in
+   the Model Tree could cause a crash.
+
+-  Fixed an issue where the Model View recording counter was not updated
+   properly.
+
+-  Fixed an issue in the editor where newly opened file tabs would be
+   placed at the far right. They are now placed next to the currently
+   viewed file.
+
+-  Fixed a bug where the Editor scroll position would jump after
+   scrolling and clicking in the editor.
+
+-  Fixed the "Locate in Script" behavior from the File Tree.
+
+-  Fixed a bug where reloading data and replaying an operation could
+   cause a crash of AnyBody.
+
+**Documentation and class examples:**
+
+-  **AnyBody Reference Manual:** Updated and improved class
+   descriptions, e.g. for classes AnyKinLinear, AnyKinRotational and
+   AnyKinEqDriver.
+
+-  **Class examples:**
+
+   -  **AnyDrawSurf**: Usage of new GetVertices(..) member function has
+      been added to the class example.
+
+   -  **AnyDrawSurfDynShape**: New class example has been added to the
+      Reference manual.
+
+   -  **AnyTransSphericalJoint**: New class example has been added to
+      the Reference manual.
+
+   -  **AnyKinMeasureLinComb**: Example using time-varying input for
+      Coef and Const has been added to the class example.
+
+*******************************
+AnyBody, v.7.1.2 (13-06-2018)
+*******************************
+
+The release contains minor bug-fixes for the previous release of
+AnyBody, and new version of the AnyBody Managed Model Repository (AMMR).
+The new AMMR (v.2.1.1) is also a minor release with smaller changes and
+bug-fixes. Please refer to the dedicated release notes in the AMMR
+documentation (also available at
+https://anyscript.org/ammr-doc/changelog.html).
+
+
+
+**Minor updates:**
+
+-  Improved the error message shown when muscle wrapping fails. The
+   improved error message now shows which muscle causes the error.
+
+-  Improved the behavior of the File Tree "locate in Anyscript" context
+   menu function, so that it now finds the correct include statement
+   location for the file.
+
+
+
+**Bugfixes:**
+
+-  Fixed an issue where sometimes an AnyBody process would be left
+   running even after the graphical interface was closed. 
+
+-  Fixed an issue where using functions such as max() with empty
+   argument arrays would cause an unknown error. 
+
+-  Fixed a crash that could occur when interacting with the model tree
+   of a partially loaded model. 
+
+-  Fixed a bug where opening a file from a link in the AnyBody editor
+   would not work correctly if the file with the link in had been
+   modified. 
+
+-  Fixed an issue where the cursor position in the editor might jump
+   when switching to the editor after interacting with other windows. 
+
+-  Corrected an error in the AnyBody console application help
+   documentation. 
+
+*******************************
+AnyBody, v.7.1.1 (25-03-2018)
+*******************************
+
+The release contains bug-fixes and a few minor features.
+
+New version of AnyBody Managed Model Repository (AMMR) version 2.1 is
+included. The updated AMMR includes a few new example models, numerous
+improvements and smaller bug fixes. Please refer to the dedicated
+release notes in the AMMR documentation.
+
+
+
+**New features:**
+
+-  **Preprocessor**: New #ifpathexists and #ifnpathexists AnyScript preprocessor
+   conditions. These provide functionality for using the existence of a
+   path as a controlling condition in the AnyScript preprocessor.
+
+-  **AnyFunTransform3D functions speedup**: Implemented a caching based
+   speedup for AnyFunTransform3D derived functions, in order to prevent
+   unnecessary re-evaluation during design updates.
+
+
+
+**Minor updates:**
+
+-  Chart View now supports using wildcard-selections (using "*") even
+   when this includes non-plottable objects such as folders. Now
+   plottable values are displayed in the chart and folder objects are
+   ignored.
+
+-  The numerical precision used when outputting **AnyFloat** values to
+   ANYSET files and through the Dump ClassOperations has been increased
+   to ensure that the values can be imported again without loss of
+   precision.
+
+-  The numerical precision used for the **smootherstep** and
+   **smoothramp** AnyScript functions has been improved.
+
+-  The Replay **AnyOperations** have been removed from the Operation
+   drop-down menu as replay functionality is already available via
+   dedicated toolbar buttons and draggable progress bar.
+
+-  Updated the **AnyInputC3D** reader to accept certain non-conforming
+   C3D files, even though they do not adhere to the standard.
+
+-  In the editor, files are now always opened to the right of the active
+   file.
+
+-  A new entry in the settings file for enabling crash-dump logging has
+   been added. This will force a recreation of the settings file on
+   first startup of this version of AnyBody. We apologize for any lost
+   settings.
+
+
+
+**Bugfixes:**
+
+-  Fixed an error that occur when using the Set Value dialog box for
+   setting an AnyFile value. 
+
+-  Fixed a graphical issue with the Set Value dialog box when using a
+   DPI scaling different from 100%. 
+
+-  Fixed an issue that could result in duplicate entries to choose
+   from when using "Locate in Model Tree". 
+
+-  Fixed a crash that could occur when trying to open the Help on
+   something other than an AnyScript object. 
+
+-  Removed an unnecessary log file that was sometimes created when
+   using certain AnyScript classes. 
+
+-  Fixed an issue where the "Plot Value" right-click context menu
+   would not be available for AnyOutputFloats in the Model Tree. 
+
+-  Removed unnecessary Model View diagnostics messages, which would
+   sometimes be included in the log files for the AnyBody Console
+   application.
+
+-  **Fixed multiple editor related issues:**
+
+   -  AnyBody would not restore the editor scroll position when
+      reloading a file modified outside AnyBody.
+
+   -  Answering "no" to reloading a file modified outside AnyBody
+      would not mark the file as being modified in AnyBody.
+
+   -  Answering "no" to reloading a file modified outside AnyBody
+      would make the dialog display again continuously.
+
+   -  Removed crash that could occur when double-clicking in an empty
+      file.
+
+   -  Updated the check for modified files to only occur when the
+      AnyBody Modeling System has focus.
+
+-  Fixed an issue where starting the AnyBody Modeling System by double
+   clicking an ANY file would sometimes cause a Windows error dialog box
+   to appear.
+
+-  Fixed a problem in AnyInputC3D with the logic behind
+   GapFillUsingResidualsOnOff. This fixes problems with very short drop
+   outs.
+
+-  Fixed an issue were the tooltips in the Chart View were no longer
+   shown.
+
+*******************************
+AnyBody, v.7.1.0 (30-11-2017)
+*******************************
+
+
+AnyBody, v.7.1.0 provides a number of minor updates and new features.
+Many of these are supporting the new version of the AnyBody Managed
+Model Repository, AMMR v.2.0, or updates to the 7.0.x GUI.
+
+AMMR v.2.0 provides many significant improvements of human body model,
+including the first release of a lower extremity model based on the
+TLEM2 dataset. It also includes a new motion capture mode referred to as
+AnyMoCap. Please refer to the release notes of AMMR for further details.
+
+
+
+**Graphical User Interface:**
+
+-  **Editor**:
+
+   -  Direct links to external HTML documentation: When double-clicking
+      an include file, which ends with .htm or .html, then it will be
+      launched in a browser instead of opening in an editor tab.
+
+   -  Improved the logic for where new tabs are opened and for which tab
+      is shown after closing the active tab.
+
+   -  Added hotkeys for jumping between editor tabs.
+
+   -  Improved display and identification for bracket matching.
+
+   -  Improved editor speed with large files opened.
+
+   -  Improved the detection of when an open file has been modified
+      outside AnyBody.
+
+   -  If a main file is opened, and no model is loaded, a dialog will
+      ask if the main file should be loaded.
+
+-  **Model View**:
+
+   -  The Model View will now, by default, be using high performance
+      Nvidia or AMD graphics cards for rendering.
+
+   -  **AnyDrawObject** new member value: PickableZOrdering. This allows
+      defining pick order priority in the Model View.
+
+-  **Model Tree:**
+
+   -  Plot Value button added to Model Tree toolbar for showing a value
+      in one of the Chart Views.
+
+-  **Operations:**
+
+   -  **Operations Tree:** Updated system for opening levels of
+      Operations Tree after model load.
+
+   -  **Operation dropdown on the toolbar:**
+
+      -  Dropdown will now preselect an Operation if an obvious choice
+         exists in the model.
+
+      -  Dropdown now has options for showing more or less Operations
+         than the currently displayed.
+
+   -  **Status bar**: A new status bar has been added to the GUI for
+      showing Operation status and other information.
+
+-  **AnyBody Assistant** will now remember last used tab, and will not
+   show when the AnyBody Modeling System is started by double-clicking
+   an any-file.
+
+-  **Chart View:**
+
+   -  If a value from a different study is selected, the matching
+      abscissa will be auto-selected if possible.
+
+   -  Limited the height of the data view area to be at maximum half the
+      total height of the Chart View.
+
+-  **Layouts**:
+
+   -  The Operation Status pane is now hidden in the default layout.
+
+   -  Loading and saving layouts now affects all layouts rather than
+      only the active layout.
+
+-  **Information Window**: Improved the handling of documentation
+   comments.
+
+-  **Draggable panes:**
+
+   -  Panes can now only be undocked by double-clicking the pane title
+      bar, and not by dragging panes free.
+
+   -  Panes now have a minimum size.
+
+   -  Improved the look and feel of floating panes.
+
+-  **Menus, toolbars and hotkeys:**
+
+   -  Changed the "Windows" menu item to be named "Open files list".
+
+   -  Added a menu item for opening the installed AMMR documentation.
+
+   -  A number of context menus have been updated and improved,
+      including the menus for the Functions and Globals panels.
+
+   -  A number of icons have been updated and tooltips improved.
+
+   -  Added more hotkeys, including keys for Locate functions and
+      show/hide objects in the Model View from within the Model Tree.
+
+-  License warning dialog about license type and/or expiration now has a
+   timeout that will automatically close the dialog.
+
+
+
+**New features:**
+
+-  **Muscle Modeling updates**
+
+   -  **AnyMuscleModel** has been extended with two parameters, so it
+      now holds nominal strength (F0), volume (Vol0) and fiber length
+      (Lf0). This is preparation for future versions which will use
+      these parameters in the muscle recruitment.
+
+   -  **Variables Lfbar, Epsilonbar and Gammabar are deprecated**:
+      Derived classes **(AnyMuscleModel3E and AnyMuscleModel2ELin),**
+      which previously had Lf0 equivalent variables (i.e. Lfbar) now
+      have deprecated members. All variable with the \"bar\" postfix are
+      now deprecated and replaced by similar variables with postfix
+      \"0\". Deprecated variables are still operational for backwards
+      compatibility, but it is recommended to upgrade as part of model
+      maintenance.
+
+   -  **Muscle calibration** can set fiber length of all muscle types.
+
+   -  New base class for AnyMuscle called AnyRecruitedForce has been
+      introduced. In future versions other force types, which also will
+      be determined by muscle recruitment, will be derived from this
+      base class.
+
+-  **Calibration studies (AnyBodyCalibrationStudy)** has been updated
+   for handling the new muscle model parameters, see above.
+
+   -  More consistent handling of muscle/ligament inclusion by the
+      pointer lists (using members MuscleArr and LigamentArr) has been
+      introduced. This implies that muscle/ligaments that are not
+      explicit part of the model of the study can be included.
+
+   -  Links to muscle model parameters (design variables) can break
+      expression and assign values, that would previously lead to
+      loading errors. Calibrated parameters will now also be saved
+      together with other modified variables in ANYSET files.
+
+-  **AnyStudy and derived classes** have improved model configuration
+   functionality.
+
+   -  Mechanical studies (**AnyMechStudyBase** and derived classes) can
+      find and include missing mechanical dependencies that were not
+      manually included in the study. Or they warn about missing
+      segments.
+
+   -  Expression handling in all studies has been updated, so that
+      expressions of objects that are either automatically picked up or
+      manually excluded are also similarly included or excluded.
+      Expression handling is thereby consistent with the updated
+      configuration functionality.
+
+-  **Mechanical studies** have new system information functions
+
+   -  Kinematic error information has been slightly improved.
+
+   -  Study object's Object Description has been extended with more
+      information about connections between segments and kinematical
+      constraints.
+
+-  **New 'argfind' function**: Function for finding index of first
+   occurrence of a value in an array.
+
+
+
+**Minor updates:**
+
+-  **AnyBody Exporter™ for SOLIDWORKS®:**
+
+   -  Official support for SOLIDWORKS 2018 added.
+
+-  **AnyScript classes:**
+
+   -  **AnyDoc:** New AnyScript class for adding documentation (links)
+      to your model. The documentation is accessible in the GUI through
+      a button in the Model Tree. AnyDoc objects can assign
+      documentation to AnyFolder objects, which implies that it can be
+      assigned to any part and at any level of your model. The new AMMR
+      uses this feature to link the model to specific documentation
+      enclosed with the model.
+
+   -  **AnyInputFile** is extended with new options that improve
+      interfacing with files while the model is loaded\ **:**
+
+      -  a new AlwaysData0 switch, which force the AnyInputFile to
+         disregard the file data and use the default data (T0/Data0)
+         instead.
+
+      -  new TFile member, which holds data from the time array (first
+         column) in the file. This is useful for checking validating the
+         file content and setting AlwaysData0 accordingly.
+
+      -  a new TFileNumRead, which holds the number of time data (rows)
+         read from the file.
+
+      -  a new TFileIsMonotoneIncreasing member, which indicates if the
+         file contains a time array which is monotonically increasing.
+         This is useful for checking validating the file content and
+         setting AlwaysData0 accordingly.
+
+   -  **AnyForceSurfaceContact**:
+
+      -  Added ProjectionThresholdMaster and -Slave members for
+         finetuning contact areas in situations where mesh surfaces have
+         sharp edges and large curvatures between contacting surfaces.
+
+      -  Added an option to AnyDrawForceSurface to visualize the
+         connection between contact points on the master and slave
+         surfaces.
+
+-  **Optimization incl. Kinematic Optimization:** Handling of
+   requirements for design variables has been improved to support model
+   development and integration with template models such as the new
+   AnyMoCap included in AMMR.
+
+-  **Muscle wrapping (with AnyKinSPLine):** New parameters enable
+   increasing robustness for difficult cases. MaxIteration enables
+   increasing solver iterations while MaxRelStepSize enables to
+   increasing robustness by enforcing smaller step-sizes. In addition,
+   handling of the absolute tolerance (AbsTol) has been improved.
+
+-  Improved the model loading speed.
+
+-  Improved the startup speed of AMS and removed screen flickering
+   during startup.
+
+-  **AnyDrawSurf:** Changed DynUpdateOnOff to be Off as default. Having
+   this as On can cause a massive slowdown of the Model View.
+
+-  **AnyKinStudy:** Changed the SmallStepAssumptions value for
+   InitialConditions to be Off as default.
+
+-  The AnyBody Console application will now exit immediately with code
+   -22 in noninteractive mode when no licenses are available.
+
+-  Improved the error message that is shown for invalid references, so
+   that it now displays the first invalid object on the path.
+
+-  'repmat' function now supports 0-length (empty) output.
+
+
+
+**Bugfixes:**
+
+-  **Fixed a bug where using AnyDrawPointCloud occasionally caused a
+   crash.**
+
+-  Fixed a bug where the AnyBody console application might crash with an
+   unknown error when exiting.
+
+-  Fixed wrong background colors in the editor tabs.
+
+-  Fixed an issue where deprecated Operations might be displayed in the
+   Operations Tree.
+
+-  Fixed a bug where interacting with the Model View or Chart View,
+   while an Operation is running, occasionally froze the program.
+
+-  Fixed a bug, where Model Tree scroll position was not recalled
+   correctly after model reload.
+
+-  Fixed an issue, where display values in the model were not updated
+   during a replay.
+
+-  Fixed a crash, which could occur when using "Close all but this" in
+   editor tab.
+
+-  Fixed an issue with showing ANYPROJ files in recent files/projects.
+
+-  Fixed an issue, where changing Model View properties would not take
+   effect immediately.
+
+-  Fixed an issue with the link to AnyScript from the Information
+   Window.
+
+-  Fixed a crash, which could occur through indirect use of an #undef'ed
+   macro.
+
+-  Fixed a crash, which would happen when **AnyForceSurfaceContact**
+   found large amounts of contact points in a continuous contact region.
+
+-  Fixed a bug where the right side of the window for Settings and
+   Properties would not show anything.
+
+-  Fixed an error where the Project Tree view would not be activated
+   when a model containing an **AnyProject** is loaded.
+
+-  Fixed an issue where **AnyObjectPtr** was not correctly recognized in
+   the editor window.
+
+-  Fixed an issue related to saving a file from the editor in a path,
+   where the user does not have write access.
+
+
+
+**Documentation and class examples:**
+
+-  **AnyBody Tutorials: Updated the Tutorials to new HTML format and
+   updated contents to reflect latest AnyBody features.**
+
+-  The installation guide for AnyExp4SOLIDWORKS was moved from the
+   plug-in manual to the AnyBody installation guide.
+
+-  **AnyBody Reference Manual:** Minor updates
+
+   -  **AnyMuscleModel** and derived: Improved Reference Manual
+      description.
+
+   -  **AnyFunTransform3DRBFdyn**: Added Reference Manual description.
+
+   -  **AnyMechStudyBase**: Updated the class example.
+
+*******************************
+AnyBody, v.7.0.1 (06-07-2017)
+*******************************
+
+The release contains bug-fixes and a few minor features that were not
+ready for the 7.0.0 release.
+
+
+
+**New features:**
+
+-  **Back/forward navigation buttons**: New model tree navigation
+   buttons. The buttons allow the user to quickly jump between
+   selections in the model tree.
+
+-  **Operation dropdown on toolbar:** New operation dropdown widget in
+   the toolbar makes it easier to see which operation is currently
+   active, and makes it easier to switch between the most important
+   operations without having to select them in the model/operations
+   tree.
+
+-  **New system for auto-generated drawing objects:** Objects for
+   auto-generated drawings (RefFrames, Nodes, Inertia) are now real
+   objects in the model tree. The objects are prefixed with ``view``
+   (i.e. ``viewRefFrame``, ``viewNodes``, ``viewInertia``). They are not
+   visible by default but can be enabled from the model tree or the
+   model view. Since the objects are real AnyScript objects they can be
+   customized and modified by the model developer. The remaining
+   auto-generated drawings of other kinds of objects will be added in
+   the future.
+
+-  New ``assert()``/``expect()``/``warn()``/``notice()`` AnyScript
+   functions: Simple functions for asserting variables. The functions
+   raise errors if the inputs evaluate to false or zero (0). The
+   functions are intended as a convenient way to generate user-defined
+   error, warning, and notice messages. The ``expect()`` function
+   generates non-critical error messages, while the ``assert()``
+   function raises a fatal error which prevents the model from
+   loading.
+
+-  New ``bool()`` function: Function for converting values to their
+   truth values (0 or 1).
+
+
+
+**Minor updates:**
+
+-  Improve the performance of objects which resulted in large amount of
+   the text data (eg. large arrays).
+
+-  Locate in AnyScript dialog: If multiple results are available the
+   first entry is now always the place where the object is
+   constructed.
+
+-  Object information window: File construction links for class
+   members now points to where the variable is initialized instead of
+   the parent class constructs the variable.
+
+-  **Reset factory layout**: Now possible to do a complete reset to the
+   factory layout.
+
+-  **License concurrency**: Implemented license concurrency so that a
+   single license of AnyBody can now run 4 simultaneous instances of
+   AnyBody GUI or Console, or any combination thereof.
+
+
+
+**Bugfixes:**
+
+-  **Fixed a bug from 7.0.0 where** ``iffun\ **()**`` did not handle
+   ``AnySwitchVar`` conditions correctly.
+
+-  Fixed a crash when clicking on raw marker and analog data in the C3D
+   file objects in the model tree.
+
+-  Fixed a situation where the same file would be opened multiple times.
+
+-  Fixed an uncommon situation where load status was not displayed
+   correctly.
+
+-  Ctrl-C shortcut for copy is now also useable in files and file
+   preview.
+
+-  Fixed issue with AnyOperation not being selected under special
+   circumstances.
+
+-  Fixed a bug which could cause entries in model tree to appear in
+   reversed order.
+
+-  Fixed a bug which were all folder in the model tree which had
+   previously been touched would be expanded after reloading.
+
+-  Fixed slow startup time for the console version of AnyBody
+   (anybodycon.exe).
+
+-  Changed the icon for Copy to Clipboard in Chart to better represent
+   the function.
+
+**Known Issues:**
+
+-  "Locate in Model Tree" has some issues finding the correct object
+   if the tree has been collapsed. Running the operation again will
+   usually locate the correct object.
+
+*******************************
+AnyBody, v.7.0.0 (06-07-2017)
+*******************************
+
+
+
+**Graphical User Interface:**
+
+Completely new look and feel of the graphical user interface with an
+efficient and flexible exploitation of the desktop area including
+multiscreen support.
+
+-  **Dock/undock windows:** Support for docking and undocking Model
+   View, Chart View and other information windows.
+
+-  **New Replay Toolbar:** New Replay Toolbar and replay buttons. Allow
+   for replaying operations without explicitly selecting the replay
+   operation in tree.
+
+-  **Improved DPI scaling:**  All part of the system now supports DPI
+   scaling in computers with high resolution displays.
+
+-  **New Editor:** Support for tabbed files in the code editor.
+
+-  **Object Information window:** New look and style of the information
+   window that shows info about the selected object in the model tree.
+
+-  **Model Tree toolbar:** New dynamic toolbar in the Model Tree window.
+   It will show buttons depending on the type of object is selected in
+   the model tree.
+
+-  **Running operations:** Ability to run operations directly from the
+   Model Tree (without selecting them in the Operations Tree).
+
+-  **New windows layouts system:**
+
+   -  Three predefined window layouts: Standard, Compact, and Tiled.
+
+   -  Functionality for overriding them with user defined layouts and
+      reverting to the installed version later. Session/model associated
+      windows layout are saved in the new project files, see below.
+
+-  **Model Tree sorting:** Button for sorting objects in the Model Tree
+   alphabetically.
+
+-  **AnyBody Assistant Window is updated:**
+
+   -  Added getting started video to getting started tab.
+
+   -  Improved process of extracting installing the demo models
+
+
+
+**New features:**
+
+-  **Full model replay functionality:**
+
+   -  Replay functionality is now full featured and supports going back
+      and forth in time using the new replay buttons and replay slider.
+
+-  **Project feature:** New "Project" feature to store settings such
+   as windows layouts, Model/Chart View etc. which are related to
+   specific project.
+
+-  **New AnyScript functions:**
+
+   -  New AnyScript functions for initializing MxN matrices:
+      ``ones(m,n)``, ``zeros(m,n)``, ``eye(m,n)``
+
+   -  New AnyScript function to create evenly spaced numbers over a
+      specified interval: ``linspace(start, stop, num)``.
+
+   -  New AnyScript function ``repmat(m,n, arr)`` to repeat an array or
+      matrix MxN times.
+
+   -  New AnyScript function ``smootherstep(edge0, edge1, x)`` to create
+      a smooth sigmoid like step function transitioning from 0 at
+      ``edge0`` to 1 at ``edge1``. First and second order derivatives
+      are zero at the edge points.
+       (https://en.wikipedia.org/wiki/Smoothstep). Useful for creating
+      interpolation functions with smooth transitions. This is
+      especially useful for kinematics weights etc..
+
+   -  New AnyScript function ``smoothramp(edge0, edge1, x)`` to generate
+      a smooth ramp function which transition from 0 at Edge0 to 0.5 at
+      Edge1 where the function reaches its maximum constant slope of 2x.
+      First and second order derivatives are zero at the edge points.
+      Useful for creating smooth ramp functions. This is useful when
+      synthesizing curves for interpolation functions. E.g. for
+      kinematic penalties functions as used with the AnyScript class
+      AnyKinMeasureFunComb1.
+
+-  **AnyC3DInput:**
+
+   -  A new option to the AnyInputC3D object to gap fill the
+      trajectories based on the residual values has been added. Gap
+      filling is done crudely with linear interpolation, so it is not
+      meant to replace gap filling in motion capture software, but it
+      gives the option to low-pas filter data with marker
+      dropouts (markers moving suddenly to {0,0,0}) without the filter
+      group delay affects the marker positions before and after the
+      dropout.
+
+
+
+**Minor updates:**
+
+-  **AnyScript functions:**
+
+   -  The logical AnyScript function ``iffun(..)``, ``andfun(..)``,
+      ``orfun(..)`` and ``nor(..)`` now supports ``On/Off`` (AnySwitch)
+      values.
+
+   -  The ``RotMat()`` AnyScript function now supports integer
+      arguments, which just converted to floating values.
+
+   -  ``round()``, ``floor()``, and ``ceil()`` no longer complain if
+      they are given arguments which are already integers.
+
+-  **Kinematic errors:** Improvements to how kinematics errors are
+   reported in the Output Window.
+
+-  **Tutorials:** The \"Getting started \...\" and \"User Interface\"
+   tutorials have been updated to reflect the new look-and-feel and
+   features of AMS 7.0.
+
+
+
+**Bugfixes:**
+
+-  Kinematic solvers:
+
+   -  Fixed a bug that prevented the KinSolDeterminate solver to be used
+      efficiently with FDK analysis.  The solver now supports same
+      abilities for linear perturbation analysis of positions as the
+      older solvers.
+
+-  Fixed bug in the ``round(..)`` AnyScript function on how negative
+   numbers were rounded up/down.
+
+-  Fix bug in AnySurfEllipsoidFit introduced in AMS 6.1.1, which could
+   cause incorrect scale of the fitted ellipsoids.
+
+-  Fixed incorrect line numbers in the AnyScript Editor; now the first
+   line is 1 instead of 0.
+
+-  Fixed the incorrect flag ANYBODY_INSTALL_DIR on 64-bit AMS.
+
+
+
+**Known Issues:**
+
+-  Model tree: Model tree does not recover accurately the folders that
+   are open just before reload. Instead, all folders which has
+   previously been touched will be opened. This will be fixed in the
+   next minor update.
+
+-  Tutorials: The remaining tutorials apart from the \"Getting started\"
+   and \"User Interface\" still need to be updated to reflect the new
+   look-and-feel of AMS 7.0. Even though the tutorials are based on
+   version 6.0 of AMS, the content is still valid.
+
+-  The ability to display default drawings of objects after the model is
+   loaded (reframes, segments) currently does not work. We are working
+   on a new improved system for drawing default representations of
+   objects. This functionality will be reestablished soon in the next
+   minor update.

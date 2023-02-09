@@ -1,0 +1,531 @@
+
+
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AnyScript™ language &#8212; AnyScript Reference 7.3.4 documentation</title>
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/cloud.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/table_styling.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noticia+Text|Open+Sans|Droid+Sans+Mono" type="text/css" />
+    
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/script/filter-class-list.js"></script>
+    <script src="../_static/fa/all.js"></script>
+
+    
+    
+     
+        <script src="../_static/jquery.cookie.js"></script>
+    
+
+    
+     
+        <script src="../_static/cloud.base.js"></script>
+    
+
+    
+     
+        <script src="../_static/cloud.js"></script>
+    
+
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Terminology" href="terminology.html" />
+    <link rel="prev" title="The AnyScript Reference manual!" href="../index.html" /> 
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head><body>
+    <div class="relbar-top">
+        
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../contents.html" title="Table Of Contents"
+             accesskey="C">toc</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="terminology.html" title="Terminology"
+             accesskey="N">next</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="../index.html" title="The AnyScript Reference manual!"
+             accesskey="P">previous</a> &nbsp; &nbsp;</li>
+    <li><a href="../index.html">AnyScript Reference 7.3.4 documentation</a> &#187;</li>
+
+          <li class="nav-item nav-item-1"><a href="../index.html" accesskey="U">The AnyScript Reference manual!</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">AnyScript™ language</a></li> 
+      </ul>
+    </div>
+    </div>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="anyscript-language">
+<h1>AnyScript™ language<a class="headerlink" href="#anyscript-language" title="Permalink to this headline">¶</a></h1>
+<p class="rubric">Content</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="terminology.html"><span class="doc">Terminology tl;dr</span></a></p></li>
+<li><p><a class="reference internal" href="#language-intro"><span class="std std-ref">Introduction</span></a></p></li>
+</ul>
+<div class="toctree-wrapper compound">
+</div>
+<div class="section" id="introduction">
+<span id="language-intro"></span><h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>AnyScript™ is an object-oriented language with a fixed set of available data
+types (classes). This means that you cannot define your own types and you
+cannot, like in a programming language, write algorithms. An AnyScript™ file is
+purely consisting of definitions (declarations) of objects and the internal data
+structure in AnyBody maps these definitions completely.</p>
+<p>The following sections gives a brief introduction to the rules for writing an
+AnyScript™ file or files. In many ways AnyScript™ looks syntactically like C++ or Java and
+this is a deliberate choice.</p>
+<p>In fact, if you compare AnyScript™ to popular programming languages, you may find
+that it is very similar to JavaScript. The syntax is much the same, and
+AnyScript™ shares the property with (the first versions of) JavaScript that it works on a set of
+predefined classes and does not let the user define new classes. Some of
+the syntactic similarities are the use of braces to delimit different
+sections of the model from each other and the fact that each declaration
+is terminated by a semicolon. The main difference is that AnyScript™ does not
+contain any executable statements, so you cannot specify a sequence of
+events, i.e., write algorithms; AnyScript™ is purely declarative contrary to C++ and Java.</p>
+</div>
+<div class="section" id="the-main-folder-and-scopes">
+<h2>The Main folder and scopes<a class="headerlink" href="#the-main-folder-and-scopes" title="Permalink to this headline">¶</a></h2>
+<p>As we have already mentioned briefly, the Main folder plays a special
+role as a container of the entire model. This means that a basic AnyScript™ file
+must contain a <code class="docutils literal notranslate"><span class="pre">Main</span> <span class="pre">=</span></code> statement:</p>
+<div class="highlight-AnyScriptDoc notranslate"><div class="highlight"><pre><span></span><span class="n">Main</span> <span class="o">=</span> <span class="p">{</span>
+ <span class="o">&lt;</span><span class="n">model</span> <span class="n">content</span><span class="o">&gt;</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+<p>You could define all the objects of the model in one big pile inside the Main folder. This
+would create a very flat but also disorganized object tree. So users
+normally prefer to organize the objects of the model in subfolders
+according to some system.</p>
+<p>For instance, a folder could contain objects
+of similar types, or it could be a particular body part. The folder
+structure plays an important role for complex models of the entire body.
+It allows such models with many hundred element to be composed of
+body part models developed by different users. AnyFolder can be nested as
+much as you find practical for your model; AnyScript™ does not make any
+restrictions in this regard.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>All statements in AnyScript™ end by a semicolon. We have this in
+containing <code class="docutils literal notranslate"><span class="pre">Main</span> <span class="pre">=</span> <span class="pre">{</span> <span class="pre">&lt;model</span> <span class="pre">content&gt;</span> <span class="pre">};</span></code> statement and this is how all statements must end.</p>
+</div>
+<p>It is also possible to include Main files from other files.
+In principle, this function is just like any other <code class="docutils literal notranslate"><span class="pre">#include</span></code>-statement.
+However, in this situation the Main folder is considered a globally defined folder.
+Which implies that regardless of the scope in which this folder is opened,
+all additions to the folder will go to the top level folder. So wherever you include a Main file,
+the same thing happens, namely that you add all what is declared in the
+included Main file to your current model’s Main scope. This can indeed
+be confusing and takes some level of experience to master.
+It is not recommended to include other Main file from
+various arbitrary files in your model. Do it from the top level if
+needed, so that it is as transparent from the code as possible.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The Main file can only be included once; already at the
+second attempt all member declared in the included Main file will
+conflict with already existig object from the first inclusion.</p>
+</div>
+<p>There is one nice application where it may be commendable to
+include a Main file from another Main file. This is if you are making
+extensions to an existing model, but you would like these extensions to
+stay separated from the existing code. For instance, you may be adding
+test facilities you only need temporarily or once in a while, and you do
+not want these facilites to influence the appearance of the model, which
+you may share with your coworkers. In this case you can make new Main
+file, include your common Main file, and then create your additions in the new
+file.</p>
+<p>Similarly, you can also use this functionality to combine two models, if
+they are properly designed for coexistence inside the Main scope. For
+this case however, it may be advisable to design the models each as separate
+building blocks (i.e. non-Main include files).</p>
+</div>
+<div class="section" id="declarations">
+<h2>Declarations<a class="headerlink" href="#declarations" title="Permalink to this headline">¶</a></h2>
+<p>A declaration of an object is made by writing the class name followed by
+the name you want for the object.</p>
+<div class="highlight-AnyScriptDoc notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">ClassName</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">objectname</span><span class="o">&gt;</span> <span class="o">=</span> <span class="o">&lt;</span><span class="n">value</span><span class="o">&gt;</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>The object name can consist of letters (case sensitive), digits (not as the first
+character) and underscores. The declaration defines (creates) a new object
+that did not exist before, i.e., a new instance of the class. The object
+declaration must also contain an initialization of the object’s value.
+This is done by an equality sign followed by an acceptable value for the
+given class. For folders, the &lt;value&gt; can be a scope
+containing multiple statements inside braces. As for value-objects, it can
+be simple values or expressions.</p>
+<div class="highlight-AnyScriptDoc notranslate"><div class="highlight"><pre><span></span><span class="kt">AnyFolder</span> <span class="n">MyFolder</span> <span class="o">=</span> <span class="p">{};</span> <span class="c1">//Empty folder</span>
+<span class="kt">AnyVar</span> <span class="n">MyVal</span> <span class="o">=</span> <span class="mf">1.0</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="initializing-objects">
+<h2>Initializing objects<a class="headerlink" href="#initializing-objects" title="Permalink to this headline">¶</a></h2>
+<p>Some objects are not declared directly in the script; they come into the
+model as predefined members of others, their owner. Most folder classes
+(except for <a class="reference internal" href="../reference/classes/AnyFolder.html#anyfolder"><span class="std std-ref">AnyFolder</span></a> and some other basic classes) have such predefined
+members, which are implicitly declared when you declare the owner.</p>
+<p>Some predefined object members can or need to be
+initialized with a statement similar to the declaration; in this case
+you should simply omit the class name, because the object already
+exists, i.e.:</p>
+<div class="highlight-AnyScriptDoc notranslate"><div class="highlight"><pre><span></span><span class="s">&quot;&lt;objectname&gt; = &lt;value&gt;;&quot;</span><span class="p">.</span>
+</pre></div>
+</div>
+<p>All objects that hold values (<a class="reference internal" href="../reference/classes/AnyValue.html#anyvalue"><span class="std std-ref">AnyValue</span></a>-derived) can only be initialized once
+from the script. Folders, however, can be initialized many times, because
+initializing the folder is actually the same as opening its scope and adding
+to it.</p>
+<p>The folder initialization looks like the following:</p>
+<div class="highlight-AnyScriptDoc notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">foldername</span><span class="o">&gt;</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="o">&lt;</span><span class="n">content</span><span class="o">&gt;</span>
+<span class="p">};</span><span class="s">&quot;</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Actually, the start of the AnyScript™ file, <code class="docutils literal notranslate"><span class="pre">Main</span> <span class="pre">=</span> <span class="pre">{</span></code>, can
+be regarded as merely an initialization of the <code class="docutils literal notranslate"><span class="pre">Main</span></code> folder.</p>
+</div>
+<p>Multiple initializations of a folder allow you to add contents to folder
+from many places in your script. This is a very important feature when
+creating complex models that are composed of many building blocks</p>
+<p>The sequence of declarations of objects in AnyScript™ does in general not
+matter. This can be allowed due to the fact that you only declare
+objects, i.e., state the existence of them; you do not define sequences
+of events like in most programming languages. AnyScript™ will look for objects in
+the entire object tree if you refer to a existing object. This implies
+that you can declare an object in the bottom of your file and refer to
+it in the top.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Some classes do however use the sequence of its members
+to determine certain properties that may be use in subsequent
+computations.</p>
+<p>In such case, it is advisable to declare such sequence sensitive members
+inside a single folder initialization scope because the sequence of the
+members then becomes the same as the sequence in the code.</p>
+</div>
+</div>
+<div class="section" id="references-and-expressions">
+<span id="section-syntax-references-and-expressions"></span><h2>References and Expressions<a class="headerlink" href="#references-and-expressions" title="Permalink to this headline">¶</a></h2>
+<p>You can refer to objects by their names. Inside the scope of a given
+folder, the members’ names are unique, i.e., no two objects can have the
+same name.</p>
+<p>You can also refer to objects that are located in other
+folders. This can be accomplished in two ways: by absolute and by
+relative references.</p>
+<dl id="syntax-absolute-ref">
+<dt>Absolute references</dt><dd><p>Absolute references are made by the so-called complete name of an
+object. The complete name specifies all owners from the root, i.e. from
+<code class="docutils literal notranslate"><span class="pre">Main</span></code>, and to the object like for instance:</p>
+<div class="highlight-AnyScriptDoc notranslate"><div class="highlight"><pre><span></span><span class="n">Main</span><span class="p">.</span><span class="o">&lt;</span><span class="n">foldername</span><span class="o">&gt;</span><span class="p">.</span><span class="o">&lt;</span><span class="n">subfoldername</span><span class="o">&gt;</span><span class="p">.</span><span class="o">&lt;</span><span class="n">objectname</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>This absolute reference to an object is valid from any scope in model.</p>
+</dd>
+</dl>
+<dl id="syntax-relative-ref">
+<dt>Relative references</dt><dd><p>A relative reference is however only valid from that particular scope
+level. You can refer further down in the object tree from a given level
+like the absolute reference refers down from the Global scope, for
+instance <code class="docutils literal notranslate"><span class="pre">&lt;membername&gt;.&lt;sub-member&gt;.&lt;objectname&gt;</span></code>.</p>
+<p>You can also
+refer up the model tree. A dot in front of the name indicates one level
+up the tree, i.e., <code class="docutils literal notranslate"><span class="pre">...&lt;foldername&gt;.&lt;objectname&gt;</span></code>  refers to the member
+of a folder three levels up from the current scope.</p>
+<div class="highlight-AnyScriptDoc notranslate"><div class="highlight"><pre><span></span><span class="kt">AnyFolder</span> <span class="n">Folder</span> <span class="mi">1</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="kt">AnyVar</span> <span class="n">B</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="kt">AnyFolder</span> <span class="n">Folder2</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="kt">AnyFolder</span> <span class="n">Subfolder1</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="c1">// A is assined the value of B.</span>
+        <span class="c1">// Use two dots to go up two scopes when refering to B</span>
+        <span class="kt">AnyVar</span> <span class="n">A</span> <span class="o">=</span> <span class="p">..</span><span class="n">Folder1</span><span class="p">.</span><span class="n">B</span><span class="p">;</span> <span class="c1">// Use two dot</span>
+    <span class="p">};</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+<p>Absolute and relative references can be used on the left hand side of
+the equality sign in an initialization; however, the more common use is
+on the right hand side for specification of the value.</p>
+<p>All value objects
+(derived from <a class="reference internal" href="../reference/classes/AnyValue.html#anyvalue"><span class="std std-ref">AnyValue</span></a>) can be initialized as equal to another value of
+the same type.</p>
+<div class="section" id="the-reference-operator">
+<h3>The reference <code class="docutils literal notranslate"><span class="pre">&amp;</span></code> operator<a class="headerlink" href="#the-reference-operator" title="Permalink to this headline">¶</a></h3>
+<p>Folders cannot be initialized with another object. So you cannot copy everything
+from one folder to another by initializing one folder by another.</p>
+<p>However, you can create special referencing objects that refer to an existing folder
+(this is much like references in C++).</p>
+<p>Such references are made by objects of the class <a class="reference internal" href="../reference/classes/AnyRefObject.html#anyrefobject"><span class="std std-ref">AnyRefObject</span></a>, but they
+are not declared in the script by this class name; they are declared by a class name of the
+object you want to refer to and the so-called reference operator (<code class="docutils literal notranslate"><span class="pre">&amp;</span></code>,
+like in C++).</p>
+<p>A reference object declaration looks like:</p>
+<div class="highlight-AnyScriptDoc notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">Target</span> <span class="n">Class</span> <span class="n">Name</span><span class="o">&gt;</span> <span class="o">&amp;&lt;</span><span class="n">ref</span> <span class="n">name</span><span class="o">&gt;</span> <span class="o">=</span> <span class="o">&lt;</span><span class="n">target</span> <span class="n">name</span><span class="o">&gt;</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>where <code class="docutils literal notranslate"><span class="pre">&lt;target</span> <span class="pre">name&gt;</span></code> is a folder object specified by either
+<a class="reference internal" href="#syntax-absolute-ref"><span class="std std-ref">absolute</span></a> or
+<a class="reference internal" href="#syntax-relative-ref"><span class="std std-ref">relative referencing</span></a>.</p>
+<p>What can the reference objects (or in short ’references’) be used
+for? Actually, they are a very important and powerful feature of AnyScript™. Many
+objects use other objects of particular classes, which they expect
+the user to declare as members. For instance many mechanical objects need
+their attachment points to be defined by declarations of reference
+frames inside the mechanical object. Often these points are already
+existing in other places in the model and here it is possible to simply
+make a reference object pointing to the real object. The real object
+exists only once, but through the reference object it appears to exist
+in two places. It cannot be emphasized enough that there is only one
+object and when its properties are changed, the changes will appear in
+the all places including the references.</p>
+<p>As stated above, a reference object is declared by
+the class name of the target object and the reference operator. However,
+the class specification does not have to be an exact match of the target
+object’s type. Any parent class of the target object is valid as
+reference type specification. It can be advantageous not to use exact
+class matches for reference and target, especially if you tend to change the
+class of the target or change the target to another object of another
+class. If all your possible target classes have a common base, this base
+class may be a more practical choice for type definition of your
+reference. There may however be restrictions on how general a base class
+you can choose, this depends on the function the reference object has.</p>
+<p>If you make a reference specified as an <a class="reference internal" href="../reference/classes/AnyObject.html#anyobject"><span class="std std-ref">AnyObject</span></a>, AnyScript™ can not resolve
+whether it is folder class, a value class, or some much more specific
+class. This means that you lose the information about the special
+features of a class, if you refer to it with a parent class as class
+specifier.</p>
+</div>
+</div>
+<div class="section" id="mathematical-expression-and-operators">
+<h2>Mathematical expression and operators<a class="headerlink" href="#mathematical-expression-and-operators" title="Permalink to this headline">¶</a></h2>
+<p>This section  contains the descriptions of the value classes of AnyScript and the
+expressions that are possible on these classes. The value classes are
+derived from the class <a class="reference internal" href="../reference/classes/AnyValue.html#anyvalue"><span class="std std-ref">AnyValue</span></a>. They define the basic data types of AnyScript,
+such as floating point numbers, integers, strings etc.</p>
+<p>Values can be initialized by assignment statements, i.e., <code class="docutils literal notranslate"><span class="pre">&lt;objectname&gt;</span>
+<span class="pre">=</span> <span class="pre">&lt;value&gt;;</span></code>. Depending on the data type such assignments can contain
+more or less complex expressions of other values in the model, i.e.
+<code class="docutils literal notranslate"><span class="pre">&lt;objectname&gt;</span> <span class="pre">=</span> <span class="pre">&lt;expression&gt;;</span></code>. You cannot make references to <a class="reference internal" href="../reference/classes/AnyValue.html#anyvalue"><span class="std std-ref">AnyValue</span></a>s
+as you can to <a class="reference internal" href="../reference/classes/AnyFolder.html#anyfolder"><span class="std std-ref">AnyFolder</span></a>s; expressions however provide a similar
+functionality for linking values to each other. Expressions on these
+values can be formed by means a standard set of mathematical operators
+and functions.</p>
+<p>Functions are, as other elements in AnyScript, implemented as classes (derived
+from the base class <a class="reference internal" href="../reference/classes/AnyFunction.html#anyfunction"><span class="std std-ref">AnyFunction</span></a>). Such classes define a function, which
+is an entity that delivers a certain output value given certain input in
+a list of values (the argument list). For instance you will find the
+standard trigonometric functions sine and cosine implemented in the
+classes <a class="reference internal" href="../reference/classes/AnyFunSin.html#anyfunsin"><span class="std std-ref">AnyFunSin</span></a> and <a class="reference internal" href="../reference/classes/AnyFunCos.html#anyfuncos"><span class="std std-ref">AnyFunCos</span></a>.</p>
+<p>When you apply a function in an expression, you use an object for the
+given function class. Contrary to other objects, AnyScript accepts and require an
+argument list in parentheses after function object names when it appears
+in a right-hand side expression. The output value replaces the function
+objects in the expression during the evaluation. For instance you use an
+object called <code class="docutils literal notranslate"><span class="pre">sin</span></code>, which is of the class <a class="reference internal" href="../reference/classes/AnyFunSin.html#anyfunsin"><span class="std std-ref">AnyFunSin</span></a>, when you want to
+get sine of a number. The function is evaluated whenever the expression,
+of which it is part, is evaluated.</p>
+<p>For standard functions, such as <code class="docutils literal notranslate"><span class="pre">sin()</span></code> and <code class="docutils literal notranslate"><span class="pre">cos()</span></code>, the system has
+predefined objects with practical names placed in the Global scope.
+Therefore, you do not need to make declarations of the objects before
+using them in expressions. This makes standard functions available, as
+one would expect, simply by typing the function name followed by the
+argument list in parentheses. However, for other functions, typically
+more complex ones with various options, you must declare the function
+object manually similar to any other object in AnyScript. Hereafter the function
+can be accessed using the name of the object with either absolute or
+relative naming principles.</p>
+<p>Functions can be polymorphic, which means that the a given function
+class (<a class="reference internal" href="../reference/classes/AnyFunction.html#anyfunction"><span class="std std-ref">AnyFunction</span></a>) can hold several actual functions that can be
+distinguished from each other by their parameter list. They all share
+the same function name, which is the name of the <a class="reference internal" href="../reference/classes/AnyFunction.html#anyfunction"><span class="std std-ref">AnyFunction</span></a> object. The
+actual functions are implemented in members of <a class="reference internal" href="../reference/classes/AnyFunction.html#anyfunction"><span class="std std-ref">AnyFunction</span></a> that are of
+the type <a class="reference internal" href="../reference/classes/AnyMonoFunction.html#anymonofunction"><span class="std std-ref">AnyMonoFunction</span></a>. Multiple <a class="reference internal" href="../reference/classes/AnyMonoFunction.html#anymonofunction"><span class="std std-ref">AnyMonoFunction</span></a>s in an <a class="reference internal" href="../reference/classes/AnyFunction.html#anyfunction"><span class="std std-ref">AnyFunction</span></a>
+provide polymorphism. From practical user point of view, these
+“MonoFunctions” do not have any significance and they are typically
+implemented as Hidden classes.</p>
+</div>
+<div class="section" id="comments-and-model-documentation">
+<h2>Comments and model documentation<a class="headerlink" href="#comments-and-model-documentation" title="Permalink to this headline">¶</a></h2>
+<p>To make your AnyScript™ file more legible you can benefit from making comments and
+splitting your model into several files. Both can be realized by
+features adopted from the C++ language.</p>
+<p>Comments that are ignored by the AnyScript™ compiler can be made in two ways: An
+entire paragraph can be excluded from the compilation by bounding it
+with <code class="docutils literal notranslate"><span class="pre">/*</span></code> and <code class="docutils literal notranslate"><span class="pre">*/</span></code>, and a single line can be excluded by a leading
+double slash, <code class="docutils literal notranslate"><span class="pre">//</span></code>. The comment functionality can be used not only to
+write sensible messages to yourself or other readers of the code, but
+also to exclude parts of the code temporarily during development and
+testing of a model.</p>
+<p>From version 2.0 of AnyBody, comments starting with either <code class="docutils literal notranslate"><span class="pre">/**</span></code> or <code class="docutils literal notranslate"><span class="pre">///</span></code> have
+been given a special meaning. These will be treated as part of a special
+model documentation that is stored together with the model objects and
+made available to the users of the models without requiring them to read
+the AnyScript™ source code. From version 3.0, these comments are collected with
+other object specific information to form an Object Description
+function, which for instance can be accessed from all Model Trees in the
+AnyBody GUI.</p>
+<p>Comments using <code class="docutils literal notranslate"><span class="pre">/**</span></code> or <code class="docutils literal notranslate"><span class="pre">///</span></code> must be attached to an object in the
+script code. This is done by placing the comment right in front the
+initialization of the object. This is referred to as a prefixed
+Documentation Comment. Documentation Comments can also be postfixed, i.e.
+placed right after an object initialization, but this requires an
+additional <code class="docutils literal notranslate"><span class="pre">&lt;</span></code> after the preceding mark, i.e., <code class="docutils literal notranslate"><span class="pre">///&lt;</span></code> and <code class="docutils literal notranslate"><span class="pre">/**&lt;</span></code>. This
+is convenient when documenting “small” objects like variables and the
+like.</p>
+<p>A third method is convenient for “larger objects”, i.e. folders. Folders
+can documented in the middle of the folder scope. We shall refer to this
+as scope-fixed Documentation Comments. A scope-fixed Documentation
+Comment is marked by adding an additional <code class="docutils literal notranslate"><span class="pre">^</span></code> after the preceding mark,
+i.e., <code class="docutils literal notranslate"><span class="pre">///^</span></code> and <code class="docutils literal notranslate"><span class="pre">/**^</span></code>. This is convenient when documenting a section
+of code in the scope of an object, for instance from the inside of an
+<code class="docutils literal notranslate"><span class="pre">#include</span></code> file used during initialization of the object. Inside the
+<code class="docutils literal notranslate"><span class="pre">#include</span></code> file there will be no access to the start or end of the
+object’s scope, but still the contents of the file may be worth
+commenting on. This is particularly convenient if the <code class="docutils literal notranslate"><span class="pre">#include</span></code> file is
+used multiple time from different objects in the model, in which case it
+would require multiple identical Documentation Comments if they were
+made outside the include file, in the vicinity of the <code class="docutils literal notranslate"><span class="pre">#include</span></code>-statement.</p>
+<p>Folders can be initialized several times and Documentation Comments can
+be made for each initialization. Multiple such comments are collected
+into one text, when presented in the AnyBody application. In the AnyBody
+GUI such collected presentations of Documentation Comments typically
+contains links to the code for each comments. This can be a powerful
+tool for navigating the AnyScript™ code of “large” objects being initialized in
+many places.</p>
+</div>
+</div>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+        <p class="logo"><a href="../index.html" title="index">
+          <img class="logo" src="../_static/anyscript_maual.svg" alt="Logo"/>
+        </a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+<h3><a href="../contents.html">Reference Manual</a></h3>
+<p class="caption"><span class="caption-text">API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../reference/class-overview.html"><strong>Class reference</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reference/function-overview.html"><strong>Function reference</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reference/globals-overview.html">Globals reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reference/environment.html">Environment variables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reference/messages/index.html">Errors, warnings and messages</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Language</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">AnyScript™ language</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#the-main-folder-and-scopes">The Main folder and scopes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#declarations">Declarations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#initializing-objects">Initializing objects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#references-and-expressions">References and Expressions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#mathematical-expression-and-operators">Mathematical expression and operators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#comments-and-model-documentation">Comments and model documentation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="preprocessor.html">The preprocessor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="inside-anybody.html">Inside the AnyBody Modeling System</a></li>
+<li class="toctree-l1"><a class="reference internal" href="technical-notes.html">Technical notes</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../demos/index.html">Demo examples</a></li>
+</ul>
+<div class="sphinxprev">
+    <h4>Other resources</h4>
+    <p class="topless"><a href="../../index.html"
+                          title="Back to all manuals">&larr; Back to all manuals</a></p>
+</div>
+        </div>
+      </div>
+    
+    
+        <div class="sidebar-toggle-group no-js">
+            
+            <button class="sidebar-toggle" id="sidebar-hide" title="Hide the sidebar menu">
+                 «
+                <span class="show-for-small">hide menu</span>
+                
+            </button>
+            <button class="sidebar-toggle" id="sidebar-show" title="Show the sidebar menu">
+                
+                <span class="show-for-small">menu</span>
+                <span class="hide-for-small">sidebar</span>
+                 »
+            </button>
+        </div>
+    
+      <div class="clearer"></div>
+    </div>
+    <div class="relbar-bottom">
+        
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../contents.html" title="Table Of Contents"
+             >toc</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="terminology.html" title="Terminology"
+             >next</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="../index.html" title="The AnyScript Reference manual!"
+             >previous</a> &nbsp; &nbsp;</li>
+    <li><a href="../index.html">AnyScript Reference 7.3.4 documentation</a> &#187;</li>
+
+          <li class="nav-item nav-item-1"><a href="../index.html" >The AnyScript Reference manual!</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">AnyScript™ language</a></li> 
+      </ul>
+    </div>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2021, AnyBody Technology A/S.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.5.4.
+    </div>
+    <!-- cloud_sptheme 1.4 -->
+  </body>
+</html>

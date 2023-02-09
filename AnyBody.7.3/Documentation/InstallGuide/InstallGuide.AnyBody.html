@@ -1,0 +1,966 @@
+
+
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Install Guide: The AnyBody Modeling System &#8212; AnyBody Install Guide 7.3.4 documentation</title>
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/cloud.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="_static/table_styling.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noticia+Text|Open+Sans|Droid+Sans+Mono" type="text/css" />
+    
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+
+    
+    
+     
+        <script src="_static/jquery.cookie.js"></script>
+    
+
+    
+     
+        <script src="_static/cloud.base.js"></script>
+    
+
+    
+     
+        <script src="_static/cloud.js"></script>
+    
+
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head><body>
+    <div class="relbar-top">
+        
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="#" title="Table Of Contents"
+             accesskey="C">toc</a> &nbsp; &nbsp;</li>
+    <li><a href="#">AnyBody Install Guide 7.3.4 documentation</a> &#187;</li>
+
+        <li class="nav-item nav-item-this"><a href=""><span class="sectnum"></span> Install Guide: The AnyBody Modeling System</a></li> 
+      </ul>
+    </div>
+    </div>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="install-guide-the-anybody-modeling-system">
+<h1><span class="sectnum"></span> Install Guide: The AnyBody Modeling System<a class="headerlink" href="#install-guide-the-anybody-modeling-system" title="Permalink to this headline">¶</a></h1>
+<p>Version 7.3.4, July 2021</p>
+<div class="section" id="installation-of-anybody">
+<span id="chapter-installation"></span><h2><span class="sectnum">1.</span> Installation of AnyBody<a class="headerlink" href="#installation-of-anybody" title="Permalink to this headline">¶</a></h2>
+<p>This section describes the basic installation of the AnyBody Modeling
+System on a computer. Firstly, the requirements for the installation are
+described and next, the installation process is described. For a
+floating network license setup, this also covers the setup for the
+client computers running the AnyBody software.</p>
+<div class="section" id="requirements">
+<h3><span class="sectnum">1.1.</span> Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h3>
+<dl>
+<dt><strong>Computer:</strong></dt><dd><dl>
+<dt>Operating system:</dt><dd><p>AnyBody runs only on standard Windows PC computers with
+Windows 8.1 or Windows 10 operating systems. The Windows 10
+service models (Semi-Annual Channel (Targeted) (SAC-T)
+Semi-Annual Channel (SAC) Long Term Servicing Channel (LTSC)) is
+supported in the following way:</p>
+<ul class="simple">
+<li><p>The AnyBody Modeling System is supported for running on
+Semi-Annual Channel, and since AnyBody is not heavily
+integrated with Windows it is expected to run on Semi-Annual
+Channel (Targeted) and Long Term Servicing Channel branches as
+well. AnyBody is routinely tested on Windows Semi-Annual
+Channel (Targeted), so any serious issues caused by updates to
+Windows are addressed in a timely fashion.</p></li>
+</ul>
+<p>AnyBody may work on earlier Windows operating systems, but this
+is not supported. The 64 bit version of AnyBody requires a 64
+bit Windows in order to run.</p>
+</dd>
+<dt>Memory:</dt><dd><p>AnyBody will in principle run on very little memory, but if you
+have less than 256 MB available to AnyBody, you will only be able
+to run very small models. Larger models typically require 512 MB
+or more, and a full-body model does not run well on less than 2
+GB. Exporting high-resolution imagery can also require extra
+memory.</p>
+<ul class="simple">
+<li><p>Working with full-body models, a minimum of 2GB ram is required
+and 4GB recommended.</p></li>
+<li><p>Notice that the 32 bit version of AnyBody is built with Large
+Address Awareness meaning that it can use more than the
+standard 2GB of memory for 32 bit programs. On 64 bit Windows
+systems, the 32 bit version AnyBody can use up to 4GB and on 32
+bit Windows systems proper modification of system options can
+bring it to use up to 3GB of memory. The 64 bit version of
+AnyBody can utilize the complete amount of memory available on
+a 64 bit Windows.</p></li>
+<li><p>Running large models with large data sets, e.g. from MOCAP with
+many samples may required gigabytes of memory; a 64 bit Windows
+system is therefore recommended for advanced modeling.</p></li>
+</ul>
+</dd>
+<dt>Processor:</dt><dd><p>AnyBody should work on any processor capable of running the
+recommended operating systems, but the faster the better. Large
+models are computationally demanding.</p>
+</dd>
+<dt>Graphics:</dt><dd><p>A graphics adapter with OpenGL 3.0 support is a minimum
+requirement. CPU-integrated graphics adapters using shared memory
+are supported, but a dedicated graphics adapter with at least 1GB
+of memory is recommended, especially when exporting high
+resolution imagery.
+If AnyBody is used through a Windows Remote Desktop Connection, a
+graphics adapter with OpenGL drivers specifically supporting Remote
+Desktop Connections are required in order to get hardware graphics
+acceleration. The Nvidia Quadro series of graphics adapters are
+known to support OpenGL on Remote Desktop Connections.</p>
+</dd>
+<dt>Hard drive:</dt><dd><p>At least 4.0GB of free disk space is recommended for installation
+and model work.</p>
+</dd>
+<dt>Web Browser:</dt><dd><p>The AnyBody Modeling System requires that Microsoft Internet
+Explorer 9.0 or later is installed on the computer; newest version
+is recommended. Older versions may result in reduced functionality
+of the AnyBody GUI, but the core simulation functions are not
+affected.</p>
+</dd>
+<dt>SOLIDWORKS:</dt><dd><p>The AnyBody Exporter for SOLIDWORKS translator add-in requires
+SOLIDWORKS to be installed in order to work.</p>
+<p>The AnyBody Exporter for SOLIDWORKS add-in is currently
+supported for SOLIDWORKS 2012 to SOLIDWORKS 2020.
+It may function on earlier or newer versions as well due to the
+generality of the SOLIDWORKS API, but this is generally not
+supported.</p>
+</dd>
+<dt>Python:</dt><dd><p>The AnyBody Modeling System implements an interface for using
+Python functionality in models. The AnyBody Modeling System
+installation includes a Python 3.7 distribution, but a
+user-selected Python installation is also supported. Supported
+versions of Python are 2.7, 3.4, 3.5, 3.6, 3.7 or 3.8. The 32 bit
+version of AnyBody can interface with a 32 bit Python
+installation, and the 64 bit version of AnyBody can use a 64 bit
+Python installation.</p>
+</dd>
+</dl>
+</dd>
+<dt><strong>User Account:</strong></dt><dd><p>Your Windows user account must have administrative privileges
+during the installation process.</p>
+<ul class="simple">
+<li><p>You may also need administrative privileges while entering
+license keys (importing license files). License keys are entered
+and license files are imported via AnyBody’s License Manager
+that opens the first time the AnyBody Modeling System is
+started.</p></li>
+</ul>
+</dd>
+<dt><strong>License:</strong></dt><dd><p>You must have a valid license file. A license file is a text
+file, typically with the extension “.lic”.
+(If you do not have a license file, you can request an
+evaluation license from
+<a class="reference external" href="http://www.anybodytech.com">www.anybodytech.com</a>.)</p>
+<ul>
+<li><p>You can open the license file and inspect the data:</p>
+<dl>
+<dt>Notice!</dt><dd><p>Do not modify the file or it will become invalid.</p>
+</dd>
+<dt>Customer information</dt><dd><p>should match your name or your organization’s name.</p>
+</dd>
+<dt>Product/license string:</dt><dd><p>The product string combines product name and license type
+connected by an ’_’ character, i.e.,
+&lt;ProductName&gt;_&lt;LicenseType&gt;. Product names can currently be one
+of the following:</p>
+<dl class="simple">
+<dt>ams4:</dt><dd><p>License for the fundamental module of the AnyBody Modeling
+System, including the AnyBody GUI and the console
+application interfaces.</p>
+</dd>
+<dt>ae4sw:</dt><dd><p>License for the AnyBody Exporter for SOLIDWORKS translator
+add-in (AnyExp4SOLIDWORKS).</p>
+</dd>
+<dt>amsall1:</dt><dd><p>A combined license for all independent modules of the
+AnyBody Modeling System installation packages.</p>
+</dd>
+<dt>ams4_processing:</dt><dd><p>A special processing license for running the AnyBody Batch
+Processing System console applications.</p>
+</dd>
+</dl>
+</dd>
+<dt>License types:</dt><dd><dl class="simple">
+<dt>&lt;ProductName&gt;_standard:</dt><dd><p>License for the standard version of the product or module.</p>
+</dd>
+<dt>&lt;ProductName&gt;_non_faculty_research:</dt><dd><p>License for the non-faculty research version of the product
+or module.</p>
+</dd>
+<dt>&lt;ProductName&gt;_research:</dt><dd><p>License for the research version of the product or module.</p>
+</dd>
+<dt>&lt;ProductName&gt;_student:</dt><dd><p>License for a student version of the product or module.</p>
+</dd>
+<dt>&lt;ProductName&gt;_trial:</dt><dd><p>License for a trial version of the product or module.</p>
+</dd>
+</dl>
+</dd>
+<dt>Host-id:</dt><dd><p>Licenses are typically bound to a computer, a dongle, or
+similar. This is done by associating the license with a host-id
+that identifies the device.</p>
+<ul class="simple">
+<li><p>The host-id must be sent to AnyBody Technology before the
+license can be issued.</p></li>
+<li><p>Host-id for a standalone license can be found by the
+AnyBody software. AnyBody’s License Manager will assist you
+in finding host-id options that can be sent to
+AnyBody Technology. Please refer to the next section.</p></li>
+<li><p>Floating network licenses are bound to a license server.
+Please refer to a later chapter in this manual for more
+details on this.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</div>
+<div class="section" id="installation-procedure">
+<h3><span class="sectnum">1.2.</span> Installation Procedure<a class="headerlink" href="#installation-procedure" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic">
+<li><p>Access to the software:</p>
+<p>A self-installing exe file is available at
+<a class="reference external" href="http://www.anybodytech.com/download.html?did=anybody.overview&amp;loc=PDFGuide">anybodytech.com/download.html?did=anybody.overview</a>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>It requires AnyBody Web-user login. If you are not a registered
+web-user already, you must register an account on the login page.</p>
+</div>
+</li>
+<li><p>Install and launch AnyBody:</p>
+<ol class="arabic simple">
+<li><p>Run the setup exe file and follow the instructions in the
+installation wizard.</p></li>
+<li><p>Custom installation allows you to select the installation
+directory and select components. Notice that the install wizard’s
+choice of directory prepares for coexistence with older and future
+versions.</p></li>
+<li><p>In order to install optional Tool components of the
+AnyBody package such as the AnyBody Exporter for SOLIDWORKS
+add-in, you must either do a full installation or select the
+specific tools when selecting components for a custom
+installation.</p></li>
+<li><p>During the final part of the installation, drivers for AnyBody’s
+hardware dongles (HASP dongles) may be installed if relevant
+drivers are not found on your computer.</p></li>
+<li><p>Finalize:</p>
+<ol class="arabic simple">
+<li><p>Choose to launch AnyBody as the final step; this will bring you
+to Step 3.</p></li>
+<li><p>Choose to open Add/Remove Programs to remove older versions of
+AnyBody. This can always be done later.</p></li>
+</ol>
+</li>
+</ol>
+</li>
+<li><p>Register your license(s):</p>
+<ol class="arabic simple">
+<li><p>If AnyBody is installed for the first time, or for other reasons
+no valid license is found, AnyBody’s License Manager will appear
+when you launch AnyBody.exe.</p></li>
+<li><p>If you have a valid license already, select Import License File,
+browse for your license file, and import it.</p>
+<ul class="simple">
+<li><p>You can choose to import the license for all users of the
+computer, or just for your own user account.</p></li>
+<li><p>You may need administrative priviledges during the process, if
+you install the license for all users.</p></li>
+<li><p>If you have a dongle-bound license, insert the USB-dongle while
+installing the license. The license will be validated during
+the process.</p></li>
+</ul>
+</li>
+<li><p>If you have purchased a license, but have no license file yet, you
+may need to send host-id information to AnyBody Technology. From
+the License Manager dialog, you can gather this information:</p>
+<ul class="simple">
+<li><p>Insert your dongle, if relevant.</p></li>
+<li><p>The “View host IDs” button will open a dialog with the possible
+Host-IDs. From here they can be sent to AnyBody Technology.</p></li>
+</ul>
+</li>
+<li><p>If you have not bought a license, you can select a trial license.</p>
+<ul class="simple">
+<li><p>Trial licenses are special computer-bound licenses valid for 30
+days. The “Get trial license” button will bring you to the
+AnyBody Technology webpage where you can request a license key.</p></li>
+</ul>
+</li>
+<li><p>Pressing OK after entering a valid license will launch AnyBody.</p></li>
+<li><p>You can enter new licenses later from the menu Help-&gt;Registration.
+This will bring up the AnyBody License Manager dialog.</p></li>
+</ol>
+</li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ol class="arabic simple">
+<li><p>If you need assistance with the installation, please contact
+AnyBody support at <a class="reference external" href="mailto:support&#37;&#52;&#48;anybodytech&#46;com">support<span>&#64;</span>anybodytech<span>&#46;</span>com</a> or phone +45 9635 4286.</p></li>
+<li><p>A free forum providing support is available at the
+<a class="reference external" href="http://www.anyscript.org">www.anyscript.org</a> along with a lot
+of resources. The web-user login you have used at
+<a class="reference external" href="http://www.anybodytech.com">www.anyboytech.com</a> is also valid
+at <a class="reference external" href="http://www.anyscript.org">www.anyscript.org</a> and vice
+versa.</p></li>
+<li><p>AnyBody’s console application cannot register licenses. It will
+only run if a valid license has been entered from AnyBody’s GUI.</p></li>
+</ol>
+</div>
+</div>
+<div class="section" id="installing-anyexp4solidworks">
+<h3><span class="sectnum">1.3.</span> Installing AnyExp4SOLIDWORKS<a class="headerlink" href="#installing-anyexp4solidworks" title="Permalink to this headline">¶</a></h3>
+<p>AnyExp4SOLIDWORKS needs both SOLIDWORKS and the AnyBody Modeling
+System in order to function. AnyExp4SOLIDWORKS is installed on your
+hard disk from the regular AnyBody installer.</p>
+<p>In order to make sure that the add-in is installed, you must choose to
+either do a complete AnyBody installation, or you must specifically
+select to install the AnyExp4SOLIDWORKS add-in from the Tools section
+when doing a custom installation.</p>
+<div class="line-block">
+<div class="line"><a class="reference internal" href="_images/image02.png"><img alt="image1" src="_images/image02.png" style="width: 10cm; height: 7.5578cm;" /></a></div>
+<div class="line"><a class="reference internal" href="_images/image03.png"><img alt="image2" src="_images/image03.png" style="width: 10cm; height: 7.5578cm;" /></a></div>
+</div>
+<p>AnyExp4SOLIDWORKS requires a separate license, which is typically
+located in the same file as your AnyBody license. Importing the
+license file into AnyBody through the license manager will place the
+file in the proper location for AnyExp4SOLIDWORKS to find it.</p>
+</div>
+<div class="section" id="loading-the-anyexp4solidworks-add-in">
+<h3><span class="sectnum">1.4.</span> Loading the AnyExp4SOLIDWORKS add-in<a class="headerlink" href="#loading-the-anyexp4solidworks-add-in" title="Permalink to this headline">¶</a></h3>
+<p>AnyExp4SOLIDWORKS is delivered in the form of a DLL (Dynamic Link
+Library), which can be loaded as an add-in from SOLIDWORKS by doing the
+following steps.</p>
+<ol class="arabic simple">
+<li><p>Start SOLIDWORKS with administrator rights (use the “run as
+administrator” feature). It is only necessary to run SOLIDWORKS as
+administrator when importing the add-in, afterwards it can be started
+as normal.</p></li>
+<li><p>Choose the menu <span class="menuselection">File ‣ Open</span>.</p></li>
+<li><p>In the file dialog, select “Add-Ins (<code class="docutils literal notranslate"><span class="pre">*.dll</span></code>)” file extension type
+and choose the AnyExp4SOLIDWORKS DLL file.</p></li>
+</ol>
+<p><a class="reference internal" href="_images/image04.png"><img alt="image3" src="_images/image04.png" style="width: 10cm; height: 8.8037cm;" /></a></p>
+<p>The AnyExp4SOLIDWORKS DLL can be found in the AnyBody installation,
+ypically in the folder <code class="file docutils literal notranslate"><span class="pre">C:Program</span>&#160; <span class="pre">FilesAnyBody</span> <span class="pre">TechnologyAnyBody.</span><em><span class="pre">X.X</span></em><span class="pre">ToolsAnyExp4SOLIDWORKS</span></code>,
+where <code class="docutils literal notranslate"><span class="pre">X.X</span></code> indicates the AnyBody version number.</p>
+<p>After you have loaded the AnyExp4SOLIDWORKS module successfully, you
+can see that the AnyExp4SOLIDWORKS module appears in the SOLIDWORKS menu bar.</p>
+<p><a class="reference internal" href="_images/image05.png"><img alt="image4" src="_images/image05.png" style="width: 10cm; height: 2.1677cm;" /></a></p>
+<p>You are now ready to use SOLIDWORKS as a powerful model authoring tool
+for the AnyBody Modeling System.</p>
+</div>
+<div class="section" id="using-anybody-through-remote-desktop-connection">
+<h3><span class="sectnum">1.5.</span> Using AnyBody through Remote Desktop Connection<a class="headerlink" href="#using-anybody-through-remote-desktop-connection" title="Permalink to this headline">¶</a></h3>
+<p>The AnyBody Modeling System requires OpenGL 3.0 support, but connecting
+to a computer using Windows Remote Desktop Connection will typically
+only allow support for OpenGL 1.1, which will result in the Model View
+and Chart View not working.
+Certain graphics adapters such as the Nvidia Quadro series are
+known to support OpenGL on Remote Desktop Connections.
+A workaround for this limitation is to use a
+software OpenGL renderer instead. The 64 bit version of the
+AnyBody Modeling System ships with an appropriate OpenGL software
+renderer which can be installed manually by the user.</p>
+<p>Installation procedure for enabling software OpenGL rendering:</p>
+<ol class="arabic simple">
+<li><p>Open the AnyBody Modeling System, open the <span class="menuselection">Tools ‣ Settings</span> dialog and
+change the <code class="docutils literal notranslate"><span class="pre">Chart.Chart_View.AntiAlias</span></code>, <code class="docutils literal notranslate"><span class="pre">Model_View.AntiAlias</span></code> and
+<code class="docutils literal notranslate"><span class="pre">Camera.AntiAlias</span></code> values to 0.</p></li>
+<li><p>Close the AnyBody Modeling System.</p></li>
+<li><p>Open a File Explorer and go to the AnyBody Modeling System
+installation location and copy the file named <code class="file docutils literal notranslate"><span class="pre">opengl32.dll</span></code> from the
+<code class="file docutils literal notranslate"><span class="pre">AssistSoftwareOpenGL</span></code> subfolder to the
+AnyBody installation folder, so that it is placed alongside the
+<code class="file docutils literal notranslate"><span class="pre">AnyBody.exe</span></code> file.</p></li>
+<li><p>When you start the AnyBody Modeling System again, it will now use the
+software OpenGL renderer.</p></li>
+</ol>
+<p>In order to revert to hardware OpenGL acceleration, please revert the
+steps mentioned above.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Using a software OpenGL renderer will result in much worse
+performance regarding Model View update speed, as well as loss of
+antialiasing support.</p>
+</div>
+</div>
+</div>
+<div class="section" id="uninstalling-or-repairing-anybody">
+<span id="chapter-uninstallingorrepairing"></span><h2><span class="sectnum">2.</span> Uninstalling or Repairing AnyBody<a class="headerlink" href="#uninstalling-or-repairing-anybody" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><p>You must access the install wizard again for removal and repair of
+the AnyBody installation. You have several options:</p>
+<ol class="arabic simple">
+<li><p>Use “Add or Remove Programs” from the Windows Control Panel.</p></li>
+<li><p>Run the self-installing exe file again.</p></li>
+<li><p>Run the online installation.</p></li>
+</ol>
+</li>
+<li><p>HASP dongle drivers:</p>
+<ol class="arabic simple">
+<li><p>If the drivers for the HASP dongles did not install properly
+during the installation you can install them by executing the HASP
+installation package in the directory, where AnyBody is installed
+or from the Windows Start Menu: <span class="menuselection">Start ‣ AnyBody Technology ‣
+AnyBody.x.x ‣ Tools</span>. The available HASP installation package is
+an MSI package.</p></li>
+<li><p>You can get information about the drivers’ versions from <span class="menuselection">Start ‣
+AnyBody Technology ‣ AnyBody.x.x ‣ Tools ‣ About…</span> This will
+reveal the installed versions of the drivers as well as the ones
+supplied with this version of AnyBody.</p></li>
+<li><p>You can remove or repair the drivers from Add/Remove Programs in
+the Windows Control Panel or you can run the HASP installation
+package again as mentioned above. This is also an option when
+running a maintenance/repair installation of AnyBody, either from
+Add/Remove Programs or by running the self-installing exe file.</p></li>
+<li><p>The most current drivers from our supplier, Aladdin, can be
+downloaded from
+<a class="reference external" href="http://www.aladdin.com/support/hasp/enduser.asp">http://www.aladdin.com/support/hasp/enduser.asp</a>.</p></li>
+</ol>
+</li>
+</ol>
+</div>
+<div class="section" id="introduction-to-anybody-versions-and-licensing">
+<span id="chapter-versionsandlicensing"></span><h2><span class="sectnum">3.</span> Introduction to AnyBody Versions and Licensing<a class="headerlink" href="#introduction-to-anybody-versions-and-licensing" title="Permalink to this headline">¶</a></h2>
+<dl class="simple">
+<dt>Version number:</dt><dd><p>AnyBody is designated a minimum three digit version number:</p>
+<ul class="simple">
+<li><p>First digit is the Major Version Number.</p></li>
+<li><p>Second and third digits are the so-called Minor Version Numbers.</p></li>
+<li><p>The third digit is incremented for all smaller updates such as
+bugfixes and patches. Such updates may not be officially announced
+and they will install as updates to the same version with lower
+third digit.</p></li>
+<li><p>Versions with different first and second digit can coexist on your
+computer. They install as separate packages and must be
+uninstalled independently.</p></li>
+<li><p>Additional version digits and build numbers merely serve to
+identify a particular build of AnyBody and they are of no pratical
+significance to the end-users.</p></li>
+</ul>
+</dd>
+</dl>
+<p>License types:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Temporary trial licenses are available for evaluation purposes.
+You can request a trial license on
+<a class="reference external" href="http://www.anybodytech.com">www.anybodytech.com</a>. Please
+notice that you must register as a web-user of the site before
+being able to access the software.</p></li>
+<li><p>Licenses for educational, research, and commercial use are
+available. Please inquire at
+<a class="reference external" href="www.anybodytech.com">www.anybodytech.com</a>.</p></li>
+<li><p>Licenses for running additional console application instances of
+the AnyBody Modeling System for processing large datasets are
+available. Please inquire at
+<a class="reference external" href="www.anybodytech.com">www.anybodytech.com</a>.</p></li>
+</ul>
+</div></blockquote>
+<p>License files:</p>
+<blockquote>
+<div><ul>
+<li><p>All license types are distributed as license files. The installed
+software is in principle the same in all cases.</p></li>
+<li><p>Licenses are bound to a unique identifier of the host computer.</p>
+<dl class="simple">
+<dt>Network adapter:</dt><dd><p>Node-locked licenses are typically bound to the MAC address of
+the host computer’s network adapter (the physical adapter
+address). Node-locked license may allow one or more instances
+of AnyBody to run on the computer simultanously.</p>
+</dd>
+<dt>Dongles:</dt><dd><p>Licenses can be bound to dongles (HASP dongles from Aladdin).
+Standalone dongles for USB or LPT ports must be inserted in the
+computer for AnyBody to run.</p>
+</dd>
+<dt>Floating network licenses</dt><dd><p>(or concurrent licenses) are also available. Floating licenses
+are bound to a license server, which is a computer on the
+network. Floating licenses can be counted multi-user licenses.</p>
+</dd>
+</dl>
+</li>
+</ul>
+</div></blockquote>
+<p>License concurrency:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>A single AnyBody license can be used for simultaneously running up
+to 4 instances of the AnyBody GUI or console application, or any
+mix thereof.</p></li>
+<li><p>All shared instances of AnyBody from a single license must be run
+by the same user. If a different user wants to run AnyBody
+simultaneously on the same computer, this requires another license
+checkout.</p></li>
+</ul>
+</div></blockquote>
+<div class="section" id="the-license-file">
+<h3><span class="sectnum">3.1.</span> The License File<a class="headerlink" href="#the-license-file" title="Permalink to this headline">¶</a></h3>
+<p>The license file is a text file typically with the extension “.lic”. It
+can hold one or more licenses that are in readable text format. The
+licenses are digitally signed so that the license becomes invalid if the
+information is altered without being resigned.</p>
+<p>A single license in the file has the format</p>
+<div class="highlight-AnyScriptDoc notranslate"><div class="highlight"><pre><span></span><span class="n">LICENSE</span> <span class="n">anybodytch</span> <span class="n">ams4_trial</span>
+    <span class="o">&lt;</span><span class="n">MAINTENANCE_END</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">LICENSE_END</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">NUM_LICENSES</span><span class="o">&gt;</span>
+    <span class="n">hostid</span><span class="o">=&lt;</span><span class="n">HOST</span><span class="o">-</span><span class="n">ID</span><span class="o">&gt;</span> <span class="n">issuer</span><span class="o">=</span><span class="n">ABT</span>
+    <span class="n">customer</span><span class="o">=</span><span class="s">&quot;&lt;CUSTOMER_NAME&gt;&quot;</span> <span class="n">issued</span><span class="o">=</span><span class="mi">6</span><span class="o">-</span><span class="n">may</span><span class="o">-</span><span class="mi">2009</span> <span class="n">sig</span><span class="o">=</span><span class="s">&quot;&lt;SIGNATURE&gt;&quot;</span>
+</pre></div>
+</div>
+<p>When the license file is imported, it is copied and renamed to a special
+location where AnyBody will look for it. The imported file is always
+renamed to license.lic and previously imported files are renamed before
+overwriting them. This means that old license files remain in the system
+and can be located.</p>
+<p>AnyBody will look for the license file in three locations in the
+following order.</p>
+<ol class="arabic">
+<li><p>In the directory of AnyBody executables. This location is not used
+for imported licenses; it is merely searched for trouble shooting
+purposes.</p></li>
+<li><p>Licenses imported for your personal user are located in a
+user-specific application data folder, typically:</p>
+<div class="highlight-AnyScriptDoc notranslate"><div class="highlight"><pre><span></span><span class="n">C</span>:\<span class="n">Users</span>\<span class="o">&lt;</span><span class="n">UserName</span><span class="o">&gt;</span><span class="n">AppData</span>\<span class="n">Local</span>\<span class="n">AnyBodyTechnology</span>\<span class="n">AnyBody</span><span class="mf">.7</span><span class="p">.</span><span class="kp">x</span><span class="p">.</span><span class="kp">x</span>
+</pre></div>
+</div>
+</li>
+<li><p>Licenses imported for all users are located in a common application
+data folder, typically:</p>
+<div class="highlight-AnyScriptDoc notranslate"><div class="highlight"><pre><span></span><span class="n">C</span>:\<span class="n">ProgramData</span>\<span class="n">AnyBodyTechnology</span>\<span class="n">AnyBody</span><span class="mf">.7</span><span class="p">.</span><span class="kp">x</span><span class="p">.</span><span class="kp">x</span>
+</pre></div>
+</div>
+</li>
+</ol>
+</div>
+<div class="section" id="trouble-shooting-the-license">
+<h3><span class="sectnum">3.2.</span> Trouble-shooting the License<a class="headerlink" href="#trouble-shooting-the-license" title="Permalink to this headline">¶</a></h3>
+<p>In case of a license problem, you can inspect the license status from
+the License Manager dialog:</p>
+<ol class="arabic simple">
+<li><p>Open the License Manager from the Help-&gt;Registration menu. (It opens
+automatically if your license is not valid).</p></li>
+<li><p>Press the button “View license status”. It will open a dialog with
+license status information.</p></li>
+<li><p>If needed, send the information to AnyBody support at
+<a class="reference external" href="mailto:support&#37;&#52;&#48;anybodytech&#46;com">support<span>&#64;</span>anybodytech<span>&#46;</span>com</a> along with the license file..</p></li>
+</ol>
+<p>Below is a list of typical license errors and causes:</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>License Status: “Bad signature in license (-5)”</dt><dd><p>The license file has been violated, e.g. manually edited, and is
+no longer valid. A new license file is required.</p>
+</dd>
+</dl>
+</li>
+<li><p>License Status: “No license check or No authorization for product or
+License server doesn’t support this. Make sure you have imported a
+valid license file.”</p>
+<ol class="arabic simple">
+<li><p>No valid license file has been imported on the AnyBody client
+computer.</p></li>
+<li><p>The product name for the license is wrong. A new license file is
+required.</p></li>
+<li><dl class="simple">
+<dt>No license file has been imported in the client computers.</dt><dd><p>Please refer to chapter 4 of this guide.</p>
+</dd>
+</dl>
+</li>
+</ol>
+</li>
+<li><dl class="simple">
+<dt>License Status: “All licenses in use (-22)”</dt><dd><p>Too many license instances have been checked out. Each instance of
+AnyBody count as one license check-out, even two instances on the
+same computer. This is related to counted licenses only.</p>
+</dd>
+</dl>
+</li>
+<li><p>License Status: “Wrong host for license (-4)”</p>
+<ol class="arabic simple">
+<li><p>The license file is used by the wrong host, i.e., on the wrong
+computer.</p></li>
+<li><p>License is linked to a hardware dongle, which is missing or not
+accepted on the computer (drivers missing).</p></li>
+<li><p>Wrong dongle is used.</p></li>
+</ol>
+</li>
+<li><p>License Status: “Communication with server failed! Please make sure
+the server has been started.”</p>
+<ul>
+<li><p>Wrong server hostname specified in the client license file. This
+can be changed without violating the license file signature.</p></li>
+<li><p>Different TCP/IP port number specified for license server and in
+client license file. The port number can be modified in the
+license file without violating its signature. Notice that from RLM
+v6, the default port is 5053 instead of 28000.</p></li>
+<li><p>Network issues. Make sure the client can contact the server
+properly. It may be necessary to set up firewall exceptions on the
+server and/or the client computer.</p></li>
+<li><p>License server is not accepting your license. There are three
+typical reasons for this, please refer to Section
+<a class="reference external" href="#Trouble-shootingtheLicenseServerSetup">4.1</a>:</p>
+<ol class="arabic simple">
+<li><p>License server is not started.</p></li>
+<li><p>The license file is missing on the server.</p></li>
+<li><p>The AnyBody Technology definition file (a file identifying
+AnyBody Technology to the generic RLM server software) is
+missing in the license server setup.</p></li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="floating-licenses-and-license-management-server">
+<span id="chapter-networklicense"></span><h2><span class="sectnum">4.</span> Floating Licenses and License Management Server<a class="headerlink" href="#floating-licenses-and-license-management-server" title="Permalink to this headline">¶</a></h2>
+<p>The AnyBody Modeling System uses the RLM license manager solution from
+<a class="reference external" href="http://www.reprisesoftware.com">Reprise Software, Inc</a>. This section describes the basics of a floating license setup with RLM,
+including:</p>
+<ul class="simple">
+<li><p>A typical (recommended) setup.</p></li>
+<li><p>How to download the requisites.</p></li>
+<li><p>How to get more information about RLM.</p></li>
+</ul>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>For extended end-user information about RLM, please refer to the
+following resources:</p>
+<ul class="simple">
+<li><p>RLM support and download area <a class="reference external" href="http://www.reprisesoftware.com/support/end-users.php">http://www.reprisesoftware.com/support/end-users.php</a> ,</p></li>
+<li><p>RLM End-User Manual <a class="reference external" href="http://www.reprisesoftware.com/RLM_Enduser.html">http://www.reprisesoftware.com/RLM_Enduser.html</a> ,</p></li>
+<li><p>RLM Online FAQ <a class="reference external" href="http://www.reprisesoftware.com/support/faq.php">http://www.reprisesoftware.com/support/faq.php</a></p></li>
+</ul>
+</div>
+<div class="section" id="id1">
+<h3><span class="sectnum">4.1.</span> Requirements<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<p>In order to set up your RLM license server for AnyBody license
+management, you need the following:</p>
+<ol class="arabic simple">
+<li><p>A valid license file.</p></li>
+<li><p>The RLM server executable and utilities for your server platform.</p></li>
+<li><p>A file identifying AnyBody Technology for the RLM license server.
+This is referred to as an ISV definition file. This can be a platform
+independent server settings file (called anybodytch.set) or an
+executable (e.g. anybodytch.exe) for your specific server platform.</p></li>
+</ol>
+<p>Item 2 and 3 you can download from
+<a class="reference external" href="http://www.anybodytech.com/download.html?did=license_server">www.anybodytech.com/download.html?did=license_server</a>.
+You must log onto the AnyBody Technology website to get to the download
+area. Reprise Software may deliver more and newer RML distributions than
+currently supported by AnyBody Technology. These can be downloaded from
+the Reprise Sofware website.</p>
+<p>The license file is a text file (<cite>*.lic</cite>), similar to the node-locked
+license files described in the previous sections. The difference is that
+the license file for a floating license server contains some additional
+lines defining the server. This includes the server’s name, host-id, and
+optionally a TCP/IP port number.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You must send your server host-id to AnyBody Technology before
+the license file can be issued. The host-id is typically the MAC number
+of the primary ethernet card.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you need to run the RLM license server on a virtual machine
+you will have to contact AnyBody Technology, as this requires a special
+license file setup. In this case you will need to send the host-name of
+the virtual machine as well as the host-id (MAC address) of the virtual
+machine to AnyBody Technology.</p>
+</div>
+</div>
+<div class="section" id="a-typical-license-server-setup">
+<h3><span class="sectnum">4.2.</span> A typical license server setup<a class="headerlink" href="#a-typical-license-server-setup" title="Permalink to this headline">¶</a></h3>
+<p>A typical license server installation include:</p>
+<ol class="arabic">
+<li><p>Install the RLM license server executable, i.e., unpack it in your
+choice of directory on your server (If you already have an RLM
+license server running, you can use this one).</p></li>
+<li><p>Copy the ISV definition file to the same directory (This is the
+typical and recommended setup, but the file can be located in another
+directory. Please refer to the RLM End-User Manual for more details)</p></li>
+<li><p>Copy your license file to the same directory (This is the typical and
+recommended setup, but the file can be located in another directory.
+Please refer to the RLM End-User Manual for more details)</p></li>
+<li><p>Check and if needed modify the hostname and TCP/IP port number in the
+first line (The HOST line) of the license file. The hostname and port
+number can be changed without invalidating the license file. On a
+Windows-based server, the hostname can be found by using the command
+“ipconfig /all” in a command prompt.</p>
+<ul class="simple">
+<li><p>The host name is the first argument of the HOST line.</p></li>
+<li><p>The TCP/IP port number is the third argument in the HOST line. It
+may be omitted in which case the default port is 5053 (Notice that
+RLM version 5 and older used 28000).</p></li>
+<li><p>The second argument is the host-id. This must not be changed or
+the license file becomes invalid.</p></li>
+</ul>
+</li>
+<li><p>If the client computer will be contacting the server through a VPN
+connection, it might be advantageous to set up the RLM license server
+to free licenses after the client computers have lost VPN contact
+with the license server computer. This can be done by creating an
+empty “anybodytch.opt” file in the same folder as the RLM executable
+on the license server computer. The anybodytch.opt file must contain
+the following line:</p>
+<div class="highlight-AnyScriptDoc notranslate"><div class="highlight"><pre><span></span><span class="n">TIMEOUT</span> <span class="mi">3600</span>
+</pre></div>
+</div>
+<p>This will free licenses used by remote client computers which have
+been out of contact with the license server computer for more than an
+hour.</p>
+</li>
+<li><p>Modify the firewall of the server to allow incoming connections on
+the ports used by RLM.</p>
+<ul class="simple">
+<li><p>On a Windows license server, the rlm.exe license server program
+can be added to the firewall exceptions. This should allow
+connections on the ports used by both RLM itself and the ISV
+license server started by RLM.</p></li>
+<li><p>On a license server with a port number based firewall, it may be
+necessary to add both RLM’s own port number (by default 5053 on
+RLM v6 and later), and the port number of the RLM AnyBody ISV
+license server to the firewall port exceptions. The AnyBody ISV
+license server can be set to use a specific port number by
+specifying it in the ISV line of the server license file. For
+further details on how to specify this, please refer to the RLM
+End-User Manual.</p></li>
+</ul>
+</li>
+<li><p>Start up the license server. The license server can either be started
+as a normal program or as a service.</p>
+<ul>
+<li><p>To start the RLM license server as a normal program, navigate to
+the RLM license server folder and start the RLM license server by
+executing rlm.exe. Please note that in this case the license
+server will only be serving licenses while this program is
+running.</p></li>
+<li><p>If the RLM license server is installed as a service, the RLM
+license server will automatically begin serving licenses when the
+server computer is started. To install the RLM license server as a
+service on a Windows server computer, please do the following:</p>
+<ul>
+<li><p>Open a command prompt with administrator privileges
+(right-click the command-prompt icon and select “Run as
+administrator”).</p></li>
+<li><p>Execute the following command in the command prompt:</p>
+<div class="highlight-AnyScriptDoc notranslate"><div class="highlight"><pre><span></span><span class="n">C</span>:\<span class="n">rlm</span>\<span class="n">rlm</span><span class="p">.</span><span class="n">exe</span> <span class="o">-</span><span class="n">install_service</span> <span class="o">-</span><span class="n">dlog</span> <span class="o">&lt;</span><span class="n">rlm</span><span class="p">.</span><span class="n">exe</span> <span class="n">location</span><span class="o">&gt;</span>\<span class="o">&lt;</span><span class="n">logfilename</span><span class="o">&gt;</span>
+  <span class="o">-</span><span class="n">c</span> <span class="o">&lt;</span><span class="n">location</span> <span class="n">of</span> <span class="n">license</span> <span class="n">file</span><span class="o">&gt;</span>\<span class="o">&lt;</span><span class="n">license</span> <span class="n">file</span> <span class="n">name</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>Where the parts in <code class="docutils literal notranslate"><span class="pre">&lt;...&gt;</span></code> are replaced by the actual values
+for the specific server computer. An example of this could be:</p>
+<div class="highlight-AnyScriptDoc notranslate"><div class="highlight"><pre><span></span><span class="n">C</span>:\<span class="n">rlm</span>\<span class="n">rlm</span><span class="p">.</span><span class="n">exe</span> <span class="o">-</span><span class="n">install_service</span> <span class="o">-</span><span class="n">dlog</span> <span class="n">c</span>:\<span class="n">rlm</span>\<span class="n">my_rlm_logfile</span><span class="p">.</span><span class="nb">log</span>
+  <span class="o">-</span><span class="n">c</span> <span class="n">c</span>:\<span class="n">rlm</span>\<span class="n">license</span><span class="p">.</span><span class="n">lic</span>
+</pre></div>
+</div>
+</li>
+<li><p>Start the rlm service by manually going to the Windows
+Services, finding the new RLM service, selecting it and
+starting it, or by rebooting the license server computer.</p></li>
+</ul>
+<p>The RLM license server can also be started as a service on Unix
+systems. For more details, please refer to the RLM End-User
+Manual.</p>
+</li>
+</ul>
+</li>
+<li><p>Set up your client computers</p>
+<ul class="simple">
+<li><p>Install AnyBody as described in the previous sections.</p></li>
+<li><p>Import the license file. The same file as on the license server
+can be used, but in principle it only needs the first line; only
+server host-name and port number is needed.</p></li>
+</ul>
+</li>
+</ol>
+</div>
+<div class="section" id="trouble-shooting-the-license-server-setup">
+<span id="id2"></span><h3><span class="sectnum">4.3.</span> Trouble-shooting the License Server Setup<a class="headerlink" href="#trouble-shooting-the-license-server-setup" title="Permalink to this headline">¶</a></h3>
+<p>Below is a list of typical issues associated with setting up the license
+server.</p>
+<ol class="arabic simple">
+<li><p>License server is not started.</p></li>
+<li><p>The license file is missing on the server.</p></li>
+<li><p>The AnyBody Technology definition file (anybodytch.set or
+anybodytch.exe) is missing in the license server setup.</p></li>
+<li><p>Client and server does not communicate on the same port, either
+because different ports numbers are specified in the server and
+client side license files or because the default port number is used
+and different versions of RLM technology uses different ports.</p></li>
+</ol>
+<ul>
+<li><p>An RLM option file is available for enabling logging of issues
+regarding the license server. A log file of this kind is needed when
+contacting AnyBody Support about license server related issues.</p>
+<p>The typical and recommended setup is to create a file called
+’anybodytch.opt’ in the RLM license executable folder, if it does not
+already exist. The file must contain the following line:</p>
+<div class="highlight-AnyScriptDoc notranslate"><div class="highlight"><pre><span></span><span class="n">REPORTLOG</span> <span class="o">+</span> <span class="n">anybodytch1</span><span class="p">.</span><span class="nb">log</span> <span class="n">std</span>
+</pre></div>
+</div>
+<p>Place the option file in the same directory as the license file that
+is read by the license server. Restarting the license server, a log
+file with the specified name will be created and updated during the
+license service.</p>
+<p>Please refer to the RLM End-User Manual, Chapters ’The License File’
+and ’The ISV option file’, for more details.</p>
+</li>
+<li><p>The status of the RLM license server on the license server computer
+can be viewed by running the following command in a command prompt in
+the license server computer RLM executable folder:</p>
+<div class="highlight-AnyScriptDoc notranslate"><div class="highlight"><pre><span></span><span class="n">rlmutil</span> <span class="n">rlmstat</span> <span class="o">-</span><span class="n">a</span>
+</pre></div>
+</div>
+<p>The output from this command will provide information on what ports
+RLM is using, what ISV license servers are running, and what licenses
+are being served and used. If you need to contact AnyBody support
+regarding a floating license issues, please include the output from
+this command.</p>
+</li>
+<li><p>The connection between an RLM server and a client computer can be
+tested in the following way.</p>
+<ul>
+<li><p>Unpack the RLM installation package to a folder on the client
+computer to be tested.</p></li>
+<li><p>First, on the license server computer, run the following command
+line in the RLM license server executable folder:</p>
+<div class="highlight-AnyScriptDoc notranslate"><div class="highlight"><pre><span></span><span class="n">rlmtests</span> <span class="o">-</span><span class="n">s</span>
+</pre></div>
+</div>
+</li>
+<li><p>Second, on the client computer, run the following command line in
+the folder where you unpacked the RLM installation package (with
+&lt;server hostname&gt; replaced by the actual RLM license server
+computer hostname):</p>
+<div class="highlight-AnyScriptDoc notranslate"><div class="highlight"><pre><span></span><span class="n">rlmtests</span> <span class="o">-</span><span class="n">a</span> <span class="o">&lt;</span><span class="n">server</span> <span class="n">hostname</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><p>The client computer will now begin trying to contact the RLM
+license server computer, and the output in the client computers
+command prompt will display whether the tests are successful.</p></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script><div class="sphinx-toc sphinxlocaltoc">
+    <h3><a href="#">Page contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#"><span class="sectnum"></span> Install Guide: The AnyBody Modeling System</a><ul>
+<li><a class="reference internal" href="#installation-of-anybody"><span class="sectnum">1.</span> Installation of AnyBody</a><ul>
+<li><a class="reference internal" href="#requirements"><span class="sectnum">1.1.</span> Requirements</a></li>
+<li><a class="reference internal" href="#installation-procedure"><span class="sectnum">1.2.</span> Installation Procedure</a></li>
+<li><a class="reference internal" href="#installing-anyexp4solidworks"><span class="sectnum">1.3.</span> Installing AnyExp4SOLIDWORKS</a></li>
+<li><a class="reference internal" href="#loading-the-anyexp4solidworks-add-in"><span class="sectnum">1.4.</span> Loading the AnyExp4SOLIDWORKS add-in</a></li>
+<li><a class="reference internal" href="#using-anybody-through-remote-desktop-connection"><span class="sectnum">1.5.</span> Using AnyBody through Remote Desktop Connection</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#uninstalling-or-repairing-anybody"><span class="sectnum">2.</span> Uninstalling or Repairing AnyBody</a></li>
+<li><a class="reference internal" href="#introduction-to-anybody-versions-and-licensing"><span class="sectnum">3.</span> Introduction to AnyBody Versions and Licensing</a><ul>
+<li><a class="reference internal" href="#the-license-file"><span class="sectnum">3.1.</span> The License File</a></li>
+<li><a class="reference internal" href="#trouble-shooting-the-license"><span class="sectnum">3.2.</span> Trouble-shooting the License</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#floating-licenses-and-license-management-server"><span class="sectnum">4.</span> Floating Licenses and License Management Server</a><ul>
+<li><a class="reference internal" href="#id1"><span class="sectnum">4.1.</span> Requirements</a></li>
+<li><a class="reference internal" href="#a-typical-license-server-setup"><span class="sectnum">4.2.</span> A typical license server setup</a></li>
+<li><a class="reference internal" href="#trouble-shooting-the-license-server-setup"><span class="sectnum">4.3.</span> Trouble-shooting the License Server Setup</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </div><div class="sphinxprev">
+    <h4>Other resources</h4>
+    <p class="topless"><a href="../index.html"
+                          title="Back to all manuals">&larr; Back to all manuals</a></p>
+</div>
+        </div>
+      </div>
+    
+    
+        <div class="sidebar-toggle-group no-js">
+            
+            <button class="sidebar-toggle" id="sidebar-hide" title="Hide the sidebar menu">
+                 «
+                <span class="show-for-small">hide menu</span>
+                
+            </button>
+            <button class="sidebar-toggle" id="sidebar-show" title="Show the sidebar menu">
+                
+                <span class="show-for-small">menu</span>
+                <span class="hide-for-small">sidebar</span>
+                 »
+            </button>
+        </div>
+    
+      <div class="clearer"></div>
+    </div>
+    <div class="relbar-bottom">
+        
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="#" title="Table Of Contents"
+             >toc</a> &nbsp; &nbsp;</li>
+    <li><a href="#">AnyBody Install Guide 7.3.4 documentation</a> &#187;</li>
+
+        <li class="nav-item nav-item-this"><a href=""><span class="sectnum"></span> Install Guide: The AnyBody Modeling System</a></li> 
+      </ul>
+    </div>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2021, AnyBody Technology A/S.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.5.4.
+    </div>
+    <!-- cloud_sptheme 1.4 -->
+  </body>
+</html>

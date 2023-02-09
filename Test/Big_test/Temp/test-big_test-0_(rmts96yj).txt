@@ -1,0 +1,53 @@
+########### MACRO #############
+load "1P_Calib/1P_Calib.main.any"
+operation HumanModel.Calibration.CalibrationSequence
+run
+classoperation Main.HumanModel.Mannequin.PostureVel.Right.GlenohumeralAbduction "Set Value" --value="120"
+classoperation Main.HumanModel.BodyModel.Right.ShoulderArm.MusPar.supraspinatus_1.F0 "Set Value" --value="76"
+classoperation Main.HumanModel.BodyModel.Right.ShoulderArm.MusPar.supraspinatus_2.F0 "Set Value" --value="76"
+classoperation Main.HumanModel.BodyModel.Right.ShoulderArm.MusPar.supraspinatus_3.F0 "Set Value" --value="76"
+classoperation Main.HumanModel.BodyModel.Right.ShoulderArm.MusPar.supraspinatus_4.F0 "Set Value" --value="76"
+classoperation Main.HumanModel.BodyModel.Right.ShoulderArm.MusPar.supraspinatus_5.F0 "Set Value" --value="76"
+classoperation Main.HumanModel.BodyModel.Right.ShoulderArm.MusPar.supraspinatus_6.F0 "Set Value" --value="76"
+classoperation Main "Update Values"
+operation Main.Study.InverseDynamics
+run
+classoperation Main.Study.Output.Abscissa.t "Dump"
+classoperation Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.supraspinatus_1.Lm "Dump"
+classoperation Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.supraspinatus_2.Lm "Dump"
+classoperation Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.supraspinatus_3.Lm "Dump"
+classoperation Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.supraspinatus_4.Lm "Dump"
+classoperation Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.supraspinatus_5.Lm "Dump"
+classoperation Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.supraspinatus_6.Lm "Dump"
+classoperation Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.subscapularis_1.Lm "Dump"
+classoperation Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.subscapularis_2.Lm "Dump"
+classoperation Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.subscapularis_3.Lm "Dump"
+classoperation Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.subscapularis_4.Lm "Dump"
+classoperation Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.subscapularis_5.Lm "Dump"
+classoperation Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.subscapularis_6.Lm "Dump"
+classoperation Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.infraspinatus_1.Lm "Dump"
+classoperation Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.infraspinatus_2.Lm "Dump"
+classoperation Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.infraspinatus_3.Lm "Dump"
+classoperation Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.infraspinatus_4.Lm "Dump"
+classoperation Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.infraspinatus_5.Lm "Dump"
+classoperation Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.infraspinatus_6.Lm "Dump"
+classoperation Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.teres_minor_1.Lm "Dump"
+classoperation Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.teres_minor_2.Lm "Dump"
+classoperation Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.teres_minor_3.Lm "Dump"
+classoperation Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.teres_minor_4.Lm "Dump"
+classoperation Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.teres_minor_5.Lm "Dump"
+classoperation Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.teres_minor_6.Lm "Dump"
+
+######### OUTPUT LOG ##########
+
+AnyBody Console Application
+AnyBodyCon.exe version : 7. 3. 4. 8518 (64-bit version) 
+Build : 18813.46800
+Copyright (c) 1999 - 2022 AnyBody Technology A/S
+
+Cannot validate license !
+Please run AnyBody.exe to manage your license(s).
+
+Failed to checkout RLM license.
+
+ERROR: anybodycon.exe existed unexpectedly. Return code: -22 : No license available.

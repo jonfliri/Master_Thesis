@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<assembly xmlns="urn:schemas-microsoft-com:asm.v1" manifestVersion="1.0">
+    <assemblyIdentity type="win32" name="AnyBody.SuiteSparse-5.2.0-x64" version="5.2.0.0" processorArchitecture="amd64"/>
+	<file name="CAMD.dll"/>
+	<file name="CCOLAMD.dll"/>
+	<file name="CHOLMOD.dll"/>
+	<file name="COLAMD.dll"/>
+</assembly>

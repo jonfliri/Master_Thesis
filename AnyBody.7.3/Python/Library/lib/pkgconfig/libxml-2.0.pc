@@ -1,0 +1,11 @@
+prefix=F:/AnySource/AMS1-Master/Python64/Library 
+exec_prefix=F:/AnySource/AMS1-Master/Python64/Library 
+libdir=F:/AnySource/AMS1-Master/Python64/Library/lib 
+includedir=F:/AnySource/AMS1-Master/Python64/Library/include 
+modules=0 
+Name: libXML 
+Version: 2.9.10 
+Description: libXML library version2. 
+Requires: 
+Libs: -LF:/AnySource/AMS1-Master/Python64/Library/lib -lxml2 -liconv -lz 
+Cflags: -IF:/AnySource/AMS1-Master/Python64/Library/include/libxml 

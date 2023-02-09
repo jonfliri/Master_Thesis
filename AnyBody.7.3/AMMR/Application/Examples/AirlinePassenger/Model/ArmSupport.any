@@ -1,0 +1,36 @@
+AnyFolder ArmSupport ={
+  AnyComponentDefinition obj = {};
+  AnyVar   Strength=....SupportSettings.ArmrestSupportStrength;
+  
+  AnyReacForce ThoraxUlnaSupportRight={
+    AnyKinMeasureOrg Org = {
+      AnyKinLinear Lin = {
+        AnyRefFrame &BaseObject = Main.Model.BodyModel.Trunk.SegmentsThorax.ThoraxSeg;
+        AnyRefFrame &TargetObject = Main.Model.BodyModel.Right.ShoulderArm.Seg.Ulna;
+        Ref = 0;
+      };
+      AnyKinRotational Rot = {
+        AnyRefFrame &BaseObject = Main.Model.BodyModel.Trunk.SegmentsThorax.ThoraxSeg;
+        AnyRefFrame &TargetObject = Main.Model.BodyModel.Right.ShoulderArm.Seg.Ulna;
+        Type = RotAxesAngles;
+      };
+//      MeasureOrganizer = {0,5};
+    };
+  };
+  
+  AnyReacForce ThoraxUlnaSupportLeft={
+    AnyKinMeasureOrg Org = {
+      AnyKinLinear Lin = {
+        AnyRefFrame &BaseObject = Main.Model.BodyModel.Trunk.SegmentsThorax.ThoraxSeg;
+        AnyRefFrame &TargetObject = Main.Model.BodyModel.Left.ShoulderArm.Seg.Ulna;
+        Ref = 0;
+      };
+      AnyKinRotational Rot = {
+        AnyRefFrame &BaseObject = Main.Model.BodyModel.Trunk.SegmentsThorax.ThoraxSeg;
+        AnyRefFrame &TargetObject = Main.Model.BodyModel.Left.ShoulderArm.Seg.Ulna;
+        Type = RotAxesAngles;
+      };
+//      MeasureOrganizer = {0,5};
+    };
+  };    
+};

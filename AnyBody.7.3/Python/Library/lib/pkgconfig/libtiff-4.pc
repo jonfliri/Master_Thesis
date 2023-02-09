@@ -1,0 +1,11 @@
+prefix=F:/AnySource/AMS1-Master/Python64/Library
+exec_prefix=F:/AnySource/AMS1-Master/Python64/Library
+libdir=F:/AnySource/AMS1-Master/Python64/Library/lib
+includedir=F:/AnySource/AMS1-Master/Python64/Library/include
+
+Name: libtiff
+Description:  Tag Image File Format (TIFF) library.
+Version: 4.1.0
+Libs: -LF:/AnySource/AMS1-Master/Python64/Library/lib -ltiff
+Libs.private: 
+Cflags: -IF:/AnySource/AMS1-Master/Python64/Library/include

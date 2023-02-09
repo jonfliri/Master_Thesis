@@ -1,0 +1,493 @@
+
+
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AnyVirtualMarkerBVH &#8212; AnyScript Reference 7.3.4 documentation</title>
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/cloud.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/table_styling.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noticia+Text|Open+Sans|Droid+Sans+Mono" type="text/css" />
+    
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/script/filter-class-list.js"></script>
+    <script src="../../_static/fa/all.js"></script>
+
+    
+    
+     
+        <script src="../../_static/jquery.cookie.js"></script>
+    
+
+    
+     
+        <script src="../../_static/cloud.base.js"></script>
+    
+
+    
+     
+        <script src="../../_static/cloud.js"></script>
+    
+
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="AnyWidgetAxis" href="AnyWidgetAxis.html" />
+    <link rel="prev" title="AnyViaPointMuscle" href="AnyViaPointMuscle.html" /> 
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head><body>
+    <div class="relbar-top">
+        
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../contents.html" title="Table Of Contents"
+             accesskey="C">toc</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="AnyWidgetAxis.html" title="AnyWidgetAxis"
+             accesskey="N">next</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="AnyViaPointMuscle.html" title="AnyViaPointMuscle"
+             accesskey="P">previous</a> &nbsp; &nbsp;</li>
+    <li><a href="../../index.html">AnyScript Reference 7.3.4 documentation</a> &#187;</li>
+
+          <li class="nav-item nav-item-1"><a href="../../index.html" >The AnyScript Reference manual!</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../class-overview.html" accesskey="U"><strong>Class reference</strong></a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">AnyVirtualMarkerBVH</a></li> 
+      </ul>
+    </div>
+    </div>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="anyvirtualmarkerbvh">
+<span id="id1"></span><h1>AnyVirtualMarkerBVH<a class="headerlink" href="#anyvirtualmarkerbvh" title="Permalink to this headline">¶</a></h1>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>Creatable</p>
+</dd>
+<dt class="field-even">Parent class</dt>
+<dd class="field-even"><p><a class="reference internal" href="AnyOprData.html#anyoprdata"><span class="std std-ref">AnyOprData</span></a></p>
+</dd>
+</dl>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>Class used to define virtual markers on a BVH model, see <a class="reference internal" href="AnyInputBVH.html#anyinputbvh"><span class="std std-ref">AnyInputBVH</span></a> for more details.</p>
+<p>Comment in the lines below when adding examples</p>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<p>Here is a virtual marker is defined in the Markers folder of an AnyInputBVH object.
+The marker is located on the root segment, called ‘Hips’, of the BVH model.</p>
+<div class="highlight-AnyScriptDoc notranslate"><div class="highlight"><pre><span></span><span class="kt">AnyInputBVH</span> <span class="n">BVH_Model</span> <span class="o">=</span> <span class="p">{</span>
+
+  <span class="p">...</span> <span class="n">for</span> <span class="n">more</span> <span class="n">details</span> <span class="n">see</span> <span class="kt">AnyInputBVH</span>
+
+  <span class="n">Markers</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="n">AnyVirtualMarkerBVH</span> <span class="n">HipsMarker</span> <span class="o">=</span> <span class="p">{</span>
+      <span class="n">RefFramePtr</span> <span class="o">=</span> <span class="o">&amp;</span><span class="p">..</span><span class="n">Model</span><span class="p">.</span><span class="n">Hips</span><span class="p">.</span><span class="n">Seg</span><span class="p">;</span>
+    <span class="p">};</span>
+  <span class="p">};</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+<p> </p>
+</div>
+<div class="section" id="required-initialization-members">
+<h2>Required initialization members<a class="headerlink" href="#required-initialization-members" title="Permalink to this headline">¶</a></h2>
+<!-- Hack to trick sphinx into adding member target link -->
+<!--<div class="section" id="refframeptr">
+<span id="anyvirtualmarkerbvh-refframeptr"></span><h3>RefFramePtr<a class="headerlink" href="#refframeptr" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries odd section collapsed" id="RefFramePtr">
+<span id="anyvirtualmarkerbvh-refframeptr" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title">RefFramePtr</span><span class="member-title-equal"></span><span class="member-title-default"></span><a class="headerlink" href="#RefFramePtr" title="Permalink to this headline">¶</a>
+<span class="member-descr">Pointer to the reference frame in the BVH stick-figure model that defined the marker.</span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyObjectPtrVar.html#anyobjectptrvar"><span class="std std-ref">AnyObjectPtrVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+</div>
+<p>Pointer to the reference frame in the BVH stick-figure model that defined the marker.</p>
+</div></blockquote>
+</div>
+</div>
+<div class="html-toggle section" id="denied-access-members">
+<h2>Denied-Access members<a class="headerlink" href="#denied-access-members" title="Permalink to this headline">¶</a></h2>
+<!-- Hack to trick sphinx into adding member target link -->
+<!--<div class="section" id="pos">
+<span id="anyvirtualmarkerbvh-pos"></span><h3>Pos<a class="headerlink" href="#pos" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries odd section collapsed" id="Pos">
+<span id="anyvirtualmarkerbvh-pos" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title">Pos</span><span class="member-title-equal"></span><span class="member-title-default"></span><a class="headerlink" href="#Pos" title="Permalink to this headline">¶</a>
+<span class="member-descr">Raw position data for the marker, generated by the AnyInputBVH object that...</span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyOutputFloat.html#anyoutputfloat"><span class="std std-ref">AnyOutputFloat</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">DesignVar</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">0.0</span></code></div>
+</div>
+<p>Raw position data for the marker, generated by the AnyInputBVH object that own this object.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+</div><!--</div>
+<div class="section" id="posfiltered">
+<span id="anyvirtualmarkerbvh-posfiltered"></span><h3>PosFiltered<a class="headerlink" href="#posfiltered" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries even section collapsed" id="PosFiltered">
+<span id="anyvirtualmarkerbvh-posfiltered" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title">PosFiltered</span><span class="member-title-equal"></span><span class="member-title-default"></span><a class="headerlink" href="#PosFiltered" title="Permalink to this headline">¶</a>
+<span class="member-descr">Filtered position data for the marker, generated by the AnyInputBVH object...</span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyOutputFloat.html#anyoutputfloat"><span class="std std-ref">AnyOutputFloat</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">DesignVar</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">0.0</span></code></div>
+</div>
+<p>Filtered position data for the marker, generated by the AnyInputBVH object that own this object.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+</div><!--</div>
+<div class="section" id="posinterpol">
+<span id="anyvirtualmarkerbvh-posinterpol"></span><h3>PosInterpol<a class="headerlink" href="#posinterpol" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries odd section collapsed" id="PosInterpol">
+<span id="anyvirtualmarkerbvh-posinterpol" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title">PosInterpol</span><span class="member-title-equal"></span><span class="member-title-default"></span><a class="headerlink" href="#PosInterpol" title="Permalink to this headline">¶</a>
+<span class="member-descr">Interpolation function that interpolates the filtered position data  in...</span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyFunInterpol.html#anyfuninterpol"><span class="std std-ref">AnyFunInterpol</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">{}</span></code></div>
+</div>
+<p>Interpolation function that interpolates the filtered position data  in ‘PosFiltered’.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+</div><!--</div>
+<div class="section" id="posinterpol-function">
+<span id="anyvirtualmarkerbvh-posinterpol-function"></span><h3>PosInterpol.Function<a class="headerlink" href="#posinterpol-function" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries even section collapsed" id="PosInterpol.Function">
+<span id="anyvirtualmarkerbvh-posinterpol-function" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title">PosInterpol.Function</span><span class="member-title-equal"></span><span class="member-title-default"></span><a class="headerlink" href="#PosInterpol.Function" title="Permalink to this headline">¶</a>
+<span class="member-descr"></span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyMonoFunction.html#anymonofunction"><span class="std std-ref">AnyMonoFunction</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">{}</span></code></div>
+</div>
+<p>&lt;No description&gt;</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+</div><!--</div>
+<div class="section" id="posinterpol-function-arglist">
+<span id="anyvirtualmarkerbvh-posinterpol-function-arglist"></span><h3>PosInterpol.Function.ArgList<a class="headerlink" href="#posinterpol-function-arglist" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries odd section collapsed" id="PosInterpol.Function.ArgList">
+<span id="anyvirtualmarkerbvh-posinterpol-function-arglist" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title">PosInterpol.Function.ArgList</span><span class="member-title-equal"></span><span class="member-title-default"></span><a class="headerlink" href="#PosInterpol.Function.ArgList" title="Permalink to this headline">¶</a>
+<span class="member-descr">A special folder containing the argument list of the function.</span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyFunctionArgList.html#anyfunctionarglist"><span class="std std-ref">AnyFunctionArgList</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">{}</span></code></div>
+</div>
+<p>A special folder containing the argument list of the function.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+</div><!--</div>
+<div class="section" id="posinterpol-function-arglist-arg">
+<span id="anyvirtualmarkerbvh-posinterpol-function-arglist-arg"></span><h3>PosInterpol.Function.ArgList.Arg<a class="headerlink" href="#posinterpol-function-arglist-arg" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries even section collapsed" id="PosInterpol.Function.ArgList.Arg">
+<span id="anyvirtualmarkerbvh-posinterpol-function-arglist-arg" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title">PosInterpol.Function.ArgList.Arg</span><span class="member-title-equal"></span><span class="member-title-default"></span><a class="headerlink" href="#PosInterpol.Function.ArgList.Arg" title="Permalink to this headline">¶</a>
+<span class="member-descr"></span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyFloat.html#anyfloat"><span class="std std-ref">AnyFloat</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">&quot;Dependent&quot;</span></code></div>
+</div>
+<p>&lt;No description&gt;</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+</div><!--</div>
+<div class="section" id="posinterpol-updfundata">
+<span id="anyvirtualmarkerbvh-posinterpol-updfundata"></span><h3>PosInterpol.UpdFunData<a class="headerlink" href="#posinterpol-updfundata" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries odd section collapsed" id="PosInterpol.UpdFunData">
+<span id="anyvirtualmarkerbvh-posinterpol-updfundata" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title">PosInterpol.UpdFunData</span><span class="member-title-equal"></span><span class="member-title-default"></span><a class="headerlink" href="#PosInterpol.UpdFunData" title="Permalink to this headline">¶</a>
+<span class="member-descr">Data update counter that counts number of data configuration processes.</span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyIntVar.html#anyintvar"><span class="std std-ref">AnyIntVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">DesignVar</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">0</span></code></div>
+</div>
+<p>Data update counter that counts number of data configuration processes.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+</div><!--</div>
+<div class="section" id="posinterpol-type">
+<span id="anyvirtualmarkerbvh-posinterpol-type"></span><h3>PosInterpol.Type<a class="headerlink" href="#posinterpol-type" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries even section collapsed" id="PosInterpol.Type">
+<span id="anyvirtualmarkerbvh-posinterpol-type" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title">PosInterpol.Type</span><span class="member-title-equal"></span><span class="member-title-default"></span><a class="headerlink" href="#PosInterpol.Type" title="Permalink to this headline">¶</a>
+<span class="member-descr">Interpolation type.</span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyInterPolType.html#anyinterpoltype"><span class="std std-ref">AnyInterPolType</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">&quot;Dependent&quot;</span></code></div>
+</div>
+<p>Interpolation type.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+</div><!--</div>
+<div class="section" id="posinterpol-bsplineorder">
+<span id="anyvirtualmarkerbvh-posinterpol-bsplineorder"></span><h3>PosInterpol.BsplineOrder<a class="headerlink" href="#posinterpol-bsplineorder" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries odd section collapsed" id="PosInterpol.BsplineOrder">
+<span id="anyvirtualmarkerbvh-posinterpol-bsplineorder" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title">PosInterpol.BsplineOrder</span><span class="member-title-equal"></span><span class="member-title-default"></span><a class="headerlink" href="#PosInterpol.BsplineOrder" title="Permalink to this headline">¶</a>
+<span class="member-descr">Order of B-spline interpolation. Notice that this number defines the order...</span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyIntVar.html#anyintvar"><span class="std std-ref">AnyIntVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">4</span></code></div>
+</div>
+<p>Order of B-spline interpolation. Notice that this number defines the order of continuity for the resulting function. Default value is set to provide continuity of second order derivatives.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+</div><!--</div>
+<div class="section" id="posinterpol-t">
+<span id="anyvirtualmarkerbvh-posinterpol-t"></span><h3>PosInterpol.T<a class="headerlink" href="#posinterpol-t" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries even section collapsed" id="PosInterpol.T">
+<span id="anyvirtualmarkerbvh-posinterpol-t" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title">PosInterpol.T</span><span class="member-title-equal"></span><span class="member-title-default"></span><a class="headerlink" href="#PosInterpol.T" title="Permalink to this headline">¶</a>
+<span class="member-descr">Time (parameter) data points.</span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyVector.html#anyvector"><span class="std std-ref">AnyVector</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">DesignVar</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">&quot;Dependent&quot;</span></code></div>
+</div>
+<p>Time (parameter) data points.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+</div><!--</div>
+<div class="section" id="posinterpol-data">
+<span id="anyvirtualmarkerbvh-posinterpol-data"></span><h3>PosInterpol.Data<a class="headerlink" href="#posinterpol-data" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries odd section collapsed" id="PosInterpol.Data">
+<span id="anyvirtualmarkerbvh-posinterpol-data" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title">PosInterpol.Data</span><span class="member-title-equal"></span><span class="member-title-default"></span><a class="headerlink" href="#PosInterpol.Data" title="Permalink to this headline">¶</a>
+<span class="member-descr">Matrix of data points. Each row contains the data points for one component...</span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyMatrix.html#anymatrix"><span class="std std-ref">AnyMatrix</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">DesignVar</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">&quot;Dependent&quot;</span></code></div>
+</div>
+<p>Matrix of data points. Each row contains the data points for one component of the return vector.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+</div><!--</div>
+<div class="section" id="posinterpol-filename">
+<span id="anyvirtualmarkerbvh-posinterpol-filename"></span><h3>PosInterpol.FileName<a class="headerlink" href="#posinterpol-filename" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries even section collapsed" id="PosInterpol.FileName">
+<span id="anyvirtualmarkerbvh-posinterpol-filename" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title">PosInterpol.FileName</span><span class="member-title-equal"></span><span class="member-title-default"></span><a class="headerlink" href="#PosInterpol.FileName" title="Permalink to this headline">¶</a>
+<span class="member-descr">Name of a text file with data points in space-separated columns. The first...</span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyFileVar.html#anyfilevar"><span class="std std-ref">AnyFileVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">&quot;&quot;</span></code></div>
+</div>
+<p>Name of a text file with data points in space-separated columns. The first column must hold T and the following must correspond to the rows of Data. Comments can be entered into the data file in lines that do not start with a number and after the correct number of values.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+</div><!--</div>
+<div class="section" id="posinterpol-fileerrorcontinueonoff">
+<span id="anyvirtualmarkerbvh-posinterpol-fileerrorcontinueonoff"></span><h3>PosInterpol.FileErrorContinueOnOff<a class="headerlink" href="#posinterpol-fileerrorcontinueonoff" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries odd section collapsed" id="PosInterpol.FileErrorContinueOnOff">
+<span id="anyvirtualmarkerbvh-posinterpol-fileerrorcontinueonoff" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title">PosInterpol.FileErrorContinueOnOff</span><span class="member-title-equal"></span><span class="member-title-default"></span><a class="headerlink" href="#PosInterpol.FileErrorContinueOnOff" title="Permalink to this headline">¶</a>
+<span class="member-descr">'On' allows data file loading to continue on some errors. These are...</span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnySwitchVar.html#anyswitchvar"><span class="std std-ref">AnySwitchVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">Off</span></code></div>
+</div>
+<p>‘On’ allows data file loading to continue on some errors. These are typically when the number data points does not match the expected number. Error messages are sent anyway and you should not expect data to work properly.</p>
+</div></blockquote>
+</div>
+</div>
+<div class="html-toggle section" id="deprecated-members">
+<h2>Deprecated members<a class="headerlink" href="#deprecated-members" title="Permalink to this headline">¶</a></h2>
+<!-- Hack to trick sphinx into adding member target link -->
+<!--<div class="section" id="posinterpol-function-return">
+<span id="anyvirtualmarkerbvh-posinterpol-function-return"></span><h3>PosInterpol.Function.Return<a class="headerlink" href="#posinterpol-function-return" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries odd section collapsed" id="PosInterpol.Function.Return">
+<span id="anyvirtualmarkerbvh-posinterpol-function-return" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title">PosInterpol.Function.Return</span><span class="member-title-equal"></span><span class="member-title-default"></span><a class="headerlink" href="#PosInterpol.Function.Return" title="Permalink to this headline">¶</a>
+<span class="member-descr"></span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyFloat.html#anyfloat"><span class="std std-ref">AnyFloat</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">ConfigVar</span></a></div>
+</div>
+<div class="without-title admonition danger">
+<p class="admonition-title">Danger</p>
+<p><strong>Deprecated</strong>: Hidden object for return-data management.</p>
+</div>
+<p>&lt;No description&gt;</p>
+</div></blockquote>
+</div>
+</div>
+</div>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+        <p class="logo"><a href="../../index.html" title="index">
+          <img class="logo" src="../../_static/anyscript_maual.svg" alt="Logo"/>
+        </a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+<h3><a href="../../contents.html">Reference Manual</a></h3>
+<p class="caption"><span class="caption-text">API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../class-overview.html"><strong>Class reference</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../function-overview.html"><strong>Function reference</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../globals-overview.html">Globals reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../environment.html">Environment variables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../messages/index.html">Errors, warnings and messages</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Language</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../anyscript/language.html">AnyScript™ language</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../anyscript/preprocessor.html">The preprocessor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../anyscript/inside-anybody.html">Inside the AnyBody Modeling System</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../anyscript/technical-notes.html">Technical notes</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../demos/index.html">Demo examples</a></li>
+</ul>
+<div class="sphinxprev">
+    <h4>Other resources</h4>
+    <p class="topless"><a href="../../../index.html"
+                          title="Back to all manuals">&larr; Back to all manuals</a></p>
+</div>
+        </div>
+      </div>
+    
+    
+        <div class="sidebar-toggle-group no-js">
+            
+            <button class="sidebar-toggle" id="sidebar-hide" title="Hide the sidebar menu">
+                 «
+                <span class="show-for-small">hide menu</span>
+                
+            </button>
+            <button class="sidebar-toggle" id="sidebar-show" title="Show the sidebar menu">
+                
+                <span class="show-for-small">menu</span>
+                <span class="hide-for-small">sidebar</span>
+                 »
+            </button>
+        </div>
+    
+      <div class="clearer"></div>
+    </div>
+    <div class="relbar-bottom">
+        
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../contents.html" title="Table Of Contents"
+             >toc</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="AnyWidgetAxis.html" title="AnyWidgetAxis"
+             >next</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="AnyViaPointMuscle.html" title="AnyViaPointMuscle"
+             >previous</a> &nbsp; &nbsp;</li>
+    <li><a href="../../index.html">AnyScript Reference 7.3.4 documentation</a> &#187;</li>
+
+          <li class="nav-item nav-item-1"><a href="../../index.html" >The AnyScript Reference manual!</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../class-overview.html" ><strong>Class reference</strong></a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">AnyVirtualMarkerBVH</a></li> 
+      </ul>
+    </div>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2021, AnyBody Technology A/S.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.5.4.
+    </div>
+    <!-- cloud_sptheme 1.4 -->
+  </body>
+</html>

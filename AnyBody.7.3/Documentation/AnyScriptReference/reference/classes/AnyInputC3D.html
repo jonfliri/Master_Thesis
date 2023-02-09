@@ -1,0 +1,1342 @@
+
+
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AnyInputC3D &#8212; AnyScript Reference 7.3.4 documentation</title>
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/cloud.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/table_styling.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noticia+Text|Open+Sans|Droid+Sans+Mono" type="text/css" />
+    
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/script/filter-class-list.js"></script>
+    <script src="../../_static/fa/all.js"></script>
+
+    
+    
+     
+        <script src="../../_static/jquery.cookie.js"></script>
+    
+
+    
+     
+        <script src="../../_static/cloud.base.js"></script>
+    
+
+    
+     
+        <script src="../../_static/cloud.js"></script>
+    
+
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="AnyInputDB" href="AnyInputDB.html" />
+    <link rel="prev" title="AnyInputBVH" href="AnyInputBVH.html" /> 
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head><body>
+    <div class="relbar-top">
+        
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../contents.html" title="Table Of Contents"
+             accesskey="C">toc</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="AnyInputDB.html" title="AnyInputDB"
+             accesskey="N">next</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="AnyInputBVH.html" title="AnyInputBVH"
+             accesskey="P">previous</a> &nbsp; &nbsp;</li>
+    <li><a href="../../index.html">AnyScript Reference 7.3.4 documentation</a> &#187;</li>
+
+          <li class="nav-item nav-item-1"><a href="../../index.html" >The AnyScript Reference manual!</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../class-overview.html" accesskey="U"><strong>Class reference</strong></a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">AnyInputC3D</a></li> 
+      </ul>
+    </div>
+    </div>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="anyinputc3d">
+<span id="id1"></span><h1>AnyInputC3D<a class="headerlink" href="#anyinputc3d" title="Permalink to this headline">¶</a></h1>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>Creatable</p>
+</dd>
+<dt class="field-even">Parent class</dt>
+<dd class="field-even"><p><a class="reference internal" href="AnyDataFileBase.html#anydatafilebase"><span class="std std-ref">AnyDataFileBase</span></a></p>
+</dd>
+</dl>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>Class to read files in C3D format. The class allows you to import the whole
+c3d file or only the header and parameter section.</p>
+<p>C3D is standard file format for containing movement analysis data such as marker
+trajectories, joint angles, measured forces or EMG. For more information about C3D files,
+please see <a class="reference external" href="http://c3d.org">http://c3d.org</a>.</p>
+<p>The class also allows you
+to have a basic model defined, where each measured 3D point are defined as
+a segment and the position is driven using an interpolation driver of the
+specified type using the measured data for the 3D point, and the orientation
+is driven to zero. In the model, only the part of the points section that is
+measured data is used. This is by default judged based on the content of the
+camera bytes in the C3D datafile but it is also possible to define which 3D
+trajectories that are markers using the members MarkerUseAllPointsOnOff,
+MarkerUseCamMaskOnOff,MarkerIndices or MarkerLabels.</p>
+<p>Additionally, it is also possible to apply filtering to the markers, processed data,
+and analog data. By default, the marker trajectories are filtered using a second-order,
+zero-phase, lowpass Butterworth filter with a cutoff frequency at 10 Hz. Processed data
+and analog data are not filtered by default.</p>
+<p>The class also has a class operation defined that allows you to
+right-click the C3D object in the model tree and save the C3D file to AnyScript
+files.This will produce a series of AnyScript files which contain the
+data in the C3D file. These are:</p>
+<p><code class="docutils literal notranslate"><span class="pre">&lt;output_filename&gt;.any</span></code>,
+<code class="docutils literal notranslate"><span class="pre">&lt;output_filename&gt;.Header.any</span></code>,
+<code class="docutils literal notranslate"><span class="pre">&lt;output_filename&gt;.Analog.any</span></code>,
+<code class="docutils literal notranslate"><span class="pre">&lt;output_filename&gt;.Points.Markers.any</span></code>,
+<code class="docutils literal notranslate"><span class="pre">&lt;output_filename&gt;.Points.Processed.any</span></code>,
+<code class="docutils literal notranslate"><span class="pre">&lt;output_filename&gt;.MarkerMover.any</span></code>,
+<code class="docutils literal notranslate"><span class="pre">&lt;output_filename&gt;.MarkerListMover.any</span></code>, and
+<code class="docutils literal notranslate"><span class="pre">&lt;output_filename&gt;.ProcessedListMover.any</span></code></p>
+<p>The Header, Analog and Points directly contain the data in these parts of the C3D file
+MarkerMover includes the definition of a segment including drivers. Finally,
+MarkerListMover and ProcessedListMover contain list of the markers to be driven.
+<code class="docutils literal notranslate"><span class="pre">&lt;output_filename&gt;.any</span></code> is the main file, which, if loaded, will setup the model.</p>
+<p> </p>
+<table class="colwidths-given plain docutils align-default" id="id2">
+<caption><span class="caption-text">Demo examples related to AnyInputC3D</span><a class="headerlink" href="#id2" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 75%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Demo</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference download internal" download="" href="../../_downloads/c0250ad6e0352bdf0b44c75c4d26e714/ClassExamples.AnyInputC3D.zip"><code class="xref download docutils literal notranslate"><span class="pre">ClassExamples.AnyInputC3D</span></code></a></p></td>
+<td><p>Demonstration of loading a number of differently formatted C3D files.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="required-initialization-members">
+<h2>Required initialization members<a class="headerlink" href="#required-initialization-members" title="Permalink to this headline">¶</a></h2>
+<!-- Hack to trick sphinx into adding member target link -->
+<!--<div class="section" id="filename">
+<span id="anyinputc3d-filename"></span><h3>FileName<a class="headerlink" href="#filename" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries odd section collapsed" id="FileName">
+<span id="anyinputc3d-filename" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title">FileName</span><span class="member-title-equal"></span><span class="member-title-default"></span><a class="headerlink" href="#FileName" title="Permalink to this headline">¶</a>
+<span class="member-descr">Name of the file.</span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyFileVar.html#anyfilevar"><span class="std std-ref">AnyFileVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">DesignVar</span></a></div>
+</div>
+<p>Name of the file.</p>
+</div></blockquote>
+</div>
+</div>
+<div class="section" id="optional-initialization-members">
+<h2>Optional initialization members<a class="headerlink" href="#optional-initialization-members" title="Permalink to this headline">¶</a></h2>
+<!-- Hack to trick sphinx into adding member target link -->
+  <!--<div class="section" id="readalldataonoff">
+<span id="anyinputc3d-readalldataonoff"></span><h3>ReadAllDataOnOff<a class="headerlink" href="#readalldataonoff" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries odd section collapsed" id="ReadAllDataOnOff">
+<span id="anyinputc3d-readalldataonoff" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title"> ReadAllDataOnOff </span><span class="member-title-equal">=</span><span class="member-title-default"> On </span><a class="headerlink" href="#ReadAllDataOnOff" title="Permalink to this headline">¶</a>
+<span class="member-descr">Switch to specify if all data should be read or not</span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnySwitchVar.html#anyswitchvar"><span class="std std-ref">AnySwitchVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">On</span></code></div>
+</div>
+<p>Switch to specify if all data should be read or not</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+ </div> <!--</div>
+<div class="section" id="truncateextracharsinnamesonoff">
+<span id="anyinputc3d-truncateextracharsinnamesonoff"></span><h3>TruncateExtraCharsInNamesOnOff<a class="headerlink" href="#truncateextracharsinnamesonoff" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries even section collapsed" id="TruncateExtraCharsInNamesOnOff">
+<span id="anyinputc3d-truncateextracharsinnamesonoff" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title"> TruncateExtraCharsInNamesOnOff </span><span class="member-title-equal">=</span><span class="member-title-default"> On </span><a class="headerlink" href="#TruncateExtraCharsInNamesOnOff" title="Permalink to this headline">¶</a>
+<span class="member-descr">Switch to specify whether extra characters in group, parameter, points, or...</span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnySwitchVar.html#anyswitchvar"><span class="std std-ref">AnySwitchVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">On</span></code></div>
+</div>
+<p>Switch to specify whether extra characters in group, parameter, points, or analog data names should be truncated.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+ </div> <!--</div>
+<div class="section" id="makenameuniquestr">
+<span id="anyinputc3d-makenameuniquestr"></span><h3>MakeNameUniqueStr<a class="headerlink" href="#makenameuniquestr" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries odd section collapsed" id="MakeNameUniqueStr">
+<span id="anyinputc3d-makenameuniquestr" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title"> MakeNameUniqueStr </span><span class="member-title-equal">=</span><span class="member-title-default"> "_" </span><a class="headerlink" href="#MakeNameUniqueStr" title="Permalink to this headline">¶</a>
+<span class="member-descr">Switch for enforcing unique names of markers and points. This option may...</span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyStringVar.html#anystringvar"><span class="std std-ref">AnyStringVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">&quot;_&quot;</span></code></div>
+</div>
+<p>Switch for enforcing unique names of markers and points. This option may change names in the imported data compared to the original files.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+ </div> <!--</div>
+<div class="section" id="pointsscalefactor">
+<span id="anyinputc3d-pointsscalefactor"></span><h3>PointsScaleFactor<a class="headerlink" href="#pointsscalefactor" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries even section collapsed" id="PointsScaleFactor">
+<span id="anyinputc3d-pointsscalefactor" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title"> PointsScaleFactor </span><span class="member-title-equal">=</span><span class="member-title-default"> 1.0 </span><a class="headerlink" href="#PointsScaleFactor" title="Permalink to this headline">¶</a>
+<span class="member-descr">A scale factor to be multiplied to all 3D data points.</span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyVar.html#anyvar"><span class="std std-ref">AnyVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">1.0</span></code></div>
+</div>
+<p>A scale factor to be multiplied to all 3D data points.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+ </div> <!--</div>
+<div class="section" id="constructmodelonoff">
+<span id="anyinputc3d-constructmodelonoff"></span><h3>ConstructModelOnOff<a class="headerlink" href="#constructmodelonoff" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries odd section collapsed" id="ConstructModelOnOff">
+<span id="anyinputc3d-constructmodelonoff" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title"> ConstructModelOnOff </span><span class="member-title-equal">=</span><span class="member-title-default"> On </span><a class="headerlink" href="#ConstructModelOnOff" title="Permalink to this headline">¶</a>
+<span class="member-descr">Switch to specify if a model should be constructed from the measured 3D data points.</span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnySwitchVar.html#anyswitchvar"><span class="std std-ref">AnySwitchVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">On</span></code></div>
+</div>
+<p>Switch to specify if a model should be constructed from the measured 3D data points.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+ </div> <!--</div>
+<div class="section" id="constructchartonoff">
+<span id="anyinputc3d-constructchartonoff"></span><h3>ConstructChartOnOff<a class="headerlink" href="#constructchartonoff" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries even section collapsed" id="ConstructChartOnOff">
+<span id="anyinputc3d-constructchartonoff" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title"> ConstructChartOnOff </span><span class="member-title-equal">=</span><span class="member-title-default"> On </span><a class="headerlink" href="#ConstructChartOnOff" title="Permalink to this headline">¶</a>
+<span class="member-descr">Switch for whether the chart displaying the trajectories in space is included or not.</span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnySwitchVar.html#anyswitchvar"><span class="std std-ref">AnySwitchVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">On</span></code></div>
+</div>
+<p>Switch for whether the chart displaying the trajectories in space is included or not.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+ </div> <!--</div>
+<div class="section" id="constructweightfunusingresidualonoff">
+<span id="anyinputc3d-constructweightfunusingresidualonoff"></span><h3>ConstructWeightFunUsingResidualOnOff<a class="headerlink" href="#constructweightfunusingresidualonoff" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries odd section collapsed" id="ConstructWeightFunUsingResidualOnOff">
+<span id="anyinputc3d-constructweightfunusingresidualonoff" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title"> ConstructWeightFunUsingResidualOnOff </span><span class="member-title-equal">=</span><span class="member-title-default"> Off </span><a class="headerlink" href="#ConstructWeightFunUsingResidualOnOff" title="Permalink to this headline">¶</a>
+<span class="member-descr">Switch for whether weigth functions based on the residual values are included or not.</span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnySwitchVar.html#anyswitchvar"><span class="std std-ref">AnySwitchVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">Off</span></code></div>
+</div>
+<p>Switch for whether weigth functions based on the residual values are included or not.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+ </div> <!--</div>
+<div class="section" id="gapfillusingresidualsonoff">
+<span id="anyinputc3d-gapfillusingresidualsonoff"></span><h3>GapFillUsingResidualsOnOff<a class="headerlink" href="#gapfillusingresidualsonoff" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries even section collapsed" id="GapFillUsingResidualsOnOff">
+<span id="anyinputc3d-gapfillusingresidualsonoff" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title"> GapFillUsingResidualsOnOff </span><span class="member-title-equal">=</span><span class="member-title-default"> Off </span><a class="headerlink" href="#GapFillUsingResidualsOnOff" title="Permalink to this headline">¶</a>
+<span class="member-descr">If enabled marker trajectories will be gap filled by linear interpolation in...</span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnySwitchVar.html#anyswitchvar"><span class="std std-ref">AnySwitchVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">Off</span></code></div>
+</div>
+<p>If enabled marker trajectories will be gap filled by linear interpolation in the dropout intervals as indicated by the residual values. Note: This setting is is not meant to replace gap filling in your MoCap software, but it may prevent problems when low pass filtering data.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+ </div> <!--</div>
+<div class="section" id="markeruseallpointsonoff">
+<span id="anyinputc3d-markeruseallpointsonoff"></span><h3>MarkerUseAllPointsOnOff<a class="headerlink" href="#markeruseallpointsonoff" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries odd section collapsed" id="MarkerUseAllPointsOnOff">
+<span id="anyinputc3d-markeruseallpointsonoff" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title"> MarkerUseAllPointsOnOff </span><span class="member-title-equal">=</span><span class="member-title-default"> Off </span><a class="headerlink" href="#MarkerUseAllPointsOnOff" title="Permalink to this headline">¶</a>
+<span class="member-descr">Switch for using all point data as 3D marker data.</span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnySwitchVar.html#anyswitchvar"><span class="std std-ref">AnySwitchVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">Off</span></code></div>
+</div>
+<p>Switch for using all point data as 3D marker data.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+ </div> <!--</div>
+<div class="section" id="markerusecammaskonoff">
+<span id="anyinputc3d-markerusecammaskonoff"></span><h3>MarkerUseCamMaskOnOff<a class="headerlink" href="#markerusecammaskonoff" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries even section collapsed" id="MarkerUseCamMaskOnOff">
+<span id="anyinputc3d-markerusecammaskonoff" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title"> MarkerUseCamMaskOnOff </span><span class="member-title-equal">=</span><span class="member-title-default"> On </span><a class="headerlink" href="#MarkerUseCamMaskOnOff" title="Permalink to this headline">¶</a>
+<span class="member-descr">Switch for using the Camera Mask for deciding which point data as 3D marker...</span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnySwitchVar.html#anyswitchvar"><span class="std std-ref">AnySwitchVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">On</span></code></div>
+</div>
+<p>Switch for using the Camera Mask for deciding which point data as 3D marker data. Non-zero camera mask is interpreted as 3D marker data.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+ </div> <!--</div>
+<div class="section" id="markerindices">
+<span id="anyinputc3d-markerindices"></span><h3>MarkerIndices<a class="headerlink" href="#markerindices" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries odd section collapsed" id="MarkerIndices">
+<span id="anyinputc3d-markerindices" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title"> MarkerIndices </span><span class="member-title-equal">=</span><span class="member-title-default"> ... </span><a class="headerlink" href="#MarkerIndices" title="Permalink to this headline">¶</a>
+<span class="member-descr">Array of point indices to be used as 3D marker data.</span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyIntArray.html#anyintarray"><span class="std std-ref">AnyIntArray</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+<div class="line"><strong>Default:</strong> <em>Depends on other values</em></div>
+</div>
+<p>Array of point indices to be used as 3D marker data.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+ </div> <!--</div>
+<div class="section" id="markerlabels">
+<span id="anyinputc3d-markerlabels"></span><h3>MarkerLabels<a class="headerlink" href="#markerlabels" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries even section collapsed" id="MarkerLabels">
+<span id="anyinputc3d-markerlabels" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title"> MarkerLabels </span><span class="member-title-equal">=</span><span class="member-title-default"> ... </span><a class="headerlink" href="#MarkerLabels" title="Permalink to this headline">¶</a>
+<span class="member-descr">Array of point labels to be used as 3D marker data.</span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyStringArray.html#anystringarray"><span class="std std-ref">AnyStringArray</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+<div class="line"><strong>Default:</strong> <em>Depends on other values</em></div>
+</div>
+<p>Array of point labels to be used as 3D marker data.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+ </div> <!--</div>
+<div class="section" id="markerfilterindex">
+<span id="anyinputc3d-markerfilterindex"></span><h3>MarkerFilterIndex<a class="headerlink" href="#markerfilterindex" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries odd section collapsed" id="MarkerFilterIndex">
+<span id="anyinputc3d-markerfilterindex" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title"> MarkerFilterIndex </span><span class="member-title-equal">=</span><span class="member-title-default"> 0 </span><a class="headerlink" href="#MarkerFilterIndex" title="Permalink to this headline">¶</a>
+<span class="member-descr">Index of the filter to be used for the marker data. Zero is the default...</span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyIntVar.html#anyintvar"><span class="std std-ref">AnyIntVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">0</span></code></div>
+</div>
+<p>Index of the filter to be used for the marker data. Zero is the default filter in member Filter. Negative numbers means that no filter is applied. Positive numbers refer to filters entered by declaration of new objects in C3D object.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+ </div> <!--</div>
+<div class="section" id="processeddatafilterindex">
+<span id="anyinputc3d-processeddatafilterindex"></span><h3>ProcessedDataFilterIndex<a class="headerlink" href="#processeddatafilterindex" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries even section collapsed" id="ProcessedDataFilterIndex">
+<span id="anyinputc3d-processeddatafilterindex" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title"> ProcessedDataFilterIndex </span><span class="member-title-equal">=</span><span class="member-title-default"> 0 </span><a class="headerlink" href="#ProcessedDataFilterIndex" title="Permalink to this headline">¶</a>
+<span class="member-descr">Index of the filter to be used for the "processed" point data. Zero is the...</span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyIntVar.html#anyintvar"><span class="std std-ref">AnyIntVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">0</span></code></div>
+</div>
+<p>Index of the filter to be used for the “processed” point data. Zero is the default filter in member Filter. Negative numbers means that no filter is applied. Positive numbers refer to filters entered by declaration of new objects in C3D object.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+ </div> <!--</div>
+<div class="section" id="analogfilterindex">
+<span id="anyinputc3d-analogfilterindex"></span><h3>AnalogFilterIndex<a class="headerlink" href="#analogfilterindex" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries odd section collapsed" id="AnalogFilterIndex">
+<span id="anyinputc3d-analogfilterindex" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title"> AnalogFilterIndex </span><span class="member-title-equal">=</span><span class="member-title-default"> -1 </span><a class="headerlink" href="#AnalogFilterIndex" title="Permalink to this headline">¶</a>
+<span class="member-descr">Index of the filter to be used for the data in the analog section. Zero is...</span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyIntVar.html#anyintvar"><span class="std std-ref">AnyIntVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">-1</span></code></div>
+</div>
+<p>Index of the filter to be used for the data in the analog section. Zero is the default filter in member Filter. Negative numbers means that no filter is applied. Positive numbers refer to filters entered by declaration of new objects in C3D object.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+ </div> <!--</div>
+<div class="section" id="filter">
+<h3>Filter<a class="headerlink" href="#filter" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries even section collapsed" >
+
+<h3 class="html-toggle-button" style=""><span class="member-title"> Filter </span><span class="member-title-equal">=</span><span class="member-title-default"> {} </span><a class="headerlink" href="#Filter" title="Permalink to this headline">¶</a>
+<span class="member-descr">Standard (default) filter (Butterworth type filter).</span>
+</h3><!-- Hack to trick sphinx into adding member target link -->
+<!--<div class="section" id="filter-z0">
+<span id="anyinputc3d-filter-z0"></span><h4>Filter.z0<a class="headerlink" href="#filter-z0" title="Permalink to this headline">¶</a></h4>
+-->
+
+<div class="html-toggle member-entries odd section collapsed" id="Filter.z0">
+<span id="anyinputc3d-filter-z0" style=""></span>
+<h4 class="html-toggle-button" style=""><span class="member-title"> &nbsp;&nbsp;.z0 </span><span class="member-title-equal">=</span><span class="member-title-default"> ... </span><a class="headerlink" href="#Filter.z0" title="Permalink to this headline">¶</a>
+<span class="member-descr">Initial condition vector.</span>
+</h4><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyVector.html#anyvector"><span class="std std-ref">AnyVector</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">DesignVar</span></a></div>
+<div class="line"><strong>Default:</strong> <em>Depends on other values</em></div>
+</div>
+<p>Initial condition vector.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+</div><!--</div>
+<div class="section" id="filter-automaticinitialconditiononoff">
+<span id="anyinputc3d-filter-automaticinitialconditiononoff"></span><h4>Filter.AutomaticInitialConditionOnOff<a class="headerlink" href="#filter-automaticinitialconditiononoff" title="Permalink to this headline">¶</a></h4>
+-->
+
+<div class="html-toggle member-entries even section collapsed" id="Filter.AutomaticInitialConditionOnOff">
+<span id="anyinputc3d-filter-automaticinitialconditiononoff" style=""></span>
+<h4 class="html-toggle-button" style=""><span class="member-title"> &nbsp;&nbsp;.AutomaticInitialConditionOnOff </span><span class="member-title-equal">=</span><span class="member-title-default"> On </span><a class="headerlink" href="#Filter.AutomaticInitialConditionOnOff" title="Permalink to this headline">¶</a>
+<span class="member-descr">Switch to specify whether or not the initial conditions are calculated automatically.</span>
+</h4><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnySwitchVar.html#anyswitchvar"><span class="std std-ref">AnySwitchVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">On</span></code></div>
+</div>
+<p>Switch to specify whether or not the initial conditions are calculated automatically.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+</div><!--</div>
+<div class="section" id="filter-filterforwardbackwardonoff">
+<span id="anyinputc3d-filter-filterforwardbackwardonoff"></span><h4>Filter.FilterForwardBackwardOnOff<a class="headerlink" href="#filter-filterforwardbackwardonoff" title="Permalink to this headline">¶</a></h4>
+-->
+
+<div class="html-toggle member-entries odd section collapsed" id="Filter.FilterForwardBackwardOnOff">
+<span id="anyinputc3d-filter-filterforwardbackwardonoff" style=""></span>
+<h4 class="html-toggle-button" style=""><span class="member-title"> &nbsp;&nbsp;.FilterForwardBackwardOnOff </span><span class="member-title-equal">=</span><span class="member-title-default"> On </span><a class="headerlink" href="#Filter.FilterForwardBackwardOnOff" title="Permalink to this headline">¶</a>
+<span class="member-descr">Switch to specify if filtering should only be performed in the forward...</span>
+</h4><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnySwitchVar.html#anyswitchvar"><span class="std std-ref">AnySwitchVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">On</span></code></div>
+</div>
+<p>Switch to specify if filtering should only be performed in the forward direction or both in the forward and backward direction.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+</div><!--</div>
+<div class="section" id="filter-n">
+<span id="anyinputc3d-filter-n"></span><h4>Filter.N<a class="headerlink" href="#filter-n" title="Permalink to this headline">¶</a></h4>
+-->
+
+<div class="html-toggle member-entries even section collapsed" id="Filter.N">
+<span id="anyinputc3d-filter-n" style=""></span>
+<h4 class="html-toggle-button" style=""><span class="member-title"> &nbsp;&nbsp;.N </span><span class="member-title-equal">=</span><span class="member-title-default"> 2 </span><a class="headerlink" href="#Filter.N" title="Permalink to this headline">¶</a>
+<span class="member-descr">The filter order.</span>
+</h4><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyIntVar.html#anyintvar"><span class="std std-ref">AnyIntVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">DesignVar</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">2</span></code></div>
+</div>
+<p>The filter order.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+</div><!--</div>
+<div class="section" id="filter-w">
+<span id="anyinputc3d-filter-w"></span><h4>Filter.W<a class="headerlink" href="#filter-w" title="Permalink to this headline">¶</a></h4>
+-->
+
+<div class="html-toggle member-entries odd section collapsed" id="Filter.W">
+<span id="anyinputc3d-filter-w" style=""></span>
+<h4 class="html-toggle-button" style=""><span class="member-title"> &nbsp;&nbsp;.W </span><span class="member-title-equal">=</span><span class="member-title-default"> ... </span><a class="headerlink" href="#Filter.W" title="Permalink to this headline">¶</a>
+<span class="member-descr">The normalized cut-off frequency(ies).</span>
+</h4><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyVector.html#anyvector"><span class="std std-ref">AnyVector</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">DesignVar</span></a></div>
+<div class="line"><strong>Default:</strong> <em>Depends on other values</em></div>
+</div>
+<p>The normalized cut-off frequency(ies).</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+</div><!--</div>
+<div class="section" id="filter-fs">
+<span id="anyinputc3d-filter-fs"></span><h4>Filter.Fs<a class="headerlink" href="#filter-fs" title="Permalink to this headline">¶</a></h4>
+-->
+
+<div class="html-toggle member-entries even section collapsed" id="Filter.Fs">
+<span id="anyinputc3d-filter-fs" style=""></span>
+<h4 class="html-toggle-button" style=""><span class="member-title"> &nbsp;&nbsp;.Fs </span><span class="member-title-equal">=</span><span class="member-title-default"> 0.0 </span><a class="headerlink" href="#Filter.Fs" title="Permalink to this headline">¶</a>
+<span class="member-descr">The sample frequency of the data to be filtered.</span>
+</h4><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyVar.html#anyvar"><span class="std std-ref">AnyVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">DesignVar</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">0.0</span></code></div>
+</div>
+<p>The sample frequency of the data to be filtered.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+</div><!--</div>
+<div class="section" id="filter-fc">
+<span id="anyinputc3d-filter-fc"></span><h4>Filter.Fc<a class="headerlink" href="#filter-fc" title="Permalink to this headline">¶</a></h4>
+-->
+
+<div class="html-toggle member-entries odd section collapsed" id="Filter.Fc">
+<span id="anyinputc3d-filter-fc" style=""></span>
+<h4 class="html-toggle-button" style=""><span class="member-title"> &nbsp;&nbsp;.Fc </span><span class="member-title-equal">=</span><span class="member-title-default"> {10.0} </span><a class="headerlink" href="#Filter.Fc" title="Permalink to this headline">¶</a>
+<span class="member-descr">The cut-off frequency(ies).</span>
+</h4><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyVector.html#anyvector"><span class="std std-ref">AnyVector</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">DesignVar</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">{10.0}</span></code></div>
+</div>
+<p>The cut-off frequency(ies).</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+</div><!--</div>
+<div class="section" id="filter-type">
+<span id="anyinputc3d-filter-type"></span><h4>Filter.Type<a class="headerlink" href="#filter-type" title="Permalink to this headline">¶</a></h4>
+-->
+
+<div class="html-toggle member-entries even section collapsed" id="Filter.Type">
+<span id="anyinputc3d-filter-type" style=""></span>
+<h4 class="html-toggle-button" style=""><span class="member-title"> &nbsp;&nbsp;.Type </span><span class="member-title-equal">=</span><span class="member-title-default"> LowPass </span><a class="headerlink" href="#Filter.Type" title="Permalink to this headline">¶</a>
+<span class="member-descr">The filter type.</span>
+</h4><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyFilterType.html#anyfiltertype"><span class="std std-ref">AnyFilterType</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">DesignVar</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">LowPass</span></code></div>
+</div>
+<p>The filter type.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+ </div></div> <!--</div>
+</div>
+<div class="section" id="weightthreshold">
+<span id="anyinputc3d-weightthreshold"></span><h3>WeightThreshold<a class="headerlink" href="#weightthreshold" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries odd section collapsed" id="WeightThreshold">
+<span id="anyinputc3d-weightthreshold" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title"> WeightThreshold </span><span class="member-title-equal">=</span><span class="member-title-default"> 0.0 </span><a class="headerlink" href="#WeightThreshold" title="Permalink to this headline">¶</a>
+<span class="member-descr">Weight function threshold value for determination whether the weights should be zero</span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyVar.html#anyvar"><span class="std std-ref">AnyVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">0.0</span></code></div>
+</div>
+<p>Weight function threshold value for determination whether the weights should be zero</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+ </div> <!--</div>
+<div class="section" id="weightoutput">
+<span id="anyinputc3d-weightoutput"></span><h3>WeightOutput<a class="headerlink" href="#weightoutput" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries even section collapsed" id="WeightOutput">
+<span id="anyinputc3d-weightoutput" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title"> WeightOutput </span><span class="member-title-equal">=</span><span class="member-title-default"> ... </span><a class="headerlink" href="#WeightOutput" title="Permalink to this headline">¶</a>
+<span class="member-descr">Weight function output, i.e., the weight value retuned by the weight functions.</span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyMatrix.html#anymatrix"><span class="std std-ref">AnyMatrix</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">{{0.0,</span> <span class="pre">1.0},</span> <span class="pre">{0.0,</span> <span class="pre">1.0},</span> <span class="pre">{0.0,</span> <span class="pre">1.0}}</span></code></div>
+</div>
+<p>Weight function output, i.e., the weight value retuned by the weight functions.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+ </div> <!--</div>
+<div class="section" id="weighttransitiontime">
+<span id="anyinputc3d-weighttransitiontime"></span><h3>WeightTransitionTime<a class="headerlink" href="#weighttransitiontime" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries odd section collapsed" id="WeightTransitionTime">
+<span id="anyinputc3d-weighttransitiontime" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title"> WeightTransitionTime </span><span class="member-title-equal">=</span><span class="member-title-default"> 0.1 </span><a class="headerlink" href="#WeightTransitionTime" title="Permalink to this headline">¶</a>
+<span class="member-descr">Weight function transition time, i.e., the time used for smooth transistion...</span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyVar.html#anyvar"><span class="std std-ref">AnyVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">0.1</span></code></div>
+</div>
+<p>Weight function transition time, i.e., the time used for smooth transistion between zero and the weight value.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+ </div> <!--</div>
+<div class="section" id="searchandreplace">
+<span id="anyinputc3d-searchandreplace"></span><h3>SearchAndReplace<a class="headerlink" href="#searchandreplace" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries even section collapsed" id="SearchAndReplace">
+<span id="anyinputc3d-searchandreplace" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title"> SearchAndReplace </span><span class="member-title-equal">=</span><span class="member-title-default"> ... </span><a class="headerlink" href="#SearchAndReplace" title="Permalink to this headline">¶</a>
+<span class="member-descr">Search-and-replace functionality for converting names in the original C3D...</span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyString.html#anystring"><span class="std std-ref">AnyString</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+<div class="line"><strong>Default:</strong> <em>Depends on other values</em></div>
+</div>
+<p>Search-and-replace functionality for converting names in the original C3D data file while being imported into AnyScript.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+ </div> <!--</div>
+<div class="section" id="writemarkerdatatofilesonoff">
+<span id="anyinputc3d-writemarkerdatatofilesonoff"></span><h3>WriteMarkerDataToFilesOnOff<a class="headerlink" href="#writemarkerdatatofilesonoff" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries odd section collapsed" id="WriteMarkerDataToFilesOnOff">
+<span id="anyinputc3d-writemarkerdatatofilesonoff" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title"> WriteMarkerDataToFilesOnOff </span><span class="member-title-equal">=</span><span class="member-title-default"> Off </span><a class="headerlink" href="#WriteMarkerDataToFilesOnOff" title="Permalink to this headline">¶</a>
+<span class="member-descr">A switch to specify whether or not the marker data should be written to text...</span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnySwitchVar.html#anyswitchvar"><span class="std std-ref">AnySwitchVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">Off</span></code></div>
+</div>
+<p>A switch to specify whether or not the marker data should be written to text files. If this is set to on, three output files are created per marker, i.e. one with position data, one with velocity data and one with acceleration data. The output files are named &lt;MarkerName&gt;_pos.txt, &lt;MarkerName&gt;_vel.txt and &lt;MarkerName&gt;_acc.txt.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+ </div> <!--</div>
+<div class="section" id="markerscalexyz">
+<span id="anyinputc3d-markerscalexyz"></span><h3>MarkerScaleXYZ<a class="headerlink" href="#markerscalexyz" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries even section collapsed" id="MarkerScaleXYZ">
+<span id="anyinputc3d-markerscalexyz" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title"> MarkerScaleXYZ </span><span class="member-title-equal">=</span><span class="member-title-default"> ... </span><a class="headerlink" href="#MarkerScaleXYZ" title="Permalink to this headline">¶</a>
+<span class="member-descr">Scale factor used when drawing the marker.</span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyVec3.html#anyvec3"><span class="std std-ref">AnyVec3</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">{0.025,</span> <span class="pre">0.025,</span> <span class="pre">0.025}</span></code></div>
+</div>
+<p>Scale factor used when drawing the marker.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+ </div> <!--</div>
+<div class="section" id="markerrgb">
+<span id="anyinputc3d-markerrgb"></span><h3>MarkerRGB<a class="headerlink" href="#markerrgb" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries odd section collapsed" id="MarkerRGB">
+<span id="anyinputc3d-markerrgb" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title"> MarkerRGB </span><span class="member-title-equal">=</span><span class="member-title-default"> {0.65, 0.65, 0.65} </span><a class="headerlink" href="#MarkerRGB" title="Permalink to this headline">¶</a>
+<span class="member-descr">The color of a marker.</span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyRGB.html#anyrgb"><span class="std std-ref">AnyRGB</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">{0.65,</span> <span class="pre">0.65,</span> <span class="pre">0.65}</span></code></div>
+</div>
+<p>The color of a marker.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+ </div> <!--</div>
+<div class="section" id="markerdrawonoff">
+<span id="anyinputc3d-markerdrawonoff"></span><h3>MarkerDrawOnOff<a class="headerlink" href="#markerdrawonoff" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries even section collapsed" id="MarkerDrawOnOff">
+<span id="anyinputc3d-markerdrawonoff" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title"> MarkerDrawOnOff </span><span class="member-title-equal">=</span><span class="member-title-default"> On </span><a class="headerlink" href="#MarkerDrawOnOff" title="Permalink to this headline">¶</a>
+<span class="member-descr">A switch to specify if markers should be drawn or not. This switch only...</span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnySwitchVar.html#anyswitchvar"><span class="std std-ref">AnySwitchVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">On</span></code></div>
+</div>
+<p>A switch to specify if markers should be drawn or not. This switch only affects the AnyDrawNode markers created by the ConstructModel option.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+ </div> <!--</div>
+<div class="section" id="markerinterpoltype">
+<span id="anyinputc3d-markerinterpoltype"></span><h3>MarkerInterPolType<a class="headerlink" href="#markerinterpoltype" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries odd section collapsed" id="MarkerInterPolType">
+<span id="anyinputc3d-markerinterpoltype" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title"> MarkerInterPolType </span><span class="member-title-equal">=</span><span class="member-title-default"> Bspline </span><a class="headerlink" href="#MarkerInterPolType" title="Permalink to this headline">¶</a>
+<span class="member-descr">The interpolation type used in the linear drivers of the 3D data points.</span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyInterPolType.html#anyinterpoltype"><span class="std std-ref">AnyInterPolType</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">Bspline</span></code></div>
+</div>
+<p>The interpolation type used in the linear drivers of the 3D data points.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+ </div> <!--</div>
+<div class="section" id="markerbsplineorder">
+<span id="anyinputc3d-markerbsplineorder"></span><h3>MarkerBsplineOrder<a class="headerlink" href="#markerbsplineorder" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries even section collapsed" id="MarkerBsplineOrder">
+<span id="anyinputc3d-markerbsplineorder" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title"> MarkerBsplineOrder </span><span class="member-title-equal">=</span><span class="member-title-default"> 4 </span><a class="headerlink" href="#MarkerBsplineOrder" title="Permalink to this headline">¶</a>
+<span class="member-descr">Specification of the B-spline order. Only used if MarkerInterPolType =...</span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyIntVar.html#anyintvar"><span class="std std-ref">AnyIntVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">4</span></code></div>
+</div>
+<p>Specification of the B-spline order. Only used if MarkerInterPolType = Bspline. If too few data points, the order is lowered to fit the actual amount.</p>
+</div></blockquote>
+</div>
+</div>
+<div class="html-toggle section" id="denied-access-members">
+<h2>Denied-Access members<a class="headerlink" href="#denied-access-members" title="Permalink to this headline">¶</a></h2>
+<!-- Hack to trick sphinx into adding member target link -->
+<!--<div class="section" id="upddata">
+<span id="anyinputc3d-upddata"></span><h3>UpdData<a class="headerlink" href="#upddata" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries odd section collapsed" id="UpdData">
+<span id="anyinputc3d-upddata" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title">UpdData</span><span class="member-title-equal"></span><span class="member-title-default"></span><a class="headerlink" href="#UpdData" title="Permalink to this headline">¶</a>
+<span class="member-descr">Data update counter that counts number of data update and configuration processes.</span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyIntVar.html#anyintvar"><span class="std std-ref">AnyIntVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">DesignVar</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">0</span></code></div>
+</div>
+<p>Data update counter that counts number of data update and configuration processes.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+</div><!--</div>
+<div class="section" id="pointlabels">
+<span id="anyinputc3d-pointlabels"></span><h3>PointLabels<a class="headerlink" href="#pointlabels" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries even section collapsed" id="PointLabels">
+<span id="anyinputc3d-pointlabels" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title">PointLabels</span><span class="member-title-equal"></span><span class="member-title-default"></span><a class="headerlink" href="#PointLabels" title="Permalink to this headline">¶</a>
+<span class="member-descr">Array of the point labels used in the AnyInputC3D data structure; these...</span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyStringArray.html#anystringarray"><span class="std std-ref">AnyStringArray</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">&quot;Dependent&quot;</span></code></div>
+</div>
+<p>Array of the point labels used in the AnyInputC3D data structure; these labels may be modified compared to PointLabelsOriginal.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+</div><!--</div>
+<div class="section" id="pointlabelsoriginal">
+<span id="anyinputc3d-pointlabelsoriginal"></span><h3>PointLabelsOriginal<a class="headerlink" href="#pointlabelsoriginal" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries odd section collapsed" id="PointLabelsOriginal">
+<span id="anyinputc3d-pointlabelsoriginal" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title">PointLabelsOriginal</span><span class="member-title-equal"></span><span class="member-title-default"></span><a class="headerlink" href="#PointLabelsOriginal" title="Permalink to this headline">¶</a>
+<span class="member-descr">Array of the original point labels from the C3D file.</span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyStringArray.html#anystringarray"><span class="std std-ref">AnyStringArray</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">&quot;Dependent&quot;</span></code></div>
+</div>
+<p>Array of the original point labels from the C3D file.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+</div><!--</div>
+<div class="section" id="analoglabels">
+<span id="anyinputc3d-analoglabels"></span><h3>AnalogLabels<a class="headerlink" href="#analoglabels" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries even section collapsed" id="AnalogLabels">
+<span id="anyinputc3d-analoglabels" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title">AnalogLabels</span><span class="member-title-equal"></span><span class="member-title-default"></span><a class="headerlink" href="#AnalogLabels" title="Permalink to this headline">¶</a>
+<span class="member-descr">Array of the analog channel labels used in the AnyInputC3D data structure;...</span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyStringArray.html#anystringarray"><span class="std std-ref">AnyStringArray</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">&quot;Dependent&quot;</span></code></div>
+</div>
+<p>Array of the analog channel labels used in the AnyInputC3D data structure; these labels may be modified compared to AnalogLabelsOriginal.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+</div><!--</div>
+<div class="section" id="analoglabelsoriginal">
+<span id="anyinputc3d-analoglabelsoriginal"></span><h3>AnalogLabelsOriginal<a class="headerlink" href="#analoglabelsoriginal" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries odd section collapsed" id="AnalogLabelsOriginal">
+<span id="anyinputc3d-analoglabelsoriginal" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title">AnalogLabelsOriginal</span><span class="member-title-equal"></span><span class="member-title-default"></span><a class="headerlink" href="#AnalogLabelsOriginal" title="Permalink to this headline">¶</a>
+<span class="member-descr">Array of the original analog channel labels from the C3D file.</span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyStringArray.html#anystringarray"><span class="std std-ref">AnyStringArray</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">&quot;Dependent&quot;</span></code></div>
+</div>
+<p>Array of the original analog channel labels from the C3D file.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+</div><!--</div>
+<div class="section" id="filter-filterfun1">
+<span id="anyinputc3d-filter-filterfun1"></span><h3>Filter.FilterFun1<a class="headerlink" href="#filter-filterfun1" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries even section collapsed" id="Filter.FilterFun1">
+<span id="anyinputc3d-filter-filterfun1" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title">Filter.FilterFun1</span><span class="member-title-equal"></span><span class="member-title-default"></span><a class="headerlink" href="#Filter.FilterFun1" title="Permalink to this headline">¶</a>
+<span class="member-descr">Filtering without initial conditon and downsampling specification.</span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyMonoFunction.html#anymonofunction"><span class="std std-ref">AnyMonoFunction</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">NotDefined</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">{}</span></code></div>
+</div>
+<p>Filtering without initial conditon and downsampling specification.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+</div><!--</div>
+<div class="section" id="filter-filterfun1-arglist">
+<span id="anyinputc3d-filter-filterfun1-arglist"></span><h3>Filter.FilterFun1.ArgList<a class="headerlink" href="#filter-filterfun1-arglist" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries odd section collapsed" id="Filter.FilterFun1.ArgList">
+<span id="anyinputc3d-filter-filterfun1-arglist" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title">Filter.FilterFun1.ArgList</span><span class="member-title-equal"></span><span class="member-title-default"></span><a class="headerlink" href="#Filter.FilterFun1.ArgList" title="Permalink to this headline">¶</a>
+<span class="member-descr">A special folder containing the argument list of the function.</span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyFunctionArgList.html#anyfunctionarglist"><span class="std std-ref">AnyFunctionArgList</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">{}</span></code></div>
+</div>
+<p>A special folder containing the argument list of the function.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+</div><!--</div>
+<div class="section" id="filter-filterfun1-arglist-x">
+<span id="anyinputc3d-filter-filterfun1-arglist-x"></span><h3>Filter.FilterFun1.ArgList.x<a class="headerlink" href="#filter-filterfun1-arglist-x" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries even section collapsed" id="Filter.FilterFun1.ArgList.x">
+<span id="anyinputc3d-filter-filterfun1-arglist-x" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title">Filter.FilterFun1.ArgList.x</span><span class="member-title-equal"></span><span class="member-title-default"></span><a class="headerlink" href="#Filter.FilterFun1.ArgList.x" title="Permalink to this headline">¶</a>
+<span class="member-descr"></span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyFloat.html#anyfloat"><span class="std std-ref">AnyFloat</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">&quot;Dependent&quot;</span></code></div>
+</div>
+<p>&lt;No description&gt;</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+</div><!--</div>
+<div class="section" id="filter-filterfun2">
+<span id="anyinputc3d-filter-filterfun2"></span><h3>Filter.FilterFun2<a class="headerlink" href="#filter-filterfun2" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries odd section collapsed" id="Filter.FilterFun2">
+<span id="anyinputc3d-filter-filterfun2" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title">Filter.FilterFun2</span><span class="member-title-equal"></span><span class="member-title-default"></span><a class="headerlink" href="#Filter.FilterFun2" title="Permalink to this headline">¶</a>
+<span class="member-descr">Filtering with downsampling specification.</span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyMonoFunction.html#anymonofunction"><span class="std std-ref">AnyMonoFunction</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">NotDefined</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">{}</span></code></div>
+</div>
+<p>Filtering with downsampling specification.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+</div><!--</div>
+<div class="section" id="filter-filterfun2-arglist">
+<span id="anyinputc3d-filter-filterfun2-arglist"></span><h3>Filter.FilterFun2.ArgList<a class="headerlink" href="#filter-filterfun2-arglist" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries even section collapsed" id="Filter.FilterFun2.ArgList">
+<span id="anyinputc3d-filter-filterfun2-arglist" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title">Filter.FilterFun2.ArgList</span><span class="member-title-equal"></span><span class="member-title-default"></span><a class="headerlink" href="#Filter.FilterFun2.ArgList" title="Permalink to this headline">¶</a>
+<span class="member-descr">A special folder containing the argument list of the function.</span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyFunctionArgList.html#anyfunctionarglist"><span class="std std-ref">AnyFunctionArgList</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">{}</span></code></div>
+</div>
+<p>A special folder containing the argument list of the function.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+</div><!--</div>
+<div class="section" id="filter-filterfun2-arglist-x">
+<span id="anyinputc3d-filter-filterfun2-arglist-x"></span><h3>Filter.FilterFun2.ArgList.x<a class="headerlink" href="#filter-filterfun2-arglist-x" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries odd section collapsed" id="Filter.FilterFun2.ArgList.x">
+<span id="anyinputc3d-filter-filterfun2-arglist-x" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title">Filter.FilterFun2.ArgList.x</span><span class="member-title-equal"></span><span class="member-title-default"></span><a class="headerlink" href="#Filter.FilterFun2.ArgList.x" title="Permalink to this headline">¶</a>
+<span class="member-descr"></span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyFloat.html#anyfloat"><span class="std std-ref">AnyFloat</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">&quot;Dependent&quot;</span></code></div>
+</div>
+<p>&lt;No description&gt;</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+</div><!--</div>
+<div class="section" id="filter-filterfun2-arglist-m">
+<span id="anyinputc3d-filter-filterfun2-arglist-m"></span><h3>Filter.FilterFun2.ArgList.m<a class="headerlink" href="#filter-filterfun2-arglist-m" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries even section collapsed" id="Filter.FilterFun2.ArgList.m">
+<span id="anyinputc3d-filter-filterfun2-arglist-m" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title">Filter.FilterFun2.ArgList.m</span><span class="member-title-equal"></span><span class="member-title-default"></span><a class="headerlink" href="#Filter.FilterFun2.ArgList.m" title="Permalink to this headline">¶</a>
+<span class="member-descr"></span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyIntVar.html#anyintvar"><span class="std std-ref">AnyIntVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">0</span></code></div>
+</div>
+<p>&lt;No description&gt;</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+</div><!--</div>
+<div class="section" id="filter-filterfun3">
+<span id="anyinputc3d-filter-filterfun3"></span><h3>Filter.FilterFun3<a class="headerlink" href="#filter-filterfun3" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries odd section collapsed" id="Filter.FilterFun3">
+<span id="anyinputc3d-filter-filterfun3" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title">Filter.FilterFun3</span><span class="member-title-equal"></span><span class="member-title-default"></span><a class="headerlink" href="#Filter.FilterFun3" title="Permalink to this headline">¶</a>
+<span class="member-descr">Filtering with initial condition specification.</span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyMonoFunction.html#anymonofunction"><span class="std std-ref">AnyMonoFunction</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">NotDefined</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">{}</span></code></div>
+</div>
+<p>Filtering with initial condition specification.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+</div><!--</div>
+<div class="section" id="filter-filterfun3-arglist">
+<span id="anyinputc3d-filter-filterfun3-arglist"></span><h3>Filter.FilterFun3.ArgList<a class="headerlink" href="#filter-filterfun3-arglist" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries even section collapsed" id="Filter.FilterFun3.ArgList">
+<span id="anyinputc3d-filter-filterfun3-arglist" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title">Filter.FilterFun3.ArgList</span><span class="member-title-equal"></span><span class="member-title-default"></span><a class="headerlink" href="#Filter.FilterFun3.ArgList" title="Permalink to this headline">¶</a>
+<span class="member-descr">A special folder containing the argument list of the function.</span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyFunctionArgList.html#anyfunctionarglist"><span class="std std-ref">AnyFunctionArgList</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">{}</span></code></div>
+</div>
+<p>A special folder containing the argument list of the function.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+</div><!--</div>
+<div class="section" id="filter-filterfun3-arglist-x">
+<span id="anyinputc3d-filter-filterfun3-arglist-x"></span><h3>Filter.FilterFun3.ArgList.x<a class="headerlink" href="#filter-filterfun3-arglist-x" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries odd section collapsed" id="Filter.FilterFun3.ArgList.x">
+<span id="anyinputc3d-filter-filterfun3-arglist-x" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title">Filter.FilterFun3.ArgList.x</span><span class="member-title-equal"></span><span class="member-title-default"></span><a class="headerlink" href="#Filter.FilterFun3.ArgList.x" title="Permalink to this headline">¶</a>
+<span class="member-descr"></span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyFloat.html#anyfloat"><span class="std std-ref">AnyFloat</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">&quot;Dependent&quot;</span></code></div>
+</div>
+<p>&lt;No description&gt;</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+</div><!--</div>
+<div class="section" id="filter-filterfun3-arglist-z0">
+<span id="anyinputc3d-filter-filterfun3-arglist-z0"></span><h3>Filter.FilterFun3.ArgList.z0<a class="headerlink" href="#filter-filterfun3-arglist-z0" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries even section collapsed" id="Filter.FilterFun3.ArgList.z0">
+<span id="anyinputc3d-filter-filterfun3-arglist-z0" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title">Filter.FilterFun3.ArgList.z0</span><span class="member-title-equal"></span><span class="member-title-default"></span><a class="headerlink" href="#Filter.FilterFun3.ArgList.z0" title="Permalink to this headline">¶</a>
+<span class="member-descr"></span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyVector.html#anyvector"><span class="std std-ref">AnyVector</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">&quot;Dependent&quot;</span></code></div>
+</div>
+<p>&lt;No description&gt;</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+</div><!--</div>
+<div class="section" id="filter-filterfun4">
+<span id="anyinputc3d-filter-filterfun4"></span><h3>Filter.FilterFun4<a class="headerlink" href="#filter-filterfun4" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries odd section collapsed" id="Filter.FilterFun4">
+<span id="anyinputc3d-filter-filterfun4" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title">Filter.FilterFun4</span><span class="member-title-equal"></span><span class="member-title-default"></span><a class="headerlink" href="#Filter.FilterFun4" title="Permalink to this headline">¶</a>
+<span class="member-descr">Filtering with both initial condition and downsampling specification.</span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyMonoFunction.html#anymonofunction"><span class="std std-ref">AnyMonoFunction</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">NotDefined</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">{}</span></code></div>
+</div>
+<p>Filtering with both initial condition and downsampling specification.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+</div><!--</div>
+<div class="section" id="filter-filterfun4-arglist">
+<span id="anyinputc3d-filter-filterfun4-arglist"></span><h3>Filter.FilterFun4.ArgList<a class="headerlink" href="#filter-filterfun4-arglist" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries even section collapsed" id="Filter.FilterFun4.ArgList">
+<span id="anyinputc3d-filter-filterfun4-arglist" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title">Filter.FilterFun4.ArgList</span><span class="member-title-equal"></span><span class="member-title-default"></span><a class="headerlink" href="#Filter.FilterFun4.ArgList" title="Permalink to this headline">¶</a>
+<span class="member-descr">A special folder containing the argument list of the function.</span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyFunctionArgList.html#anyfunctionarglist"><span class="std std-ref">AnyFunctionArgList</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">{}</span></code></div>
+</div>
+<p>A special folder containing the argument list of the function.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+</div><!--</div>
+<div class="section" id="filter-filterfun4-arglist-x">
+<span id="anyinputc3d-filter-filterfun4-arglist-x"></span><h3>Filter.FilterFun4.ArgList.x<a class="headerlink" href="#filter-filterfun4-arglist-x" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries odd section collapsed" id="Filter.FilterFun4.ArgList.x">
+<span id="anyinputc3d-filter-filterfun4-arglist-x" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title">Filter.FilterFun4.ArgList.x</span><span class="member-title-equal"></span><span class="member-title-default"></span><a class="headerlink" href="#Filter.FilterFun4.ArgList.x" title="Permalink to this headline">¶</a>
+<span class="member-descr"></span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyFloat.html#anyfloat"><span class="std std-ref">AnyFloat</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">&quot;Dependent&quot;</span></code></div>
+</div>
+<p>&lt;No description&gt;</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+</div><!--</div>
+<div class="section" id="filter-filterfun4-arglist-m">
+<span id="anyinputc3d-filter-filterfun4-arglist-m"></span><h3>Filter.FilterFun4.ArgList.m<a class="headerlink" href="#filter-filterfun4-arglist-m" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries even section collapsed" id="Filter.FilterFun4.ArgList.m">
+<span id="anyinputc3d-filter-filterfun4-arglist-m" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title">Filter.FilterFun4.ArgList.m</span><span class="member-title-equal"></span><span class="member-title-default"></span><a class="headerlink" href="#Filter.FilterFun4.ArgList.m" title="Permalink to this headline">¶</a>
+<span class="member-descr"></span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyIntVar.html#anyintvar"><span class="std std-ref">AnyIntVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">0</span></code></div>
+</div>
+<p>&lt;No description&gt;</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+</div><!--</div>
+<div class="section" id="filter-filterfun4-arglist-z0">
+<span id="anyinputc3d-filter-filterfun4-arglist-z0"></span><h3>Filter.FilterFun4.ArgList.z0<a class="headerlink" href="#filter-filterfun4-arglist-z0" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries odd section collapsed" id="Filter.FilterFun4.ArgList.z0">
+<span id="anyinputc3d-filter-filterfun4-arglist-z0" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title">Filter.FilterFun4.ArgList.z0</span><span class="member-title-equal"></span><span class="member-title-default"></span><a class="headerlink" href="#Filter.FilterFun4.ArgList.z0" title="Permalink to this headline">¶</a>
+<span class="member-descr"></span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyVector.html#anyvector"><span class="std std-ref">AnyVector</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">&quot;Dependent&quot;</span></code></div>
+</div>
+<p>&lt;No description&gt;</p>
+</div></blockquote>
+</div>
+</div>
+<div class="html-toggle section" id="deprecated-members">
+<h2>Deprecated members<a class="headerlink" href="#deprecated-members" title="Permalink to this headline">¶</a></h2>
+<!-- Hack to trick sphinx into adding member target link -->
+<!--<div class="section" id="filter-filterfun1-return">
+<span id="anyinputc3d-filter-filterfun1-return"></span><h3>Filter.FilterFun1.Return<a class="headerlink" href="#filter-filterfun1-return" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries odd section collapsed" id="Filter.FilterFun1.Return">
+<span id="anyinputc3d-filter-filterfun1-return" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title">Filter.FilterFun1.Return</span><span class="member-title-equal"></span><span class="member-title-default"></span><a class="headerlink" href="#Filter.FilterFun1.Return" title="Permalink to this headline">¶</a>
+<span class="member-descr"></span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyFloat.html#anyfloat"><span class="std std-ref">AnyFloat</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">ConfigVar</span></a></div>
+</div>
+<div class="without-title admonition danger">
+<p class="admonition-title">Danger</p>
+<p><strong>Deprecated</strong>: Hidden object for return-data management.</p>
+</div>
+<p>&lt;No description&gt;</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+</div><!--</div>
+<div class="section" id="filter-filterfun2-return">
+<span id="anyinputc3d-filter-filterfun2-return"></span><h3>Filter.FilterFun2.Return<a class="headerlink" href="#filter-filterfun2-return" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries even section collapsed" id="Filter.FilterFun2.Return">
+<span id="anyinputc3d-filter-filterfun2-return" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title">Filter.FilterFun2.Return</span><span class="member-title-equal"></span><span class="member-title-default"></span><a class="headerlink" href="#Filter.FilterFun2.Return" title="Permalink to this headline">¶</a>
+<span class="member-descr"></span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyFloat.html#anyfloat"><span class="std std-ref">AnyFloat</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">ConfigVar</span></a></div>
+</div>
+<div class="without-title admonition danger">
+<p class="admonition-title">Danger</p>
+<p><strong>Deprecated</strong>: Hidden object for return-data management.</p>
+</div>
+<p>&lt;No description&gt;</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+</div><!--</div>
+<div class="section" id="filter-filterfun3-return">
+<span id="anyinputc3d-filter-filterfun3-return"></span><h3>Filter.FilterFun3.Return<a class="headerlink" href="#filter-filterfun3-return" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries odd section collapsed" id="Filter.FilterFun3.Return">
+<span id="anyinputc3d-filter-filterfun3-return" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title">Filter.FilterFun3.Return</span><span class="member-title-equal"></span><span class="member-title-default"></span><a class="headerlink" href="#Filter.FilterFun3.Return" title="Permalink to this headline">¶</a>
+<span class="member-descr"></span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyFloat.html#anyfloat"><span class="std std-ref">AnyFloat</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">ConfigVar</span></a></div>
+</div>
+<div class="without-title admonition danger">
+<p class="admonition-title">Danger</p>
+<p><strong>Deprecated</strong>: Hidden object for return-data management.</p>
+</div>
+<p>&lt;No description&gt;</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+</div><!--</div>
+<div class="section" id="filter-filterfun4-return">
+<span id="anyinputc3d-filter-filterfun4-return"></span><h3>Filter.FilterFun4.Return<a class="headerlink" href="#filter-filterfun4-return" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries even section collapsed" id="Filter.FilterFun4.Return">
+<span id="anyinputc3d-filter-filterfun4-return" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title">Filter.FilterFun4.Return</span><span class="member-title-equal"></span><span class="member-title-default"></span><a class="headerlink" href="#Filter.FilterFun4.Return" title="Permalink to this headline">¶</a>
+<span class="member-descr"></span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyFloat.html#anyfloat"><span class="std std-ref">AnyFloat</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">ConfigVar</span></a></div>
+</div>
+<div class="without-title admonition danger">
+<p class="admonition-title">Danger</p>
+<p><strong>Deprecated</strong>: Hidden object for return-data management.</p>
+</div>
+<p>&lt;No description&gt;</p>
+</div></blockquote>
+</div>
+</div>
+</div>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+        <p class="logo"><a href="../../index.html" title="index">
+          <img class="logo" src="../../_static/anyscript_maual.svg" alt="Logo"/>
+        </a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+<h3><a href="../../contents.html">Reference Manual</a></h3>
+<p class="caption"><span class="caption-text">API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../class-overview.html"><strong>Class reference</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../function-overview.html"><strong>Function reference</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../globals-overview.html">Globals reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../environment.html">Environment variables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../messages/index.html">Errors, warnings and messages</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Language</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../anyscript/language.html">AnyScript™ language</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../anyscript/preprocessor.html">The preprocessor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../anyscript/inside-anybody.html">Inside the AnyBody Modeling System</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../anyscript/technical-notes.html">Technical notes</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../demos/index.html">Demo examples</a></li>
+</ul>
+<div class="sphinxprev">
+    <h4>Other resources</h4>
+    <p class="topless"><a href="../../../index.html"
+                          title="Back to all manuals">&larr; Back to all manuals</a></p>
+</div>
+        </div>
+      </div>
+    
+    
+        <div class="sidebar-toggle-group no-js">
+            
+            <button class="sidebar-toggle" id="sidebar-hide" title="Hide the sidebar menu">
+                 «
+                <span class="show-for-small">hide menu</span>
+                
+            </button>
+            <button class="sidebar-toggle" id="sidebar-show" title="Show the sidebar menu">
+                
+                <span class="show-for-small">menu</span>
+                <span class="hide-for-small">sidebar</span>
+                 »
+            </button>
+        </div>
+    
+      <div class="clearer"></div>
+    </div>
+    <div class="relbar-bottom">
+        
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../contents.html" title="Table Of Contents"
+             >toc</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="AnyInputDB.html" title="AnyInputDB"
+             >next</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="AnyInputBVH.html" title="AnyInputBVH"
+             >previous</a> &nbsp; &nbsp;</li>
+    <li><a href="../../index.html">AnyScript Reference 7.3.4 documentation</a> &#187;</li>
+
+          <li class="nav-item nav-item-1"><a href="../../index.html" >The AnyScript Reference manual!</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../class-overview.html" ><strong>Class reference</strong></a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">AnyInputC3D</a></li> 
+      </ul>
+    </div>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2021, AnyBody Technology A/S.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.5.4.
+    </div>
+    <!-- cloud_sptheme 1.4 -->
+  </body>
+</html>

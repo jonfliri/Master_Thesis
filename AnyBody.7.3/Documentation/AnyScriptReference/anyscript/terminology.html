@@ -1,0 +1,327 @@
+
+
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Terminology &#8212; AnyScript Reference 7.3.4 documentation</title>
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/cloud.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/table_styling.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noticia+Text|Open+Sans|Droid+Sans+Mono" type="text/css" />
+    
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/script/filter-class-list.js"></script>
+    <script src="../_static/fa/all.js"></script>
+
+    
+    
+     
+        <script src="../_static/jquery.cookie.js"></script>
+    
+
+    
+     
+        <script src="../_static/cloud.base.js"></script>
+    
+
+    
+     
+        <script src="../_static/cloud.js"></script>
+    
+
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="The preprocessor" href="preprocessor.html" />
+    <link rel="prev" title="AnyScript™ language" href="language.html" /> 
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head><body>
+    <div class="relbar-top">
+        
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../contents.html" title="Table Of Contents"
+             accesskey="C">toc</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="preprocessor.html" title="The preprocessor"
+             accesskey="N">next</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="language.html" title="AnyScript™ language"
+             accesskey="P">previous</a> &nbsp; &nbsp;</li>
+    <li><a href="../index.html">AnyScript Reference 7.3.4 documentation</a> &#187;</li>
+
+          <li class="nav-item nav-item-1"><a href="../index.html" >The AnyScript Reference manual!</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="language.html" accesskey="U">AnyScript™ language</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Terminology</a></li> 
+      </ul>
+    </div>
+    </div>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="terminology">
+<h1>Terminology<a class="headerlink" href="#terminology" title="Permalink to this headline">¶</a></h1>
+<p>The first and most obvious thing you may have noticed already, is that a
+lot of things are called ‘Any’-something. You may come to like this or
+hate it, but anyway there are good reasons for this choice of
+terminology.</p>
+<p>The principle is that the names of all data types (i.e. all class names)
+start with ‘Any’. The historical reason is that they are the classes of
+the AnyBody modeling language, and the name ‘AnyBody’ implies that it is a
+system for making models of any body, be it a human, a dog, or a
+dinosaur. Similarly, you may think of a class as the basis for making
+any object of that type; for instance the base class for any type of
+object is called <a class="reference internal" href="../reference/classes/AnyObject.html#anyobject"><span class="std std-ref">AnyObject</span></a>, i.e., all objects are also AnyObjects. The
+practical reason for this standardization of the class names is that it
+makes class names easy to distinguish from object names and other
+identifiers. It provides a primitive form of syntax highlighting, which
+was particularly nice in earlier versions of AnyBody where color highlighting
+in the AnyScript™ editor did not exist.</p>
+<p>If you get tired of the many Any’ies, you can often skip them in oral
+communication without losing the meaning. Even in this manual you will find us
+speaking of objects, folders, segments, etc. even though it would be more
+strictly correct to speak of objects of the types <a class="reference internal" href="../reference/classes/AnyObject.html#anyobject"><span class="std std-ref">AnyObject</span></a>,
+<a class="reference internal" href="../reference/classes/AnyFolder.html#anyfolder"><span class="std std-ref">AnyFolder</span></a>, and <a class="reference internal" href="../reference/classes/AnySeg.html#anyseg"><span class="std std-ref">AnySeg</span></a>.</p>
+<p>The remaining part of this section contains brief explanations of terms
+that will be used frequently while describing the details of the
+AnyScript™ language.</p>
+<div class="section" id="classes-and-objects">
+<h2>Classes and objects<a class="headerlink" href="#classes-and-objects" title="Permalink to this headline">¶</a></h2>
+<dl class="glossary simple">
+<dt id="term-Objects">Objects<a class="headerlink" href="#term-Objects" title="Permalink to this term">¶</a></dt><dd><p>Objects are the actual elements you create/define by the AnyScript™ declarations. They
+are also referred to as the instances of the classes, i.e., you can
+have many objects (instances) of the same class.</p>
+</dd>
+<dt id="term-Classes">Classes<a class="headerlink" href="#term-Classes" title="Permalink to this term">¶</a></dt><dd><p>A class is an object type specification. Classes can be derived from
+other classes whereby they inherit properties from the class they are
+derived from. Typically they add more properties to inherited ones in
+order for their existence to be justified. In AnyScript™ all classes are
+derived from one class, which implies that all classes can be
+organized in a tree with one root according to their derivation.
+There are three categories of classes in AnyScript™:</p>
+</dd>
+<dt id="term-Creatable-classes">Creatable classes<a class="headerlink" href="#term-Creatable-classes" title="Permalink to this term">¶</a></dt><dd><p>are the classes you can actually use, meaning that you can define
+objects of these classes.</p>
+</dd>
+<dt id="term-Abstract-classes">Abstract classes<a class="headerlink" href="#term-Abstract-classes" title="Permalink to this term">¶</a></dt><dd><p>Objects of abstract classes cannot be declared in AnyScript™. They lack some
+of the information necessary to be fully operational entities.
+Their purpose is to provide some kinship between derived classes,
+so they are typically found high in the class hierarchy.</p>
+</dd>
+<dt id="term-Hidden-classes">Hidden classes<a class="headerlink" href="#term-Hidden-classes" title="Permalink to this term">¶</a></dt><dd><p>are classes that primarily exist for convenient organization of
+the program’s functionality. Knowledge about these will be of
+little relevance to the standard user.</p>
+</dd>
+<dt id="term-Class-Templates">Class Templates<a class="headerlink" href="#term-Class-Templates" title="Permalink to this term">¶</a></dt><dd><p>Are AnyScript™ defined templates for a class. In principle, Class Templates are
+not real classes, like the built-in AnyScript™ classes, but they do indeed work
+almost like the real classes. Since the Class Templates can be
+defined in AnyScript™ code, they can be defined by the user. See more info: <a class="reference internal" href="preprocessor.html#class-templates"><span class="std std-ref">Class templates</span></a>.</p>
+</dd>
+<dt id="term-Class-Hierarchy">Class Hierarchy<a class="headerlink" href="#term-Class-Hierarchy" title="Permalink to this term">¶</a></dt><dd><p>is the tree of classes ordered according to the inheritance. In
+relation to the relative location of classes in the tree, the
+following terms are used:</p>
+</dd>
+<dt id="term-Parent-class-or-base-class">Parent class or base class<a class="headerlink" href="#term-Parent-class-or-base-class" title="Permalink to this term">¶</a></dt><dd><p>are names for the class a given class is derived from. The parent
+or base class is the root in a tree of all the classes derived
+from it.</p>
+</dd>
+<dt id="term-Child-or-derived-class">Child or derived class<a class="headerlink" href="#term-Child-or-derived-class" title="Permalink to this term">¶</a></dt><dd><p>are names for the classes that are derived from another class, the
+base class.</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="object-hierarchy-model-tree">
+<h2>Object hierarchy (Model tree)<a class="headerlink" href="#object-hierarchy-model-tree" title="Permalink to this headline">¶</a></h2>
+<p>There are in principle two types of
+objects: those that can contain others and those that cannot. The
+former are the nodes of the model tree and the latter the leaves.</p>
+<p>The basic classes of these two kinds are the <a class="reference internal" href="../reference/classes/AnyFolder.html#anyfolder"><span class="std std-ref">AnyFolder</span></a>, which can
+contain other objects, and <a class="reference internal" href="../reference/classes/AnyValue.html#anyvalue"><span class="std std-ref">AnyValue</span></a>, which is parent of all classes
+that hold values, i.e., basic data. <a class="reference internal" href="../reference/classes/AnyFolder.html#anyfolder"><span class="std std-ref">AnyFolder</span></a> is the parent of most
+classes because any modeling object typically hold data for user
+input and output of results; this is what makes the functionality of
+the class accessible.</p>
+<p>The following are terms related to describe object
+relationship in the object/model tree:</p>
+<dl class="glossary simple">
+<dt id="term-Model-tree">Model tree<a class="headerlink" href="#term-Model-tree" title="Permalink to this term">¶</a></dt><dd><p>Is a map of the existing objects in a
+model and it can be browsed in the user interface of the system after
+proper loading of the model in AnyBody.</p>
+</dd>
+<dt id="term-Owners">Owners<a class="headerlink" href="#term-Owners" title="Permalink to this term">¶</a></dt><dd><p>are the objects that contain other objects. This implies that an
+owner is of the class AnyFolder or derived from AnyFolder.</p>
+</dd>
+<dt id="term-Members">Members<a class="headerlink" href="#term-Members" title="Permalink to this term">¶</a></dt><dd><p>are the objects defined inside a given object, i.e., the owner.</p>
+</dd>
+<dt id="term-Properties">Properties<a class="headerlink" href="#term-Properties" title="Permalink to this term">¶</a></dt><dd><p>are the values stored in members, so we may speak of the
+properties of a given class (the owner of the property-holding
+member), for instance the mass of a segment. This implies that
+properties are stored in classes that are derived from AnyValue.</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="folder-scopes">
+<h2>Folder Scopes<a class="headerlink" href="#folder-scopes" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p>AnyScript™ files are divided into scopes delimited by braces, <code class="docutils literal notranslate"><span class="pre">{</span></code> and <code class="docutils literal notranslate"><span class="pre">}</span></code>. The
+scope of a folder is opened by <code class="docutils literal notranslate"><span class="pre">&lt;foldername&gt;</span> <span class="pre">=</span> <span class="pre">{</span></code>  and closed by <code class="docutils literal notranslate"><span class="pre">}</span></code>.</p>
+<p>The scope of a folder can contain initialization of existing members
+and declarations of new members, i.e., initialization for the folder.
+The folder scope can be thought of as the “value” of a folder.
+General description of the use and access of scopes shall not be
+given here, but a number of special issues regarding scopes shall be
+mentioned below.</p>
+</div></blockquote>
+<dl class="glossary">
+<dt id="term-Main">Main<a class="headerlink" href="#term-Main" title="Permalink to this term">¶</a></dt><dd><p>is first scope you encounter in an AnyScript™ model. This outer scope is
+where the user defines the model. Main is a special folder that is
+predefined in the system so that it can be filled (initialized)
+without declaration. Therefore, all AnyScript™ models start with the phrase
+<code class="docutils literal notranslate"><span class="pre">Main</span> <span class="pre">=</span> <span class="pre">{</span></code>, which open the Main scope for initialization. There
+exists only one Main folder and Main is a restricted keyword.</p>
+</dd>
+<dt id="term-Global-scope">Global scope<a class="headerlink" href="#term-Global-scope" title="Permalink to this term">¶</a></dt><dd><p>is actually the outer most scope which among others contains the
+Main folder. As Main, Global is a special folder, which is
+predefined by the system. The scope of Global is not accessible
+for initialization by the user, but it functions to contain
+predefined objects that the system makes available to the user.</p>
+<p>The access to these objects is facilitated by a special mechanism
+of the AnyScript™ compiler that makes all objects in the Global folder
+available from anywhere in the script, i.e., from any scope. To
+the user it appears as if these global objects exist in all
+scopes. Apart from Main, typical contents of Global is
+mathematical constants and functions.</p>
+</dd>
+<dt id="term-Restricted-keywords">Restricted keywords<a class="headerlink" href="#term-Restricted-keywords" title="Permalink to this term">¶</a></dt><dd><p>are all words that cannot be used for object names. All class
+names are restricted keywords, as well as all names of the members
+of the Global folder. Moreover, all names of predefined members
+appear as restricted keywords in the given scope.</p>
+</dd>
+<dt id="term-Object-names">Object names:<a class="headerlink" href="#term-Object-names" title="Permalink to this term">¶</a></dt><dd><p>All objects are identified by names, the object names. An object
+is uniquely identified by its name and the folder it is member of,
+i.e., there can be only one object with a given name in each
+folder. The object name can consist of letters (case sensitive),
+digits (not in the first place) and underscores. Adding the
+identification of the folder in front of the object name, you can
+uniquely refer a given object. This will be covered in more
+details in a following section.</p>
+</dd>
+</dl>
+</div>
+</div>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+        <p class="logo"><a href="../index.html" title="index">
+          <img class="logo" src="../_static/anyscript_maual.svg" alt="Logo"/>
+        </a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+<h3><a href="../contents.html">Reference Manual</a></h3>
+<p class="caption"><span class="caption-text">API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../reference/class-overview.html"><strong>Class reference</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reference/function-overview.html"><strong>Function reference</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reference/globals-overview.html">Globals reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reference/environment.html">Environment variables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reference/messages/index.html">Errors, warnings and messages</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Language</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="language.html">AnyScript™ language</a></li>
+<li class="toctree-l1"><a class="reference internal" href="preprocessor.html">The preprocessor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="inside-anybody.html">Inside the AnyBody Modeling System</a></li>
+<li class="toctree-l1"><a class="reference internal" href="technical-notes.html">Technical notes</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../demos/index.html">Demo examples</a></li>
+</ul>
+<div class="sphinxprev">
+    <h4>Other resources</h4>
+    <p class="topless"><a href="../../index.html"
+                          title="Back to all manuals">&larr; Back to all manuals</a></p>
+</div>
+        </div>
+      </div>
+    
+    
+        <div class="sidebar-toggle-group no-js">
+            
+            <button class="sidebar-toggle" id="sidebar-hide" title="Hide the sidebar menu">
+                 «
+                <span class="show-for-small">hide menu</span>
+                
+            </button>
+            <button class="sidebar-toggle" id="sidebar-show" title="Show the sidebar menu">
+                
+                <span class="show-for-small">menu</span>
+                <span class="hide-for-small">sidebar</span>
+                 »
+            </button>
+        </div>
+    
+      <div class="clearer"></div>
+    </div>
+    <div class="relbar-bottom">
+        
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../contents.html" title="Table Of Contents"
+             >toc</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="preprocessor.html" title="The preprocessor"
+             >next</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="language.html" title="AnyScript™ language"
+             >previous</a> &nbsp; &nbsp;</li>
+    <li><a href="../index.html">AnyScript Reference 7.3.4 documentation</a> &#187;</li>
+
+          <li class="nav-item nav-item-1"><a href="../index.html" >The AnyScript Reference manual!</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="language.html" >AnyScript™ language</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Terminology</a></li> 
+      </ul>
+    </div>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2021, AnyBody Technology A/S.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.5.4.
+    </div>
+    <!-- cloud_sptheme 1.4 -->
+  </body>
+</html>

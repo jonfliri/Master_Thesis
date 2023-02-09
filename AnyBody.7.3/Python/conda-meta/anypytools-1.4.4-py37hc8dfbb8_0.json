@@ -1,0 +1,597 @@
+{
+  "arch": "x86_64",
+  "build": "py37hc8dfbb8_0",
+  "build_number": 0,
+  "channel": "https://conda.anaconda.org/conda-forge/win-64",
+  "constrains": [],
+  "depends": [
+    "h5py >=2.5",
+    "pydoe",
+    "pygments_anyscript",
+    "python >=3.7,<3.8.0a0",
+    "python_abi 3.7.* *_cp37m",
+    "scipy >=0.15",
+    "setuptools",
+    "tqdm"
+  ],
+  "extracted_package_dir": "C:\\Anaconda3_64\\pkgs\\anypytools-1.4.4-py37hc8dfbb8_0",
+  "features": "",
+  "files": [
+    "Lib/site-packages/AnyPyTools-1.4.4-py3.7.egg-info/PKG-INFO",
+    "Lib/site-packages/AnyPyTools-1.4.4-py3.7.egg-info/SOURCES.txt",
+    "Lib/site-packages/AnyPyTools-1.4.4-py3.7.egg-info/dependency_links.txt",
+    "Lib/site-packages/AnyPyTools-1.4.4-py3.7.egg-info/entry_points.txt",
+    "Lib/site-packages/AnyPyTools-1.4.4-py3.7.egg-info/requires.txt",
+    "Lib/site-packages/AnyPyTools-1.4.4-py3.7.egg-info/top_level.txt",
+    "Lib/site-packages/anypytools/__init__.py",
+    "Lib/site-packages/anypytools/__pycache__/__init__.cpython-37.pyc",
+    "Lib/site-packages/anypytools/__pycache__/abcutils.cpython-37.pyc",
+    "Lib/site-packages/anypytools/__pycache__/datautils.cpython-37.pyc",
+    "Lib/site-packages/anypytools/__pycache__/h5py_wrapper.cpython-37.pyc",
+    "Lib/site-packages/anypytools/__pycache__/macro_commands.cpython-37.pyc",
+    "Lib/site-packages/anypytools/__pycache__/macroutils.cpython-37.pyc",
+    "Lib/site-packages/anypytools/__pycache__/pytest_plugin.cpython-37.pyc",
+    "Lib/site-packages/anypytools/__pycache__/tools.cpython-37.pyc",
+    "Lib/site-packages/anypytools/abcutils.py",
+    "Lib/site-packages/anypytools/datautils.py",
+    "Lib/site-packages/anypytools/h5py_wrapper.py",
+    "Lib/site-packages/anypytools/macro_commands.py",
+    "Lib/site-packages/anypytools/macroutils.py",
+    "Lib/site-packages/anypytools/pytest_plugin.py",
+    "Lib/site-packages/anypytools/tools.py",
+    "Menu/AnyPyToolsTutorial.json",
+    "Scripts/AnyPyToolsTutorial.bat",
+    "share/notebooks/AnyPyTools/.ipynb_checkpoints/AnyPyTools Tutorial-checkpoint.ipynb",
+    "share/notebooks/AnyPyTools/00_AnyPyTools_tutorial.ipynb",
+    "share/notebooks/AnyPyTools/00_Install_and_setup.ipynb",
+    "share/notebooks/AnyPyTools/01_Getting_started_with_anypytools.ipynb",
+    "share/notebooks/AnyPyTools/02_Generating_macros.ipynb",
+    "share/notebooks/AnyPyTools/03_Working_with_output_from_Anybody.ipynb",
+    "share/notebooks/AnyPyTools/04_Batch_processing_multiple_models.ipynb",
+    "share/notebooks/AnyPyTools/05_Monte_Carlo_studies_etc.ipynb",
+    "share/notebooks/AnyPyTools/06_Tips&Tricks.ipynb",
+    "share/notebooks/AnyPyTools/Knee.any",
+    "share/notebooks/AnyPyTools/Tutorial_files/BatchProcess/Demo.Arm2D.any",
+    "share/notebooks/AnyPyTools/Tutorial_files/BatchProcess/Output/TestOutput_model1.csv",
+    "share/notebooks/AnyPyTools/Tutorial_files/BatchProcess/Output/TestOutput_model2.csv",
+    "share/notebooks/AnyPyTools/Tutorial_files/BatchProcess/Output/TestOutput_model3.csv",
+    "share/notebooks/AnyPyTools/Tutorial_files/BatchProcess/Output/TestOutput_model4.csv",
+    "share/notebooks/AnyPyTools/Tutorial_files/BatchProcess/Output/TestOutput_model5.csv",
+    "share/notebooks/AnyPyTools/Tutorial_files/BatchProcess/Output/TestOutput_model6.csv",
+    "share/notebooks/AnyPyTools/Tutorial_files/BatchProcess/Output/TestOutput_model7.csv",
+    "share/notebooks/AnyPyTools/Tutorial_files/BatchProcess/Output/TestOutput_model8.csv",
+    "share/notebooks/AnyPyTools/Tutorial_files/BatchProcess/Output/TestOutput_model9.csv",
+    "share/notebooks/AnyPyTools/Tutorial_files/BatchProcess/Output/dummy.txt",
+    "share/notebooks/AnyPyTools/Tutorial_files/BatchProcess/RunExample.bat",
+    "share/notebooks/AnyPyTools/Tutorial_files/BatchProcess/__pycache__/batchprocess.cpython-37.pyc",
+    "share/notebooks/AnyPyTools/Tutorial_files/BatchProcess/batchprocess.py",
+    "share/notebooks/AnyPyTools/Tutorial_files/BatchProcess/model1/main.any",
+    "share/notebooks/AnyPyTools/Tutorial_files/BatchProcess/model2/main.any",
+    "share/notebooks/AnyPyTools/Tutorial_files/BatchProcess/model3/main.any",
+    "share/notebooks/AnyPyTools/Tutorial_files/BatchProcess/model4/main.any",
+    "share/notebooks/AnyPyTools/Tutorial_files/BatchProcess/model5/main.any",
+    "share/notebooks/AnyPyTools/Tutorial_files/BatchProcess/model6/main.any",
+    "share/notebooks/AnyPyTools/Tutorial_files/BatchProcess/model7/main.any",
+    "share/notebooks/AnyPyTools/Tutorial_files/BatchProcess/model8/main.any",
+    "share/notebooks/AnyPyTools/Tutorial_files/BatchProcess/model9/main.any",
+    "share/notebooks/AnyPyTools/Tutorial_files/BatchProcessExample.zip",
+    "share/notebooks/AnyPyTools/Tutorial_files/SimpleMacro/Collected results.xlsx",
+    "share/notebooks/AnyPyTools/Tutorial_files/SimpleMacro/Demo.Arm2D.any",
+    "share/notebooks/AnyPyTools/Tutorial_files/SimpleMacro/RunExample.bat",
+    "share/notebooks/AnyPyTools/Tutorial_files/SimpleMacro/__pycache__/python_parameter.cpython-37.pyc",
+    "share/notebooks/AnyPyTools/Tutorial_files/SimpleMacro/python_parameter.py",
+    "share/notebooks/AnyPyTools/Tutorial_files/knee.gif",
+    "share/notebooks/AnyPyTools/Tutorial_files/menu1.png",
+    "share/notebooks/AnyPyTools/Tutorial_files/relax.png",
+    "share/notebooks/AnyPyTools/custom.css",
+    "share/notebooks/AnyPyTools/knee.gif",
+    "share/notebooks/AnyPyTools/output.anydata.h5",
+    "Menu/AnyPyToolsTutorial.json"
+  ],
+  "fn": "anypytools-1.4.4-py37hc8dfbb8_0.tar.bz2",
+  "license": "MIT",
+  "link": {
+    "source": "C:\\Anaconda3_64\\pkgs\\anypytools-1.4.4-py37hc8dfbb8_0",
+    "type": 1
+  },
+  "md5": "b4a0f1af0c2bdf6dc602c549ab602e2e",
+  "name": "anypytools",
+  "package_tarball_full_path": "C:\\Anaconda3_64\\pkgs\\anypytools-1.4.4-py37hc8dfbb8_0.tar.bz2",
+  "paths_data": {
+    "paths": [
+      {
+        "_path": "Lib/site-packages/AnyPyTools-1.4.4-py3.7.egg-info/PKG-INFO",
+        "path_type": "hardlink",
+        "sha256": "54888f908e976871064f5a22858d022f369c9a14ad6bcd1cd4f344e41d205aef",
+        "sha256_in_prefix": "54888f908e976871064f5a22858d022f369c9a14ad6bcd1cd4f344e41d205aef",
+        "size_in_bytes": 1304
+      },
+      {
+        "_path": "Lib/site-packages/AnyPyTools-1.4.4-py3.7.egg-info/SOURCES.txt",
+        "path_type": "hardlink",
+        "sha256": "f8249c3115b1c652ba6d021876b3646b7d736e9584a2a44ff8e90ba7c8e36b17",
+        "sha256_in_prefix": "f8249c3115b1c652ba6d021876b3646b7d736e9584a2a44ff8e90ba7c8e36b17",
+        "size_in_bytes": 1209
+      },
+      {
+        "_path": "Lib/site-packages/AnyPyTools-1.4.4-py3.7.egg-info/dependency_links.txt",
+        "path_type": "hardlink",
+        "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+        "sha256_in_prefix": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+        "size_in_bytes": 1
+      },
+      {
+        "_path": "Lib/site-packages/AnyPyTools-1.4.4-py3.7.egg-info/entry_points.txt",
+        "path_type": "hardlink",
+        "sha256": "aa427b6f97df334cdcd038ff648b0c361b763af26055215740bcd6ed8343b3fd",
+        "sha256_in_prefix": "aa427b6f97df334cdcd038ff648b0c361b763af26055215740bcd6ed8343b3fd",
+        "size_in_bytes": 50
+      },
+      {
+        "_path": "Lib/site-packages/AnyPyTools-1.4.4-py3.7.egg-info/requires.txt",
+        "path_type": "hardlink",
+        "sha256": "5e4852535f2f16a7474d773286050090161340981f5f0f3c526232527039412e",
+        "sha256_in_prefix": "5e4852535f2f16a7474d773286050090161340981f5f0f3c526232527039412e",
+        "size_in_bytes": 17
+      },
+      {
+        "_path": "Lib/site-packages/AnyPyTools-1.4.4-py3.7.egg-info/top_level.txt",
+        "path_type": "hardlink",
+        "sha256": "b1ad42a1a76ceb356446cbee6a9c85766f68be924eebe3e7a68566a53b1d70d9",
+        "sha256_in_prefix": "b1ad42a1a76ceb356446cbee6a9c85766f68be924eebe3e7a68566a53b1d70d9",
+        "size_in_bytes": 11
+      },
+      {
+        "_path": "Lib/site-packages/anypytools/__init__.py",
+        "path_type": "hardlink",
+        "sha256": "c9b0f0bec3a302f466bf0f7a27fd7f14f125d5673f77c7cf77de9dfc532d9035",
+        "sha256_in_prefix": "c9b0f0bec3a302f466bf0f7a27fd7f14f125d5673f77c7cf77de9dfc532d9035",
+        "size_in_bytes": 1583
+      },
+      {
+        "_path": "Lib/site-packages/anypytools/__pycache__/__init__.cpython-37.pyc",
+        "path_type": "hardlink",
+        "sha256": "b5c909ad0a235aad9b2781cf28aa7a4d20a4403f6a032711c854f6cb066e6151",
+        "sha256_in_prefix": "b5c909ad0a235aad9b2781cf28aa7a4d20a4403f6a032711c854f6cb066e6151",
+        "size_in_bytes": 1598
+      },
+      {
+        "_path": "Lib/site-packages/anypytools/__pycache__/abcutils.cpython-37.pyc",
+        "path_type": "hardlink",
+        "sha256": "6c35fb1ba211db9ae47012cf8e730ef3c231c386ae5d424348ad1e41506344ae",
+        "sha256_in_prefix": "6c35fb1ba211db9ae47012cf8e730ef3c231c386ae5d424348ad1e41506344ae",
+        "size_in_bytes": 26395
+      },
+      {
+        "_path": "Lib/site-packages/anypytools/__pycache__/datautils.cpython-37.pyc",
+        "path_type": "hardlink",
+        "sha256": "8debbbd1a4e76523aa90c2c3a8ef827ec7285b69031328edac39fa3cc9ea22c8",
+        "sha256_in_prefix": "8debbbd1a4e76523aa90c2c3a8ef827ec7285b69031328edac39fa3cc9ea22c8",
+        "size_in_bytes": 5158
+      },
+      {
+        "_path": "Lib/site-packages/anypytools/__pycache__/h5py_wrapper.cpython-37.pyc",
+        "path_type": "hardlink",
+        "sha256": "07c8b9da20e48acc6cdacb140ba7a0466d9b6b47c4328e63788da9c9eb0e485e",
+        "sha256_in_prefix": "07c8b9da20e48acc6cdacb140ba7a0466d9b6b47c4328e63788da9c9eb0e485e",
+        "size_in_bytes": 4606
+      },
+      {
+        "_path": "Lib/site-packages/anypytools/__pycache__/macro_commands.cpython-37.pyc",
+        "path_type": "hardlink",
+        "sha256": "a7ed9a8d0e7259b646cfa8806a98c133cfbee1dc6d8d294aadfbd763f9d070ba",
+        "sha256_in_prefix": "a7ed9a8d0e7259b646cfa8806a98c133cfbee1dc6d8d294aadfbd763f9d070ba",
+        "size_in_bytes": 605
+      },
+      {
+        "_path": "Lib/site-packages/anypytools/__pycache__/macroutils.cpython-37.pyc",
+        "path_type": "hardlink",
+        "sha256": "7655a23557bd04469aa07c08c62df08a7746803bf2a5623cebff316dd526bc39",
+        "sha256_in_prefix": "7655a23557bd04469aa07c08c62df08a7746803bf2a5623cebff316dd526bc39",
+        "size_in_bytes": 31276
+      },
+      {
+        "_path": "Lib/site-packages/anypytools/__pycache__/pytest_plugin.cpython-37.pyc",
+        "path_type": "hardlink",
+        "sha256": "1c0379f9c5c05f940a20526432aacca4ba3684c2e79ae9f5a738a92cd46f42e5",
+        "sha256_in_prefix": "1c0379f9c5c05f940a20526432aacca4ba3684c2e79ae9f5a738a92cd46f42e5",
+        "size_in_bytes": 15933
+      },
+      {
+        "_path": "Lib/site-packages/anypytools/__pycache__/tools.cpython-37.pyc",
+        "path_type": "hardlink",
+        "sha256": "9077b4ba5aa296163c9a890eaf099bc7598c4b53f9d8c2815df7d6110675628c",
+        "sha256_in_prefix": "9077b4ba5aa296163c9a890eaf099bc7598c4b53f9d8c2815df7d6110675628c",
+        "size_in_bytes": 22783
+      },
+      {
+        "_path": "Lib/site-packages/anypytools/abcutils.py",
+        "path_type": "hardlink",
+        "sha256": "583cebae7e35db20467abc55e0a2c233eda3482c19bb0ca19d81b9a3898c6d45",
+        "sha256_in_prefix": "583cebae7e35db20467abc55e0a2c233eda3482c19bb0ca19d81b9a3898c6d45",
+        "size_in_bytes": 32853
+      },
+      {
+        "_path": "Lib/site-packages/anypytools/datautils.py",
+        "path_type": "hardlink",
+        "sha256": "81abbadc7d8a5206e4a1f3313f65fce6e099329dd90f4e4a236cd7094b002065",
+        "sha256_in_prefix": "81abbadc7d8a5206e4a1f3313f65fce6e099329dd90f4e4a236cd7094b002065",
+        "size_in_bytes": 5531
+      },
+      {
+        "_path": "Lib/site-packages/anypytools/h5py_wrapper.py",
+        "path_type": "hardlink",
+        "sha256": "86fa8a0ea64548aed898f737e8a3dfed008aa475d7798f0a40dbd6474bfbf9e8",
+        "sha256_in_prefix": "86fa8a0ea64548aed898f737e8a3dfed008aa475d7798f0a40dbd6474bfbf9e8",
+        "size_in_bytes": 4800
+      },
+      {
+        "_path": "Lib/site-packages/anypytools/macro_commands.py",
+        "path_type": "hardlink",
+        "sha256": "2311181ec2c40997fc8dbc447cd391355b3ff0c924b561eed3de7f77c164768b",
+        "sha256_in_prefix": "2311181ec2c40997fc8dbc447cd391355b3ff0c924b561eed3de7f77c164768b",
+        "size_in_bytes": 535
+      },
+      {
+        "_path": "Lib/site-packages/anypytools/macroutils.py",
+        "path_type": "hardlink",
+        "sha256": "86d289dfa1c8d9c365ee44594f0e320448f7de3aa4b73781aa2c0b397e0ddba2",
+        "sha256_in_prefix": "86d289dfa1c8d9c365ee44594f0e320448f7de3aa4b73781aa2c0b397e0ddba2",
+        "size_in_bytes": 31134
+      },
+      {
+        "_path": "Lib/site-packages/anypytools/pytest_plugin.py",
+        "path_type": "hardlink",
+        "sha256": "e7f8ce726e69f059a64ef04a67df089f26e7113996e6c479c520e57d260d8635",
+        "sha256_in_prefix": "e7f8ce726e69f059a64ef04a67df089f26e7113996e6c479c520e57d260d8635",
+        "size_in_bytes": 18256
+      },
+      {
+        "_path": "Lib/site-packages/anypytools/tools.py",
+        "path_type": "hardlink",
+        "sha256": "3ccd14adfcb7802f4f7e06ed262eaf5ab252ce699d6008ee7c003ad47074e641",
+        "sha256_in_prefix": "3ccd14adfcb7802f4f7e06ed262eaf5ab252ce699d6008ee7c003ad47074e641",
+        "size_in_bytes": 25092
+      },
+      {
+        "_path": "Menu/AnyPyToolsTutorial.json",
+        "path_type": "hardlink",
+        "sha256": "ea431342ac8d325cb19612a4e79488099012c722ad7bc205685cd4441a7da907",
+        "sha256_in_prefix": "ea431342ac8d325cb19612a4e79488099012c722ad7bc205685cd4441a7da907",
+        "size_in_bytes": 393
+      },
+      {
+        "_path": "Scripts/AnyPyToolsTutorial.bat",
+        "path_type": "hardlink",
+        "sha256": "4bee09dbe2c50e2f2a4f1e8f16d4d530e94c3264220a20239a067952ac51105c",
+        "sha256_in_prefix": "4bee09dbe2c50e2f2a4f1e8f16d4d530e94c3264220a20239a067952ac51105c",
+        "size_in_bytes": 140
+      },
+      {
+        "_path": "share/notebooks/AnyPyTools/.ipynb_checkpoints/AnyPyTools Tutorial-checkpoint.ipynb",
+        "path_type": "hardlink",
+        "sha256": "dc0920fd98ea0a7f06fafe538774969471710dd57728b5ef6463a9054a29931a",
+        "sha256_in_prefix": "dc0920fd98ea0a7f06fafe538774969471710dd57728b5ef6463a9054a29931a",
+        "size_in_bytes": 109690
+      },
+      {
+        "_path": "share/notebooks/AnyPyTools/00_AnyPyTools_tutorial.ipynb",
+        "path_type": "hardlink",
+        "sha256": "f9ad13edccad018afb3f555914d5b654690ba608cfd133c929dfd35c3ee42435",
+        "sha256_in_prefix": "f9ad13edccad018afb3f555914d5b654690ba608cfd133c929dfd35c3ee42435",
+        "size_in_bytes": 1948
+      },
+      {
+        "_path": "share/notebooks/AnyPyTools/00_Install_and_setup.ipynb",
+        "path_type": "hardlink",
+        "sha256": "df5dbed2bcc98d640b8c560dcea1c68d4c1cd66a60a71e5e92419c57d4d1a33a",
+        "sha256_in_prefix": "df5dbed2bcc98d640b8c560dcea1c68d4c1cd66a60a71e5e92419c57d4d1a33a",
+        "size_in_bytes": 1990
+      },
+      {
+        "_path": "share/notebooks/AnyPyTools/01_Getting_started_with_anypytools.ipynb",
+        "path_type": "hardlink",
+        "sha256": "37b5a987f9c9927486c17abd6dbbbe8dde8be25397440aaf102f11c2c731e8b3",
+        "sha256_in_prefix": "37b5a987f9c9927486c17abd6dbbbe8dde8be25397440aaf102f11c2c731e8b3",
+        "size_in_bytes": 34341
+      },
+      {
+        "_path": "share/notebooks/AnyPyTools/02_Generating_macros.ipynb",
+        "path_type": "hardlink",
+        "sha256": "b5c5b296973c5a2c011eb5d332037eb913c52fadb2d4c7ce84a9b47ac30d2ea3",
+        "sha256_in_prefix": "b5c5b296973c5a2c011eb5d332037eb913c52fadb2d4c7ce84a9b47ac30d2ea3",
+        "size_in_bytes": 74597
+      },
+      {
+        "_path": "share/notebooks/AnyPyTools/03_Working_with_output_from_Anybody.ipynb",
+        "path_type": "hardlink",
+        "sha256": "5606bcd67c9a0ee5ba81ab0944790e47daaa6473ccd9d6ae02539772f14e5352",
+        "sha256_in_prefix": "5606bcd67c9a0ee5ba81ab0944790e47daaa6473ccd9d6ae02539772f14e5352",
+        "size_in_bytes": 28621
+      },
+      {
+        "_path": "share/notebooks/AnyPyTools/04_Batch_processing_multiple_models.ipynb",
+        "path_type": "hardlink",
+        "sha256": "0e85e760aa9afdf76d42a46870f4eae41275089d31cfe8602ec7a562be45376b",
+        "sha256_in_prefix": "0e85e760aa9afdf76d42a46870f4eae41275089d31cfe8602ec7a562be45376b",
+        "size_in_bytes": 6268
+      },
+      {
+        "_path": "share/notebooks/AnyPyTools/05_Monte_Carlo_studies_etc.ipynb",
+        "path_type": "hardlink",
+        "sha256": "e348b961d44c033e094523d91ced546df861d6991bb6af2f4d24c171bc493cc1",
+        "sha256_in_prefix": "e348b961d44c033e094523d91ced546df861d6991bb6af2f4d24c171bc493cc1",
+        "size_in_bytes": 134297
+      },
+      {
+        "_path": "share/notebooks/AnyPyTools/06_Tips&Tricks.ipynb",
+        "path_type": "hardlink",
+        "sha256": "7480e337a752f8a461422bfaf28014739c8fee11b53f6283015aa353e4593657",
+        "sha256_in_prefix": "7480e337a752f8a461422bfaf28014739c8fee11b53f6283015aa353e4593657",
+        "size_in_bytes": 68229
+      },
+      {
+        "_path": "share/notebooks/AnyPyTools/Knee.any",
+        "path_type": "hardlink",
+        "sha256": "ef6fdbc2f3870cec963e8bbc8349f8360b17ff8fbc50c2f4571abde7937c3f78",
+        "sha256_in_prefix": "ef6fdbc2f3870cec963e8bbc8349f8360b17ff8fbc50c2f4571abde7937c3f78",
+        "size_in_bytes": 6038
+      },
+      {
+        "_path": "share/notebooks/AnyPyTools/Tutorial_files/BatchProcess/Demo.Arm2D.any",
+        "path_type": "hardlink",
+        "sha256": "2a7a8366713338ee51d71826622b80e34c59097054a333a6d09bb0a41997df0c",
+        "sha256_in_prefix": "2a7a8366713338ee51d71826622b80e34c59097054a333a6d09bb0a41997df0c",
+        "size_in_bytes": 10236
+      },
+      {
+        "_path": "share/notebooks/AnyPyTools/Tutorial_files/BatchProcess/Output/TestOutput_model1.csv",
+        "path_type": "hardlink",
+        "sha256": "abc90d9fb82badfdb534ee5b584e0560d1dc2deffa392bf74724ac840b3c33a9",
+        "sha256_in_prefix": "abc90d9fb82badfdb534ee5b584e0560d1dc2deffa392bf74724ac840b3c33a9",
+        "size_in_bytes": 3951
+      },
+      {
+        "_path": "share/notebooks/AnyPyTools/Tutorial_files/BatchProcess/Output/TestOutput_model2.csv",
+        "path_type": "hardlink",
+        "sha256": "f9c0b1c8c4766d57ee3335f1adc6964f57395d8421944ac429f9421b9851ec30",
+        "sha256_in_prefix": "f9c0b1c8c4766d57ee3335f1adc6964f57395d8421944ac429f9421b9851ec30",
+        "size_in_bytes": 3951
+      },
+      {
+        "_path": "share/notebooks/AnyPyTools/Tutorial_files/BatchProcess/Output/TestOutput_model3.csv",
+        "path_type": "hardlink",
+        "sha256": "35ff5cbc1afec6a4a3f58fc6cd00741bea0f8a8d46f299ff006b79057ab5565a",
+        "sha256_in_prefix": "35ff5cbc1afec6a4a3f58fc6cd00741bea0f8a8d46f299ff006b79057ab5565a",
+        "size_in_bytes": 3951
+      },
+      {
+        "_path": "share/notebooks/AnyPyTools/Tutorial_files/BatchProcess/Output/TestOutput_model4.csv",
+        "path_type": "hardlink",
+        "sha256": "35ff5cbc1afec6a4a3f58fc6cd00741bea0f8a8d46f299ff006b79057ab5565a",
+        "sha256_in_prefix": "35ff5cbc1afec6a4a3f58fc6cd00741bea0f8a8d46f299ff006b79057ab5565a",
+        "size_in_bytes": 3951
+      },
+      {
+        "_path": "share/notebooks/AnyPyTools/Tutorial_files/BatchProcess/Output/TestOutput_model5.csv",
+        "path_type": "hardlink",
+        "sha256": "1180d69a9502a365b2ea92d2eedb9a1302c2a47d506950d6c07b9f2fa345d661",
+        "sha256_in_prefix": "1180d69a9502a365b2ea92d2eedb9a1302c2a47d506950d6c07b9f2fa345d661",
+        "size_in_bytes": 3951
+      },
+      {
+        "_path": "share/notebooks/AnyPyTools/Tutorial_files/BatchProcess/Output/TestOutput_model6.csv",
+        "path_type": "hardlink",
+        "sha256": "d4be96580864c51a951d4f4d725073848708f0154999884765dbd32ad9f1c200",
+        "sha256_in_prefix": "d4be96580864c51a951d4f4d725073848708f0154999884765dbd32ad9f1c200",
+        "size_in_bytes": 3951
+      },
+      {
+        "_path": "share/notebooks/AnyPyTools/Tutorial_files/BatchProcess/Output/TestOutput_model7.csv",
+        "path_type": "hardlink",
+        "sha256": "81f29f77b14aa946b791759807e2cf1df1df6cfc5264b147cfd63a789d83c4ac",
+        "sha256_in_prefix": "81f29f77b14aa946b791759807e2cf1df1df6cfc5264b147cfd63a789d83c4ac",
+        "size_in_bytes": 3951
+      },
+      {
+        "_path": "share/notebooks/AnyPyTools/Tutorial_files/BatchProcess/Output/TestOutput_model8.csv",
+        "path_type": "hardlink",
+        "sha256": "f872e52204b942dd2b487337fc3f5c07dc87004fd42cadac4cf450605c582f6d",
+        "sha256_in_prefix": "f872e52204b942dd2b487337fc3f5c07dc87004fd42cadac4cf450605c582f6d",
+        "size_in_bytes": 3951
+      },
+      {
+        "_path": "share/notebooks/AnyPyTools/Tutorial_files/BatchProcess/Output/TestOutput_model9.csv",
+        "path_type": "hardlink",
+        "sha256": "b10303850ab9fd5b33eaf4c6208e815ff88b25560e94f76e97873d364bbed501",
+        "sha256_in_prefix": "b10303850ab9fd5b33eaf4c6208e815ff88b25560e94f76e97873d364bbed501",
+        "size_in_bytes": 3951
+      },
+      {
+        "_path": "share/notebooks/AnyPyTools/Tutorial_files/BatchProcess/Output/dummy.txt",
+        "path_type": "hardlink",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "sha256_in_prefix": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "size_in_bytes": 0
+      },
+      {
+        "_path": "share/notebooks/AnyPyTools/Tutorial_files/BatchProcess/RunExample.bat",
+        "path_type": "hardlink",
+        "sha256": "5044a267b371db9038cb0833432f53b4d5cd310cb6ea431f78e27a0faf29fa6a",
+        "sha256_in_prefix": "5044a267b371db9038cb0833432f53b4d5cd310cb6ea431f78e27a0faf29fa6a",
+        "size_in_bytes": 38
+      },
+      {
+        "_path": "share/notebooks/AnyPyTools/Tutorial_files/BatchProcess/__pycache__/batchprocess.cpython-37.pyc",
+        "path_type": "hardlink",
+        "sha256": "d8cfe6ee959c89d430c98d9506e0e668c0bbad57eaf84426b29adc1bedea5322",
+        "sha256_in_prefix": "d8cfe6ee959c89d430c98d9506e0e668c0bbad57eaf84426b29adc1bedea5322",
+        "size_in_bytes": 415
+      },
+      {
+        "_path": "share/notebooks/AnyPyTools/Tutorial_files/BatchProcess/batchprocess.py",
+        "path_type": "hardlink",
+        "sha256": "04f483e6a362980bbc30e2e58e9ea5683b9120c81f40570cc0ca8461d1fe4c40",
+        "sha256_in_prefix": "04f483e6a362980bbc30e2e58e9ea5683b9120c81f40570cc0ca8461d1fe4c40",
+        "size_in_bytes": 240
+      },
+      {
+        "_path": "share/notebooks/AnyPyTools/Tutorial_files/BatchProcess/model1/main.any",
+        "path_type": "hardlink",
+        "sha256": "7e6a39af685cce2dbd0cfc81c63ea3d56c68f4196ce115d6f86b38a1ebc86363",
+        "sha256_in_prefix": "7e6a39af685cce2dbd0cfc81c63ea3d56c68f4196ce115d6f86b38a1ebc86363",
+        "size_in_bytes": 119
+      },
+      {
+        "_path": "share/notebooks/AnyPyTools/Tutorial_files/BatchProcess/model2/main.any",
+        "path_type": "hardlink",
+        "sha256": "e268d26c5075ccf43b12423958baf182040258bcfa7f9e3c4c7359ae490e9325",
+        "sha256_in_prefix": "e268d26c5075ccf43b12423958baf182040258bcfa7f9e3c4c7359ae490e9325",
+        "size_in_bytes": 119
+      },
+      {
+        "_path": "share/notebooks/AnyPyTools/Tutorial_files/BatchProcess/model3/main.any",
+        "path_type": "hardlink",
+        "sha256": "f5439c4ffb6cd7ab52a8b7880b9997b627efa96db61be4109011bd32977dcc38",
+        "sha256_in_prefix": "f5439c4ffb6cd7ab52a8b7880b9997b627efa96db61be4109011bd32977dcc38",
+        "size_in_bytes": 119
+      },
+      {
+        "_path": "share/notebooks/AnyPyTools/Tutorial_files/BatchProcess/model4/main.any",
+        "path_type": "hardlink",
+        "sha256": "f5439c4ffb6cd7ab52a8b7880b9997b627efa96db61be4109011bd32977dcc38",
+        "sha256_in_prefix": "f5439c4ffb6cd7ab52a8b7880b9997b627efa96db61be4109011bd32977dcc38",
+        "size_in_bytes": 119
+      },
+      {
+        "_path": "share/notebooks/AnyPyTools/Tutorial_files/BatchProcess/model5/main.any",
+        "path_type": "hardlink",
+        "sha256": "737f715dbd57a39dd009b08f76893b0f45b6a27c2b3b2d0694675a8b918f011e",
+        "sha256_in_prefix": "737f715dbd57a39dd009b08f76893b0f45b6a27c2b3b2d0694675a8b918f011e",
+        "size_in_bytes": 119
+      },
+      {
+        "_path": "share/notebooks/AnyPyTools/Tutorial_files/BatchProcess/model6/main.any",
+        "path_type": "hardlink",
+        "sha256": "166b1601936fc820b9c5cfccc075ceb4713b2f9a21f5457aeb794f069ad2b5de",
+        "sha256_in_prefix": "166b1601936fc820b9c5cfccc075ceb4713b2f9a21f5457aeb794f069ad2b5de",
+        "size_in_bytes": 119
+      },
+      {
+        "_path": "share/notebooks/AnyPyTools/Tutorial_files/BatchProcess/model7/main.any",
+        "path_type": "hardlink",
+        "sha256": "2d2542487e8ecb89fd64385dbe6ab9899f13a2b9e461a709430b26fea7f937c2",
+        "sha256_in_prefix": "2d2542487e8ecb89fd64385dbe6ab9899f13a2b9e461a709430b26fea7f937c2",
+        "size_in_bytes": 119
+      },
+      {
+        "_path": "share/notebooks/AnyPyTools/Tutorial_files/BatchProcess/model8/main.any",
+        "path_type": "hardlink",
+        "sha256": "9a9a4150f70605921b9211e36c36920ece9b7ecb7a4371b4171f4ab075623f06",
+        "sha256_in_prefix": "9a9a4150f70605921b9211e36c36920ece9b7ecb7a4371b4171f4ab075623f06",
+        "size_in_bytes": 119
+      },
+      {
+        "_path": "share/notebooks/AnyPyTools/Tutorial_files/BatchProcess/model9/main.any",
+        "path_type": "hardlink",
+        "sha256": "9d02a75303172785aa8fecd87f320dc64821368e09d4e64568565c23d4537165",
+        "sha256_in_prefix": "9d02a75303172785aa8fecd87f320dc64821368e09d4e64568565c23d4537165",
+        "size_in_bytes": 119
+      },
+      {
+        "_path": "share/notebooks/AnyPyTools/Tutorial_files/BatchProcessExample.zip",
+        "path_type": "hardlink",
+        "sha256": "ce861e1d26b9de0c4ac54608f807e969676e6677f8afcb5787d4289c64118dea",
+        "sha256_in_prefix": "ce861e1d26b9de0c4ac54608f807e969676e6677f8afcb5787d4289c64118dea",
+        "size_in_bytes": 16222
+      },
+      {
+        "_path": "share/notebooks/AnyPyTools/Tutorial_files/SimpleMacro/Collected results.xlsx",
+        "path_type": "hardlink",
+        "sha256": "489f5f50f408fc06b8c6623a6dac3f2a55cf7e84dd558d438ab1edc90c1683a9",
+        "sha256_in_prefix": "489f5f50f408fc06b8c6623a6dac3f2a55cf7e84dd558d438ab1edc90c1683a9",
+        "size_in_bytes": 39567
+      },
+      {
+        "_path": "share/notebooks/AnyPyTools/Tutorial_files/SimpleMacro/Demo.Arm2D.any",
+        "path_type": "hardlink",
+        "sha256": "cfefa52488295ceaa74c811eb26adbe4f8a57875d35b2724ba782737124f35a1",
+        "sha256_in_prefix": "cfefa52488295ceaa74c811eb26adbe4f8a57875d35b2724ba782737124f35a1",
+        "size_in_bytes": 10394
+      },
+      {
+        "_path": "share/notebooks/AnyPyTools/Tutorial_files/SimpleMacro/RunExample.bat",
+        "path_type": "hardlink",
+        "sha256": "293017d7edd94f42c91b0a63057b6c0a4fc70014d46f58fe3b555a81e25a087d",
+        "sha256_in_prefix": "293017d7edd94f42c91b0a63057b6c0a4fc70014d46f58fe3b555a81e25a087d",
+        "size_in_bytes": 42
+      },
+      {
+        "_path": "share/notebooks/AnyPyTools/Tutorial_files/SimpleMacro/__pycache__/python_parameter.cpython-37.pyc",
+        "path_type": "hardlink",
+        "sha256": "16ccdcf8e36475e3d3e54772c3b53b483a037f71de05c0af48e4f80a87629f0e",
+        "sha256_in_prefix": "16ccdcf8e36475e3d3e54772c3b53b483a037f71de05c0af48e4f80a87629f0e",
+        "size_in_bytes": 544
+      },
+      {
+        "_path": "share/notebooks/AnyPyTools/Tutorial_files/SimpleMacro/python_parameter.py",
+        "path_type": "hardlink",
+        "sha256": "d29388d7575929daaa254415871a3903d76da1003550790eef3f9f9379a7ff72",
+        "sha256_in_prefix": "d29388d7575929daaa254415871a3903d76da1003550790eef3f9f9379a7ff72",
+        "size_in_bytes": 398
+      },
+      {
+        "_path": "share/notebooks/AnyPyTools/Tutorial_files/knee.gif",
+        "path_type": "hardlink",
+        "sha256": "d883d2cbd8f148331c60a8bf945937321fdb9b80e557ec5468f0fd8be3f287ae",
+        "sha256_in_prefix": "d883d2cbd8f148331c60a8bf945937321fdb9b80e557ec5468f0fd8be3f287ae",
+        "size_in_bytes": 2673501
+      },
+      {
+        "_path": "share/notebooks/AnyPyTools/Tutorial_files/menu1.png",
+        "path_type": "hardlink",
+        "sha256": "3e38b1daf83f9f5b089a9ec4e5fcb012b8b5f9a56b455454be236abcdf9c575f",
+        "sha256_in_prefix": "3e38b1daf83f9f5b089a9ec4e5fcb012b8b5f9a56b455454be236abcdf9c575f",
+        "size_in_bytes": 7565
+      },
+      {
+        "_path": "share/notebooks/AnyPyTools/Tutorial_files/relax.png",
+        "path_type": "hardlink",
+        "sha256": "7e480f0dcd35b1309185fa1183e6f950688ab7e1646d003450bd29d3b0476063",
+        "sha256_in_prefix": "7e480f0dcd35b1309185fa1183e6f950688ab7e1646d003450bd29d3b0476063",
+        "size_in_bytes": 136761
+      },
+      {
+        "_path": "share/notebooks/AnyPyTools/custom.css",
+        "path_type": "hardlink",
+        "sha256": "f174d0c4d05dc6e51e781a0030939fddaf5e59532c4d44068d48afd0d23996ad",
+        "sha256_in_prefix": "f174d0c4d05dc6e51e781a0030939fddaf5e59532c4d44068d48afd0d23996ad",
+        "size_in_bytes": 1825
+      },
+      {
+        "_path": "share/notebooks/AnyPyTools/knee.gif",
+        "path_type": "hardlink",
+        "sha256": "d883d2cbd8f148331c60a8bf945937321fdb9b80e557ec5468f0fd8be3f287ae",
+        "sha256_in_prefix": "d883d2cbd8f148331c60a8bf945937321fdb9b80e557ec5468f0fd8be3f287ae",
+        "size_in_bytes": 2673501
+      },
+      {
+        "_path": "share/notebooks/AnyPyTools/output.anydata.h5",
+        "path_type": "hardlink",
+        "sha256": "4978a5fdc71db300fa0eb5fbe4bfaad1bb9fabf495155c5fd1d287d6cca7536b",
+        "sha256_in_prefix": "4978a5fdc71db300fa0eb5fbe4bfaad1bb9fabf495155c5fd1d287d6cca7536b",
+        "size_in_bytes": 793296
+      }
+    ],
+    "paths_version": 1
+  },
+  "platform": "win32",
+  "requested_spec": "conda-forge/win-64::anypytools==1.4.4=py37hc8dfbb8_0",
+  "sha256": "0cdad218edb8d1d36f4a04e73ea7ce8b560f18b70b2e1430bfeccc2d9312a9d9",
+  "size": 6014602,
+  "subdir": "win-64",
+  "timestamp": 1593590318275,
+  "track_features": "",
+  "url": "https://conda.anaconda.org/conda-forge/win-64/anypytools-1.4.4-py37hc8dfbb8_0.tar.bz2",
+  "version": "1.4.4"
+}

@@ -1,0 +1,380 @@
+{
+  "build": "py_0",
+  "build_number": 0,
+  "channel": "https://conda.anaconda.org/conda-forge/noarch",
+  "constrains": [],
+  "depends": [
+    "python >=3.3"
+  ],
+  "extracted_package_dir": "C:\\Anaconda3_64\\pkgs\\pypubsub-4.0.3-py_0",
+  "features": "",
+  "files": [
+    "Lib/site-packages/Pypubsub-4.0.3.dist-info/INSTALLER",
+    "Lib/site-packages/Pypubsub-4.0.3.dist-info/METADATA",
+    "Lib/site-packages/Pypubsub-4.0.3.dist-info/RECORD",
+    "Lib/site-packages/Pypubsub-4.0.3.dist-info/WHEEL",
+    "Lib/site-packages/Pypubsub-4.0.3.dist-info/top_level.txt",
+    "Lib/site-packages/pubsub/LICENSE_BSD_Simple.txt",
+    "Lib/site-packages/pubsub/RELEASE_NOTES.txt",
+    "Lib/site-packages/pubsub/__init__.py",
+    "Lib/site-packages/pubsub/core/__init__.py",
+    "Lib/site-packages/pubsub/core/annotations.py",
+    "Lib/site-packages/pubsub/core/callables.py",
+    "Lib/site-packages/pubsub/core/listener.py",
+    "Lib/site-packages/pubsub/core/notificationmgr.py",
+    "Lib/site-packages/pubsub/core/publisher.py",
+    "Lib/site-packages/pubsub/core/topicargspec.py",
+    "Lib/site-packages/pubsub/core/topicdefnprovider.py",
+    "Lib/site-packages/pubsub/core/topicexc.py",
+    "Lib/site-packages/pubsub/core/topicmgr.py",
+    "Lib/site-packages/pubsub/core/topicobj.py",
+    "Lib/site-packages/pubsub/core/topictreetraverser.py",
+    "Lib/site-packages/pubsub/core/topicutils.py",
+    "Lib/site-packages/pubsub/core/weakmethod.py",
+    "Lib/site-packages/pubsub/pub.py",
+    "Lib/site-packages/pubsub/utils/__init__.py",
+    "Lib/site-packages/pubsub/utils/exchandling.py",
+    "Lib/site-packages/pubsub/utils/misc.py",
+    "Lib/site-packages/pubsub/utils/notification.py",
+    "Lib/site-packages/pubsub/utils/topictreeprinter.py",
+    "Lib/site-packages/pubsub/utils/xmltopicdefnprovider.py",
+    "Lib/site-packages/pubsub/__pycache__/__init__.cpython-37.pyc",
+    "Lib/site-packages/pubsub/core/__pycache__/__init__.cpython-37.pyc",
+    "Lib/site-packages/pubsub/core/__pycache__/annotations.cpython-37.pyc",
+    "Lib/site-packages/pubsub/core/__pycache__/callables.cpython-37.pyc",
+    "Lib/site-packages/pubsub/core/__pycache__/listener.cpython-37.pyc",
+    "Lib/site-packages/pubsub/core/__pycache__/notificationmgr.cpython-37.pyc",
+    "Lib/site-packages/pubsub/core/__pycache__/publisher.cpython-37.pyc",
+    "Lib/site-packages/pubsub/core/__pycache__/topicargspec.cpython-37.pyc",
+    "Lib/site-packages/pubsub/core/__pycache__/topicdefnprovider.cpython-37.pyc",
+    "Lib/site-packages/pubsub/core/__pycache__/topicexc.cpython-37.pyc",
+    "Lib/site-packages/pubsub/core/__pycache__/topicmgr.cpython-37.pyc",
+    "Lib/site-packages/pubsub/core/__pycache__/topicobj.cpython-37.pyc",
+    "Lib/site-packages/pubsub/core/__pycache__/topictreetraverser.cpython-37.pyc",
+    "Lib/site-packages/pubsub/core/__pycache__/topicutils.cpython-37.pyc",
+    "Lib/site-packages/pubsub/core/__pycache__/weakmethod.cpython-37.pyc",
+    "Lib/site-packages/pubsub/__pycache__/pub.cpython-37.pyc",
+    "Lib/site-packages/pubsub/utils/__pycache__/__init__.cpython-37.pyc",
+    "Lib/site-packages/pubsub/utils/__pycache__/exchandling.cpython-37.pyc",
+    "Lib/site-packages/pubsub/utils/__pycache__/misc.cpython-37.pyc",
+    "Lib/site-packages/pubsub/utils/__pycache__/notification.cpython-37.pyc",
+    "Lib/site-packages/pubsub/utils/__pycache__/topictreeprinter.cpython-37.pyc",
+    "Lib/site-packages/pubsub/utils/__pycache__/xmltopicdefnprovider.cpython-37.pyc"
+  ],
+  "fn": "pypubsub-4.0.3-py_0.tar.bz2",
+  "license": "BSD-2-Clause",
+  "license_family": "BSD",
+  "link": {
+    "source": "C:\\Anaconda3_64\\pkgs\\pypubsub-4.0.3-py_0",
+    "type": 1
+  },
+  "md5": "687d5d7bc59cb73a0e065323774c1f62",
+  "name": "pypubsub",
+  "noarch": "python",
+  "package_tarball_full_path": "C:\\Anaconda3_64\\pkgs\\pypubsub-4.0.3-py_0.tar.bz2",
+  "package_type": "noarch_python",
+  "paths_data": {
+    "paths": [
+      {
+        "_path": "site-packages/Pypubsub-4.0.3.dist-info/INSTALLER",
+        "path_type": "hardlink",
+        "sha256": "ceebae7b8927a3227e5303cf5e0f1f7b34bb542ad7250ac03fbcde36ec2f1508",
+        "sha256_in_prefix": "ceebae7b8927a3227e5303cf5e0f1f7b34bb542ad7250ac03fbcde36ec2f1508",
+        "size_in_bytes": 4
+      },
+      {
+        "_path": "site-packages/Pypubsub-4.0.3.dist-info/METADATA",
+        "path_type": "hardlink",
+        "sha256": "945b959ae822a3378d4854de2d264f147ef010c68e894c208c04421cd5e12bd4",
+        "sha256_in_prefix": "945b959ae822a3378d4854de2d264f147ef010c68e894c208c04421cd5e12bd4",
+        "size_in_bytes": 2164
+      },
+      {
+        "_path": "site-packages/Pypubsub-4.0.3.dist-info/RECORD",
+        "path_type": "hardlink",
+        "sha256": "6545bf7e3f8ae871ea3758e71d71d0b541ed13d8418509fb2bd6c5c3f17eb5b6",
+        "sha256_in_prefix": "6545bf7e3f8ae871ea3758e71d71d0b541ed13d8418509fb2bd6c5c3f17eb5b6",
+        "size_in_bytes": 3577
+      },
+      {
+        "_path": "site-packages/Pypubsub-4.0.3.dist-info/WHEEL",
+        "path_type": "hardlink",
+        "sha256": "1817faef8e5327c3d44957f4d0b4d0b3fc3e3ac5330fd59cefde6d149b74194b",
+        "sha256_in_prefix": "1817faef8e5327c3d44957f4d0b4d0b3fc3e3ac5330fd59cefde6d149b74194b",
+        "size_in_bytes": 93
+      },
+      {
+        "_path": "site-packages/Pypubsub-4.0.3.dist-info/top_level.txt",
+        "path_type": "hardlink",
+        "sha256": "9f037094991473a7adc044d3cd6ddc11a57de3822c487cef3d93cd537ae4f7bd",
+        "sha256_in_prefix": "9f037094991473a7adc044d3cd6ddc11a57de3822c487cef3d93cd537ae4f7bd",
+        "size_in_bytes": 7
+      },
+      {
+        "_path": "site-packages/pubsub/LICENSE_BSD_Simple.txt",
+        "path_type": "hardlink",
+        "sha256": "42b972151ea0ca1fba614bec8a057abafba9aefca49130e1d86473aad33a2950",
+        "sha256_in_prefix": "42b972151ea0ca1fba614bec8a057abafba9aefca49130e1d86473aad33a2950",
+        "size_in_bytes": 1313
+      },
+      {
+        "_path": "site-packages/pubsub/RELEASE_NOTES.txt",
+        "path_type": "hardlink",
+        "sha256": "6e892fd1e974876aa1507bc2c7f537ab5ce7a89064b6270270f75e5c7e9d2632",
+        "sha256_in_prefix": "6e892fd1e974876aa1507bc2c7f537ab5ce7a89064b6270270f75e5c7e9d2632",
+        "size_in_bytes": 1750
+      },
+      {
+        "_path": "site-packages/pubsub/__init__.py",
+        "path_type": "hardlink",
+        "sha256": "6befb807eaa0334ec18a9f3ec1e3ba8e236e8f4790ca3df4a6510e44a5fbb9cd",
+        "sha256_in_prefix": "6befb807eaa0334ec18a9f3ec1e3ba8e236e8f4790ca3df4a6510e44a5fbb9cd",
+        "size_in_bytes": 251
+      },
+      {
+        "_path": "site-packages/pubsub/core/__init__.py",
+        "path_type": "hardlink",
+        "sha256": "0511ab57ef3e74d98bbb5bbd76578861a9fcbfab42a3d96abf8e515a1448c447",
+        "sha256_in_prefix": "0511ab57ef3e74d98bbb5bbd76578861a9fcbfab42a3d96abf8e515a1448c447",
+        "size_in_bytes": 1089
+      },
+      {
+        "_path": "site-packages/pubsub/core/annotations.py",
+        "path_type": "hardlink",
+        "sha256": "4797eb99ca74bbdabc1c128260ac2b4b4dcc4dac590fc3d8231b0fe9d3d7d1cd",
+        "sha256_in_prefix": "4797eb99ca74bbdabc1c128260ac2b4b4dcc4dac590fc3d8231b0fe9d3d7d1cd",
+        "size_in_bytes": 1147
+      },
+      {
+        "_path": "site-packages/pubsub/core/callables.py",
+        "path_type": "hardlink",
+        "sha256": "26be559b113c3ae944a2778d368840d2578b7a6b269dcefb26c16d074ada8325",
+        "sha256_in_prefix": "26be559b113c3ae944a2778d368840d2578b7a6b269dcefb26c16d074ada8325",
+        "size_in_bytes": 7693
+      },
+      {
+        "_path": "site-packages/pubsub/core/listener.py",
+        "path_type": "hardlink",
+        "sha256": "afc47d27f5d59f1f9e6557ef2fcf908c35bfdd3d1aae9d86833f400c7d182e6d",
+        "sha256_in_prefix": "afc47d27f5d59f1f9e6557ef2fcf908c35bfdd3d1aae9d86833f400c7d182e6d",
+        "size_in_bytes": 12708
+      },
+      {
+        "_path": "site-packages/pubsub/core/notificationmgr.py",
+        "path_type": "hardlink",
+        "sha256": "b5b968e0cb2cfdfc863002999c063dea57d34742675a1ea117567ed2641e42b6",
+        "sha256_in_prefix": "b5b968e0cb2cfdfc863002999c063dea57d34742675a1ea117567ed2641e42b6",
+        "size_in_bytes": 8056
+      },
+      {
+        "_path": "site-packages/pubsub/core/publisher.py",
+        "path_type": "hardlink",
+        "sha256": "74d39bd401b47e9dc1838dbf1a4a6d472aa5844253a0d2322d02fee3633f4295",
+        "sha256_in_prefix": "74d39bd401b47e9dc1838dbf1a4a6d472aa5844253a0d2322d02fee3633f4295",
+        "size_in_bytes": 9502
+      },
+      {
+        "_path": "site-packages/pubsub/core/topicargspec.py",
+        "path_type": "hardlink",
+        "sha256": "0ba0ec6f2ca162c918acc08d3cd9b67aa0063a13cf41fbb48acac952879fb81c",
+        "sha256_in_prefix": "0ba0ec6f2ca162c918acc08d3cd9b67aa0063a13cf41fbb48acac952879fb81c",
+        "size_in_bytes": 13500
+      },
+      {
+        "_path": "site-packages/pubsub/core/topicdefnprovider.py",
+        "path_type": "hardlink",
+        "sha256": "9b816fbcea825b7472f330ec0e167ad899410b0c7a9242c14d5e8dbc7c0ab8bb",
+        "sha256_in_prefix": "9b816fbcea825b7472f330ec0e167ad899410b0c7a9242c14d5e8dbc7c0ab8bb",
+        "size_in_bytes": 25298
+      },
+      {
+        "_path": "site-packages/pubsub/core/topicexc.py",
+        "path_type": "hardlink",
+        "sha256": "fa9bac6772c81f3239be488240a945ce8621f3657678d54d65c67ce276869841",
+        "sha256_in_prefix": "fa9bac6772c81f3239be488240a945ce8621f3657678d54d65c67ce276869841",
+        "size_in_bytes": 2920
+      },
+      {
+        "_path": "site-packages/pubsub/core/topicmgr.py",
+        "path_type": "hardlink",
+        "sha256": "3248a9ef64c996cdcf2c128c20e19b8f4da6f9535120f035e0d819f8cceed98c",
+        "sha256_in_prefix": "3248a9ef64c996cdcf2c128c20e19b8f4da6f9535120f035e0d819f8cceed98c",
+        "size_in_bytes": 19085
+      },
+      {
+        "_path": "site-packages/pubsub/core/topicobj.py",
+        "path_type": "hardlink",
+        "sha256": "e048158a009e6db8b0c29cea9b955f69fa9150726370ebd2f27a566d095a220a",
+        "sha256_in_prefix": "e048158a009e6db8b0c29cea9b955f69fa9150726370ebd2f27a566d095a220a",
+        "size_in_bytes": 21526
+      },
+      {
+        "_path": "site-packages/pubsub/core/topictreetraverser.py",
+        "path_type": "hardlink",
+        "sha256": "6c67c30cb2f5424983c35df6444a9a56152f6d86e83f2f2e13ec6eedb7275600",
+        "sha256_in_prefix": "6c67c30cb2f5424983c35df6444a9a56152f6d86e83f2f2e13ec6eedb7275600",
+        "size_in_bytes": 5304
+      },
+      {
+        "_path": "site-packages/pubsub/core/topicutils.py",
+        "path_type": "hardlink",
+        "sha256": "4a14af531c71728baf943a4bc3965aee64fe4862d92940a9a58dc13d997eb22b",
+        "sha256_in_prefix": "4a14af531c71728baf943a4bc3965aee64fe4862d92940a9a58dc13d997eb22b",
+        "size_in_bytes": 3995
+      },
+      {
+        "_path": "site-packages/pubsub/core/weakmethod.py",
+        "path_type": "hardlink",
+        "sha256": "be87328ea7aee71f5ea53531f4e40eec4a169bbac0f217abee0f8a738136139c",
+        "sha256_in_prefix": "be87328ea7aee71f5ea53531f4e40eec4a169bbac0f217abee0f8a738136139c",
+        "size_in_bytes": 1384
+      },
+      {
+        "_path": "site-packages/pubsub/pub.py",
+        "path_type": "hardlink",
+        "sha256": "8608cee122822b72f593cfba7b0e42c19620459664df809937ac43d0a9063021",
+        "sha256_in_prefix": "8608cee122822b72f593cfba7b0e42c19620459664df809937ac43d0a9063021",
+        "size_in_bytes": 6058
+      },
+      {
+        "_path": "site-packages/pubsub/utils/__init__.py",
+        "path_type": "hardlink",
+        "sha256": "44b1ee01a497ea951c1a0565a5c21e7e4eb4ea8ce4064bb0a2f884697e27fd85",
+        "sha256_in_prefix": "44b1ee01a497ea951c1a0565a5c21e7e4eb4ea8ce4064bb0a2f884697e27fd85",
+        "size_in_bytes": 602
+      },
+      {
+        "_path": "site-packages/pubsub/utils/exchandling.py",
+        "path_type": "hardlink",
+        "sha256": "867e8ca18779b832ceb31cf5c077293f9e5d00c5cdb5a2e603be1587dcb2d7be",
+        "sha256_in_prefix": "867e8ca18779b832ceb31cf5c077293f9e5d00c5cdb5a2e603be1587dcb2d7be",
+        "size_in_bytes": 4232
+      },
+      {
+        "_path": "site-packages/pubsub/utils/misc.py",
+        "path_type": "hardlink",
+        "sha256": "d41d47cce86c5233ef8abdc6fbcae8d04a18bbb9667f203940f7cf1a621f8097",
+        "sha256_in_prefix": "d41d47cce86c5233ef8abdc6fbcae8d04a18bbb9667f203940f7cf1a621f8097",
+        "size_in_bytes": 1149
+      },
+      {
+        "_path": "site-packages/pubsub/utils/notification.py",
+        "path_type": "hardlink",
+        "sha256": "5ef591cb8fb0c1204164b8c0e365ffedc91e452f7e0124d23151891cd0ed2e98",
+        "sha256_in_prefix": "5ef591cb8fb0c1204164b8c0e365ffedc91e452f7e0124d23151891cd0ed2e98",
+        "size_in_bytes": 13463
+      },
+      {
+        "_path": "site-packages/pubsub/utils/topictreeprinter.py",
+        "path_type": "hardlink",
+        "sha256": "467676767f68ca3443611f0aeb484a89e1ace35b9ede00fbd14f3995ddede34a",
+        "sha256_in_prefix": "467676767f68ca3443611f0aeb484a89e1ace35b9ede00fbd14f3995ddede34a",
+        "size_in_bytes": 7934
+      },
+      {
+        "_path": "site-packages/pubsub/utils/xmltopicdefnprovider.py",
+        "path_type": "hardlink",
+        "sha256": "77d3b69522dbc923ed40ec06c88dc70534eb530dbde168f3c9a9c4ece6f1dfb6",
+        "sha256_in_prefix": "77d3b69522dbc923ed40ec06c88dc70534eb530dbde168f3c9a9c4ece6f1dfb6",
+        "size_in_bytes": 8625
+      },
+      {
+        "_path": "Lib/site-packages/pubsub/__pycache__/__init__.cpython-37.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "Lib/site-packages/pubsub/core/__pycache__/__init__.cpython-37.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "Lib/site-packages/pubsub/core/__pycache__/annotations.cpython-37.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "Lib/site-packages/pubsub/core/__pycache__/callables.cpython-37.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "Lib/site-packages/pubsub/core/__pycache__/listener.cpython-37.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "Lib/site-packages/pubsub/core/__pycache__/notificationmgr.cpython-37.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "Lib/site-packages/pubsub/core/__pycache__/publisher.cpython-37.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "Lib/site-packages/pubsub/core/__pycache__/topicargspec.cpython-37.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "Lib/site-packages/pubsub/core/__pycache__/topicdefnprovider.cpython-37.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "Lib/site-packages/pubsub/core/__pycache__/topicexc.cpython-37.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "Lib/site-packages/pubsub/core/__pycache__/topicmgr.cpython-37.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "Lib/site-packages/pubsub/core/__pycache__/topicobj.cpython-37.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "Lib/site-packages/pubsub/core/__pycache__/topictreetraverser.cpython-37.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "Lib/site-packages/pubsub/core/__pycache__/topicutils.cpython-37.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "Lib/site-packages/pubsub/core/__pycache__/weakmethod.cpython-37.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "Lib/site-packages/pubsub/__pycache__/pub.cpython-37.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "Lib/site-packages/pubsub/utils/__pycache__/__init__.cpython-37.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "Lib/site-packages/pubsub/utils/__pycache__/exchandling.cpython-37.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "Lib/site-packages/pubsub/utils/__pycache__/misc.cpython-37.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "Lib/site-packages/pubsub/utils/__pycache__/notification.cpython-37.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "Lib/site-packages/pubsub/utils/__pycache__/topictreeprinter.cpython-37.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "Lib/site-packages/pubsub/utils/__pycache__/xmltopicdefnprovider.cpython-37.pyc",
+        "path_type": "pyc_file"
+      }
+    ],
+    "paths_version": 1
+  },
+  "requested_spec": "conda-forge/noarch::pypubsub==4.0.3=py_0",
+  "sha256": "827c353ded44cbabbd39aa5e8530c3094f73e79f543287b8e95c212a3126f19c",
+  "size": 45120,
+  "subdir": "noarch",
+  "timestamp": 1549131631381,
+  "track_features": "",
+  "url": "https://conda.anaconda.org/conda-forge/noarch/pypubsub-4.0.3-py_0.tar.bz2",
+  "version": "4.0.3"
+}

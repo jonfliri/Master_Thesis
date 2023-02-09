@@ -1,0 +1,262 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<?xml-stylesheet type="text/xsl" href="AnyScriptPackage.htm.xslt"?><AnyScriptPackage>
+  <ID>DemoRepository</ID>
+  <Name>The AnyBody Repository Demos</Name>
+  <Description>This an installation of the AnyBody Managed Model Repository (AMMR) for demo purposes only.
+  </Description>
+  <SubPackage>
+    <Name>AnyScript Applications</Name>
+    <Description>This is the sub-package description!</Description>
+    <RootPath>AMMR.v2.3.4-Demo</RootPath>
+
+    <FilePath format="dir">../AMMR</FilePath>
+    <!--<FilePath format="zip">./AMMR.zip</FilePath>-->
+    <!--<FilePath format="dir">../../../AMMR\Output/</FilePath>-->
+    <!--<FilePath format="file">./*.any</FilePath>-->
+
+    <AnyScriptApp>
+      <ID>StandingModel</ID>
+      <Name>Standing Model</Name>
+      <Description>A basic static full-body model standing on a floor.</Description>
+      <Path>Application/Examples/StandingModel</Path>
+      <AnyMainFile>StandingModel.main.any</AnyMainFile>
+      <!--      
+      <DocPath>Application/Examples/StandingModel/Docs</DocPath>
+      <AnyFileRef>
+        <FileName>param.any</FileName>
+        <LineNo>10</LineNo>
+        <Description>Bla bla bla bla bla bla bla bla bla bla bla</Description>
+      </AnyFileRef>
+      <File>
+        <FileName>Intro.html</FileName>
+        <Description>Bla bla bla bla bla bla bla bla bla bla bla</Description>
+      </File>
+      -->
+    </AnyScriptApp>
+
+
+    <AnyScriptApp>
+      <ID>CrossTrainer</ID>
+      <Name>Cross Trainer Model</Name>
+      <Description>
+        This model is is based on a SolidWorks CAD model of a cross trainer fitness machine extended with the human.
+        This model is also the subject of the AnyBody Tutorial called "Making Models using SolidWorks".
+      </Description>
+      <Path>Application/Examples/CrossTrainer</Path>
+      <AnyMainFile>CrossTrainer.main.any</AnyMainFile>
+      <AnyMainFile>Input/FitnessMachine.main.any</AnyMainFile>
+    </AnyScriptApp>
+
+    <AnyScriptApp>
+      <ID>LegPressMachine</ID>
+      <Name>Leg Press Machine</Name>
+      <Description>A model illustrating a leg press exercise and it demonstrates the use of the SolidModeling Class Template in the ToolBox of AMMR. </Description>
+      <Path>Application/Examples/LegPressMachine</Path>
+      <AnyMainFile>LegPressMachine.main.any</AnyMainFile>
+    </AnyScriptApp>
+
+    <AnyScriptApp>
+      <ID>SpineFixationWithForceDepKinematics</ID>
+      <Name>Spine Fixation Model using Force Dependent Kinematics</Name>
+      <Description>This application is an example of how to use the new force-dependent kinematics. The force dependent kinematics allows the kinematic spine rhythm which normally drives the vertebras to be switched entirely off.</Description>
+      <Path>Application/Examples/SpineFixationWithForceDepKinematics</Path>
+      <AnyMainFile>SpineFixationWithForceDependentKinematics.main.any</AnyMainFile>
+    </AnyScriptApp> 
+
+
+    <AnyScriptApp>
+      <ID>BikeModel</ID>
+      <Name>Bike Model</Name>
+      <Description>Bicycle rider model. It comes in two version, a full-body model and a lower extremity only.</Description>
+      <Path>Application/Examples/BikeModel</Path>
+      <AnyMainFile>BikeModel-FullBody.main.any</AnyMainFile>
+      <AnyMainFile>BikeModel-LowerBody.main.any</AnyMainFile>
+    </AnyScriptApp>
+
+
+    <AnyScriptApp>
+      <ID>FreePosture</ID>
+      <Name>Free Posture Models</Name>
+      <Description>
+        A collection of full-body models that are easy to put into specific static postures or motions. It is equipped with drivers on intuitive anatomical joint angle.
+        This application can be a good starting point for new applications involving the entire body. 
+        It comes in four versions: Static and simple motion with and wihtout using the built shoulder rythm, respectively.
+      </Description>
+      <Path>Application/Examples/FreePosture</Path>
+      <AnyMainFile>FreePostureFullBodyStatic.Main.any</AnyMainFile>
+      <AnyMainFile>FreePostureFullBodyMove.Main.any</AnyMainFile>
+      <AnyMainFile>FreePostureFullBodyShoulderRhythmStatic.Main.any</AnyMainFile>
+      <AnyMainFile>FreePostureFullBodyShoulderRhythmMove.Main.any</AnyMainFile>
+    </AnyScriptApp>
+
+    
+    <AnyScriptApp>
+      <ID>Simple MoCap Model</ID>
+      <Name>Simple MOCAP-driven Gait Models (C3D input)</Name>
+      <Description>
+        A simple example of a model based on MoCap data. The model exist in three flavors. 
+        A lower extremity model, a full body model, and full body model which doesn't used 
+        force plates but predicts the ground reaction forces instead. The three model uses the
+        redundant kinematic solver, and is a good starting point for understanding and making MOCAP driven models. 
+        The MoCap data is imported directly from a C3D file.
+      </Description>
+      <Path>Application/MocapExamples/Plug-in-gait_Simple</Path>
+      <AnyMainFile>FullBody.main.any</AnyMainFile>
+      <AnyMainFile>FullBody.main.any</AnyMainFile>
+      <AnyMainFile>FullBody_GRFPrediction.main.any</AnyMainFile>
+    </AnyScriptApp>
+
+    <AnyScriptApp>
+      <ID>Multi trial MoCap Model</ID>
+      <Name>Simple MOCAP-driven Gait Models (C3D input)</Name>
+      <Description>
+        Example of a MoCap model structured for analyzing data from multiple trials and subjects. 
+        This example shows the AnyMoCap framework applied to a set of squatting trials.
+        The subject specific scaling and marker optimization is done on a standing reference 
+        recording, and the values are then applied two squatting trials.
+        This model is the best starting point for analyzing bigger MoCap experiments.
+      </Description>
+      <Path>Application/MocapExamples/Plug-in-gait_MultiTrial_StandingRef</Path>
+      <AnyMainFile>Subjects/S1/S1_FlywheelSquat/Main.any</AnyMainFile>
+      <AnyMainFile>Subjects/S1/S1_StandingRef/Main.any</AnyMainFile>
+    </AnyScriptApp>    
+
+
+    <AnyScriptApp>
+      <ID>Inertial MoCap example</ID>
+      <Name>MoCap model driven by inertial MoCap data</Name>
+      <Description>
+        Example of a MoCap mdoel using data from a inertial motional caputure suit.
+        The model uses a BVH file with data from an Xsens suit.
+        The ground reaction forces are predicted using the GRF prediction algorithm.
+      </Description>
+      <Path>Application/MocapExamples/BVH_Xsens</Path>
+      <AnyMainFile>Subjects/S1/S01_Trial01/Main.any</AnyMainFile>
+    </AnyScriptApp>    
+
+    <AnyScriptApp>
+      <ID>PedalDemoConditional</ID>
+      <Name>Pedal Demo Model</Name>
+      <Description>A leg pressing down a pedal. This demonstrates conditional contact between the foot and the pedal.</Description>
+      <Path>Application/Examples/PedalDemoConditional</Path>
+      <AnyMainFile>PedalDemoConditional.Main.any</AnyMainFile>
+    </AnyScriptApp>
+
+    <AnyScriptApp>
+      <ID>SeatedHuman</ID>
+      <Name>Seated Human</Name>
+      <Description>A model of a seated human consisting of the full body model, a chair, and an interface between the two.</Description>
+      <Path>Application/Examples/SeatedHuman</Path>
+      <AnyMainFile>SeatedHuman.main.any</AnyMainFile>
+    </AnyScriptApp>
+
+    <AnyScriptApp>
+      <ID>StandingLift</ID>
+      <Name>Model of Lifting</Name>
+      <Description>A model of a lifting an item in a standing posture. This can be a good starting point for modeling standing with items in the hands or lifting motions.
+      A special version provide specific output for Finite Element Analysis<!--of what-->.
+      </Description>
+      <Path>Application/Examples/StandingLift</Path>
+      <AnyMainFile>StandingLift.main.any</AnyMainFile>
+      <AnyMainFile>StandingLiftFEA.main.any</AnyMainFile>
+    </AnyScriptApp>
+
+    <AnyScriptApp>
+      <ID>WheelChairRancho</ID>
+      <Name>Wheel Chair Model</Name>
+      <Description>A model of a person sitting in a wheelchair, the model is driven by motion capture data.</Description>
+      <Path>Application/Examples/WheelchairRancho</Path>
+      <AnyMainFile>WheelChairRancho.Main.any</AnyMainFile>
+    </AnyScriptApp>
+
+    <AnyScriptApp>
+      <ID>BikeModel2D</ID>
+      <Name>2D Bike Model</Name>
+      <Description>A simple bicycle rider model using a planar leg model.</Description>
+      <Path>Application/Examples/BikeModel2D</Path>
+      <AnyMainFile>BikeModel2D.main.any</AnyMainFile>
+    </AnyScriptApp>
+
+    <AnyScriptApp>
+      <ID>PedalDemo</ID>
+      <Name>Simple Pedal Demo</Name>
+      <Description>This model demonstrates the construction of a foot pedal example.</Description>
+      <Path>Application/Examples/PedalDemo</Path>
+      <AnyMainFile>PedalDemo.Main.any</AnyMainFile>
+    </AnyScriptApp>
+
+    <AnyScriptApp>
+      <ID>Pushup</ID>
+      <Name>Push-up Model</Name>
+      <Description>A full-body model doing push-ups with assumed drivers.</Description>
+      <Path>Application/Examples/Pushup</Path>
+      <AnyMainFile>Pushup.main.any</AnyMainFile>
+    </AnyScriptApp>
+
+    <AnyScriptApp>
+      <ID>BenchPress</ID>
+      <Name>Bench Press Model</Name>
+      <Description>A full-body model doing push-ups with assumed drivers.</Description>
+      <Path>Application/Examples/BenchPress</Path>
+      <AnyMainFile>BenchPress.main.any</AnyMainFile>
+    </AnyScriptApp>
+
+    <AnyScriptApp>
+      <ID>WheelTurn</ID>
+      <Name>Turning a Wheel</Name>
+      <Description>A model of a person turning a horizontal wheel by means of a handle. The purpose of the model is shoulder validation.</Description>
+      <Path>Application/Examples/WheelTurn</Path>
+      <AnyMainFile>WheelTurn.main.any</AnyMainFile>
+    </AnyScriptApp>
+
+    <AnyScriptApp>
+      <ID>FacetJointModel</ID>
+      <Name>Facet Joint Model</Name>
+      <Description>A spine model with facet joints.</Description>
+      <Path>Application/Examples/FacetJointModel</Path>
+      <AnyMainFile>FacetJointModel.main.any</AnyMainFile>
+    </AnyScriptApp>
+
+    <AnyScriptApp>
+      <ID>StandingPosturePredictionWithLoad</ID>
+      <Name>Posture Prediction Model</Name>
+      <Description>This is a model which can predict the posture as a consequence of applied loads in hands. It does this by minimizing joint torques and applying balance drivers which account for external applied loads.</Description>
+      <Path>Application/Examples/StandingPosturePredictionWithLoad</Path>
+      <AnyMainFile>StandingPosturePrediction.main.any</AnyMainFile>
+    </AnyScriptApp>
+	
+    <AnyScriptApp>
+      <ID>StandingModelScalingDisplay</ID>
+      <Name>Standing Model specially designed to visualize scaling option</Name>
+      <Description>This model is based on the StandingModel it serves the purpose of demonstrating model scaling.</Description>
+      <Path>Application/Examples/StandingModelScalingDisplay</Path>
+      <AnyMainFile>StandingModelScalingDisplay.main.any</AnyMainFile>
+    </AnyScriptApp>
+    
+    <AnyScriptApp>
+      <ID>THA-KneeBendDemo</ID>
+      <Name>Total Hip Arthroplasty (THA) Model</Name>
+      <Description>Model of a total hip replacement using a conatct implant model and force-dependent kinematics (FDK).</Description>
+      <Path>Application/Examples/THA-KneeBendDemo</Path>
+      <AnyMainFile>THA-KneeBendDemo.main.any</AnyMainFile>
+    </AnyScriptApp>
+
+    <AnyScriptApp>
+      <ID>KneeSimulator</ID>
+      <Name>Knee Simulator Model</Name>
+      <Description>Model of a Knee Simulator using a knee implant model and force-dependent kinematics (FDK).</Description>
+      <Path>Application/Examples/KneeSimulator</Path>
+      <AnyMainFile>Main.any</AnyMainFile>
+    </AnyScriptApp>
+
+    <AnyScriptApp>
+      <ID>BikeSpring</ID>
+      <Name>Bicylce Model with Springs</Name>
+      <Description>
+        The simple 2D Bike Model extended with springs helping the model over the dead centers.</Description>
+      <Path>Application/Examples/BikeSpring</Path>
+      <AnyMainFile>BikeModel.main.any</AnyMainFile>
+    </AnyScriptApp>
+
+  </SubPackage>
+</AnyScriptPackage>

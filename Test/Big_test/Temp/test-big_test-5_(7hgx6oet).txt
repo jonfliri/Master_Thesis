@@ -1,0 +1,905 @@
+########### MACRO #############
+load "Big_test.main.any"
+classoperation Main.HumanModel.Calibration.RMin "Set Value" --value="0.35"
+classoperation Main.HumanModel.Calibration.RMax "Set Value" --value="1.1"
+classoperation Main.HumanModel.Calibration.RightShoulderCal.ShoulderCal.coracobrachialisRmin "Set Value" --value="{0.55,0.55,0.55,0.55,0.55,0.55}"
+classoperation Main.HumanModel.Calibration.RightShoulderCal.ShoulderCal.coracobrachialisRmax "Set Value" --value="{0.95,0.95,0.95,0.95,0.95,0.95}"
+classoperation Main.HumanModel.Calibration.RightShoulderCal.ShoulderCal.deltoideus_scapularRmin "Set Value" --value="{0.35,0.35,0.35,0.35,0.35,0.35,0.35,0.35}"
+classoperation Main.HumanModel.Calibration.RightShoulderCal.ShoulderCal.deltoideus_scapularRmax "Set Value" --value="{1.1,1.1,1.1,1.1,1.1,1.1,1.1,1.1}"
+classoperation Main.HumanModel.Calibration.RightShoulderCal.ShoulderCal.deltoideus_clavicularRmin "Set Value" --value="{0.55,0.55,0.55,0.55}"
+classoperation Main.HumanModel.Calibration.RightShoulderCal.ShoulderCal.deltoideus_clavicularRmax "Set Value" --value="{1.3,1.3,1.3,1.3}"
+classoperation Main.HumanModel.Calibration.RightShoulderCal.ShoulderCal.infraspinatusRmin "Set Value" --value="{0.5,0.5,0.5,0.5,0.5,0.5}"
+classoperation Main.HumanModel.Calibration.RightShoulderCal.ShoulderCal.infraspinatusRmax "Set Value" --value="{1.4,1.4,1.4,1.4,1.4,1.4}"
+classoperation Main.HumanModel.Calibration.RightShoulderCal.ShoulderCal.pectoralis_major_thoracicRmin "Set Value" --value="{0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4}"
+classoperation Main.HumanModel.Calibration.RightShoulderCal.ShoulderCal.pectoralis_major_thoracicRmax "Set Value" --value="{1.4,1.4,1.4,1.4,1.4,1.4,1.4,1.4,1.4,1.4}"
+classoperation Main.HumanModel.Calibration.RightShoulderCal.ShoulderCal.pectoralis_major_clavicularRmin "Set Value" --value="{0.4,0.4,0.4,0.4,0.4}"
+classoperation Main.HumanModel.Calibration.RightShoulderCal.ShoulderCal.pectoralis_major_clavicularRmax "Set Value" --value="{1.3,1.3,1.3,1.3,1.3}"
+classoperation Main.HumanModel.Calibration.RightShoulderCal.ShoulderCal.pectoralis_minorRmin "Set Value" --value="{0.55,0.5,0.45,0.45}"
+classoperation Main.HumanModel.Calibration.RightShoulderCal.ShoulderCal.pectoralis_minorRmax "Set Value" --value="{1.05,1.1,1.1,1.1}"
+classoperation Main.HumanModel.Calibration.RightShoulderCal.ShoulderCal.rhomboideusRmin "Set Value" --value="{0.45,0.45,0.45}"
+classoperation Main.HumanModel.Calibration.RightShoulderCal.ShoulderCal.rhomboideusRmax "Set Value" --value="{1.1,1.1,1.1}"
+classoperation Main.HumanModel.Calibration.RightShoulderCal.ShoulderCal.serratus_anteriorRmin "Set Value" --value="{0.6,0.6,0.5,0.45,0.45,0.5}"
+classoperation Main.HumanModel.Calibration.RightShoulderCal.ShoulderCal.serratus_anteriorRmax "Set Value" --value="{1.1,1.1,1.2,1.2,1.2,1.2}"
+classoperation Main.HumanModel.Calibration.RightShoulderCal.ShoulderCal.subscapularisRmin "Set Value" --value="{0.475,0.475,0.475,0.475,0.475,0.475}"
+classoperation Main.HumanModel.Calibration.RightShoulderCal.ShoulderCal.subscapularisRmax "Set Value" --value="{0.9,0.9,0.9,0.9,0.9,0.9}"
+classoperation Main.HumanModel.Calibration.RightShoulderCal.ShoulderCal.supraspinatusRmin "Set Value" --value="{0.3,0.3,0.3,0.3,0.3,0.3}"
+classoperation Main.HumanModel.Calibration.RightShoulderCal.ShoulderCal.supraspinatusRmax "Set Value" --value="{1.3,1.3,1.3,1.3,1.3,1.3}"
+classoperation Main.HumanModel.Calibration.RightShoulderCal.ShoulderCal.teres_majorRmin "Set Value" --value="{0.3,0.3,0.3,0.3,0.3,0.3}"
+classoperation Main.HumanModel.Calibration.RightShoulderCal.ShoulderCal.teres_majorRmax "Set Value" --value="{0.9,0.9,0.9,0.9,0.9,0.9}"
+classoperation Main.HumanModel.Calibration.RightShoulderCal.ShoulderCal.teres_minorRmin "Set Value" --value="{0.25,0.25,0.25,0.25,0.25,0.25}"
+classoperation Main.HumanModel.Calibration.RightShoulderCal.ShoulderCal.teres_minorRmax "Set Value" --value="{1.4,1.4,1.4,1.4,1.4,1.4}"
+classoperation Main.HumanModel.Calibration.RightShoulderCal.ShoulderCal.trapezius_scapularRmin "Set Value" --value="{0.5,0.5,0.5,0.5,0.5,0.5}"
+classoperation Main.HumanModel.Calibration.RightShoulderCal.ShoulderCal.trapezius_scapularRmax "Set Value" --value="{1.1,1.1,1.1,1.1,1.1,1.1}"
+classoperation Main "Update Values"
+operation HumanModel.Calibration.CalibrationSequence
+run
+classoperation Main.HumanModel.Mannequin.PostureVel.Right.GlenohumeralAbduction "Set Value" --value="120"
+classoperation Main.HumanModel.BodyModel.Right.ShoulderArm.MusPar.supraspinatus_1.F0 "Set Value" --value="69.66"
+classoperation Main.HumanModel.BodyModel.Right.ShoulderArm.MusPar.supraspinatus_2.F0 "Set Value" --value="69.66"
+classoperation Main.HumanModel.BodyModel.Right.ShoulderArm.MusPar.supraspinatus_3.F0 "Set Value" --value="69.66"
+classoperation Main.HumanModel.BodyModel.Right.ShoulderArm.MusPar.supraspinatus_4.F0 "Set Value" --value="69.66"
+classoperation Main.HumanModel.BodyModel.Right.ShoulderArm.MusPar.supraspinatus_5.F0 "Set Value" --value="69.66"
+classoperation Main.HumanModel.BodyModel.Right.ShoulderArm.MusPar.supraspinatus_6.F0 "Set Value" --value="69.66"
+classoperation Main "Update Values"
+operation Main.Study.InverseDynamics
+run
+classoperation Main.Study.Output.Abscissa.t "Dump"
+classoperation Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.supraspinatus_1.Fm "Dump"
+classoperation Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.supraspinatus_2.Fm "Dump"
+classoperation Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.supraspinatus_3.Fm "Dump"
+classoperation Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.supraspinatus_4.Fm "Dump"
+classoperation Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.supraspinatus_5.Fm "Dump"
+classoperation Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.supraspinatus_6.Fm "Dump"
+classoperation Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.subscapularis_1.Fm "Dump"
+classoperation Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.subscapularis_2.Fm "Dump"
+classoperation Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.subscapularis_3.Fm "Dump"
+classoperation Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.subscapularis_4.Fm "Dump"
+classoperation Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.subscapularis_5.Fm "Dump"
+classoperation Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.subscapularis_6.Fm "Dump"
+classoperation Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.infraspinatus_1.Fm "Dump"
+classoperation Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.infraspinatus_2.Fm "Dump"
+classoperation Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.infraspinatus_3.Fm "Dump"
+classoperation Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.infraspinatus_4.Fm "Dump"
+classoperation Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.infraspinatus_5.Fm "Dump"
+classoperation Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.infraspinatus_6.Fm "Dump"
+classoperation Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.teres_minor_1.Fm "Dump"
+classoperation Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.teres_minor_2.Fm "Dump"
+classoperation Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.teres_minor_3.Fm "Dump"
+classoperation Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.teres_minor_4.Fm "Dump"
+classoperation Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.teres_minor_5.Fm "Dump"
+classoperation Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.teres_minor_6.Fm "Dump"
+classoperation Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.supraspinatus_1.Fp "Dump"
+classoperation Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.supraspinatus_2.Fp "Dump"
+classoperation Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.supraspinatus_3.Fp "Dump"
+classoperation Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.supraspinatus_4.Fp "Dump"
+classoperation Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.supraspinatus_5.Fp "Dump"
+classoperation Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.supraspinatus_6.Fp "Dump"
+classoperation Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.subscapularis_1.Fp "Dump"
+classoperation Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.subscapularis_2.Fp "Dump"
+classoperation Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.subscapularis_3.Fp "Dump"
+classoperation Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.subscapularis_4.Fp "Dump"
+classoperation Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.subscapularis_5.Fp "Dump"
+classoperation Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.subscapularis_6.Fp "Dump"
+classoperation Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.infraspinatus_1.Fp "Dump"
+classoperation Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.infraspinatus_2.Fp "Dump"
+classoperation Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.infraspinatus_3.Fp "Dump"
+classoperation Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.infraspinatus_4.Fp "Dump"
+classoperation Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.infraspinatus_5.Fp "Dump"
+classoperation Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.infraspinatus_6.Fp "Dump"
+classoperation Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.teres_minor_1.Fp "Dump"
+classoperation Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.teres_minor_2.Fp "Dump"
+classoperation Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.teres_minor_3.Fp "Dump"
+classoperation Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.teres_minor_4.Fp "Dump"
+classoperation Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.teres_minor_5.Fp "Dump"
+classoperation Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.teres_minor_6.Fp "Dump"
+classoperation Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.supraspinatus_1.F0 "Dump"
+classoperation Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.supraspinatus_2.F0 "Dump"
+classoperation Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.supraspinatus_3.F0 "Dump"
+classoperation Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.supraspinatus_4.F0 "Dump"
+classoperation Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.supraspinatus_5.F0 "Dump"
+classoperation Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.supraspinatus_6.F0 "Dump"
+classoperation Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.subscapularis_1.F0 "Dump"
+classoperation Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.subscapularis_2.F0 "Dump"
+classoperation Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.subscapularis_3.F0 "Dump"
+classoperation Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.subscapularis_4.F0 "Dump"
+classoperation Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.subscapularis_5.F0 "Dump"
+classoperation Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.subscapularis_6.F0 "Dump"
+classoperation Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.infraspinatus_1.F0 "Dump"
+classoperation Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.infraspinatus_2.F0 "Dump"
+classoperation Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.infraspinatus_3.F0 "Dump"
+classoperation Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.infraspinatus_4.F0 "Dump"
+classoperation Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.infraspinatus_5.F0 "Dump"
+classoperation Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.infraspinatus_6.F0 "Dump"
+classoperation Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.teres_minor_1.F0 "Dump"
+classoperation Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.teres_minor_2.F0 "Dump"
+classoperation Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.teres_minor_3.F0 "Dump"
+classoperation Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.teres_minor_4.F0 "Dump"
+classoperation Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.teres_minor_5.F0 "Dump"
+classoperation Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.teres_minor_6.F0 "Dump"
+classoperation Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.supraspinatus_1.Lf0 "Dump"
+classoperation Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.supraspinatus_2.Lf0 "Dump"
+classoperation Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.supraspinatus_3.Lf0 "Dump"
+classoperation Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.supraspinatus_4.Lf0 "Dump"
+classoperation Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.supraspinatus_5.Lf0 "Dump"
+classoperation Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.supraspinatus_6.Lf0 "Dump"
+classoperation Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.subscapularis_1.Lf0 "Dump"
+classoperation Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.subscapularis_2.Lf0 "Dump"
+classoperation Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.subscapularis_3.Lf0 "Dump"
+classoperation Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.subscapularis_4.Lf0 "Dump"
+classoperation Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.subscapularis_5.Lf0 "Dump"
+classoperation Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.subscapularis_6.Lf0 "Dump"
+classoperation Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.infraspinatus_1.Lf0 "Dump"
+classoperation Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.infraspinatus_2.Lf0 "Dump"
+classoperation Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.infraspinatus_3.Lf0 "Dump"
+classoperation Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.infraspinatus_4.Lf0 "Dump"
+classoperation Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.infraspinatus_5.Lf0 "Dump"
+classoperation Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.infraspinatus_6.Lf0 "Dump"
+classoperation Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.teres_minor_1.Lf0 "Dump"
+classoperation Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.teres_minor_2.Lf0 "Dump"
+classoperation Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.teres_minor_3.Lf0 "Dump"
+classoperation Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.teres_minor_4.Lf0 "Dump"
+classoperation Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.teres_minor_5.Lf0 "Dump"
+classoperation Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.teres_minor_6.Lf0 "Dump"
+
+######### OUTPUT LOG ##########
+
+AnyBody Console Application
+AnyBodyCon.exe version : 7. 3. 4. 8518 (64-bit version) 
+Build : 18813.46800
+Copyright (c) 1999 - 2023 AnyBody Technology A/S
+
+Current path: C:\Master_Thesis\Test\Big_test
+
+#### Macro command > load "Big_test.main.any"
+Loading  Main  :  "C:\Master_Thesis\Test\Big_test\Big_test.main.any"
+Scanning...
+Passing...
+Constructing model tree...
+NOTICE(OBJ1) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\BodyModels\GenericBodyModel\BodyModel.config_info.any(8)  :   'Messages.msg_BM_SCALING'  :  2
+NOTICE(OBJ1) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\BodyModels\GenericBodyModel\BodyModel.config_info.any(8)  :   'Messages.msg_BM_SCALING_FILE'  :  C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Scaling\ScalingUniform.any
+NOTICE(OBJ1) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\BodyModels\GenericBodyModel\BodyModel.config_info.any(8)  :   'Messages.msg_BM_SCALING_STANDARDPARAM_EXTERIOR'  :  0
+NOTICE(OBJ1) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\BodyModels\GenericBodyModel\BodyModel.config_info.any(8)  :   'Messages.msg_BM_CONFIG_MESSAGES'  :  1
+NOTICE(OBJ1) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\BodyModels\GenericBodyModel\BodyModel.config_info.any(8)  :   'Messages.msg_BM_CONFIG_VALUES'  :  1
+NOTICE(OBJ1) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\BodyModels\GenericBodyModel\BodyModel.config_info.any(8)  :   'Messages.msg_BM_DRAWSETTINGS_SKIP'  :  0
+NOTICE(OBJ1) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\BodyModels\GenericBodyModel\BodyModel.config_info.any(8)  :   'Messages.msg_BM_FOOT_MODEL'  :  0
+NOTICE(OBJ1) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\BodyModels\GenericBodyModel\BodyModel.config_info.any(8)  :   'Messages.msg_BM_LEG_MODEL'  :  2
+NOTICE(OBJ1) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\BodyModels\GenericBodyModel\BodyModel.config_info.any(8)  :   'Messages.msg_BM_ARM_THORAX_SCAPULA_CONTACT'  :  1
+NOTICE(OBJ1) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\BodyModels\GenericBodyModel\BodyModel.config_info.any(8)  :   'Messages.msg_BM_LEG_LEFT'  :  1
+NOTICE(OBJ1) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\BodyModels\GenericBodyModel\BodyModel.config_info.any(8)  :   'Messages.msg_BM_LEG_RIGHT'  :  1
+NOTICE(OBJ1) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\BodyModels\GenericBodyModel\BodyModel.config_info.any(8)  :   'Messages.msg_BM_LEG_STRENGTH_INDEX'  :  1.000
+NOTICE(OBJ1) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\BodyModels\GenericBodyModel\BodyModel.config_info.any(8)  :   'Messages.msg_BM_LEG_MUSCLES_BOTH'  :  1
+NOTICE(OBJ1) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\BodyModels\GenericBodyModel\BodyModel.config_info.any(8)  :   'Messages.msg_BM_LEG_MUSCLES_LEFT'  :  0
+NOTICE(OBJ1) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\BodyModels\GenericBodyModel\BodyModel.config_info.any(8)  :   'Messages.msg_BM_LEG_MUSCLES_RIGHT'  :  0
+NOTICE(OBJ1) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\BodyModels\GenericBodyModel\BodyModel.config_info.any(8)  :   'Messages.msg_BM_LEG_DATASET'  :  TLEM2.1
+NOTICE(OBJ1) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\BodyModels\GenericBodyModel\BodyModel.config_info.any(8)  :   'Messages.msg_BM_LEG_MORPHOLOGY'  :  2
+NOTICE(OBJ1) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\BodyModels\GenericBodyModel\BodyModel.config_info.any(8)  :   'Messages.msg_BM_TRUNK_DATASET'  :  TrunkData1.1
+NOTICE(OBJ1) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\BodyModels\GenericBodyModel\BodyModel.config_info.any(8)  :   'Messages.msg_BM_TRUNK_STRENGTH_INDEX'  :  1.000
+NOTICE(OBJ1) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\BodyModels\GenericBodyModel\BodyModel.config_info.any(8)  :   'Messages.msg_BM_TRUNK_MUSCLES'  :  1
+NOTICE(OBJ1) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\BodyModels\GenericBodyModel\BodyModel.config_info.any(8)  :   'Messages.msg_BM_TRUNK_LUMBAR_MUSCLES'  :  1
+NOTICE(OBJ1) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\BodyModels\GenericBodyModel\BodyModel.config_info.any(8)  :   'Messages.msg_BM_TRUNK_CERVICAL_MUSCLES'  :  0
+NOTICE(OBJ1) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\BodyModels\GenericBodyModel\BodyModel.config_info.any(8)  :   'Messages.msg_BM_TRUNK_DISC_STIFNESS'  :  0
+NOTICE(OBJ1) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\BodyModels\GenericBodyModel\BodyModel.config_info.any(8)  :   'Messages.msg_BM_TRUNK_LUMBAR_DISC_STIFNESS'  :  0
+NOTICE(OBJ1) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\BodyModels\GenericBodyModel\BodyModel.config_info.any(8)  :   'Messages.msg_BM_TRUNK_CERVICAL_DISC_STIFNESS'  :  0
+NOTICE(OBJ1) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\BodyModels\GenericBodyModel\BodyModel.config_info.any(8)  :   'Messages.msg_BM_TRUNK_RHYTHM'  :  1
+NOTICE(OBJ1) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\BodyModels\GenericBodyModel\BodyModel.config_info.any(8)  :   'Messages.msg_BM_TRUNK_LUMBAR_RHYTHM'  :  1
+NOTICE(OBJ1) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\BodyModels\GenericBodyModel\BodyModel.config_info.any(8)  :   'Messages.msg_BM_TRUNK_CERVICAL_RHYTHM'  :  1
+NOTICE(OBJ1) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\BodyModels\GenericBodyModel\BodyModel.config_info.any(8)  :   'Messages.msg_BM_TRUNK_LIGAMENTS'  :  0
+NOTICE(OBJ1) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\BodyModels\GenericBodyModel\BodyModel.config_info.any(8)  :   'Messages.msg_BM_TRUNK_LUMBAR_LIGAMENTS'  :  0
+NOTICE(OBJ1) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\BodyModels\GenericBodyModel\BodyModel.config_info.any(8)  :   'Messages.msg_BM_ARM_STRENGTH_INDEX'  :  1.000
+NOTICE(OBJ1) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\BodyModels\GenericBodyModel\BodyModel.config_info.any(8)  :   'Messages.msg_BM_ARM_LEFT'  :  0
+NOTICE(OBJ1) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\BodyModels\GenericBodyModel\BodyModel.config_info.any(8)  :   'Messages.msg_BM_ARM_RIGHT'  :  1
+NOTICE(OBJ1) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\BodyModels\GenericBodyModel\BodyModel.config_info.any(8)  :   'Messages.msg_BM_ARM_SHOULDER_RHYTHM'  :  0
+NOTICE(OBJ1) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\BodyModels\GenericBodyModel\BodyModel.config_info.any(8)  :   'Messages.msg_BM_ARM_CLAVICULA_ROTATION_RHYTHM'  :  1
+NOTICE(OBJ1) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\BodyModels\GenericBodyModel\BodyModel.config_info.any(8)  :   'Messages.msg_BM_ARM_DETAILED_HAND'  :  0
+NOTICE(OBJ1) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\BodyModels\GenericBodyModel\BodyModel.config_info.any(8)  :   'Messages.msg_BM_ARM_DELTOID_WRAPPING'  :  2
+NOTICE(OBJ1) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\BodyModels\GenericBodyModel\BodyModel.config_info.any(8)  :   'Messages.msg_BM_ARM_MUSCLES_BOTH'  :  1
+NOTICE(OBJ1) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\BodyModels\GenericBodyModel\BodyModel.config_info.any(8)  :   'Messages.msg_BM_ARM_MUSCLES_LEFT'  :  2
+NOTICE(OBJ1) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\BodyModels\GenericBodyModel\BodyModel.config_info.any(8)  :   'Messages.msg_BM_ARM_MUSCLES_RIGHT'  :  2
+NOTICE(OBJ1) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\BodyModels\GenericBodyModel\BodyModel.config_info.any(8)  :   'Messages.msg_BM_PELVIS_DISPLAY'  :  1
+NOTICE(OBJ1) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\BodyModels\GenericBodyModel\BodyModel.config_info.any(8)  :   'Messages.msg_BM_MANNEQUIN_DRIVER_DEFAULT'  :  1
+NOTICE(OBJ1) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\BodyModels\GenericBodyModel\BodyModel.config_info.any(8)  :   'Messages.msg_BM_MANNEQUIN_DRIVER_WEAK_SWITCH'  :  1
+NOTICE(OBJ1) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\BodyModels\GenericBodyModel\BodyModel.config_info.any(8)  :   'Messages.msg_BM_LEG_TRUNK_INTERFACE'  :  2
+NOTICE(OBJ1) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\BodyModels\GenericBodyModel\BodyModel.config_info.any(8)  :   'Messages.msg_BM_CALIBRATION_TYPE'  :  2
+NOTICE(OBJ1) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\BodyModels\GenericBodyModel\BodyModel.config_info.any(8)  :   'Messages.msg_BM_MANNEQUIN_DRIVER_PELVIS_POS_X'  :  1
+NOTICE(OBJ1) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\BodyModels\GenericBodyModel\BodyModel.config_info.any(8)  :   'Messages.msg_BM_MANNEQUIN_DRIVER_PELVIS_POS_Y'  :  1
+NOTICE(OBJ1) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\BodyModels\GenericBodyModel\BodyModel.config_info.any(8)  :   'Messages.msg_BM_MANNEQUIN_DRIVER_PELVIS_POS_Z'  :  1
+NOTICE(OBJ1) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\BodyModels\GenericBodyModel\BodyModel.config_info.any(8)  :   'Messages.msg_BM_MANNEQUIN_DRIVER_PELVIS_ROT_Z'  :  1
+NOTICE(OBJ1) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\BodyModels\GenericBodyModel\BodyModel.config_info.any(8)  :   'Messages.msg_BM_MANNEQUIN_DRIVER_PELVIS_ROT_Y'  :  1
+NOTICE(OBJ1) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\BodyModels\GenericBodyModel\BodyModel.config_info.any(8)  :   'Messages.msg_BM_MANNEQUIN_DRIVER_PELVIS_ROT_X'  :  1
+NOTICE(OBJ1) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\BodyModels\GenericBodyModel\BodyModel.config_info.any(8)  :   'Messages.msg_BM_MANNEQUIN_DRIVER_NECK'  :  1
+NOTICE(OBJ1) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\BodyModels\GenericBodyModel\BodyModel.config_info.any(8)  :   'Messages.msg_BM_MANNEQUIN_DRIVER_SKULL_THORAX_FLEXION'  :  1
+NOTICE(OBJ1) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\BodyModels\GenericBodyModel\BodyModel.config_info.any(8)  :   'Messages.msg_BM_MANNEQUIN_DRIVER_SKULL_THORAX_LATERALBENDING'  :  1
+NOTICE(OBJ1) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\BodyModels\GenericBodyModel\BodyModel.config_info.any(8)  :   'Messages.msg_BM_MANNEQUIN_DRIVER_SKULL_THORAX_ROTATION'  :  1
+NOTICE(OBJ1) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\BodyModels\GenericBodyModel\BodyModel.config_info.any(8)  :   'Messages.msg_BM_MANNEQUIN_DRIVER_PELVIS_THORAX_LATERAL_BENDING'  :  1
+NOTICE(OBJ1) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\BodyModels\GenericBodyModel\BodyModel.config_info.any(8)  :   'Messages.msg_BM_MANNEQUIN_DRIVER_PELVIS_THORAX_ROTATION'  :  1
+NOTICE(OBJ1) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\BodyModels\GenericBodyModel\BodyModel.config_info.any(8)  :   'Messages.msg_BM_MANNEQUIN_DRIVER_PELVIS_THORAX_EXTENSION'  :  1
+NOTICE(OBJ1) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\BodyModels\GenericBodyModel\BodyModel.config_info.any(8)  :   'Messages.msg_BM_MANNEQUIN_DRIVER_STERNO_CLAVICULAR_RIGHT'  :  1
+NOTICE(OBJ1) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\BodyModels\GenericBodyModel\BodyModel.config_info.any(8)  :   'Messages.msg_BM_MANNEQUIN_DRIVER_STERNOCLAVICULAR_PROTRACTION_RIGHT'  :  1
+NOTICE(OBJ1) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\BodyModels\GenericBodyModel\BodyModel.config_info.any(8)  :   'Messages.msg_BM_MANNEQUIN_DRIVER_STERNOCLAVICULAR_ELEVATION_RIGHT'  :  1
+NOTICE(OBJ1) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\BodyModels\GenericBodyModel\BodyModel.config_info.any(8)  :   'Messages.msg_BM_MANNEQUIN_DRIVER_STERNOCLAVICULAR_AXIAL_ROTATION_RIGHT'  :  1
+NOTICE(OBJ1) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\BodyModels\GenericBodyModel\BodyModel.config_info.any(8)  :   'Messages.msg_BM_MANNEQUIN_DRIVER_GLENOHUMERAL_ABDUCTION_RIGHT'  :  1
+NOTICE(OBJ1) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\BodyModels\GenericBodyModel\BodyModel.config_info.any(8)  :   'Messages.msg_BM_MANNEQUIN_DRIVER_GLENOHUMERAL_FLEXION_RIGHT'  :  1
+NOTICE(OBJ1) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\BodyModels\GenericBodyModel\BodyModel.config_info.any(8)  :   'Messages.msg_BM_MANNEQUIN_DRIVER_GLENOHUMERAL_EXTERNAL_ROTATION_RIGHT'  :  1
+NOTICE(OBJ1) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\BodyModels\GenericBodyModel\BodyModel.config_info.any(8)  :   'Messages.msg_BM_MANNEQUIN_DRIVER_ELBOW_FLEXION_RIGHT'  :  1
+NOTICE(OBJ1) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\BodyModels\GenericBodyModel\BodyModel.config_info.any(8)  :   'Messages.msg_BM_MANNEQUIN_DRIVER_ELBOW_PRONATION_RIGHT'  :  1
+NOTICE(OBJ1) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\BodyModels\GenericBodyModel\BodyModel.config_info.any(8)  :   'Messages.msg_BM_MANNEQUIN_DRIVER_WRIST_FLEXION_RIGHT'  :  1
+NOTICE(OBJ1) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\BodyModels\GenericBodyModel\BodyModel.config_info.any(8)  :   'Messages.msg_BM_MANNEQUIN_DRIVER_WRIST_ABDUCTION_RIGHT'  :  1
+NOTICE(OBJ1) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\BodyModels\GenericBodyModel\BodyModel.config_info.any(8)  :   'Messages.msg_BM_MANNEQUIN_DRIVER_HAND_RIGHT'  :  1
+NOTICE(OBJ1) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\BodyModels\GenericBodyModel\BodyModel.config_info.any(8)  :   'Messages.msg_BM_MANNEQUIN_DRIVER_STERNO_CLAVICULAR_LEFT'  :  1
+NOTICE(OBJ1) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\BodyModels\GenericBodyModel\BodyModel.config_info.any(8)  :   'Messages.msg_BM_MANNEQUIN_DRIVER_STERNOCLAVICULAR_PROTRACTION_LEFT'  :  1
+NOTICE(OBJ1) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\BodyModels\GenericBodyModel\BodyModel.config_info.any(8)  :   'Messages.msg_BM_MANNEQUIN_DRIVER_STERNOCLAVICULAR_ELEVATION_LEFT'  :  1
+NOTICE(OBJ1) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\BodyModels\GenericBodyModel\BodyModel.config_info.any(8)  :   'Messages.msg_BM_MANNEQUIN_DRIVER_STERNOCLAVICULAR_AXIAL_ROTATION_LEFT'  :  1
+NOTICE(OBJ1) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\BodyModels\GenericBodyModel\BodyModel.config_info.any(8)  :   'Messages.msg_BM_MANNEQUIN_DRIVER_GLENOHUMERAL_ABDUCTION_LEFT'  :  1
+NOTICE(OBJ1) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\BodyModels\GenericBodyModel\BodyModel.config_info.any(8)  :   'Messages.msg_BM_MANNEQUIN_DRIVER_GLENOHUMERAL_FLEXION_LEFT'  :  1
+NOTICE(OBJ1) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\BodyModels\GenericBodyModel\BodyModel.config_info.any(8)  :   'Messages.msg_BM_MANNEQUIN_DRIVER_GLENOHUMERAL_EXTERNAL_ROTATION_LEFT'  :  1
+NOTICE(OBJ1) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\BodyModels\GenericBodyModel\BodyModel.config_info.any(8)  :   'Messages.msg_BM_MANNEQUIN_DRIVER_ELBOW_FLEXION_LEFT'  :  1
+NOTICE(OBJ1) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\BodyModels\GenericBodyModel\BodyModel.config_info.any(8)  :   'Messages.msg_BM_MANNEQUIN_DRIVER_ELBOW_PRONATION_LEFT'  :  1
+NOTICE(OBJ1) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\BodyModels\GenericBodyModel\BodyModel.config_info.any(8)  :   'Messages.msg_BM_MANNEQUIN_DRIVER_WRIST_FLEXION_LEFT'  :  1
+NOTICE(OBJ1) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\BodyModels\GenericBodyModel\BodyModel.config_info.any(8)  :   'Messages.msg_BM_MANNEQUIN_DRIVER_WRIST_ABDUCTION_LEFT'  :  1
+NOTICE(OBJ1) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\BodyModels\GenericBodyModel\BodyModel.config_info.any(8)  :   'Messages.msg_BM_MANNEQUIN_DRIVER_HAND_LEFT'  :  1
+NOTICE(OBJ1) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\BodyModels\GenericBodyModel\BodyModel.config_info.any(8)  :   'Messages.msg_BM_MANNEQUIN_DRIVER_HIP_FLEXION_RIGHT'  :  1
+NOTICE(OBJ1) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\BodyModels\GenericBodyModel\BodyModel.config_info.any(8)  :   'Messages.msg_BM_MANNEQUIN_DRIVER_HIP_EXTERNAL_ROTATION_RIGHT'  :  1
+NOTICE(OBJ1) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\BodyModels\GenericBodyModel\BodyModel.config_info.any(8)  :   'Messages.msg_BM_MANNEQUIN_DRIVER_HIP_ABDUCTION_RIGHT'  :  1
+NOTICE(OBJ1) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\BodyModels\GenericBodyModel\BodyModel.config_info.any(8)  :   'Messages.msg_BM_MANNEQUIN_DRIVER_KNEE_FLEXION_RIGHT'  :  1
+NOTICE(OBJ1) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\BodyModels\GenericBodyModel\BodyModel.config_info.any(8)  :   'Messages.msg_BM_MANNEQUIN_DRIVER_ANKLE_FLEXION_RIGHT'  :  1
+NOTICE(OBJ1) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\BodyModels\GenericBodyModel\BodyModel.config_info.any(8)  :   'Messages.msg_BM_MANNEQUIN_DRIVER_ANKLE_EVERSION_RIGHT'  :  1
+NOTICE(OBJ1) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\BodyModels\GenericBodyModel\BodyModel.config_info.any(8)  :   'Messages.msg_BM_MANNEQUIN_DRIVER_ANKLE_SUBTALAR_EVERSION_RIGHT'  :  1
+NOTICE(OBJ1) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\BodyModels\GenericBodyModel\BodyModel.config_info.any(8)  :   'Messages.msg_BM_MANNEQUIN_DRIVER_HIP_FLEXION_LEFT'  :  1
+NOTICE(OBJ1) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\BodyModels\GenericBodyModel\BodyModel.config_info.any(8)  :   'Messages.msg_BM_MANNEQUIN_DRIVER_HIP_EXTERNAL_ROTATION_LEFT'  :  1
+NOTICE(OBJ1) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\BodyModels\GenericBodyModel\BodyModel.config_info.any(8)  :   'Messages.msg_BM_MANNEQUIN_DRIVER_HIP_ABDUCTION_LEFT'  :  1
+NOTICE(OBJ1) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\BodyModels\GenericBodyModel\BodyModel.config_info.any(8)  :   'Messages.msg_BM_MANNEQUIN_DRIVER_KNEE_FLEXION_LEFT'  :  1
+NOTICE(OBJ1) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\BodyModels\GenericBodyModel\BodyModel.config_info.any(8)  :   'Messages.msg_BM_MANNEQUIN_DRIVER_ANKLE_FLEXION_LEFT'  :  1
+NOTICE(OBJ1) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\BodyModels\GenericBodyModel\BodyModel.config_info.any(8)  :   'Messages.msg_BM_MANNEQUIN_DRIVER_ANKLE_EVERSION_LEFT'  :  1
+NOTICE(OBJ1) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\BodyModels\GenericBodyModel\BodyModel.config_info.any(8)  :   'Messages.msg_BM_MANNEQUIN_DRIVER_ANKLE_SUBTALAR_EVERSION_LEFT'  :  1
+NOTICE(OBJ1) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\BodyModels\GenericBodyModel\BodyModel.config_info.any(8)  :   'Messages.msg_BM_JOINT_TYPE_HIP_RIGHT'  :  1
+NOTICE(OBJ1) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\BodyModels\GenericBodyModel\BodyModel.config_info.any(8)  :   'Messages.msg_BM_JOINT_TYPE_HIP_LEFT'  :  1
+NOTICE(OBJ1) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\BodyModels\GenericBodyModel\BodyModel.config_info.any(8)  :   'Messages.msg_BM_JOINT_TYPE_KNEE_RIGHT'  :  1
+NOTICE(OBJ1) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\BodyModels\GenericBodyModel\BodyModel.config_info.any(8)  :   'Messages.msg_BM_JOINT_TYPE_KNEE_LEFT'  :  1
+NOTICE(OBJ1) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\BodyModels\GenericBodyModel\BodyModel.config_info.any(8)  :   'Messages.msg_BM_JOINT_TYPE_PATELLOFEMORAL_RIGHT'  :  1
+NOTICE(OBJ1) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\BodyModels\GenericBodyModel\BodyModel.config_info.any(8)  :   'Messages.msg_BM_JOINT_TYPE_PATELLOFEMORAL_LEFT'  :  1
+NOTICE(OBJ1) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\BodyModels\GenericBodyModel\BodyModel.config_info.any(8)  :   'Messages.msg_BM_JOINT_TYPE_ANKLE_RIGHT'  :  1
+NOTICE(OBJ1) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\BodyModels\GenericBodyModel\BodyModel.config_info.any(8)  :   'Messages.msg_BM_JOINT_TYPE_ANKLE_LEFT'  :  1
+NOTICE(OBJ1) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\BodyModels\GenericBodyModel\BodyModel.config_info.any(8)  :   'Messages.msg_BM_JOINT_TYPE_SUBTALAR_RIGHT'  :  1
+NOTICE(OBJ1) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\BodyModels\GenericBodyModel\BodyModel.config_info.any(8)  :   'Messages.msg_BM_JOINT_TYPE_SUBTALAR_LEFT'  :  1
+NOTICE(OBJ1) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\BodyModels\GenericBodyModel\BodyModel.config_info.any(8)  :   'Messages.msg_BM_JOINT_TYPE_PATELLATENDON_RIGHT'  :  1
+NOTICE(OBJ1) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\BodyModels\GenericBodyModel\BodyModel.config_info.any(8)  :   'Messages.msg_BM_JOINT_TYPE_PATELLATENDON_LEFT'  :  1
+NOTICE(OBJ1) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\BodyModels\GenericBodyModel\BodyModel.config_info.any(8)  :   'Messages.msg_BM_GLOBAL_REFERENCE_FRAME_SWITCH'  :  0
+Linking identifiers...
+Evaluating constants...
+Configuring model...
+Evaluating model...
+Loaded successfully.
+Elapsed Time : 20.094000
+
+#### Macro command > classoperation Main.HumanModel.Calibration.RMin "Set Value" --value="0.35"
+
+#### Macro command > classoperation Main.HumanModel.Calibration.RMax "Set Value" --value="1.1"
+
+#### Macro command > classoperation Main.HumanModel.Calibration.RightShoulderCal.ShoulderCal.coracobrachialisRmin "Set Value" --value="{0.55,0.55,0.55,0.55,0.55,0.55}"
+WARNING(OBJ1) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Calibration\ShoulderCal.any(261)  :   'coracobrachialisRmin'  :  'Set Value' operation on this value-object has broken symbolic dependency. ('Reset Value' to re-establish this dependency)
+
+#### Macro command > classoperation Main.HumanModel.Calibration.RightShoulderCal.ShoulderCal.coracobrachialisRmax "Set Value" --value="{0.95,0.95,0.95,0.95,0.95,0.95}"
+WARNING(OBJ1) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Calibration\ShoulderCal.any(262)  :   'coracobrachialisRmax'  :  'Set Value' operation on this value-object has broken symbolic dependency. ('Reset Value' to re-establish this dependency)
+
+#### Macro command > classoperation Main.HumanModel.Calibration.RightShoulderCal.ShoulderCal.deltoideus_scapularRmin "Set Value" --value="{0.35,0.35,0.35,0.35,0.35,0.35,0.35,0.35}"
+WARNING(OBJ1) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Calibration\ShoulderCal.any(272)  :   'deltoideus_scapularRmin'  :  'Set Value' operation on this value-object has broken symbolic dependency. ('Reset Value' to re-establish this dependency)
+
+#### Macro command > classoperation Main.HumanModel.Calibration.RightShoulderCal.ShoulderCal.deltoideus_scapularRmax "Set Value" --value="{1.1,1.1,1.1,1.1,1.1,1.1,1.1,1.1}"
+WARNING(OBJ1) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Calibration\ShoulderCal.any(273)  :   'deltoideus_scapularRmax'  :  'Set Value' operation on this value-object has broken symbolic dependency. ('Reset Value' to re-establish this dependency)
+
+#### Macro command > classoperation Main.HumanModel.Calibration.RightShoulderCal.ShoulderCal.deltoideus_clavicularRmin "Set Value" --value="{0.55,0.55,0.55,0.55}"
+WARNING(OBJ1) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Calibration\ShoulderCal.any(280)  :   'deltoideus_clavicularRmin'  :  'Set Value' operation on this value-object has broken symbolic dependency. ('Reset Value' to re-establish this dependency)
+
+#### Macro command > classoperation Main.HumanModel.Calibration.RightShoulderCal.ShoulderCal.deltoideus_clavicularRmax "Set Value" --value="{1.3,1.3,1.3,1.3}"
+WARNING(OBJ1) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Calibration\ShoulderCal.any(281)  :   'deltoideus_clavicularRmax'  :  'Set Value' operation on this value-object has broken symbolic dependency. ('Reset Value' to re-establish this dependency)
+
+#### Macro command > classoperation Main.HumanModel.Calibration.RightShoulderCal.ShoulderCal.infraspinatusRmin "Set Value" --value="{0.5,0.5,0.5,0.5,0.5,0.5}"
+WARNING(OBJ1) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Calibration\ShoulderCal.any(284)  :   'infraspinatusRmin'  :  'Set Value' operation on this value-object has broken symbolic dependency. ('Reset Value' to re-establish this dependency)
+
+#### Macro command > classoperation Main.HumanModel.Calibration.RightShoulderCal.ShoulderCal.infraspinatusRmax "Set Value" --value="{1.4,1.4,1.4,1.4,1.4,1.4}"
+WARNING(OBJ1) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Calibration\ShoulderCal.any(285)  :   'infraspinatusRmax'  :  'Set Value' operation on this value-object has broken symbolic dependency. ('Reset Value' to re-establish this dependency)
+
+#### Macro command > classoperation Main.HumanModel.Calibration.RightShoulderCal.ShoulderCal.pectoralis_major_thoracicRmin "Set Value" --value="{0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4}"
+WARNING(OBJ1) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Calibration\ShoulderCal.any(288)  :   'pectoralis_major_thoracicRmin'  :  'Set Value' operation on this value-object has broken symbolic dependency. ('Reset Value' to re-establish this dependency)
+
+#### Macro command > classoperation Main.HumanModel.Calibration.RightShoulderCal.ShoulderCal.pectoralis_major_thoracicRmax "Set Value" --value="{1.4,1.4,1.4,1.4,1.4,1.4,1.4,1.4,1.4,1.4}"
+WARNING(OBJ1) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Calibration\ShoulderCal.any(289)  :   'pectoralis_major_thoracicRmax'  :  'Set Value' operation on this value-object has broken symbolic dependency. ('Reset Value' to re-establish this dependency)
+
+#### Macro command > classoperation Main.HumanModel.Calibration.RightShoulderCal.ShoulderCal.pectoralis_major_clavicularRmin "Set Value" --value="{0.4,0.4,0.4,0.4,0.4}"
+WARNING(OBJ1) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Calibration\ShoulderCal.any(292)  :   'pectoralis_major_clavicularRmin'  :  'Set Value' operation on this value-object has broken symbolic dependency. ('Reset Value' to re-establish this dependency)
+
+#### Macro command > classoperation Main.HumanModel.Calibration.RightShoulderCal.ShoulderCal.pectoralis_major_clavicularRmax "Set Value" --value="{1.3,1.3,1.3,1.3,1.3}"
+WARNING(OBJ1) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Calibration\ShoulderCal.any(293)  :   'pectoralis_major_clavicularRmax'  :  'Set Value' operation on this value-object has broken symbolic dependency. ('Reset Value' to re-establish this dependency)
+
+#### Macro command > classoperation Main.HumanModel.Calibration.RightShoulderCal.ShoulderCal.pectoralis_minorRmin "Set Value" --value="{0.55,0.5,0.45,0.45}"
+WARNING(OBJ1) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Calibration\ShoulderCal.any(296)  :   'pectoralis_minorRmin'  :  'Set Value' operation on this value-object has broken symbolic dependency. ('Reset Value' to re-establish this dependency)
+
+#### Macro command > classoperation Main.HumanModel.Calibration.RightShoulderCal.ShoulderCal.pectoralis_minorRmax "Set Value" --value="{1.05,1.1,1.1,1.1}"
+WARNING(OBJ1) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Calibration\ShoulderCal.any(297)  :   'pectoralis_minorRmax'  :  'Set Value' operation on this value-object has broken symbolic dependency. ('Reset Value' to re-establish this dependency)
+
+#### Macro command > classoperation Main.HumanModel.Calibration.RightShoulderCal.ShoulderCal.rhomboideusRmin "Set Value" --value="{0.45,0.45,0.45}"
+WARNING(OBJ1) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Calibration\ShoulderCal.any(300)  :   'rhomboideusRmin'  :  'Set Value' operation on this value-object has broken symbolic dependency. ('Reset Value' to re-establish this dependency)
+
+#### Macro command > classoperation Main.HumanModel.Calibration.RightShoulderCal.ShoulderCal.rhomboideusRmax "Set Value" --value="{1.1,1.1,1.1}"
+WARNING(OBJ1) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Calibration\ShoulderCal.any(301)  :   'rhomboideusRmax'  :  'Set Value' operation on this value-object has broken symbolic dependency. ('Reset Value' to re-establish this dependency)
+
+#### Macro command > classoperation Main.HumanModel.Calibration.RightShoulderCal.ShoulderCal.serratus_anteriorRmin "Set Value" --value="{0.6,0.6,0.5,0.45,0.45,0.5}"
+WARNING(OBJ1) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Calibration\ShoulderCal.any(304)  :   'serratus_anteriorRmin'  :  'Set Value' operation on this value-object has broken symbolic dependency. ('Reset Value' to re-establish this dependency)
+
+#### Macro command > classoperation Main.HumanModel.Calibration.RightShoulderCal.ShoulderCal.serratus_anteriorRmax "Set Value" --value="{1.1,1.1,1.2,1.2,1.2,1.2}"
+WARNING(OBJ1) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Calibration\ShoulderCal.any(305)  :   'serratus_anteriorRmax'  :  'Set Value' operation on this value-object has broken symbolic dependency. ('Reset Value' to re-establish this dependency)
+
+#### Macro command > classoperation Main.HumanModel.Calibration.RightShoulderCal.ShoulderCal.subscapularisRmin "Set Value" --value="{0.475,0.475,0.475,0.475,0.475,0.475}"
+WARNING(OBJ1) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Calibration\ShoulderCal.any(308)  :   'subscapularisRmin'  :  'Set Value' operation on this value-object has broken symbolic dependency. ('Reset Value' to re-establish this dependency)
+
+#### Macro command > classoperation Main.HumanModel.Calibration.RightShoulderCal.ShoulderCal.subscapularisRmax "Set Value" --value="{0.9,0.9,0.9,0.9,0.9,0.9}"
+WARNING(OBJ1) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Calibration\ShoulderCal.any(309)  :   'subscapularisRmax'  :  'Set Value' operation on this value-object has broken symbolic dependency. ('Reset Value' to re-establish this dependency)
+
+#### Macro command > classoperation Main.HumanModel.Calibration.RightShoulderCal.ShoulderCal.supraspinatusRmin "Set Value" --value="{0.3,0.3,0.3,0.3,0.3,0.3}"
+WARNING(OBJ1) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Calibration\ShoulderCal.any(312)  :   'supraspinatusRmin'  :  'Set Value' operation on this value-object has broken symbolic dependency. ('Reset Value' to re-establish this dependency)
+
+#### Macro command > classoperation Main.HumanModel.Calibration.RightShoulderCal.ShoulderCal.supraspinatusRmax "Set Value" --value="{1.3,1.3,1.3,1.3,1.3,1.3}"
+WARNING(OBJ1) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Calibration\ShoulderCal.any(313)  :   'supraspinatusRmax'  :  'Set Value' operation on this value-object has broken symbolic dependency. ('Reset Value' to re-establish this dependency)
+
+#### Macro command > classoperation Main.HumanModel.Calibration.RightShoulderCal.ShoulderCal.teres_majorRmin "Set Value" --value="{0.3,0.3,0.3,0.3,0.3,0.3}"
+WARNING(OBJ1) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Calibration\ShoulderCal.any(316)  :   'teres_majorRmin'  :  'Set Value' operation on this value-object has broken symbolic dependency. ('Reset Value' to re-establish this dependency)
+
+#### Macro command > classoperation Main.HumanModel.Calibration.RightShoulderCal.ShoulderCal.teres_majorRmax "Set Value" --value="{0.9,0.9,0.9,0.9,0.9,0.9}"
+WARNING(OBJ1) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Calibration\ShoulderCal.any(317)  :   'teres_majorRmax'  :  'Set Value' operation on this value-object has broken symbolic dependency. ('Reset Value' to re-establish this dependency)
+
+#### Macro command > classoperation Main.HumanModel.Calibration.RightShoulderCal.ShoulderCal.teres_minorRmin "Set Value" --value="{0.25,0.25,0.25,0.25,0.25,0.25}"
+WARNING(OBJ1) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Calibration\ShoulderCal.any(320)  :   'teres_minorRmin'  :  'Set Value' operation on this value-object has broken symbolic dependency. ('Reset Value' to re-establish this dependency)
+
+#### Macro command > classoperation Main.HumanModel.Calibration.RightShoulderCal.ShoulderCal.teres_minorRmax "Set Value" --value="{1.4,1.4,1.4,1.4,1.4,1.4}"
+WARNING(OBJ1) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Calibration\ShoulderCal.any(321)  :   'teres_minorRmax'  :  'Set Value' operation on this value-object has broken symbolic dependency. ('Reset Value' to re-establish this dependency)
+
+#### Macro command > classoperation Main.HumanModel.Calibration.RightShoulderCal.ShoulderCal.trapezius_scapularRmin "Set Value" --value="{0.5,0.5,0.5,0.5,0.5,0.5}"
+WARNING(OBJ1) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Calibration\ShoulderCal.any(324)  :   'trapezius_scapularRmin'  :  'Set Value' operation on this value-object has broken symbolic dependency. ('Reset Value' to re-establish this dependency)
+
+#### Macro command > classoperation Main.HumanModel.Calibration.RightShoulderCal.ShoulderCal.trapezius_scapularRmax "Set Value" --value="{1.1,1.1,1.1,1.1,1.1,1.1}"
+WARNING(OBJ1) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Calibration\ShoulderCal.any(325)  :   'trapezius_scapularRmax'  :  'Set Value' operation on this value-object has broken symbolic dependency. ('Reset Value' to re-establish this dependency)
+
+#### Macro command > classoperation Main "Update Values"
+Updating expressions...
+WARNING(OBJ.MCH.MUS2) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle-parameters-shoulder.any(74)  :   'biceps_brachii_caput_longum'  :  Muscle without strength  :  The muscle has been stretched too much
+WARNING(OBJ.MCH.MUS2) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle-parameters-shoulder.any(597)  :   'infraspinatus_3'  :  Muscle without strength  :  The muscle has been stretched too much
+WARNING(OBJ.MCH.MUS2) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle-parameters-shoulder.any(627)  :   'infraspinatus_5'  :  Muscle without strength  :  The muscle has been stretched too much
+WARNING(OBJ.MCH.MUS2) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle-parameters-shoulder.any(692)  :   'latissimus_dorsi_3'  :  Muscle without strength  :  The muscle has been stretched too much
+WARNING(OBJ.MCH.MUS2) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle-parameters-shoulder.any(708)  :   'latissimus_dorsi_4'  :  Muscle without strength  :  The muscle has been stretched too much
+WARNING(OBJ.MCH.MUS2) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle-parameters-shoulder.any(724)  :   'latissimus_dorsi_5'  :  Muscle without strength  :  The muscle has been stretched too much
+WARNING(OBJ.MCH.MUS2) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle-parameters-shoulder.any(1110)  :   'rhomboideus_1'  :  Muscle without strength  :  The muscle has been stretched too much
+WARNING(OBJ.MCH.MUS2) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle-parameters-shoulder.any(1158)  :   'serratus_anterior_1'  :  Muscle without strength  :  The muscle has been stretched too much
+WARNING(OBJ.MCH.MUS2) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle-parameters-shoulder.any(1174)  :   'serratus_anterior_2'  :  Muscle without strength  :  The muscle has been stretched too much
+WARNING(OBJ.MCH.MUS2) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle-parameters-shoulder.any(1190)  :   'serratus_anterior_3'  :  Muscle without strength  :  The muscle has been stretched too much
+WARNING(OBJ.MCH.MUS2) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle-parameters-shoulder.any(1363)  :   'supraspinatus_1'  :  Muscle without strength  :  The muscle has been stretched too much
+WARNING(OBJ.MCH.MUS2) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle-parameters-shoulder.any(1379)  :   'supraspinatus_2'  :  Muscle without strength  :  The muscle has been stretched too much
+WARNING(OBJ.MCH.MUS2) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle-parameters-shoulder.any(1395)  :   'supraspinatus_3'  :  Muscle without strength  :  The muscle has been stretched too much
+WARNING(OBJ.MCH.MUS2) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle-parameters-shoulder.any(1411)  :   'supraspinatus_4'  :  Muscle without strength  :  The muscle has been stretched too much
+WARNING(OBJ.MCH.MUS2) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle-parameters-shoulder.any(1427)  :   'supraspinatus_5'  :  Muscle without strength  :  The muscle has been stretched too much
+WARNING(OBJ.MCH.MUS2) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle-parameters-shoulder.any(1443)  :   'supraspinatus_6'  :  Muscle without strength  :  The muscle has been stretched too much
+WARNING(OBJ.MCH.MUS2) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle-parameters-shoulder.any(1651)  :   'trapezius_scapular_part_1'  :  Muscle without strength  :  The muscle has been stretched too much
+WARNING(OBJ.MCH.MUS2) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle-parameters-shoulder.any(1847)  :   'Triceps_LH_1'  :  Muscle without strength  :  The muscle has been stretched too much
+WARNING(OBJ.MCH.MUS2) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle-parameters-shoulder.any(1868)  :   'Triceps_LH_2'  :  Muscle without strength  :  The muscle has been stretched too much
+WARNING(OBJ.MCH.MUS2) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle-parameters-shoulder.any(1973)  :   'Triceps_LA_1'  :  Muscle without strength  :  The muscle has been stretched too much
+WARNING(OBJ.MCH.MUS2) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle-parameters-shoulder.any(2015)  :   'Brach_rad_1'  :  Muscle without strength  :  The muscle has been stretched too much
+WARNING(OBJ.MCH.MUS2) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle-parameters-shoulder.any(2036)  :   'Brach_rad_2'  :  Muscle without strength  :  The muscle has been stretched too much
+WARNING(OBJ.MCH.MUS2) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle-parameters-shoulder.any(2077)  :   'Anconeus_2'  :  Muscle without strength  :  The muscle has been stretched too much
+WARNING(OBJ.MCH.MUS2) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle-parameters-shoulder.any(2098)  :   'Pronator_teres_caput_humeral_1'  :  Muscle without strength  :  The muscle has been stretched too much
+WARNING(OBJ.MCH.MUS2) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle-parameters-shoulder.any(2119)  :   'Pronator_teres_caput_humeral_2'  :  Muscle without strength  :  The muscle has been stretched too much
+WARNING(OBJ.MCH.MUS2) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle-parameters-shoulder.any(2161)  :   'Supinator_humerus_part_1'  :  Muscle without strength  :  The muscle has been stretched too much
+WARNING(OBJ.MCH.MUS2) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle-parameters-shoulder.any(2181)  :   'Supinator_humerus_part_2'  :  Muscle without strength  :  The muscle has been stretched too much
+WARNING(OBJ.MCH.MUS2) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle-parameters-shoulder.any(2242)  :   'Pron_quadr_1'  :  Muscle without strength  :  The muscle has been stretched too much
+...Finished updating expressions
+
+#### Macro command > operation HumanModel.Calibration.CalibrationSequence
+
+#### Macro command > run
+
+***************************************************************************************
+0) Operation Sequence: (Operation: Main.HumanModel.Calibration.CalibrationSequence): 
+0.0) Dummy operation: (Operation: Main.HumanModel.Calibration.CalibrationSequence.PlaceHolderOpr): 
+1.0) FiberAndTendonLengthAdjustment (Operation: Main.HumanModel.Calibration.RightShoulderCal.ArmCalibrationStudyShoulder.FiberAndTendonLengthAdjustment): 
+1.0.0) PreOperation (Operation: Main.HumanModel.Calibration.RightShoulderCal.ArmCalibrationStudyShoulder.FiberAndTendonLengthAdjustment.PreOperation): 
+1.0.0.0) Kinematics (Operation: Main.HumanModel.Calibration.RightShoulderCal.ArmCalibrationStudyShoulder.Kinematics): 
+1.0.0.0.0) PreOperation (Operation: Main.HumanModel.Calibration.RightShoulderCal.ArmCalibrationStudyShoulder.Kinematics.PreOperation): 
+1.0.0.0.0.0) InitialConditions (Operation: Main.HumanModel.Calibration.RightShoulderCal.ArmCalibrationStudyShoulder.InitialConditions): 
+1.0.0.0.0.0) ...Design variables have been updated.
+1.0.0.0.0.1) ...Load-time positions have been re-established.
+1.0.0.0.0.2) ...Kinematic analysis completed.
+WARNING(OBJ.MCH.MUS2) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle-parameters-shoulder.any(597)  :   'infraspinatus_3'  :  Muscle without strength  :  The muscle has been stretched too much
+WARNING(OBJ.MCH.MUS2) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle-parameters-shoulder.any(627)  :   'infraspinatus_5'  :  Muscle without strength  :  The muscle has been stretched too much
+WARNING(OBJ.MCH.MUS2) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle-parameters-shoulder.any(804)  :   'pectoralis_major_thoracic_part_1'  :  Muscle without strength  :  The muscle has been stretched too much
+WARNING(OBJ.MCH.MUS2) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle-parameters-shoulder.any(820)  :   'pectoralis_major_thoracic_part_2'  :  Muscle without strength  :  The muscle has been stretched too much
+WARNING(OBJ.MCH.MUS2) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle-parameters-shoulder.any(836)  :   'pectoralis_major_thoracic_part_3'  :  Muscle without strength  :  The muscle has been stretched too much
+WARNING(OBJ.MCH.MUS2) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle-parameters-shoulder.any(852)  :   'pectoralis_major_thoracic_part_4'  :  Muscle without strength  :  The muscle has been stretched too much
+WARNING(OBJ.MCH.MUS2) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle-parameters-shoulder.any(868)  :   'pectoralis_major_thoracic_part_5'  :  Muscle without strength  :  The muscle has been stretched too much
+WARNING(OBJ.MCH.MUS2) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle-parameters-shoulder.any(884)  :   'pectoralis_major_thoracic_part_6'  :  Muscle without strength  :  The muscle has been stretched too much
+WARNING(OBJ.MCH.MUS2) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle-parameters-shoulder.any(900)  :   'pectoralis_major_thoracic_part_7'  :  Muscle without strength  :  The muscle has been stretched too much
+WARNING(OBJ.MCH.MUS2) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle-parameters-shoulder.any(916)  :   'pectoralis_major_thoracic_part_8'  :  Muscle without strength  :  The muscle has been stretched too much
+WARNING(OBJ.MCH.MUS2) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle-parameters-shoulder.any(1062)  :   'pectoralis_minor_2'  :  Muscle without strength  :  The muscle has been stretched too much
+WARNING(OBJ.MCH.MUS2) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle-parameters-shoulder.any(1078)  :   'pectoralis_minor_3'  :  Muscle without strength  :  The muscle has been stretched too much
+WARNING(OBJ.MCH.MUS2) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle-parameters-shoulder.any(1094)  :   'pectoralis_minor_4'  :  Muscle without strength  :  The muscle has been stretched too much
+WARNING(OBJ.MCH.MUS2) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle-parameters-shoulder.any(1110)  :   'rhomboideus_1'  :  Muscle without strength  :  The muscle has been stretched too much
+WARNING(OBJ.MCH.MUS2) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle-parameters-shoulder.any(1126)  :   'rhomboideus_2'  :  Muscle without strength  :  The muscle has been stretched too much
+WARNING(OBJ.MCH.MUS2) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle-parameters-shoulder.any(1158)  :   'serratus_anterior_1'  :  Muscle without strength  :  The muscle has been stretched too much
+WARNING(OBJ.MCH.MUS2) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle-parameters-shoulder.any(1363)  :   'supraspinatus_1'  :  Muscle without strength  :  The muscle has been stretched too much
+WARNING(OBJ.MCH.MUS2) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle-parameters-shoulder.any(1379)  :   'supraspinatus_2'  :  Muscle without strength  :  The muscle has been stretched too much
+WARNING(OBJ.MCH.MUS2) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle-parameters-shoulder.any(1395)  :   'supraspinatus_3'  :  Muscle without strength  :  The muscle has been stretched too much
+WARNING(OBJ.MCH.MUS2) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle-parameters-shoulder.any(1523)  :   'teres_major_5'  :  Muscle without strength  :  The muscle has been stretched too much
+WARNING(OBJ.MCH.MUS2) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle-parameters-shoulder.any(1539)  :   'teres_major_6'  :  Muscle without strength  :  The muscle has been stretched too much
+WARNING(OBJ.MCH.MUS2) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle-parameters-shoulder.any(1651)  :   'trapezius_scapular_part_1'  :  Muscle without strength  :  The muscle has been stretched too much
+WARNING(OBJ.MCH.MUS2) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle-parameters-shoulder.any(74)  :   'biceps_brachii_caput_longum'  :  Muscle without strength  :  The muscle has been stretched too much
+WARNING(OBJ.MCH.MUS2) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle-parameters-shoulder.any(658)  :   'latissimus_dorsi_1'  :  Muscle without strength  :  The muscle has been stretched too much
+WARNING(OBJ.MCH.MUS2) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle-parameters-shoulder.any(675)  :   'latissimus_dorsi_2'  :  Muscle without strength  :  The muscle has been stretched too much
+WARNING(OBJ.MCH.MUS2) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle-parameters-shoulder.any(692)  :   'latissimus_dorsi_3'  :  Muscle without strength  :  The muscle has been stretched too much
+WARNING(OBJ.MCH.MUS2) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle-parameters-shoulder.any(708)  :   'latissimus_dorsi_4'  :  Muscle without strength  :  The muscle has been stretched too much
+WARNING(OBJ.MCH.MUS2) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle-parameters-shoulder.any(724)  :   'latissimus_dorsi_5'  :  Muscle without strength  :  The muscle has been stretched too much
+WARNING(OBJ.MCH.MUS2) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle-parameters-shoulder.any(1847)  :   'Triceps_LH_1'  :  Muscle without strength  :  The muscle has been stretched too much
+WARNING(OBJ.MCH.MUS2) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle-parameters-shoulder.any(1868)  :   'Triceps_LH_2'  :  Muscle without strength  :  The muscle has been stretched too much
+WARNING(OBJ.MCH.MUS2) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle-parameters-shoulder.any(1973)  :   'Triceps_LA_1'  :  Muscle without strength  :  The muscle has been stretched too much
+WARNING(OBJ.MCH.MUS2) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle-parameters-shoulder.any(2015)  :   'Brach_rad_1'  :  Muscle without strength  :  The muscle has been stretched too much
+WARNING(OBJ.MCH.MUS2) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle-parameters-shoulder.any(2036)  :   'Brach_rad_2'  :  Muscle without strength  :  The muscle has been stretched too much
+WARNING(OBJ.MCH.MUS2) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle-parameters-shoulder.any(2181)  :   'Supinator_humerus_part_2'  :  Muscle without strength  :  The muscle has been stretched too much
+1.0.0.0.0.3) ...Dependent variables are fully updated.
+1.0.0.0) Kinematic analysis...
+WARNING(OBJ.MCH.MUS2) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle-parameters-shoulder.any(932)  :   'pectoralis_major_thoracic_part_9'  :  Muscle without strength  :  The muscle has been stretched too much
+WARNING(OBJ.MCH.MUS2) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle-parameters-shoulder.any(2077)  :   'Anconeus_2'  :  Muscle without strength  :  The muscle has been stretched too much
+WARNING(OBJ.MCH.MUS2) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle-parameters-shoulder.any(948)  :   'pectoralis_major_thoracic_part_10'  :  Muscle without strength  :  The muscle has been stretched too much
+WARNING(OBJ.MCH.MUS2) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle-parameters-shoulder.any(1174)  :   'serratus_anterior_2'  :  Muscle without strength  :  The muscle has been stretched too much
+WARNING(OBJ.MCH.MUS2) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle-parameters-shoulder.any(1931)  :   'Triceps_ME_1'  :  Muscle without strength  :  The muscle has been stretched too much
+WARNING(OBJ.MCH.MUS2) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle-parameters-shoulder.any(1190)  :   'serratus_anterior_3'  :  Muscle without strength  :  The muscle has been stretched too much
+WARNING(OBJ.MCH.MUS2) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle-parameters-shoulder.any(1427)  :   'supraspinatus_5'  :  Muscle without strength  :  The muscle has been stretched too much
+WARNING(OBJ.MCH.MUS2) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle-parameters-shoulder.any(642)  :   'infraspinatus_6'  :  Muscle without strength  :  The muscle has been stretched too much
+WARNING(OBJ.MCH.MUS2) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle-parameters-shoulder.any(1411)  :   'supraspinatus_4'  :  Muscle without strength  :  The muscle has been stretched too much
+WARNING(OBJ.MCH.MUS2) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle-parameters-shoulder.any(1443)  :   'supraspinatus_6'  :  Muscle without strength  :  The muscle has been stretched too much
+WARNING(OBJ.MCH.MUS2) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle-parameters-shoulder.any(1619)  :   'teres_minor_5'  :  Muscle without strength  :  The muscle has been stretched too much
+WARNING(OBJ.MCH.MUS2) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle-parameters-shoulder.any(1635)  :   'teres_minor_6'  :  Muscle without strength  :  The muscle has been stretched too much
+WARNING(OBJ.MCH.MUS2) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle-parameters-shoulder.any(383)  :   'deltoideus_posterior_part_1'  :  Muscle without strength  :  The muscle has been stretched too much
+WARNING(OBJ.MCH.MUS2) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle-parameters-shoulder.any(567)  :   'infraspinatus_1'  :  Muscle without strength  :  The muscle has been stretched too much
+WARNING(OBJ.MCH.MUS2) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle-parameters-shoulder.any(1142)  :   'rhomboideus_3'  :  Muscle without strength  :  The muscle has been stretched too much
+WARNING(OBJ.MCH.KIN6) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Interface.any(278)  :   'GHMeasure'  :  Close to singular position  :  Orientation close to Gimbal Lock, i.e., first and third axis of rotation being parallel
+WARNING(OBJ.MCH.MUS2) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle-parameters-shoulder.any(1747)  :   'trapezius_clavicular_part_1'  :  Muscle without strength  :  The muscle has been stretched too much
+WARNING(OBJ.MCH.MUS2) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle-parameters-shoulder.any(1827)  :   'trapezius_clavicular_part_6'  :  Muscle without strength  :  The muscle has been stretched too much
+WARNING(OBJ.MCH.MUS2) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle-parameters-shoulder.any(1811)  :   'trapezius_clavicular_part_5'  :  Muscle without strength  :  The muscle has been stretched too much
+WARNING(OBJ.MCH.MUS2) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle-parameters-shoulder.any(59)  :   'biceps_brachii_caput_breve'  :  Muscle without strength  :  The muscle has been stretched too much
+WARNING(OBJ.MCH.MUS2) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle-parameters-shoulder.any(1206)  :   'serratus_anterior_4'  :  Muscle without strength  :  The muscle has been stretched too much
+WARNING(OBJ.MCH.MUS2) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle-parameters-shoulder.any(1491)  :   'teres_major_3'  :  Muscle without strength  :  The muscle has been stretched too much
+1.0.0.31) ...Kinematic analysis completed
+1.0) Muscle Fiber and Tendon Length Adjustment...
+NOTICE(OBJ.MCH.MUS6) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle.any(68)  :   'coracobrachialis_1'  :  Muscle calibration :  The tendon/fiber length of the muscle was calibrated according to the executed muscle calibration and the muscle model properties have been updated.
+NOTICE(OBJ.MCH.MUS6) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle.any(75)  :   'coracobrachialis_2'  :  Muscle calibration :  The tendon/fiber length of the muscle was calibrated according to the executed muscle calibration and the muscle model properties have been updated.
+NOTICE(OBJ.MCH.MUS6) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle.any(82)  :   'coracobrachialis_3'  :  Muscle calibration :  The tendon/fiber length of the muscle was calibrated according to the executed muscle calibration and the muscle model properties have been updated.
+NOTICE(OBJ.MCH.MUS6) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle.any(89)  :   'coracobrachialis_4'  :  Muscle calibration :  The tendon/fiber length of the muscle was calibrated according to the executed muscle calibration and the muscle model properties have been updated.
+NOTICE(OBJ.MCH.MUS6) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle.any(96)  :   'coracobrachialis_5'  :  Muscle calibration :  The tendon/fiber length of the muscle was calibrated according to the executed muscle calibration and the muscle model properties have been updated.
+NOTICE(OBJ.MCH.MUS6) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle.any(103)  :   'coracobrachialis_6'  :  Muscle calibration :  The tendon/fiber length of the muscle was calibrated according to the executed muscle calibration and the muscle model properties have been updated.
+NOTICE(OBJ.MCH.MUS6) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle.any(297)  :   'deltoideus_posterior_part_1'  :  Muscle calibration :  The tendon/fiber length of the muscle was calibrated according to the executed muscle calibration and the muscle model properties have been updated.
+NOTICE(OBJ.MCH.MUS6) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle.any(321)  :   'deltoideus_posterior_part_3'  :  Muscle calibration :  The tendon/fiber length of the muscle was calibrated according to the executed muscle calibration and the muscle model properties have been updated.
+NOTICE(OBJ.MCH.MUS6) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle.any(346)  :   'deltoideus_posterior_part_2'  :  Muscle calibration :  The tendon/fiber length of the muscle was calibrated according to the executed muscle calibration and the muscle model properties have been updated.
+NOTICE(OBJ.MCH.MUS6) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle.any(364)  :   'deltoideus_posterior_part_4'  :  Muscle calibration :  The tendon/fiber length of the muscle was calibrated according to the executed muscle calibration and the muscle model properties have been updated.
+NOTICE(OBJ.MCH.MUS6) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle.any(384)  :   'deltoideus_lateral_part_1'  :  Muscle calibration :  The tendon/fiber length of the muscle was calibrated according to the executed muscle calibration and the muscle model properties have been updated.
+NOTICE(OBJ.MCH.MUS6) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle.any(405)  :   'deltoideus_lateral_part_3'  :  Muscle calibration :  The tendon/fiber length of the muscle was calibrated according to the executed muscle calibration and the muscle model properties have been updated.
+NOTICE(OBJ.MCH.MUS6) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle.any(426)  :   'deltoideus_lateral_part_2'  :  Muscle calibration :  The tendon/fiber length of the muscle was calibrated according to the executed muscle calibration and the muscle model properties have been updated.
+NOTICE(OBJ.MCH.MUS6) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle.any(444)  :   'deltoideus_lateral_part_4'  :  Muscle calibration :  The tendon/fiber length of the muscle was calibrated according to the executed muscle calibration and the muscle model properties have been updated.
+NOTICE(OBJ.MCH.MUS6) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle.any(465)  :   'deltoideus_anterior_part_1'  :  Muscle calibration :  The tendon/fiber length of the muscle was calibrated according to the executed muscle calibration and the muscle model properties have been updated.
+NOTICE(OBJ.MCH.MUS6) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle.any(489)  :   'deltoideus_anterior_part_2'  :  Muscle calibration :  The tendon/fiber length of the muscle was calibrated according to the executed muscle calibration and the muscle model properties have been updated.
+NOTICE(OBJ.MCH.MUS6) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle.any(508)  :   'deltoideus_anterior_part_3'  :  Muscle calibration :  The tendon/fiber length of the muscle was calibrated according to the executed muscle calibration and the muscle model properties have been updated.
+NOTICE(OBJ.MCH.MUS6) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle.any(530)  :   'deltoideus_anterior_part_4'  :  Muscle calibration :  The tendon/fiber length of the muscle was calibrated according to the executed muscle calibration and the muscle model properties have been updated.
+NOTICE(OBJ.MCH.MUS6) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle.any(555)  :   'infraspinatus_1'  :  Muscle calibration :  The tendon/fiber length of the muscle was calibrated according to the executed muscle calibration and the muscle model properties have been updated.
+NOTICE(OBJ.MCH.MUS6) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle.any(574)  :   'infraspinatus_2'  :  Muscle calibration :  The tendon/fiber length of the muscle was calibrated according to the executed muscle calibration and the muscle model properties have been updated.
+NOTICE(OBJ.MCH.MUS6) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle.any(584)  :   'infraspinatus_3'  :  Muscle calibration :  The tendon/fiber length of the muscle was calibrated according to the executed muscle calibration and the muscle model properties have been updated.
+NOTICE(OBJ.MCH.MUS6) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle.any(594)  :   'infraspinatus_4'  :  Muscle calibration :  The tendon/fiber length of the muscle was calibrated according to the executed muscle calibration and the muscle model properties have been updated.
+NOTICE(OBJ.MCH.MUS6) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle.any(604)  :   'infraspinatus_5'  :  Muscle calibration :  The tendon/fiber length of the muscle was calibrated according to the executed muscle calibration and the muscle model properties have been updated.
+NOTICE(OBJ.MCH.MUS6) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle.any(614)  :   'infraspinatus_6'  :  Muscle calibration :  The tendon/fiber length of the muscle was calibrated according to the executed muscle calibration and the muscle model properties have been updated.
+NOTICE(OBJ.MCH.MUS6) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle.any(748)  :   'pectoralis_major_thoracic_part_1'  :  Muscle calibration :  The tendon/fiber length of the muscle was calibrated according to the executed muscle calibration and the muscle model properties have been updated.
+NOTICE(OBJ.MCH.MUS6) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle.any(763)  :   'pectoralis_major_thoracic_part_2'  :  Muscle calibration :  The tendon/fiber length of the muscle was calibrated according to the executed muscle calibration and the muscle model properties have been updated.
+NOTICE(OBJ.MCH.MUS6) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle.any(778)  :   'pectoralis_major_thoracic_part_3'  :  Muscle calibration :  The tendon/fiber length of the muscle was calibrated according to the executed muscle calibration and the muscle model properties have been updated.
+NOTICE(OBJ.MCH.MUS6) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle.any(793)  :   'pectoralis_major_thoracic_part_4'  :  Muscle calibration :  The tendon/fiber length of the muscle was calibrated according to the executed muscle calibration and the muscle model properties have been updated.
+NOTICE(OBJ.MCH.MUS6) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle.any(803)  :   'pectoralis_major_thoracic_part_5'  :  Muscle calibration :  The tendon/fiber length of the muscle was calibrated according to the executed muscle calibration and the muscle model properties have been updated.
+NOTICE(OBJ.MCH.MUS6) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle.any(813)  :   'pectoralis_major_thoracic_part_6'  :  Muscle calibration :  The tendon/fiber length of the muscle was calibrated according to the executed muscle calibration and the muscle model properties have been updated.
+NOTICE(OBJ.MCH.MUS6) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle.any(823)  :   'pectoralis_major_thoracic_part_7'  :  Muscle calibration :  The tendon/fiber length of the muscle was calibrated according to the executed muscle calibration and the muscle model properties have been updated.
+NOTICE(OBJ.MCH.MUS6) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle.any(833)  :   'pectoralis_major_thoracic_part_8'  :  Muscle calibration :  The tendon/fiber length of the muscle was calibrated according to the executed muscle calibration and the muscle model properties have been updated.
+NOTICE(OBJ.MCH.MUS6) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle.any(843)  :   'pectoralis_major_thoracic_part_9'  :  Muscle calibration :  The tendon/fiber length of the muscle was calibrated according to the executed muscle calibration and the muscle model properties have been updated.
+NOTICE(OBJ.MCH.MUS6) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle.any(863)  :   'pectoralis_major_thoracic_part_10'  :  Muscle calibration :  The tendon/fiber length of the muscle was calibrated according to the executed muscle calibration and the muscle model properties have been updated.
+NOTICE(OBJ.MCH.MUS6) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle.any(874)  :   'pectoralis_major_clavicular_part_1'  :  Muscle calibration :  The tendon/fiber length of the muscle was calibrated according to the executed muscle calibration and the muscle model properties have been updated.
+NOTICE(OBJ.MCH.MUS6) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle.any(893)  :   'pectoralis_major_clavicular_part_2'  :  Muscle calibration :  The tendon/fiber length of the muscle was calibrated according to the executed muscle calibration and the muscle model properties have been updated.
+NOTICE(OBJ.MCH.MUS6) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle.any(906)  :   'pectoralis_major_clavicular_part_3'  :  Muscle calibration :  The tendon/fiber length of the muscle was calibrated according to the executed muscle calibration and the muscle model properties have been updated.
+NOTICE(OBJ.MCH.MUS6) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle.any(919)  :   'pectoralis_major_clavicular_part_4'  :  Muscle calibration :  The tendon/fiber length of the muscle was calibrated according to the executed muscle calibration and the muscle model properties have been updated.
+NOTICE(OBJ.MCH.MUS6) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle.any(934)  :   'pectoralis_major_clavicular_part_5'  :  Muscle calibration :  The tendon/fiber length of the muscle was calibrated according to the executed muscle calibration and the muscle model properties have been updated.
+NOTICE(OBJ.MCH.MUS6) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle.any(947)  :   'pectoralis_minor_1'  :  Muscle calibration :  The tendon/fiber length of the muscle was calibrated according to the executed muscle calibration and the muscle model properties have been updated.
+NOTICE(OBJ.MCH.MUS6) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle.any(954)  :   'pectoralis_minor_2'  :  Muscle calibration :  The tendon/fiber length of the muscle was calibrated according to the executed muscle calibration and the muscle model properties have been updated.
+NOTICE(OBJ.MCH.MUS6) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle.any(972)  :   'pectoralis_minor_3'  :  Muscle calibration :  The tendon/fiber length of the muscle was calibrated according to the executed muscle calibration and the muscle model properties have been updated.
+NOTICE(OBJ.MCH.MUS6) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle.any(980)  :   'pectoralis_minor_4'  :  Muscle calibration :  The tendon/fiber length of the muscle was calibrated according to the executed muscle calibration and the muscle model properties have been updated.
+NOTICE(OBJ.MCH.MUS6) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle.any(988)  :   'rhomboideus_1'  :  Muscle calibration :  The tendon/fiber length of the muscle was calibrated according to the executed muscle calibration and the muscle model properties have been updated.
+NOTICE(OBJ.MCH.MUS6) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle.any(996)  :   'rhomboideus_2'  :  Muscle calibration :  The tendon/fiber length of the muscle was calibrated according to the executed muscle calibration and the muscle model properties have been updated.
+NOTICE(OBJ.MCH.MUS6) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle.any(1003)  :   'rhomboideus_3'  :  Muscle calibration :  The tendon/fiber length of the muscle was calibrated according to the executed muscle calibration and the muscle model properties have been updated.
+NOTICE(OBJ.MCH.MUS6) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle.any(1010)  :   'serratus_anterior_1'  :  Muscle calibration :  The tendon/fiber length of the muscle was calibrated according to the executed muscle calibration and the muscle model properties have been updated.
+NOTICE(OBJ.MCH.MUS6) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle.any(1026)  :   'serratus_anterior_2'  :  Muscle calibration :  The tendon/fiber length of the muscle was calibrated according to the executed muscle calibration and the muscle model properties have been updated.
+NOTICE(OBJ.MCH.MUS6) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle.any(1036)  :   'serratus_anterior_3'  :  Muscle calibration :  The tendon/fiber length of the muscle was calibrated according to the executed muscle calibration and the muscle model properties have been updated.
+NOTICE(OBJ.MCH.MUS6) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle.any(1046)  :   'serratus_anterior_4'  :  Muscle calibration :  The tendon/fiber length of the muscle was calibrated according to the executed muscle calibration and the muscle model properties have been updated.
+NOTICE(OBJ.MCH.MUS6) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle.any(1056)  :   'serratus_anterior_5'  :  Muscle calibration :  The tendon/fiber length of the muscle was calibrated according to the executed muscle calibration and the muscle model properties have been updated.
+NOTICE(OBJ.MCH.MUS6) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle.any(1066)  :   'serratus_anterior_6'  :  Muscle calibration :  The tendon/fiber length of the muscle was calibrated according to the executed muscle calibration and the muscle model properties have been updated.
+NOTICE(OBJ.MCH.MUS6) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle.any(1086)  :   'subscapularis_1'  :  Muscle calibration :  The tendon/fiber length of the muscle was calibrated according to the executed muscle calibration and the muscle model properties have been updated.
+NOTICE(OBJ.MCH.MUS6) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle.any(1108)  :   'subscapularis_2'  :  Muscle calibration :  The tendon/fiber length of the muscle was calibrated according to the executed muscle calibration and the muscle model properties have been updated.
+NOTICE(OBJ.MCH.MUS6) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle.any(1119)  :   'subscapularis_3'  :  Muscle calibration :  The tendon/fiber length of the muscle was calibrated according to the executed muscle calibration and the muscle model properties have been updated.
+NOTICE(OBJ.MCH.MUS6) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle.any(1131)  :   'subscapularis_4'  :  Muscle calibration :  The tendon/fiber length of the muscle was calibrated according to the executed muscle calibration and the muscle model properties have been updated.
+NOTICE(OBJ.MCH.MUS6) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle.any(1142)  :   'subscapularis_5'  :  Muscle calibration :  The tendon/fiber length of the muscle was calibrated according to the executed muscle calibration and the muscle model properties have been updated.
+NOTICE(OBJ.MCH.MUS6) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle.any(1153)  :   'subscapularis_6'  :  Muscle calibration :  The tendon/fiber length of the muscle was calibrated according to the executed muscle calibration and the muscle model properties have been updated.
+NOTICE(OBJ.MCH.MUS6) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle.any(1164)  :   'supraspinatus_1'  :  Muscle calibration :  The tendon/fiber length of the muscle was calibrated according to the executed muscle calibration and the muscle model properties have been updated.
+NOTICE(OBJ.MCH.MUS6) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle.any(1177)  :   'supraspinatus_2'  :  Muscle calibration :  The tendon/fiber length of the muscle was calibrated according to the executed muscle calibration and the muscle model properties have been updated.
+NOTICE(OBJ.MCH.MUS6) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle.any(1187)  :   'supraspinatus_3'  :  Muscle calibration :  The tendon/fiber length of the muscle was calibrated according to the executed muscle calibration and the muscle model properties have been updated.
+NOTICE(OBJ.MCH.MUS6) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle.any(1197)  :   'supraspinatus_4'  :  Muscle calibration :  The tendon/fiber length of the muscle was calibrated according to the executed muscle calibration and the muscle model properties have been updated.
+NOTICE(OBJ.MCH.MUS6) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle.any(1207)  :   'supraspinatus_5'  :  Muscle calibration :  The tendon/fiber length of the muscle was calibrated according to the executed muscle calibration and the muscle model properties have been updated.
+NOTICE(OBJ.MCH.MUS6) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle.any(1217)  :   'supraspinatus_6'  :  Muscle calibration :  The tendon/fiber length of the muscle was calibrated according to the executed muscle calibration and the muscle model properties have been updated.
+NOTICE(OBJ.MCH.MUS6) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle.any(1227)  :   'teres_major_1'  :  Muscle calibration :  The tendon/fiber length of the muscle was calibrated according to the executed muscle calibration and the muscle model properties have been updated.
+NOTICE(OBJ.MCH.MUS6) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle.any(1243)  :   'teres_major_2'  :  Muscle calibration :  The tendon/fiber length of the muscle was calibrated according to the executed muscle calibration and the muscle model properties have been updated.
+NOTICE(OBJ.MCH.MUS6) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle.any(1254)  :   'teres_major_3'  :  Muscle calibration :  The tendon/fiber length of the muscle was calibrated according to the executed muscle calibration and the muscle model properties have been updated.
+NOTICE(OBJ.MCH.MUS6) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle.any(1265)  :   'teres_major_4'  :  Muscle calibration :  The tendon/fiber length of the muscle was calibrated according to the executed muscle calibration and the muscle model properties have been updated.
+NOTICE(OBJ.MCH.MUS6) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle.any(1276)  :   'teres_major_5'  :  Muscle calibration :  The tendon/fiber length of the muscle was calibrated according to the executed muscle calibration and the muscle model properties have been updated.
+NOTICE(OBJ.MCH.MUS6) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle.any(1287)  :   'teres_major_6'  :  Muscle calibration :  The tendon/fiber length of the muscle was calibrated according to the executed muscle calibration and the muscle model properties have been updated.
+NOTICE(OBJ.MCH.MUS6) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle.any(1298)  :   'teres_minor_1'  :  Muscle calibration :  The tendon/fiber length of the muscle was calibrated according to the executed muscle calibration and the muscle model properties have been updated.
+NOTICE(OBJ.MCH.MUS6) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle.any(1318)  :   'teres_minor_2'  :  Muscle calibration :  The tendon/fiber length of the muscle was calibrated according to the executed muscle calibration and the muscle model properties have been updated.
+NOTICE(OBJ.MCH.MUS6) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle.any(1328)  :   'teres_minor_3'  :  Muscle calibration :  The tendon/fiber length of the muscle was calibrated according to the executed muscle calibration and the muscle model properties have been updated.
+NOTICE(OBJ.MCH.MUS6) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle.any(1338)  :   'teres_minor_4'  :  Muscle calibration :  The tendon/fiber length of the muscle was calibrated according to the executed muscle calibration and the muscle model properties have been updated.
+NOTICE(OBJ.MCH.MUS6) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle.any(1348)  :   'teres_minor_5'  :  Muscle calibration :  The tendon/fiber length of the muscle was calibrated according to the executed muscle calibration and the muscle model properties have been updated.
+NOTICE(OBJ.MCH.MUS6) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle.any(1358)  :   'teres_minor_6'  :  Muscle calibration :  The tendon/fiber length of the muscle was calibrated according to the executed muscle calibration and the muscle model properties have been updated.
+NOTICE(OBJ.MCH.MUS6) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle.any(1369)  :   'trapezius_scapular_part_1'  :  Muscle calibration :  The tendon/fiber length of the muscle was calibrated according to the executed muscle calibration and the muscle model properties have been updated.
+NOTICE(OBJ.MCH.MUS6) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle.any(1383)  :   'trapezius_scapular_part_2'  :  Muscle calibration :  The tendon/fiber length of the muscle was calibrated according to the executed muscle calibration and the muscle model properties have been updated.
+NOTICE(OBJ.MCH.MUS6) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle.any(1394)  :   'trapezius_scapular_part_3'  :  Muscle calibration :  The tendon/fiber length of the muscle was calibrated according to the executed muscle calibration and the muscle model properties have been updated.
+NOTICE(OBJ.MCH.MUS6) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle.any(1404)  :   'trapezius_scapular_part_4'  :  Muscle calibration :  The tendon/fiber length of the muscle was calibrated according to the executed muscle calibration and the muscle model properties have been updated.
+NOTICE(OBJ.MCH.MUS6) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle.any(1411)  :   'trapezius_scapular_part_5'  :  Muscle calibration :  The tendon/fiber length of the muscle was calibrated according to the executed muscle calibration and the muscle model properties have been updated.
+NOTICE(OBJ.MCH.MUS6) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle.any(1418)  :   'trapezius_scapular_part_6'  :  Muscle calibration :  The tendon/fiber length of the muscle was calibrated according to the executed muscle calibration and the muscle model properties have been updated.
+1.0) ...Muscle Fiber and Tendon Length Adjustment finished.
+1.1) ...Design variables of the calibration model have been updated.
+2.0) FiberAndTendonLengthAdjustment (Operation: Main.HumanModel.Calibration.RightElbowCal.ArmCalibrationStudyElbow.FiberAndTendonLengthAdjustment): 
+2.0.0) PreOperation (Operation: Main.HumanModel.Calibration.RightElbowCal.ArmCalibrationStudyElbow.FiberAndTendonLengthAdjustment.PreOperation): 
+2.0.0.0) Kinematics (Operation: Main.HumanModel.Calibration.RightElbowCal.ArmCalibrationStudyElbow.Kinematics): 
+2.0.0.0.0) PreOperation (Operation: Main.HumanModel.Calibration.RightElbowCal.ArmCalibrationStudyElbow.Kinematics.PreOperation): 
+2.0.0.0.0.0) InitialConditions (Operation: Main.HumanModel.Calibration.RightElbowCal.ArmCalibrationStudyElbow.InitialConditions): 
+2.0.0.0.0.0) ...Design variables have been updated.
+2.0.0.0.0.1) ...Load-time positions have been re-established.
+2.0.0.0.0.2) ...Kinematic analysis completed.
+WARNING(OBJ.MCH.MUS2) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle-parameters-shoulder.any(1847)  :   'Triceps_LH_1'  :  Muscle without strength  :  The muscle has been stretched too much
+WARNING(OBJ.MCH.MUS2) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle-parameters-shoulder.any(1868)  :   'Triceps_LH_2'  :  Muscle without strength  :  The muscle has been stretched too much
+WARNING(OBJ.MCH.MUS2) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle-parameters-shoulder.any(1973)  :   'Triceps_LA_1'  :  Muscle without strength  :  The muscle has been stretched too much
+WARNING(OBJ.MCH.MUS2) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle-parameters-shoulder.any(2015)  :   'Brach_rad_1'  :  Muscle without strength  :  The muscle has been stretched too much
+WARNING(OBJ.MCH.MUS2) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle-parameters-shoulder.any(2036)  :   'Brach_rad_2'  :  Muscle without strength  :  The muscle has been stretched too much
+WARNING(OBJ.MCH.MUS2) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle-parameters-shoulder.any(2098)  :   'Pronator_teres_caput_humeral_1'  :  Muscle without strength  :  The muscle has been stretched too much
+WARNING(OBJ.MCH.MUS2) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle-parameters-shoulder.any(2181)  :   'Supinator_humerus_part_2'  :  Muscle without strength  :  The muscle has been stretched too much
+WARNING(OBJ.MCH.MUS2) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle-parameters-shoulder.any(74)  :   'biceps_brachii_caput_longum'  :  Muscle without strength  :  The muscle has been stretched too much
+WARNING(OBJ.MCH.MUS2) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle-parameters-shoulder.any(692)  :   'latissimus_dorsi_3'  :  Muscle without strength  :  The muscle has been stretched too much
+WARNING(OBJ.MCH.MUS2) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle-parameters-shoulder.any(708)  :   'latissimus_dorsi_4'  :  Muscle without strength  :  The muscle has been stretched too much
+WARNING(OBJ.MCH.MUS2) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle-parameters-shoulder.any(724)  :   'latissimus_dorsi_5'  :  Muscle without strength  :  The muscle has been stretched too much
+2.0.0.0.0.3) ...Dependent variables are fully updated.
+2.0.0.0) Kinematic analysis...
+WARNING(OBJ.MCH.MUS2) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle-parameters-shoulder.any(1931)  :   'Triceps_ME_1'  :  Muscle without strength  :  The muscle has been stretched too much
+WARNING(OBJ.MCH.MUS2) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle-parameters-shoulder.any(1994)  :   'Triceps_LA_2'  :  Muscle without strength  :  The muscle has been stretched too much
+WARNING(OBJ.MCH.MUS2) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle-parameters-shoulder.any(2057)  :   'Anconeus_1'  :  Muscle without strength  :  The muscle has been stretched too much
+WARNING(OBJ.MCH.MUS2) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle-parameters-shoulder.any(2077)  :   'Anconeus_2'  :  Muscle without strength  :  The muscle has been stretched too much
+WARNING(OBJ.MCH.MUS2) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle-parameters-shoulder.any(2119)  :   'Pronator_teres_caput_humeral_2'  :  Muscle without strength  :  The muscle has been stretched too much
+WARNING(OBJ.MCH.MUS2) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle-parameters-shoulder.any(2242)  :   'Pron_quadr_1'  :  Muscle without strength  :  The muscle has been stretched too much
+WARNING(OBJ.MCH.MUS2) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle-parameters-shoulder.any(2262)  :   'Pron_quadr_2'  :  Muscle without strength  :  The muscle has been stretched too much
+WARNING(OBJ.MCH.MUS2) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle-parameters-shoulder.any(658)  :   'latissimus_dorsi_1'  :  Muscle without strength  :  The muscle has been stretched too much
+WARNING(OBJ.MCH.MUS2) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle-parameters-shoulder.any(675)  :   'latissimus_dorsi_2'  :  Muscle without strength  :  The muscle has been stretched too much
+WARNING(OBJ.MCH.MUS2) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle-parameters-shoulder.any(59)  :   'biceps_brachii_caput_breve'  :  Muscle without strength  :  The muscle has been stretched too much
+2.0.0.5) ...Kinematic analysis completed
+2.0) Muscle Fiber and Tendon Length Adjustment...
+NOTICE(OBJ.MCH.MUS6) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle.any(1478)  :   'Brachialis_1'  :  Muscle calibration :  The tendon/fiber length of the muscle was calibrated according to the executed muscle calibration and the muscle model properties have been updated.
+NOTICE(OBJ.MCH.MUS6) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle.any(1496)  :   'Brachialis_2'  :  Muscle calibration :  The tendon/fiber length of the muscle was calibrated according to the executed muscle calibration and the muscle model properties have been updated.
+NOTICE(OBJ.MCH.MUS6) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle.any(1508)  :   'Triceps_LH_1'  :  Muscle calibration :  Pennation angle of the muscle is so large that Rmin value cannot be attained before fiber become perpendicular earlier. Calibration has set minimum length to fit perpendicular case.
+NOTICE(OBJ.MCH.MUS6) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle.any(1508)  :   'Triceps_LH_1'  :  Muscle calibration :  The tendon/fiber length of the muscle was calibrated according to the executed muscle calibration and the muscle model properties have been updated.
+NOTICE(OBJ.MCH.MUS6) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle.any(1530)  :   'Triceps_LH_2'  :  Muscle calibration :  Pennation angle of the muscle is so large that Rmin value cannot be attained before fiber become perpendicular earlier. Calibration has set minimum length to fit perpendicular case.
+NOTICE(OBJ.MCH.MUS6) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle.any(1530)  :   'Triceps_LH_2'  :  Muscle calibration :  The tendon/fiber length of the muscle was calibrated according to the executed muscle calibration and the muscle model properties have been updated.
+NOTICE(OBJ.MCH.MUS6) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle.any(1544)  :   'Triceps_ME_1'  :  Muscle calibration :  Pennation angle of the muscle is so large that Rmin value cannot be attained before fiber become perpendicular earlier. Calibration has set minimum length to fit perpendicular case.
+NOTICE(OBJ.MCH.MUS6) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle.any(1544)  :   'Triceps_ME_1'  :  Muscle calibration :  The tendon/fiber length of the muscle was calibrated according to the executed muscle calibration and the muscle model properties have been updated.
+NOTICE(OBJ.MCH.MUS6) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle.any(1556)  :   'Triceps_ME_2'  :  Muscle calibration :  Pennation angle of the muscle is so large that Rmin value cannot be attained before fiber become perpendicular earlier. Calibration has set minimum length to fit perpendicular case.
+NOTICE(OBJ.MCH.MUS6) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle.any(1556)  :   'Triceps_ME_2'  :  Muscle calibration :  The tendon/fiber length of the muscle was calibrated according to the executed muscle calibration and the muscle model properties have been updated.
+NOTICE(OBJ.MCH.MUS6) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle.any(1568)  :   'Triceps_LA_1'  :  Muscle calibration :  Pennation angle of the muscle is so large that Rmin value cannot be attained before fiber become perpendicular earlier. Calibration has set minimum length to fit perpendicular case.
+NOTICE(OBJ.MCH.MUS6) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle.any(1568)  :   'Triceps_LA_1'  :  Muscle calibration :  The tendon/fiber length of the muscle was calibrated according to the executed muscle calibration and the muscle model properties have been updated.
+NOTICE(OBJ.MCH.MUS6) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle.any(1580)  :   'Triceps_LA_2'  :  Muscle calibration :  Pennation angle of the muscle is so large that Rmin value cannot be attained before fiber become perpendicular earlier. Calibration has set minimum length to fit perpendicular case.
+NOTICE(OBJ.MCH.MUS6) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle.any(1580)  :   'Triceps_LA_2'  :  Muscle calibration :  The tendon/fiber length of the muscle was calibrated according to the executed muscle calibration and the muscle model properties have been updated.
+NOTICE(OBJ.MCH.MUS6) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle.any(1592)  :   'Brach_rad_1'  :  Muscle calibration :  The tendon/fiber length of the muscle was calibrated according to the executed muscle calibration and the muscle model properties have been updated.
+NOTICE(OBJ.MCH.MUS6) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle.any(1609)  :   'Brach_rad_2'  :  Muscle calibration :  The tendon/fiber length of the muscle was calibrated according to the executed muscle calibration and the muscle model properties have been updated.
+NOTICE(OBJ.MCH.MUS6) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle.any(1624)  :   'Anconeus_1'  :  Muscle calibration :  Pennation angle of the muscle is so large that Rmin value cannot be attained before fiber become perpendicular earlier. Calibration has set minimum length to fit perpendicular case.
+NOTICE(OBJ.MCH.MUS6) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle.any(1624)  :   'Anconeus_1'  :  Muscle calibration :  The tendon/fiber length of the muscle was calibrated according to the executed muscle calibration and the muscle model properties have been updated.
+NOTICE(OBJ.MCH.MUS6) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle.any(1631)  :   'Anconeus_2'  :  Muscle calibration :  Pennation angle of the muscle is so large that Rmin value cannot be attained before fiber become perpendicular earlier. Calibration has set minimum length to fit perpendicular case.
+NOTICE(OBJ.MCH.MUS6) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle.any(1631)  :   'Anconeus_2'  :  Muscle calibration :  The tendon/fiber length of the muscle was calibrated according to the executed muscle calibration and the muscle model properties have been updated.
+NOTICE(OBJ.MCH.MUS6) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle.any(1638)  :   'Pronator_teres_caput_humeral_1'  :  Muscle calibration :  The tendon/fiber length of the muscle was calibrated according to the executed muscle calibration and the muscle model properties have been updated.
+NOTICE(OBJ.MCH.MUS6) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle.any(1655)  :   'Pronator_teres_caput_humeral_2'  :  Muscle calibration :  The tendon/fiber length of the muscle was calibrated according to the executed muscle calibration and the muscle model properties have been updated.
+NOTICE(OBJ.MCH.MUS6) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle.any(1673)  :   'Pronator_teres_caput_ulnare_1'  :  Muscle calibration :  The tendon/fiber length of the muscle was calibrated according to the executed muscle calibration and the muscle model properties have been updated.
+NOTICE(OBJ.MCH.MUS6) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle.any(1692)  :   'Supinator_humerus_part_1'  :  Muscle calibration :  The tendon/fiber length of the muscle was calibrated according to the executed muscle calibration and the muscle model properties have been updated.
+NOTICE(OBJ.MCH.MUS6) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle.any(1707)  :   'Supinator_humerus_part_2'  :  Muscle calibration :  The tendon/fiber length of the muscle was calibrated according to the executed muscle calibration and the muscle model properties have been updated.
+NOTICE(OBJ.MCH.MUS6) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle.any(1722)  :   'Supinator_ulna_part_1'  :  Muscle calibration :  The tendon/fiber length of the muscle was calibrated according to the executed muscle calibration and the muscle model properties have been updated.
+NOTICE(OBJ.MCH.MUS6) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle.any(1743)  :   'Supinator_ulna_part_2'  :  Muscle calibration :  The tendon/fiber length of the muscle was calibrated according to the executed muscle calibration and the muscle model properties have been updated.
+NOTICE(OBJ.MCH.MUS6) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle.any(1762)  :   'Pron_quadr_1'  :  Muscle calibration :  The tendon/fiber length of the muscle was calibrated according to the executed muscle calibration and the muscle model properties have been updated.
+NOTICE(OBJ.MCH.MUS6) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle.any(1769)  :   'Pron_quadr_2'  :  Muscle calibration :  The tendon/fiber length of the muscle was calibrated according to the executed muscle calibration and the muscle model properties have been updated.
+2.0) ...Muscle Fiber and Tendon Length Adjustment finished.
+2.1) ...Design variables of the calibration model have been updated.
+3.0) FiberAndTendonLengthAdjustment (Operation: Main.HumanModel.Calibration.RightWristCal.ArmCalibrationStudyWrist.FiberAndTendonLengthAdjustment): 
+3.0.0) PreOperation (Operation: Main.HumanModel.Calibration.RightWristCal.ArmCalibrationStudyWrist.FiberAndTendonLengthAdjustment.PreOperation): 
+3.0.0.0) Kinematics (Operation: Main.HumanModel.Calibration.RightWristCal.ArmCalibrationStudyWrist.Kinematics): 
+3.0.0.0.0) PreOperation (Operation: Main.HumanModel.Calibration.RightWristCal.ArmCalibrationStudyWrist.Kinematics.PreOperation): 
+3.0.0.0.0.0) InitialConditions (Operation: Main.HumanModel.Calibration.RightWristCal.ArmCalibrationStudyWrist.InitialConditions): 
+3.0.0.0.0.0) ...Design variables have been updated.
+3.0.0.0.0.1) ...Load-time positions have been re-established.
+3.0.0.0.0.2) ...Kinematic analysis completed.
+WARNING(OBJ.MCH.MUS2) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle-parameters-shoulder.any(74)  :   'biceps_brachii_caput_longum'  :  Muscle without strength  :  The muscle has been stretched too much
+WARNING(OBJ.MCH.MUS2) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle-parameters-shoulder.any(692)  :   'latissimus_dorsi_3'  :  Muscle without strength  :  The muscle has been stretched too much
+WARNING(OBJ.MCH.MUS2) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle-parameters-shoulder.any(708)  :   'latissimus_dorsi_4'  :  Muscle without strength  :  The muscle has been stretched too much
+WARNING(OBJ.MCH.MUS2) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle-parameters-shoulder.any(724)  :   'latissimus_dorsi_5'  :  Muscle without strength  :  The muscle has been stretched too much
+3.0.0.0.0.3) ...Dependent variables are fully updated.
+3.0.0.0) Kinematic analysis...
+WARNING(OBJ.MCH.MUS2) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle-parameters-shoulder.any(59)  :   'biceps_brachii_caput_breve'  :  Muscle without strength  :  The muscle has been stretched too much
+3.0.0.11) ...Kinematic analysis completed
+3.0) Muscle Fiber and Tendon Length Adjustment...
+NOTICE(OBJ.MCH.MUS6) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle.any(1478)  :   'Brachialis_1'  :  Muscle calibration :  The tendon/fiber length of the muscle was calibrated according to the executed muscle calibration and the muscle model properties have been updated.
+NOTICE(OBJ.MCH.MUS6) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle.any(1496)  :   'Brachialis_2'  :  Muscle calibration :  The tendon/fiber length of the muscle was calibrated according to the executed muscle calibration and the muscle model properties have been updated.
+NOTICE(OBJ.MCH.MUS6) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle.any(1508)  :   'Triceps_LH_1'  :  Muscle calibration :  Pennation angle of the muscle is so large that Rmin value cannot be attained before fiber become perpendicular earlier. Calibration has set minimum length to fit perpendicular case.
+NOTICE(OBJ.MCH.MUS6) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle.any(1508)  :   'Triceps_LH_1'  :  Muscle calibration :  The tendon/fiber length of the muscle was calibrated according to the executed muscle calibration and the muscle model properties have been updated.
+NOTICE(OBJ.MCH.MUS6) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle.any(1530)  :   'Triceps_LH_2'  :  Muscle calibration :  Pennation angle of the muscle is so large that Rmin value cannot be attained before fiber become perpendicular earlier. Calibration has set minimum length to fit perpendicular case.
+NOTICE(OBJ.MCH.MUS6) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle.any(1530)  :   'Triceps_LH_2'  :  Muscle calibration :  The tendon/fiber length of the muscle was calibrated according to the executed muscle calibration and the muscle model properties have been updated.
+NOTICE(OBJ.MCH.MUS6) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle.any(1544)  :   'Triceps_ME_1'  :  Muscle calibration :  Pennation angle of the muscle is so large that Rmin value cannot be attained before fiber become perpendicular earlier. Calibration has set minimum length to fit perpendicular case.
+NOTICE(OBJ.MCH.MUS6) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle.any(1544)  :   'Triceps_ME_1'  :  Muscle calibration :  The tendon/fiber length of the muscle was calibrated according to the executed muscle calibration and the muscle model properties have been updated.
+NOTICE(OBJ.MCH.MUS6) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle.any(1556)  :   'Triceps_ME_2'  :  Muscle calibration :  Pennation angle of the muscle is so large that Rmin value cannot be attained before fiber become perpendicular earlier. Calibration has set minimum length to fit perpendicular case.
+NOTICE(OBJ.MCH.MUS6) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle.any(1556)  :   'Triceps_ME_2'  :  Muscle calibration :  The tendon/fiber length of the muscle was calibrated according to the executed muscle calibration and the muscle model properties have been updated.
+NOTICE(OBJ.MCH.MUS6) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle.any(1568)  :   'Triceps_LA_1'  :  Muscle calibration :  Pennation angle of the muscle is so large that Rmin value cannot be attained before fiber become perpendicular earlier. Calibration has set minimum length to fit perpendicular case.
+NOTICE(OBJ.MCH.MUS6) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle.any(1568)  :   'Triceps_LA_1'  :  Muscle calibration :  The tendon/fiber length of the muscle was calibrated according to the executed muscle calibration and the muscle model properties have been updated.
+NOTICE(OBJ.MCH.MUS6) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle.any(1580)  :   'Triceps_LA_2'  :  Muscle calibration :  Pennation angle of the muscle is so large that Rmin value cannot be attained before fiber become perpendicular earlier. Calibration has set minimum length to fit perpendicular case.
+NOTICE(OBJ.MCH.MUS6) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle.any(1580)  :   'Triceps_LA_2'  :  Muscle calibration :  The tendon/fiber length of the muscle was calibrated according to the executed muscle calibration and the muscle model properties have been updated.
+NOTICE(OBJ.MCH.MUS6) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle.any(1592)  :   'Brach_rad_1'  :  Muscle calibration :  The tendon/fiber length of the muscle was calibrated according to the executed muscle calibration and the muscle model properties have been updated.
+NOTICE(OBJ.MCH.MUS6) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle.any(1609)  :   'Brach_rad_2'  :  Muscle calibration :  The tendon/fiber length of the muscle was calibrated according to the executed muscle calibration and the muscle model properties have been updated.
+NOTICE(OBJ.MCH.MUS6) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle.any(1624)  :   'Anconeus_1'  :  Muscle calibration :  Pennation angle of the muscle is so large that Rmin value cannot be attained before fiber become perpendicular earlier. Calibration has set minimum length to fit perpendicular case.
+NOTICE(OBJ.MCH.MUS6) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle.any(1624)  :   'Anconeus_1'  :  Muscle calibration :  The tendon/fiber length of the muscle was calibrated according to the executed muscle calibration and the muscle model properties have been updated.
+NOTICE(OBJ.MCH.MUS6) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle.any(1631)  :   'Anconeus_2'  :  Muscle calibration :  Pennation angle of the muscle is so large that Rmin value cannot be attained before fiber become perpendicular earlier. Calibration has set minimum length to fit perpendicular case.
+NOTICE(OBJ.MCH.MUS6) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle.any(1631)  :   'Anconeus_2'  :  Muscle calibration :  The tendon/fiber length of the muscle was calibrated according to the executed muscle calibration and the muscle model properties have been updated.
+NOTICE(OBJ.MCH.MUS6) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle.any(1638)  :   'Pronator_teres_caput_humeral_1'  :  Muscle calibration :  The tendon/fiber length of the muscle was calibrated according to the executed muscle calibration and the muscle model properties have been updated.
+NOTICE(OBJ.MCH.MUS6) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle.any(1655)  :   'Pronator_teres_caput_humeral_2'  :  Muscle calibration :  The tendon/fiber length of the muscle was calibrated according to the executed muscle calibration and the muscle model properties have been updated.
+NOTICE(OBJ.MCH.MUS6) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle.any(1673)  :   'Pronator_teres_caput_ulnare_1'  :  Muscle calibration :  The tendon/fiber length of the muscle was calibrated according to the executed muscle calibration and the muscle model properties have been updated.
+NOTICE(OBJ.MCH.MUS6) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle.any(1692)  :   'Supinator_humerus_part_1'  :  Muscle calibration :  The tendon/fiber length of the muscle was calibrated according to the executed muscle calibration and the muscle model properties have been updated.
+NOTICE(OBJ.MCH.MUS6) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle.any(1707)  :   'Supinator_humerus_part_2'  :  Muscle calibration :  The tendon/fiber length of the muscle was calibrated according to the executed muscle calibration and the muscle model properties have been updated.
+NOTICE(OBJ.MCH.MUS6) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle.any(1722)  :   'Supinator_ulna_part_1'  :  Muscle calibration :  The tendon/fiber length of the muscle was calibrated according to the executed muscle calibration and the muscle model properties have been updated.
+NOTICE(OBJ.MCH.MUS6) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle.any(1743)  :   'Supinator_ulna_part_2'  :  Muscle calibration :  The tendon/fiber length of the muscle was calibrated according to the executed muscle calibration and the muscle model properties have been updated.
+NOTICE(OBJ.MCH.MUS6) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle.any(1762)  :   'Pron_quadr_1'  :  Muscle calibration :  The tendon/fiber length of the muscle was calibrated according to the executed muscle calibration and the muscle model properties have been updated.
+NOTICE(OBJ.MCH.MUS6) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle.any(1769)  :   'Pron_quadr_2'  :  Muscle calibration :  The tendon/fiber length of the muscle was calibrated according to the executed muscle calibration and the muscle model properties have been updated.
+3.0) ...Muscle Fiber and Tendon Length Adjustment finished.
+3.1) ...Design variables of the calibration model have been updated.
+4.0) FiberAndTendonLengthAdjustment (Operation: Main.HumanModel.Calibration.RightSpineDependentCal.ArmCalibrationStudySpineDependent.FiberAndTendonLengthAdjustment): 
+4.0.0) PreOperation (Operation: Main.HumanModel.Calibration.RightSpineDependentCal.ArmCalibrationStudySpineDependent.FiberAndTendonLengthAdjustment.PreOperation): 
+4.0.0.0) Kinematics (Operation: Main.HumanModel.Calibration.RightSpineDependentCal.ArmCalibrationStudySpineDependent.Kinematics): 
+4.0.0.0.0) PreOperation (Operation: Main.HumanModel.Calibration.RightSpineDependentCal.ArmCalibrationStudySpineDependent.Kinematics.PreOperation): 
+4.0.0.0.0.0) InitialConditions (Operation: Main.HumanModel.Calibration.RightSpineDependentCal.ArmCalibrationStudySpineDependent.InitialConditions): 
+4.0.0.0.0.0) ...Design variables have been updated.
+4.0.0.0.0.1) ...Load-time positions have been re-established.
+4.0.0.0.0.2) ...Kinematic analysis completed.
+WARNING(OBJ.MCH.MUS2) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle-parameters-shoulder.any(1827)  :   'trapezius_clavicular_part_6'  :  Muscle without strength  :  The muscle has been stretched too much
+WARNING(OBJ.MCH.MUS2) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle-parameters-shoulder.any(692)  :   'latissimus_dorsi_3'  :  Muscle without strength  :  The muscle has been stretched too much
+WARNING(OBJ.MCH.MUS2) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle-parameters-shoulder.any(708)  :   'latissimus_dorsi_4'  :  Muscle without strength  :  The muscle has been stretched too much
+WARNING(OBJ.MCH.MUS2) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle-parameters-shoulder.any(724)  :   'latissimus_dorsi_5'  :  Muscle without strength  :  The muscle has been stretched too much
+WARNING(OBJ.MCH.MUS2) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle-parameters-shoulder.any(74)  :   'biceps_brachii_caput_longum'  :  Muscle without strength  :  The muscle has been stretched too much
+4.0.0.0.0.3) ...Dependent variables are fully updated.
+4.0.0.0) Kinematic analysis...
+WARNING(OBJ.MCH.MUS2) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle-parameters-shoulder.any(740)  :   'levator_scapulae_1'  :  Muscle without strength  :  The muscle has been stretched too much
+WARNING(OBJ.MCH.MUS2) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle-parameters-shoulder.any(1747)  :   'trapezius_clavicular_part_1'  :  Muscle without strength  :  The muscle has been stretched too much
+WARNING(OBJ.MCH.MUS2) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle-parameters-shoulder.any(1763)  :   'trapezius_clavicular_part_2'  :  Muscle without strength  :  The muscle has been stretched too much
+WARNING(OBJ.MCH.MUS2) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle-parameters-shoulder.any(1779)  :   'trapezius_clavicular_part_3'  :  Muscle without strength  :  The muscle has been stretched too much
+WARNING(OBJ.MCH.MUS2) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle-parameters-shoulder.any(1795)  :   'trapezius_clavicular_part_4'  :  Muscle without strength  :  The muscle has been stretched too much
+WARNING(OBJ.MCH.MUS2) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle-parameters-shoulder.any(1811)  :   'trapezius_clavicular_part_5'  :  Muscle without strength  :  The muscle has been stretched too much
+WARNING(OBJ.MCH.MUS2) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle-parameters-shoulder.any(658)  :   'latissimus_dorsi_1'  :  Muscle without strength  :  The muscle has been stretched too much
+WARNING(OBJ.MCH.MUS2) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle-parameters-shoulder.any(675)  :   'latissimus_dorsi_2'  :  Muscle without strength  :  The muscle has been stretched too much
+4.0.0.7) ...Kinematic analysis completed
+4.0) Muscle Fiber and Tendon Length Adjustment...
+NOTICE(OBJ.MCH.MUS6) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\levator_scapulae.any(1)  :   'levator_scapulae_1'  :  Muscle calibration :  The tendon/fiber length of the muscle was calibrated according to the executed muscle calibration and the muscle model properties have been updated.
+NOTICE(OBJ.MCH.MUS6) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\levator_scapulae.any(8)  :   'levator_scapulae_2'  :  Muscle calibration :  The tendon/fiber length of the muscle was calibrated according to the executed muscle calibration and the muscle model properties have been updated.
+NOTICE(OBJ.MCH.MUS6) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\levator_scapulae.any(15)  :   'levator_scapulae_3'  :  Muscle calibration :  The tendon/fiber length of the muscle was calibrated according to the executed muscle calibration and the muscle model properties have been updated.
+NOTICE(OBJ.MCH.MUS6) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\levator_scapulae.any(22)  :   'levator_scapulae_4'  :  Muscle calibration :  The tendon/fiber length of the muscle was calibrated according to the executed muscle calibration and the muscle model properties have been updated.
+NOTICE(OBJ.MCH.MUS6) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\trapezius_clavicular.any(1)  :   'trapezius_clavicular_part_1'  :  Muscle calibration :  The tendon/fiber length of the muscle was calibrated according to the executed muscle calibration and the muscle model properties have been updated.
+NOTICE(OBJ.MCH.MUS6) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\trapezius_clavicular.any(8)  :   'trapezius_clavicular_part_2'  :  Muscle calibration :  The tendon/fiber length of the muscle was calibrated according to the executed muscle calibration and the muscle model properties have been updated.
+NOTICE(OBJ.MCH.MUS6) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\trapezius_clavicular.any(15)  :   'trapezius_clavicular_part_3'  :  Muscle calibration :  The tendon/fiber length of the muscle was calibrated according to the executed muscle calibration and the muscle model properties have been updated.
+NOTICE(OBJ.MCH.MUS6) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\trapezius_clavicular.any(22)  :   'trapezius_clavicular_part_4'  :  Muscle calibration :  The tendon/fiber length of the muscle was calibrated according to the executed muscle calibration and the muscle model properties have been updated.
+NOTICE(OBJ.MCH.MUS6) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\trapezius_clavicular.any(29)  :   'trapezius_clavicular_part_5'  :  Muscle calibration :  The tendon/fiber length of the muscle was calibrated according to the executed muscle calibration and the muscle model properties have been updated.
+NOTICE(OBJ.MCH.MUS6) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\trapezius_clavicular.any(36)  :   'trapezius_clavicular_part_6'  :  Muscle calibration :  The tendon/fiber length of the muscle was calibrated according to the executed muscle calibration and the muscle model properties have been updated.
+NOTICE(OBJ.MCH.MUS6) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\sternocleidomastoid.any(3)  :   'Sternocleidomastoid_caput_clavicular'  :  Muscle calibration :  Muscle was not calibrated. This type of muscle model is not supported by this calibration operation.
+NOTICE(OBJ.MCH.MUS6) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\sternocleidomastoid.any(3)  :   'Sternocleidomastoid_caput_clavicular'  :  Muscle calibration :  Muscle was not calibrated. This type of muscle model is not supported by this calibration operation.
+NOTICE(OBJ.MCH.MUS6) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\sternocleidomastoid.any(10)  :   'Sternocleidomastoid_caput_Sternum'  :  Muscle calibration :  Muscle was not calibrated. This type of muscle model is not supported by this calibration operation.
+NOTICE(OBJ.MCH.MUS6) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\sternocleidomastoid.any(10)  :   'Sternocleidomastoid_caput_Sternum'  :  Muscle calibration :  Muscle was not calibrated. This type of muscle model is not supported by this calibration operation.
+NOTICE(OBJ.MCH.MUS6) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle.any(625)  :   'latissimus_dorsi_1'  :  Muscle calibration :  The tendon/fiber length of the muscle was calibrated according to the executed muscle calibration and the muscle model properties have been updated.
+NOTICE(OBJ.MCH.MUS6) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle.any(650)  :   'latissimus_dorsi_2'  :  Muscle calibration :  The tendon/fiber length of the muscle was calibrated according to the executed muscle calibration and the muscle model properties have been updated.
+NOTICE(OBJ.MCH.MUS6) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle.any(665)  :   'latissimus_dorsi_3'  :  Muscle calibration :  The tendon/fiber length of the muscle was calibrated according to the executed muscle calibration and the muscle model properties have been updated.
+NOTICE(OBJ.MCH.MUS6) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle.any(683)  :   'latissimus_dorsi_4'  :  Muscle calibration :  The tendon/fiber length of the muscle was calibrated according to the executed muscle calibration and the muscle model properties have been updated.
+NOTICE(OBJ.MCH.MUS6) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle.any(701)  :   'latissimus_dorsi_5'  :  Muscle calibration :  The tendon/fiber length of the muscle was calibrated according to the executed muscle calibration and the muscle model properties have been updated.
+4.0) ...Muscle Fiber and Tendon Length Adjustment finished.
+4.1) ...Design variables of the calibration model have been updated.
+
+***************************************************************************************
+
+#### Macro command > classoperation Main.HumanModel.Mannequin.PostureVel.Right.GlenohumeralAbduction "Set Value" --value="120"
+
+#### Macro command > classoperation Main.HumanModel.BodyModel.Right.ShoulderArm.MusPar.supraspinatus_1.F0 "Set Value" --value="69.66"
+
+#### Macro command > classoperation Main.HumanModel.BodyModel.Right.ShoulderArm.MusPar.supraspinatus_2.F0 "Set Value" --value="69.66"
+
+#### Macro command > classoperation Main.HumanModel.BodyModel.Right.ShoulderArm.MusPar.supraspinatus_3.F0 "Set Value" --value="69.66"
+
+#### Macro command > classoperation Main.HumanModel.BodyModel.Right.ShoulderArm.MusPar.supraspinatus_4.F0 "Set Value" --value="69.66"
+
+#### Macro command > classoperation Main.HumanModel.BodyModel.Right.ShoulderArm.MusPar.supraspinatus_5.F0 "Set Value" --value="69.66"
+
+#### Macro command > classoperation Main.HumanModel.BodyModel.Right.ShoulderArm.MusPar.supraspinatus_6.F0 "Set Value" --value="69.66"
+
+#### Macro command > classoperation Main "Update Values"
+Updating expressions...
+...Finished updating expressions
+
+#### Macro command > operation Main.Study.InverseDynamics
+
+#### Macro command > run
+
+***************************************************************************************
+0) InverseDynamics (Operation: Main.Study.InverseDynamics): 
+0.0) PreOperation (Operation: Main.Study.InverseDynamics.PreOperation): 
+0.0.0) InitialConditions (Operation: Main.Study.InitialConditions): 
+0.0.0) ...Design variables have been updated.
+0.0.1) ...Load-time positions have been re-established.
+0.0.2) ...Kinematic analysis completed.
+WARNING(OBJ.MCH.MUS2) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle-parameters-shoulder.any(74)  :   'biceps_brachii_caput_longum'  :  Muscle without strength  :  The muscle has been stretched too much
+0.0.3) ...Dependent variables are fully updated.
+0) Inverse dynamic analysis...
+WARNING(OBJ.MCH.MUS2) :   C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Body\AAUHuman\Arm\Muscle-parameters-shoulder.any(59)  :   'biceps_brachii_caput_breve'  :  Muscle without strength  :  The muscle has been stretched too much
+10) ...Inverse dynamic analysis completed
+Total simulation time: 18.679
+
+***************************************************************************************
+
+#### Macro command > classoperation Main.Study.Output.Abscissa.t "Dump"
+Main.Study.Output.Abscissa.t = {0.0, 0.10000000000000001, 0.20000000000000001, 0.29999999999999999, 0.40000000000000002, 0.5, 0.59999999999999998, 0.69999999999999996, 0.80000000000000004, 0.90000000000000002, 1.0};
+
+#### Macro command > classoperation Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.supraspinatus_1.Fm "Dump"
+Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.supraspinatus_1.Fm = {2.0146101385410131e-13, 2.2045641513877596, 4.4653697455114285, 5.6282532413459343, 5.5122175667978324, 3.9335437757113767, 1.6751630658056496, 0.22248977555766944, 2.0020444640277292e-14, 1.0319819292470774e-14, 1.2823329763437776e-14};
+
+#### Macro command > classoperation Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.supraspinatus_2.Fm "Dump"
+Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.supraspinatus_2.Fm = {2.2324061442965302e-13, 2.2019310231517433, 4.4638250799844048, 5.5654060285871676, 5.2957443451370656, 3.5586989213698854, 1.3845746595920423, 0.15828993660477381, 1.8729901306347833e-14, 9.9027564537393205e-15, 1.2427546436147218e-14};
+
+#### Macro command > classoperation Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.supraspinatus_3.Fm "Dump"
+Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.supraspinatus_3.Fm = {4.6480721431888991e-13, 2.4252201395907842, 4.4971031103965995, 5.5598166925723733, 5.5317315067629549, 4.0116911077137081, 1.7665977969835758, 0.38888245914859121, 6.6603186569766308e-14, 1.614719535816019e-14, 1.870543876732193e-14};
+
+#### Macro command > classoperation Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.supraspinatus_4.Fm "Dump"
+Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.supraspinatus_4.Fm = {8.3368228203351366e-13, 2.4427922357099665, 4.5562365240347047, 5.5900031349343342, 5.3783429820914161, 3.6038165763280099, 1.3900109980120436, 0.25521974317643542, 6.9780248418464633e-14, 1.5738670087136633e-14, 1.8158083320497105e-14};
+
+#### Macro command > classoperation Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.supraspinatus_5.Fm "Dump"
+Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.supraspinatus_5.Fm = {4.1444974248551421e-12, 2.5032087855435905, 4.4670419681266766, 5.6364417943857417, 5.8252998842120931, 4.3566023151245847, 1.9411085059922732, 0.42847382429113973, 0.015087923736894396, 2.3286429136684891e-14, 2.6193862817504633e-14};
+
+#### Macro command > classoperation Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.supraspinatus_6.Fm "Dump"
+Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.supraspinatus_6.Fm = {0.27911065248523254, 2.5419744966772719, 4.5343405802353347, 5.6948330689266236, 5.7824647539928522, 4.1302295670327585, 1.6896734407814902, 0.32673392717431465, 0.012820167134572272, 2.3503701786641673e-14, 2.5886357260908459e-14};
+
+#### Macro command > classoperation Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.subscapularis_1.Fm "Dump"
+Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.subscapularis_1.Fm = {0.66841877033287922, 5.5658739542052054, 8.6344067001267621, 10.832673430902, 11.711731430129559, 4.6017736226165754e-13, 8.921576611846929e-14, 6.5266001691512574e-15, 1.5494038476922484e-14, 1.6978634026265815e-14, 2.0957373164716545e-14};
+
+#### Macro command > classoperation Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.subscapularis_2.Fm "Dump"
+Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.subscapularis_2.Fm = {0.62104136660627074, 5.4547774392827835, 8.461660949451943, 8.2405370780334408, 5.1440199628898611e-13, 1.1728774875470222e-13, 5.5208330675902767e-14, 4.7271163734454502e-15, 1.1751352321867548e-14, 1.3291653745561245e-14, 1.7687781728758843e-14};
+
+#### Macro command > classoperation Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.subscapularis_3.Fm "Dump"
+Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.subscapularis_3.Fm = {2.2329025173885211, 2.9971320421474563, 4.4380191004136007, 6.4559592824949892, 11.02747157919787, 18.068589543537954, 22.087633980640071, 18.69931496500924, 3.4467592820584345, 4.420861324750068e-13, 6.2885485731632527e-14};
+
+#### Macro command > classoperation Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.subscapularis_4.Fm "Dump"
+Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.subscapularis_4.Fm = {2.1352940858712857, 2.8155864431311128, 4.1640395755866582, 6.2891996197010247, 11.770954263745157, 19.769384384012564, 24.887140610776548, 23.030295453769828, 12.217725367183153, 1.851971691617853, 6.9933991296577362e-14};
+
+#### Macro command > classoperation Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.subscapularis_5.Fm "Dump"
+Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.subscapularis_5.Fm = {1.4666829573527227, 1.7151433360625021, 1.9999208335600398, 2.0152685794638971, 3.0330026369659082, 1.788091120884132e-12, 2.1778769738436972e-13, 1.8629364439960418e-14, 5.4998367636738681e-14, 8.5044546942539881e-14, 5.3254857777830866e-14};
+
+#### Macro command > classoperation Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.subscapularis_6.Fm "Dump"
+Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.subscapularis_6.Fm = {1.3811400111341032, 1.6369625593929908, 1.982081456552591, 2.2470523192314658, 3.8306476288278408, 4.0458558077278903, 3.2356651714542502e-13, 2.399195375027833e-14, 6.4220172202264413e-14, 1.1135804192305322e-13, 5.9125962438140722e-14};
+
+#### Macro command > classoperation Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.infraspinatus_1.Fm "Dump"
+Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.infraspinatus_1.Fm = {5.8681587163422416e-13, 3.8783968306020129, 7.5024723474026755, 11.134829219436613, 15.795558510820303, 20.379954202947577, 20.760659045404203, 14.130413871718542, 5.8121667470340279, 0.72809858672867112, 0.32219657492533638};
+
+#### Macro command > classoperation Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.infraspinatus_2.Fm "Dump"
+Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.infraspinatus_2.Fm = {1.2759971185228896, 5.4335151607024725, 9.2027733193318326, 12.435836572701033, 15.866938614338727, 17.367537783223195, 14.112431821244533, 7.3135521059885997, 2.1784164533889889, 0.052876288516257058, 1.4842794788123649e-12};
+
+#### Macro command > classoperation Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.infraspinatus_3.Fm "Dump"
+Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.infraspinatus_3.Fm = {3.6807726438796338e-13, 1.3642514689431316e-13, 2.6110548056022735e-13, 3.737320070061168e-13, 1.3361754356082579e-13, 1.7101624126371618e-13, 6.4730769575224619e-13, 7.5076310751591322, 3.0997269526594029, 1.0622364462407092e-13, 0.92673675298619096};
+
+#### Macro command > classoperation Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.infraspinatus_4.Fm "Dump"
+Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.infraspinatus_4.Fm = {2.3215128016419774e-10, 5.0843978250322546e-13, 8.9350432756152093e-13, 1.7105284212631174e-12, 8.2269607271974e-13, 6.2832784249259736e-12, 10.601008683236079, 9.9554721304656795, 2.9169312343409506, 8.1616870082803958e-14, 3.2811621601825855e-13};
+
+#### Macro command > classoperation Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.infraspinatus_5.Fm "Dump"
+Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.infraspinatus_5.Fm = {2.3340216241225219e-13, 4.6518541100883102e-14, 7.3380472806922515e-14, 8.692807653978106e-14, 2.758728665827529e-14, 2.79442886539262e-14, 3.4963999690821111e-14, 5.6253640677176578e-15, 1.9252684926205044e-14, 2.5207426740599875e-14, 1.0236413612237634e-13};
+
+#### Macro command > classoperation Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.infraspinatus_6.Fm "Dump"
+Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.infraspinatus_6.Fm = {2.7829347920434161e-13, 4.9366458299910328e-14, 7.6747346857029556e-14, 9.0167440984689203e-14, 2.835670480847723e-14, 2.8301822857647298e-14, 3.4559380599803382e-14, 5.3324008977149613e-15, 1.7348446450739624e-14, 2.1793623609846409e-14, 7.0957755976147038e-14};
+
+#### Macro command > classoperation Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.teres_minor_1.Fm "Dump"
+Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.teres_minor_1.Fm = {5.1148560003849516e-13, 4.9602104464400393e-14, 7.6113985699436579e-14, 9.0069945205662165e-14, 2.8476335089956781e-14, 2.8147193018006216e-14, 3.2724667091973076e-14, 4.6985972772898928e-15, 1.4429593008955852e-14, 1.6662336988330608e-14, 3.5174011475299241e-14};
+
+#### Macro command > classoperation Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.teres_minor_2.Fm "Dump"
+Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.teres_minor_2.Fm = {4.5259674846254009e-13, 4.8182971914345733e-14, 7.4075480188540247e-14, 8.7387969983564676e-14, 2.7486992011641353e-14, 2.7008964408052014e-14, 3.1102718454694747e-14, 4.4280374328078523e-15, 1.3584693370916405e-14, 1.5861488232215948e-14, 3.3362786183930499e-14};
+
+#### Macro command > classoperation Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.teres_minor_3.Fm "Dump"
+Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.teres_minor_3.Fm = {0.0015154433460173777, 4.0474673113695917e-14, 5.6493676425011209e-14, 6.4831863170095197e-14, 2.0741586066207083e-14, 2.0760911881491002e-14, 2.4478164886150183e-14, 3.6832960763507441e-15, 1.2440915110299734e-14, 1.7075000504703548e-14, 4.0122280196224086e-14};
+
+#### Macro command > classoperation Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.teres_minor_4.Fm "Dump"
+Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.teres_minor_4.Fm = {0.00095835952981300292, 3.8560875234257978e-14, 5.3885829614711023e-14, 6.1454165592083687e-14, 1.9422400095208674e-14, 1.9179524978788408e-14, 2.2176073100574502e-14, 3.2700798622447618e-15, 1.0910825305981485e-14, 1.525698943056473e-14, 3.5631571156035459e-14};
+
+#### Macro command > classoperation Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.teres_minor_5.Fm "Dump"
+Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.teres_minor_5.Fm = {0.00036015709482954922, 3.2143897440659117e-14, 4.3696847058561461e-14, 4.9479924018417683e-14, 1.5771491633233973e-14, 1.5699769690936423e-14, 1.8313622737272167e-14, 2.7616509622208498e-15, 9.6058772426849689e-15, 1.4890606093731738e-14, 3.9078821545940952e-14};
+
+#### Macro command > classoperation Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.teres_minor_6.Fm "Dump"
+Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.teres_minor_6.Fm = {0.00026589770367436847, 3.1179975124336328e-14, 4.2557011121382254e-14, 4.8041564168555997e-14, 1.5204313393794e-14, 1.5023921436793608e-14, 1.7348225277735591e-14, 2.5856311826417736e-15, 8.9159513040227944e-15, 1.3722944547622375e-14, 3.5601181116702956e-14};
+
+#### Macro command > classoperation Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.supraspinatus_1.Fp "Dump"
+Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.supraspinatus_1.Fp = {0.83700331848876297, 0.47118524857516869, 0.14346699479743066, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0};
+
+#### Macro command > classoperation Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.supraspinatus_2.Fp "Dump"
+Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.supraspinatus_2.Fp = {0.82728603266348433, 0.45428198552728222, 0.12070972789111221, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0};
+
+#### Macro command > classoperation Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.supraspinatus_3.Fp "Dump"
+Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.supraspinatus_3.Fp = {0.69527551777963914, 0.39487059526850504, 0.11228514650549405, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0};
+
+#### Macro command > classoperation Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.supraspinatus_4.Fp "Dump"
+Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.supraspinatus_4.Fp = {0.68857341852106124, 0.37587686348406352, 0.083217314879857673, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0};
+
+#### Macro command > classoperation Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.supraspinatus_5.Fp "Dump"
+Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.supraspinatus_5.Fp = {0.59186771286269546, 0.35881428096869777, 0.12212038883706502, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0};
+
+#### Macro command > classoperation Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.supraspinatus_6.Fp "Dump"
+Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.supraspinatus_6.Fp = {0.57864728682525046, 0.3438404683376009, 0.10181044948176568, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0};
+
+#### Macro command > classoperation Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.subscapularis_1.Fp "Dump"
+Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.subscapularis_1.Fp = {0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0};
+
+#### Macro command > classoperation Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.subscapularis_2.Fp "Dump"
+Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.subscapularis_2.Fp = {0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0};
+
+#### Macro command > classoperation Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.subscapularis_3.Fp "Dump"
+Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.subscapularis_3.Fp = {0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0};
+
+#### Macro command > classoperation Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.subscapularis_4.Fp "Dump"
+Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.subscapularis_4.Fp = {0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0};
+
+#### Macro command > classoperation Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.subscapularis_5.Fp "Dump"
+Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.subscapularis_5.Fp = {0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0};
+
+#### Macro command > classoperation Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.subscapularis_6.Fp "Dump"
+Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.subscapularis_6.Fp = {0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0};
+
+#### Macro command > classoperation Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.infraspinatus_1.Fp "Dump"
+Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.infraspinatus_1.Fp = {1.1193614828380685, 0.91941601471113399, 0.6784818469132291, 0.39318370891706489, 0.06599995396806306, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0};
+
+#### Macro command > classoperation Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.infraspinatus_2.Fp "Dump"
+Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.infraspinatus_2.Fp = {0.76825007811529622, 0.54396888250583786, 0.28174276127906167, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0};
+
+#### Macro command > classoperation Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.infraspinatus_3.Fp "Dump"
+Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.infraspinatus_3.Fp = {0.35594043347948889, 0.45637968221138087, 0.49336070378948627, 0.46450435271313611, 0.37127161959574534, 0.21890238447344032, 0.016005966670449585, 0.0, 0.0, 0.0, 0.0};
+
+#### Macro command > classoperation Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.infraspinatus_4.Fp "Dump"
+Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.infraspinatus_4.Fp = {0.053790376281219694, 0.10964330414122608, 0.10670551829479839, 0.044939868969849778, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0};
+
+#### Macro command > classoperation Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.infraspinatus_5.Fp "Dump"
+Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.infraspinatus_5.Fp = {0.0, 0.0, 0.058534398335214941, 0.21241565642525911, 0.30354711315286603, 0.32620474960353985, 0.27878052609545595, 0.16401954067067179, 0.0, 0.0, 0.0};
+
+#### Macro command > classoperation Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.infraspinatus_6.Fp "Dump"
+Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.infraspinatus_6.Fp = {0.0, 0.0, 0.0, 0.0487012811337761, 0.13415054989083325, 0.15429884236999605, 0.10777263593704482, 0.0, 0.0, 0.0, 0.0};
+
+#### Macro command > classoperation Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.teres_minor_1.Fp "Dump"
+Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.teres_minor_1.Fp = {0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0};
+
+#### Macro command > classoperation Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.teres_minor_2.Fp "Dump"
+Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.teres_minor_2.Fp = {0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0};
+
+#### Macro command > classoperation Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.teres_minor_3.Fp "Dump"
+Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.teres_minor_3.Fp = {0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0};
+
+#### Macro command > classoperation Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.teres_minor_4.Fp "Dump"
+Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.teres_minor_4.Fp = {0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0};
+
+#### Macro command > classoperation Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.teres_minor_5.Fp "Dump"
+Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.teres_minor_5.Fp = {0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.018588064604760417, 0.033512377343032737, 0.010702284040356846, 0.0};
+
+#### Macro command > classoperation Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.teres_minor_6.Fp "Dump"
+Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.teres_minor_6.Fp = {0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.015658452396191722, 0.03503043239570789, 0.017191967411568136, 0.0};
+
+#### Macro command > classoperation Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.supraspinatus_1.F0 "Dump"
+Error : Main.Study.Output.Model.BodyModel.Right.ShoulderArm.Mus.supraspinatus_1.F0 : Unresolved object.
+
+Closing model...
+Saving modified values...
+Deleting loaded model...
+...Model deleted.

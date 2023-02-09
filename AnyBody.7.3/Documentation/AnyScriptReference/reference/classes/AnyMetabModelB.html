@@ -1,0 +1,559 @@
+
+
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AnyMetabModelB &#8212; AnyScript Reference 7.3.4 documentation</title>
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/cloud.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/table_styling.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noticia+Text|Open+Sans|Droid+Sans+Mono" type="text/css" />
+    
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/script/filter-class-list.js"></script>
+    <script src="../../_static/fa/all.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+    
+    
+     
+        <script src="../../_static/jquery.cookie.js"></script>
+    
+
+    
+     
+        <script src="../../_static/cloud.base.js"></script>
+    
+
+    
+     
+        <script src="../../_static/cloud.js"></script>
+    
+
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="AnyMetabModelBase" href="AnyMetabModelBase.html" />
+    <link rel="prev" title="AnyMessage" href="AnyMessage.html" /> 
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head><body>
+    <div class="relbar-top">
+        
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../contents.html" title="Table Of Contents"
+             accesskey="C">toc</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="AnyMetabModelBase.html" title="AnyMetabModelBase"
+             accesskey="N">next</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="AnyMessage.html" title="AnyMessage"
+             accesskey="P">previous</a> &nbsp; &nbsp;</li>
+    <li><a href="../../index.html">AnyScript Reference 7.3.4 documentation</a> &#187;</li>
+
+          <li class="nav-item nav-item-1"><a href="../../index.html" >The AnyScript Reference manual!</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../class-overview.html" accesskey="U"><strong>Class reference</strong></a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">AnyMetabModelB</a></li> 
+      </ul>
+    </div>
+    </div>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="anymetabmodelb">
+<span id="id1"></span><h1>AnyMetabModelB<a class="headerlink" href="#anymetabmodelb" title="Permalink to this headline">¶</a></h1>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>Creatable</p>
+</dd>
+<dt class="field-even">Parent class</dt>
+<dd class="field-even"><p><a class="reference internal" href="AnyMetabModelBase.html#anymetabmodelbase"><span class="std std-ref">AnyMetabModelBase</span></a></p>
+</dd>
+</dl>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>This class comprises the muscle-metabolism model presented in the paper
+Bhargava, L.J., Pandy, M.G. &amp; Anderson, F.C., J.Biomech. 37, 81-88(2004).</p>
+<p>The model by Bhargava et. al. determines the metabolic power of the muscle from the total
+external power and the rate of heat production (the heat rate), which implies that AnyBody can find
+the metabolic power if the heat rate is known.
+In the model by Bhargava et.al., the heat rate, <span class="math notranslate nohighlight">\(\dot{H}\)</span>, is composed of four terms.</p>
+<div class="math notranslate nohighlight">
+\[\dot{H} = \dot{A} + \dot{M} +\dot{S} + \dot{B}\]</div>
+<p>respectively referred to as:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\dot{A}\)</span>: Activation power.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\dot{M}\)</span>: Maintenance power.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\dot{S}\)</span>: Shortening-lengthening power.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\dot{B}\)</span>: Basal power.</p></li>
+</ul>
+<p>For further details, please refer to the paper and the AnyBody technical documentation on muscle modeling.</p>
+<p>Related to the implementation and parameter/member naming in this class, please notice the following</p>
+<ul class="simple">
+<li><p>‘Con’ and ‘Ecc’ refer to concentric and eccentric contraction, respectively.</p></li>
+<li><p>‘Slow’ and ‘Fast’ refer to slow- and fast-twitch fibers, respectively.</p></li>
+<li><p>The activation power uses the coeeificent phi0 assumed to be constant,
+where in the original paper it comprises of an additional term that decays towards zero with muscle activation time.</p></li>
+<li><p>‘AddMusclePowerForEcc’ enables you to add the external power produced by the muscle to the heat production
+in the eccentric cases. This is always done for the concentric case, but it is not obviously the case in the
+eccentric case from a mechanical point of view. Therefore, this switch.
+In the original paper by Bhargava this is indeed done and the parameters in the paper must be considered as calibrated under this assumption.
+Therefore, ‘AddMusclePowerForEcc’ is ‘On’ by default, even though theoretical argumentation suggests ‘Off’.</p></li>
+</ul>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<p>Here is simple code block to include the <code class="docutils literal notranslate"><span class="pre">AnyMetabModelSimple</span></code> in a study:</p>
+<div class="highlight-AnyScriptDoc notranslate"><div class="highlight"><pre><span></span><span class="c1">// Class template with default values shown</span>
+<span class="n">AnyMetabModelB</span> <span class="n">BhargavaMetabolicModel</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="c1">//CoefBasalPower = 0.0225;</span>
+    <span class="c1">//CoefSLPowerConIso = 0.16;</span>
+    <span class="c1">//CoefSLPowerCon = 0.18;</span>
+    <span class="c1">//CoefSLPowerEcc = 0.157;</span>
+    <span class="c1">//CoefActPowerPhi0 = 0.06;</span>
+    <span class="c1">//CoefActPowerSlow = 40.0;</span>
+    <span class="c1">//CoefActPowerFast = 133.0;</span>
+    <span class="c1">//CoefMaintPowerSlow = 74.0;</span>
+    <span class="c1">//CoefMaintPowerFast = 111.0;</span>
+    <span class="c1">//MuscleDensity = 1059.7;</span>
+    <span class="c1">//AddMusclePowerForEcc = On;</span>
+    <span class="c1">//AddMusclePowerForEccCoef = 1.0;</span>
+ <span class="p">};</span>
+
+<span class="c1">// Study in which to include the metabolic model</span>
+<span class="kt">AnyBodyStudy</span> <span class="n">Study</span> <span class="o">=</span> <span class="p">{</span>
+   <span class="n">Gravity</span> <span class="o">=</span> <span class="p">{</span><span class="mf">0.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">9.81</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">};</span>
+   <span class="n">MetabModel</span> <span class="o">=</span> <span class="o">&amp;</span><span class="p">.</span><span class="n">BhargavaMetabolicModel</span><span class="p">;</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+<p> </p>
+<table class="colwidths-given plain docutils align-default" id="id2">
+<caption><span class="caption-text">Demo examples related to AnyMetabModelB</span><a class="headerlink" href="#id2" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 75%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Demo</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference download internal" download="" href="../../_downloads/dc0790e552edf04ed88504a51c4ca866/ClassExamples.AnyMetabModel.zip"><code class="xref download docutils literal notranslate"><span class="pre">ClassExamples.AnyMetabModel</span></code></a></p></td>
+<td><p>Different metabolism models demonstrated together with a simple…</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="optional-initialization-members">
+<h2>Optional initialization members<a class="headerlink" href="#optional-initialization-members" title="Permalink to this headline">¶</a></h2>
+<!-- Hack to trick sphinx into adding member target link -->
+  <!--<div class="section" id="coefbasalpower">
+<span id="anymetabmodelb-coefbasalpower"></span><h3>CoefBasalPower<a class="headerlink" href="#coefbasalpower" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries odd section collapsed" id="CoefBasalPower">
+<span id="anymetabmodelb-coefbasalpower" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title"> CoefBasalPower </span><span class="member-title-equal">=</span><span class="member-title-default"> 0.0225 </span><a class="headerlink" href="#CoefBasalPower" title="Permalink to this headline">¶</a>
+<span class="member-descr">Basal heat rate per muscle mass [W/kg]. This is the Ḃ per weight.</span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyVar.html#anyvar"><span class="std std-ref">AnyVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">DesignVar</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">0.0225</span></code></div>
+</div>
+<p>Basal heat rate per muscle mass [W/kg]. This is the Ḃ per weight.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+ </div> <!--</div>
+<div class="section" id="coefslpowerconiso">
+<span id="anymetabmodelb-coefslpowerconiso"></span><h3>CoefSLPowerConIso<a class="headerlink" href="#coefslpowerconiso" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries even section collapsed" id="CoefSLPowerConIso">
+<span id="anymetabmodelb-coefslpowerconiso" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title"> CoefSLPowerConIso </span><span class="member-title-equal">=</span><span class="member-title-default"> 0.16 </span><a class="headerlink" href="#CoefSLPowerConIso" title="Permalink to this headline">¶</a>
+<span class="member-descr">Shortening-Lengthening heat rate coefficient per isometric force in...</span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyVar.html#anyvar"><span class="std std-ref">AnyVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">DesignVar</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">0.16</span></code></div>
+</div>
+<p>Shortening-Lengthening heat rate coefficient per isometric force in concentric case. .</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+ </div> <!--</div>
+<div class="section" id="coefslpowercon">
+<span id="anymetabmodelb-coefslpowercon"></span><h3>CoefSLPowerCon<a class="headerlink" href="#coefslpowercon" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries odd section collapsed" id="CoefSLPowerCon">
+<span id="anymetabmodelb-coefslpowercon" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title"> CoefSLPowerCon </span><span class="member-title-equal">=</span><span class="member-title-default"> 0.18 </span><a class="headerlink" href="#CoefSLPowerCon" title="Permalink to this headline">¶</a>
+<span class="member-descr">Shortening-Lengthening heat rate coefficient per actual force in concentric...</span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyVar.html#anyvar"><span class="std std-ref">AnyVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">DesignVar</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">0.18</span></code></div>
+</div>
+<p>Shortening-Lengthening heat rate coefficient per actual force in concentric case. Contributes to Ṡ.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+ </div> <!--</div>
+<div class="section" id="coefslpowerecc">
+<span id="anymetabmodelb-coefslpowerecc"></span><h3>CoefSLPowerEcc<a class="headerlink" href="#coefslpowerecc" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries even section collapsed" id="CoefSLPowerEcc">
+<span id="anymetabmodelb-coefslpowerecc" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title"> CoefSLPowerEcc </span><span class="member-title-equal">=</span><span class="member-title-default"> 0.157 </span><a class="headerlink" href="#CoefSLPowerEcc" title="Permalink to this headline">¶</a>
+<span class="member-descr">Shortening-Lengthening heat rate coefficient per actual force in eccentric...</span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyVar.html#anyvar"><span class="std std-ref">AnyVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">DesignVar</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">0.157</span></code></div>
+</div>
+<p>Shortening-Lengthening heat rate coefficient per actual force in eccentric case. Contributes to Ṡ.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+ </div> <!--</div>
+<div class="section" id="coefactpowerphi0">
+<span id="anymetabmodelb-coefactpowerphi0"></span><h3>CoefActPowerPhi0<a class="headerlink" href="#coefactpowerphi0" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries odd section collapsed" id="CoefActPowerPhi0">
+<span id="anymetabmodelb-coefactpowerphi0" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title"> CoefActPowerPhi0 </span><span class="member-title-equal">=</span><span class="member-title-default"> 0.06 </span><a class="headerlink" href="#CoefActPowerPhi0" title="Permalink to this headline">¶</a>
+<span class="member-descr">Activation heat rate ratio (constant). Used in Ȧ.</span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyVar.html#anyvar"><span class="std std-ref">AnyVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">DesignVar</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">0.06</span></code></div>
+</div>
+<p>Activation heat rate ratio (constant). Used in Ȧ.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+ </div> <!--</div>
+<div class="section" id="coefactpowerslow">
+<span id="anymetabmodelb-coefactpowerslow"></span><h3>CoefActPowerSlow<a class="headerlink" href="#coefactpowerslow" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries even section collapsed" id="CoefActPowerSlow">
+<span id="anymetabmodelb-coefactpowerslow" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title"> CoefActPowerSlow </span><span class="member-title-equal">=</span><span class="member-title-default"> 40.0 </span><a class="headerlink" href="#CoefActPowerSlow" title="Permalink to this headline">¶</a>
+<span class="member-descr">Activation heat rate coefficient (per mass) for slow twitch fibers. Used in Ȧ.</span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyVar.html#anyvar"><span class="std std-ref">AnyVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">DesignVar</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">40.0</span></code></div>
+</div>
+<p>Activation heat rate coefficient (per mass) for slow twitch fibers. Used in Ȧ.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+ </div> <!--</div>
+<div class="section" id="coefactpowerfast">
+<span id="anymetabmodelb-coefactpowerfast"></span><h3>CoefActPowerFast<a class="headerlink" href="#coefactpowerfast" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries odd section collapsed" id="CoefActPowerFast">
+<span id="anymetabmodelb-coefactpowerfast" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title"> CoefActPowerFast </span><span class="member-title-equal">=</span><span class="member-title-default"> 133.0 </span><a class="headerlink" href="#CoefActPowerFast" title="Permalink to this headline">¶</a>
+<span class="member-descr">Activation heat rate coefficient (per mass) for fast twitch fibers. Used in Ȧ.</span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyVar.html#anyvar"><span class="std std-ref">AnyVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">DesignVar</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">133.0</span></code></div>
+</div>
+<p>Activation heat rate coefficient (per mass) for fast twitch fibers. Used in Ȧ.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+ </div> <!--</div>
+<div class="section" id="coefmaintpowerslow">
+<span id="anymetabmodelb-coefmaintpowerslow"></span><h3>CoefMaintPowerSlow<a class="headerlink" href="#coefmaintpowerslow" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries even section collapsed" id="CoefMaintPowerSlow">
+<span id="anymetabmodelb-coefmaintpowerslow" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title"> CoefMaintPowerSlow </span><span class="member-title-equal">=</span><span class="member-title-default"> 74.0 </span><a class="headerlink" href="#CoefMaintPowerSlow" title="Permalink to this headline">¶</a>
+<span class="member-descr">Maintenance heat rate coefficient for slow twitch fibers. Used in Ṁ.</span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyVar.html#anyvar"><span class="std std-ref">AnyVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">DesignVar</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">74.0</span></code></div>
+</div>
+<p>Maintenance heat rate coefficient for slow twitch fibers. Used in Ṁ.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+ </div> <!--</div>
+<div class="section" id="coefmaintpowerfast">
+<span id="anymetabmodelb-coefmaintpowerfast"></span><h3>CoefMaintPowerFast<a class="headerlink" href="#coefmaintpowerfast" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries odd section collapsed" id="CoefMaintPowerFast">
+<span id="anymetabmodelb-coefmaintpowerfast" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title"> CoefMaintPowerFast </span><span class="member-title-equal">=</span><span class="member-title-default"> 111.0 </span><a class="headerlink" href="#CoefMaintPowerFast" title="Permalink to this headline">¶</a>
+<span class="member-descr">Maintenance heat rate coefficient for fast twitch fibers. Used in Ṁ.</span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyVar.html#anyvar"><span class="std std-ref">AnyVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">DesignVar</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">111.0</span></code></div>
+</div>
+<p>Maintenance heat rate coefficient for fast twitch fibers. Used in Ṁ.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+ </div> <!--</div>
+<div class="section" id="muscledensity">
+<span id="anymetabmodelb-muscledensity"></span><h3>MuscleDensity<a class="headerlink" href="#muscledensity" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries even section collapsed" id="MuscleDensity">
+<span id="anymetabmodelb-muscledensity" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title"> MuscleDensity </span><span class="member-title-equal">=</span><span class="member-title-default"> 1059.7 </span><a class="headerlink" href="#MuscleDensity" title="Permalink to this headline">¶</a>
+<span class="member-descr">Muscle density [kg/m^3].</span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyVar.html#anyvar"><span class="std std-ref">AnyVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">DesignVar</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">1059.7</span></code></div>
+</div>
+<p>Muscle density [kg/m^3].</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+ </div> <!--</div>
+<div class="section" id="addmusclepowerforecc">
+<span id="anymetabmodelb-addmusclepowerforecc"></span><h3>AddMusclePowerForEcc<a class="headerlink" href="#addmusclepowerforecc" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries odd section collapsed" id="AddMusclePowerForEcc">
+<span id="anymetabmodelb-addmusclepowerforecc" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title"> AddMusclePowerForEcc </span><span class="member-title-equal">=</span><span class="member-title-default"> On </span><a class="headerlink" href="#AddMusclePowerForEcc" title="Permalink to this headline">¶</a>
+<span class="member-descr">Switch for whether to add the muscle power to the heat production in the...</span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnySwitchVar.html#anyswitchvar"><span class="std std-ref">AnySwitchVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">DesignVar</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">On</span></code></div>
+</div>
+<p>Switch for whether to add the muscle power to the heat production in the eccentric case.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+ </div> <!--</div>
+<div class="section" id="addmusclepowerforecccoef">
+<span id="anymetabmodelb-addmusclepowerforecccoef"></span><h3>AddMusclePowerForEccCoef<a class="headerlink" href="#addmusclepowerforecccoef" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries even section collapsed" id="AddMusclePowerForEccCoef">
+<span id="anymetabmodelb-addmusclepowerforecccoef" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title"> AddMusclePowerForEccCoef </span><span class="member-title-equal">=</span><span class="member-title-default"> 1.0 </span><a class="headerlink" href="#AddMusclePowerForEccCoef" title="Permalink to this headline">¶</a>
+<span class="member-descr">Fraction to the muscle power to add when 'AddMusclePowerForEcc' is 'On'....</span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyVar.html#anyvar"><span class="std std-ref">AnyVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">DesignVar</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">1.0</span></code></div>
+</div>
+<p>Fraction to the muscle power to add when ‘AddMusclePowerForEcc’ is ‘On’. Default is ‘1.0’ like in the paper. A values of ‘-1.0’ will subtract the negative eccentric muscle power, i.e. add a positive value.</p>
+</div></blockquote>
+</div>
+</div>
+<div class="html-toggle section" id="denied-access-members">
+<h2>Denied-Access members<a class="headerlink" href="#denied-access-members" title="Permalink to this headline">¶</a></h2>
+<!-- Hack to trick sphinx into adding member target link -->
+<!--<div class="section" id="updconfig">
+<span id="anymetabmodelb-updconfig"></span><h3>UpdConfig<a class="headerlink" href="#updconfig" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries odd section collapsed" id="UpdConfig">
+<span id="anymetabmodelb-updconfig" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title">UpdConfig</span><span class="member-title-equal"></span><span class="member-title-default"></span><a class="headerlink" href="#UpdConfig" title="Permalink to this headline">¶</a>
+<span class="member-descr"></span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyIntVar.html#anyintvar"><span class="std std-ref">AnyIntVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">0</span></code></div>
+</div>
+<p>&lt;No description&gt;</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+</div><!--</div>
+<div class="section" id="upddesign">
+<span id="anymetabmodelb-upddesign"></span><h3>UpdDesign<a class="headerlink" href="#upddesign" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries even section collapsed" id="UpdDesign">
+<span id="anymetabmodelb-upddesign" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title">UpdDesign</span><span class="member-title-equal"></span><span class="member-title-default"></span><a class="headerlink" href="#UpdDesign" title="Permalink to this headline">¶</a>
+<span class="member-descr">Counter of updates of design variable (i.e. the DesignVar Evaluation Moment).</span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyIntVar.html#anyintvar"><span class="std std-ref">AnyIntVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">DesignVar</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">0</span></code></div>
+</div>
+<p>Counter of updates of design variable (i.e. the DesignVar Evaluation Moment).</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+</div><!--</div>
+<div class="section" id="updoutput">
+<span id="anymetabmodelb-updoutput"></span><h3>UpdOutput<a class="headerlink" href="#updoutput" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries odd section collapsed" id="UpdOutput">
+<span id="anymetabmodelb-updoutput" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title">UpdOutput</span><span class="member-title-equal"></span><span class="member-title-default"></span><a class="headerlink" href="#UpdOutput" title="Permalink to this headline">¶</a>
+<span class="member-descr"></span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyIntVar.html#anyintvar"><span class="std std-ref">AnyIntVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">OutputVar</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">0</span></code></div>
+</div>
+<p>&lt;No description&gt;</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+</div><!--</div>
+<div class="section" id="t">
+<span id="anymetabmodelb-t"></span><h3>t<a class="headerlink" href="#t" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries even section collapsed" id="t">
+<span id="anymetabmodelb-t_" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title">t</span><span class="member-title-equal"></span><span class="member-title-default"></span><a class="headerlink" href="#t" title="Permalink to this headline">¶</a>
+<span class="member-descr">Object-time variable.</span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyVar.html#anyvar"><span class="std std-ref">AnyVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">TimeVar</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">0.0</span></code></div>
+</div>
+<p>Object-time variable.</p>
+</div></blockquote>
+</div>
+</div>
+</div>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+        <p class="logo"><a href="../../index.html" title="index">
+          <img class="logo" src="../../_static/anyscript_maual.svg" alt="Logo"/>
+        </a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+<h3><a href="../../contents.html">Reference Manual</a></h3>
+<p class="caption"><span class="caption-text">API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../class-overview.html"><strong>Class reference</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../function-overview.html"><strong>Function reference</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../globals-overview.html">Globals reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../environment.html">Environment variables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../messages/index.html">Errors, warnings and messages</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Language</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../anyscript/language.html">AnyScript™ language</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../anyscript/preprocessor.html">The preprocessor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../anyscript/inside-anybody.html">Inside the AnyBody Modeling System</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../anyscript/technical-notes.html">Technical notes</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../demos/index.html">Demo examples</a></li>
+</ul>
+<div class="sphinxprev">
+    <h4>Other resources</h4>
+    <p class="topless"><a href="../../../index.html"
+                          title="Back to all manuals">&larr; Back to all manuals</a></p>
+</div>
+        </div>
+      </div>
+    
+    
+        <div class="sidebar-toggle-group no-js">
+            
+            <button class="sidebar-toggle" id="sidebar-hide" title="Hide the sidebar menu">
+                 «
+                <span class="show-for-small">hide menu</span>
+                
+            </button>
+            <button class="sidebar-toggle" id="sidebar-show" title="Show the sidebar menu">
+                
+                <span class="show-for-small">menu</span>
+                <span class="hide-for-small">sidebar</span>
+                 »
+            </button>
+        </div>
+    
+      <div class="clearer"></div>
+    </div>
+    <div class="relbar-bottom">
+        
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../contents.html" title="Table Of Contents"
+             >toc</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="AnyMetabModelBase.html" title="AnyMetabModelBase"
+             >next</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="AnyMessage.html" title="AnyMessage"
+             >previous</a> &nbsp; &nbsp;</li>
+    <li><a href="../../index.html">AnyScript Reference 7.3.4 documentation</a> &#187;</li>
+
+          <li class="nav-item nav-item-1"><a href="../../index.html" >The AnyScript Reference manual!</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../class-overview.html" ><strong>Class reference</strong></a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">AnyMetabModelB</a></li> 
+      </ul>
+    </div>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2021, AnyBody Technology A/S.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.5.4.
+    </div>
+    <!-- cloud_sptheme 1.4 -->
+  </body>
+</html>

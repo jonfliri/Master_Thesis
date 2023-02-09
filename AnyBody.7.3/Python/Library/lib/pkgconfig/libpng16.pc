@@ -1,0 +1,12 @@
+prefix=F:/AnySource/AMS1-Master/Python64/Library
+exec_prefix=F:/AnySource/AMS1-Master/Python64/Library
+libdir=F:/AnySource/AMS1-Master/Python64/Library/lib
+includedir=F:/AnySource/AMS1-Master/Python64/Library/include/libpng16
+
+Name: libpng
+Description: Loads and saves PNG files
+Version: 1.6.37
+Requires: zlib
+Libs: -L${libdir} -lpng16
+Libs.private: -lz -lm
+Cflags: -I${includedir}

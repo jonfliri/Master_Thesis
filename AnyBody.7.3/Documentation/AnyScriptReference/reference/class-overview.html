@@ -1,0 +1,1886 @@
+
+
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Class reference &#8212; AnyScript Reference 7.3.4 documentation</title>
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/cloud.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/table_styling.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noticia+Text|Open+Sans|Droid+Sans+Mono" type="text/css" />
+    
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/script/filter-class-list.js"></script>
+    <script src="../_static/fa/all.js"></script>
+
+    
+    
+     
+        <script src="../_static/jquery.cookie.js"></script>
+    
+
+    
+     
+        <script src="../_static/cloud.base.js"></script>
+    
+
+    
+     
+        <script src="../_static/cloud.js"></script>
+    
+
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Any3DObject" href="classes/Any3DObject.html" />
+    <link rel="prev" title="Inside the AnyBody Modeling System" href="../anyscript/inside-anybody.html" /> 
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head><body>
+    <div class="relbar-top">
+        
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../contents.html" title="Table Of Contents"
+             accesskey="C">toc</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="classes/Any3DObject.html" title="Any3DObject"
+             accesskey="N">next</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="../anyscript/inside-anybody.html" title="Inside the AnyBody Modeling System"
+             accesskey="P">previous</a> &nbsp; &nbsp;</li>
+    <li><a href="../index.html">AnyScript Reference 7.3.4 documentation</a> &#187;</li>
+
+          <li class="nav-item nav-item-1"><a href="../index.html" accesskey="U">The AnyScript Reference manual!</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><strong>Class reference</strong></a></li> 
+      </ul>
+    </div>
+    </div>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="class-reference">
+<h1><strong>Class reference</strong><a class="headerlink" href="#class-reference" title="Permalink to this headline">¶</a></h1>
+<p>In this section, we shall describe a number of basic and particularly
+important classes. Detailed description of these classes are naturally
+found in their own manual pages, but the description here serves to
+provide some overview of how the AnyScript™ language is designed. As you may
+discover many of these important classes are abstract base classes, so
+their importance actually comes from the role of defining core concepts
+in the language.</p>
+<div class="section" id="frequently-used-classes">
+<h2>Frequently used classes<a class="headerlink" href="#frequently-used-classes" title="Permalink to this headline">¶</a></h2>
+<div class="html-toggle section" id="basic-classes-and-datatypes">
+<h3>Basic  classes and datatypes<a class="headerlink" href="#basic-classes-and-datatypes" title="Permalink to this headline">¶</a></h3>
+<p>Describes the classes that the whole data structure is founded on.</p>
+<table class="colwidths-given classtable docutils align-default">
+<colgroup>
+<col style="width: 30%" />
+<col style="width: 70%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Class name</p></th>
+<th class="head"><p>Short description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>_</p></td>
+<td><p>_</p></td>
+</tr>
+<tr class="row-odd"><td><p>_</p></td>
+<td><p>_</p></td>
+</tr>
+<tr class="class-type-creatable row-even"><td><p><a class="reference internal" href="classes/AnyFolder.html#anyfolder"><span class="std std-ref">AnyFolder</span></a></p></td>
+<td><p>This is the base class of all folders, i.e.,…</p></td>
+</tr>
+<tr class="class-type-abstract row-odd"><td><p><a class="reference internal" href="classes/AnyStudy.html#anystudy"><span class="std std-ref">AnyStudy</span></a></p></td>
+<td><p>This is the base class from which all studies…</p></td>
+</tr>
+<tr class="class-type-creatable row-even"><td><p><a class="reference internal" href="classes/AnyFloat.html#anyfloat"><span class="std std-ref">AnyFloat</span></a></p></td>
+<td><p>Multi-dimensional floating-point variable.</p></td>
+</tr>
+<tr class="class-type-creatable row-odd"><td><p><a class="reference internal" href="classes/AnyInt.html#anyint"><span class="std std-ref">AnyInt</span></a></p></td>
+<td><p>Multi-dimensional integer variable.</p></td>
+</tr>
+<tr class="class-type-creatable row-even"><td><p><a class="reference internal" href="classes/AnyVec3.html#anyvec3"><span class="std std-ref">AnyVec3</span></a></p></td>
+<td><p>Algebraic vector with three components….</p></td>
+</tr>
+<tr class="class-type-creatable row-odd"><td><p><a class="reference internal" href="classes/AnyMat33.html#anymat33"><span class="std std-ref">AnyMat33</span></a></p></td>
+<td><p>Three by three algebraic matrix.</p></td>
+</tr>
+<tr class="class-type-creatable row-even"><td><p><a class="reference internal" href="classes/AnyVar.html#anyvar"><span class="std std-ref">AnyVar</span></a></p></td>
+<td><p>Scalar floating point variable.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="html-toggle section" id="mechanical-objects-and-forces">
+<h3>Mechanical objects and forces<a class="headerlink" href="#mechanical-objects-and-forces" title="Permalink to this headline">¶</a></h3>
+<p>Contains descriptions of all objects that can be used in creating a
+mechanical model, hereunder a body model.</p>
+<table class="colwidths-given classtable docutils align-default">
+<colgroup>
+<col style="width: 30%" />
+<col style="width: 70%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Class name</p></th>
+<th class="head"><p>Short description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>_</p></td>
+<td><p>_</p></td>
+</tr>
+<tr class="row-odd"><td><p>_</p></td>
+<td><p>_</p></td>
+</tr>
+<tr class="class-type-creatable row-even"><td><p><a class="reference internal" href="classes/AnyForce3D.html#anyforce3d"><span class="std std-ref">AnyForce3D</span></a></p></td>
+<td><p>A three-dimensional concentrated force (a…</p></td>
+</tr>
+<tr class="class-type-creatable row-odd"><td><p><a class="reference internal" href="classes/AnySeg.html#anyseg"><span class="std std-ref">AnySeg</span></a></p></td>
+<td><p>This class represents a rigid body in the…</p></td>
+</tr>
+<tr class="class-type-abstract row-even"><td><p><a class="reference internal" href="classes/AnyMuscle.html#anymuscle"><span class="std std-ref">AnyMuscle</span></a></p></td>
+<td><p>This class is the base class for all muscles….</p></td>
+</tr>
+<tr class="class-type-creatable row-odd"><td><p><a class="reference internal" href="classes/AnyRefNode.html#anyrefnode"><span class="std std-ref">AnyRefNode</span></a></p></td>
+<td><p>The reference node is a reference frame…</p></td>
+</tr>
+<tr class="class-type-abstract row-even"><td><p><a class="reference internal" href="classes/AnyRefFrame.html#anyrefframe"><span class="std std-ref">AnyRefFrame</span></a></p></td>
+<td><p>This is an abstract class that defines 3-D…</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="html-toggle section" id="kinematic-measures">
+<h3>Kinematic measures<a class="headerlink" href="#kinematic-measures" title="Permalink to this headline">¶</a></h3>
+<p>AnyBody objects which measure the value of a user-specified DOF within the model.
+The special feature about kinematic measures is that you can drive them. In AnyBody, you can drive
+anything that you can measure, and this is really a unique facility. The concept was introduced
+as a way of describing dimensions in a kinematic model that you might want to get information about or control with drivers.</p>
+<p>A joint angle or a distance between two points are examples of kinematic measures.
+Joints can be understood as kinematic measures equipped with drivers. For example, a
+spherical joint is a distance between two points on two different segments that is driven to be zero.
+This means that, using kinematic measures, you can define types of joints that are not available as
+predefined objects in AnyScript.</p>
+<p>To read more see the <a class="reference external" href="https://anyscript.org/tutorials/The_mechanical_elements/lesson4.html?highlight=kinematic%20measures">Kinematic Measures Tutorial</a>.</p>
+<table class="colwidths-given classtable docutils align-default">
+<colgroup>
+<col style="width: 30%" />
+<col style="width: 70%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Class name</p></th>
+<th class="head"><p>Short description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>_</p></td>
+<td><p>_</p></td>
+</tr>
+<tr class="row-odd"><td><p>_</p></td>
+<td><p>_</p></td>
+</tr>
+<tr class="class-type-creatable row-even"><td><p><a class="reference internal" href="classes/AnyKinLinear.html#anykinlinear"><span class="std std-ref">AnyKinLinear</span></a></p></td>
+<td><p>This “kinematic measure” measures translation,…</p></td>
+</tr>
+<tr class="class-type-creatable row-odd"><td><p><a class="reference internal" href="classes/AnyKinRotational.html#anykinrotational"><span class="std std-ref">AnyKinRotational</span></a></p></td>
+<td><p>This “kinematic measure” measures 3-D…</p></td>
+</tr>
+<tr class="class-type-creatable row-even"><td><p><a class="reference internal" href="classes/AnyKinCoM.html#anykincom"><span class="std std-ref">AnyKinCoM</span></a></p></td>
+<td><p>This measures the center of mass (CoM) of a…</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="html-toggle section" id="drivers">
+<h3>Drivers<a class="headerlink" href="#drivers" title="Permalink to this headline">¶</a></h3>
+<p>These are AnyBody objects which constrain the value of a measure to a constant value or a mathematical function of time.
+Drivers essentially assemble and impart motion to your mechanisms.</p>
+<table class="colwidths-given classtable docutils align-default">
+<colgroup>
+<col style="width: 30%" />
+<col style="width: 70%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Class name</p></th>
+<th class="head"><p>Short description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>_</p></td>
+<td><p>_</p></td>
+</tr>
+<tr class="row-odd"><td><p>_</p></td>
+<td><p>_</p></td>
+</tr>
+<tr class="class-type-creatable row-even"><td><p><a class="reference internal" href="classes/AnyKinDriver.html#anykindriver"><span class="std std-ref">AnyKinDriver</span></a></p></td>
+<td><p>This kinematic driver class extends the…</p></td>
+</tr>
+<tr class="class-type-creatable row-odd"><td><p><a class="reference internal" href="classes/AnyKinMotion.html#anykinmotion"><span class="std std-ref">AnyKinMotion</span></a></p></td>
+<td><p>AnyKinMotion is a kinematic driver class that…</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="html-toggle section" id="drawing">
+<h3>Drawing<a class="headerlink" href="#drawing" title="Permalink to this headline">¶</a></h3>
+<p>These are AnyBody objects that allow the user to visualize their model in the model view window.</p>
+<table class="colwidths-given classtable docutils align-default">
+<colgroup>
+<col style="width: 30%" />
+<col style="width: 70%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Class name</p></th>
+<th class="head"><p>Short description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>_</p></td>
+<td><p>_</p></td>
+</tr>
+<tr class="row-odd"><td><p>_</p></td>
+<td><p>_</p></td>
+</tr>
+<tr class="class-type-creatable row-even"><td><p><a class="reference internal" href="classes/AnyDrawRefFrame.html#anydrawrefframe"><span class="std std-ref">AnyDrawRefFrame</span></a></p></td>
+<td><p>This is an object for drawing reference frames.</p></td>
+</tr>
+<tr class="class-type-creatable row-odd"><td><p><a class="reference internal" href="classes/AnyDrawNode.html#anydrawnode"><span class="std std-ref">AnyDrawNode</span></a></p></td>
+<td><p>This object draws a single node (AnyRefFrame)…</p></td>
+</tr>
+<tr class="class-type-creatable row-even"><td><p><a class="reference internal" href="classes/AnyDrawSeg.html#anydrawseg"><span class="std std-ref">AnyDrawSeg</span></a></p></td>
+<td><p>This is an object for drawing a segment. It…</p></td>
+</tr>
+<tr class="class-type-creatable row-odd"><td><p><a class="reference internal" href="classes/AnyDrawSurf.html#anydrawsurf"><span class="std std-ref">AnyDrawSurf</span></a></p></td>
+<td><p>This object draws a 3-D CAD model in the…</p></td>
+</tr>
+<tr class="class-type-creatable row-even"><td><p><a class="reference internal" href="classes/AnyDrawMuscle.html#anydrawmuscle"><span class="std std-ref">AnyDrawMuscle</span></a></p></td>
+<td><p>This is a class for drawing a muscle. The…</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="html-toggle section" id="data-input-output">
+<h3>Data input/output<a class="headerlink" href="#data-input-output" title="Permalink to this headline">¶</a></h3>
+<p>AnyBody objects which allow for the input and output of various data types.</p>
+<table class="colwidths-given classtable docutils align-default">
+<colgroup>
+<col style="width: 30%" />
+<col style="width: 70%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Class name</p></th>
+<th class="head"><p>Short description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>_</p></td>
+<td><p>_</p></td>
+</tr>
+<tr class="row-odd"><td><p>_</p></td>
+<td><p>_</p></td>
+</tr>
+<tr class="class-type-creatable row-even"><td><p><a class="reference internal" href="classes/AnyInputFile.html#anyinputfile"><span class="std std-ref">AnyInputFile</span></a></p></td>
+<td><p>Class to read a space or comma separated…</p></td>
+</tr>
+<tr class="class-type-creatable row-odd"><td><p><a class="reference internal" href="classes/AnyOutputFile.html#anyoutputfile"><span class="std std-ref">AnyOutputFile</span></a></p></td>
+<td><p>This class provides functionality for saving…</p></td>
+</tr>
+<tr class="class-type-creatable row-even"><td><p><a class="reference internal" href="classes/AnyInputC3D.html#anyinputc3d"><span class="std std-ref">AnyInputC3D</span></a></p></td>
+<td><p>Class to read files in C3D format. The class…</p></td>
+</tr>
+<tr class="class-type-creatable row-odd"><td><p><a class="reference internal" href="classes/AnyMechOutputFileForceExport.html#anymechoutputfileforceexport"><span class="std std-ref">AnyMechOutputFileForceExport</span></a></p></td>
+<td><p>This class is an output file class…</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="html-toggle section" id="all-classes">
+<h2>All classes<a class="headerlink" href="#all-classes" title="Permalink to this headline">¶</a></h2>
+<input type="text" class="filter-search-input" id="filter-table-input" onkeyup="filter_table()" placeholder="Search for classes..."><table class="colwidths-given classtable filter-table docutils align-default">
+<colgroup>
+<col style="width: 30%" />
+<col style="width: 70%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Class name</p></th>
+<th class="head"><p>Short description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>_</p></td>
+<td><p>_</p></td>
+</tr>
+<tr class="row-odd"><td><p>_</p></td>
+<td><p>_</p></td>
+</tr>
+<tr class="class-type-abstract row-even"><td><p><a class="reference internal" href="classes/AnyAbscissaFolder.html#anyabscissafolder"><span class="std std-ref">AnyAbscissaFolder</span></a></p></td>
+<td><p>This class function is much like…</p></td>
+</tr>
+<tr class="class-type-abstract row-odd"><td><p><a class="reference internal" href="classes/AnyAppliedForce.html#anyappliedforce"><span class="std std-ref">AnyAppliedForce</span></a></p></td>
+<td><p>This class is the abstract base class for all…</p></td>
+</tr>
+<tr class="class-type-creatable row-even"><td><p><a class="reference internal" href="classes/AnyBodyCalibrationStudy.html#anybodycalibrationstudy"><span class="std std-ref">AnyBodyCalibrationStudy</span></a></p></td>
+<td><p>The AnyBodyCalibrationStudy contains…</p></td>
+</tr>
+<tr class="class-type-abstract row-odd"><td><p><a class="reference internal" href="classes/AnyBodyLigamentLenCalOpr.html#anybodyligamentlencalopr"><span class="std std-ref">AnyBodyLigamentLenCalOpr</span></a></p></td>
+<td><p>Class for ligament length calibration…</p></td>
+</tr>
+<tr class="class-type-abstract row-even"><td><p><a class="reference internal" href="classes/AnyBodyMusFibAndTenLenCalOpr.html#anybodymusfibandtenlencalopr"><span class="std std-ref">AnyBodyMusFibAndTenLenCalOpr</span></a></p></td>
+<td><p>Class for simultaneous muscle fiber and tendon…</p></td>
+</tr>
+<tr class="class-type-abstract row-odd"><td><p><a class="reference internal" href="classes/AnyBodyMusTenLenCalOpr.html#anybodymustenlencalopr"><span class="std std-ref">AnyBodyMusTenLenCalOpr</span></a></p></td>
+<td><p>Class for tendon length calibration operation…</p></td>
+</tr>
+<tr class="class-type-creatable row-even"><td><p><a class="reference internal" href="classes/AnyBodyStudy.html#anybodystudy"><span class="std std-ref">AnyBodyStudy</span></a></p></td>
+<td><p>The AnyBodyStudy is a study-class for doing…</p></td>
+</tr>
+<tr class="class-type-creatable row-odd"><td><p><a class="reference internal" href="classes/AnyCamera.html#anycamera"><span class="std std-ref">AnyCamera</span></a></p></td>
+<td><p>AnyCamera is the base class for camera…</p></td>
+</tr>
+<tr class="class-type-creatable row-even"><td><p><a class="reference internal" href="classes/AnyCameraLookAt.html#anycameralookat"><span class="std std-ref">AnyCameraLookAt</span></a></p></td>
+<td><p>The LookAt camera is supposed to be an…</p></td>
+</tr>
+<tr class="class-type-creatable row-odd"><td><p><a class="reference internal" href="classes/AnyCameraModelView.html#anycameramodelview"><span class="std std-ref">AnyCameraModelView</span></a></p></td>
+<td><p>This is a basic and simple camera…</p></td>
+</tr>
+<tr class="class-type-creatable row-even"><td><p><a class="reference internal" href="classes/AnyCamRecorder.html#anycamrecorder"><span class="std std-ref">AnyCamRecorder</span></a></p></td>
+<td><p>AnyCamRecorder objects serve to record images…</p></td>
+</tr>
+<tr class="class-type-creatable row-odd"><td><p><a class="reference internal" href="classes/AnyChart.html#anychart"><span class="std std-ref">AnyChart</span></a></p></td>
+<td><p>Class that defines a chart showing output.</p></td>
+</tr>
+<tr class="class-type-abstract row-even"><td><p><a class="reference internal" href="classes/AnyChartAxis.html#anychartaxis"><span class="std std-ref">AnyChartAxis</span></a></p></td>
+<td><p>Class containing axis definitons for a chart…</p></td>
+</tr>
+<tr class="class-type-abstract row-odd"><td><p><a class="reference internal" href="classes/AnyChartAxisUnit.html#anychartaxisunit"><span class="std std-ref">AnyChartAxisUnit</span></a></p></td>
+<td><p>Class containing unit definitons for axes in a…</p></td>
+</tr>
+<tr class="class-type-abstract row-even"><td><p><a class="reference internal" href="classes/AnyChartCursor.html#anychartcursor"><span class="std std-ref">AnyChartCursor</span></a></p></td>
+<td><p>Chart cursor object. A cursor is attached to a series.</p></td>
+</tr>
+<tr class="class-type-abstract row-odd"><td><p><a class="reference internal" href="classes/AnyChartLegendFolder.html#anychartlegendfolder"><span class="std std-ref">AnyChartLegendFolder</span></a></p></td>
+<td><p>Class that defines a chart showing output.</p></td>
+</tr>
+<tr class="class-type-abstract row-even"><td><p><a class="reference internal" href="classes/AnyChartObject.html#anychartobject"><span class="std std-ref">AnyChartObject</span></a></p></td>
+<td><p>Base class for objects used in AnyChart.</p></td>
+</tr>
+<tr class="class-type-creatable row-odd"><td><p><a class="reference internal" href="classes/AnyChartSerie.html#anychartserie"><span class="std std-ref">AnyChartSerie</span></a></p></td>
+<td><p>Class defining a data series of a chart (AnyChart).</p></td>
+</tr>
+<tr class="class-type-abstract row-even"><td><p><a class="reference internal" href="classes/AnyChartSeriesFolder.html#anychartseriesfolder"><span class="std std-ref">AnyChartSeriesFolder</span></a></p></td>
+<td><p>Folder for holding series definitions in…</p></td>
+</tr>
+<tr class="class-type-abstract row-odd"><td><p><a class="reference internal" href="classes/AnyChartSerieTitle.html#anychartserietitle"><span class="std std-ref">AnyChartSerieTitle</span></a></p></td>
+<td><p>A special string class for series titles in AnyChart.</p></td>
+</tr>
+<tr class="class-type-creatable row-even"><td><p><a class="reference internal" href="classes/AnyChartStyle.html#anychartstyle"><span class="std std-ref">AnyChartStyle</span></a></p></td>
+<td><p>General styles of the AnyChart appearance.</p></td>
+</tr>
+<tr class="class-type-abstract row-odd"><td><p><a class="reference internal" href="classes/AnyChartStyleFolder.html#anychartstylefolder"><span class="std std-ref">AnyChartStyleFolder</span></a></p></td>
+<td><p>Class that defines a chart showing output.</p></td>
+</tr>
+<tr class="class-type-abstract row-even"><td><p><a class="reference internal" href="classes/AnyChartText.html#anycharttext"><span class="std std-ref">AnyChartText</span></a></p></td>
+<td><p>Base class for text objects in the chart.</p></td>
+</tr>
+<tr class="class-type-abstract row-odd"><td><p><a class="reference internal" href="classes/AnyChartTextField.html#anycharttextfield"><span class="std std-ref">AnyChartTextField</span></a></p></td>
+<td><p>Class for text fields in the chart.</p></td>
+</tr>
+<tr class="class-type-creatable row-even"><td><p><a class="reference internal" href="classes/AnyComponentDefinition.html#anycomponentdefinition"><span class="std std-ref">AnyComponentDefinition</span></a></p></td>
+<td><p>A Class for marking organizatorial components…</p></td>
+</tr>
+<tr class="class-type-abstract row-odd"><td><p><a class="reference internal" href="classes/AnyConstitutiveModel.html#anyconstitutivemodel"><span class="std std-ref">AnyConstitutiveModel</span></a></p></td>
+<td><p>Base class for constitutive models, such as…</p></td>
+</tr>
+<tr class="class-type-creatable row-even"><td><p><a class="reference internal" href="classes/AnyCylindricalJoint.html#anycylindricaljoint"><span class="std std-ref">AnyCylindricalJoint</span></a></p></td>
+<td><p>A cylindrical joint allows rotation about a…</p></td>
+</tr>
+<tr class="class-type-abstract row-odd"><td><p><a class="reference internal" href="classes/AnyDataFileBase.html#anydatafilebase"><span class="std std-ref">AnyDataFileBase</span></a></p></td>
+<td><p>Abstract base class for all inputs from files.</p></td>
+</tr>
+<tr class="class-type-creatable row-even"><td><p><a class="reference internal" href="classes/AnyDBType.html#anydbtype"><span class="std std-ref">AnyDBType</span></a></p></td>
+<td><p>Database types.</p></td>
+</tr>
+<tr class="class-type-creatable row-odd"><td><p><a class="reference internal" href="classes/AnyDescription.html#anydescription"><span class="std std-ref">AnyDescription</span></a></p></td>
+<td><p>This class is used for defining descriptions…</p></td>
+</tr>
+<tr class="class-type-creatable row-even"><td><p><a class="reference internal" href="classes/AnyDesEvalStudy.html#anydesevalstudy"><span class="std std-ref">AnyDesEvalStudy</span></a></p></td>
+<td><p>This class can evaluate design variable values…</p></td>
+</tr>
+<tr class="class-type-abstract row-odd"><td><p><a class="reference internal" href="classes/AnyDesEvalStudyOpr.html#anydesevalstudyopr"><span class="std std-ref">AnyDesEvalStudyOpr</span></a></p></td>
+<td><p>Operation that executes the update function in…</p></td>
+</tr>
+<tr class="class-type-creatable row-even"><td><p><a class="reference internal" href="classes/AnyDesignDef.html#anydesigndef"><span class="std std-ref">AnyDesignDef</span></a></p></td>
+<td><p>Base for design definitions classes.</p></td>
+</tr>
+<tr class="class-type-creatable row-odd"><td><p><a class="reference internal" href="classes/AnyDesMeasure.html#anydesmeasure"><span class="std std-ref">AnyDesMeasure</span></a></p></td>
+<td><p>This class defines design performance…</p></td>
+</tr>
+<tr class="class-type-creatable row-even"><td><p><a class="reference internal" href="classes/AnyDesMeasureType.html#anydesmeasuretype"><span class="std std-ref">AnyDesMeasureType</span></a></p></td>
+<td><p>Type definitions for design measures.</p></td>
+</tr>
+<tr class="class-type-abstract row-odd"><td><p><a class="reference internal" href="classes/AnyDesStudy.html#anydesstudy"><span class="std std-ref">AnyDesStudy</span></a></p></td>
+<td><p>This class is the(abstract) base class of all…</p></td>
+</tr>
+<tr class="class-type-creatable row-even"><td><p><a class="reference internal" href="classes/AnyDesVar.html#anydesvar"><span class="std std-ref">AnyDesVar</span></a></p></td>
+<td><p>This class functions as a design variable container.</p></td>
+</tr>
+<tr class="class-type-creatable row-odd"><td><p><a class="reference internal" href="classes/AnyDisplayPriority.html#anydisplaypriority"><span class="std std-ref">AnyDisplayPriority</span></a></p></td>
+<td><p>Priority determining if the operation sequence…</p></td>
+</tr>
+<tr class="class-type-creatable row-even"><td><p><a class="reference internal" href="classes/AnyDoc.html#anydoc"><span class="std std-ref">AnyDoc</span></a></p></td>
+<td><p>This is the base class for AnyScript…</p></td>
+</tr>
+<tr class="class-type-creatable row-odd"><td><p><a class="reference internal" href="classes/AnyDrawCamera.html#anydrawcamera"><span class="std std-ref">AnyDrawCamera</span></a></p></td>
+<td><p>Drawing object for visualizing a camera in the model.</p></td>
+</tr>
+<tr class="class-type-creatable row-even"><td><p><a class="reference internal" href="classes/AnyDrawForce.html#anydrawforce"><span class="std std-ref">AnyDrawForce</span></a></p></td>
+<td><p>This drawing object class draws all forces…</p></td>
+</tr>
+<tr class="class-type-creatable row-odd"><td><p><a class="reference internal" href="classes/AnyDrawForceSurface.html#anydrawforcesurface"><span class="std std-ref">AnyDrawForceSurface</span></a></p></td>
+<td><p>Class drawing contact forces on the surfaces…</p></td>
+</tr>
+<tr class="class-type-creatable row-even"><td><p><a class="reference internal" href="classes/AnyDrawGroup.html#anydrawgroup"><span class="std std-ref">AnyDrawGroup</span></a></p></td>
+<td><p>This drawing group class is a class specially…</p></td>
+</tr>
+<tr class="class-type-creatable row-odd"><td><p><a class="reference internal" href="classes/AnyDrawKinMeasure.html#anydrawkinmeasure"><span class="std std-ref">AnyDrawKinMeasure</span></a></p></td>
+<td><p>This drawing object class draws all kinematic…</p></td>
+</tr>
+<tr class="class-type-creatable row-even"><td><p><a class="reference internal" href="classes/AnyDrawLine.html#anydrawline"><span class="std std-ref">AnyDrawLine</span></a></p></td>
+<td><p>A general line drawing object. You can specify…</p></td>
+</tr>
+<tr class="class-type-creatable row-odd"><td><p><a class="reference internal" href="classes/AnyDrawMuscle.html#anydrawmuscle"><span class="std std-ref">AnyDrawMuscle</span></a></p></td>
+<td><p>This is a class for drawing a muscle. The…</p></td>
+</tr>
+<tr class="class-type-creatable row-even"><td><p><a class="reference internal" href="classes/AnyDrawNode.html#anydrawnode"><span class="std std-ref">AnyDrawNode</span></a></p></td>
+<td><p>This object draws a single node (AnyRefFrame)…</p></td>
+</tr>
+<tr class="class-type-creatable row-odd"><td><p><a class="reference internal" href="classes/AnyDrawNodes.html#anydrawnodes"><span class="std std-ref">AnyDrawNodes</span></a></p></td>
+<td><p>This object draws all the nodes (AnyRefFrames)…</p></td>
+</tr>
+<tr class="class-type-abstract row-even"><td><p><a class="reference internal" href="classes/AnyDrawObject.html#anydrawobject"><span class="std std-ref">AnyDrawObject</span></a></p></td>
+<td><p>This is the base class for drawing object classes.</p></td>
+</tr>
+<tr class="class-type-abstract row-odd"><td><p><a class="reference internal" href="classes/AnyDrawObjectRigid.html#anydrawobjectrigid"><span class="std std-ref">AnyDrawObjectRigid</span></a></p></td>
+<td><p>This drawing object class is the base class…</p></td>
+</tr>
+<tr class="class-type-abstract row-even"><td><p><a class="reference internal" href="classes/AnyDrawObjectRigidFormatted.html#anydrawobjectrigidformatted"><span class="std std-ref">AnyDrawObjectRigidFormatted</span></a></p></td>
+<td><p>This drawing object class is the base class…</p></td>
+</tr>
+<tr class="class-type-creatable row-odd"><td><p><a class="reference internal" href="classes/AnyDrawOverlayImage.html#anydrawoverlayimage"><span class="std std-ref">AnyDrawOverlayImage</span></a></p></td>
+<td><p>An overlay image drawing object. This object…</p></td>
+</tr>
+<tr class="class-type-creatable row-even"><td><p><a class="reference internal" href="classes/AnyDrawParamSurf.html#anydrawparamsurf"><span class="std std-ref">AnyDrawParamSurf</span></a></p></td>
+<td><p>This is a drawing object for parameterized…</p></td>
+</tr>
+<tr class="class-type-creatable row-odd"><td><p><a class="reference internal" href="classes/AnyDrawPLine.html#anydrawpline"><span class="std std-ref">AnyDrawPLine</span></a></p></td>
+<td><p>An object of this class defines and draws a…</p></td>
+</tr>
+<tr class="class-type-creatable row-even"><td><p><a class="reference internal" href="classes/AnyDrawPointCloud.html#anydrawpointcloud"><span class="std std-ref">AnyDrawPointCloud</span></a></p></td>
+<td><p>This object draws all the points specified by…</p></td>
+</tr>
+<tr class="class-type-creatable row-odd"><td><p><a class="reference internal" href="classes/AnyDrawRefFrame.html#anydrawrefframe"><span class="std std-ref">AnyDrawRefFrame</span></a></p></td>
+<td><p>This is an object for drawing reference frames.</p></td>
+</tr>
+<tr class="class-type-creatable row-even"><td><p><a class="reference internal" href="classes/AnyDrawRefFrameNodes.html#anydrawrefframenodes"><span class="std std-ref">AnyDrawRefFrameNodes</span></a></p></td>
+<td><p>This is an object for drawing the nodes of a…</p></td>
+</tr>
+<tr class="class-type-creatable row-odd"><td><p><a class="reference internal" href="classes/AnyDrawSeg.html#anydrawseg"><span class="std std-ref">AnyDrawSeg</span></a></p></td>
+<td><p>This is an object for drawing a segment. It…</p></td>
+</tr>
+<tr class="class-type-creatable row-even"><td><p><a class="reference internal" href="classes/AnyDrawSegInertia.html#anydrawseginertia"><span class="std std-ref">AnyDrawSegInertia</span></a></p></td>
+<td><p>This is an object for drawing the inertia part…</p></td>
+</tr>
+<tr class="class-type-creatable row-odd"><td><p><a class="reference internal" href="classes/AnyDrawSphere.html#anydrawsphere"><span class="std std-ref">AnyDrawSphere</span></a></p></td>
+<td><p>A general sphere drawing object. If placed in…</p></td>
+</tr>
+<tr class="class-type-creatable row-even"><td><p><a class="reference internal" href="classes/AnyDrawStdJoint.html#anydrawstdjoint"><span class="std std-ref">AnyDrawStdJoint</span></a></p></td>
+<td><p>This drawing object class draws all standard…</p></td>
+</tr>
+<tr class="class-type-creatable row-odd"><td><p><a class="reference internal" href="classes/AnyDrawSTL.html#anydrawstl"><span class="std std-ref">AnyDrawSTL</span></a></p></td>
+<td><p>This object draws a 3-D CAD model in the…</p></td>
+</tr>
+<tr class="class-type-creatable row-even"><td><p><a class="reference internal" href="classes/AnyDrawSurf.html#anydrawsurf"><span class="std std-ref">AnyDrawSurf</span></a></p></td>
+<td><p>This object draws a 3-D CAD model in the…</p></td>
+</tr>
+<tr class="class-type-creatable row-odd"><td><p><a class="reference internal" href="classes/AnyDrawSurfDynShape.html#anydrawsurfdynshape"><span class="std std-ref">AnyDrawSurfDynShape</span></a></p></td>
+<td><p>This class draws a 3-D geometry that may…</p></td>
+</tr>
+<tr class="class-type-creatable row-even"><td><p><a class="reference internal" href="classes/AnyDrawVector.html#anydrawvector"><span class="std std-ref">AnyDrawVector</span></a></p></td>
+<td><p>A general vector drawing object. You can…</p></td>
+</tr>
+<tr class="class-type-creatable row-odd"><td><p><a class="reference internal" href="classes/AnyDrawViaPointMuscle.html#anydrawviapointmuscle"><span class="std std-ref">AnyDrawViaPointMuscle</span></a></p></td>
+<td><p>This is a class for drawing a via point muscle.</p></td>
+</tr>
+<tr class="class-type-abstract row-even"><td><p><a class="reference internal" href="classes/AnyDrawWidgetBase.html#anydrawwidgetbase"><span class="std std-ref">AnyDrawWidgetBase</span></a></p></td>
+<td><p>This is the abstract base class for drawing…</p></td>
+</tr>
+<tr class="class-type-creatable row-odd"><td><p><a class="reference internal" href="classes/AnyDrawWidgetLin.html#anydrawwidgetlin"><span class="std std-ref">AnyDrawWidgetLin</span></a></p></td>
+<td><p>The AnyDrawWidgetLin class is used for…</p></td>
+</tr>
+<tr class="class-type-creatable row-even"><td><p><a class="reference internal" href="classes/AnyDrawWidgetRot.html#anydrawwidgetrot"><span class="std std-ref">AnyDrawWidgetRot</span></a></p></td>
+<td><p>The AnyDrawWidgetRot class is used for…</p></td>
+</tr>
+<tr class="class-type-abstract row-odd"><td><p><a class="reference internal" href="classes/AnyEnum.html#anyenum"><span class="std std-ref">AnyEnum</span></a></p></td>
+<td><p>Abstract base class for multi-dimensional,…</p></td>
+</tr>
+<tr class="class-type-creatable row-even"><td><p><a class="reference internal" href="classes/AnyEnumBoundingBoxType.html#anyenumboundingboxtype"><span class="std std-ref">AnyEnumBoundingBoxType</span></a></p></td>
+<td><p>Different ways of computing bounding box for an object.</p></td>
+</tr>
+<tr class="class-type-creatable row-odd"><td><p><a class="reference internal" href="classes/AnyEnumFloatNumberStyle.html#anyenumfloatnumberstyle"><span class="std std-ref">AnyEnumFloatNumberStyle</span></a></p></td>
+<td><p>Number formatting style.</p></td>
+</tr>
+<tr class="class-type-creatable row-even"><td><p><a class="reference internal" href="classes/AnyEnumFourierSerieType.html#anyenumfourierserietype"><span class="std std-ref">AnyEnumFourierSerieType</span></a></p></td>
+<td><p>Type definitions for the Fourier function.</p></td>
+</tr>
+<tr class="class-type-creatable row-odd"><td><p><a class="reference internal" href="classes/AnyEnumKinSys.html#anyenumkinsys"><span class="std std-ref">AnyEnumKinSys</span></a></p></td>
+<td><p>Different flavours of setup of the kinematic system.</p></td>
+</tr>
+<tr class="class-type-creatable row-even"><td><p><a class="reference internal" href="classes/AnyEnumLine3DCapStyle.html#anyenumline3dcapstyle"><span class="std std-ref">AnyEnumLine3DCapStyle</span></a></p></td>
+<td><p>Line style class providing style options for…</p></td>
+</tr>
+<tr class="class-type-creatable row-odd"><td><p><a class="reference internal" href="classes/AnyEnumLine3DStyle.html#anyenumline3dstyle"><span class="std std-ref">AnyEnumLine3DStyle</span></a></p></td>
+<td><p>Line style class providing style options for…</p></td>
+</tr>
+<tr class="class-type-creatable row-even"><td><p><a class="reference internal" href="classes/AnyEnumLineStyle.html#anyenumlinestyle"><span class="std std-ref">AnyEnumLineStyle</span></a></p></td>
+<td><p>Line style class providing style options for…</p></td>
+</tr>
+<tr class="class-type-creatable row-odd"><td><p><a class="reference internal" href="classes/AnyEnumMessageType.html#anyenummessagetype"><span class="std std-ref">AnyEnumMessageType</span></a></p></td>
+<td><p>Message types. Notice that all except the…</p></td>
+</tr>
+<tr class="class-type-creatable row-even"><td><p><a class="reference internal" href="classes/AnyEnumMuscleRecruitmentNormalizationType.html#anyenummusclerecruitmentnormalizationtype"><span class="std std-ref">AnyEnumMuscleRecruitmentNormalizationType</span></a></p></td>
+<td><p>Class for specification of criterion types for the</p></td>
+</tr>
+<tr class="class-type-creatable row-odd"><td><p><a class="reference internal" href="classes/AnyEnumMuscleRecruitmentType.html#anyenummusclerecruitmenttype"><span class="std std-ref">AnyEnumMuscleRecruitmentType</span></a></p></td>
+<td><p>Class for specification of criterion types for the</p></td>
+</tr>
+<tr class="class-type-creatable row-even"><td><p><a class="reference internal" href="classes/AnyEnumNewtonSolver.html#anyenumnewtonsolver"><span class="std std-ref">AnyEnumNewtonSolver</span></a></p></td>
+<td><p>Different flavors of Newton algorithms.</p></td>
+</tr>
+<tr class="class-type-creatable row-odd"><td><p><a class="reference internal" href="classes/AnyEnumOptSolver.html#anyenumoptsolver"><span class="std std-ref">AnyEnumOptSolver</span></a></p></td>
+<td><p>This class defines axis specifications…</p></td>
+</tr>
+<tr class="class-type-creatable row-even"><td><p><a class="reference internal" href="classes/AnyEnumPointMarkerStyle.html#anyenumpointmarkerstyle"><span class="std std-ref">AnyEnumPointMarkerStyle</span></a></p></td>
+<td><p>Point marker appearence style class.</p></td>
+</tr>
+<tr class="class-type-creatable row-odd"><td><p><a class="reference internal" href="classes/AnyEnumRBFFunType.html#anyenumrbffuntype"><span class="std std-ref">AnyEnumRBFFunType</span></a></p></td>
+<td><p>Radial Basis Function (RBF) types.</p></td>
+</tr>
+<tr class="class-type-abstract row-even"><td><p><a class="reference internal" href="classes/AnyEnumState.html#anyenumstate"><span class="std std-ref">AnyEnumState</span></a></p></td>
+<td><p>This class is used to define the states that…</p></td>
+</tr>
+<tr class="class-type-abstract row-odd"><td><p><a class="reference internal" href="classes/AnyEnumVar.html#anyenumvar"><span class="std std-ref">AnyEnumVar</span></a></p></td>
+<td><p>Abstract base class for enumerated types with…</p></td>
+</tr>
+<tr class="class-type-creatable row-even"><td><p><a class="reference internal" href="classes/AnyEnumVTKLandmarkTransformType.html#anyenumvtklandmarktransformtype"><span class="std std-ref">AnyEnumVTKLandmarkTransformType</span></a></p></td>
+<td><p>Specification of methods to be used in…</p></td>
+</tr>
+<tr class="class-type-creatable row-odd"><td><p><a class="reference internal" href="classes/AnyFDKSolverType.html#anyfdksolvertype"><span class="std std-ref">AnyFDKSolverType</span></a></p></td>
+<td><p>Type definitions for force-dependent solvers.</p></td>
+</tr>
+<tr class="class-type-creatable row-even"><td><p><a class="reference internal" href="classes/AnyFile.html#anyfile"><span class="std std-ref">AnyFile</span></a></p></td>
+<td><p>A special string class for storing file names…</p></td>
+</tr>
+<tr class="class-type-creatable row-odd"><td><p><a class="reference internal" href="classes/AnyFileVar.html#anyfilevar"><span class="std std-ref">AnyFileVar</span></a></p></td>
+<td><p>A special string class for storing a single file name.</p></td>
+</tr>
+<tr class="class-type-creatable row-even"><td><p><a class="reference internal" href="classes/AnyFilterType.html#anyfiltertype"><span class="std std-ref">AnyFilterType</span></a></p></td>
+<td><p>Type definitions for filter functions.</p></td>
+</tr>
+<tr class="class-type-creatable row-odd"><td><p><a class="reference internal" href="classes/AnyFixedRefFrame.html#anyfixedrefframe"><span class="std std-ref">AnyFixedRefFrame</span></a></p></td>
+<td><p>A fixed reference frame, which for instance…</p></td>
+</tr>
+<tr class="class-type-creatable row-even"><td><p><a class="reference internal" href="classes/AnyFloat.html#anyfloat"><span class="std std-ref">AnyFloat</span></a></p></td>
+<td><p>Multi-dimensional floating-point variable.</p></td>
+</tr>
+<tr class="class-type-creatable row-odd"><td><p><a class="reference internal" href="classes/AnyFloatVar.html#anyfloatvar"><span class="std std-ref">AnyFloatVar</span></a></p></td>
+<td><p>Scalar floating point variable.</p></td>
+</tr>
+<tr class="class-type-creatable row-even"><td><p><a class="reference internal" href="classes/AnyFolder.html#anyfolder"><span class="std std-ref">AnyFolder</span></a></p></td>
+<td><p>This is the base class of all folders, i.e.,…</p></td>
+</tr>
+<tr class="class-type-creatable row-odd"><td><p><a class="reference internal" href="classes/AnyForce.html#anyforce"><span class="std std-ref">AnyForce</span></a></p></td>
+<td><p>This class function to create a generalized…</p></td>
+</tr>
+<tr class="class-type-creatable row-even"><td><p><a class="reference internal" href="classes/AnyForce3D.html#anyforce3d"><span class="std std-ref">AnyForce3D</span></a></p></td>
+<td><p>A three-dimensional concentrated force (a…</p></td>
+</tr>
+<tr class="class-type-abstract row-odd"><td><p><a class="reference internal" href="classes/AnyForceBase.html#anyforcebase"><span class="std std-ref">AnyForceBase</span></a></p></td>
+<td><p>This class is the base class for all forces.</p></td>
+</tr>
+<tr class="class-type-creatable row-even"><td><p><a class="reference internal" href="classes/AnyForceConBasisCone.html#anyforceconbasiscone"><span class="std std-ref">AnyForceConBasisCone</span></a></p></td>
+<td><p>This class makes a single simple cone…</p></td>
+</tr>
+<tr class="class-type-abstract row-odd"><td><p><a class="reference internal" href="classes/AnyForceConOnMuscleActivity.html#anyforcecononmuscleactivity"><span class="std std-ref">AnyForceConOnMuscleActivity</span></a></p></td>
+<td><p>Base class for user-defined muscle activity constraints</p></td>
+</tr>
+<tr class="class-type-creatable row-even"><td><p><a class="reference internal" href="classes/AnyForceConSimpleBound.html#anyforceconsimplebound"><span class="std std-ref">AnyForceConSimpleBound</span></a></p></td>
+<td><p>With this class you can make simple bounds on…</p></td>
+</tr>
+<tr class="class-type-abstract row-odd"><td><p><a class="reference internal" href="classes/AnyForceConstraint.html#anyforceconstraint"><span class="std std-ref">AnyForceConstraint</span></a></p></td>
+<td><p>This is the base class for force constraints.</p></td>
+</tr>
+<tr class="class-type-creatable row-even"><td><p><a class="reference internal" href="classes/AnyForceConstraintType.html#anyforceconstrainttype"><span class="std std-ref">AnyForceConstraintType</span></a></p></td>
+<td><p>Reaction force type specification enum.</p></td>
+</tr>
+<tr class="class-type-abstract row-odd"><td><p><a class="reference internal" href="classes/AnyForceMeasure.html#anyforcemeasure"><span class="std std-ref">AnyForceMeasure</span></a></p></td>
+<td><p>This class is the (abstract) base class for a…</p></td>
+</tr>
+<tr class="class-type-creatable row-even"><td><p><a class="reference internal" href="classes/AnyForceMomentMeasure.html#anyforcemomentmeasure"><span class="std std-ref">AnyForceMomentMeasure</span></a></p></td>
+<td><p>This particular class “measures” forces…</p></td>
+</tr>
+<tr class="class-type-creatable row-odd"><td><p><a class="reference internal" href="classes/AnyForceMomentMeasure2.html#anyforcemomentmeasure2"><span class="std std-ref">AnyForceMomentMeasure2</span></a></p></td>
+<td><p>As its parent class,…</p></td>
+</tr>
+<tr class="class-type-creatable row-even"><td><p><a class="reference internal" href="classes/AnyForceSurfaceContact.html#anyforcesurfacecontact"><span class="std std-ref">AnyForceSurfaceContact</span></a></p></td>
+<td><p>This class function calculates contact forces…</p></td>
+</tr>
+<tr class="class-type-abstract row-odd"><td><p><a class="reference internal" href="classes/AnyFun3D.html#anyfun3d"><span class="std std-ref">AnyFun3D</span></a></p></td>
+<td><p>Base class for a number of 3D geometric functions.</p></td>
+</tr>
+<tr class="class-type-abstract row-even"><td><p><a class="reference internal" href="classes/AnyFunAbs.html#anyfunabs"><span class="std std-ref">AnyFunAbs</span></a></p></td>
+<td><p>Absolute value function.</p></td>
+</tr>
+<tr class="class-type-abstract row-odd"><td><p><a class="reference internal" href="classes/AnyFunACos.html#anyfunacos"><span class="std std-ref">AnyFunACos</span></a></p></td>
+<td><p>Inverse cosine (arccosine).</p></td>
+</tr>
+<tr class="class-type-abstract row-even"><td><p><a class="reference internal" href="classes/AnyFunAnd.html#anyfunand"><span class="std std-ref">AnyFunAnd</span></a></p></td>
+<td><p>Boolean ‘and’ function.</p></td>
+</tr>
+<tr class="class-type-abstract row-odd"><td><p><a class="reference internal" href="classes/AnyFunAnyBodyLinkOf.html#anyfunanybodylinkof"><span class="std std-ref">AnyFunAnyBodyLinkOf</span></a></p></td>
+<td><p>Returns a string with a link to the Model Tree…</p></td>
+</tr>
+<tr class="class-type-abstract row-even"><td><p><a class="reference internal" href="classes/AnyFunAnyScriptLinkOf.html#anyfunanyscriptlinkof"><span class="std std-ref">AnyFunAnyScriptLinkOf</span></a></p></td>
+<td><p>Returns a string with a link to the script…</p></td>
+</tr>
+<tr class="class-type-abstract row-odd"><td><p><a class="reference internal" href="classes/AnyFunArrayCat.html#anyfunarraycat"><span class="std std-ref">AnyFunArrayCat</span></a></p></td>
+<td><p>Function for appending arrays.</p></td>
+</tr>
+<tr class="class-type-abstract row-even"><td><p><a class="reference internal" href="classes/AnyFunArrayFlatten.html#anyfunarrayflatten"><span class="std std-ref">AnyFunArrayFlatten</span></a></p></td>
+<td><p>Function for flattening multidimensional arrays.</p></td>
+</tr>
+<tr class="class-type-abstract row-odd"><td><p><a class="reference internal" href="classes/AnyFunArrayReshape.html#anyfunarrayreshape"><span class="std std-ref">AnyFunArrayReshape</span></a></p></td>
+<td><p>Function for reshaping multidimensional arrays.</p></td>
+</tr>
+<tr class="class-type-abstract row-even"><td><p><a class="reference internal" href="classes/AnyFunASin.html#anyfunasin"><span class="std std-ref">AnyFunASin</span></a></p></td>
+<td><p>Inverse sine (arcsine).</p></td>
+</tr>
+<tr class="class-type-abstract row-odd"><td><p><a class="reference internal" href="classes/AnyFunAssert.html#anyfunassert"><span class="std std-ref">AnyFunAssert</span></a></p></td>
+<td><p>assert function.</p></td>
+</tr>
+<tr class="class-type-abstract row-even"><td><p><a class="reference internal" href="classes/AnyFunAssertion.html#anyfunassertion"><span class="std std-ref">AnyFunAssertion</span></a></p></td>
+<td><p>Base class for a number of assert and expect functions.</p></td>
+</tr>
+<tr class="class-type-abstract row-odd"><td><p><a class="reference internal" href="classes/AnyFunATan.html#anyfunatan"><span class="std std-ref">AnyFunATan</span></a></p></td>
+<td><p>Inverse tangent (arctangent).</p></td>
+</tr>
+<tr class="class-type-abstract row-even"><td><p><a class="reference internal" href="classes/AnyFunATan2.html#anyfunatan2"><span class="std std-ref">AnyFunATan2</span></a></p></td>
+<td><p>The power function of all elements.</p></td>
+</tr>
+<tr class="class-type-abstract row-odd"><td><p><a class="reference internal" href="classes/AnyFunBool.html#anyfunbool"><span class="std std-ref">AnyFunBool</span></a></p></td>
+<td><p>The ‘bool’ (truth value) function of all elements.</p></td>
+</tr>
+<tr class="class-type-creatable row-even"><td><p><a class="reference internal" href="classes/AnyFunButterworthFilter.html#anyfunbutterworthfilter"><span class="std std-ref">AnyFunButterworthFilter</span></a></p></td>
+<td><p>Digital Butterworth filter class. This filter…</p></td>
+</tr>
+<tr class="class-type-abstract row-odd"><td><p><a class="reference internal" href="classes/AnyFunCeil.html#anyfunceil"><span class="std std-ref">AnyFunCeil</span></a></p></td>
+<td><p>The ceil function of all elements.</p></td>
+</tr>
+<tr class="class-type-abstract row-even"><td><p><a class="reference internal" href="classes/AnyFunClassNameOf.html#anyfunclassnameof"><span class="std std-ref">AnyFunClassNameOf</span></a></p></td>
+<td><p>Returns the class name of an object.</p></td>
+</tr>
+<tr class="class-type-abstract row-odd"><td><p><a class="reference internal" href="classes/AnyFunCompleteNameOf.html#anyfuncompletenameof"><span class="std std-ref">AnyFunCompleteNameOf</span></a></p></td>
+<td><p>Returns the complete-name of an object.</p></td>
+</tr>
+<tr class="class-type-creatable row-even"><td><p><a class="reference internal" href="classes/AnyFunConst.html#anyfunconst"><span class="std std-ref">AnyFunConst</span></a></p></td>
+<td><p>Parameter function returning constant values…</p></td>
+</tr>
+<tr class="class-type-abstract row-odd"><td><p><a class="reference internal" href="classes/AnyFunCos.html#anyfuncos"><span class="std std-ref">AnyFunCos</span></a></p></td>
+<td><p>Cosine.</p></td>
+</tr>
+<tr class="class-type-abstract row-even"><td><p><a class="reference internal" href="classes/AnyFunCosh.html#anyfuncosh"><span class="std std-ref">AnyFunCosh</span></a></p></td>
+<td><p>Hyperbolic cosine.</p></td>
+</tr>
+<tr class="class-type-abstract row-odd"><td><p><a class="reference internal" href="classes/AnyFunCross.html#anyfuncross"><span class="std std-ref">AnyFunCross</span></a></p></td>
+<td><p>Vector mulitplication (cross product) function.</p></td>
+</tr>
+<tr class="class-type-abstract row-even"><td><p><a class="reference internal" href="classes/AnyFunction.html#anyfunction"><span class="std std-ref">AnyFunction</span></a></p></td>
+<td><p>AnyFunction is the base class for all…</p></td>
+</tr>
+<tr class="class-type-abstract row-odd"><td><p><a class="reference internal" href="classes/AnyFunctionArgList.html#anyfunctionarglist"><span class="std std-ref">AnyFunctionArgList</span></a></p></td>
+<td><p>AnyFunctionArgList is a special folder that…</p></td>
+</tr>
+<tr class="class-type-abstract row-even"><td><p><a class="reference internal" href="classes/AnyFunctionBase.html#anyfunctionbase"><span class="std std-ref">AnyFunctionBase</span></a></p></td>
+<td><p>Base class for all AnyScript function related objects.</p></td>
+</tr>
+<tr class="class-type-abstract row-odd"><td><p><a class="reference internal" href="classes/AnyFunDesignVar.html#anyfundesignvar"><span class="std std-ref">AnyFunDesignVar</span></a></p></td>
+<td><p>Function for casting any expression to the…</p></td>
+</tr>
+<tr class="class-type-abstract row-even"><td><p><a class="reference internal" href="classes/AnyFunDimOf.html#anyfundimof"><span class="std std-ref">AnyFunDimOf</span></a></p></td>
+<td><p>Returns number of dimensions in an AnyValue structure.</p></td>
+</tr>
+<tr class="class-type-abstract row-odd"><td><p><a class="reference internal" href="classes/AnyFunDiv.html#anyfundiv"><span class="std std-ref">AnyFunDiv</span></a></p></td>
+<td><p>Element by element division function.</p></td>
+</tr>
+<tr class="class-type-abstract row-even"><td><p><a class="reference internal" href="classes/AnyFunElemByElemOpr.html#anyfunelembyelemopr"><span class="std std-ref">AnyFunElemByElemOpr</span></a></p></td>
+<td><p>Base class for a number of single argument…</p></td>
+</tr>
+<tr class="class-type-abstract row-odd"><td><p><a class="reference internal" href="classes/AnyFunElemOpr.html#anyfunelemopr"><span class="std std-ref">AnyFunElemOpr</span></a></p></td>
+<td><p>Base class for a number of functions that can…</p></td>
+</tr>
+<tr class="class-type-abstract row-even"><td><p><a class="reference internal" href="classes/AnyFunEq.html#anyfuneq"><span class="std std-ref">AnyFunEq</span></a></p></td>
+<td><p>Equality testing function.</p></td>
+</tr>
+<tr class="class-type-creatable row-odd"><td><p><a class="reference internal" href="classes/AnyFunEx.html#anyfunex"><span class="std std-ref">AnyFunEx</span></a></p></td>
+<td><p>The AnyFunEX function class serves as a…</p></td>
+</tr>
+<tr class="class-type-abstract row-even"><td><p><a class="reference internal" href="classes/AnyFunExMonoBase.html#anyfunexmonobase"><span class="std std-ref">AnyFunExMonoBase</span></a></p></td>
+<td><p>Base class for all mono-function classes for…</p></td>
+</tr>
+<tr class="class-type-creatable row-odd"><td><p><a class="reference internal" href="classes/AnyFunExMonoC.html#anyfunexmonoc"><span class="std std-ref">AnyFunExMonoC</span></a></p></td>
+<td><p>Mono-function class for interfacing to…</p></td>
+</tr>
+<tr class="class-type-creatable row-even"><td><p><a class="reference internal" href="classes/AnyFunExMonoPy.html#anyfunexmonopy"><span class="std std-ref">AnyFunExMonoPy</span></a></p></td>
+<td><p>Mono-function class for interfacing to…</p></td>
+</tr>
+<tr class="class-type-abstract row-odd"><td><p><a class="reference internal" href="classes/AnyFunExp.html#anyfunexp"><span class="std std-ref">AnyFunExp</span></a></p></td>
+<td><p>The exponential function.</p></td>
+</tr>
+<tr class="class-type-abstract row-even"><td><p><a class="reference internal" href="classes/AnyFunExpect.html#anyfunexpect"><span class="std std-ref">AnyFunExpect</span></a></p></td>
+<td><p>expect function.</p></td>
+</tr>
+<tr class="class-type-creatable row-odd"><td><p><a class="reference internal" href="classes/AnyFunExponentialSerie.html#anyfunexponentialserie"><span class="std std-ref">AnyFunExponentialSerie</span></a></p></td>
+<td><p>Exponential series function.</p></td>
+</tr>
+<tr class="class-type-abstract row-even"><td><p><a class="reference internal" href="classes/AnyFunEye.html#anyfuneye"><span class="std std-ref">AnyFunEye</span></a></p></td>
+<td><p>Function for identity matries.</p></td>
+</tr>
+<tr class="class-type-abstract row-odd"><td><p><a class="reference internal" href="classes/AnyFunFilePathCompleteOf.html#anyfunfilepathcompleteof"><span class="std std-ref">AnyFunFilePathCompleteOf</span></a></p></td>
+<td><p>Returns the complete path of an AnyFile object…</p></td>
+</tr>
+<tr class="class-type-abstract row-even"><td><p><a class="reference internal" href="classes/AnyFunFilePathNameOf.html#anyfunfilepathnameof"><span class="std std-ref">AnyFunFilePathNameOf</span></a></p></td>
+<td><p>Returns the file name of an AnyFile object as a string.</p></td>
+</tr>
+<tr class="class-type-abstract row-odd"><td><p><a class="reference internal" href="classes/AnyFunFilePathReferenceOf.html#anyfunfilepathreferenceof"><span class="std std-ref">AnyFunFilePathReferenceOf</span></a></p></td>
+<td><p>Returns the reference path of an AnyFile…</p></td>
+</tr>
+<tr class="class-type-abstract row-even"><td><p><a class="reference internal" href="classes/AnyFunFilePathRelativeOf.html#anyfunfilepathrelativeof"><span class="std std-ref">AnyFunFilePathRelativeOf</span></a></p></td>
+<td><p>Returns the relative file path of an AnyFile…</p></td>
+</tr>
+<tr class="class-type-abstract row-odd"><td><p><a class="reference internal" href="classes/AnyFunFloor.html#anyfunfloor"><span class="std std-ref">AnyFunFloor</span></a></p></td>
+<td><p>The floor function of all elements.</p></td>
+</tr>
+<tr class="class-type-abstract row-even"><td><p><a class="reference internal" href="classes/AnyFunGenEigenProblem.html#anyfungeneigenproblem"><span class="std std-ref">AnyFunGenEigenProblem</span></a></p></td>
+<td><p>This function solves an eigenproblem and…</p></td>
+</tr>
+<tr class="class-type-abstract row-odd"><td><p><a class="reference internal" href="classes/AnyFunGreaterThan.html#anyfungreaterthan"><span class="std std-ref">AnyFunGreaterThan</span></a></p></td>
+<td><p>Greater-than testing function.</p></td>
+</tr>
+<tr class="class-type-abstract row-even"><td><p><a class="reference internal" href="classes/AnyFunGreaterThanEq.html#anyfungreaterthaneq"><span class="std std-ref">AnyFunGreaterThanEq</span></a></p></td>
+<td><p>Greater-than-or-equal-to testing function.</p></td>
+</tr>
+<tr class="class-type-abstract row-odd"><td><p><a class="reference internal" href="classes/AnyFunIf.html#anyfunif"><span class="std std-ref">AnyFunIf</span></a></p></td>
+<td><p>If-then-else function.</p></td>
+</tr>
+<tr class="class-type-abstract row-even"><td><p><a class="reference internal" href="classes/AnyFunInfo.html#anyfuninfo"><span class="std std-ref">AnyFunInfo</span></a></p></td>
+<td><p>Base class for a number of functions that can…</p></td>
+</tr>
+<tr class="class-type-abstract row-odd"><td><p><a class="reference internal" href="classes/AnyFunInit.html#anyfuninit"><span class="std std-ref">AnyFunInit</span></a></p></td>
+<td><p>Base class for a number of functions that…</p></td>
+</tr>
+<tr class="class-type-abstract row-even"><td><p><a class="reference internal" href="classes/AnyFunIntArray.html#anyfunintarray"><span class="std std-ref">AnyFunIntArray</span></a></p></td>
+<td><p>Function for making integer arrays.</p></td>
+</tr>
+<tr class="class-type-creatable row-odd"><td><p><a class="reference internal" href="classes/AnyFunInterpol.html#anyfuninterpol"><span class="std std-ref">AnyFunInterpol</span></a></p></td>
+<td><p>This class provides a vector function of a…</p></td>
+</tr>
+<tr class="class-type-abstract row-even"><td><p><a class="reference internal" href="classes/AnyFunLessThan.html#anyfunlessthan"><span class="std std-ref">AnyFunLessThan</span></a></p></td>
+<td><p>Less-than testing function.</p></td>
+</tr>
+<tr class="class-type-abstract row-odd"><td><p><a class="reference internal" href="classes/AnyFunLessThanEq.html#anyfunlessthaneq"><span class="std std-ref">AnyFunLessThanEq</span></a></p></td>
+<td><p>Less-than-or-equal-to testing function.</p></td>
+</tr>
+<tr class="class-type-creatable row-even"><td><p><a class="reference internal" href="classes/AnyFunLinFilter.html#anyfunlinfilter"><span class="std std-ref">AnyFunLinFilter</span></a></p></td>
+<td><p>Linear digital filter. Both Infinite Impulse…</p></td>
+</tr>
+<tr class="class-type-abstract row-odd"><td><p><a class="reference internal" href="classes/AnyFunLinFilterBase.html#anyfunlinfilterbase"><span class="std std-ref">AnyFunLinFilterBase</span></a></p></td>
+<td><p>Abstract base class for all linear filters.</p></td>
+</tr>
+<tr class="class-type-abstract row-even"><td><p><a class="reference internal" href="classes/AnyFunLinFilterDesignBase.html#anyfunlinfilterdesignbase"><span class="std std-ref">AnyFunLinFilterDesignBase</span></a></p></td>
+<td><p>Abstract base class for all linear filters…</p></td>
+</tr>
+<tr class="class-type-abstract row-odd"><td><p><a class="reference internal" href="classes/AnyFunLinspace.html#anyfunlinspace"><span class="std std-ref">AnyFunLinspace</span></a></p></td>
+<td><p>Generate a vector of evenly spaced numbers…</p></td>
+</tr>
+<tr class="class-type-abstract row-even"><td><p><a class="reference internal" href="classes/AnyFunLog.html#anyfunlog"><span class="std std-ref">AnyFunLog</span></a></p></td>
+<td><p>The natural logarithm.</p></td>
+</tr>
+<tr class="class-type-abstract row-odd"><td><p><a class="reference internal" href="classes/AnyFunLog10.html#anyfunlog10"><span class="std std-ref">AnyFunLog10</span></a></p></td>
+<td><p>The 10-based logarithm.</p></td>
+</tr>
+<tr class="class-type-abstract row-even"><td><p><a class="reference internal" href="classes/AnyFunLogical.html#anyfunlogical"><span class="std std-ref">AnyFunLogical</span></a></p></td>
+<td><p>Base class for a number of conditional functions.</p></td>
+</tr>
+<tr class="class-type-abstract row-odd"><td><p><a class="reference internal" href="classes/AnyFunMult.html#anyfunmult"><span class="std std-ref">AnyFunMult</span></a></p></td>
+<td><p>Element by element multiplication function.</p></td>
+</tr>
+<tr class="class-type-abstract row-even"><td><p><a class="reference internal" href="classes/AnyFunNameOf.html#anyfunnameof"><span class="std std-ref">AnyFunNameOf</span></a></p></td>
+<td><p>Returns the name of an object.</p></td>
+</tr>
+<tr class="class-type-abstract row-odd"><td><p><a class="reference internal" href="classes/AnyFunNot.html#anyfunnot"><span class="std std-ref">AnyFunNot</span></a></p></td>
+<td><p>The ‘not’ function of all elements.</p></td>
+</tr>
+<tr class="class-type-abstract row-even"><td><p><a class="reference internal" href="classes/AnyFunNotEq.html#anyfunnoteq"><span class="std std-ref">AnyFunNotEq</span></a></p></td>
+<td><p>Not-equal testing function.</p></td>
+</tr>
+<tr class="class-type-abstract row-odd"><td><p><a class="reference internal" href="classes/AnyFunNotice.html#anyfunnotice"><span class="std std-ref">AnyFunNotice</span></a></p></td>
+<td><p>Notice function.</p></td>
+</tr>
+<tr class="class-type-abstract row-even"><td><p><a class="reference internal" href="classes/AnyFunNumElemOf.html#anyfunnumelemof"><span class="std std-ref">AnyFunNumElemOf</span></a></p></td>
+<td><p>Returns number of elements in an AnyValue structure.</p></td>
+</tr>
+<tr class="class-type-abstract row-odd"><td><p><a class="reference internal" href="classes/AnyFunObjBase.html#anyfunobjbase"><span class="std std-ref">AnyFunObjBase</span></a></p></td>
+<td><p>Base class for a number of object manipulation…</p></td>
+</tr>
+<tr class="class-type-creatable row-even"><td><p><a class="reference internal" href="classes/AnyFunObjPtr2Float.html#anyfunobjptr2float"><span class="std std-ref">AnyFunObjPtr2Float</span></a></p></td>
+<td><p>This function converts object pointers to…</p></td>
+</tr>
+<tr class="class-type-creatable row-odd"><td><p><a class="reference internal" href="classes/AnyFunObjPtr2String.html#anyfunobjptr2string"><span class="std std-ref">AnyFunObjPtr2String</span></a></p></td>
+<td><p>This function converts object pointers to…</p></td>
+</tr>
+<tr class="class-type-creatable row-even"><td><p><a class="reference internal" href="classes/AnyFunObjSearch.html#anyfunobjsearch"><span class="std std-ref">AnyFunObjSearch</span></a></p></td>
+<td><p>Search function for finding objects in the model.</p></td>
+</tr>
+<tr class="class-type-creatable row-odd"><td><p><a class="reference internal" href="classes/AnyFunObjSearchRecursive.html#anyfunobjsearchrecursive"><span class="std std-ref">AnyFunObjSearchRecursive</span></a></p></td>
+<td><p>Recursive search function for finding objects…</p></td>
+</tr>
+<tr class="class-type-creatable row-even"><td><p><a class="reference internal" href="classes/AnyFunObjSelect.html#anyfunobjselect"><span class="std std-ref">AnyFunObjSelect</span></a></p></td>
+<td><p>Select function for finding objects in the model.</p></td>
+</tr>
+<tr class="class-type-creatable row-odd"><td><p><a class="reference internal" href="classes/AnyFunObjSort.html#anyfunobjsort"><span class="std std-ref">AnyFunObjSort</span></a></p></td>
+<td><p>Sorting function for sorting arrays of values…</p></td>
+</tr>
+<tr class="class-type-abstract row-even"><td><p><a class="reference internal" href="classes/AnyFunOnes.html#anyfunones"><span class="std std-ref">AnyFunOnes</span></a></p></td>
+<td><p>Function for making matrices of ones.</p></td>
+</tr>
+<tr class="class-type-abstract row-odd"><td><p><a class="reference internal" href="classes/AnyFunOr.html#anyfunor"><span class="std std-ref">AnyFunOr</span></a></p></td>
+<td><p>Boolean ‘or’ function.</p></td>
+</tr>
+<tr class="class-type-creatable row-even"><td><p><a class="reference internal" href="classes/AnyFunPolynomial.html#anyfunpolynomial"><span class="std std-ref">AnyFunPolynomial</span></a></p></td>
+<td><p>Polynomial function.</p></td>
+</tr>
+<tr class="class-type-abstract row-odd"><td><p><a class="reference internal" href="classes/AnyFunPow.html#anyfunpow"><span class="std std-ref">AnyFunPow</span></a></p></td>
+<td><p>The power function of all elements.</p></td>
+</tr>
+<tr class="class-type-abstract row-even"><td><p><a class="reference internal" href="classes/AnyFunRepMat.html#anyfunrepmat"><span class="std std-ref">AnyFunRepMat</span></a></p></td>
+<td><p>Function for repeating arrays.</p></td>
+</tr>
+<tr class="class-type-creatable row-odd"><td><p><a class="reference internal" href="classes/AnyFunRotMat.html#anyfunrotmat"><span class="std std-ref">AnyFunRotMat</span></a></p></td>
+<td><p>Rotational transformation matrix.</p></td>
+</tr>
+<tr class="class-type-abstract row-even"><td><p><a class="reference internal" href="classes/AnyFunRound.html#anyfunround"><span class="std std-ref">AnyFunRound</span></a></p></td>
+<td><p>The round function of all elements.</p></td>
+</tr>
+<tr class="class-type-abstract row-odd"><td><p><a class="reference internal" href="classes/AnyFunSetDifference.html#anyfunsetdifference"><span class="std std-ref">AnyFunSetDifference</span></a></p></td>
+<td><p>Difference of unique elements in arrays.</p></td>
+</tr>
+<tr class="class-type-abstract row-even"><td><p><a class="reference internal" href="classes/AnyFunSetIntersection.html#anyfunsetintersection"><span class="std std-ref">AnyFunSetIntersection</span></a></p></td>
+<td><p>Intersection of unique elements between arrays.</p></td>
+</tr>
+<tr class="class-type-abstract row-odd"><td><p><a class="reference internal" href="classes/AnyFunSetUnion.html#anyfunsetunion"><span class="std std-ref">AnyFunSetUnion</span></a></p></td>
+<td><p>Union of unique elements from arrays.</p></td>
+</tr>
+<tr class="class-type-abstract row-even"><td><p><a class="reference internal" href="classes/AnyFunSin.html#anyfunsin"><span class="std std-ref">AnyFunSin</span></a></p></td>
+<td><p>Sine.</p></td>
+</tr>
+<tr class="class-type-abstract row-odd"><td><p><a class="reference internal" href="classes/AnyFunSinh.html#anyfunsinh"><span class="std std-ref">AnyFunSinh</span></a></p></td>
+<td><p>Hyperbolic sine.</p></td>
+</tr>
+<tr class="class-type-abstract row-even"><td><p><a class="reference internal" href="classes/AnyFunSizesOf.html#anyfunsizesof"><span class="std std-ref">AnyFunSizesOf</span></a></p></td>
+<td><p>Returns the size of each dimension in an…</p></td>
+</tr>
+<tr class="class-type-abstract row-odd"><td><p><a class="reference internal" href="classes/AnyFunSmootherstep.html#anyfunsmootherstep"><span class="std std-ref">AnyFunSmootherstep</span></a></p></td>
+<td><p>Smooth step function.</p></td>
+</tr>
+<tr class="class-type-abstract row-even"><td><p><a class="reference internal" href="classes/AnyFunSmoothramp.html#anyfunsmoothramp"><span class="std std-ref">AnyFunSmoothramp</span></a></p></td>
+<td><p>Smooth ramp function.</p></td>
+</tr>
+<tr class="class-type-abstract row-odd"><td><p><a class="reference internal" href="classes/AnyFunSolveGenEqSystem.html#anyfunsolvegeneqsystem"><span class="std std-ref">AnyFunSolveGenEqSystem</span></a></p></td>
+<td><p>This function solves a general system of…</p></td>
+</tr>
+<tr class="class-type-abstract row-even"><td><p><a class="reference internal" href="classes/AnyFunSolveSymEqSystem.html#anyfunsolvesymeqsystem"><span class="std std-ref">AnyFunSolveSymEqSystem</span></a></p></td>
+<td><p>This function solves a system of equations…</p></td>
+</tr>
+<tr class="class-type-abstract row-odd"><td><p><a class="reference internal" href="classes/AnyFunSqrt.html#anyfunsqrt"><span class="std std-ref">AnyFunSqrt</span></a></p></td>
+<td><p>Square root.</p></td>
+</tr>
+<tr class="class-type-creatable row-even"><td><p><a class="reference internal" href="classes/AnyFunSquareWave.html#anyfunsquarewave"><span class="std std-ref">AnyFunSquareWave</span></a></p></td>
+<td><p>Parameter function class making a smooth…</p></td>
+</tr>
+<tr class="class-type-creatable row-odd"><td><p><a class="reference internal" href="classes/AnyFunSquareWaveThreshold.html#anyfunsquarewavethreshold"><span class="std std-ref">AnyFunSquareWaveThreshold</span></a></p></td>
+<td><p>Parameter function class making a square wave…</p></td>
+</tr>
+<tr class="class-type-abstract row-even"><td><p><a class="reference internal" href="classes/AnyFunStringFormat.html#anyfunstringformat"><span class="std std-ref">AnyFunStringFormat</span></a></p></td>
+<td><p>Formatted string function.</p></td>
+</tr>
+<tr class="class-type-abstract row-odd"><td><p><a class="reference internal" href="classes/AnyFunStringLink.html#anyfunstringlink"><span class="std std-ref">AnyFunStringLink</span></a></p></td>
+<td><p>Returns a string formatted as an external link…</p></td>
+</tr>
+<tr class="class-type-abstract row-even"><td><p><a class="reference internal" href="classes/AnyFunStringQuote.html#anyfunstringquote"><span class="std std-ref">AnyFunStringQuote</span></a></p></td>
+<td><p>Quotation mark function.</p></td>
+</tr>
+<tr class="class-type-abstract row-odd"><td><p><a class="reference internal" href="classes/AnyFunStringValueOf.html#anyfunstringvalueof"><span class="std std-ref">AnyFunStringValueOf</span></a></p></td>
+<td><p>Returns the value of an object as a string.</p></td>
+</tr>
+<tr class="class-type-abstract row-even"><td><p><a class="reference internal" href="classes/AnyFunSurfSTLSize.html#anyfunsurfstlsize"><span class="std std-ref">AnyFunSurfSTLSize</span></a></p></td>
+<td><p>This function reads an STL file and returns…</p></td>
+</tr>
+<tr class="class-type-abstract row-odd"><td><p><a class="reference internal" href="classes/AnyFunSurfSTLVertices.html#anyfunsurfstlvertices"><span class="std std-ref">AnyFunSurfSTLVertices</span></a></p></td>
+<td><p>This function reads an STL file and returns…</p></td>
+</tr>
+<tr class="class-type-abstract row-even"><td><p><a class="reference internal" href="classes/AnyFunSurfVertices.html#anyfunsurfvertices"><span class="std std-ref">AnyFunSurfVertices</span></a></p></td>
+<td><p>This function returns the coordinates of…</p></td>
+</tr>
+<tr class="class-type-abstract row-odd"><td><p><a class="reference internal" href="classes/AnyFunSymEigenProblem.html#anyfunsymeigenproblem"><span class="std std-ref">AnyFunSymEigenProblem</span></a></p></td>
+<td><p>This function solves an eigenproblem for a…</p></td>
+</tr>
+<tr class="class-type-abstract row-even"><td><p><a class="reference internal" href="classes/AnyFunTan.html#anyfuntan"><span class="std std-ref">AnyFunTan</span></a></p></td>
+<td><p>Tangent.</p></td>
+</tr>
+<tr class="class-type-abstract row-odd"><td><p><a class="reference internal" href="classes/AnyFunTanh.html#anyfuntanh"><span class="std std-ref">AnyFunTanh</span></a></p></td>
+<td><p>Hyperbolic tangent.</p></td>
+</tr>
+<tr class="class-type-creatable row-even"><td><p><a class="reference internal" href="classes/AnyFunTransform3D.html#anyfuntransform3d"><span class="std std-ref">AnyFunTransform3D</span></a></p></td>
+<td><p>Base class for 3D transformation functions….</p></td>
+</tr>
+<tr class="class-type-creatable row-odd"><td><p><a class="reference internal" href="classes/AnyFunTransform3DIdentity.html#anyfuntransform3didentity"><span class="std std-ref">AnyFunTransform3DIdentity</span></a></p></td>
+<td><p>Identity 3D transformation function.</p></td>
+</tr>
+<tr class="class-type-creatable row-even"><td><p><a class="reference internal" href="classes/AnyFunTransform3DLin.html#anyfuntransform3dlin"><span class="std std-ref">AnyFunTransform3DLin</span></a></p></td>
+<td><p>Linear 3D transformation function.</p></td>
+</tr>
+<tr class="class-type-creatable row-odd"><td><p><a class="reference internal" href="classes/AnyFunTransform3DLin2.html#anyfuntransform3dlin2"><span class="std std-ref">AnyFunTransform3DLin2</span></a></p></td>
+<td><p>Linear 3D transformation constructed based on…</p></td>
+</tr>
+<tr class="class-type-creatable row-even"><td><p><a class="reference internal" href="classes/AnyFunTransform3DLinRef.html#anyfuntransform3dlinref"><span class="std std-ref">AnyFunTransform3DLinRef</span></a></p></td>
+<td><p>Linear 3D transformation based on reference…</p></td>
+</tr>
+<tr class="class-type-creatable row-odd"><td><p><a class="reference internal" href="classes/AnyFunTransform3DLinRef2.html#anyfuntransform3dlinref2"><span class="std std-ref">AnyFunTransform3DLinRef2</span></a></p></td>
+<td><p>Linear 3D transformation based on reference…</p></td>
+</tr>
+<tr class="class-type-abstract row-even"><td><p><a class="reference internal" href="classes/AnyFunTransform3DLinRef4Globals.html#anyfuntransform3dlinref4globals"><span class="std std-ref">AnyFunTransform3DLinRef4Globals</span></a></p></td>
+<td><p>Linear 3D transformation based on reference…</p></td>
+</tr>
+<tr class="class-type-abstract row-odd"><td><p><a class="reference internal" href="classes/AnyFunTransform3DLinRefBase.html#anyfuntransform3dlinrefbase"><span class="std std-ref">AnyFunTransform3DLinRefBase</span></a></p></td>
+<td><p>Base class for linear 3D transformations based…</p></td>
+</tr>
+<tr class="class-type-creatable row-even"><td><p><a class="reference internal" href="classes/AnyFunTransform3DRBF.html#anyfuntransform3drbf"><span class="std std-ref">AnyFunTransform3DRBF</span></a></p></td>
+<td><p>3D transformation function based on Radial…</p></td>
+</tr>
+<tr class="class-type-creatable row-odd"><td><p><a class="reference internal" href="classes/AnyFunTransform3DRBFdyn.html#anyfuntransform3drbfdyn"><span class="std std-ref">AnyFunTransform3DRBFdyn</span></a></p></td>
+<td><p>Dynamic 3D transformation function based on…</p></td>
+</tr>
+<tr class="class-type-creatable row-even"><td><p><a class="reference internal" href="classes/AnyFunTransform3DSTL.html#anyfuntransform3dstl"><span class="std std-ref">AnyFunTransform3DSTL</span></a></p></td>
+<td><p>3D transformation function based on two STL…</p></td>
+</tr>
+<tr class="class-type-creatable row-odd"><td><p><a class="reference internal" href="classes/AnyFunTransitionType.html#anyfuntransitiontype"><span class="std std-ref">AnyFunTransitionType</span></a></p></td>
+<td><p>Type definitions for function transitions used…</p></td>
+</tr>
+<tr class="class-type-abstract row-even"><td><p><a class="reference internal" href="classes/AnyFunVecArgFind.html#anyfunvecargfind"><span class="std std-ref">AnyFunVecArgFind</span></a></p></td>
+<td><p>The index of the first element equalling the…</p></td>
+</tr>
+<tr class="class-type-abstract row-odd"><td><p><a class="reference internal" href="classes/AnyFunVecArgMax.html#anyfunvecargmax"><span class="std std-ref">AnyFunVecArgMax</span></a></p></td>
+<td><p>The index of the maximum of all elements in a…</p></td>
+</tr>
+<tr class="class-type-abstract row-even"><td><p><a class="reference internal" href="classes/AnyFunVecArgMin.html#anyfunvecargmin"><span class="std std-ref">AnyFunVecArgMin</span></a></p></td>
+<td><p>The index of the minimum of all elements in a…</p></td>
+</tr>
+<tr class="class-type-abstract row-odd"><td><p><a class="reference internal" href="classes/AnyFunVecMax.html#anyfunvecmax"><span class="std std-ref">AnyFunVecMax</span></a></p></td>
+<td><p>The maximum of all elements in a vector.</p></td>
+</tr>
+<tr class="class-type-abstract row-even"><td><p><a class="reference internal" href="classes/AnyFunVecMean.html#anyfunvecmean"><span class="std std-ref">AnyFunVecMean</span></a></p></td>
+<td><p>The mean of all elements in a vector.</p></td>
+</tr>
+<tr class="class-type-abstract row-odd"><td><p><a class="reference internal" href="classes/AnyFunVecMin.html#anyfunvecmin"><span class="std std-ref">AnyFunVecMin</span></a></p></td>
+<td><p>The minimum of all elements in a vector.</p></td>
+</tr>
+<tr class="class-type-abstract row-even"><td><p><a class="reference internal" href="classes/AnyFunVecOpr.html#anyfunvecopr"><span class="std std-ref">AnyFunVecOpr</span></a></p></td>
+<td><p>Base class for a number of functions that…</p></td>
+</tr>
+<tr class="class-type-abstract row-odd"><td><p><a class="reference internal" href="classes/AnyFunVecProd.html#anyfunvecprod"><span class="std std-ref">AnyFunVecProd</span></a></p></td>
+<td><p>The product of all elements in a vector.</p></td>
+</tr>
+<tr class="class-type-abstract row-even"><td><p><a class="reference internal" href="classes/AnyFunVecSecInt.html#anyfunvecsecint"><span class="std std-ref">AnyFunVecSecInt</span></a></p></td>
+<td><p>The secant integral of a function given by a…</p></td>
+</tr>
+<tr class="class-type-abstract row-odd"><td><p><a class="reference internal" href="classes/AnyFunVecSum.html#anyfunvecsum"><span class="std std-ref">AnyFunVecSum</span></a></p></td>
+<td><p>The sum of all elements in a vector.</p></td>
+</tr>
+<tr class="class-type-abstract row-even"><td><p><a class="reference internal" href="classes/AnyFunVector.html#anyfunvector"><span class="std std-ref">AnyFunVector</span></a></p></td>
+<td><p>Function for making floating point arrays.</p></td>
+</tr>
+<tr class="class-type-abstract row-odd"><td><p><a class="reference internal" href="classes/AnyFunVecVNorm.html#anyfunvecvnorm"><span class="std std-ref">AnyFunVecVNorm</span></a></p></td>
+<td><p>The norm of a vector.</p></td>
+</tr>
+<tr class="class-type-abstract row-even"><td><p><a class="reference internal" href="classes/AnyFunWarn.html#anyfunwarn"><span class="std std-ref">AnyFunWarn</span></a></p></td>
+<td><p>warn function.</p></td>
+</tr>
+<tr class="class-type-abstract row-odd"><td><p><a class="reference internal" href="classes/AnyFunZeros.html#anyfunzeros"><span class="std std-ref">AnyFunZeros</span></a></p></td>
+<td><p>Function for making zero matrices.</p></td>
+</tr>
+<tr class="class-type-creatable row-even"><td><p><a class="reference internal" href="classes/AnyGeneralMuscle.html#anygeneralmuscle"><span class="std std-ref">AnyGeneralMuscle</span></a></p></td>
+<td><p>This muscle class is more general than other…</p></td>
+</tr>
+<tr class="class-type-abstract row-odd"><td><p><a class="reference internal" href="classes/AnyGlobalBase.html#anyglobalbase"><span class="std std-ref">AnyGlobalBase</span></a></p></td>
+<td><p>Class for containing global system constants….</p></td>
+</tr>
+<tr class="class-type-creatable row-even"><td><p><a class="reference internal" href="classes/AnyGUIPlugin.html#anyguiplugin"><span class="std std-ref">AnyGUIPlugin</span></a></p></td>
+<td><p>Class for creating GUI plugins.</p></td>
+</tr>
+<tr class="class-type-creatable row-odd"><td><p><a class="reference internal" href="classes/AnyImageOrigin.html#anyimageorigin"><span class="std std-ref">AnyImageOrigin</span></a></p></td>
+<td><p>An overlay image drawing object. This object…</p></td>
+</tr>
+<tr class="class-type-creatable row-even"><td><p><a class="reference internal" href="classes/AnyInputANYDATA.html#anyinputanydata"><span class="std std-ref">AnyInputANYDATA</span></a></p></td>
+<td><p>Class to read a ANYDATA file typically having…</p></td>
+</tr>
+<tr class="class-type-creatable row-odd"><td><p><a class="reference internal" href="classes/AnyInputBVH.html#anyinputbvh"><span class="std std-ref">AnyInputBVH</span></a></p></td>
+<td><p>Class to read files in BVH format</p></td>
+</tr>
+<tr class="class-type-creatable row-even"><td><p><a class="reference internal" href="classes/AnyInputC3D.html#anyinputc3d"><span class="std std-ref">AnyInputC3D</span></a></p></td>
+<td><p>Class to read files in C3D format. The class…</p></td>
+</tr>
+<tr class="class-type-creatable row-odd"><td><p><a class="reference internal" href="classes/AnyInputDB.html#anyinputdb"><span class="std std-ref">AnyInputDB</span></a></p></td>
+<td><p>This class can import data from a external SQL…</p></td>
+</tr>
+<tr class="class-type-creatable row-even"><td><p><a class="reference internal" href="classes/AnyInputFile.html#anyinputfile"><span class="std std-ref">AnyInputFile</span></a></p></td>
+<td><p>Class to read a space or comma separated…</p></td>
+</tr>
+<tr class="class-type-creatable row-odd"><td><p><a class="reference internal" href="classes/AnyInputXML.html#anyinputxml"><span class="std std-ref">AnyInputXML</span></a></p></td>
+<td><p>Class to read files in an XML format (see.</p></td>
+</tr>
+<tr class="class-type-creatable row-even"><td><p><a class="reference internal" href="classes/AnyInt.html#anyint"><span class="std std-ref">AnyInt</span></a></p></td>
+<td><p>Multi-dimensional integer variable.</p></td>
+</tr>
+<tr class="class-type-creatable row-odd"><td><p><a class="reference internal" href="classes/AnyIntArray.html#anyintarray"><span class="std std-ref">AnyIntArray</span></a></p></td>
+<td><p>One-dimensional integer array.</p></td>
+</tr>
+<tr class="class-type-creatable row-even"><td><p><a class="reference internal" href="classes/AnyIntArray2.html#anyintarray2"><span class="std std-ref">AnyIntArray2</span></a></p></td>
+<td><p>Two-dimensional integer array.</p></td>
+</tr>
+<tr class="class-type-creatable row-odd"><td><p><a class="reference internal" href="classes/AnyInterPolType.html#anyinterpoltype"><span class="std std-ref">AnyInterPolType</span></a></p></td>
+<td><p>Type definitions for the Interpolation functions.</p></td>
+</tr>
+<tr class="class-type-creatable row-even"><td><p><a class="reference internal" href="classes/AnyIntVar.html#anyintvar"><span class="std std-ref">AnyIntVar</span></a></p></td>
+<td><p>Scalar integer variable.</p></td>
+</tr>
+<tr class="class-type-abstract row-odd"><td><p><a class="reference internal" href="classes/AnyJoint.html#anyjoint"><span class="std std-ref">AnyJoint</span></a></p></td>
+<td><p>This class is the base class of all joints. A…</p></td>
+</tr>
+<tr class="class-type-creatable row-even"><td><p><a class="reference internal" href="classes/AnyKinAnlSolverOptions.html#anykinanlsolveroptions"><span class="std std-ref">AnyKinAnlSolverOptions</span></a></p></td>
+<td><p>Folder containing all solver options for…</p></td>
+</tr>
+<tr class="class-type-creatable row-odd"><td><p><a class="reference internal" href="classes/AnyKinCoM.html#anykincom"><span class="std std-ref">AnyKinCoM</span></a></p></td>
+<td><p>This measures the center of mass (CoM) of a…</p></td>
+</tr>
+<tr class="class-type-creatable row-even"><td><p><a class="reference internal" href="classes/AnyKinDriver.html#anykindriver"><span class="std std-ref">AnyKinDriver</span></a></p></td>
+<td><p>This kinematic driver class extends the…</p></td>
+</tr>
+<tr class="class-type-creatable row-odd"><td><p><a class="reference internal" href="classes/AnyKinDriverMarker.html#anykindrivermarker"><span class="std std-ref">AnyKinDriverMarker</span></a></p></td>
+<td><p>This class is a specialized kinematic driver…</p></td>
+</tr>
+<tr class="class-type-creatable row-even"><td><p><a class="reference internal" href="classes/AnyKinEq.html#anykineq"><span class="std std-ref">AnyKinEq</span></a></p></td>
+<td><p>This class is the base class for all types of…</p></td>
+</tr>
+<tr class="class-type-creatable row-odd"><td><p><a class="reference internal" href="classes/AnyKinEqDriver.html#anykineqdriver"><span class="std std-ref">AnyKinEqDriver</span></a></p></td>
+<td><p>This class is the base class for kinematical…</p></td>
+</tr>
+<tr class="class-type-creatable row-even"><td><p><a class="reference internal" href="classes/AnyKinEqFourierDriver.html#anykineqfourierdriver"><span class="std std-ref">AnyKinEqFourierDriver</span></a></p></td>
+<td><p>This class provides a Fourier expansion as…</p></td>
+</tr>
+<tr class="class-type-creatable row-odd"><td><p><a class="reference internal" href="classes/AnyKinEqInterPolDriver.html#anykineqinterpoldriver"><span class="std std-ref">AnyKinEqInterPolDriver</span></a></p></td>
+<td><p>This class provides a driver function that…</p></td>
+</tr>
+<tr class="class-type-creatable row-even"><td><p><a class="reference internal" href="classes/AnyKinEqPolynomialDriver.html#anykineqpolynomialdriver"><span class="std std-ref">AnyKinEqPolynomialDriver</span></a></p></td>
+<td><p>This class contains a polynomial driver…</p></td>
+</tr>
+<tr class="class-type-creatable row-odd"><td><p><a class="reference internal" href="classes/AnyKinEqSimpleDriver.html#anykineqsimpledriver"><span class="std std-ref">AnyKinEqSimpleDriver</span></a></p></td>
+<td><p>This class contains a simple driver function…</p></td>
+</tr>
+<tr class="class-type-creatable row-even"><td><p><a class="reference internal" href="classes/AnyKinEqType.html#anykineqtype"><span class="std std-ref">AnyKinEqType</span></a></p></td>
+<td><p>Kinematic constraint type specification enum.</p></td>
+</tr>
+<tr class="class-type-creatable row-odd"><td><p><a class="reference internal" href="classes/AnyKinLinear.html#anykinlinear"><span class="std std-ref">AnyKinLinear</span></a></p></td>
+<td><p>This “kinematic measure” measures translation,…</p></td>
+</tr>
+<tr class="class-type-creatable row-even"><td><p><a class="reference internal" href="classes/AnyKinLinear2.html#anykinlinear2"><span class="std std-ref">AnyKinLinear2</span></a></p></td>
+<td><p>This kinematic measure class is similarly to…</p></td>
+</tr>
+<tr class="class-type-creatable row-odd"><td><p><a class="reference internal" href="classes/AnyKinLinearType.html#anykinlineartype"><span class="std std-ref">AnyKinLinearType</span></a></p></td>
+<td><p>Type definitions for linear/translational…</p></td>
+</tr>
+<tr class="class-type-abstract row-even"><td><p><a class="reference internal" href="classes/AnyKinMeasure.html#anykinmeasure"><span class="std std-ref">AnyKinMeasure</span></a></p></td>
+<td><p>This class is the abstract base class for all…</p></td>
+</tr>
+<tr class="class-type-abstract row-odd"><td><p><a class="reference internal" href="classes/AnyKinMeasureBase.html#anykinmeasurebase"><span class="std std-ref">AnyKinMeasureBase</span></a></p></td>
+<td><p>This class is the abstract base class for all…</p></td>
+</tr>
+<tr class="class-type-abstract row-even"><td><p><a class="reference internal" href="classes/AnyKinMeasureCombBase.html#anykinmeasurecombbase"><span class="std std-ref">AnyKinMeasureCombBase</span></a></p></td>
+<td><p>This class is a base class for all kinematic…</p></td>
+</tr>
+<tr class="class-type-creatable row-odd"><td><p><a class="reference internal" href="classes/AnyKinMeasureFunComb1.html#anykinmeasurefuncomb1"><span class="std std-ref">AnyKinMeasureFunComb1</span></a></p></td>
+<td><p>This class creates new kinematic measures by…</p></td>
+</tr>
+<tr class="class-type-creatable row-even"><td><p><a class="reference internal" href="classes/AnyKinMeasureLinComb.html#anykinmeasurelincomb"><span class="std std-ref">AnyKinMeasureLinComb</span></a></p></td>
+<td><p>This class is a composer of new kinematic…</p></td>
+</tr>
+<tr class="class-type-creatable row-odd"><td><p><a class="reference internal" href="classes/AnyKinMeasureNormComb.html#anykinmeasurenormcomb"><span class="std std-ref">AnyKinMeasureNormComb</span></a></p></td>
+<td><p>The norm combination measure contained in this…</p></td>
+</tr>
+<tr class="class-type-creatable row-even"><td><p><a class="reference internal" href="classes/AnyKinMeasureOrg.html#anykinmeasureorg"><span class="std std-ref">AnyKinMeasureOrg</span></a></p></td>
+<td><p>This class is a composer of new kinematic…</p></td>
+</tr>
+<tr class="class-type-creatable row-odd"><td><p><a class="reference internal" href="classes/AnyKinMeasureProd.html#anykinmeasureprod"><span class="std std-ref">AnyKinMeasureProd</span></a></p></td>
+<td><p>This kinematic measure class is deprecated. It…</p></td>
+</tr>
+<tr class="class-type-creatable row-even"><td><p><a class="reference internal" href="classes/AnyKinMeasureQuadComb.html#anykinmeasurequadcomb"><span class="std std-ref">AnyKinMeasureQuadComb</span></a></p></td>
+<td><p>This class is a composer of new kinematic…</p></td>
+</tr>
+<tr class="class-type-abstract row-odd"><td><p><a class="reference internal" href="classes/AnyKinMeasureReal.html#anykinmeasurereal"><span class="std std-ref">AnyKinMeasureReal</span></a></p></td>
+<td><p>This class is the abstract base class for real…</p></td>
+</tr>
+<tr class="class-type-abstract row-even"><td><p><a class="reference internal" href="classes/AnyKinMeasureUsr.html#anykinmeasureusr"><span class="std std-ref">AnyKinMeasureUsr</span></a></p></td>
+<td><p>This class is an abstract base class for users…</p></td>
+</tr>
+<tr class="class-type-creatable row-odd"><td><p><a class="reference internal" href="classes/AnyKinMotion.html#anykinmotion"><span class="std std-ref">AnyKinMotion</span></a></p></td>
+<td><p>AnyKinMotion is a kinematic driver class that…</p></td>
+</tr>
+<tr class="class-type-creatable row-even"><td><p><a class="reference internal" href="classes/AnyKinPLine.html#anykinpline"><span class="std std-ref">AnyKinPLine</span></a></p></td>
+<td><p>This “kinematic measure” measures the distance…</p></td>
+</tr>
+<tr class="class-type-creatable row-odd"><td><p><a class="reference internal" href="classes/AnyKinPointSurface.html#anykinpointsurface"><span class="std std-ref">AnyKinPointSurface</span></a></p></td>
+<td><p>This “kinematic measure” measures the distance…</p></td>
+</tr>
+<tr class="class-type-creatable row-even"><td><p><a class="reference internal" href="classes/AnyKinRotational.html#anykinrotational"><span class="std std-ref">AnyKinRotational</span></a></p></td>
+<td><p>This “kinematic measure” measures 3-D…</p></td>
+</tr>
+<tr class="class-type-creatable row-odd"><td><p><a class="reference internal" href="classes/AnyKinRotationalType.html#anykinrotationaltype"><span class="std std-ref">AnyKinRotationalType</span></a></p></td>
+<td><p>Type definitions for rotational coordinates.</p></td>
+</tr>
+<tr class="class-type-creatable row-even"><td><p><a class="reference internal" href="classes/AnyKinSolverType.html#anykinsolvertype"><span class="std std-ref">AnyKinSolverType</span></a></p></td>
+<td><p>Type definitions for kinematic solvers.</p></td>
+</tr>
+<tr class="class-type-creatable row-odd"><td><p><a class="reference internal" href="classes/AnyKinSPLine.html#anykinspline"><span class="std std-ref">AnyKinSPLine</span></a></p></td>
+<td><p>This “kinematic measure” measures the length…</p></td>
+</tr>
+<tr class="class-type-creatable row-even"><td><p><a class="reference internal" href="classes/AnyKinSPSheet.html#anykinspsheet"><span class="std std-ref">AnyKinSPSheet</span></a></p></td>
+<td><p>This “kinematic measure” can be used to model…</p></td>
+</tr>
+<tr class="class-type-creatable row-odd"><td><p><a class="reference internal" href="classes/AnyKinSPSheetSolverType.html#anykinspsheetsolvertype"><span class="std std-ref">AnyKinSPSheetSolverType</span></a></p></td>
+<td><p>Type definitions for the solver of shortest…</p></td>
+</tr>
+<tr class="class-type-creatable row-even"><td><p><a class="reference internal" href="classes/AnyKinStudy.html#anykinstudy"><span class="std std-ref">AnyKinStudy</span></a></p></td>
+<td><p>This study class comprises operations for…</p></td>
+</tr>
+<tr class="class-type-creatable row-odd"><td><p><a class="reference internal" href="classes/AnyLigament.html#anyligament"><span class="std std-ref">AnyLigament</span></a></p></td>
+<td><p>This class is the base class for all ligaments.</p></td>
+</tr>
+<tr class="class-type-abstract row-even"><td><p><a class="reference internal" href="classes/AnyLigamentModel.html#anyligamentmodel"><span class="std std-ref">AnyLigamentModel</span></a></p></td>
+<td><p>This class is the base class for ligament…</p></td>
+</tr>
+<tr class="class-type-creatable row-odd"><td><p><a class="reference internal" href="classes/AnyLigamentModelPol.html#anyligamentmodelpol"><span class="std std-ref">AnyLigamentModelPol</span></a></p></td>
+<td><p>This ligament model provides a constitutive…</p></td>
+</tr>
+<tr class="class-type-creatable row-even"><td><p><a class="reference internal" href="classes/AnyLigamentViaPoint.html#anyligamentviapoint"><span class="std std-ref">AnyLigamentViaPoint</span></a></p></td>
+<td><p>This is a specilization of the general…</p></td>
+</tr>
+<tr class="class-type-abstract row-odd"><td><p><a class="reference internal" href="classes/AnyMainFolder.html#anymainfolder"><span class="std std-ref">AnyMainFolder</span></a></p></td>
+<td><p>Objects of this class are the top or root…</p></td>
+</tr>
+<tr class="class-type-creatable row-even"><td><p><a class="reference internal" href="classes/AnyMat33.html#anymat33"><span class="std std-ref">AnyMat33</span></a></p></td>
+<td><p>Three by three algebraic matrix.</p></td>
+</tr>
+<tr class="class-type-creatable row-odd"><td><p><a class="reference internal" href="classes/AnyMatrix.html#anymatrix"><span class="std std-ref">AnyMatrix</span></a></p></td>
+<td><p>Algebraic matrix with arbitrary number of rows…</p></td>
+</tr>
+<tr class="class-type-abstract row-even"><td><p><a class="reference internal" href="classes/AnyMechObject.html#anymechobject"><span class="std std-ref">AnyMechObject</span></a></p></td>
+<td><p>This is the abstract base class from which all…</p></td>
+</tr>
+<tr class="class-type-creatable row-odd"><td><p><a class="reference internal" href="classes/AnyMechObjectExcluder.html#anymechobjectexcluder"><span class="std std-ref">AnyMechObjectExcluder</span></a></p></td>
+<td><p>This folder-class is a ‘collector object’ used…</p></td>
+</tr>
+<tr class="class-type-abstract row-even"><td><p><a class="reference internal" href="classes/AnyMechOpr.html#anymechopr"><span class="std std-ref">AnyMechOpr</span></a></p></td>
+<td><p>Base class for operations associated with the…</p></td>
+</tr>
+<tr class="class-type-abstract row-odd"><td><p><a class="reference internal" href="classes/AnyMechOprBase.html#anymechoprbase"><span class="std std-ref">AnyMechOprBase</span></a></p></td>
+<td><p>Base class for operations associated with the…</p></td>
+</tr>
+<tr class="class-type-abstract row-even"><td><p><a class="reference internal" href="classes/AnyMechOprDeprecated.html#anymechoprdeprecated"><span class="std std-ref">AnyMechOprDeprecated</span></a></p></td>
+<td><p>Deprecated mechanical operations.</p></td>
+</tr>
+<tr class="class-type-creatable row-odd"><td><p><a class="reference internal" href="classes/AnyMechOprInvDynAnl.html#anymechoprinvdynanl"><span class="std std-ref">AnyMechOprInvDynAnl</span></a></p></td>
+<td><p>This operation performs inverse dynamic…</p></td>
+</tr>
+<tr class="class-type-creatable row-even"><td><p><a class="reference internal" href="classes/AnyMechOprInvMuscleDynAnl.html#anymechoprinvmuscledynanl"><span class="std std-ref">AnyMechOprInvMuscleDynAnl</span></a></p></td>
+<td><p>This operation performs inverse dynamic…</p></td>
+</tr>
+<tr class="class-type-creatable row-odd"><td><p><a class="reference internal" href="classes/AnyMechOprKinAnl.html#anymechoprkinanl"><span class="std std-ref">AnyMechOprKinAnl</span></a></p></td>
+<td><p>This operation-class performs kinematical…</p></td>
+</tr>
+<tr class="class-type-abstract row-even"><td><p><a class="reference internal" href="classes/AnyMechOprSubProcess.html#anymechoprsubprocess"><span class="std std-ref">AnyMechOprSubProcess</span></a></p></td>
+<td><p>This is a special (abstract) operation class…</p></td>
+</tr>
+<tr class="class-type-abstract row-odd"><td><p><a class="reference internal" href="classes/AnyMechOutputFileBase.html#anymechoutputfilebase"><span class="std std-ref">AnyMechOutputFileBase</span></a></p></td>
+<td><p>Base class for a number of data-file classes…</p></td>
+</tr>
+<tr class="class-type-creatable row-even"><td><p><a class="reference internal" href="classes/AnyMechOutputFileEquilEqExport.html#anymechoutputfileequileqexport"><span class="std std-ref">AnyMechOutputFileEquilEqExport</span></a></p></td>
+<td><p>Output file for mechanical system export. It…</p></td>
+</tr>
+<tr class="class-type-creatable row-odd"><td><p><a class="reference internal" href="classes/AnyMechOutputFileForceExport.html#anymechoutputfileforceexport"><span class="std std-ref">AnyMechOutputFileForceExport</span></a></p></td>
+<td><p>This class is an output file class…</p></td>
+</tr>
+<tr class="class-type-creatable row-even"><td><p><a class="reference internal" href="classes/AnyMechStudy.html#anymechstudy"><span class="std std-ref">AnyMechStudy</span></a></p></td>
+<td><p>This class extends the kinematical analysis…</p></td>
+</tr>
+<tr class="class-type-creatable row-odd"><td><p><a class="reference internal" href="classes/AnyMechStudyBase.html#anymechstudybase"><span class="std std-ref">AnyMechStudyBase</span></a></p></td>
+<td><p>This is the base class from which all…</p></td>
+</tr>
+<tr class="class-type-abstract row-even"><td><p><a class="reference internal" href="classes/AnyMechStudyModelInfo.html#anymechstudymodelinfo"><span class="std std-ref">AnyMechStudyModelInfo</span></a></p></td>
+<td><p>Operation for analyzing the mechanical model…</p></td>
+</tr>
+<tr class="class-type-creatable row-odd"><td><p><a class="reference internal" href="classes/AnyMessage.html#anymessage"><span class="std std-ref">AnyMessage</span></a></p></td>
+<td><p>This class functions to make user-defined…</p></td>
+</tr>
+<tr class="class-type-creatable row-even"><td><p><a class="reference internal" href="classes/AnyMetabModelB.html#anymetabmodelb"><span class="std std-ref">AnyMetabModelB</span></a></p></td>
+<td><p>This class comprises the muscle-metabolism…</p></td>
+</tr>
+<tr class="class-type-abstract row-odd"><td><p><a class="reference internal" href="classes/AnyMetabModelBase.html#anymetabmodelbase"><span class="std std-ref">AnyMetabModelBase</span></a></p></td>
+<td><p>Base class for metabolic model classes. A…</p></td>
+</tr>
+<tr class="class-type-creatable row-even"><td><p><a class="reference internal" href="classes/AnyMetabModelSimple.html#anymetabmodelsimple"><span class="std std-ref">AnyMetabModelSimple</span></a></p></td>
+<td><p>This class comprises a simple metabolic model…</p></td>
+</tr>
+<tr class="class-type-creatable row-odd"><td><p><a class="reference internal" href="classes/AnyMetabModelU.html#anymetabmodelu"><span class="std std-ref">AnyMetabModelU</span></a></p></td>
+<td><p>This class comprises the muscle-metabolism…</p></td>
+</tr>
+<tr class="class-type-creatable row-even"><td><p><a class="reference internal" href="classes/AnyModelViewDefinition.html#anymodelviewdefinition"><span class="std std-ref">AnyModelViewDefinition</span></a></p></td>
+<td><p>Class for AnyProject related Model View Definitions.</p></td>
+</tr>
+<tr class="class-type-abstract row-odd"><td><p><a class="reference internal" href="classes/AnyModelViewObject.html#anymodelviewobject"><span class="std std-ref">AnyModelViewObject</span></a></p></td>
+<td><p>This is the base class for Model View related objects.</p></td>
+</tr>
+<tr class="class-type-creatable row-even"><td><p><a class="reference internal" href="classes/AnyMoment3D.html#anymoment3d"><span class="std std-ref">AnyMoment3D</span></a></p></td>
+<td><p>A three-dimensional moment applied to a…</p></td>
+</tr>
+<tr class="class-type-abstract row-odd"><td><p><a class="reference internal" href="classes/AnyMonoFunction.html#anymonofunction"><span class="std std-ref">AnyMonoFunction</span></a></p></td>
+<td><p>This is the base class for function…</p></td>
+</tr>
+<tr class="class-type-abstract row-even"><td><p><a class="reference internal" href="classes/AnyMovingRefFrame.html#anymovingrefframe"><span class="std std-ref">AnyMovingRefFrame</span></a></p></td>
+<td><p>This is the abstract base class for generally…</p></td>
+</tr>
+<tr class="class-type-abstract row-odd"><td><p><a class="reference internal" href="classes/AnyMuscle.html#anymuscle"><span class="std std-ref">AnyMuscle</span></a></p></td>
+<td><p>This class is the base class for all muscles….</p></td>
+</tr>
+<tr class="class-type-creatable row-even"><td><p><a class="reference internal" href="classes/AnyMuscleActivityBound.html#anymuscleactivitybound"><span class="std std-ref">AnyMuscleActivityBound</span></a></p></td>
+<td><p>With this class you can make simple bounds on…</p></td>
+</tr>
+<tr class="class-type-creatable row-odd"><td><p><a class="reference internal" href="classes/AnyMuscleActivityConstraint.html#anymuscleactivityconstraint"><span class="std std-ref">AnyMuscleActivityConstraint</span></a></p></td>
+<td><p>With this class you can make general linear…</p></td>
+</tr>
+<tr class="class-type-creatable row-even"><td><p><a class="reference internal" href="classes/AnyMuscleModel.html#anymusclemodel"><span class="std std-ref">AnyMuscleModel</span></a></p></td>
+<td><p>Simple muscle model class.</p></td>
+</tr>
+<tr class="class-type-creatable row-odd"><td><p><a class="reference internal" href="classes/AnyMuscleModel2ELin.html#anymusclemodel2elin"><span class="std std-ref">AnyMuscleModel2ELin</span></a></p></td>
+<td><p>This class contains a two element, Hill-type…</p></td>
+</tr>
+<tr class="class-type-creatable row-even"><td><p><a class="reference internal" href="classes/AnyMuscleModel3E.html#anymusclemodel3e"><span class="std std-ref">AnyMuscleModel3E</span></a></p></td>
+<td><p>This class contains a three element, Hill-type…</p></td>
+</tr>
+<tr class="class-type-creatable row-odd"><td><p><a class="reference internal" href="classes/AnyMuscleModelUsr1.html#anymusclemodelusr1"><span class="std std-ref">AnyMuscleModelUsr1</span></a></p></td>
+<td><p>This class gives the possibility to make…</p></td>
+</tr>
+<tr class="class-type-creatable row-even"><td><p><a class="reference internal" href="classes/AnyMuscleRecruitmentSolver.html#anymusclerecruitmentsolver"><span class="std std-ref">AnyMuscleRecruitmentSolver</span></a></p></td>
+<td><p>Class for specification of criteria functions…</p></td>
+</tr>
+<tr class="class-type-creatable row-odd"><td><p><a class="reference internal" href="classes/AnyMuscleSheet.html#anymusclesheet"><span class="std std-ref">AnyMuscleSheet</span></a></p></td>
+<td><p>This is a spezialization of the AnyMuscle…</p></td>
+</tr>
+<tr class="class-type-creatable row-even"><td><p><a class="reference internal" href="classes/AnyMuscleShortestPath.html#anymuscleshortestpath"><span class="std std-ref">AnyMuscleShortestPath</span></a></p></td>
+<td><p>This is a specialization of the general muscle…</p></td>
+</tr>
+<tr class="class-type-creatable row-odd"><td><p><a class="reference internal" href="classes/AnyMuscleViaPoint.html#anymuscleviapoint"><span class="std std-ref">AnyMuscleViaPoint</span></a></p></td>
+<td><p>This is a specilization of the general muscle…</p></td>
+</tr>
+<tr class="class-type-abstract row-even"><td><p><a class="reference internal" href="classes/AnyMuscleViaPointBase.html#anymuscleviapointbase"><span class="std std-ref">AnyMuscleViaPointBase</span></a></p></td>
+<td><p>This is the bases classe for specilizations of…</p></td>
+</tr>
+<tr class="class-type-abstract row-odd"><td><p><a class="reference internal" href="classes/AnyObject.html#anyobject"><span class="std std-ref">AnyObject</span></a></p></td>
+<td><p>This is the base class for all abstract and…</p></td>
+</tr>
+<tr class="class-type-creatable row-even"><td><p><a class="reference internal" href="classes/AnyObjectLayer.html#anyobjectlayer"><span class="std std-ref">AnyObjectLayer</span></a></p></td>
+<td><p>Please notice that the Objects pointer array…</p></td>
+</tr>
+<tr class="class-type-creatable row-odd"><td><p><a class="reference internal" href="classes/AnyObjectPtr.html#anyobjectptr"><span class="std std-ref">AnyObjectPtr</span></a></p></td>
+<td><p>Multi-dimensional object pointer variable.</p></td>
+</tr>
+<tr class="class-type-creatable row-even"><td><p><a class="reference internal" href="classes/AnyObjectPtrArray.html#anyobjectptrarray"><span class="std std-ref">AnyObjectPtrArray</span></a></p></td>
+<td><p>Array of object pointers.</p></td>
+</tr>
+<tr class="class-type-creatable row-odd"><td><p><a class="reference internal" href="classes/AnyObjectPtrVar.html#anyobjectptrvar"><span class="std std-ref">AnyObjectPtrVar</span></a></p></td>
+<td><p>Scalar object pointer variable, i.e., a single…</p></td>
+</tr>
+<tr class="class-type-creatable row-even"><td><p><a class="reference internal" href="classes/AnyObjectSearchString.html#anyobjectsearchstring"><span class="std std-ref">AnyObjectSearchString</span></a></p></td>
+<td><p>String variable (multi-dimensional) used for…</p></td>
+</tr>
+<tr class="class-type-abstract row-odd"><td><p><a class="reference internal" href="classes/AnyOperation.html#anyoperation"><span class="std std-ref">AnyOperation</span></a></p></td>
+<td><p>The base class for all operations.</p></td>
+</tr>
+<tr class="class-type-creatable row-even"><td><p><a class="reference internal" href="classes/AnyOperationDummy.html#anyoperationdummy"><span class="std std-ref">AnyOperationDummy</span></a></p></td>
+<td><p>This is an operation that does not do anything.</p></td>
+</tr>
+<tr class="class-type-creatable row-odd"><td><p><a class="reference internal" href="classes/AnyOperationMacro.html#anyoperationmacro"><span class="std std-ref">AnyOperationMacro</span></a></p></td>
+<td><p>This operation-class is a encapsulation of an…</p></td>
+</tr>
+<tr class="class-type-creatable row-even"><td><p><a class="reference internal" href="classes/AnyOperationReplay.html#anyoperationreplay"><span class="std std-ref">AnyOperationReplay</span></a></p></td>
+<td><p>Operation that can replay previously…</p></td>
+</tr>
+<tr class="class-type-creatable row-odd"><td><p><a class="reference internal" href="classes/AnyOperationSequence.html#anyoperationsequence"><span class="std std-ref">AnyOperationSequence</span></a></p></td>
+<td><p>This operation can hold a number of other…</p></td>
+</tr>
+<tr class="class-type-creatable row-even"><td><p><a class="reference internal" href="classes/AnyOperationSetValue.html#anyoperationsetvalue"><span class="std std-ref">AnyOperationSetValue</span></a></p></td>
+<td><p>This operation set the value of…</p></td>
+</tr>
+<tr class="class-type-creatable row-odd"><td><p><a class="reference internal" href="classes/AnyOperationShellExec.html#anyoperationshellexec"><span class="std std-ref">AnyOperationShellExec</span></a></p></td>
+<td><p>This operation can open an external executable…</p></td>
+</tr>
+<tr class="class-type-abstract row-even"><td><p><a class="reference internal" href="classes/AnyOprBase.html#anyoprbase"><span class="std std-ref">AnyOprBase</span></a></p></td>
+<td><p>Base class for folders associated operation classes.</p></td>
+</tr>
+<tr class="class-type-abstract row-odd"><td><p><a class="reference internal" href="classes/AnyOprData.html#anyoprdata"><span class="std std-ref">AnyOprData</span></a></p></td>
+<td><p>Base class for folders containing operation…</p></td>
+</tr>
+<tr class="class-type-abstract row-even"><td><p><a class="reference internal" href="classes/AnyOprSet.html#anyoprset"><span class="std std-ref">AnyOprSet</span></a></p></td>
+<td><p>Base class for folders containing solver settings.</p></td>
+</tr>
+<tr class="class-type-abstract row-odd"><td><p><a class="reference internal" href="classes/AnyOprSetForceDepKin.html#anyoprsetforcedepkin"><span class="std std-ref">AnyOprSetForceDepKin</span></a></p></td>
+<td><p>This folder-class holds parameters used for…</p></td>
+</tr>
+<tr class="class-type-creatable row-even"><td><p><a class="reference internal" href="classes/AnyOprSetKinematics.html#anyoprsetkinematics"><span class="std std-ref">AnyOprSetKinematics</span></a></p></td>
+<td><p>Option class for kinematic solvers.</p></td>
+</tr>
+<tr class="class-type-abstract row-odd"><td><p><a class="reference internal" href="classes/AnyOprSetMechSolver.html#anyoprsetmechsolver"><span class="std std-ref">AnyOprSetMechSolver</span></a></p></td>
+<td><p>Base class for solver option for solvers for…</p></td>
+</tr>
+<tr class="class-type-abstract row-even"><td><p><a class="reference internal" href="classes/AnyOprSetMechStudyRefFrame.html#anyoprsetmechstudyrefframe"><span class="std std-ref">AnyOprSetMechStudyRefFrame</span></a></p></td>
+<td><p>This folder-class holds parameters that…</p></td>
+</tr>
+<tr class="class-type-abstract row-odd"><td><p><a class="reference internal" href="classes/AnyOprSetMuscleRecruitment.html#anyoprsetmusclerecruitment"><span class="std std-ref">AnyOprSetMuscleRecruitment</span></a></p></td>
+<td><p>Class specifying the optimization criterion…</p></td>
+</tr>
+<tr class="class-type-abstract row-even"><td><p><a class="reference internal" href="classes/AnyOprSetMuscleRecruitmentNormalization.html#anyoprsetmusclerecruitmentnormalization"><span class="std std-ref">AnyOprSetMuscleRecruitmentNormalization</span></a></p></td>
+<td><p>Class specifying the optimization criterion…</p></td>
+</tr>
+<tr class="class-type-creatable row-odd"><td><p><a class="reference internal" href="classes/AnyOprSetNLEqSolver.html#anyoprsetnleqsolver"><span class="std std-ref">AnyOprSetNLEqSolver</span></a></p></td>
+<td><p>Settings for the iterative solvers for…</p></td>
+</tr>
+<tr class="class-type-creatable row-even"><td><p><a class="reference internal" href="classes/AnyOprSetNLEqSolverCont.html#anyoprsetnleqsolvercont"><span class="std std-ref">AnyOprSetNLEqSolverCont</span></a></p></td>
+<td><p>Settings for the non-linear equation solvers…</p></td>
+</tr>
+<tr class="class-type-creatable row-odd"><td><p><a class="reference internal" href="classes/AnyOprSetNLEqSolverNewton.html#anyoprsetnleqsolvernewton"><span class="std std-ref">AnyOprSetNLEqSolverNewton</span></a></p></td>
+<td><p>Settings for non-linear equation solvers based…</p></td>
+</tr>
+<tr class="class-type-abstract row-even"><td><p><a class="reference internal" href="classes/AnyOprSetNRSimplex.html#anyoprsetnrsimplex"><span class="std std-ref">AnyOprSetNRSimplex</span></a></p></td>
+<td><p>Settings for a simplex solver based on the…</p></td>
+</tr>
+<tr class="class-type-abstract row-odd"><td><p><a class="reference internal" href="classes/AnyOprSetOOSolQP.html#anyoprsetoosolqp"><span class="std std-ref">AnyOprSetOOSolQP</span></a></p></td>
+<td><p>Setting for a QP solver from the OOSol library…</p></td>
+</tr>
+<tr class="class-type-abstract row-even"><td><p><a class="reference internal" href="classes/AnyOprSetOOSolSimplex.html#anyoprsetoosolsimplex"><span class="std std-ref">AnyOprSetOOSolSimplex</span></a></p></td>
+<td><p>Settings for a simplex solver from the OOSol library.</p></td>
+</tr>
+<tr class="class-type-abstract row-odd"><td><p><a class="reference internal" href="classes/AnyOprSetOptim.html#anyoprsetoptim"><span class="std std-ref">AnyOprSetOptim</span></a></p></td>
+<td><p>Base class for optimization solver settings.</p></td>
+</tr>
+<tr class="class-type-abstract row-even"><td><p><a class="reference internal" href="classes/AnyOprSetSolver.html#anyoprsetsolver"><span class="std std-ref">AnyOprSetSolver</span></a></p></td>
+<td><p>Base class for solver options such as equation…</p></td>
+</tr>
+<tr class="class-type-abstract row-odd"><td><p><a class="reference internal" href="classes/AnyOprSetUI.html#anyoprsetui"><span class="std std-ref">AnyOprSetUI</span></a></p></td>
+<td><p>General user interface update setting common…</p></td>
+</tr>
+<tr class="class-type-creatable row-even"><td><p><a class="reference internal" href="classes/AnyOptKinStudy.html#anyoptkinstudy"><span class="std std-ref">AnyOptKinStudy</span></a></p></td>
+<td><p>This study class is specialized towards…</p></td>
+</tr>
+<tr class="class-type-abstract row-odd"><td><p><a class="reference internal" href="classes/AnyOptKinStudyOpr.html#anyoptkinstudyopr"><span class="std std-ref">AnyOptKinStudyOpr</span></a></p></td>
+<td></td>
+</tr>
+<tr class="class-type-creatable row-even"><td><p><a class="reference internal" href="classes/AnyOptStudy.html#anyoptstudy"><span class="std std-ref">AnyOptStudy</span></a></p></td>
+<td><p>This study does optimization. It varies design…</p></td>
+</tr>
+<tr class="class-type-abstract row-odd"><td><p><a class="reference internal" href="classes/AnyOptStudyOpr.html#anyoptstudyopr"><span class="std std-ref">AnyOptStudyOpr</span></a></p></td>
+<td><p>Operation that executes the optimization…</p></td>
+</tr>
+<tr class="class-type-abstract row-even"><td><p><a class="reference internal" href="classes/AnyOptStudyOprSolverData.html#anyoptstudyoprsolverdata"><span class="std std-ref">AnyOptStudyOprSolverData</span></a></p></td>
+<td><p>Class for containing optimization solver data.</p></td>
+</tr>
+<tr class="class-type-creatable row-odd"><td><p><a class="reference internal" href="classes/AnyOutputBVH.html#anyoutputbvh"><span class="std std-ref">AnyOutputBVH</span></a></p></td>
+<td><p>Class to save data from a BVH structured model…</p></td>
+</tr>
+<tr class="class-type-creatable row-even"><td><p><a class="reference internal" href="classes/AnyOutputFile.html#anyoutputfile"><span class="std std-ref">AnyOutputFile</span></a></p></td>
+<td><p>This class provides functionality for saving…</p></td>
+</tr>
+<tr class="class-type-abstract row-odd"><td><p><a class="reference internal" href="classes/AnyOutputFileBase.html#anyoutputfilebase"><span class="std std-ref">AnyOutputFileBase</span></a></p></td>
+<td><p>Abstract base class for a number of output…</p></td>
+</tr>
+<tr class="class-type-abstract row-even"><td><p><a class="reference internal" href="classes/AnyOutputFileHeaderFormat.html#anyoutputfileheaderformat"><span class="std std-ref">AnyOutputFileHeaderFormat</span></a></p></td>
+<td></td>
+</tr>
+<tr class="class-type-abstract row-odd"><td><p><a class="reference internal" href="classes/AnyOutputFloat.html#anyoutputfloat"><span class="std std-ref">AnyOutputFloat</span></a></p></td>
+<td><p>A special floating point tensor class for…</p></td>
+</tr>
+<tr class="class-type-abstract row-even"><td><p><a class="reference internal" href="classes/AnyOutputFloatLink.html#anyoutputfloatlink"><span class="std std-ref">AnyOutputFloatLink</span></a></p></td>
+<td><p>This class is the base class for classes that…</p></td>
+</tr>
+<tr class="class-type-abstract row-odd"><td><p><a class="reference internal" href="classes/AnyOutputFloatPostProc.html#anyoutputfloatpostproc"><span class="std std-ref">AnyOutputFloatPostProc</span></a></p></td>
+<td><p>This class for holding output data is…</p></td>
+</tr>
+<tr class="class-type-abstract row-even"><td><p><a class="reference internal" href="classes/AnyOutputFolder.html#anyoutputfolder"><span class="std std-ref">AnyOutputFolder</span></a></p></td>
+<td><p>Objects of this class store the…</p></td>
+</tr>
+<tr class="class-type-creatable row-odd"><td><p><a class="reference internal" href="classes/AnyOutputFun.html#anyoutputfun"><span class="std std-ref">AnyOutputFun</span></a></p></td>
+<td><p>This class defines a function for making and…</p></td>
+</tr>
+<tr class="class-type-creatable row-even"><td><p><a class="reference internal" href="classes/AnyOutputGCD.html#anyoutputgcd"><span class="std std-ref">AnyOutputGCD</span></a></p></td>
+<td><p>This output file class is specialized to…</p></td>
+</tr>
+<tr class="class-type-abstract row-odd"><td><p><a class="reference internal" href="classes/AnyParamFun.html#anyparamfun"><span class="std std-ref">AnyParamFun</span></a></p></td>
+<td><p>Base class for parameter functions</p></td>
+</tr>
+<tr class="class-type-creatable row-even"><td><p><a class="reference internal" href="classes/AnyParamStudy.html#anyparamstudy"><span class="std std-ref">AnyParamStudy</span></a></p></td>
+<td><p>This class can perform a systematic variation…</p></td>
+</tr>
+<tr class="class-type-creatable row-odd"><td><p><a class="reference internal" href="classes/AnyParamStudy1D.html#anyparamstudy1d"><span class="std std-ref">AnyParamStudy1D</span></a></p></td>
+<td><p>This class can perform a systematic variation…</p></td>
+</tr>
+<tr class="class-type-abstract row-even"><td><p><a class="reference internal" href="classes/AnyParamStudyBase.html#anyparamstudybase"><span class="std std-ref">AnyParamStudyBase</span></a></p></td>
+<td><p>This is an abstract base-class for parameter studies.</p></td>
+</tr>
+<tr class="class-type-abstract row-odd"><td><p><a class="reference internal" href="classes/AnyParamStudyOpr.html#anyparamstudyopr"><span class="std std-ref">AnyParamStudyOpr</span></a></p></td>
+<td><p>Operation that executes a parameter study in…</p></td>
+</tr>
+<tr class="class-type-abstract row-even"><td><p><a class="reference internal" href="classes/AnyParamSurf.html#anyparamsurf"><span class="std std-ref">AnyParamSurf</span></a></p></td>
+<td><p>This is a base class for parameterized surfaces.</p></td>
+</tr>
+<tr class="class-type-abstract row-odd"><td><p><a class="reference internal" href="classes/AnyParamSurfAnalytical.html#anyparamsurfanalytical"><span class="std std-ref">AnyParamSurfAnalytical</span></a></p></td>
+<td><p>This is a base class for parameterized…</p></td>
+</tr>
+<tr class="class-type-abstract row-even"><td><p><a class="reference internal" href="classes/AnyPath.html#anypath"><span class="std std-ref">AnyPath</span></a></p></td>
+<td><p>A special string class for storing handling…</p></td>
+</tr>
+<tr class="class-type-abstract row-odd"><td><p><a class="reference internal" href="classes/AnyPositionedRefFrame.html#anypositionedrefframe"><span class="std std-ref">AnyPositionedRefFrame</span></a></p></td>
+<td><p>This is the abstract base class for moving…</p></td>
+</tr>
+<tr class="class-type-creatable row-even"><td><p><a class="reference internal" href="classes/AnyPrismaticJoint.html#anyprismaticjoint"><span class="std std-ref">AnyPrismaticJoint</span></a></p></td>
+<td><p>A prismatic joint is a translational joint…</p></td>
+</tr>
+<tr class="class-type-creatable row-odd"><td><p><a class="reference internal" href="classes/AnyProject.html#anyproject"><span class="std std-ref">AnyProject</span></a></p></td>
+<td><p>Class AnyProject is the AnyScript container…</p></td>
+</tr>
+<tr class="class-type-abstract row-even"><td><p><a class="reference internal" href="classes/AnyProjectAutos.html#anyprojectautos"><span class="std std-ref">AnyProjectAutos</span></a></p></td>
+<td><p>Folder-class specialized for holding…</p></td>
+</tr>
+<tr class="class-type-creatable row-odd"><td><p><a class="reference internal" href="classes/AnyProjectChart.html#anyprojectchart"><span class="std std-ref">AnyProjectChart</span></a></p></td>
+<td><p>Class for AnyProject Chart output definitions.</p></td>
+</tr>
+<tr class="class-type-abstract row-even"><td><p><a class="reference internal" href="classes/AnyProjectDescriptionObject.html#anyprojectdescriptionobject"><span class="std std-ref">AnyProjectDescriptionObject</span></a></p></td>
+<td><p>Base class for all classes associated with the…</p></td>
+</tr>
+<tr class="class-type-abstract row-odd"><td><p><a class="reference internal" href="classes/AnyProjectFiles.html#anyprojectfiles"><span class="std std-ref">AnyProjectFiles</span></a></p></td>
+<td><p>Folder-class specialized for holding project…</p></td>
+</tr>
+<tr class="class-type-creatable row-even"><td><p><a class="reference internal" href="classes/AnyProjectModelViewDefinition.html#anyprojectmodelviewdefinition"><span class="std std-ref">AnyProjectModelViewDefinition</span></a></p></td>
+<td><p>Class for AnyProject related Model View Definitions.</p></td>
+</tr>
+<tr class="class-type-creatable row-odd"><td><p><a class="reference internal" href="classes/AnyProjectModelViewFolder.html#anyprojectmodelviewfolder"><span class="std std-ref">AnyProjectModelViewFolder</span></a></p></td>
+<td><p>Folder-class specialized for holding Model…</p></td>
+</tr>
+<tr class="class-type-abstract row-even"><td><p><a class="reference internal" href="classes/AnyProjectObject.html#anyprojectobject"><span class="std std-ref">AnyProjectObject</span></a></p></td>
+<td><p>Base class for classes associated with…</p></td>
+</tr>
+<tr class="class-type-creatable row-odd"><td><p><a class="reference internal" href="classes/AnyProjectOutputFolder.html#anyprojectoutputfolder"><span class="std std-ref">AnyProjectOutputFolder</span></a></p></td>
+<td><p>Folder-class specialized for AnyProject Output objects</p></td>
+</tr>
+<tr class="class-type-abstract row-even"><td><p><a class="reference internal" href="classes/AnyProjectOutputObject.html#anyprojectoutputobject"><span class="std std-ref">AnyProjectOutputObject</span></a></p></td>
+<td><p>Base class for classes associated with…</p></td>
+</tr>
+<tr class="class-type-abstract row-odd"><td><p><a class="reference internal" href="classes/AnyProjectTaskBase.html#anyprojecttaskbase"><span class="std std-ref">AnyProjectTaskBase</span></a></p></td>
+<td><p>Base class for AnyProject related Tasks. Tasks…</p></td>
+</tr>
+<tr class="class-type-creatable row-even"><td><p><a class="reference internal" href="classes/AnyProjectTaskFolder.html#anyprojecttaskfolder"><span class="std std-ref">AnyProjectTaskFolder</span></a></p></td>
+<td><p>Folder-class specialized for holding Task…</p></td>
+</tr>
+<tr class="class-type-creatable row-odd"><td><p><a class="reference internal" href="classes/AnyProjectTaskLoadModel.html#anyprojecttaskloadmodel"><span class="std std-ref">AnyProjectTaskLoadModel</span></a></p></td>
+<td><p>This class is a Task-class specialization…</p></td>
+</tr>
+<tr class="class-type-creatable row-even"><td><p><a class="reference internal" href="classes/AnyProjectTaskOperation.html#anyprojecttaskoperation"><span class="std std-ref">AnyProjectTaskOperation</span></a></p></td>
+<td><p>This class is a Task-class specialization…</p></td>
+</tr>
+<tr class="class-type-creatable row-odd"><td><p><a class="reference internal" href="classes/AnyReacForce.html#anyreacforce"><span class="std std-ref">AnyReacForce</span></a></p></td>
+<td><p>This class is the base class for all reaction…</p></td>
+</tr>
+<tr class="class-type-creatable row-even"><td><p><a class="reference internal" href="classes/AnyReacForceType.html#anyreacforcetype"><span class="std std-ref">AnyReacForceType</span></a></p></td>
+<td><p>Reaction force type specification enum.</p></td>
+</tr>
+<tr class="class-type-abstract row-odd"><td><p><a class="reference internal" href="classes/AnyRealObject.html#anyrealobject"><span class="std std-ref">AnyRealObject</span></a></p></td>
+<td><p>This class is the base class of all “real” objects.</p></td>
+</tr>
+<tr class="class-type-abstract row-even"><td><p><a class="reference internal" href="classes/AnyRecruitedForce.html#anyrecruitedforce"><span class="std std-ref">AnyRecruitedForce</span></a></p></td>
+<td><p>This class is the base class for all muscles…</p></td>
+</tr>
+<tr class="class-type-abstract row-odd"><td><p><a class="reference internal" href="classes/AnyRefFrame.html#anyrefframe"><span class="std std-ref">AnyRefFrame</span></a></p></td>
+<td><p>This is an abstract class that defines 3-D…</p></td>
+</tr>
+<tr class="class-type-creatable row-even"><td><p><a class="reference internal" href="classes/AnyRefFrameAxis.html#anyrefframeaxis"><span class="std std-ref">AnyRefFrameAxis</span></a></p></td>
+<td><p>This class defines axis specifications…</p></td>
+</tr>
+<tr class="class-type-creatable row-odd"><td><p><a class="reference internal" href="classes/AnyRefNode.html#anyrefnode"><span class="std std-ref">AnyRefNode</span></a></p></td>
+<td><p>The reference node is a reference frame…</p></td>
+</tr>
+<tr class="class-type-creatable row-even"><td><p><a class="reference internal" href="classes/AnyRevoluteJoint.html#anyrevolutejoint"><span class="std std-ref">AnyRevoluteJoint</span></a></p></td>
+<td><p>A revolute joint is an ideal hinge that only…</p></td>
+</tr>
+<tr class="class-type-creatable row-odd"><td><p><a class="reference internal" href="classes/AnyRGB.html#anyrgb"><span class="std std-ref">AnyRGB</span></a></p></td>
+<td><p>Value type holding RGB (color) values. It is…</p></td>
+</tr>
+<tr class="class-type-creatable row-even"><td><p><a class="reference internal" href="classes/AnyRGBs.html#anyrgbs"><span class="std std-ref">AnyRGBs</span></a></p></td>
+<td><p>Value type holding multiple RGB (color) values…</p></td>
+</tr>
+<tr class="class-type-creatable row-odd"><td><p><a class="reference internal" href="classes/AnyScene.html#anyscene"><span class="std std-ref">AnyScene</span></a></p></td>
+<td><p>This class comprises scene settings.</p></td>
+</tr>
+<tr class="class-type-creatable row-even"><td><p><a class="reference internal" href="classes/AnySceneForceDrawing.html#anysceneforcedrawing"><span class="std std-ref">AnySceneForceDrawing</span></a></p></td>
+<td><p>This class comprises scene force drawing settings.</p></td>
+</tr>
+<tr class="class-type-abstract row-odd"><td><p><a class="reference internal" href="classes/AnySceneObject.html#anysceneobject"><span class="std std-ref">AnySceneObject</span></a></p></td>
+<td><p>This is the base class for all object that in…</p></td>
+</tr>
+<tr class="class-type-creatable row-even"><td><p><a class="reference internal" href="classes/AnySceneViewer.html#anysceneviewer"><span class="std std-ref">AnySceneViewer</span></a></p></td>
+<td><p>This class comprises scene viewer settings.</p></td>
+</tr>
+<tr class="class-type-creatable row-odd"><td><p><a class="reference internal" href="classes/AnySearchFun.html#anysearchfun"><span class="std std-ref">AnySearchFun</span></a></p></td>
+<td><p>This class defines a function template that…</p></td>
+</tr>
+<tr class="class-type-creatable row-even"><td><p><a class="reference internal" href="classes/AnySeg.html#anyseg"><span class="std std-ref">AnySeg</span></a></p></td>
+<td><p>This class represents a rigid body in the…</p></td>
+</tr>
+<tr class="class-type-creatable row-odd"><td><p><a class="reference internal" href="classes/AnyShortestPathMuscle.html#anyshortestpathmuscle"><span class="std std-ref">AnyShortestPathMuscle</span></a></p></td>
+<td><p>This class is deprecated because it has been…</p></td>
+</tr>
+<tr class="class-type-creatable row-even"><td><p><a class="reference internal" href="classes/AnySphericalJoint.html#anysphericaljoint"><span class="std std-ref">AnySphericalJoint</span></a></p></td>
+<td><p>A spherical joint is a point constraint, also…</p></td>
+</tr>
+<tr class="class-type-creatable row-odd"><td><p><a class="reference internal" href="classes/AnyStandardModelViewDefinition.html#anystandardmodelviewdefinition"><span class="std std-ref">AnyStandardModelViewDefinition</span></a></p></td>
+<td><p>Class for AnyProject related Model View…</p></td>
+</tr>
+<tr class="class-type-abstract row-even"><td><p><a class="reference internal" href="classes/AnyStdGlobalRoot.html#anystdglobalroot"><span class="std std-ref">AnyStdGlobalRoot</span></a></p></td>
+<td><p>This is the class of the folder that contains…</p></td>
+</tr>
+<tr class="class-type-creatable row-odd"><td><p><a class="reference internal" href="classes/AnyStdJoint.html#anystdjoint"><span class="std std-ref">AnyStdJoint</span></a></p></td>
+<td><p>This is the base class for the standard…</p></td>
+</tr>
+<tr class="class-type-creatable row-even"><td><p><a class="reference internal" href="classes/AnyString.html#anystring"><span class="std std-ref">AnyString</span></a></p></td>
+<td><p>Multi-dimensional string variable.</p></td>
+</tr>
+<tr class="class-type-creatable row-odd"><td><p><a class="reference internal" href="classes/AnyStringArray.html#anystringarray"><span class="std std-ref">AnyStringArray</span></a></p></td>
+<td><p>One-dimensional string array.</p></td>
+</tr>
+<tr class="class-type-creatable row-even"><td><p><a class="reference internal" href="classes/AnyStringVar.html#anystringvar"><span class="std std-ref">AnyStringVar</span></a></p></td>
+<td><p>String variable holding a single string.</p></td>
+</tr>
+<tr class="class-type-creatable row-odd"><td><p><a class="reference internal" href="classes/AnyStringVector.html#anystringvector"><span class="std std-ref">AnyStringVector</span></a></p></td>
+<td><p>String vector with arbitrary number of…</p></td>
+</tr>
+<tr class="class-type-abstract row-even"><td><p><a class="reference internal" href="classes/AnyStudy.html#anystudy"><span class="std std-ref">AnyStudy</span></a></p></td>
+<td><p>This is the base class from which all studies…</p></td>
+</tr>
+<tr class="class-type-abstract row-odd"><td><p><a class="reference internal" href="classes/AnyStyle.html#anystyle"><span class="std std-ref">AnyStyle</span></a></p></td>
+<td><p>Base class for all style setting classes.</p></td>
+</tr>
+<tr class="class-type-creatable row-even"><td><p><a class="reference internal" href="classes/AnyStyleBoundingBox.html#anystyleboundingbox"><span class="std std-ref">AnyStyleBoundingBox</span></a></p></td>
+<td><p>Complex definition of a bounding box with…</p></td>
+</tr>
+<tr class="class-type-abstract row-odd"><td><p><a class="reference internal" href="classes/AnyStyleDraw.html#anystyledraw"><span class="std std-ref">AnyStyleDraw</span></a></p></td>
+<td><p>Base class for all drawing style classes.</p></td>
+</tr>
+<tr class="class-type-abstract row-even"><td><p><a class="reference internal" href="classes/AnyStyleDrawLine.html#anystyledrawline"><span class="std std-ref">AnyStyleDrawLine</span></a></p></td>
+<td><p>Class that holds a line style definition.</p></td>
+</tr>
+<tr class="class-type-abstract row-odd"><td><p><a class="reference internal" href="classes/AnyStyleDrawLineCap.html#anystyledrawlinecap"><span class="std std-ref">AnyStyleDrawLineCap</span></a></p></td>
+<td><p>Class that holds a line-end style definition.</p></td>
+</tr>
+<tr class="class-type-abstract row-even"><td><p><a class="reference internal" href="classes/AnyStyleDrawLines.html#anystyledrawlines"><span class="std std-ref">AnyStyleDrawLines</span></a></p></td>
+<td><p>Class that holds style definitions for multiple lines.</p></td>
+</tr>
+<tr class="class-type-abstract row-odd"><td><p><a class="reference internal" href="classes/AnyStyleDrawLineWithCaps.html#anystyledrawlinewithcaps"><span class="std std-ref">AnyStyleDrawLineWithCaps</span></a></p></td>
+<td><p>Class that holds a line style definition for…</p></td>
+</tr>
+<tr class="class-type-abstract row-even"><td><p><a class="reference internal" href="classes/AnyStyleDrawMaterial.html#anystyledrawmaterial"><span class="std std-ref">AnyStyleDrawMaterial</span></a></p></td>
+<td><p>Base class for all material defining drawing…</p></td>
+</tr>
+<tr class="class-type-creatable row-odd"><td><p><a class="reference internal" href="classes/AnyStyleDrawMaterial1.html#anystyledrawmaterial1"><span class="std std-ref">AnyStyleDrawMaterial1</span></a></p></td>
+<td><p>A material definition drawing style class for…</p></td>
+</tr>
+<tr class="class-type-abstract row-even"><td><p><a class="reference internal" href="classes/AnyStyleDrawMaterialCrease.html#anystyledrawmaterialcrease"><span class="std std-ref">AnyStyleDrawMaterialCrease</span></a></p></td>
+<td><p>Base class for all materials defining a crease angle.</p></td>
+</tr>
+<tr class="class-type-creatable row-odd"><td><p><a class="reference internal" href="classes/AnyStyleDrawMaterialScale.html#anystyledrawmaterialscale"><span class="std std-ref">AnyStyleDrawMaterialScale</span></a></p></td>
+<td><p>A material definition drawing style class that…</p></td>
+</tr>
+<tr class="class-type-abstract row-even"><td><p><a class="reference internal" href="classes/AnyStyleDrawPointMarkers.html#anystyledrawpointmarkers"><span class="std std-ref">AnyStyleDrawPointMarkers</span></a></p></td>
+<td><p>Class that holds style definitions for one or…</p></td>
+</tr>
+<tr class="class-type-abstract row-odd"><td><p><a class="reference internal" href="classes/AnyStyleDrawSurfaces.html#anystyledrawsurfaces"><span class="std std-ref">AnyStyleDrawSurfaces</span></a></p></td>
+<td><p>Style class for defining properties of…</p></td>
+</tr>
+<tr class="class-type-abstract row-even"><td><p><a class="reference internal" href="classes/AnyStyleFont.html#anystylefont"><span class="std std-ref">AnyStyleFont</span></a></p></td>
+<td><p>Base class for all drawing style classes.</p></td>
+</tr>
+<tr class="class-type-abstract row-odd"><td><p><a class="reference internal" href="classes/AnyStyleFont3DView.html#anystylefont3dview"><span class="std std-ref">AnyStyleFont3DView</span></a></p></td>
+<td><p>Base class for all drawing style classes.</p></td>
+</tr>
+<tr class="class-type-abstract row-even"><td><p><a class="reference internal" href="classes/AnyStyleNumeric.html#anystylenumeric"><span class="std std-ref">AnyStyleNumeric</span></a></p></td>
+<td><p>Base class for all classes containing numeric…</p></td>
+</tr>
+<tr class="class-type-abstract row-odd"><td><p><a class="reference internal" href="classes/AnyStyleNumeric1.html#anystylenumeric1"><span class="std std-ref">AnyStyleNumeric1</span></a></p></td>
+<td><p>Class defining number formats for output.</p></td>
+</tr>
+<tr class="class-type-abstract row-even"><td><p><a class="reference internal" href="classes/AnyStyleNumeric1f.html#anystylenumeric1f"><span class="std std-ref">AnyStyleNumeric1f</span></a></p></td>
+<td><p>Class defining number formats for output.</p></td>
+</tr>
+<tr class="class-type-abstract row-odd"><td><p><a class="reference internal" href="classes/AnyStyleNumeric2.html#anystylenumeric2"><span class="std std-ref">AnyStyleNumeric2</span></a></p></td>
+<td><p>Class defining number formats for output.</p></td>
+</tr>
+<tr class="class-type-creatable row-even"><td><p><a class="reference internal" href="classes/AnyStyleRBFFun.html#anystylerbffun"><span class="std std-ref">AnyStyleRBFFun</span></a></p></td>
+<td><p>Radial Basis Function (RBF) definition.</p></td>
+</tr>
+<tr class="class-type-abstract row-odd"><td><p><a class="reference internal" href="classes/AnySurface.html#anysurface"><span class="std std-ref">AnySurface</span></a></p></td>
+<td><p>This is a base class for geometrical…</p></td>
+</tr>
+<tr class="class-type-creatable row-even"><td><p><a class="reference internal" href="classes/AnySurfCylinder.html#anysurfcylinder"><span class="std std-ref">AnySurfCylinder</span></a></p></td>
+<td><p>This class contains a parameterized cylinder surface.</p></td>
+</tr>
+<tr class="class-type-creatable row-odd"><td><p><a class="reference internal" href="classes/AnySurfCylinderFit.html#anysurfcylinderfit"><span class="std std-ref">AnySurfCylinderFit</span></a></p></td>
+<td><p>This class represents a parameterized cylinder…</p></td>
+</tr>
+<tr class="class-type-creatable row-even"><td><p><a class="reference internal" href="classes/AnySurfEllipsoid.html#anysurfellipsoid"><span class="std std-ref">AnySurfEllipsoid</span></a></p></td>
+<td><p>This class contains a parameterized ellipsoid…</p></td>
+</tr>
+<tr class="class-type-creatable row-odd"><td><p><a class="reference internal" href="classes/AnySurfEllipsoidFit.html#anysurfellipsoidfit"><span class="std std-ref">AnySurfEllipsoidFit</span></a></p></td>
+<td><p>This class represents a parameterized…</p></td>
+</tr>
+<tr class="class-type-creatable row-even"><td><p><a class="reference internal" href="classes/AnySurfFile.html#anysurffile"><span class="std std-ref">AnySurfFile</span></a></p></td>
+<td><p>Class for file objects that hold geometrical surfaces.</p></td>
+</tr>
+<tr class="class-type-creatable row-odd"><td><p><a class="reference internal" href="classes/AnySurfFileArray.html#anysurffilearray"><span class="std std-ref">AnySurfFileArray</span></a></p></td>
+<td><p>One-dimensional AnySurfFile array.</p></td>
+</tr>
+<tr class="class-type-creatable row-even"><td><p><a class="reference internal" href="classes/AnySurfFileVar.html#anysurffilevar"><span class="std std-ref">AnySurfFileVar</span></a></p></td>
+<td><p>Scalar AnySurfFile object, i.e., object with…</p></td>
+</tr>
+<tr class="class-type-creatable row-odd"><td><p><a class="reference internal" href="classes/AnySurfPlaneFit.html#anysurfplanefit"><span class="std std-ref">AnySurfPlaneFit</span></a></p></td>
+<td><p>This class represents a parameterized…</p></td>
+</tr>
+<tr class="class-type-creatable row-even"><td><p><a class="reference internal" href="classes/AnySurfSphere.html#anysurfsphere"><span class="std std-ref">AnySurfSphere</span></a></p></td>
+<td><p>This class contains a parameterized sphere…</p></td>
+</tr>
+<tr class="class-type-creatable row-odd"><td><p><a class="reference internal" href="classes/AnySurfSTL.html#anysurfstl"><span class="std std-ref">AnySurfSTL</span></a></p></td>
+<td><p>This class contains the description of a…</p></td>
+</tr>
+<tr class="class-type-creatable row-even"><td><p><a class="reference internal" href="classes/AnySurfTorus.html#anysurftorus"><span class="std std-ref">AnySurfTorus</span></a></p></td>
+<td><p>This class contains a parameterized torus…</p></td>
+</tr>
+<tr class="class-type-creatable row-odd"><td><p><a class="reference internal" href="classes/AnySwitch.html#anyswitch"><span class="std std-ref">AnySwitch</span></a></p></td>
+<td><p>Multi-dimensional switch with states ‘On’ and ‘Off’.</p></td>
+</tr>
+<tr class="class-type-creatable row-even"><td><p><a class="reference internal" href="classes/AnySwitchVar.html#anyswitchvar"><span class="std std-ref">AnySwitchVar</span></a></p></td>
+<td><p>Single switch with states ‘On’ and ‘Off’.</p></td>
+</tr>
+<tr class="class-type-abstract row-odd"><td><p><a class="reference internal" href="classes/AnySystemFolder.html#anysystemfolder"><span class="std std-ref">AnySystemFolder</span></a></p></td>
+<td><p>Base class system folders.</p></td>
+</tr>
+<tr class="class-type-abstract row-even"><td><p><a class="reference internal" href="classes/AnySystemValuesFloatFolder.html#anysystemvaluesfloatfolder"><span class="std std-ref">AnySystemValuesFloatFolder</span></a></p></td>
+<td><p>Characteristic values for floating-point type…</p></td>
+</tr>
+<tr class="class-type-abstract row-odd"><td><p><a class="reference internal" href="classes/AnySystemValuesFolder.html#anysystemvaluesfolder"><span class="std std-ref">AnySystemValuesFolder</span></a></p></td>
+<td><p>System variables.</p></td>
+</tr>
+<tr class="class-type-abstract row-even"><td><p><a class="reference internal" href="classes/AnySystemValuesIntFolder.html#anysystemvaluesintfolder"><span class="std std-ref">AnySystemValuesIntFolder</span></a></p></td>
+<td><p>Characteristic values for integer type value (AnyInt).</p></td>
+</tr>
+<tr class="class-type-abstract row-odd"><td><p><a class="reference internal" href="classes/AnyTimeStudy.html#anytimestudy"><span class="std std-ref">AnyTimeStudy</span></a></p></td>
+<td><p>This is the base class for all studies with…</p></td>
+</tr>
+<tr class="class-type-creatable row-even"><td><p><a class="reference internal" href="classes/AnyTransSphericalJoint.html#anytranssphericaljoint"><span class="std std-ref">AnyTransSphericalJoint</span></a></p></td>
+<td><p>The AnyTransSphericalJoint is basically a…</p></td>
+</tr>
+<tr class="class-type-creatable row-odd"><td><p><a class="reference internal" href="classes/AnyUniversalJoint.html#anyuniversaljoint"><span class="std std-ref">AnyUniversalJoint</span></a></p></td>
+<td><p>A universal joint allows rotation about two…</p></td>
+</tr>
+<tr class="class-type-creatable row-even"><td><p><a class="reference internal" href="classes/AnyUpdateEventType.html#anyupdateeventtype"><span class="std std-ref">AnyUpdateEventType</span></a></p></td>
+<td></td>
+</tr>
+<tr class="class-type-abstract row-odd"><td><p><a class="reference internal" href="classes/AnyValue.html#anyvalue"><span class="std std-ref">AnyValue</span></a></p></td>
+<td><p>This is the base class for all classes the…</p></td>
+</tr>
+<tr class="class-type-creatable row-even"><td><p><a class="reference internal" href="classes/AnyVar.html#anyvar"><span class="std std-ref">AnyVar</span></a></p></td>
+<td><p>Scalar floating point variable.</p></td>
+</tr>
+<tr class="class-type-creatable row-odd"><td><p><a class="reference internal" href="classes/AnyVarRef.html#anyvarref"><span class="std std-ref">AnyVarRef</span></a></p></td>
+<td><p>This special variable class functions as…</p></td>
+</tr>
+<tr class="class-type-creatable row-even"><td><p><a class="reference internal" href="classes/AnyVec3.html#anyvec3"><span class="std std-ref">AnyVec3</span></a></p></td>
+<td><p>Algebraic vector with three components….</p></td>
+</tr>
+<tr class="class-type-creatable row-odd"><td><p><a class="reference internal" href="classes/AnyVec4.html#anyvec4"><span class="std std-ref">AnyVec4</span></a></p></td>
+<td><p>Algebraic vector with four components. AnyVec4…</p></td>
+</tr>
+<tr class="class-type-creatable row-even"><td><p><a class="reference internal" href="classes/AnyVector.html#anyvector"><span class="std std-ref">AnyVector</span></a></p></td>
+<td><p>Algebraic vector with arbitrary number of…</p></td>
+</tr>
+<tr class="class-type-creatable row-odd"><td><p><a class="reference internal" href="classes/AnyViaPointLigament.html#anyviapointligament"><span class="std std-ref">AnyViaPointLigament</span></a></p></td>
+<td><p>This class is deprecated because it has been…</p></td>
+</tr>
+<tr class="class-type-creatable row-even"><td><p><a class="reference internal" href="classes/AnyViaPointMuscle.html#anyviapointmuscle"><span class="std std-ref">AnyViaPointMuscle</span></a></p></td>
+<td><p>This class is deprecated because it has been…</p></td>
+</tr>
+<tr class="class-type-creatable row-odd"><td><p><a class="reference internal" href="classes/AnyVirtualMarkerBVH.html#anyvirtualmarkerbvh"><span class="std std-ref">AnyVirtualMarkerBVH</span></a></p></td>
+<td><p>Class used to define virtual markers on a BVH…</p></td>
+</tr>
+<tr class="class-type-creatable row-even"><td><p><a class="reference internal" href="classes/AnyWidgetAxis.html#anywidgetaxis"><span class="std std-ref">AnyWidgetAxis</span></a></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<div class="toctree-wrapper compound">
+</div>
+</div>
+</div>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+        <p class="logo"><a href="../index.html" title="index">
+          <img class="logo" src="../_static/anyscript_maual.svg" alt="Logo"/>
+        </a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+<h3><a href="../contents.html">Reference Manual</a></h3>
+<p class="caption"><span class="caption-text">API</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#"><strong>Class reference</strong></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#frequently-used-classes">Frequently used classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#all-classes">All classes</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="function-overview.html"><strong>Function reference</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="globals-overview.html">Globals reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="environment.html">Environment variables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="messages/index.html">Errors, warnings and messages</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Language</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../anyscript/language.html">AnyScript™ language</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../anyscript/preprocessor.html">The preprocessor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../anyscript/inside-anybody.html">Inside the AnyBody Modeling System</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../anyscript/technical-notes.html">Technical notes</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../demos/index.html">Demo examples</a></li>
+</ul>
+<div class="sphinxprev">
+    <h4>Other resources</h4>
+    <p class="topless"><a href="../../index.html"
+                          title="Back to all manuals">&larr; Back to all manuals</a></p>
+</div>
+        </div>
+      </div>
+    
+    
+        <div class="sidebar-toggle-group no-js">
+            
+            <button class="sidebar-toggle" id="sidebar-hide" title="Hide the sidebar menu">
+                 «
+                <span class="show-for-small">hide menu</span>
+                
+            </button>
+            <button class="sidebar-toggle" id="sidebar-show" title="Show the sidebar menu">
+                
+                <span class="show-for-small">menu</span>
+                <span class="hide-for-small">sidebar</span>
+                 »
+            </button>
+        </div>
+    
+      <div class="clearer"></div>
+    </div>
+    <div class="relbar-bottom">
+        
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../contents.html" title="Table Of Contents"
+             >toc</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="classes/Any3DObject.html" title="Any3DObject"
+             >next</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="../anyscript/inside-anybody.html" title="Inside the AnyBody Modeling System"
+             >previous</a> &nbsp; &nbsp;</li>
+    <li><a href="../index.html">AnyScript Reference 7.3.4 documentation</a> &#187;</li>
+
+          <li class="nav-item nav-item-1"><a href="../index.html" >The AnyScript Reference manual!</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><strong>Class reference</strong></a></li> 
+      </ul>
+    </div>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2021, AnyBody Technology A/S.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.5.4.
+    </div>
+    <!-- cloud_sptheme 1.4 -->
+  </body>
+</html>

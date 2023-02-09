@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ab:anyml xmlns:ab="uri:1">
+<h1>Demos and model examples</h1>
+Follow the installation/re-installation link below to acquire a repository of AnyBody demo models.<br/>
+If installed properly, you should see a full list of available models on this page.
+<br/>
+<br/>
+You can always reinstall the demos to revert to the original demos. <br/>
+<b>Do not use the demo models for important work. Make a copy first.</b>
+</ab:anyml>
+

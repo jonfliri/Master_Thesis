@@ -1,0 +1,9 @@
+AnyBody Help Resources !
+===============================================
+
+.. figure:: _static/forum-feature4.png
+   :align: center
+   :figwidth: 100 %
+   :width: 70 %
+   :alt: Help resources
+

@@ -1,0 +1,258 @@
+
+
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Errors, warnings and messages &#8212; AnyScript Reference 7.3.4 documentation</title>
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/cloud.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/table_styling.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noticia+Text|Open+Sans|Droid+Sans+Mono" type="text/css" />
+    
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/script/filter-class-list.js"></script>
+    <script src="../../_static/fa/all.js"></script>
+
+    
+    
+     
+        <script src="../../_static/jquery.cookie.js"></script>
+    
+
+    
+     
+        <script src="../../_static/cloud.base.js"></script>
+    
+
+    
+     
+        <script src="../../_static/cloud.js"></script>
+    
+
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="System Messages (SYS)" href="SYS.html" />
+    <link rel="prev" title="Environment variables" href="../environment.html" /> 
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head><body>
+    <div class="relbar-top">
+        
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../contents.html" title="Table Of Contents"
+             accesskey="C">toc</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="SYS.html" title="System Messages (SYS)"
+             accesskey="N">next</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="../environment.html" title="Environment variables"
+             accesskey="P">previous</a> &nbsp; &nbsp;</li>
+    <li><a href="../../index.html">AnyScript Reference 7.3.4 documentation</a> &#187;</li>
+
+        <li class="nav-item nav-item-this"><a href="">Errors, warnings and messages</a></li> 
+      </ul>
+    </div>
+    </div>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="errors-warnings-and-messages">
+<h1>Errors, warnings and messages<a class="headerlink" href="#errors-warnings-and-messages" title="Permalink to this headline">¶</a></h1>
+<p>The AnyBody™ core has a system for sending messages to the user. This system provides each
+messages with an ID, the Message ID, which can be used as reference for finding further information.</p>
+<p>The messages are group within these three main categories:</p>
+<div class="toctree-wrapper compound">
+<p class="caption"><span class="caption-text">Error types</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="SYS.html">System Messages (<code class="docutils literal notranslate"><span class="pre">SYS</span></code>)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SCR.html">Kernel Messages (<code class="docutils literal notranslate"><span class="pre">SCR</span></code>)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="OBJ.html">AnyScript Objects Messages (<code class="docutils literal notranslate"><span class="pre">OBJ</span></code>)</a></li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+</div>
+<p>A short version of the message is displayed within AnyBody’s output window. The
+beginning of the message shows the Message ID. In the AnyBody™ GUI application,
+double-clicking the Message ID will bring up this reference manual with an extended
+version of the error messages. If there is additional help on how to deal with this
+kind of errors the reference manual may provide links to more resources.</p>
+<p>Issues associated with special views in GUI application, such as Model View and
+Chart Views, will typically be displayed directly inside these view.</p>
+<p class="html-toggle rubric">Logging</p>
+<p>The message system also includes logging facilities consisting of multiple log files. The AnyBody™ user interfaces
+displays the contents of main output log file. This file is located in a user-specific Application Data directory
+(e.g. <code class="file docutils literal notranslate"><span class="pre">C:\Documents</span> <span class="pre">and</span> <span class="pre">Settings{UserName}\Application</span> <span class="pre">Data\AnyBody</span> <span class="pre">Technology\AnyBody.</span><em><span class="pre">x.x.x</span></em></code>). The log file is
+named <code class="file docutils literal notranslate"><span class="pre">AnyBody.output.log</span></code> or <code class="file docutils literal notranslate"><span class="pre">AnyBody.</span><em><span class="pre">XX</span></em><span class="pre">.output.log</span></code>, where <code class="docutils literal notranslate"><span class="pre">XX</span></code> is a number allowing for multiple sessions of
+AnyBody™ running at the same time with their own log file. Additionally, the system has an extended log file,
+called <code class="file docutils literal notranslate"><span class="pre">AnyBody.full.log</span></code> or <code class="file docutils literal notranslate"><span class="pre">AnyBody.</span><em><span class="pre">XX</span></em><span class="pre">.full.log</span></code>. This so called full log file contains everything from the
+ordinary log plus occasionally additional information. This additional is considered unnecessary to be
+displayed in the user interfaces of AnyBody™ and can only be found in the full log.</p>
+<p class="html-toggle rubric">severity groups</p>
+<p>All messages are categorized into severity groups that defines how the system treats the given situation.</p>
+<table class="docutils align-default" id="id2">
+<caption><span class="caption-text">List tables can have captions like this one.</span><a class="headerlink" href="#id2" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Severity Level</p></th>
+<th class="head"><p>Operations</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Notice</p></td>
+<td><p>Continues</p></td>
+<td><p>Simple notification</p></td>
+</tr>
+<tr class="row-odd"><td><p>Warning</p></td>
+<td><p>Continues</p></td>
+<td><p>A warning that is typically not important for your work unless you are having particular problems.</p></td>
+</tr>
+<tr class="row-even"><td><p>Important warning</p></td>
+<td><p>Continues</p></td>
+<td><p>An important issue that allows you to continue but requires your attention.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Error</p></td>
+<td><p>Continues, but operation will fail</p></td>
+<td><p>An issue that enforces the system to stop the given operation eventually, but it may continue beyond the point of the problem.</p></td>
+</tr>
+<tr class="row-even"><td><p>Fatal Error</p></td>
+<td><p>Stops</p></td>
+<td><p>An issue that enforces the system to stop the given operation at once.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Fatal System Error</p></td>
+<td><p>Stops <a class="footnote-reference brackets" href="#f1" id="id1">1</a></p></td>
+<td><p>A fatal error has occurred which is not properly handled by the system and may therefore lead to unpredictable results.</p></td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Footnotes</p>
+<dl class="footnote brackets">
+<dt class="label" id="f1"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>Such errors may crash the system eventually and in any case restarting AnyBody™ is recommened.</p>
+</dd>
+</dl>
+</div>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+        <p class="logo"><a href="../../index.html" title="index">
+          <img class="logo" src="../../_static/anyscript_maual.svg" alt="Logo"/>
+        </a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+<h3><a href="../../contents.html">Reference Manual</a></h3>
+<p class="caption"><span class="caption-text">API</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../class-overview.html"><strong>Class reference</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../function-overview.html"><strong>Function reference</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../globals-overview.html">Globals reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../environment.html">Environment variables</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Errors, warnings and messages</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="SYS.html">System Messages (<code class="docutils literal notranslate"><span class="pre">SYS</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SCR.html">Kernel Messages (<code class="docutils literal notranslate"><span class="pre">SCR</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="OBJ.html">AnyScript Objects Messages (<code class="docutils literal notranslate"><span class="pre">OBJ</span></code>)</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Language</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../anyscript/language.html">AnyScript™ language</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../anyscript/preprocessor.html">The preprocessor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../anyscript/inside-anybody.html">Inside the AnyBody Modeling System</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../anyscript/technical-notes.html">Technical notes</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../demos/index.html">Demo examples</a></li>
+</ul>
+<div class="sphinxprev">
+    <h4>Other resources</h4>
+    <p class="topless"><a href="../../../index.html"
+                          title="Back to all manuals">&larr; Back to all manuals</a></p>
+</div>
+        </div>
+      </div>
+    
+    
+        <div class="sidebar-toggle-group no-js">
+            
+            <button class="sidebar-toggle" id="sidebar-hide" title="Hide the sidebar menu">
+                 «
+                <span class="show-for-small">hide menu</span>
+                
+            </button>
+            <button class="sidebar-toggle" id="sidebar-show" title="Show the sidebar menu">
+                
+                <span class="show-for-small">menu</span>
+                <span class="hide-for-small">sidebar</span>
+                 »
+            </button>
+        </div>
+    
+      <div class="clearer"></div>
+    </div>
+    <div class="relbar-bottom">
+        
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../contents.html" title="Table Of Contents"
+             >toc</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="SYS.html" title="System Messages (SYS)"
+             >next</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="../environment.html" title="Environment variables"
+             >previous</a> &nbsp; &nbsp;</li>
+    <li><a href="../../index.html">AnyScript Reference 7.3.4 documentation</a> &#187;</li>
+
+        <li class="nav-item nav-item-this"><a href="">Errors, warnings and messages</a></li> 
+      </ul>
+    </div>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2021, AnyBody Technology A/S.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.5.4.
+    </div>
+    <!-- cloud_sptheme 1.4 -->
+  </body>
+</html>

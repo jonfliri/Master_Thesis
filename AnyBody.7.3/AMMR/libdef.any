@@ -1,0 +1,30 @@
+#ifndef LIBDEF_ANY
+#define  LIBDEF_ANY
+
+#include "AMMR.version.any"
+
+#define ANYBODY_APPLICATION_LIBRARY_NAME "AMMR" + AMMR_VERSION 
+
+#path ANYBODY_PATH_AMMR "."
+#path ANYBODY_PATH_BODY "Body/AAUHuman/"
+#path ANYBODY_PATH_MANDIBLE "Body/Mandible/"
+#path ANYBODY_PATH_MODELUTILS "Tools/ModelUtilities/"
+
+
+#if (ANYBODY_V1 > 7)|(ANYBODY_V1 == 7 & ANYBODY_V2 > 1)|(ANYBODY_V1 == 7 & ANYBODY_V2 == 1 & ANYBODY_V3 >= 1)
+  #include "Tools/conditional_paths.any"
+#else
+ #path AMMR_PATH_DOC "Documentation"
+ #ifndef ANYBODY_PATH_OUTPUT
+ #path ANYBODY_PATH_OUTPUT "<ANYBODY_PATH_MAINFILEDIR>/Output/"
+ #endif
+#endif
+
+#ifndef ANYMOCAP_MODEL
+#path ANYMOCAP_PATH "Tools/AnyMoCap"
+#path ANYMOCAP_MODEL "<ANYMOCAP_PATH>/AnyMocapModel.any"
+#endif
+
+#include "<ANYBODY_PATH_BODY>/HumanModel.defs.any"
+
+#endif

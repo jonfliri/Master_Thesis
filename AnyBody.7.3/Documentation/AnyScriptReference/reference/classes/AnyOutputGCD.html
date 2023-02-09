@@ -1,0 +1,834 @@
+
+
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AnyOutputGCD &#8212; AnyScript Reference 7.3.4 documentation</title>
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/cloud.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/table_styling.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noticia+Text|Open+Sans|Droid+Sans+Mono" type="text/css" />
+    
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/script/filter-class-list.js"></script>
+    <script src="../../_static/fa/all.js"></script>
+
+    
+    
+     
+        <script src="../../_static/jquery.cookie.js"></script>
+    
+
+    
+     
+        <script src="../../_static/cloud.base.js"></script>
+    
+
+    
+     
+        <script src="../../_static/cloud.js"></script>
+    
+
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="AnyParamFun" href="AnyParamFun.html" />
+    <link rel="prev" title="AnyOutputFun" href="AnyOutputFun.html" /> 
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head><body>
+    <div class="relbar-top">
+        
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../contents.html" title="Table Of Contents"
+             accesskey="C">toc</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="AnyParamFun.html" title="AnyParamFun"
+             accesskey="N">next</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="AnyOutputFun.html" title="AnyOutputFun"
+             accesskey="P">previous</a> &nbsp; &nbsp;</li>
+    <li><a href="../../index.html">AnyScript Reference 7.3.4 documentation</a> &#187;</li>
+
+          <li class="nav-item nav-item-1"><a href="../../index.html" >The AnyScript Reference manual!</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../class-overview.html" accesskey="U"><strong>Class reference</strong></a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">AnyOutputGCD</a></li> 
+      </ul>
+    </div>
+    </div>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="anyoutputgcd">
+<span id="id1"></span><h1>AnyOutputGCD<a class="headerlink" href="#anyoutputgcd" title="Permalink to this headline">¶</a></h1>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>Creatable</p>
+</dd>
+<dt class="field-even">Parent class</dt>
+<dd class="field-even"><p><a class="reference internal" href="AnyOutputFile.html#anyoutputfile"><span class="std std-ref">AnyOutputFile</span></a></p>
+</dd>
+</dl>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>This output file class is specialized to prepare a data file on the GCD
+(Gait Cycle Data) format. This is specially aimed at making output for
+clinical gait analysis and possibly similar analysis of periodic motion.
+The format is a relatively simple ASCII format, where the desired data
+are cut into two intervals (one from left heel strike to left heel strike
+and the other from right heel strike to right heel strike) with a specified
+number of sampled points over the interval.</p>
+<p>The gait cycles (for the left and right side) are defined separately using the
+time specifications LeftHeelStrike1 (first occurance of left heel stike)
+and LeftHeelStrike2 (second occurance of left heel stike) for the left side and
+RightHeelStrike1 and RightHeelStrike2 for the right side.
+These time specifications are in absolute time as used in the study.
+Points is used to specify the number of data points there should be
+written in the output file for each output variable. If Points does not match the analysis
+time of the study, the output data are linearly interpolated and re-sampled.</p>
+<p>Links to output data can be done in two different ways:
+1) Inside the AnyOutputGCD object, there are two pre-defined
+folders: Left and Right, and references to data made inside, e.g. the
+Left folder, will be written to the output file in the time interval specified for the
+left side, i.e. using LeftHeelStrike1 and LeftHeelStrike2.
+Similarly for the right hand side by placing data references inside the Right folder.
+2) All data objects (AnyValue and derived) inside the object will also be written to
+the output file. Depending on their names, the varibles will be written in the left or
+right side gait cycle intervals: 1) If the variable does not contain the words “Left” or “Right”,
+it will be output to the file in both intervals, 2) if it contains the word “Left” it will
+be output in the left interval only, 3) if it contains the world “Right” it will be output
+in the right interval only, and 4) If it contains both “Left” and “Right”, the object will
+report an error as consistent naming of the variable in the file is not possible.</p>
+<p>When writing the GCD file, the names of the AnyScript variables are changed:
+1) “!Left” or “!Right” are prepended, depending on whether it is in the left or
+right side gait cycle intervals. 2) All dots in the full AnyScript name of the
+variable are removed to obtain more compact names.</p>
+<p> </p>
+</div>
+<div class="section" id="expected-members">
+<h2>Expected members<a class="headerlink" href="#expected-members" title="Permalink to this headline">¶</a></h2>
+<!-- Hack to trick sphinx into adding member target link -->
+<!--<div class="section" id="anyvalue">
+<span id="anyoutputgcd-anyvalue"></span><h3>AnyValue<a class="headerlink" href="#anyvalue" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries odd section collapsed" id="AnyValue">
+<span id="anyoutputgcd-anyvalue" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title"> AnyValue (1..Inf) </span><span class="member-title-equal"></span><span class="member-title-default"></span><a class="headerlink" href="#AnyValue" title="Permalink to this headline">¶</a>
+<span class="member-descr">All values (i.e. all AnyValue-derived members) can be reported in the output...</span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyValue.html#anyvalue"><span class="std std-ref">AnyValue</span></a></div>
+<div class="line"><strong>Number:</strong> 1..Inf</div>
+</div>
+<p>All values (i.e. all AnyValue-derived members) can be reported in the output file depending on the file format settings.</p>
+</div></blockquote>
+</div>
+</div>
+<div class="section" id="required-initialization-members">
+<h2>Required initialization members<a class="headerlink" href="#required-initialization-members" title="Permalink to this headline">¶</a></h2>
+<!-- Hack to trick sphinx into adding member target link -->
+<!--<div class="section" id="filename">
+<span id="anyoutputgcd-filename"></span><h3>FileName<a class="headerlink" href="#filename" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries odd section collapsed" id="FileName">
+<span id="anyoutputgcd-filename" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title">FileName</span><span class="member-title-equal"></span><span class="member-title-default"></span><a class="headerlink" href="#FileName" title="Permalink to this headline">¶</a>
+<span class="member-descr">Name of the file.</span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyFileVar.html#anyfilevar"><span class="std std-ref">AnyFileVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">DesignVar</span></a></div>
+</div>
+<p>Name of the file.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+</div><!--</div>
+<div class="section" id="leftheelstrike1">
+<span id="anyoutputgcd-leftheelstrike1"></span><h3>LeftHeelStrike1<a class="headerlink" href="#leftheelstrike1" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries even section collapsed" id="LeftHeelStrike1">
+<span id="anyoutputgcd-leftheelstrike1" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title">LeftHeelStrike1</span><span class="member-title-equal"></span><span class="member-title-default"></span><a class="headerlink" href="#LeftHeelStrike1" title="Permalink to this headline">¶</a>
+<span class="member-descr">Left foot first heel strike time.</span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyVar.html#anyvar"><span class="std std-ref">AnyVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">DesignVar</span></a></div>
+</div>
+<p>Left foot first heel strike time.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+</div><!--</div>
+<div class="section" id="leftheelstrike2">
+<span id="anyoutputgcd-leftheelstrike2"></span><h3>LeftHeelStrike2<a class="headerlink" href="#leftheelstrike2" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries odd section collapsed" id="LeftHeelStrike2">
+<span id="anyoutputgcd-leftheelstrike2" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title">LeftHeelStrike2</span><span class="member-title-equal"></span><span class="member-title-default"></span><a class="headerlink" href="#LeftHeelStrike2" title="Permalink to this headline">¶</a>
+<span class="member-descr">Left foot second heel strike time.</span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyVar.html#anyvar"><span class="std std-ref">AnyVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">DesignVar</span></a></div>
+</div>
+<p>Left foot second heel strike time.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+</div><!--</div>
+<div class="section" id="rightheelstrike1">
+<span id="anyoutputgcd-rightheelstrike1"></span><h3>RightHeelStrike1<a class="headerlink" href="#rightheelstrike1" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries even section collapsed" id="RightHeelStrike1">
+<span id="anyoutputgcd-rightheelstrike1" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title">RightHeelStrike1</span><span class="member-title-equal"></span><span class="member-title-default"></span><a class="headerlink" href="#RightHeelStrike1" title="Permalink to this headline">¶</a>
+<span class="member-descr">Right foot first heel strike time.</span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyVar.html#anyvar"><span class="std std-ref">AnyVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">DesignVar</span></a></div>
+</div>
+<p>Right foot first heel strike time.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+</div><!--</div>
+<div class="section" id="rightheelstrike2">
+<span id="anyoutputgcd-rightheelstrike2"></span><h3>RightHeelStrike2<a class="headerlink" href="#rightheelstrike2" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries odd section collapsed" id="RightHeelStrike2">
+<span id="anyoutputgcd-rightheelstrike2" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title">RightHeelStrike2</span><span class="member-title-equal"></span><span class="member-title-default"></span><a class="headerlink" href="#RightHeelStrike2" title="Permalink to this headline">¶</a>
+<span class="member-descr">Right foot second heel strike time.</span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyVar.html#anyvar"><span class="std std-ref">AnyVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">DesignVar</span></a></div>
+</div>
+<p>Right foot second heel strike time.</p>
+</div></blockquote>
+</div>
+</div>
+<div class="section" id="optional-initialization-members">
+<h2>Optional initialization members<a class="headerlink" href="#optional-initialization-members" title="Permalink to this headline">¶</a></h2>
+<!-- Hack to trick sphinx into adding member target link -->
+  <!--<div class="section" id="numberformat">
+<h3>NumberFormat<a class="headerlink" href="#numberformat" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries odd section collapsed" >
+
+<h3 class="html-toggle-button" style=""><span class="member-title"> NumberFormat </span><span class="member-title-equal">=</span><span class="member-title-default"> {} </span><a class="headerlink" href="#NumberFormat" title="Permalink to this headline">¶</a>
+<span class="member-descr">Format settings for numerical values in text formatted files. Applies to...</span>
+</h3><!-- Hack to trick sphinx into adding member target link -->
+<!--<div class="section" id="numberformat-digits">
+<span id="anyoutputgcd-numberformat-digits"></span><h4>NumberFormat.Digits<a class="headerlink" href="#numberformat-digits" title="Permalink to this headline">¶</a></h4>
+-->
+
+<div class="html-toggle member-entries odd section collapsed" id="NumberFormat.Digits">
+<span id="anyoutputgcd-numberformat-digits" style=""></span>
+<h4 class="html-toggle-button" style=""><span class="member-title"> &nbsp;&nbsp;.Digits </span><span class="member-title-equal">=</span><span class="member-title-default"> 15 </span><a class="headerlink" href="#NumberFormat.Digits" title="Permalink to this headline">¶</a>
+<span class="member-descr">Number of digits in output. Disregarded if smaller than one.</span>
+</h4><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyIntVar.html#anyintvar"><span class="std std-ref">AnyIntVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">15</span></code></div>
+</div>
+<p>Number of digits in output. Disregarded if smaller than one.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+</div><!--</div>
+<div class="section" id="numberformat-width">
+<span id="anyoutputgcd-numberformat-width"></span><h4>NumberFormat.Width<a class="headerlink" href="#numberformat-width" title="Permalink to this headline">¶</a></h4>
+-->
+
+<div class="html-toggle member-entries even section collapsed" id="NumberFormat.Width">
+<span id="anyoutputgcd-numberformat-width" style=""></span>
+<h4 class="html-toggle-button" style=""><span class="member-title"> &nbsp;&nbsp;.Width </span><span class="member-title-equal">=</span><span class="member-title-default"> 23 </span><a class="headerlink" href="#NumberFormat.Width" title="Permalink to this headline">¶</a>
+<span class="member-descr">Number of character spaces reserved for the number in output. Disregarded if...</span>
+</h4><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyIntVar.html#anyintvar"><span class="std std-ref">AnyIntVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">23</span></code></div>
+</div>
+<p>Number of character spaces reserved for the number in output. Disregarded if smaller than one.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+</div><!--</div>
+<div class="section" id="numberformat-style">
+<span id="anyoutputgcd-numberformat-style"></span><h4>NumberFormat.Style<a class="headerlink" href="#numberformat-style" title="Permalink to this headline">¶</a></h4>
+-->
+
+<div class="html-toggle member-entries odd section collapsed" id="NumberFormat.Style">
+<span id="anyoutputgcd-numberformat-style" style=""></span>
+<h4 class="html-toggle-button" style=""><span class="member-title"> &nbsp;&nbsp;.Style </span><span class="member-title-equal">=</span><span class="member-title-default"> ScientificNumber </span><a class="headerlink" href="#NumberFormat.Style" title="Permalink to this headline">¶</a>
+<span class="member-descr">Style specification.</span>
+</h4><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyEnumFloatNumberStyle.html#anyenumfloatnumberstyle"><span class="std std-ref">AnyEnumFloatNumberStyle</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">ScientificNumber</span></code></div>
+</div>
+<p>Style specification.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+</div><!--</div>
+<div class="section" id="numberformat-formatstr">
+<span id="anyoutputgcd-numberformat-formatstr"></span><h4>NumberFormat.FormatStr<a class="headerlink" href="#numberformat-formatstr" title="Permalink to this headline">¶</a></h4>
+-->
+
+<div class="html-toggle member-entries even section collapsed" id="NumberFormat.FormatStr">
+<span id="anyoutputgcd-numberformat-formatstr" style=""></span>
+<h4 class="html-toggle-button" style=""><span class="member-title"> &nbsp;&nbsp;.FormatStr </span><span class="member-title-equal">=</span><span class="member-title-default"> "" </span><a class="headerlink" href="#NumberFormat.FormatStr" title="Permalink to this headline">¶</a>
+<span class="member-descr">Complete format specification using C-style character specification known...</span>
+</h4><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyStringVar.html#anystringvar"><span class="std std-ref">AnyStringVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">&quot;&quot;</span></code></div>
+</div>
+<p>Complete format specification using C-style character specification known from the printf() function. This overrides the any other specification. If not specified by the user it is determined automatically from the other specification.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+ </div></div> <!--</div>
+</div>
+<div class="section" id="values">
+<span id="anyoutputgcd-values"></span><h3>Values<a class="headerlink" href="#values" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries even section collapsed" id="Values">
+<span id="anyoutputgcd-values" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title"> Values </span><span class="member-title-equal">=</span><span class="member-title-default"> ... </span><a class="headerlink" href="#Values" title="Permalink to this headline">¶</a>
+<span class="member-descr">Array of object-pointers to values, which will be included in the output data.</span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyObjectPtr.html#anyobjectptr"><span class="std std-ref">AnyObjectPtr</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+<div class="line"><strong>Default:</strong> <em>Depends on other values</em></div>
+</div>
+<p>Array of object-pointers to values, which will be included in the output data.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+ </div> <!--</div>
+<div class="section" id="search">
+<span id="anyoutputgcd-search"></span><h3>Search<a class="headerlink" href="#search" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries odd section collapsed" id="Search">
+<span id="anyoutputgcd-search" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title"> Search </span><span class="member-title-equal">=</span><span class="member-title-default"> ... </span><a class="headerlink" href="#Search" title="Permalink to this headline">¶</a>
+<span class="member-descr">Array of objects search strings, which will be applied to find and include...</span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyString.html#anystring"><span class="std std-ref">AnyString</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+<div class="line"><strong>Default:</strong> <em>Depends on other values</em></div>
+</div>
+<p>Array of objects search strings, which will be applied to find and include values in the output (for more info. on search-strings, see class AnyObjectSearchString).</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+ </div> <!--</div>
+<div class="section" id="format">
+<span id="anyoutputgcd-format"></span><h3>Format<a class="headerlink" href="#format" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries even section collapsed" id="Format">
+<span id="anyoutputgcd-format" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title"> Format </span><span class="member-title-equal">=</span><span class="member-title-default"> 0 </span><a class="headerlink" href="#Format" title="Permalink to this headline">¶</a>
+<span class="member-descr">File format options. 0: Text format (CSV format with optional header...</span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyIntVar.html#anyintvar"><span class="std std-ref">AnyIntVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">DesignVar</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">0</span></code></div>
+</div>
+<p>File format options. 0: Text format (CSV format with optional header section), 1: XML format.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+ </div> <!--</div>
+<div class="section" id="sepsign">
+<span id="anyoutputgcd-sepsign"></span><h3>SepSign<a class="headerlink" href="#sepsign" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries odd section collapsed" id="SepSign">
+<span id="anyoutputgcd-sepsign" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title"> SepSign </span><span class="member-title-equal">=</span><span class="member-title-default"> "," </span><a class="headerlink" href="#SepSign" title="Permalink to this headline">¶</a>
+<span class="member-descr">Separator sign for the standard format.</span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyStringVar.html#anystringvar"><span class="std std-ref">AnyStringVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">DesignVar</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">&quot;,&quot;</span></code></div>
+</div>
+<p>Separator sign for the standard format.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+ </div> <!--</div>
+<div class="section" id="sepspaceautoonoff">
+<span id="anyoutputgcd-sepspaceautoonoff"></span><h3>SepSpaceAutoOnOff<a class="headerlink" href="#sepspaceautoonoff" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries even section collapsed" id="SepSpaceAutoOnOff">
+<span id="anyoutputgcd-sepspaceautoonoff" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title"> SepSpaceAutoOnOff </span><span class="member-title-equal">=</span><span class="member-title-default"> On </span><a class="headerlink" href="#SepSpaceAutoOnOff" title="Permalink to this headline">¶</a>
+<span class="member-descr">Option to give preference to optimal formatting for standard CSV/TEXT...</span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnySwitchVar.html#anyswitchvar"><span class="std std-ref">AnySwitchVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">DesignVar</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">On</span></code></div>
+</div>
+<p>Option to give preference to optimal formatting for standard CSV/TEXT readers. This option can override column width given in ‘NumberFormat’ so that e.g. space-separated values will only be separated by a single space. When ‘On’, the file conforms to standard CSV format, else it gives preference to nicely aligned columns (formatted according to ‘NumberFormat’).</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+ </div> <!--</div>
+<div class="section" id="linesepsign">
+<span id="anyoutputgcd-linesepsign"></span><h3>LineSepSign<a class="headerlink" href="#linesepsign" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries odd section collapsed" id="LineSepSign">
+<span id="anyoutputgcd-linesepsign" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title"> LineSepSign </span><span class="member-title-equal">=</span><span class="member-title-default"> "" </span><a class="headerlink" href="#LineSepSign" title="Permalink to this headline">¶</a>
+<span class="member-descr">Line separator sign for the standard format.</span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyStringVar.html#anystringvar"><span class="std std-ref">AnyStringVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">DesignVar</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">&quot;&quot;</span></code></div>
+</div>
+<p>Line separator sign for the standard format.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+ </div> <!--</div>
+<div class="section" id="header">
+<h3>Header<a class="headerlink" href="#header" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries even section collapsed" >
+
+<h3 class="html-toggle-button" style=""><span class="member-title"> Header </span><span class="member-title-equal">=</span><span class="member-title-default"> {} </span><a class="headerlink" href="#Header" title="Permalink to this headline">¶</a>
+<span class="member-descr">Header formatting settings for the standard format.</span>
+</h3><!-- Hack to trick sphinx into adding member target link -->
+<!--<div class="section" id="header-titlesectiononoff">
+<span id="anyoutputgcd-header-titlesectiononoff"></span><h4>Header.TitleSectionOnOff<a class="headerlink" href="#header-titlesectiononoff" title="Permalink to this headline">¶</a></h4>
+-->
+
+<div class="html-toggle member-entries odd section collapsed" id="Header.TitleSectionOnOff">
+<span id="anyoutputgcd-header-titlesectiononoff" style=""></span>
+<h4 class="html-toggle-button" style=""><span class="member-title"> &nbsp;&nbsp;.TitleSectionOnOff </span><span class="member-title-equal">=</span><span class="member-title-default"> On </span><a class="headerlink" href="#Header.TitleSectionOnOff" title="Permalink to this headline">¶</a>
+<span class="member-descr">Switch for the title section.</span>
+</h4><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnySwitchVar.html#anyswitchvar"><span class="std std-ref">AnySwitchVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">DesignVar</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">On</span></code></div>
+</div>
+<p>Switch for the title section.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+</div><!--</div>
+<div class="section" id="header-constsectiononoff">
+<span id="anyoutputgcd-header-constsectiononoff"></span><h4>Header.ConstSectionOnOff<a class="headerlink" href="#header-constsectiononoff" title="Permalink to this headline">¶</a></h4>
+-->
+
+<div class="html-toggle member-entries even section collapsed" id="Header.ConstSectionOnOff">
+<span id="anyoutputgcd-header-constsectiononoff" style=""></span>
+<h4 class="html-toggle-button" style=""><span class="member-title"> &nbsp;&nbsp;.ConstSectionOnOff </span><span class="member-title-equal">=</span><span class="member-title-default"> On </span><a class="headerlink" href="#Header.ConstSectionOnOff" title="Permalink to this headline">¶</a>
+<span class="member-descr">Switch for the header section containing constant variables.</span>
+</h4><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnySwitchVar.html#anyswitchvar"><span class="std std-ref">AnySwitchVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">DesignVar</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">On</span></code></div>
+</div>
+<p>Switch for the header section containing constant variables.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+</div><!--</div>
+<div class="section" id="header-constsectionsaveoptionsonoff">
+<span id="anyoutputgcd-header-constsectionsaveoptionsonoff"></span><h4>Header.ConstSectionSaveOptionsOnOff<a class="headerlink" href="#header-constsectionsaveoptionsonoff" title="Permalink to this headline">¶</a></h4>
+-->
+
+<div class="html-toggle member-entries odd section collapsed" id="Header.ConstSectionSaveOptionsOnOff">
+<span id="anyoutputgcd-header-constsectionsaveoptionsonoff" style=""></span>
+<h4 class="html-toggle-button" style=""><span class="member-title"> &nbsp;&nbsp;.ConstSectionSaveOptionsOnOff </span><span class="member-title-equal">=</span><span class="member-title-default"> On </span><a class="headerlink" href="#Header.ConstSectionSaveOptionsOnOff" title="Permalink to this headline">¶</a>
+<span class="member-descr">Switch for class-specific parameters in the Constants section of the output...</span>
+</h4><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnySwitchVar.html#anyswitchvar"><span class="std std-ref">AnySwitchVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">DesignVar</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">On</span></code></div>
+</div>
+<p>Switch for class-specific parameters in the Constants section of the output file. Value ‘Off’ excludes all standard class members, which are irrelelvant in the output file.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+</div><!--</div>
+<div class="section" id="header-varsectiononoff">
+<span id="anyoutputgcd-header-varsectiononoff"></span><h4>Header.VarSectionOnOff<a class="headerlink" href="#header-varsectiononoff" title="Permalink to this headline">¶</a></h4>
+-->
+
+<div class="html-toggle member-entries even section collapsed" id="Header.VarSectionOnOff">
+<span id="anyoutputgcd-header-varsectiononoff" style=""></span>
+<h4 class="html-toggle-button" style=""><span class="member-title"> &nbsp;&nbsp;.VarSectionOnOff </span><span class="member-title-equal">=</span><span class="member-title-default"> On </span><a class="headerlink" href="#Header.VarSectionOnOff" title="Permalink to this headline">¶</a>
+<span class="member-descr">Switch for the variable description section.</span>
+</h4><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnySwitchVar.html#anyswitchvar"><span class="std std-ref">AnySwitchVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">DesignVar</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">On</span></code></div>
+</div>
+<p>Switch for the variable description section.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+</div><!--</div>
+<div class="section" id="header-columnnamesonoff">
+<span id="anyoutputgcd-header-columnnamesonoff"></span><h4>Header.ColumnNamesOnOff<a class="headerlink" href="#header-columnnamesonoff" title="Permalink to this headline">¶</a></h4>
+-->
+
+<div class="html-toggle member-entries odd section collapsed" id="Header.ColumnNamesOnOff">
+<span id="anyoutputgcd-header-columnnamesonoff" style=""></span>
+<h4 class="html-toggle-button" style=""><span class="member-title"> &nbsp;&nbsp;.ColumnNamesOnOff </span><span class="member-title-equal">=</span><span class="member-title-default"> On </span><a class="headerlink" href="#Header.ColumnNamesOnOff" title="Permalink to this headline">¶</a>
+<span class="member-descr">Switch for the row containing the column names in the data section.</span>
+</h4><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnySwitchVar.html#anyswitchvar"><span class="std std-ref">AnySwitchVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">DesignVar</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">On</span></code></div>
+</div>
+<p>Switch for the row containing the column names in the data section.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+</div><!--</div>
+<div class="section" id="header-lineprefix">
+<span id="anyoutputgcd-header-lineprefix"></span><h4>Header.LinePrefix<a class="headerlink" href="#header-lineprefix" title="Permalink to this headline">¶</a></h4>
+-->
+
+<div class="html-toggle member-entries even section collapsed" id="Header.LinePrefix">
+<span id="anyoutputgcd-header-lineprefix" style=""></span>
+<h4 class="html-toggle-button" style=""><span class="member-title"> &nbsp;&nbsp;.LinePrefix </span><span class="member-title-equal">=</span><span class="member-title-default"> "" </span><a class="headerlink" href="#Header.LinePrefix" title="Permalink to this headline">¶</a>
+<span class="member-descr">String containing a line prefix used for all lines of the header section.</span>
+</h4><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyStringVar.html#anystringvar"><span class="std std-ref">AnyStringVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">DesignVar</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">&quot;&quot;</span></code></div>
+</div>
+<p>String containing a line prefix used for all lines of the header section.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+</div><!--</div>
+<div class="section" id="header-shortennamesonoff">
+<span id="anyoutputgcd-header-shortennamesonoff"></span><h4>Header.ShortenNamesOnOff<a class="headerlink" href="#header-shortennamesonoff" title="Permalink to this headline">¶</a></h4>
+-->
+
+<div class="html-toggle member-entries odd section collapsed" id="Header.ShortenNamesOnOff">
+<span id="anyoutputgcd-header-shortennamesonoff" style=""></span>
+<h4 class="html-toggle-button" style=""><span class="member-title"> &nbsp;&nbsp;.ShortenNamesOnOff </span><span class="member-title-equal">=</span><span class="member-title-default"> Off </span><a class="headerlink" href="#Header.ShortenNamesOnOff" title="Permalink to this headline">¶</a>
+<span class="member-descr">Switch for shortening variable names, incl. column names, in the output.</span>
+</h4><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnySwitchVar.html#anyswitchvar"><span class="std std-ref">AnySwitchVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">DesignVar</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">Off</span></code></div>
+</div>
+<p>Switch for shortening variable names, incl. column names, in the output.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+</div><!--</div>
+<div class="section" id="header-columnidstring">
+<span id="anyoutputgcd-header-columnidstring"></span><h4>Header.ColumnIDString<a class="headerlink" href="#header-columnidstring" title="Permalink to this headline">¶</a></h4>
+-->
+
+<div class="html-toggle member-entries even section collapsed" id="Header.ColumnIDString">
+<span id="anyoutputgcd-header-columnidstring" style=""></span>
+<h4 class="html-toggle-button" style=""><span class="member-title"> &nbsp;&nbsp;.ColumnIDString </span><span class="member-title-equal">=</span><span class="member-title-default"> "col" </span><a class="headerlink" href="#Header.ColumnIDString" title="Permalink to this headline">¶</a>
+<span class="member-descr">String used to id columns, i.e., entered in front of column numbers to form...</span>
+</h4><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyStringVar.html#anystringvar"><span class="std std-ref">AnyStringVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">DesignVar</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">&quot;col&quot;</span></code></div>
+</div>
+<p>String used to id columns, i.e., entered in front of column numbers to form a column identifier. If this string is empty the column identifier becomes an integer.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+ </div></div> <!--</div>
+</div>
+<div class="section" id="suppresstimecolumnonoff">
+<span id="anyoutputgcd-suppresstimecolumnonoff"></span><h3>SuppressTimeColumnOnOff<a class="headerlink" href="#suppresstimecolumnonoff" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries odd section collapsed" id="SuppressTimeColumnOnOff">
+<span id="anyoutputgcd-suppresstimecolumnonoff" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title"> SuppressTimeColumnOnOff </span><span class="member-title-equal">=</span><span class="member-title-default"> Off </span><a class="headerlink" href="#SuppressTimeColumnOnOff" title="Permalink to this headline">¶</a>
+<span class="member-descr">Switch to suppress time column being printed into the output file.</span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnySwitchVar.html#anyswitchvar"><span class="std std-ref">AnySwitchVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">DesignVar</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">Off</span></code></div>
+</div>
+<p>Switch to suppress time column being printed into the output file.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+ </div> <!--</div>
+<div class="section" id="leftfootoff">
+<span id="anyoutputgcd-leftfootoff"></span><h3>LeftFootOff<a class="headerlink" href="#leftfootoff" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries even section collapsed" id="LeftFootOff">
+<span id="anyoutputgcd-leftfootoff" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title"> LeftFootOff </span><span class="member-title-equal">=</span><span class="member-title-default"> 0.0 </span><a class="headerlink" href="#LeftFootOff" title="Permalink to this headline">¶</a>
+<span class="member-descr">Left foot toe-off time.</span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyVar.html#anyvar"><span class="std std-ref">AnyVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">DesignVar</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">0.0</span></code></div>
+</div>
+<p>Left foot toe-off time.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+ </div> <!--</div>
+<div class="section" id="rightfootoff">
+<span id="anyoutputgcd-rightfootoff"></span><h3>RightFootOff<a class="headerlink" href="#rightfootoff" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries odd section collapsed" id="RightFootOff">
+<span id="anyoutputgcd-rightfootoff" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title"> RightFootOff </span><span class="member-title-equal">=</span><span class="member-title-default"> 0.0 </span><a class="headerlink" href="#RightFootOff" title="Permalink to this headline">¶</a>
+<span class="member-descr">Right foot toe-off time.</span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyVar.html#anyvar"><span class="std std-ref">AnyVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">DesignVar</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">0.0</span></code></div>
+</div>
+<p>Right foot toe-off time.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+ </div> <!--</div>
+<div class="section" id="right">
+<span id="anyoutputgcd-right"></span><h3>Right<a class="headerlink" href="#right" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries even section collapsed" id="Right">
+<span id="anyoutputgcd-right" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title"> Right </span><span class="member-title-equal">=</span><span class="member-title-default"> {} </span><a class="headerlink" href="#Right" title="Permalink to this headline">¶</a>
+<span class="member-descr">Folder containing right leg data.</span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyFolder.html#anyfolder"><span class="std std-ref">AnyFolder</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">{}</span></code></div>
+</div>
+<p>Folder containing right leg data.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+ </div> <!--</div>
+<div class="section" id="left">
+<span id="anyoutputgcd-left"></span><h3>Left<a class="headerlink" href="#left" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries odd section collapsed" id="Left">
+<span id="anyoutputgcd-left" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title"> Left </span><span class="member-title-equal">=</span><span class="member-title-default"> {} </span><a class="headerlink" href="#Left" title="Permalink to this headline">¶</a>
+<span class="member-descr">Folder containing left leg data.</span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyFolder.html#anyfolder"><span class="std std-ref">AnyFolder</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">{}</span></code></div>
+</div>
+<p>Folder containing left leg data.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+ </div> <!--</div>
+<div class="section" id="points">
+<span id="anyoutputgcd-points"></span><h3>Points<a class="headerlink" href="#points" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries even section collapsed" id="Points">
+<span id="anyoutputgcd-points" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title"> Points </span><span class="member-title-equal">=</span><span class="member-title-default"> 51 </span><a class="headerlink" href="#Points" title="Permalink to this headline">¶</a>
+<span class="member-descr">Number of output data point.</span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyIntVar.html#anyintvar"><span class="std std-ref">AnyIntVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">51</span></code></div>
+</div>
+<p>Number of output data point.</p>
+</div></blockquote>
+</div>
+</div>
+<div class="html-toggle section" id="denied-access-members">
+<h2>Denied-Access members<a class="headerlink" href="#denied-access-members" title="Permalink to this headline">¶</a></h2>
+<!-- Hack to trick sphinx into adding member target link -->
+<!--<div class="section" id="upddata">
+<span id="anyoutputgcd-upddata"></span><h3>UpdData<a class="headerlink" href="#upddata" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries odd section collapsed" id="UpdData">
+<span id="anyoutputgcd-upddata" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title">UpdData</span><span class="member-title-equal"></span><span class="member-title-default"></span><a class="headerlink" href="#UpdData" title="Permalink to this headline">¶</a>
+<span class="member-descr">Data update counter that counts number of data update and configuration processes.</span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyIntVar.html#anyintvar"><span class="std std-ref">AnyIntVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">DesignVar</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">0</span></code></div>
+</div>
+<p>Data update counter that counts number of data update and configuration processes.</p>
+</div></blockquote>
+</div>
+</div>
+<div class="html-toggle section" id="deprecated-members">
+<h2>Deprecated members<a class="headerlink" href="#deprecated-members" title="Permalink to this headline">¶</a></h2>
+<!-- Hack to trick sphinx into adding member target link -->
+<!--<div class="section" id="constsectionsaveoptionsonoff">
+<span id="anyoutputgcd-constsectionsaveoptionsonoff"></span><h3>ConstSectionSaveOptionsOnOff<a class="headerlink" href="#constsectionsaveoptionsonoff" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries odd section collapsed" id="ConstSectionSaveOptionsOnOff">
+<span id="anyoutputgcd-constsectionsaveoptionsonoff" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title">ConstSectionSaveOptionsOnOff</span><span class="member-title-equal"></span><span class="member-title-default"></span><a class="headerlink" href="#ConstSectionSaveOptionsOnOff" title="Permalink to this headline">¶</a>
+<span class="member-descr"></span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnySwitchVar.html#anyswitchvar"><span class="std std-ref">AnySwitchVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">DesignVar</span></a></div>
+</div>
+<div class="without-title admonition danger">
+<p class="admonition-title">Danger</p>
+<p><strong>Deprecated</strong>: The ‘ConstSectionSaveOptionsOnOff’ switch has been moved to the ‘Header’ folder
+(AnyBody, version 6.1).</p>
+</div>
+<p>&lt;No description&gt;</p>
+</div></blockquote>
+</div>
+</div>
+</div>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+        <p class="logo"><a href="../../index.html" title="index">
+          <img class="logo" src="../../_static/anyscript_maual.svg" alt="Logo"/>
+        </a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+<h3><a href="../../contents.html">Reference Manual</a></h3>
+<p class="caption"><span class="caption-text">API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../class-overview.html"><strong>Class reference</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../function-overview.html"><strong>Function reference</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../globals-overview.html">Globals reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../environment.html">Environment variables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../messages/index.html">Errors, warnings and messages</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Language</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../anyscript/language.html">AnyScript™ language</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../anyscript/preprocessor.html">The preprocessor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../anyscript/inside-anybody.html">Inside the AnyBody Modeling System</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../anyscript/technical-notes.html">Technical notes</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../demos/index.html">Demo examples</a></li>
+</ul>
+<div class="sphinxprev">
+    <h4>Other resources</h4>
+    <p class="topless"><a href="../../../index.html"
+                          title="Back to all manuals">&larr; Back to all manuals</a></p>
+</div>
+        </div>
+      </div>
+    
+    
+        <div class="sidebar-toggle-group no-js">
+            
+            <button class="sidebar-toggle" id="sidebar-hide" title="Hide the sidebar menu">
+                 «
+                <span class="show-for-small">hide menu</span>
+                
+            </button>
+            <button class="sidebar-toggle" id="sidebar-show" title="Show the sidebar menu">
+                
+                <span class="show-for-small">menu</span>
+                <span class="hide-for-small">sidebar</span>
+                 »
+            </button>
+        </div>
+    
+      <div class="clearer"></div>
+    </div>
+    <div class="relbar-bottom">
+        
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../contents.html" title="Table Of Contents"
+             >toc</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="AnyParamFun.html" title="AnyParamFun"
+             >next</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="AnyOutputFun.html" title="AnyOutputFun"
+             >previous</a> &nbsp; &nbsp;</li>
+    <li><a href="../../index.html">AnyScript Reference 7.3.4 documentation</a> &#187;</li>
+
+          <li class="nav-item nav-item-1"><a href="../../index.html" >The AnyScript Reference manual!</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../class-overview.html" ><strong>Class reference</strong></a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">AnyOutputGCD</a></li> 
+      </ul>
+    </div>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2021, AnyBody Technology A/S.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.5.4.
+    </div>
+    <!-- cloud_sptheme 1.4 -->
+  </body>
+</html>

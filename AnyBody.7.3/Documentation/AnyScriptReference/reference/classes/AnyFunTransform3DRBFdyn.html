@@ -1,0 +1,635 @@
+
+
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AnyFunTransform3DRBFdyn &#8212; AnyScript Reference 7.3.4 documentation</title>
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/cloud.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/table_styling.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noticia+Text|Open+Sans|Droid+Sans+Mono" type="text/css" />
+    
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/script/filter-class-list.js"></script>
+    <script src="../../_static/fa/all.js"></script>
+
+    
+    
+     
+        <script src="../../_static/jquery.cookie.js"></script>
+    
+
+    
+     
+        <script src="../../_static/cloud.base.js"></script>
+    
+
+    
+     
+        <script src="../../_static/cloud.js"></script>
+    
+
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="AnyFunTransform3DSTL" href="AnyFunTransform3DSTL.html" />
+    <link rel="prev" title="AnyFunTransform3DRBF" href="AnyFunTransform3DRBF.html" /> 
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head><body>
+    <div class="relbar-top">
+        
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../contents.html" title="Table Of Contents"
+             accesskey="C">toc</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="AnyFunTransform3DSTL.html" title="AnyFunTransform3DSTL"
+             accesskey="N">next</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="AnyFunTransform3DRBF.html" title="AnyFunTransform3DRBF"
+             accesskey="P">previous</a> &nbsp; &nbsp;</li>
+    <li><a href="../../index.html">AnyScript Reference 7.3.4 documentation</a> &#187;</li>
+
+          <li class="nav-item nav-item-1"><a href="../../index.html" >The AnyScript Reference manual!</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../class-overview.html" accesskey="U"><strong>Class reference</strong></a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">AnyFunTransform3DRBFdyn</a></li> 
+      </ul>
+    </div>
+    </div>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="anyfuntransform3drbfdyn">
+<span id="id1"></span><h1>AnyFunTransform3DRBFdyn<a class="headerlink" href="#anyfuntransform3drbfdyn" title="Permalink to this headline">¶</a></h1>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>Creatable</p>
+</dd>
+<dt class="field-even">Parent class</dt>
+<dd class="field-even"><p><a class="reference internal" href="AnyFunTransform3DRBF.html#anyfuntransform3drbf"><span class="std std-ref">AnyFunTransform3DRBF</span></a></p>
+</dd>
+</dl>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>Dynamic 3D transformation function based on Radial Basis Functions (RBF).
+In this context, “dynamic” implies that the transformation can be updated during
+a sequence of times-steps in a dynamic analysis.</p>
+<p>This class functions mathematically the same way as it parent class, AnyFunTransform3DRBF,
+but its update-functionality has been moved later in the update execution. It can be used to
+make time-dependent morphing of shapes, but do notice that these shapes cannot be part of
+design definition and thereby input to kinematic measures, which would not capture the shape
+changes.
+Dynamic transformation for introducing shape changes can currently only be used for visualization purposes,
+such as implementation of skin morphing with posture.</p>
+<p> </p>
+<table class="colwidths-given plain docutils align-default" id="id2">
+<caption><span class="caption-text">Demo examples related to AnyFunTransform3DRBFdyn</span><a class="headerlink" href="#id2" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 75%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Demo</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference download internal" download="" href="../../_downloads/d9af1d54964ce42c343c969266647452/ClassExamples.AnyFunTransform3D.zip"><code class="xref download docutils literal notranslate"><span class="pre">ClassExamples.AnyFunTransform3D</span></code></a></p></td>
+<td><p>3D transformation function (AnyFunTransform3D-derived classes)</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference download internal" download="" href="../../_downloads/b8aff8c8716b7a962851c171fa8f63b3/ClassExamples.AnyFunTransform3DRBF.zip"><code class="xref download docutils literal notranslate"><span class="pre">ClassExamples.AnyFunTransform3DRBF</span></code></a></p></td>
+<td><p>3D transformation function based on radial basis functions (RBF)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="required-initialization-members">
+<h2>Required initialization members<a class="headerlink" href="#required-initialization-members" title="Permalink to this headline">¶</a></h2>
+<!-- Hack to trick sphinx into adding member target link -->
+<!--<div class="section" id="points0">
+<span id="anyfuntransform3drbfdyn-points0"></span><h3>Points0<a class="headerlink" href="#points0" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries odd section collapsed" id="Points0">
+<span id="anyfuntransform3drbfdyn-points0" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title">Points0</span><span class="member-title-equal"></span><span class="member-title-default"></span><a class="headerlink" href="#Points0" title="Permalink to this headline">¶</a>
+<span class="member-descr">Control points in space for which a radial basis function is defined. The...</span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyMatrix.html#anymatrix"><span class="std std-ref">AnyMatrix</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">DesignVar</span></a></div>
+</div>
+<p>Control points in space for which a radial basis function is defined. The points are given as a (n x 3) matrix.</p>
+</div></blockquote>
+</div>
+</div>
+<div class="section" id="optional-initialization-members">
+<h2>Optional initialization members<a class="headerlink" href="#optional-initialization-members" title="Permalink to this headline">¶</a></h2>
+<!-- Hack to trick sphinx into adding member target link -->
+  <!--<div class="section" id="pretransforms">
+<span id="anyfuntransform3drbfdyn-pretransforms"></span><h3>PreTransforms<a class="headerlink" href="#pretransforms" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries odd section collapsed" id="PreTransforms">
+<span id="anyfuntransform3drbfdyn-pretransforms" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title"> PreTransforms </span><span class="member-title-equal">=</span><span class="member-title-default"> ... </span><a class="headerlink" href="#PreTransforms" title="Permalink to this headline">¶</a>
+<span class="member-descr">Transforms that have to be applied prior to the application of constructed...</span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyObjectPtrArray.html#anyobjectptrarray"><span class="std std-ref">AnyObjectPtrArray</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+<div class="line"><strong>Default:</strong> <em>Depends on other values</em></div>
+</div>
+<p>Transforms that have to be applied prior to the application of constructed transform, i.e. a rigid/non-rigid surface registration.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+ </div> <!--</div>
+<div class="section" id="rbfdef">
+<h3>RBFDef<a class="headerlink" href="#rbfdef" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries even section collapsed" >
+
+<h3 class="html-toggle-button" style=""><span class="member-title"> RBFDef </span><span class="member-title-equal">=</span><span class="member-title-default"> {} </span><a class="headerlink" href="#RBFDef" title="Permalink to this headline">¶</a>
+<span class="member-descr">Folder with RBF settings.</span>
+</h3><!-- Hack to trick sphinx into adding member target link -->
+<!--<div class="section" id="rbfdef-type">
+<span id="anyfuntransform3drbfdyn-rbfdef-type"></span><h4>RBFDef.Type<a class="headerlink" href="#rbfdef-type" title="Permalink to this headline">¶</a></h4>
+-->
+
+<div class="html-toggle member-entries odd section collapsed" id="RBFDef.Type">
+<span id="anyfuntransform3drbfdyn-rbfdef-type" style=""></span>
+<h4 class="html-toggle-button" style=""><span class="member-title"> &nbsp;&nbsp;.Type </span><span class="member-title-equal">=</span><span class="member-title-default"> RBF_Gaussian </span><a class="headerlink" href="#RBFDef.Type" title="Permalink to this headline">¶</a>
+<span class="member-descr">Type of the radial basis function to use.</span>
+</h4><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyEnumRBFFunType.html#anyenumrbffuntype"><span class="std std-ref">AnyEnumRBFFunType</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">RBF_Gaussian</span></code></div>
+</div>
+<p>Type of the radial basis function to use.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+</div><!--</div>
+<div class="section" id="rbfdef-param">
+<span id="anyfuntransform3drbfdyn-rbfdef-param"></span><h4>RBFDef.Param<a class="headerlink" href="#rbfdef-param" title="Permalink to this headline">¶</a></h4>
+-->
+
+<div class="html-toggle member-entries even section collapsed" id="RBFDef.Param">
+<span id="anyfuntransform3drbfdyn-rbfdef-param" style=""></span>
+<h4 class="html-toggle-button" style=""><span class="member-title"> &nbsp;&nbsp;.Param </span><span class="member-title-equal">=</span><span class="member-title-default"> 1.0 </span><a class="headerlink" href="#RBFDef.Param" title="Permalink to this headline">¶</a>
+<span class="member-descr">Parameter used in the given radial basis function.</span>
+</h4><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyVar.html#anyvar"><span class="std std-ref">AnyVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">1.0</span></code></div>
+</div>
+<p>Parameter used in the given radial basis function.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+ </div></div> <!--</div>
+</div>
+<div class="section" id="rbfcoefs">
+<span id="anyfuntransform3drbfdyn-rbfcoefs"></span><h3>RBFCoefs<a class="headerlink" href="#rbfcoefs" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries odd section collapsed" id="RBFCoefs">
+<span id="anyfuntransform3drbfdyn-rbfcoefs" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title"> RBFCoefs </span><span class="member-title-equal">=</span><span class="member-title-default"> ... </span><a class="headerlink" href="#RBFCoefs" title="Permalink to this headline">¶</a>
+<span class="member-descr">Coefficients (weights) for the each radial basis function, i.e., for each...</span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyMatrix.html#anymatrix"><span class="std std-ref">AnyMatrix</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">DesignVar</span></a></div>
+<div class="line"><strong>Default:</strong> <em>Depends on other values</em></div>
+</div>
+<p>Coefficients (weights) for the each radial basis function, i.e., for each control point. Three parameters are given for each control point, which is the weight for each direction in space. Similarly to the points, the RBFParams are given as a (n x 3) matrix.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+ </div> <!--</div>
+<div class="section" id="polynomdegree">
+<span id="anyfuntransform3drbfdyn-polynomdegree"></span><h3>PolynomDegree<a class="headerlink" href="#polynomdegree" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries even section collapsed" id="PolynomDegree">
+<span id="anyfuntransform3drbfdyn-polynomdegree" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title"> PolynomDegree </span><span class="member-title-equal">=</span><span class="member-title-default"> -1 </span><a class="headerlink" href="#PolynomDegree" title="Permalink to this headline">¶</a>
+<span class="member-descr">Degree of the polynomia. Negative values means that no polynomial term is used.</span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyIntVar.html#anyintvar"><span class="std std-ref">AnyIntVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">-1</span></code></div>
+</div>
+<p>Degree of the polynomia. Negative values means that no polynomial term is used.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+ </div> <!--</div>
+<div class="section" id="polynomcoefs">
+<span id="anyfuntransform3drbfdyn-polynomcoefs"></span><h3>PolynomCoefs<a class="headerlink" href="#polynomcoefs" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries odd section collapsed" id="PolynomCoefs">
+<span id="anyfuntransform3drbfdyn-polynomcoefs" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title"> PolynomCoefs </span><span class="member-title-equal">=</span><span class="member-title-default"> ... </span><a class="headerlink" href="#PolynomCoefs" title="Permalink to this headline">¶</a>
+<span class="member-descr">Coefficients for the polynomia function added to the radial basis function....</span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyMatrix.html#anymatrix"><span class="std std-ref">AnyMatrix</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">DesignVar</span></a></div>
+<div class="line"><strong>Default:</strong> <em>Depends on other values</em></div>
+</div>
+<p>Coefficients for the polynomia function added to the radial basis function. Each term of the polynomia must be given three parameters, one for each direction in space, i.e., the PolynomCoefs are given as a (m x 3) matrix. The number of rows, m, must match PolynomDegree; degree zero means m=1 (the constant term), positive degrees mean m=1+3*degree, and negative degrees mean m=0.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+ </div> <!--</div>
+<div class="section" id="pointnames">
+<span id="anyfuntransform3drbfdyn-pointnames"></span><h3>PointNames<a class="headerlink" href="#pointnames" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries even section collapsed" id="PointNames">
+<span id="anyfuntransform3drbfdyn-pointnames" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title"> PointNames </span><span class="member-title-equal">=</span><span class="member-title-default"> ... </span><a class="headerlink" href="#PointNames" title="Permalink to this headline">¶</a>
+<span class="member-descr">Names of the points, for instance used as labels during export and import.</span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyStringArray.html#anystringarray"><span class="std std-ref">AnyStringArray</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">DesignVar</span></a></div>
+<div class="line"><strong>Default:</strong> <em>Depends on other values</em></div>
+</div>
+<p>Names of the points, for instance used as labels during export and import.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+ </div> <!--</div>
+<div class="section" id="pointdescriptions">
+<span id="anyfuntransform3drbfdyn-pointdescriptions"></span><h3>PointDescriptions<a class="headerlink" href="#pointdescriptions" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries odd section collapsed" id="PointDescriptions">
+<span id="anyfuntransform3drbfdyn-pointdescriptions" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title"> PointDescriptions </span><span class="member-title-equal">=</span><span class="member-title-default"> ... </span><a class="headerlink" href="#PointDescriptions" title="Permalink to this headline">¶</a>
+<span class="member-descr">Short descriptions of the points. These are part of the export of points and...</span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyStringArray.html#anystringarray"><span class="std std-ref">AnyStringArray</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">DesignVar</span></a></div>
+<div class="line"><strong>Default:</strong> <em>Depends on other values</em></div>
+</div>
+<p>Short descriptions of the points. These are part of the export of points and are aimed for possible usage in external software for landmark detection.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+ </div> <!--</div>
+<div class="section" id="points1">
+<span id="anyfuntransform3drbfdyn-points1"></span><h3>Points1<a class="headerlink" href="#points1" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries even section collapsed" id="Points1">
+<span id="anyfuntransform3drbfdyn-points1" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title"> Points1 </span><span class="member-title-equal">=</span><span class="member-title-default"> ... </span><a class="headerlink" href="#Points1" title="Permalink to this headline">¶</a>
+<span class="member-descr">Implicit input of RBF coefficients by control points values to be matched by...</span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyMatrix.html#anymatrix"><span class="std std-ref">AnyMatrix</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">PosVar</span></a></div>
+<div class="line"><strong>Default:</strong> <em>Depends on other values</em></div>
+</div>
+<p>Implicit input of RBF coefficients by control points values to be matched by the function. The format of the matrix is similar to Points0. The RBF coeeficient are calculated.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+ </div> <!--</div>
+<div class="section" id="boundingbox">
+<h3>BoundingBox<a class="headerlink" href="#boundingbox" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries odd section collapsed" >
+
+<h3 class="html-toggle-button" style=""><span class="member-title"> BoundingBox </span><span class="member-title-equal">=</span><span class="member-title-default"> {} </span><a class="headerlink" href="#BoundingBox" title="Permalink to this headline">¶</a>
+<span class="member-descr">Folder with bounding box settings.</span>
+</h3><!-- Hack to trick sphinx into adding member target link -->
+<!--<div class="section" id="boundingbox-type">
+<span id="anyfuntransform3drbfdyn-boundingbox-type"></span><h4>BoundingBox.Type<a class="headerlink" href="#boundingbox-type" title="Permalink to this headline">¶</a></h4>
+-->
+
+<div class="html-toggle member-entries odd section collapsed" id="BoundingBox.Type">
+<span id="anyfuntransform3drbfdyn-boundingbox-type" style=""></span>
+<h4 class="html-toggle-button" style=""><span class="member-title"> &nbsp;&nbsp;.Type </span><span class="member-title-equal">=</span><span class="member-title-default"> BB_Cartesian </span><a class="headerlink" href="#BoundingBox.Type" title="Permalink to this headline">¶</a>
+<span class="member-descr">Defines a way to compute the bounding box.</span>
+</h4><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyEnumBoundingBoxType.html#anyenumboundingboxtype"><span class="std std-ref">AnyEnumBoundingBoxType</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">BB_Cartesian</span></code></div>
+</div>
+<p>Defines a way to compute the bounding box.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+</div><!--</div>
+<div class="section" id="boundingbox-scalexyz">
+<span id="anyfuntransform3drbfdyn-boundingbox-scalexyz"></span><h4>BoundingBox.ScaleXYZ<a class="headerlink" href="#boundingbox-scalexyz" title="Permalink to this headline">¶</a></h4>
+-->
+
+<div class="html-toggle member-entries even section collapsed" id="BoundingBox.ScaleXYZ">
+<span id="anyfuntransform3drbfdyn-boundingbox-scalexyz" style=""></span>
+<h4 class="html-toggle-button" style=""><span class="member-title"> &nbsp;&nbsp;.ScaleXYZ </span><span class="member-title-equal">=</span><span class="member-title-default"> {2.0, 2.0, 2.0} </span><a class="headerlink" href="#BoundingBox.ScaleXYZ" title="Permalink to this headline">¶</a>
+<span class="member-descr">Defines a scale factor vector in selected axes.</span>
+</h4><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyVec3.html#anyvec3"><span class="std std-ref">AnyVec3</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">{2.0,</span> <span class="pre">2.0,</span> <span class="pre">2.0}</span></code></div>
+</div>
+<p>Defines a scale factor vector in selected axes.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+</div><!--</div>
+<div class="section" id="boundingbox-divisionfactorxyz">
+<span id="anyfuntransform3drbfdyn-boundingbox-divisionfactorxyz"></span><h4>BoundingBox.DivisionFactorXYZ<a class="headerlink" href="#boundingbox-divisionfactorxyz" title="Permalink to this headline">¶</a></h4>
+-->
+
+<div class="html-toggle member-entries odd section collapsed" id="BoundingBox.DivisionFactorXYZ">
+<span id="anyfuntransform3drbfdyn-boundingbox-divisionfactorxyz" style=""></span>
+<h4 class="html-toggle-button" style=""><span class="member-title"> &nbsp;&nbsp;.DivisionFactorXYZ </span><span class="member-title-equal">=</span><span class="member-title-default"> {1, 1, 1} </span><a class="headerlink" href="#BoundingBox.DivisionFactorXYZ" title="Permalink to this headline">¶</a>
+<span class="member-descr">Defines a number of bounding box subdivisions in selected axes.</span>
+</h4><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyIntArray.html#anyintarray"><span class="std std-ref">AnyIntArray</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">{1,</span> <span class="pre">1,</span> <span class="pre">1}</span></code></div>
+</div>
+<p>Defines a number of bounding box subdivisions in selected axes.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+ </div></div> <!--</div>
+</div>
+<div class="section" id="boundingboxonoff">
+<span id="anyfuntransform3drbfdyn-boundingboxonoff"></span><h3>BoundingBoxOnOff<a class="headerlink" href="#boundingboxonoff" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries even section collapsed" id="BoundingBoxOnOff">
+<span id="anyfuntransform3drbfdyn-boundingboxonoff" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title"> BoundingBoxOnOff </span><span class="member-title-equal">=</span><span class="member-title-default"> Off </span><a class="headerlink" href="#BoundingBoxOnOff" title="Permalink to this headline">¶</a>
+<span class="member-descr">A switch to use bounding box points for the RBF transform construction....</span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnySwitchVar.html#anyswitchvar"><span class="std std-ref">AnySwitchVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">Off</span></code></div>
+</div>
+<p>A switch to use bounding box points for the RBF transform construction. Please note that the source and target landmarks have to be registered for intended use (please use AnyFunTransform3DLin2 or other as a pretransform).</p>
+</div></blockquote>
+</div>
+</div>
+<div class="html-toggle section" id="denied-access-members">
+<h2>Denied-Access members<a class="headerlink" href="#denied-access-members" title="Permalink to this headline">¶</a></h2>
+<!-- Hack to trick sphinx into adding member target link -->
+<!--<div class="section" id="function">
+<span id="anyfuntransform3drbfdyn-function"></span><h3>Function<a class="headerlink" href="#function" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries odd section collapsed" id="Function">
+<span id="anyfuntransform3drbfdyn-function" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title">Function</span><span class="member-title-equal"></span><span class="member-title-default"></span><a class="headerlink" href="#Function" title="Permalink to this headline">¶</a>
+<span class="member-descr">Function for 3D vectors (of floating point values).</span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyMonoFunction.html#anymonofunction"><span class="std std-ref">AnyMonoFunction</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">DesignVar</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">{}</span></code></div>
+</div>
+<p>Function for 3D vectors (of floating point values).</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+</div><!--</div>
+<div class="section" id="function-arglist">
+<span id="anyfuntransform3drbfdyn-function-arglist"></span><h3>Function.ArgList<a class="headerlink" href="#function-arglist" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries even section collapsed" id="Function.ArgList">
+<span id="anyfuntransform3drbfdyn-function-arglist" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title">Function.ArgList</span><span class="member-title-equal"></span><span class="member-title-default"></span><a class="headerlink" href="#Function.ArgList" title="Permalink to this headline">¶</a>
+<span class="member-descr">A special folder containing the argument list of the function.</span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyFunctionArgList.html#anyfunctionarglist"><span class="std std-ref">AnyFunctionArgList</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">{}</span></code></div>
+</div>
+<p>A special folder containing the argument list of the function.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+</div><!--</div>
+<div class="section" id="function-arglist-arg">
+<span id="anyfuntransform3drbfdyn-function-arglist-arg"></span><h3>Function.ArgList.Arg<a class="headerlink" href="#function-arglist-arg" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries odd section collapsed" id="Function.ArgList.Arg">
+<span id="anyfuntransform3drbfdyn-function-arglist-arg" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title">Function.ArgList.Arg</span><span class="member-title-equal"></span><span class="member-title-default"></span><a class="headerlink" href="#Function.ArgList.Arg" title="Permalink to this headline">¶</a>
+<span class="member-descr"></span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyFloat.html#anyfloat"><span class="std std-ref">AnyFloat</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">&quot;Dependent&quot;</span></code></div>
+</div>
+<p>&lt;No description&gt;</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+</div><!--</div>
+<div class="section" id="updfundata">
+<span id="anyfuntransform3drbfdyn-updfundata"></span><h3>UpdFunData<a class="headerlink" href="#updfundata" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries even section collapsed" id="UpdFunData">
+<span id="anyfuntransform3drbfdyn-updfundata" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title">UpdFunData</span><span class="member-title-equal"></span><span class="member-title-default"></span><a class="headerlink" href="#UpdFunData" title="Permalink to this headline">¶</a>
+<span class="member-descr">Update counter and control variable for dependencies, for instance handling...</span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyIntVar.html#anyintvar"><span class="std std-ref">AnyIntVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">PosVar</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">0</span></code></div>
+</div>
+<p>Update counter and control variable for dependencies, for instance handling dependencies in PreTransforms.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+</div><!--</div>
+<div class="section" id="points0pretransformed">
+<span id="anyfuntransform3drbfdyn-points0pretransformed"></span><h3>Points0Pretransformed<a class="headerlink" href="#points0pretransformed" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries odd section collapsed" id="Points0Pretransformed">
+<span id="anyfuntransform3drbfdyn-points0pretransformed" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title">Points0Pretransformed</span><span class="member-title-equal"></span><span class="member-title-default"></span><a class="headerlink" href="#Points0Pretransformed" title="Permalink to this headline">¶</a>
+<span class="member-descr">Points genereted from Points0 using the pre-transform used for the...</span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyMatrix.html#anymatrix"><span class="std std-ref">AnyMatrix</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">PosVar</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">&quot;Dependent&quot;</span></code></div>
+</div>
+<p>Points genereted from Points0 using the pre-transform used for the construction of the transformation.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+</div><!--</div>
+<div class="section" id="boundingboxpoints">
+<span id="anyfuntransform3drbfdyn-boundingboxpoints"></span><h3>BoundingBoxPoints<a class="headerlink" href="#boundingboxpoints" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries even section collapsed" id="BoundingBoxPoints">
+<span id="anyfuntransform3drbfdyn-boundingboxpoints" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title">BoundingBoxPoints</span><span class="member-title-equal"></span><span class="member-title-default"></span><a class="headerlink" href="#BoundingBoxPoints" title="Permalink to this headline">¶</a>
+<span class="member-descr">Positions of points defining the bounding box.</span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyMatrix.html#anymatrix"><span class="std std-ref">AnyMatrix</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">PosVar</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">&quot;Dependent&quot;</span></code></div>
+</div>
+<p>Positions of points defining the bounding box.</p>
+</div></blockquote>
+</div>
+</div>
+<div class="html-toggle section" id="deprecated-members">
+<h2>Deprecated members<a class="headerlink" href="#deprecated-members" title="Permalink to this headline">¶</a></h2>
+<!-- Hack to trick sphinx into adding member target link -->
+<!--<div class="section" id="function-return">
+<span id="anyfuntransform3drbfdyn-function-return"></span><h3>Function.Return<a class="headerlink" href="#function-return" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries odd section collapsed" id="Function.Return">
+<span id="anyfuntransform3drbfdyn-function-return" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title">Function.Return</span><span class="member-title-equal"></span><span class="member-title-default"></span><a class="headerlink" href="#Function.Return" title="Permalink to this headline">¶</a>
+<span class="member-descr"></span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyFloat.html#anyfloat"><span class="std std-ref">AnyFloat</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">DesignVar</span></a></div>
+</div>
+<div class="without-title admonition danger">
+<p class="admonition-title">Danger</p>
+<p><strong>Deprecated</strong>: Hidden object for return-data management.</p>
+</div>
+<p>&lt;No description&gt;</p>
+</div></blockquote>
+</div>
+</div>
+</div>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+        <p class="logo"><a href="../../index.html" title="index">
+          <img class="logo" src="../../_static/anyscript_maual.svg" alt="Logo"/>
+        </a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+<h3><a href="../../contents.html">Reference Manual</a></h3>
+<p class="caption"><span class="caption-text">API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../class-overview.html"><strong>Class reference</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../function-overview.html"><strong>Function reference</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../globals-overview.html">Globals reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../environment.html">Environment variables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../messages/index.html">Errors, warnings and messages</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Language</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../anyscript/language.html">AnyScript™ language</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../anyscript/preprocessor.html">The preprocessor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../anyscript/inside-anybody.html">Inside the AnyBody Modeling System</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../anyscript/technical-notes.html">Technical notes</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../demos/index.html">Demo examples</a></li>
+</ul>
+<div class="sphinxprev">
+    <h4>Other resources</h4>
+    <p class="topless"><a href="../../../index.html"
+                          title="Back to all manuals">&larr; Back to all manuals</a></p>
+</div>
+        </div>
+      </div>
+    
+    
+        <div class="sidebar-toggle-group no-js">
+            
+            <button class="sidebar-toggle" id="sidebar-hide" title="Hide the sidebar menu">
+                 «
+                <span class="show-for-small">hide menu</span>
+                
+            </button>
+            <button class="sidebar-toggle" id="sidebar-show" title="Show the sidebar menu">
+                
+                <span class="show-for-small">menu</span>
+                <span class="hide-for-small">sidebar</span>
+                 »
+            </button>
+        </div>
+    
+      <div class="clearer"></div>
+    </div>
+    <div class="relbar-bottom">
+        
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../contents.html" title="Table Of Contents"
+             >toc</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="AnyFunTransform3DSTL.html" title="AnyFunTransform3DSTL"
+             >next</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="AnyFunTransform3DRBF.html" title="AnyFunTransform3DRBF"
+             >previous</a> &nbsp; &nbsp;</li>
+    <li><a href="../../index.html">AnyScript Reference 7.3.4 documentation</a> &#187;</li>
+
+          <li class="nav-item nav-item-1"><a href="../../index.html" >The AnyScript Reference manual!</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../class-overview.html" ><strong>Class reference</strong></a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">AnyFunTransform3DRBFdyn</a></li> 
+      </ul>
+    </div>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2021, AnyBody Technology A/S.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.5.4.
+    </div>
+    <!-- cloud_sptheme 1.4 -->
+  </body>
+</html>

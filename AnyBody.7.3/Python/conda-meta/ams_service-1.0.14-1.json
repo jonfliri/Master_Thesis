@@ -1,0 +1,310 @@
+{
+  "build": "1",
+  "build_number": 1,
+  "channel": "https://conda.anaconda.org/anybody/noarch",
+  "constrains": [],
+  "depends": [
+    "thrift"
+  ],
+  "extracted_package_dir": "C:\\Anaconda3_64\\pkgs\\ams_service-1.0.14-1",
+  "features": "",
+  "files": [
+    "__init__.py",
+    "Lib/site-packages/ams_service-1.0.14-py3.7.egg-info/PKG-INFO",
+    "Lib/site-packages/ams_service-1.0.14-py3.7.egg-info/SOURCES.txt",
+    "Lib/site-packages/ams_service-1.0.14-py3.7.egg-info/dependency_links.txt",
+    "Lib/site-packages/ams_service-1.0.14-py3.7.egg-info/not-zip-safe",
+    "Lib/site-packages/ams_service-1.0.14-py3.7.egg-info/requires.txt",
+    "Lib/site-packages/ams_service-1.0.14-py3.7.egg-info/top_level.txt",
+    "Lib/site-packages/ams_service/__init__.py",
+    "Lib/site-packages/ams_service/generated/__init__.py",
+    "Lib/site-packages/ams_service/generated/ams_plugin_toolkit/AMSCompoundService-remote",
+    "Lib/site-packages/ams_service/generated/ams_plugin_toolkit/AMSCompoundService.py",
+    "Lib/site-packages/ams_service/generated/ams_plugin_toolkit/AMSService-remote",
+    "Lib/site-packages/ams_service/generated/ams_plugin_toolkit/AMSService.py",
+    "Lib/site-packages/ams_service/generated/ams_plugin_toolkit/BodyModelPluginService-remote",
+    "Lib/site-packages/ams_service/generated/ams_plugin_toolkit/BodyModelPluginService.py",
+    "Lib/site-packages/ams_service/generated/ams_plugin_toolkit/LicenseService-remote",
+    "Lib/site-packages/ams_service/generated/ams_plugin_toolkit/LicenseService.py",
+    "Lib/site-packages/ams_service/generated/ams_plugin_toolkit/ModelService-remote",
+    "Lib/site-packages/ams_service/generated/ams_plugin_toolkit/ModelService.py",
+    "Lib/site-packages/ams_service/generated/ams_plugin_toolkit/PluginInfoService-remote",
+    "Lib/site-packages/ams_service/generated/ams_plugin_toolkit/PluginInfoService.py",
+    "Lib/site-packages/ams_service/generated/ams_plugin_toolkit/__init__.py",
+    "Lib/site-packages/ams_service/generated/ams_plugin_toolkit/constants.py",
+    "Lib/site-packages/ams_service/generated/ams_plugin_toolkit/ttypes.py",
+    "Lib/site-packages/ams_service/plugin.py",
+    "Lib/site-packages/ams_service/thriftapi.py",
+    "Lib/site-packages/ams_service/__pycache__/__init__.cpython-37.pyc",
+    "Lib/site-packages/ams_service/generated/__pycache__/__init__.cpython-37.pyc",
+    "Lib/site-packages/ams_service/generated/ams_plugin_toolkit/__pycache__/AMSCompoundService.cpython-37.pyc",
+    "Lib/site-packages/ams_service/generated/ams_plugin_toolkit/__pycache__/AMSService.cpython-37.pyc",
+    "Lib/site-packages/ams_service/generated/ams_plugin_toolkit/__pycache__/BodyModelPluginService.cpython-37.pyc",
+    "Lib/site-packages/ams_service/generated/ams_plugin_toolkit/__pycache__/LicenseService.cpython-37.pyc",
+    "Lib/site-packages/ams_service/generated/ams_plugin_toolkit/__pycache__/ModelService.cpython-37.pyc",
+    "Lib/site-packages/ams_service/generated/ams_plugin_toolkit/__pycache__/PluginInfoService.cpython-37.pyc",
+    "Lib/site-packages/ams_service/generated/ams_plugin_toolkit/__pycache__/__init__.cpython-37.pyc",
+    "Lib/site-packages/ams_service/generated/ams_plugin_toolkit/__pycache__/constants.cpython-37.pyc",
+    "Lib/site-packages/ams_service/generated/ams_plugin_toolkit/__pycache__/ttypes.cpython-37.pyc",
+    "Lib/site-packages/ams_service/__pycache__/plugin.cpython-37.pyc",
+    "Lib/site-packages/ams_service/__pycache__/thriftapi.cpython-37.pyc"
+  ],
+  "fn": "ams_service-1.0.14-1.tar.bz2",
+  "license": "AnyBody Software License Agreement",
+  "link": {
+    "source": "C:\\Anaconda3_64\\pkgs\\ams_service-1.0.14-1",
+    "type": 1
+  },
+  "md5": "753c2bcc80c1865ff67f30469a2a880b",
+  "name": "ams_service",
+  "noarch": "python",
+  "package_tarball_full_path": "C:\\Anaconda3_64\\pkgs\\ams_service-1.0.14-1.tar.bz2",
+  "package_type": "noarch_python",
+  "paths_data": {
+    "paths": [
+      {
+        "_path": "__init__.py",
+        "path_type": "hardlink",
+        "sha256": "cb1c043ac9d013c554eb4cb44391df59721b2ef55f4c2a2bcbe98db61b4b794d",
+        "sha256_in_prefix": "cb1c043ac9d013c554eb4cb44391df59721b2ef55f4c2a2bcbe98db61b4b794d",
+        "size_in_bytes": 25
+      },
+      {
+        "_path": "site-packages/ams_service-1.0.14-py3.7.egg-info/PKG-INFO",
+        "path_type": "hardlink",
+        "sha256": "9d669ca9fce817278fce455fabdd30b7ca6aaeba36d1d6b19118fa904ed371d8",
+        "sha256_in_prefix": "9d669ca9fce817278fce455fabdd30b7ca6aaeba36d1d6b19118fa904ed371d8",
+        "size_in_bytes": 3970
+      },
+      {
+        "_path": "site-packages/ams_service-1.0.14-py3.7.egg-info/SOURCES.txt",
+        "path_type": "hardlink",
+        "sha256": "c731cf58beff058180d2365cb32fa224b593cd17488aca1a423b5ee140855db3",
+        "sha256_in_prefix": "c731cf58beff058180d2365cb32fa224b593cd17488aca1a423b5ee140855db3",
+        "size_in_bytes": 2135
+      },
+      {
+        "_path": "site-packages/ams_service-1.0.14-py3.7.egg-info/dependency_links.txt",
+        "path_type": "hardlink",
+        "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+        "sha256_in_prefix": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+        "size_in_bytes": 1
+      },
+      {
+        "_path": "site-packages/ams_service-1.0.14-py3.7.egg-info/not-zip-safe",
+        "path_type": "hardlink",
+        "sha256": "7eb70257593da06f682a3ddda54a9d260d4fc514f645237f5ca74b08f8da61a6",
+        "sha256_in_prefix": "7eb70257593da06f682a3ddda54a9d260d4fc514f645237f5ca74b08f8da61a6",
+        "size_in_bytes": 2
+      },
+      {
+        "_path": "site-packages/ams_service-1.0.14-py3.7.egg-info/requires.txt",
+        "path_type": "hardlink",
+        "sha256": "0779c573d9366464c7c412292979af5e801dfd29878804fea278ed3f216b1c18",
+        "sha256_in_prefix": "0779c573d9366464c7c412292979af5e801dfd29878804fea278ed3f216b1c18",
+        "size_in_bytes": 7
+      },
+      {
+        "_path": "site-packages/ams_service-1.0.14-py3.7.egg-info/top_level.txt",
+        "path_type": "hardlink",
+        "sha256": "ad2320f838873d74043286837f16df40f887ed16b26e2c4105263590081a04ff",
+        "sha256_in_prefix": "ad2320f838873d74043286837f16df40f887ed16b26e2c4105263590081a04ff",
+        "size_in_bytes": 12
+      },
+      {
+        "_path": "site-packages/ams_service/__init__.py",
+        "path_type": "hardlink",
+        "sha256": "81aaa5552296148c93963981535aa159d99841ebc17dec3a4aa3481c933ea241",
+        "sha256_in_prefix": "81aaa5552296148c93963981535aa159d99841ebc17dec3a4aa3481c933ea241",
+        "size_in_bytes": 122
+      },
+      {
+        "_path": "site-packages/ams_service/generated/__init__.py",
+        "path_type": "hardlink",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "sha256_in_prefix": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "size_in_bytes": 0
+      },
+      {
+        "_path": "site-packages/ams_service/generated/ams_plugin_toolkit/AMSCompoundService-remote",
+        "path_type": "hardlink",
+        "sha256": "60dc7a8ef5a17b4996ca54fe0e6e0cf871580ece92409094432aaa930283ae09",
+        "sha256_in_prefix": "60dc7a8ef5a17b4996ca54fe0e6e0cf871580ece92409094432aaa930283ae09",
+        "size_in_bytes": 3006
+      },
+      {
+        "_path": "site-packages/ams_service/generated/ams_plugin_toolkit/AMSCompoundService.py",
+        "path_type": "hardlink",
+        "sha256": "1d7fcf77a52da7419c5da644433a7c0350240fa4f3cde73e674f818811555ec3",
+        "sha256_in_prefix": "1d7fcf77a52da7419c5da644433a7c0350240fa4f3cde73e674f818811555ec3",
+        "size_in_bytes": 8574
+      },
+      {
+        "_path": "site-packages/ams_service/generated/ams_plugin_toolkit/AMSService-remote",
+        "path_type": "hardlink",
+        "sha256": "80c0c2be24e163d0447cf41258af542c2c692341a0289eb3489c372a123a1a35",
+        "sha256_in_prefix": "80c0c2be24e163d0447cf41258af542c2c692341a0289eb3489c372a123a1a35",
+        "size_in_bytes": 3644
+      },
+      {
+        "_path": "site-packages/ams_service/generated/ams_plugin_toolkit/AMSService.py",
+        "path_type": "hardlink",
+        "sha256": "47cb1719e780a5cb9cf62ec78dab2b8994adb7af856a004577c9905c5d74849c",
+        "sha256_in_prefix": "47cb1719e780a5cb9cf62ec78dab2b8994adb7af856a004577c9905c5d74849c",
+        "size_in_bytes": 26183
+      },
+      {
+        "_path": "site-packages/ams_service/generated/ams_plugin_toolkit/BodyModelPluginService-remote",
+        "path_type": "hardlink",
+        "sha256": "0ed1cf8c83d1ab406920642c8f29aa49e2375b59453877554600eea18735fc43",
+        "sha256_in_prefix": "0ed1cf8c83d1ab406920642c8f29aa49e2375b59453877554600eea18735fc43",
+        "size_in_bytes": 2953
+      },
+      {
+        "_path": "site-packages/ams_service/generated/ams_plugin_toolkit/BodyModelPluginService.py",
+        "path_type": "hardlink",
+        "sha256": "61c71c9c74f018db73cc0cc1ebf72c638c6455f8b0cfe2a6d60289bfc71a6335",
+        "sha256_in_prefix": "61c71c9c74f018db73cc0cc1ebf72c638c6455f8b0cfe2a6d60289bfc71a6335",
+        "size_in_bytes": 6958
+      },
+      {
+        "_path": "site-packages/ams_service/generated/ams_plugin_toolkit/LicenseService-remote",
+        "path_type": "hardlink",
+        "sha256": "402b6faf4488b1e9c59f976c4ee0b63ee8823b646ab745c24bdd1d4897f65c31",
+        "sha256_in_prefix": "402b6faf4488b1e9c59f976c4ee0b63ee8823b646ab745c24bdd1d4897f65c31",
+        "size_in_bytes": 3438
+      },
+      {
+        "_path": "site-packages/ams_service/generated/ams_plugin_toolkit/LicenseService.py",
+        "path_type": "hardlink",
+        "sha256": "013929b079a0c3116c339bf0b897fde98599bc66c4007666d0eb37748c86e848",
+        "sha256_in_prefix": "013929b079a0c3116c339bf0b897fde98599bc66c4007666d0eb37748c86e848",
+        "size_in_bytes": 17838
+      },
+      {
+        "_path": "site-packages/ams_service/generated/ams_plugin_toolkit/ModelService-remote",
+        "path_type": "hardlink",
+        "sha256": "acfb6af31c079c94daf1c70c43da194e2296ec5560ff12fb251c93bebc7ff088",
+        "sha256_in_prefix": "acfb6af31c079c94daf1c70c43da194e2296ec5560ff12fb251c93bebc7ff088",
+        "size_in_bytes": 3145
+      },
+      {
+        "_path": "site-packages/ams_service/generated/ams_plugin_toolkit/ModelService.py",
+        "path_type": "hardlink",
+        "sha256": "c25798670b251374764832f807cb8266a4d59e5fe3754f23aaefebde24ca919f",
+        "sha256_in_prefix": "c25798670b251374764832f807cb8266a4d59e5fe3754f23aaefebde24ca919f",
+        "size_in_bytes": 13887
+      },
+      {
+        "_path": "site-packages/ams_service/generated/ams_plugin_toolkit/PluginInfoService-remote",
+        "path_type": "hardlink",
+        "sha256": "da30c8522d2cc8a6ddc4e745acb0e03b408d04ce3b986ecb94298866d99bf023",
+        "sha256_in_prefix": "da30c8522d2cc8a6ddc4e745acb0e03b408d04ce3b986ecb94298866d99bf023",
+        "size_in_bytes": 3388
+      },
+      {
+        "_path": "site-packages/ams_service/generated/ams_plugin_toolkit/PluginInfoService.py",
+        "path_type": "hardlink",
+        "sha256": "5a6d05185a6d610dc053fd1a30cf93ad439b6a29aa858f5ff107e8b5c778bd36",
+        "sha256_in_prefix": "5a6d05185a6d610dc053fd1a30cf93ad439b6a29aa858f5ff107e8b5c778bd36",
+        "size_in_bytes": 24910
+      },
+      {
+        "_path": "site-packages/ams_service/generated/ams_plugin_toolkit/__init__.py",
+        "path_type": "hardlink",
+        "sha256": "5ccfe9f197a22e2c8658f1bb107c7fd7996191f3b69c353cbb7f71efbff366eb",
+        "sha256_in_prefix": "5ccfe9f197a22e2c8658f1bb107c7fd7996191f3b69c353cbb7f71efbff366eb",
+        "size_in_bytes": 152
+      },
+      {
+        "_path": "site-packages/ams_service/generated/ams_plugin_toolkit/constants.py",
+        "path_type": "hardlink",
+        "sha256": "2c04096ea66c74c711b91e67409a27eac5711a2bec827b940254e72059826f80",
+        "sha256_in_prefix": "2c04096ea66c74c711b91e67409a27eac5711a2bec827b940254e72059826f80",
+        "size_in_bytes": 338
+      },
+      {
+        "_path": "site-packages/ams_service/generated/ams_plugin_toolkit/ttypes.py",
+        "path_type": "hardlink",
+        "sha256": "171faead418db9b57536511f31912c44bfbbdf4cbb4419e41c239640d958a557",
+        "sha256_in_prefix": "171faead418db9b57536511f31912c44bfbbdf4cbb4419e41c239640d958a557",
+        "size_in_bytes": 27039
+      },
+      {
+        "_path": "site-packages/ams_service/plugin.py",
+        "path_type": "hardlink",
+        "sha256": "fe99c001c45a7f25bed8781de3d404401fd048ad5b84f1e2b85f5a7c2a369aec",
+        "sha256_in_prefix": "fe99c001c45a7f25bed8781de3d404401fd048ad5b84f1e2b85f5a7c2a369aec",
+        "size_in_bytes": 2959
+      },
+      {
+        "_path": "site-packages/ams_service/thriftapi.py",
+        "path_type": "hardlink",
+        "sha256": "415c19422a406d74f4a089433fe9cd8372a935ad1dbf3b9943fe46929c9ba21c",
+        "sha256_in_prefix": "415c19422a406d74f4a089433fe9cd8372a935ad1dbf3b9943fe46929c9ba21c",
+        "size_in_bytes": 29592
+      },
+      {
+        "_path": "Lib/site-packages/ams_service/__pycache__/__init__.cpython-37.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "Lib/site-packages/ams_service/generated/__pycache__/__init__.cpython-37.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "Lib/site-packages/ams_service/generated/ams_plugin_toolkit/__pycache__/AMSCompoundService.cpython-37.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "Lib/site-packages/ams_service/generated/ams_plugin_toolkit/__pycache__/AMSService.cpython-37.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "Lib/site-packages/ams_service/generated/ams_plugin_toolkit/__pycache__/BodyModelPluginService.cpython-37.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "Lib/site-packages/ams_service/generated/ams_plugin_toolkit/__pycache__/LicenseService.cpython-37.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "Lib/site-packages/ams_service/generated/ams_plugin_toolkit/__pycache__/ModelService.cpython-37.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "Lib/site-packages/ams_service/generated/ams_plugin_toolkit/__pycache__/PluginInfoService.cpython-37.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "Lib/site-packages/ams_service/generated/ams_plugin_toolkit/__pycache__/__init__.cpython-37.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "Lib/site-packages/ams_service/generated/ams_plugin_toolkit/__pycache__/constants.cpython-37.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "Lib/site-packages/ams_service/generated/ams_plugin_toolkit/__pycache__/ttypes.cpython-37.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "Lib/site-packages/ams_service/__pycache__/plugin.cpython-37.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "Lib/site-packages/ams_service/__pycache__/thriftapi.cpython-37.pyc",
+        "path_type": "pyc_file"
+      }
+    ],
+    "paths_version": 1
+  },
+  "requested_spec": "anybody/noarch::ams_service==1.0.14=1",
+  "sha256": "ac295ab0bd10461d26f50998b2681a3d6a087d490441518a1033f5742744ec9a",
+  "size": 21865,
+  "subdir": "noarch",
+  "timestamp": 1562159577227,
+  "track_features": "",
+  "url": "https://conda.anaconda.org/anybody/noarch/ams_service-1.0.14-1.tar.bz2",
+  "version": "1.0.14"
+}

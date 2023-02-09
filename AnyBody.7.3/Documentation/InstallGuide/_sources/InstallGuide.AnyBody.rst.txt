@@ -1,0 +1,900 @@
+
+
+#############################################
+Install Guide: The AnyBody Modeling System
+#############################################
+
+Version |AMS_VERSION|, |CURRENT_MONTH| |CURRENT_YEAR|
+
+.. sectnum::
+   :start: 1
+
+
+.. _chapter:Installation:
+
+
+Installation of AnyBody
+=======================
+
+This section describes the basic installation of the AnyBody Modeling
+System on a computer. Firstly, the requirements for the installation are
+described and next, the installation process is described. For a
+floating network license setup, this also covers the setup for the
+client computers running the AnyBody software.
+
+Requirements
+------------
+
+**Computer:**
+   Operating system:
+      AnyBody runs only on standard Windows PC computers with 
+      Windows 8.1 or Windows 10 operating systems. The Windows 10
+      service models (Semi-Annual Channel (Targeted) (SAC-T)
+      Semi-Annual Channel (SAC) Long Term Servicing Channel (LTSC)) is
+      supported in the following way:
+
+      -  The AnyBody Modeling System is supported for running on
+         Semi-Annual Channel, and since AnyBody is not heavily
+         integrated with Windows it is expected to run on Semi-Annual
+         Channel (Targeted) and Long Term Servicing Channel branches as
+         well. AnyBody is routinely tested on Windows Semi-Annual
+         Channel (Targeted), so any serious issues caused by updates to
+         Windows are addressed in a timely fashion.
+
+      AnyBody may work on earlier Windows operating systems, but this
+      is not supported. The 64 bit version of AnyBody requires a 64
+      bit Windows in order to run.
+
+   Memory:
+      AnyBody will in principle run on very little memory, but if you
+      have less than 256 MB available to AnyBody, you will only be able
+      to run very small models. Larger models typically require 512 MB
+      or more, and a full-body model does not run well on less than 2
+      GB. Exporting high-resolution imagery can also require extra
+      memory.
+
+      -  Working with full-body models, a minimum of 2GB ram is required
+         and 4GB recommended.
+
+      -  Notice that the 32 bit version of AnyBody is built with Large
+         Address Awareness meaning that it can use more than the
+         standard 2GB of memory for 32 bit programs. On 64 bit Windows
+         systems, the 32 bit version AnyBody can use up to 4GB and on 32
+         bit Windows systems proper modification of system options can
+         bring it to use up to 3GB of memory. The 64 bit version of
+         AnyBody can utilize the complete amount of memory available on
+         a 64 bit Windows.
+
+      -  Running large models with large data sets, e.g. from MOCAP with
+         many samples may required gigabytes of memory; a 64 bit Windows
+         system is therefore recommended for advanced modeling.
+
+   Processor:
+      AnyBody should work on any processor capable of running the
+      recommended operating systems, but the faster the better. Large
+      models are computationally demanding.
+
+   Graphics:
+      A graphics adapter with OpenGL 3.0 support is a minimum
+      requirement. CPU-integrated graphics adapters using shared memory
+      are supported, but a dedicated graphics adapter with at least 1GB
+      of memory is recommended, especially when exporting high
+      resolution imagery.
+      If AnyBody is used through a Windows Remote Desktop Connection, a
+      graphics adapter with OpenGL drivers specifically supporting Remote
+      Desktop Connections are required in order to get hardware graphics 
+      acceleration. The Nvidia Quadro series of graphics adapters are 
+      known to support OpenGL on Remote Desktop Connections. 	  
+
+   Hard drive:
+      At least 4.0GB of free disk space is recommended for installation
+      and model work.
+
+   Web Browser:
+      The AnyBody Modeling System requires that Microsoft Internet
+      Explorer 9.0 or later is installed on the computer; newest version
+      is recommended. Older versions may result in reduced functionality
+      of the AnyBody GUI, but the core simulation functions are not
+      affected.
+
+   SOLIDWORKS:
+        The AnyBody Exporter for SOLIDWORKS translator add-in requires
+        SOLIDWORKS to be installed in order to work.
+
+        The AnyBody Exporter for SOLIDWORKS add-in is currently
+        supported for SOLIDWORKS 2012 to SOLIDWORKS 2020.
+        It may function on earlier or newer versions as well due to the
+        generality of the SOLIDWORKS API, but this is generally not
+        supported.
+
+   Python:
+      The AnyBody Modeling System implements an interface for using
+      Python functionality in models. The AnyBody Modeling System
+      installation includes a Python 3.7 distribution, but a
+      user-selected Python installation is also supported. Supported
+      versions of Python are 2.7, 3.4, 3.5, 3.6, 3.7 or 3.8. The 32 bit
+      version of AnyBody can interface with a 32 bit Python
+      installation, and the 64 bit version of AnyBody can use a 64 bit
+      Python installation.
+
+**User Account:**
+   Your Windows user account must have administrative privileges
+   during the installation process.
+
+   -  You may also need administrative privileges while entering
+      license keys (importing license files). License keys are entered
+      and license files are imported via AnyBody’s License Manager
+      that opens the first time the AnyBody Modeling System is
+      started.
+
+**License:**
+   You must have a valid license file. A license file is a text
+   file, typically with the extension ".lic".
+   (If you do not have a license file, you can request an
+   evaluation license from
+   `www.anybodytech.com <http://www.anybodytech.com>`__.)
+
+   -  You can open the license file and inspect the data:
+
+      Notice!
+         Do not modify the file or it will become invalid.
+
+      Customer information
+         should match your name or your organization’s name.
+
+      Product/license string:
+         The product string combines product name and license type
+         connected by an ’_’ character, i.e.,
+         <ProductName>_<LicenseType>. Product names can currently be one
+         of the following:
+
+         ams4:
+            License for the fundamental module of the AnyBody Modeling
+            System, including the AnyBody GUI and the console
+            application interfaces.
+
+         ae4sw:
+            License for the AnyBody Exporter for SOLIDWORKS translator
+            add-in (AnyExp4SOLIDWORKS).
+
+         amsall1:
+            A combined license for all independent modules of the
+            AnyBody Modeling System installation packages.
+
+         ams4_processing:
+            A special processing license for running the AnyBody Batch
+            Processing System console applications.
+
+      License types:
+         <ProductName>_standard:
+            License for the standard version of the product or module.
+
+         <ProductName>_non_faculty_research:
+            License for the non-faculty research version of the product
+            or module.
+
+         <ProductName>_research:
+            License for the research version of the product or module.
+
+         <ProductName>_student:
+            License for a student version of the product or module.
+
+         <ProductName>_trial:
+            License for a trial version of the product or module.
+
+      Host-id:
+         Licenses are typically bound to a computer, a dongle, or
+         similar. This is done by associating the license with a host-id
+         that identifies the device.
+
+         -  The host-id must be sent to AnyBody Technology before the
+            license can be issued.
+
+         -  Host-id for a standalone license can be found by the
+            AnyBody software. AnyBody’s License Manager will assist you
+            in finding host-id options that can be sent to
+            AnyBody Technology. Please refer to the next section.
+
+         -  Floating network licenses are bound to a license server.
+            Please refer to a later chapter in this manual for more
+            details on this.
+
+Installation Procedure
+----------------------
+
+#. Access to the software:
+
+   A self-installing exe file is available at
+   `anybodytech.com/download.html?did=anybody.overview <http://www.anybodytech.com/download.html?did=anybody.overview&loc=PDFGuide>`__.
+   
+   .. note:: It requires AnyBody Web-user login. If you are not a registered
+      web-user already, you must register an account on the login page.
+
+   .. The setup file is typically called :file:`AnyBodySetup.{v1}.{v2}.{v3}.{v4}_x64.exe`,
+   .. where **v1**, **v2**, **v3**, and **v4** are digits of the version number. The
+   .. setup file for the 64 bit version of AnyBody is called for example called 
+   .. ``AnyBodySetup.7.3.0.8065_x64.exe`` .
+
+
+#. Install and launch AnyBody:
+
+   #. Run the setup exe file and follow the instructions in the
+      installation wizard.
+
+   #. Custom installation allows you to select the installation
+      directory and select components. Notice that the install wizard’s
+      choice of directory prepares for coexistence with older and future
+      versions.
+
+   #. In order to install optional Tool components of the
+      AnyBody package such as the AnyBody Exporter for SOLIDWORKS
+      add-in, you must either do a full installation or select the
+      specific tools when selecting components for a custom
+      installation.
+
+   #. During the final part of the installation, drivers for AnyBody’s
+      hardware dongles (HASP dongles) may be installed if relevant
+      drivers are not found on your computer.
+
+   #. Finalize:
+
+      #. Choose to launch AnyBody as the final step; this will bring you
+         to Step 3.
+
+      #. Choose to open Add/Remove Programs to remove older versions of
+         AnyBody. This can always be done later.
+
+
+#. Register your license(s):
+
+   #. If AnyBody is installed for the first time, or for other reasons
+      no valid license is found, AnyBody’s License Manager will appear
+      when you launch AnyBody.exe.
+
+   #. If you have a valid license already, select Import License File,
+      browse for your license file, and import it.
+
+      -  You can choose to import the license for all users of the
+         computer, or just for your own user account.
+
+      -  You may need administrative priviledges during the process, if
+         you install the license for all users.
+
+      -  If you have a dongle-bound license, insert the USB-dongle while
+         installing the license. The license will be validated during
+         the process.
+
+
+   #. If you have purchased a license, but have no license file yet, you
+      may need to send host-id information to AnyBody Technology. From
+      the License Manager dialog, you can gather this information:
+
+      - Insert your dongle, if relevant.
+
+      - The "View host IDs" button will open a dialog with the possible
+        Host-IDs. From here they can be sent to AnyBody Technology.
+
+
+   #. If you have not bought a license, you can select a trial license.
+
+      - Trial licenses are special computer-bound licenses valid for 30
+        days. The "Get trial license" button will bring you to the
+        AnyBody Technology webpage where you can request a license key.
+
+
+   #. Pressing OK after entering a valid license will launch AnyBody.
+
+
+   #. You can enter new licenses later from the menu Help->Registration.
+      This will bring up the AnyBody License Manager dialog.
+
+
+
+.. note::
+   #. If you need assistance with the installation, please contact
+      AnyBody support at support@anybodytech.com or phone +45 9635 4286.
+
+   #. A free forum providing support is available at the
+      `www.anyscript.org <http://www.anyscript.org>`__ along with a lot
+      of resources. The web-user login you have used at
+      `www.anyboytech.com <http://www.anybodytech.com>`__ is also valid
+      at `www.anyscript.org <http://www.anyscript.org>`__ and vice
+      versa.
+
+   #. AnyBody’s console application cannot register licenses. It will
+      only run if a valid license has been entered from AnyBody’s GUI.
+
+
+Installing AnyExp4SOLIDWORKS
+----------------------------
+
+AnyExp4SOLIDWORKS needs both SOLIDWORKS and the AnyBody Modeling
+System in order to function. AnyExp4SOLIDWORKS is installed on your
+hard disk from the regular AnyBody installer.
+
+In order to make sure that the add-in is installed, you must choose to
+either do a complete AnyBody installation, or you must specifically
+select to install the AnyExp4SOLIDWORKS add-in from the Tools section
+when doing a custom installation.
+
+| |image1|
+| |image2|
+
+
+AnyExp4SOLIDWORKS requires a separate license, which is typically
+located in the same file as your AnyBody license. Importing the
+license file into AnyBody through the license manager will place the
+file in the proper location for AnyExp4SOLIDWORKS to find it.
+
+Loading the AnyExp4SOLIDWORKS add-in
+------------------------------------
+
+AnyExp4SOLIDWORKS is delivered in the form of a DLL (Dynamic Link
+Library), which can be loaded as an add-in from SOLIDWORKS by doing the
+following steps.
+
+#. Start SOLIDWORKS with administrator rights (use the "run as
+   administrator" feature). It is only necessary to run SOLIDWORKS as
+   administrator when importing the add-in, afterwards it can be started
+   as normal.
+
+#. Choose the menu :menuselection:`File --> Open`.
+
+#. In the file dialog, select "Add-Ins (``*.dll``)" file extension type
+   and choose the AnyExp4SOLIDWORKS DLL file.
+
+|image3|
+
+The AnyExp4SOLIDWORKS DLL can be found in the AnyBody installation,
+ypically in the folder :file:`C:\Program  Files\AnyBody Technology\AnyBody.{X.X}\Tools\AnyExp4SOLIDWORKS`,
+where ``X.X`` indicates the AnyBody version number.
+
+
+After you have loaded the AnyExp4SOLIDWORKS module successfully, you
+can see that the AnyExp4SOLIDWORKS module appears in the SOLIDWORKS menu bar.
+
+|image4|
+
+You are now ready to use SOLIDWORKS as a powerful model authoring tool
+for the AnyBody Modeling System.
+
+Using AnyBody through Remote Desktop Connection
+-----------------------------------------------
+
+The AnyBody Modeling System requires OpenGL 3.0 support, but connecting
+to a computer using Windows Remote Desktop Connection will typically
+only allow support for OpenGL 1.1, which will result in the Model View
+and Chart View not working. 
+Certain graphics adapters such as the Nvidia Quadro series are 
+known to support OpenGL on Remote Desktop Connections.
+A workaround for this limitation is to use a
+software OpenGL renderer instead. The 64 bit version of the
+AnyBody Modeling System ships with an appropriate OpenGL software
+renderer which can be installed manually by the user.
+
+Installation procedure for enabling software OpenGL rendering:
+
+#. Open the AnyBody Modeling System, open the :menuselection:`Tools --> Settings` dialog and
+   change the ``Chart.Chart_View.AntiAlias``, ``Model_View.AntiAlias`` and
+   ``Camera.AntiAlias`` values to 0.
+
+#. Close the AnyBody Modeling System.
+
+#. Open a File Explorer and go to the AnyBody Modeling System
+   installation location and copy the file named :file:`opengl32.dll` from the
+   :file:`Assist\SoftwareOpenGL` subfolder to the
+   AnyBody installation folder, so that it is placed alongside the
+   :file:`AnyBody.exe` file.
+
+#. When you start the AnyBody Modeling System again, it will now use the
+   software OpenGL renderer.
+
+In order to revert to hardware OpenGL acceleration, please revert the
+steps mentioned above.
+
+.. warning:: Using a software OpenGL renderer will result in much worse
+   performance regarding Model View update speed, as well as loss of
+   antialiasing support.
+
+.. _chapter:UninstallingOrRepairing:
+
+Uninstalling or Repairing AnyBody
+=================================
+
+#. You must access the install wizard again for removal and repair of
+   the AnyBody installation. You have several options:
+
+   #. Use "Add or Remove Programs" from the Windows Control Panel.
+
+   #. Run the self-installing exe file again.
+
+   #. Run the online installation.
+
+#. HASP dongle drivers:
+
+   #. If the drivers for the HASP dongles did not install properly
+      during the installation you can install them by executing the HASP
+      installation package in the directory, where AnyBody is installed
+      or from the Windows Start Menu: :menuselection:`Start --> AnyBody Technology -->
+      AnyBody.x.x --> Tools`. The available HASP installation package is
+      an MSI package.
+
+   #. You can get information about the drivers’ versions from :menuselection:`Start -->
+      AnyBody Technology --> AnyBody.x.x --> Tools --> About...` This will
+      reveal the installed versions of the drivers as well as the ones
+      supplied with this version of AnyBody.
+
+   #. You can remove or repair the drivers from Add/Remove Programs in
+      the Windows Control Panel or you can run the HASP installation
+      package again as mentioned above. This is also an option when
+      running a maintenance/repair installation of AnyBody, either from
+      Add/Remove Programs or by running the self-installing exe file.
+
+   #. The most current drivers from our supplier, Aladdin, can be
+      downloaded from
+      http://www.aladdin.com/support/hasp/enduser.asp.
+
+.. _chapter:VersionsAndLicensing:
+
+Introduction to AnyBody Versions and Licensing
+==============================================
+
+Version number:
+   AnyBody is designated a minimum three digit version number:
+
+   -  First digit is the Major Version Number.
+
+   -  Second and third digits are the so-called Minor Version Numbers.
+
+   -  The third digit is incremented for all smaller updates such as
+      bugfixes and patches. Such updates may not be officially announced
+      and they will install as updates to the same version with lower
+      third digit.
+
+   -  Versions with different first and second digit can coexist on your
+      computer. They install as separate packages and must be
+      uninstalled independently.
+
+   -  Additional version digits and build numbers merely serve to
+      identify a particular build of AnyBody and they are of no pratical
+      significance to the end-users.
+
+License types:
+
+   -  Temporary trial licenses are available for evaluation purposes.
+      You can request a trial license on
+      `www.anybodytech.com <http://www.anybodytech.com>`__. Please
+      notice that you must register as a web-user of the site before
+      being able to access the software.
+
+   -  Licenses for educational, research, and commercial use are
+      available. Please inquire at
+      `www.anybodytech.com <www.anybodytech.com>`__.
+
+   -  Licenses for running additional console application instances of
+      the AnyBody Modeling System for processing large datasets are
+      available. Please inquire at
+      `www.anybodytech.com <www.anybodytech.com>`__.
+
+License files:
+
+   -  All license types are distributed as license files. The installed
+      software is in principle the same in all cases.
+
+   -  Licenses are bound to a unique identifier of the host computer.
+
+      Network adapter:
+         Node-locked licenses are typically bound to the MAC address of
+         the host computer’s network adapter (the physical adapter
+         address). Node-locked license may allow one or more instances
+         of AnyBody to run on the computer simultanously.
+
+      Dongles:
+         Licenses can be bound to dongles (HASP dongles from Aladdin).
+         Standalone dongles for USB or LPT ports must be inserted in the
+         computer for AnyBody to run.
+
+      Floating network licenses
+         (or concurrent licenses) are also available. Floating licenses
+         are bound to a license server, which is a computer on the
+         network. Floating licenses can be counted multi-user licenses.
+
+License concurrency:
+
+   -  A single AnyBody license can be used for simultaneously running up
+      to 4 instances of the AnyBody GUI or console application, or any
+      mix thereof.
+
+   -  All shared instances of AnyBody from a single license must be run
+      by the same user. If a different user wants to run AnyBody
+      simultaneously on the same computer, this requires another license
+      checkout.
+
+The License File
+----------------
+
+The license file is a text file typically with the extension ".lic". It
+can hold one or more licenses that are in readable text format. The
+licenses are digitally signed so that the license becomes invalid if the
+information is altered without being resigned.
+
+A single license in the file has the format
+
+::
+
+   LICENSE anybodytch ams4_trial 
+       <MAINTENANCE_END> <LICENSE_END> <NUM_LICENSES>
+       hostid=<HOST-ID> issuer=ABT     
+       customer="<CUSTOMER_NAME>" issued=6-may-2009 sig="<SIGNATURE>"
+
+When the license file is imported, it is copied and renamed to a special
+location where AnyBody will look for it. The imported file is always
+renamed to license.lic and previously imported files are renamed before
+overwriting them. This means that old license files remain in the system
+and can be located.
+
+AnyBody will look for the license file in three locations in the
+following order.
+
+#. In the directory of AnyBody executables. This location is not used
+   for imported licenses; it is merely searched for trouble shooting
+   purposes.
+
+#. Licenses imported for your personal user are located in a
+   user-specific application data folder, typically:
+
+   .. code-block::
+      
+      C:\Users\<UserName>AppData\Local\AnyBodyTechnology\AnyBody.7.x.x
+
+#. Licenses imported for all users are located in a common application
+   data folder, typically:
+
+   .. code-block::
+      
+      C:\ProgramData\AnyBodyTechnology\AnyBody.7.x.x
+
+
+Trouble-shooting the License
+----------------------------
+
+In case of a license problem, you can inspect the license status from
+the License Manager dialog:
+
+#. Open the License Manager from the Help->Registration menu. (It opens
+   automatically if your license is not valid).
+
+#. Press the button "View license status". It will open a dialog with
+   license status information.
+
+#. If needed, send the information to AnyBody support at
+   support@anybodytech.com along with the license file..
+
+Below is a list of typical license errors and causes:
+
+*  License Status: "Bad signature in license (-5)"
+      The license file has been violated, e.g. manually edited, and is
+      no longer valid. A new license file is required.
+
+*  License Status: "No license check or No authorization for product or
+   License server doesn’t support this. Make sure you have imported a
+   valid license file."
+
+   #. No valid license file has been imported on the AnyBody client
+      computer.
+
+   #. The product name for the license is wrong. A new license file is
+      required.
+
+   #. No license file has been imported in the client computers.
+       Please refer to chapter 4 of this guide.
+
+*  License Status: "All licenses in use (-22)"
+      Too many license instances have been checked out. Each instance of
+      AnyBody count as one license check-out, even two instances on the
+      same computer. This is related to counted licenses only.
+
+*  License Status: "Wrong host for license (-4)"
+
+   #. The license file is used by the wrong host, i.e., on the wrong
+      computer.
+
+   #. License is linked to a hardware dongle, which is missing or not
+      accepted on the computer (drivers missing).
+
+   #. Wrong dongle is used.
+
+*  License Status: "Communication with server failed! Please make sure
+   the server has been started."
+
+   *  Wrong server hostname specified in the client license file. This
+      can be changed without violating the license file signature.
+
+   *  Different TCP/IP port number specified for license server and in
+      client license file. The port number can be modified in the
+      license file without violating its signature. Notice that from RLM
+      v6, the default port is 5053 instead of 28000.
+
+   *  Network issues. Make sure the client can contact the server
+      properly. It may be necessary to set up firewall exceptions on the
+      server and/or the client computer.
+
+   *  License server is not accepting your license. There are three
+      typical reasons for this, please refer to Section
+      `4.1 <#Trouble-shooting the License Server Setup>`__:
+
+      #. License server is not started.
+
+      #. The license file is missing on the server.
+
+      #. The AnyBody Technology definition file (a file identifying
+         AnyBody Technology to the generic RLM server software) is
+         missing in the license server setup.
+
+.. _chapter:NetworkLicense:
+
+Floating Licenses and License Management Server
+===============================================
+
+The AnyBody Modeling System uses the RLM license manager solution from
+`Reprise Software, Inc <http://www.reprisesoftware.com>`__. This section describes the basics of a floating license setup with RLM,
+including:
+
+-  A typical (recommended) setup.
+
+-  How to download the requisites.
+
+-  How to get more information about RLM.
+
+.. seealso:: For extended end-user information about RLM, please refer to the
+   following resources: 
+    
+   * RLM support and download area http://www.reprisesoftware.com/support/end-users.php ,
+   * RLM End-User Manual http://www.reprisesoftware.com/RLM_Enduser.html , 
+   * RLM Online FAQ http://www.reprisesoftware.com/support/faq.php
+
+Requirements
+-----------------------
+
+In order to set up your RLM license server for AnyBody license
+management, you need the following:
+
+#. A valid license file.
+
+#. The RLM server executable and utilities for your server platform.
+
+#. A file identifying AnyBody Technology for the RLM license server.
+   This is referred to as an ISV definition file. This can be a platform
+   independent server settings file (called anybodytch.set) or an
+   executable (e.g. anybodytch.exe) for your specific server platform.
+
+Item 2 and 3 you can download from
+`www.anybodytech.com/download.html?did=license_server <http://www.anybodytech.com/download.html?did=license_server>`__.
+You must log onto the AnyBody Technology website to get to the download
+area. Reprise Software may deliver more and newer RML distributions than
+currently supported by AnyBody Technology. These can be downloaded from
+the Reprise Sofware website.
+
+The license file is a text file (`*.lic`\ ), similar to the node-locked
+license files described in the previous sections. The difference is that
+the license file for a floating license server contains some additional
+lines defining the server. This includes the server’s name, host-id, and
+optionally a TCP/IP port number.
+
+.. note:: You must send your server host-id to AnyBody Technology before
+   the license file can be issued. The host-id is typically the MAC number
+   of the primary ethernet card.
+
+.. note:: If you need to run the RLM license server on a virtual machine
+   you will have to contact AnyBody Technology, as this requires a special
+   license file setup. In this case you will need to send the host-name of
+   the virtual machine as well as the host-id (MAC address) of the virtual
+   machine to AnyBody Technology.
+
+
+A typical license server setup
+------------------------------
+
+A typical license server installation include:
+
+#. Install the RLM license server executable, i.e., unpack it in your
+   choice of directory on your server (If you already have an RLM
+   license server running, you can use this one).
+
+#. Copy the ISV definition file to the same directory (This is the
+   typical and recommended setup, but the file can be located in another
+   directory. Please refer to the RLM End-User Manual for more details)
+
+#. Copy your license file to the same directory (This is the typical and
+   recommended setup, but the file can be located in another directory.
+   Please refer to the RLM End-User Manual for more details)
+
+#. Check and if needed modify the hostname and TCP/IP port number in the
+   first line (The HOST line) of the license file. The hostname and port
+   number can be changed without invalidating the license file. On a
+   Windows-based server, the hostname can be found by using the command
+   "ipconfig /all" in a command prompt.
+
+   -  The host name is the first argument of the HOST line.
+
+   -  The TCP/IP port number is the third argument in the HOST line. It
+      may be omitted in which case the default port is 5053 (Notice that
+      RLM version 5 and older used 28000).
+
+   -  The second argument is the host-id. This must not be changed or
+      the license file becomes invalid.
+
+#. If the client computer will be contacting the server through a VPN
+   connection, it might be advantageous to set up the RLM license server
+   to free licenses after the client computers have lost VPN contact
+   with the license server computer. This can be done by creating an
+   empty "anybodytch.opt" file in the same folder as the RLM executable
+   on the license server computer. The anybodytch.opt file must contain
+   the following line:
+
+   ::
+
+      TIMEOUT 3600
+
+   This will free licenses used by remote client computers which have
+   been out of contact with the license server computer for more than an
+   hour.
+
+#. Modify the firewall of the server to allow incoming connections on
+   the ports used by RLM.
+
+   -  On a Windows license server, the rlm.exe license server program
+      can be added to the firewall exceptions. This should allow
+      connections on the ports used by both RLM itself and the ISV
+      license server started by RLM.
+
+   -  On a license server with a port number based firewall, it may be
+      necessary to add both RLM’s own port number (by default 5053 on
+      RLM v6 and later), and the port number of the RLM AnyBody ISV
+      license server to the firewall port exceptions. The AnyBody ISV
+      license server can be set to use a specific port number by
+      specifying it in the ISV line of the server license file. For
+      further details on how to specify this, please refer to the RLM
+      End-User Manual.
+
+#. Start up the license server. The license server can either be started
+   as a normal program or as a service.
+
+   -  To start the RLM license server as a normal program, navigate to
+      the RLM license server folder and start the RLM license server by
+      executing rlm.exe. Please note that in this case the license
+      server will only be serving licenses while this program is
+      running.
+
+   -  If the RLM license server is installed as a service, the RLM
+      license server will automatically begin serving licenses when the
+      server computer is started. To install the RLM license server as a
+      service on a Windows server computer, please do the following:
+
+      -  Open a command prompt with administrator privileges
+         (right-click the command-prompt icon and select "Run as
+         administrator").
+
+      -  Execute the following command in the command prompt:
+
+         .. code-block::
+
+            C:\rlm\rlm.exe -install_service -dlog <rlm.exe location>\<logfilename> 
+              -c <location of license file>\<license file name>
+                
+         Where the parts in ``<...>`` are replaced by the actual values
+         for the specific server computer. An example of this could be:
+
+         .. code-block::
+
+            C:\rlm\rlm.exe -install_service -dlog c:\rlm\my_rlm_logfile.log 
+              -c c:\rlm\license.lic              
+
+      -  Start the rlm service by manually going to the Windows
+         Services, finding the new RLM service, selecting it and
+         starting it, or by rebooting the license server computer.
+
+      The RLM license server can also be started as a service on Unix
+      systems. For more details, please refer to the RLM End-User
+      Manual.
+
+#. Set up your client computers
+
+   -  Install AnyBody as described in the previous sections.
+
+   -  Import the license file. The same file as on the license server
+      can be used, but in principle it only needs the first line; only
+      server host-name and port number is needed.
+
+.. _Trouble-shooting the License Server Setup:
+
+Trouble-shooting the License Server Setup
+-----------------------------------------
+
+Below is a list of typical issues associated with setting up the license
+server.
+
+#. License server is not started.
+
+#. The license file is missing on the server.
+
+#. The AnyBody Technology definition file (anybodytch.set or
+   anybodytch.exe) is missing in the license server setup.
+
+#. Client and server does not communicate on the same port, either
+   because different ports numbers are specified in the server and
+   client side license files or because the default port number is used
+   and different versions of RLM technology uses different ports.
+
+-  An RLM option file is available for enabling logging of issues
+   regarding the license server. A log file of this kind is needed when
+   contacting AnyBody Support about license server related issues.
+
+   The typical and recommended setup is to create a file called
+   ’anybodytch.opt’ in the RLM license executable folder, if it does not
+   already exist. The file must contain the following line:
+
+   ::
+
+      REPORTLOG + anybodytch1.log std
+
+   Place the option file in the same directory as the license file that
+   is read by the license server. Restarting the license server, a log
+   file with the specified name will be created and updated during the
+   license service.
+
+   Please refer to the RLM End-User Manual, Chapters ’The License File’
+   and ’The ISV option file’, for more details.
+
+-  The status of the RLM license server on the license server computer
+   can be viewed by running the following command in a command prompt in
+   the license server computer RLM executable folder:
+
+   ::
+
+      rlmutil rlmstat -a
+
+   The output from this command will provide information on what ports
+   RLM is using, what ISV license servers are running, and what licenses
+   are being served and used. If you need to contact AnyBody support
+   regarding a floating license issues, please include the output from
+   this command.
+
+-  The connection between an RLM server and a client computer can be
+   tested in the following way.
+
+   -  Unpack the RLM installation package to a folder on the client
+      computer to be tested.
+
+   -  First, on the license server computer, run the following command
+      line in the RLM license server executable folder:
+
+      ::
+
+         rlmtests -s
+
+   -  Second, on the client computer, run the following command line in
+      the folder where you unpacked the RLM installation package (with
+      <server hostname> replaced by the actual RLM license server
+      computer hostname):
+
+      ::
+
+         rlmtests -a <server hostname>
+
+   -  The client computer will now begin trying to contact the RLM
+      license server computer, and the output in the client computers
+      command prompt will display whether the tests are successful.
+
+.. |image1| image:: images/image02.png
+   :width: 10cm
+   :height: 7.5578cm
+.. |image2| image:: images/image03.png
+   :width: 10cm
+   :height: 7.5578cm
+.. |image3| image:: images/image04.png
+   :width: 10cm
+   :height: 8.8037cm
+.. |image4| image:: images/image05.png
+   :width: 10cm
+   :height: 2.1677cm

@@ -1,0 +1,141 @@
+{
+  "build": "py_2",
+  "build_number": 2,
+  "channel": "https://conda.anaconda.org/conda-forge/noarch",
+  "constrains": [],
+  "depends": [
+    "pygments",
+    "python",
+    "setuptools"
+  ],
+  "extracted_package_dir": "C:\\Anaconda3_64\\pkgs\\pygments_anyscript-1.2.1-py_2",
+  "features": "",
+  "files": [
+    "Lib/site-packages/pygments_anyscript-1.2.1.dist-info/INSTALLER",
+    "Lib/site-packages/pygments_anyscript-1.2.1.dist-info/METADATA",
+    "Lib/site-packages/pygments_anyscript-1.2.1.dist-info/RECORD",
+    "Lib/site-packages/pygments_anyscript-1.2.1.dist-info/WHEEL",
+    "Lib/site-packages/pygments_anyscript-1.2.1.dist-info/entry_points.txt",
+    "Lib/site-packages/pygments_anyscript-1.2.1.dist-info/top_level.txt",
+    "Lib/site-packages/pygments_anyscript/BM_constants.txt",
+    "Lib/site-packages/pygments_anyscript/BM_parameters.txt",
+    "Lib/site-packages/pygments_anyscript/__init__.py",
+    "Lib/site-packages/pygments_anyscript/classes.txt",
+    "Lib/site-packages/pygments_anyscript/functions.txt",
+    "Lib/site-packages/pygments_anyscript/globals.txt",
+    "Lib/site-packages/pygments_anyscript/__pycache__/__init__.cpython-37.pyc"
+  ],
+  "fn": "pygments_anyscript-1.2.1-py_2.tar.bz2",
+  "license": "MIT",
+  "license_family": "MIT",
+  "link": {
+    "source": "C:\\Anaconda3_64\\pkgs\\pygments_anyscript-1.2.1-py_2",
+    "type": 1
+  },
+  "md5": "9464edb7f9708d6f9590ce540172c1f3",
+  "name": "pygments_anyscript",
+  "noarch": "python",
+  "package_tarball_full_path": "C:\\Anaconda3_64\\pkgs\\pygments_anyscript-1.2.1-py_2.tar.bz2",
+  "package_type": "noarch_python",
+  "paths_data": {
+    "paths": [
+      {
+        "_path": "site-packages/pygments_anyscript-1.2.1.dist-info/INSTALLER",
+        "path_type": "hardlink",
+        "sha256": "ceebae7b8927a3227e5303cf5e0f1f7b34bb542ad7250ac03fbcde36ec2f1508",
+        "sha256_in_prefix": "ceebae7b8927a3227e5303cf5e0f1f7b34bb542ad7250ac03fbcde36ec2f1508",
+        "size_in_bytes": 4
+      },
+      {
+        "_path": "site-packages/pygments_anyscript-1.2.1.dist-info/METADATA",
+        "path_type": "hardlink",
+        "sha256": "6a7632f3afd7a803c821b4cd7e1a2c6e454926846460000bd61cac52df4b69d5",
+        "sha256_in_prefix": "6a7632f3afd7a803c821b4cd7e1a2c6e454926846460000bd61cac52df4b69d5",
+        "size_in_bytes": 2916
+      },
+      {
+        "_path": "site-packages/pygments_anyscript-1.2.1.dist-info/RECORD",
+        "path_type": "hardlink",
+        "sha256": "da841e0b05a905f594baa20d92200f6243caa795d79ef75a12bc10eea6f73ea1",
+        "sha256_in_prefix": "da841e0b05a905f594baa20d92200f6243caa795d79ef75a12bc10eea6f73ea1",
+        "size_in_bytes": 1129
+      },
+      {
+        "_path": "site-packages/pygments_anyscript-1.2.1.dist-info/WHEEL",
+        "path_type": "hardlink",
+        "sha256": "81dbae3f206f149412434cddcb117b934cf29c35db21bbe0e59047a17ba6e6e9",
+        "sha256_in_prefix": "81dbae3f206f149412434cddcb117b934cf29c35db21bbe0e59047a17ba6e6e9",
+        "size_in_bytes": 110
+      },
+      {
+        "_path": "site-packages/pygments_anyscript-1.2.1.dist-info/entry_points.txt",
+        "path_type": "hardlink",
+        "sha256": "06d6695c2a18bad849cae69dda1860d660ee22c3d558f41574780bd961d0fe53",
+        "sha256_in_prefix": "06d6695c2a18bad849cae69dda1860d660ee22c3d558f41574780bd961d0fe53",
+        "size_in_bytes": 182
+      },
+      {
+        "_path": "site-packages/pygments_anyscript-1.2.1.dist-info/top_level.txt",
+        "path_type": "hardlink",
+        "sha256": "3a53d4529ba3fe7a23d3c070056e5e7f2907b01e76fd7385c9a3a441dd342c01",
+        "sha256_in_prefix": "3a53d4529ba3fe7a23d3c070056e5e7f2907b01e76fd7385c9a3a441dd342c01",
+        "size_in_bytes": 19
+      },
+      {
+        "_path": "site-packages/pygments_anyscript/BM_constants.txt",
+        "path_type": "hardlink",
+        "sha256": "9f4c27a231b4af3858412d49b625526ecac22a51adbde2dde8094c18997d5707",
+        "sha256_in_prefix": "9f4c27a231b4af3858412d49b625526ecac22a51adbde2dde8094c18997d5707",
+        "size_in_bytes": 1546
+      },
+      {
+        "_path": "site-packages/pygments_anyscript/BM_parameters.txt",
+        "path_type": "hardlink",
+        "sha256": "97e5650881d82e55c9ade04571aef4d90bb850e0afea7589d098764c31694684",
+        "sha256_in_prefix": "97e5650881d82e55c9ade04571aef4d90bb850e0afea7589d098764c31694684",
+        "size_in_bytes": 3611
+      },
+      {
+        "_path": "site-packages/pygments_anyscript/__init__.py",
+        "path_type": "hardlink",
+        "sha256": "a08394a9f4bb2b8dc9b86b3b9e4f9bcd0f0132d13d54093500987af7cfe9c7a9",
+        "sha256_in_prefix": "a08394a9f4bb2b8dc9b86b3b9e4f9bcd0f0132d13d54093500987af7cfe9c7a9",
+        "size_in_bytes": 8385
+      },
+      {
+        "_path": "site-packages/pygments_anyscript/classes.txt",
+        "path_type": "hardlink",
+        "sha256": "aa1c195338f53915f178461ddf9d3398744cdddaae0a9061f8350bf057aa3213",
+        "sha256_in_prefix": "aa1c195338f53915f178461ddf9d3398744cdddaae0a9061f8350bf057aa3213",
+        "size_in_bytes": 7595
+      },
+      {
+        "_path": "site-packages/pygments_anyscript/functions.txt",
+        "path_type": "hardlink",
+        "sha256": "e63345ee18ac69b773e58653a53360176ece9c9d6f22d4ab8b6e74e6c20c650b",
+        "sha256_in_prefix": "e63345ee18ac69b773e58653a53360176ece9c9d6f22d4ab8b6e74e6c20c650b",
+        "size_in_bytes": 730
+      },
+      {
+        "_path": "site-packages/pygments_anyscript/globals.txt",
+        "path_type": "hardlink",
+        "sha256": "04c9cec3afb62f0b5f7887fafa621f35ee79295b2535cf7be4b7d1a6614d1186",
+        "sha256_in_prefix": "04c9cec3afb62f0b5f7887fafa621f35ee79295b2535cf7be4b7d1a6614d1186",
+        "size_in_bytes": 1718
+      },
+      {
+        "_path": "Lib/site-packages/pygments_anyscript/__pycache__/__init__.cpython-37.pyc",
+        "path_type": "pyc_file"
+      }
+    ],
+    "paths_version": 1
+  },
+  "requested_spec": "conda-forge/noarch::pygments_anyscript==1.2.1=py_2",
+  "sha256": "6f6ed012368133765dffedd8e275013e8229be4174062529e83953522ac6ec71",
+  "size": 13381,
+  "subdir": "noarch",
+  "timestamp": 1536847283996,
+  "track_features": "",
+  "url": "https://conda.anaconda.org/conda-forge/noarch/pygments_anyscript-1.2.1-py_2.tar.bz2",
+  "version": "1.2.1"
+}

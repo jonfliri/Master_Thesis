@@ -1,0 +1,154 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=11" />
+<meta name="keywords" content="">
+<meta name="description" content="">
+<meta name="author" content="">
+<title>Getting Started with AnyBody</title>
+<style media="screen" type="text/css">
+body{font-family:"Segoe UI",Arial,Courier;}
+body{
+  font-size: 80%;
+  margin-top: 0ch;
+  padding-top: 0px;
+}
+h1 {
+  font-size: 150%;
+  font-weight: bold;
+  margin-bottom: -2ch;
+}
+h2 {
+  font-size: 125%;
+  font-weight: bold;
+  margin-bottom: 0ch;
+}
+
+a:link {color: #0000ff; text-decoration: underline; }
+a:active {color: #0000ff; text-decoration: underline; }
+a:visited {color: #0000ff; text-decoration: underline; }
+.link {color: #0000ff; text-decoration: underline;}
+.button_green {
+    background-color: #2F8350;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    /*height:30px;
+    width:150px;*/
+    text-align: center;
+    text-decoration: underline;
+    display: inline-block;
+    font-size:100%;
+    margin: 4px 2px;
+    cursor: pointer;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+}
+</style>
+<base href="">
+<!-- <link rel="stylesheet" type="text/css" media="screen" href="css/stylesheet.css"> -->
+<!-- <link rel="stylesheet" type="text/css" media="print" href="css/print.css"> -->
+<!-- <link rel="alternative stylesheet" type="text/css" media="screen" href="css/accessibility.css"> -->
+<!-- <link rel="icon" type="image/x-icon" href="favicon.ico"> -->
+<!-- <script type="text/javascript" src="js/global.js"></script> -->
+<!-- <script type="text/javascript" src="js/#.js"></script> -->
+<META http-equiv="Content-Script-Type" content="text/javascript">
+<script language="JScript">
+    function openFile(fn) {
+        var a, link;
+        curhref = decodeURI(location.href)
+        a = curhref.match("\/[^/]*\.html.*");
+        curhref = curhref.replace("file:///", "")
+        curhref = curhref.replace(a, "/")
+        WshShell = new ActiveXObject("WScript.Shell");
+        var FileName = curhref + fn;
+        //alert(FileName);
+        link = 'cmd /C "' + FileName + '"'
+        WshShell.Run(link, 0, false);
+
+    }
+    function openURL(url) {
+        WshShell = new ActiveXObject("WScript.Shell");
+        WshShell.Run(url);
+    }
+</script>
+<script type="text/javascript">
+	var urlParams = {};
+	(function () {    
+		var e,        
+			a = /\+/g,  // Regex for replacing addition symbol with a space        
+			r = /([^&=]+)=?([^&]*)/g,        
+			d = function (s) { return decodeURIComponent(s.replace(a, " ")); },        
+			q = window.location.search.substring(1);    
+		while (e = r.exec(q))       
+		urlParams[d(e[1])] = d(e[2]);
+		})();
+</script>
+</head>
+<body scroll="auto">
+  <h1>Getting Started with AnyBody</h1>
+
+  <p>This page contains some tips on how to get started with AnyBody. </p>
+  <!--<b>
+  <ol>
+    <li><a href="#sec1">Video tour</a></li>
+    <li><a href="#sec2">Demo models</a></li>
+    <li><a href="#sec3">Learning resources</a></li>
+    <li><a href="#sec4">Stay up to date</a></li>
+  </ol>
+  </b>-->
+
+
+  <a name="sec1"/>  
+  <h2>1) Video tour</h2>
+  <a onclick="openFile('../Documentation/Tutorials/index.html')">
+  <img src="AssistantVideo.png" alt="Introductory Video" style="width:384px;height:216px;">
+  </a>
+
+  <a name="sec2"/>
+  <h2>2) Demo models</h2>
+  <p>
+    Go to the “Demo” tab at the top this dialog box to install a library of demo models. Once installed, you can also access the library through this tab.
+  </p>
+  
+  
+  <a name="sec3"/>
+  <h2>3) Learning resources</h2>
+  <p>
+    If you have performed a “Typical” or “Complete” AnyBody installation, you will have access to the following resources (clickable links below). The Tutorials and AnyScript Reference Manual are also accessible from the <b>Help Menu</b>  
+  </p>
+
+  <p>
+    <a onclick="openFile('../Documentation/Tutorials/index.html')" style="text-decoration: underline;
+                color: blue; cursor: hand">
+    <button class="button_green" title="Use the Getting-Started tutorials to first steady your ship. Continue with more advanced tutorials on Force Dependent Kinematics, SolidWorks model importing etc">Tutorials</button>
+    </a>
+    <a onclick="openFile('../Documentation/AnyScriptReference/index.html')"
+                style="text-decoration: underline; color: blue; cursor: hand">
+    <button class="button_green" title="Your go-to manual for understanding the purpose and syntax of the AnyScript language elements.">AnyScript Reference Manual</button>
+    </a>
+    <a onclick="openFile('../Documentation/AnyExp4SOLIDWORKS/index.html')" style="text-decoration: underline;
+                color: blue; cursor: hand">
+    <button class="button_green" title="Learn how to import SolidWorks models into AnyBody, for simulating their interactions with the human body.">AnyExp4SOLIDWORKS User Guide</button>            
+    </a>   
+  </p> 
+
+    
+  <a name="sec4"/>
+  <h2>4) Stay up to date</h2>
+  <p>
+    Stay updated with the latest developments and learning resources at <a onclick="openURL('https://www.anyscript.org')" class="link">https://anyscript.org/</a>. Find extra models, tips and tricks and advanced simulation help on its <b>Wiki</b> page.
+  </p>
+  <p>
+    Visit the <a onclick="openURL('https://forum.anyscript.org')" class="link">AnyScript forum</a>;
+                </script> to post your queries on our <b>free, public user forum</b>. Our engineers will get back to you with solutions, when fellow users cannot. Do participate by sharing your own ideas and solutions to other forum questions.
+  </p>
+  <p>
+    Do not forget to sign up for free access to live and previously recorded AnyBody webcasts on <a onclick="openURL('https://anybodytech.com')" class="link"> our company homepage</a>.   
+    
+  </p>
+    
+</body>
+</html>

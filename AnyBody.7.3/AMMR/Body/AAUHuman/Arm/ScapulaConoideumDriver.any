@@ -1,0 +1,46 @@
+//This is included from jnt.any when no shoulder rhythm is included.
+// This is its own include file, so the calibration studies can reuse
+// the drivers. 
+
+//Replaced by rhythm.
+AnyKinEqSimpleDriver ScapulaTSThoraxNodeDriver = 
+{
+  AnyKinMeasure &Measure1=.ScapulaTSThoraxMeasure ;
+  DriverPos = {0};
+  DriverVel = {0};
+  Reaction.Type = {Off};
+};
+
+
+//Replaced by rhythm
+AnyKinEqSimpleDriver ConoideumLigamentDrv ={
+  //This is the position of origo of clavicula unscaled
+  AnyVec3  ClaviculaRStd=(-..Seg.Clavicula.NeutralPositionOnPelvis.StandardsRel*..Seg.Clavicula.Mirror)*..Seg.Clavicula.NeutralPositionOnPelvis.Clavicula_Axes';
+  
+  //This the position of conoid node on clavicual unscaled
+  AnyVec3  ClaviculaConoidR=ClaviculaRStd+ (..Seg.Clavicula.ConoidStd*..Seg.Clavicula.Mirror)*..Seg.Clavicula.NeutralPositionOnPelvis.Clavicula_Axes';
+  
+  //This is the position of origo of Scapula unscaled
+  AnyVec3  ScapulaRStd=(-..Seg.Scapula.NeutralPositionOnPelvis.StandardsRel*..Seg.Scapula.Mirror)*..Seg.Scapula.NeutralPositionOnPelvis.Scapula_Axes';
+  
+  //This the position of conoid node on clavicual unscaled
+  AnyVec3  ScapulaConoidR=ScapulaRStd+ (..Seg.Scapula.ConoidStd*..Seg.Scapula.Mirror)*..Seg.Scapula.NeutralPositionOnPelvis.Scapula_Axes';
+  
+  AnyVec3 StandardConoidVector= ClaviculaConoidR-ScapulaConoidR;
+  
+  #if BM_ARM_DELTOID_WRAPPING == _DELTOID_WRAPPING_RAKE_
+  // This scaling factor measures unscaled and scaled thickness of scapula segment to assess the relative change in conoid ligament
+  AnyVar ScaleFactor = vnorm (..Seg.Scapula.O_deltoideus_scapular_part_5.sRel -..Seg.Scapula.O_deltoideus_scapular_part_3.sRel) 
+        / vnorm(..Seg.Scapula.Data.O_deltoideus_scapular_part_5_pos -..Seg.Scapula.Data.O_deltoideus_scapular_part_3_pos) ;
+  #else
+  AnyVar ScaleFactor = vnorm (..Seg.Scapula.O_deltoideus_lateral_part_4.sRel -..Seg.Scapula.O_deltoideus_lateral_part_1.sRel) 
+  / vnorm(..Seg.Scapula.Data.O_deltoideus_lateral_part_4_pos -..Seg.Scapula.Data.O_deltoideus_lateral_part_1_pos) ;
+  #endif
+    
+  AnyFloat ScaleStdConoidVectorLength = vnorm(StandardConoidVector)*ScaleFactor;
+  
+  AnyKinPLine &ref=.ConoideumLigament;
+  DriverPos={ScaleStdConoidVectorLength};
+  DriverVel={0};
+  Reaction.Type={Off};
+};

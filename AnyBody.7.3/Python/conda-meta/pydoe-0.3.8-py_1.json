@@ -1,0 +1,243 @@
+{
+  "build": "py_1",
+  "build_number": 1,
+  "channel": "https://conda.anaconda.org/conda-forge/noarch",
+  "constrains": [],
+  "depends": [
+    "numpy >=1.8",
+    "python",
+    "scipy >=0.13"
+  ],
+  "extracted_package_dir": "C:\\Anaconda3_64\\pkgs\\pydoe-0.3.8-py_1",
+  "features": "",
+  "files": [
+    "Lib/site-packages/pyDOE-0.3.8-py2.7.egg-info/PKG-INFO",
+    "Lib/site-packages/pyDOE-0.3.8-py2.7.egg-info/SOURCES.txt",
+    "Lib/site-packages/pyDOE-0.3.8-py2.7.egg-info/dependency_links.txt",
+    "Lib/site-packages/pyDOE-0.3.8-py2.7.egg-info/installed-files.txt",
+    "Lib/site-packages/pyDOE-0.3.8-py2.7.egg-info/requires.txt",
+    "Lib/site-packages/pyDOE-0.3.8-py2.7.egg-info/top_level.txt",
+    "Lib/site-packages/pyDOE/__init__.py",
+    "Lib/site-packages/pyDOE/build_regression_matrix.py",
+    "Lib/site-packages/pyDOE/doe_box_behnken.py",
+    "Lib/site-packages/pyDOE/doe_composite.py",
+    "Lib/site-packages/pyDOE/doe_factorial.py",
+    "Lib/site-packages/pyDOE/doe_fold.py",
+    "Lib/site-packages/pyDOE/doe_lhs.py",
+    "Lib/site-packages/pyDOE/doe_plackett_burman.py",
+    "Lib/site-packages/pyDOE/doe_repeat_center.py",
+    "Lib/site-packages/pyDOE/doe_star.py",
+    "Lib/site-packages/pyDOE/doe_union.py",
+    "Lib/site-packages/pyDOE/var_regression_matrix.py",
+    "Lib/site-packages/pyDOE/__pycache__/__init__.cpython-37.pyc",
+    "Lib/site-packages/pyDOE/__pycache__/build_regression_matrix.cpython-37.pyc",
+    "Lib/site-packages/pyDOE/__pycache__/doe_box_behnken.cpython-37.pyc",
+    "Lib/site-packages/pyDOE/__pycache__/doe_composite.cpython-37.pyc",
+    "Lib/site-packages/pyDOE/__pycache__/doe_factorial.cpython-37.pyc",
+    "Lib/site-packages/pyDOE/__pycache__/doe_fold.cpython-37.pyc",
+    "Lib/site-packages/pyDOE/__pycache__/doe_lhs.cpython-37.pyc",
+    "Lib/site-packages/pyDOE/__pycache__/doe_plackett_burman.cpython-37.pyc",
+    "Lib/site-packages/pyDOE/__pycache__/doe_repeat_center.cpython-37.pyc",
+    "Lib/site-packages/pyDOE/__pycache__/doe_star.cpython-37.pyc",
+    "Lib/site-packages/pyDOE/__pycache__/doe_union.cpython-37.pyc",
+    "Lib/site-packages/pyDOE/__pycache__/var_regression_matrix.cpython-37.pyc"
+  ],
+  "fn": "pydoe-0.3.8-py_1.tar.bz2",
+  "license": "BSD 3-Clause",
+  "link": {
+    "source": "C:\\Anaconda3_64\\pkgs\\pydoe-0.3.8-py_1",
+    "type": 1
+  },
+  "md5": "6aeffd34a05a050c9b01c86de859c459",
+  "name": "pydoe",
+  "noarch": "python",
+  "package_tarball_full_path": "C:\\Anaconda3_64\\pkgs\\pydoe-0.3.8-py_1.tar.bz2",
+  "package_type": "noarch_python",
+  "paths_data": {
+    "paths": [
+      {
+        "_path": "site-packages/pyDOE-0.3.8-py2.7.egg-info/PKG-INFO",
+        "path_type": "hardlink",
+        "sha256": "d5be64cf608238a90f2a361993719708601b0cbce45e2741a325c6bc71bed94a",
+        "sha256_in_prefix": "d5be64cf608238a90f2a361993719708601b0cbce45e2741a325c6bc71bed94a",
+        "size_in_bytes": 5427
+      },
+      {
+        "_path": "site-packages/pyDOE-0.3.8-py2.7.egg-info/SOURCES.txt",
+        "path_type": "hardlink",
+        "sha256": "bbceab1214730f89cfa18a1fd591c2eff924f95316fa2402ca06c19a50786881",
+        "sha256_in_prefix": "bbceab1214730f89cfa18a1fd591c2eff924f95316fa2402ca06c19a50786881",
+        "size_in_bytes": 450
+      },
+      {
+        "_path": "site-packages/pyDOE-0.3.8-py2.7.egg-info/dependency_links.txt",
+        "path_type": "hardlink",
+        "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+        "sha256_in_prefix": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+        "size_in_bytes": 1
+      },
+      {
+        "_path": "site-packages/pyDOE-0.3.8-py2.7.egg-info/installed-files.txt",
+        "path_type": "hardlink",
+        "sha256": "fa03a8d5b5e8a5ee3ae6bf33472a4599db920ebf7b553c4254c04d13dd9441e8",
+        "sha256_in_prefix": "fa03a8d5b5e8a5ee3ae6bf33472a4599db920ebf7b553c4254c04d13dd9441e8",
+        "size_in_bytes": 715
+      },
+      {
+        "_path": "site-packages/pyDOE-0.3.8-py2.7.egg-info/requires.txt",
+        "path_type": "hardlink",
+        "sha256": "1978c5330a34a48fac00c1107de3949b8c8da3bd11517f59ca9b4510363c6c8a",
+        "sha256_in_prefix": "1978c5330a34a48fac00c1107de3949b8c8da3bd11517f59ca9b4510363c6c8a",
+        "size_in_bytes": 12
+      },
+      {
+        "_path": "site-packages/pyDOE-0.3.8-py2.7.egg-info/top_level.txt",
+        "path_type": "hardlink",
+        "sha256": "8f7f187c1bfbb4ee201c3dff426063edf11b1039e96ddb7b3595cdf38679dbb5",
+        "sha256_in_prefix": "8f7f187c1bfbb4ee201c3dff426063edf11b1039e96ddb7b3595cdf38679dbb5",
+        "size_in_bytes": 6
+      },
+      {
+        "_path": "site-packages/pyDOE/__init__.py",
+        "path_type": "hardlink",
+        "sha256": "c0f2adb981b4b8595a0da64fad9946c606730fb20c635083e7121bd8d090fbc0",
+        "sha256_in_prefix": "c0f2adb981b4b8595a0da64fad9946c606730fb20c635083e7121bd8d090fbc0",
+        "size_in_bytes": 1073
+      },
+      {
+        "_path": "site-packages/pyDOE/build_regression_matrix.py",
+        "path_type": "hardlink",
+        "sha256": "b328c3fb432f94374af83fa8e7877f5f4d242c761d7448472fc045c2ebc744a2",
+        "sha256_in_prefix": "b328c3fb432f94374af83fa8e7877f5f4d242c761d7448472fc045c2ebc744a2",
+        "size_in_bytes": 2991
+      },
+      {
+        "_path": "site-packages/pyDOE/doe_box_behnken.py",
+        "path_type": "hardlink",
+        "sha256": "6bd21e1d2daad6f79c6baa58c6f43dbb19f77824a3aee2a531cb4bba3b5c4fc7",
+        "sha256_in_prefix": "6bd21e1d2daad6f79c6baa58c6f43dbb19f77824a3aee2a531cb4bba3b5c4fc7",
+        "size_in_bytes": 2602
+      },
+      {
+        "_path": "site-packages/pyDOE/doe_composite.py",
+        "path_type": "hardlink",
+        "sha256": "231e71c31a88954cd39cf97538a0d3241f1277e4fc2b558f825d7c0644d616ce",
+        "sha256_in_prefix": "231e71c31a88954cd39cf97538a0d3241f1277e4fc2b558f825d7c0644d616ce",
+        "size_in_bytes": 6272
+      },
+      {
+        "_path": "site-packages/pyDOE/doe_factorial.py",
+        "path_type": "hardlink",
+        "sha256": "2b56794d7b487454856924ee96332b60c763f0aec1e5ff9875cce1b21b8ee06e",
+        "sha256_in_prefix": "2b56794d7b487454856924ee96332b60c763f0aec1e5ff9875cce1b21b8ee06e",
+        "size_in_bytes": 7199
+      },
+      {
+        "_path": "site-packages/pyDOE/doe_fold.py",
+        "path_type": "hardlink",
+        "sha256": "adf1d4ff3788ef7e6545d2586b5d5ac8485c4584cae54d039df30bf750a41737",
+        "sha256_in_prefix": "adf1d4ff3788ef7e6545d2586b5d5ac8485c4584cae54d039df30bf750a41737",
+        "size_in_bytes": 1547
+      },
+      {
+        "_path": "site-packages/pyDOE/doe_lhs.py",
+        "path_type": "hardlink",
+        "sha256": "2ac2500c76500d60edcca7206b2cb10d390281bde1fc625c86ed23c23592bf76",
+        "sha256_in_prefix": "2ac2500c76500d60edcca7206b2cb10d390281bde1fc625c86ed23c23592bf76",
+        "size_in_bytes": 7829
+      },
+      {
+        "_path": "site-packages/pyDOE/doe_plackett_burman.py",
+        "path_type": "hardlink",
+        "sha256": "97baf48e579fb89091e42a04d69770bd472cc85f644b90153f7cb8733f511fc0",
+        "sha256_in_prefix": "97baf48e579fb89091e42a04d69770bd472cc85f644b90153f7cb8733f511fc0",
+        "size_in_bytes": 3010
+      },
+      {
+        "_path": "site-packages/pyDOE/doe_repeat_center.py",
+        "path_type": "hardlink",
+        "sha256": "7e90186a0818a6e3cfee91e298bf58f645a0b3289baccd90ef78344f9668a226",
+        "sha256_in_prefix": "7e90186a0818a6e3cfee91e298bf58f645a0b3289baccd90ef78344f9668a226",
+        "size_in_bytes": 1125
+      },
+      {
+        "_path": "site-packages/pyDOE/doe_star.py",
+        "path_type": "hardlink",
+        "sha256": "e440f6cb4b248a8444b49e8d16214de4674cedb2814069687f6b253d0e787906",
+        "sha256_in_prefix": "e440f6cb4b248a8444b49e8d16214de4674cedb2814069687f6b253d0e787906",
+        "size_in_bytes": 2370
+      },
+      {
+        "_path": "site-packages/pyDOE/doe_union.py",
+        "path_type": "hardlink",
+        "sha256": "cbf6ab1abeee2a7869694b9f9ebe71b6221c3bad6154e835c455ecd5449f67aa",
+        "sha256_in_prefix": "cbf6ab1abeee2a7869694b9f9ebe71b6221c3bad6154e835c455ecd5449f67aa",
+        "size_in_bytes": 1227
+      },
+      {
+        "_path": "site-packages/pyDOE/var_regression_matrix.py",
+        "path_type": "hardlink",
+        "sha256": "b4442e7a1d0c77e90910cc5d0b0315f104a6672abae519778077c86a153736fa",
+        "sha256_in_prefix": "b4442e7a1d0c77e90910cc5d0b0315f104a6672abae519778077c86a153736fa",
+        "size_in_bytes": 1506
+      },
+      {
+        "_path": "Lib/site-packages/pyDOE/__pycache__/__init__.cpython-37.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "Lib/site-packages/pyDOE/__pycache__/build_regression_matrix.cpython-37.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "Lib/site-packages/pyDOE/__pycache__/doe_box_behnken.cpython-37.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "Lib/site-packages/pyDOE/__pycache__/doe_composite.cpython-37.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "Lib/site-packages/pyDOE/__pycache__/doe_factorial.cpython-37.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "Lib/site-packages/pyDOE/__pycache__/doe_fold.cpython-37.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "Lib/site-packages/pyDOE/__pycache__/doe_lhs.cpython-37.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "Lib/site-packages/pyDOE/__pycache__/doe_plackett_burman.cpython-37.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "Lib/site-packages/pyDOE/__pycache__/doe_repeat_center.cpython-37.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "Lib/site-packages/pyDOE/__pycache__/doe_star.cpython-37.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "Lib/site-packages/pyDOE/__pycache__/doe_union.cpython-37.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "Lib/site-packages/pyDOE/__pycache__/var_regression_matrix.cpython-37.pyc",
+        "path_type": "pyc_file"
+      }
+    ],
+    "paths_version": 1
+  },
+  "requested_spec": "conda-forge/noarch::pydoe==0.3.8=py_1",
+  "sha256": "4616364442c3c0c91188ae8b04d3146f21e8826e55e120835d910844e4dbe38e",
+  "size": 13421,
+  "subdir": "noarch",
+  "timestamp": 1531166118644,
+  "track_features": "",
+  "url": "https://conda.anaconda.org/conda-forge/noarch/pydoe-0.3.8-py_1.tar.bz2",
+  "version": "0.3.8"
+}

@@ -1,0 +1,95 @@
+{
+  "arch": "x86_64",
+  "build": "py37hc8dfbb8_1001",
+  "build_number": 1001,
+  "channel": "https://conda.anaconda.org/conda-forge/win-64",
+  "constrains": [],
+  "depends": [
+    "python >=3.7,<3.8.0a0",
+    "python_abi 3.7.* *_cp37m"
+  ],
+  "extracted_package_dir": "C:\\Anaconda3_64\\pkgs\\ratelimiter-1.2.0-py37hc8dfbb8_1001",
+  "features": "",
+  "files": [
+    "Lib/site-packages/__pycache__/ratelimiter.cpython-37.pyc",
+    "Lib/site-packages/ratelimiter-1.2.0-py3.7.egg-info/PKG-INFO",
+    "Lib/site-packages/ratelimiter-1.2.0-py3.7.egg-info/SOURCES.txt",
+    "Lib/site-packages/ratelimiter-1.2.0-py3.7.egg-info/dependency_links.txt",
+    "Lib/site-packages/ratelimiter-1.2.0-py3.7.egg-info/requires.txt",
+    "Lib/site-packages/ratelimiter-1.2.0-py3.7.egg-info/top_level.txt",
+    "Lib/site-packages/ratelimiter.py"
+  ],
+  "fn": "ratelimiter-1.2.0-py37hc8dfbb8_1001.tar.bz2",
+  "license": "Apache-2.0",
+  "license_family": "APACHE",
+  "link": {
+    "source": "C:\\Anaconda3_64\\pkgs\\ratelimiter-1.2.0-py37hc8dfbb8_1001",
+    "type": 1
+  },
+  "md5": "40282a7d01ab11a870ba90f150a1eab4",
+  "name": "ratelimiter",
+  "package_tarball_full_path": "C:\\Anaconda3_64\\pkgs\\ratelimiter-1.2.0-py37hc8dfbb8_1001.tar.bz2",
+  "paths_data": {
+    "paths": [
+      {
+        "_path": "Lib/site-packages/__pycache__/ratelimiter.cpython-37.pyc",
+        "path_type": "hardlink",
+        "sha256": "ae4380ce1437c3c4c047ae35b93910fffe411c26820c186cffe0babd2937e4c3",
+        "sha256_in_prefix": "ae4380ce1437c3c4c047ae35b93910fffe411c26820c186cffe0babd2937e4c3",
+        "size_in_bytes": 3823
+      },
+      {
+        "_path": "Lib/site-packages/ratelimiter-1.2.0-py3.7.egg-info/PKG-INFO",
+        "path_type": "hardlink",
+        "sha256": "20ba14403f8a7d3fc8628407df5eca2645769564ffed979bd4eec12d48be7a56",
+        "sha256_in_prefix": "20ba14403f8a7d3fc8628407df5eca2645769564ffed979bd4eec12d48be7a56",
+        "size_in_bytes": 4985
+      },
+      {
+        "_path": "Lib/site-packages/ratelimiter-1.2.0-py3.7.egg-info/SOURCES.txt",
+        "path_type": "hardlink",
+        "sha256": "d1de539f01423fedd87329a88515d504d18b0b9c56bc34b49b226265fe252294",
+        "sha256_in_prefix": "d1de539f01423fedd87329a88515d504d18b0b9c56bc34b49b226265fe252294",
+        "size_in_bytes": 232
+      },
+      {
+        "_path": "Lib/site-packages/ratelimiter-1.2.0-py3.7.egg-info/dependency_links.txt",
+        "path_type": "hardlink",
+        "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+        "sha256_in_prefix": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+        "size_in_bytes": 1
+      },
+      {
+        "_path": "Lib/site-packages/ratelimiter-1.2.0-py3.7.egg-info/requires.txt",
+        "path_type": "hardlink",
+        "sha256": "d777751db66776deb9f144042b0a3e10620042815870fff38621446e0bb13a6c",
+        "sha256_in_prefix": "d777751db66776deb9f144042b0a3e10620042815870fff38621446e0bb13a6c",
+        "size_in_bytes": 65
+      },
+      {
+        "_path": "Lib/site-packages/ratelimiter-1.2.0-py3.7.egg-info/top_level.txt",
+        "path_type": "hardlink",
+        "sha256": "91379171042a9b57c6a87349c470b0501f54cdb4c85040fce77e7ede957a467c",
+        "sha256_in_prefix": "91379171042a9b57c6a87349c470b0501f54cdb4c85040fce77e7ede957a467c",
+        "size_in_bytes": 12
+      },
+      {
+        "_path": "Lib/site-packages/ratelimiter.py",
+        "path_type": "hardlink",
+        "sha256": "299e5ec657602d2caeaae8d98b7ff9aa175a58c601beb9948ebd56830cd8c630",
+        "sha256_in_prefix": "299e5ec657602d2caeaae8d98b7ff9aa175a58c601beb9948ebd56830cd8c630",
+        "size_in_bytes": 4775
+      }
+    ],
+    "paths_version": 1
+  },
+  "platform": "win32",
+  "requested_spec": "conda-forge/win-64::ratelimiter==1.2.0=py37hc8dfbb8_1001",
+  "sha256": "301cc7bccd19e1d6fee1fe234f1417ced9349ab70ca99e49c9c82c70a331f323",
+  "size": 12731,
+  "subdir": "win-64",
+  "timestamp": 1591807649319,
+  "track_features": "",
+  "url": "https://conda.anaconda.org/conda-forge/win-64/ratelimiter-1.2.0-py37hc8dfbb8_1001.tar.bz2",
+  "version": "1.2.0"
+}

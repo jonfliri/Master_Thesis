@@ -1,0 +1,158 @@
+.. _ack:
+
+#########################################
+License Acknowledgement
+#########################################
+
+Overview
+**************
+AnyBody Technology's products utilize third-party software subject to the licenses described below.
+
+
+
+OpenSceneGraph
+****************************
+The OpenSceneGraph is protected by Copyright, and is licensed as OpenSource, so
+the source code is freely available, modifiable and redistributed under the
+terms of the OpenSceneGraph Public License (:download:`OSGPL<downloads/openscenegraph_license.txt>`).
+
+As part of the OpenSceneGraph functionality, AnyBody uses:
+
+FreeType under :download:`The FreeType Project License<downloads/freetype_license.txt>`: Copyright © 1996-2002, 2006 by David Turner, Robert Wilhelm, and Werner Lemberg. 
+
+Libpng under the :download:`Libpng License<downloads/libpng_license.txt>`: See copyright notices in the license file. 
+
+Libjpeg by Independent JPEG Group (IJG, www.ijg.org): This software is in parts based on the work of the Independent JPEG Group. (:download:`The LIBJPEG readme including license term<downloads/libjpeg_readme.txt>`) 
+
+Libtiff by Sam Leffler and Silicon Graphics, Inc. (:download:`Copyright and terms of usage<downloads/libtiff_copyright.txt>`). 
+
+Giflib by Eric S. Raymond, Copyright © 1997  Eric S. Raymond (:download:`Copyright and terms of usage<downloads/giflib_copyright.txt>`).
+
+zlib by Jean-loup Gailly and Mark Adler, Copyright © 1995-2017 Jean-loup Gailly and Mark Adler (:download:`zlib readme<downloads/zlib_readme.txt>`). 
+
+curl by Daniel Stenberg, Copyright © 1996 - 2018, Daniel Stenberg, <daniel@haxx.se>, and many contributors, All rights reserved. (:download:`COPYRIGHT AND PERMISSION NOTICE<downloads/curl_copyright.txt>`)
+
+glut by Mark J. Kilgard, Copyright © Mark J. Kilgard, 1994, 1995, 1996, 1998, 2000, 2006, 2010 (:download:`glut license<downloads/glut_license.txt>`).
+
+DCMTK by OFFIS, Copyright © 1994-2017, OFFIS e.V., All rights reserved (:download:`Copyright and terms of usage<downloads/dcmtk_copyright.txt>`). 
+
+Autodesk® FBX
+****************************
+This software contains Autodesk® FBX® code developed by Autodesk, Inc. Copyright 2018 Autodesk, Inc. All rights, reserved. Such code is provided “as is” and Autodesk, Inc. disclaims any and all warranties, whether express or implied, including without limitation the implied warranties of merchantability, fitness for a particular purpose or non-infringement of third party rights. In no event shall Autodesk, Inc. be liable for any direct, indirect, incidental, special, exemplary, or consequential damages (including, but not limited to, procurement of substitute goods or services; loss of use, data, or profits; or business interruption) however caused and on any theory of liability, whether in contract, strict liability, or tort (including negligence or otherwise) arising in any way out of such code.
+
+Hierarchical Data Format (HDF5) 
+**********************************
+AnyBody uses Hierarchical Data Format (HDF5). HDF5 is distributed under a BSD-style license (:download:`HDF5 Copyright and License Term<downloads/hdf5_copyright.txt>`).
+
+HDF5 (Hierarchical Data Format 5) Software Library and Utilities 
+Copyright © 2006-2018, The HDF Group. 
+
+LibXML2 
+****************************
+
+AnyBody uses LibXML2 (version 2.9.8) by http://www.xmlsoft.org/. LibXML is distributed under the :download:`MIT license<downloads/libxml2_copyright.txt>`.
+
+Copyright © 1998-2012 Daniel Veillard.  All Rights Reserved.  
+
+SuiteSparse
+****************************
+
+AnyBody uses SuiteSparse version 5.2.0. SuiteSparse has been compiled including only the :download:`LGPL<downloads/lesser.txt>` parts.
+
+SuiteSpace, Copyright 2012, Timothy A. Davis 
+
+UMFPACK
+****************************
+
+AnyBody uses UMFPACK version 5.1.0. UMFPACK is distributed under :download:`LGPL<downloads/lesser.txt>`. 
+
+UMFPACK, Copyright © 1995-2006 by Timothy A.  Davis 
+
+Visualization Toolkit (VTK) 
+****************************
+
+AnyBody uses The Visualization Toolkit (VTK) by Kitware. VTK is distributed under :download:`the BSD license<downloads/vtk_copyright.txt>`. 
+
+Copyright © 1993-2015 Ken Martin, Will Schroeder, Bill Lorensen, All rights reserved.
+
+Boost
+***************************
+
+AnyBody uses Boost libraries. Boost is distributed under :download:`the Boost Software License<downloads/boost_license.txt>`.
+
+Copyright Beman Dawes, David Abrahams, 1998-2005.
+Copyright Rene Rivera 2004-2007.
+
+Apache Thrift
+***************************
+
+AnyBody uses Apache Thrift. Apache Thrift is distributed under :download:`Apache License 2.0<downloads/apache_license.txt>`.
+ 
+Copyright ©2017 Apache Software Foundation
+
+GTEngine
+***************************
+
+GTEngine is distributed under :download:`the Boost Software License<downloads/boost_license.txt>`, Version 1.0.
+
+Copyright © David Eberly, Geometric Tools, Redmond WA 98052, 1998-2019.
+
+International Components for Unicode (ICU)
+******************************************
+ICU is distributed under the :download:`Unicode License<downloads/unicode_license.txt>`.
+
+Copyright © 1991-2020 Unicode, Inc. All rights reserved.
+
+Intel Math Kernel Library (MKL)
+*******************************
+Intel MKL is distributed under the :download:`Intel Simplified Software License<downloads/intel-simplified-software-license.pdf>`.
+
+Copyright 2015-2018 Intel Corporation.
+
+The Mesa 3D Graphics Library
+****************************
+The core Mesa 3D Graphics Library is distributed under the :download:`MIT license<downloads/mesa3d_license.txt>`.
+
+Copyright © 1999-2007  Brian Paul   All Rights Reserved.
+
+TinyXML
+***************************
+AnyBody uses the TinyXML library. TinyXML is distributed under the :download:`zlib license<downloads/tinyxml_license.txt>`.
+
+Copyright © 2006 Ryan Pusztai, Ryan Mulder
+
+RADAU5
+***************************
+AnyBody uses the RADAU5 library by Ernst Hairer (:download:`copyright and terms of usage<downloads/radau5_license.txt>`)
+
+Copyright © 2004, Ernst Hairer
+
+Stackwalker
+***************************
+AnyBody uses Stackwalker by Jochen Kalmbach (:download:`copyright and terms of usage<downloads/stackwalker_license.txt>`)
+
+Copyright (c) 2005-2013, Jochen Kalmbach - All rights reserved.
+
+Python
+***************************
+AnyBody interfaces with different version of Python by the `Python Software Foundation (PSF) <https://www.python.org>`__ . 
+
+AnyBody supports the following version of Python 
+
+* Python 3.8 (distributed under the PSF License, https://docs.python.org/3.8/license.html). Copyright © 2001-2020 Python Software Foundation; All Rights Reserved”. 
+* Python 3.7 (distributed under the PSF License, https://docs.python.org/3.7/license.html). Copyright © 2001-2019 Python Software Foundation; All Rights Reserved”. 
+* Python 3.6 (distributed under the PSF License, https://docs.python.org/3.6/license.html). Copyright © 2001-2017 Python Software Foundation; All Rights Reserved”. 
+* Python 3.5 (distributed under the PSF License, https://docs.python.org/3.5/license.html). Copyright © 2001-2017 Python Software Foundation; All Rights Reserved”. 
+* Python 3.4 (distributed under the PSF License, https://docs.python.org/3.4/license.html). Copyright © 2001-2016 Python Software Foundation; All Rights Reserved”. 
+* Python 2.7 (distributed under the PSF License, https://docs.python.org/2.7/license.html). Copyright © 2001-2017 Python Software Foundation; All Rights Reserved”. 
+
+The AnyBody installation includes a Python 3.7 distribution under the PSF License https://docs.python.org/3.7/license.html.
+The Python distribution includes the following packages distributed according to the licenses stated alongside their names:
+
+.. csv-table:: Python environment licenses
+   :file: python-licenses.csv
+   :widths: 30, 20, 50
+   :header-rows: 1
+
+
+

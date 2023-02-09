@@ -1,0 +1,325 @@
+
+
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AnyStyleNumeric1f &#8212; AnyScript Reference 7.3.4 documentation</title>
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/cloud.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/table_styling.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noticia+Text|Open+Sans|Droid+Sans+Mono" type="text/css" />
+    
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/script/filter-class-list.js"></script>
+    <script src="../../_static/fa/all.js"></script>
+
+    
+    
+     
+        <script src="../../_static/jquery.cookie.js"></script>
+    
+
+    
+     
+        <script src="../../_static/cloud.base.js"></script>
+    
+
+    
+     
+        <script src="../../_static/cloud.js"></script>
+    
+
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="AnyStyleNumeric2" href="AnyStyleNumeric2.html" />
+    <link rel="prev" title="AnyStyleNumeric1" href="AnyStyleNumeric1.html" /> 
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head><body>
+    <div class="relbar-top">
+        
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../contents.html" title="Table Of Contents"
+             accesskey="C">toc</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="AnyStyleNumeric2.html" title="AnyStyleNumeric2"
+             accesskey="N">next</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="AnyStyleNumeric1.html" title="AnyStyleNumeric1"
+             accesskey="P">previous</a> &nbsp; &nbsp;</li>
+    <li><a href="../../index.html">AnyScript Reference 7.3.4 documentation</a> &#187;</li>
+
+          <li class="nav-item nav-item-1"><a href="../../index.html" >The AnyScript Reference manual!</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../class-overview.html" accesskey="U"><strong>Class reference</strong></a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">AnyStyleNumeric1f</a></li> 
+      </ul>
+    </div>
+    </div>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="anystylenumeric1f">
+<span id="id1"></span><h1>AnyStyleNumeric1f<a class="headerlink" href="#anystylenumeric1f" title="Permalink to this headline">¶</a></h1>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>Abstract</p>
+</dd>
+<dt class="field-even">Parent class</dt>
+<dd class="field-even"><p><a class="reference internal" href="AnyStyleNumeric1.html#anystylenumeric1"><span class="std std-ref">AnyStyleNumeric1</span></a></p>
+</dd>
+</dl>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>Class defining number formats for output.
+This class contains extended formatting capabilities compared to the parent class, AnyStyleNumeric1.
+A fixed amount of space, the width, and a style, decimal or scientific notation, can be assigned to the output,
+in addition to the precission already given by the number of digits after the decimal point.</p>
+<p>A more detailed and versatile formatting can achieved with C-style formatting specification known from the printf() function.
+This is done by the FormatStr member, which overrides any other specification.</p>
+<div class="highlight-AnyScriptDoc notranslate"><div class="highlight"><pre><span></span><span class="n">FormatStr</span> <span class="o">=</span> %<span class="p">[</span><span class="n">flags</span><span class="p">]</span> <span class="p">[</span><span class="n">width</span><span class="p">]</span> <span class="p">[.</span><span class="n">precision</span><span class="p">]</span> <span class="p">[</span>\<span class="p">{</span><span class="n">h</span> <span class="o">|</span> <span class="n">l</span> <span class="o">|</span> <span class="n">ll</span> <span class="o">|</span> <span class="n">I</span> <span class="o">|</span> <span class="n">I32</span> <span class="o">|</span> <span class="n">I64</span><span class="p">]</span><span class="n">type</span>
+</pre></div>
+</div>
+<p><strong>type:</strong></p>
+<dl class="simple">
+<dt>f:</dt><dd><p>Signed value having the form [ ?]d.d, where d is one or more decimal digits.
+The number of digits before the decimal point depends on the magnitude of the number, and the number of digits after the decimal point depends on the requested precision.</p>
+</dd>
+<dt>e:</dt><dd><p>Signed value having the form [ ?]d.d e [sign]d where d is one or more decimal digits, depending on the output format and size of the exponent, and sign is + or ?</p>
+</dd>
+<dt>E:</dt><dd><p>Identical to e, but using uppercase ‘E’ instead of lowercase ‘e’.</p>
+</dd>
+<dt>g:</dt><dd><p>Signed value printed in f or e format, whichever is more compact for the given value and precision.
+The e format is used only when the exponent of the value is less than ? or greater than or equal to the precision argument.
+Trailing zeros are truncated, and the decimal point appears only if one or more digits follow it.</p>
+</dd>
+<dt>G:</dt><dd><p>Identical to g, but using the E format instead of e.</p>
+</dd>
+</dl>
+<p><strong>flags:</strong></p>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">-</span></code>:</dt><dd><p>Left align the result within the given field width.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">+</span></code>:</dt><dd><p>Prefix the output value with a sign (+ or ? if the output value is of a signed type.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">0</span></code>:</dt><dd><p>If width is prefixed with 0, zeros are added until the minimum width is reached. If 0 and ?appear, the 0 is ignored. If 0 is specified with an integer format (i, u, x, X, o, d) and a precision specification is also present (for example, %04.d), the 0 is ignored.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">Blank</span></code> ‘’:</dt><dd><p>Prefix the output value with a blank if the output value is signed and positive; the blank is ignored if both the blank and + flags appear.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">#</span></code>:</dt><dd><p>When used with the o, x, or X format, the # flag prefixes any nonzero output value with 0, 0x, or 0X, respectively.
+When used with the e, E, f, a or A format, the # flag forces the output value to contain a decimal point in all cases.
+When used with the g or G format, the # flag forces the output value to contain a decimal point in all cases and prevents the truncation of trailing zeros.
+Ignored when used with c, d, i, u, or s.</p>
+</dd>
+</dl>
+<p><strong>width:</strong></p>
+<p>The width argument is a nonnegative decimal integer controlling the minimum number of characters printed. If the number of characters in the output value is less than the specified width, blanks are added to the left or the right of the values ?depending on whether the ?flag (for left alignment) is specified ?until the minimum width is reached. If width is prefixed with 0, zeros are added until the minimum width is reached (not useful for left-aligned numbers).</p>
+<p>The width specification never causes a value to be truncated. If the number of characters in the output value is greater than the specified width, or if width is not given, all characters of the value are printed (subject to the precision specification).</p>
+<p><strong>precision:</strong></p>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">f</span></code>:</dt><dd><p>The precision value specifies the number of digits after the decimal point.
+If a decimal point appears, at least one digit appears before it. The value is rounded to the appropriate number of digits.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">e,E</span></code>:</dt><dd><p>The precision specifies the number of digits to be printed after the decimal point. The last printed digit is rounded.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">g,G</span></code>:</dt><dd><p>The precision specifies the maximum number of significant digits printed.</p>
+</dd>
+</dl>
+<p>Notice that not some output functions may not support all possible formats in FormatStr, depending on their implementation.</p>
+<p>Notice also that FormatStr has higher priority that Digits, Width, and Style;
+the lower priorities attributes cannot be initialized togther with FormatStr,
+but their values are set from FormatStr, if possible.</p>
+<p> </p>
+</div>
+<div class="section" id="optional-initialization-members">
+<h2>Optional initialization members<a class="headerlink" href="#optional-initialization-members" title="Permalink to this headline">¶</a></h2>
+<!-- Hack to trick sphinx into adding member target link -->
+  <!--<div class="section" id="digits">
+<span id="anystylenumeric1f-digits"></span><h3>Digits<a class="headerlink" href="#digits" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries odd section collapsed" id="Digits">
+<span id="anystylenumeric1f-digits" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title"> Digits </span><span class="member-title-equal">=</span><span class="member-title-default"> 8 </span><a class="headerlink" href="#Digits" title="Permalink to this headline">¶</a>
+<span class="member-descr">Number of digits in output. Disregarded if smaller than one.</span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyIntVar.html#anyintvar"><span class="std std-ref">AnyIntVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">8</span></code></div>
+</div>
+<p>Number of digits in output. Disregarded if smaller than one.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+ </div> <!--</div>
+<div class="section" id="width">
+<span id="anystylenumeric1f-width"></span><h3>Width<a class="headerlink" href="#width" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries even section collapsed" id="Width">
+<span id="anystylenumeric1f-width" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title"> Width </span><span class="member-title-equal">=</span><span class="member-title-default"> 0 </span><a class="headerlink" href="#Width" title="Permalink to this headline">¶</a>
+<span class="member-descr">Number of character spaces reserved for the number in output. Disregarded if...</span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyIntVar.html#anyintvar"><span class="std std-ref">AnyIntVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">0</span></code></div>
+</div>
+<p>Number of character spaces reserved for the number in output. Disregarded if smaller than one.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+ </div> <!--</div>
+<div class="section" id="style">
+<span id="anystylenumeric1f-style"></span><h3>Style<a class="headerlink" href="#style" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries odd section collapsed" id="Style">
+<span id="anystylenumeric1f-style" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title"> Style </span><span class="member-title-equal">=</span><span class="member-title-default"> CompactNumber </span><a class="headerlink" href="#Style" title="Permalink to this headline">¶</a>
+<span class="member-descr">Style specification.</span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyEnumFloatNumberStyle.html#anyenumfloatnumberstyle"><span class="std std-ref">AnyEnumFloatNumberStyle</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">CompactNumber</span></code></div>
+</div>
+<p>Style specification.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+ </div> <!--</div>
+<div class="section" id="formatstr">
+<span id="anystylenumeric1f-formatstr"></span><h3>FormatStr<a class="headerlink" href="#formatstr" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries even section collapsed" id="FormatStr">
+<span id="anystylenumeric1f-formatstr" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title"> FormatStr </span><span class="member-title-equal">=</span><span class="member-title-default"> "" </span><a class="headerlink" href="#FormatStr" title="Permalink to this headline">¶</a>
+<span class="member-descr">Complete format specification using C-style character specification known...</span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyStringVar.html#anystringvar"><span class="std std-ref">AnyStringVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">&quot;&quot;</span></code></div>
+</div>
+<p>Complete format specification using C-style character specification known from the printf() function. This overrides the any other specification. If not specified by the user it is determined automatically from the other specification.</p>
+</div></blockquote>
+</div>
+</div>
+</div>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+        <p class="logo"><a href="../../index.html" title="index">
+          <img class="logo" src="../../_static/anyscript_maual.svg" alt="Logo"/>
+        </a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+<h3><a href="../../contents.html">Reference Manual</a></h3>
+<p class="caption"><span class="caption-text">API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../class-overview.html"><strong>Class reference</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../function-overview.html"><strong>Function reference</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../globals-overview.html">Globals reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../environment.html">Environment variables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../messages/index.html">Errors, warnings and messages</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Language</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../anyscript/language.html">AnyScript™ language</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../anyscript/preprocessor.html">The preprocessor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../anyscript/inside-anybody.html">Inside the AnyBody Modeling System</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../anyscript/technical-notes.html">Technical notes</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../demos/index.html">Demo examples</a></li>
+</ul>
+<div class="sphinxprev">
+    <h4>Other resources</h4>
+    <p class="topless"><a href="../../../index.html"
+                          title="Back to all manuals">&larr; Back to all manuals</a></p>
+</div>
+        </div>
+      </div>
+    
+    
+        <div class="sidebar-toggle-group no-js">
+            
+            <button class="sidebar-toggle" id="sidebar-hide" title="Hide the sidebar menu">
+                 «
+                <span class="show-for-small">hide menu</span>
+                
+            </button>
+            <button class="sidebar-toggle" id="sidebar-show" title="Show the sidebar menu">
+                
+                <span class="show-for-small">menu</span>
+                <span class="hide-for-small">sidebar</span>
+                 »
+            </button>
+        </div>
+    
+      <div class="clearer"></div>
+    </div>
+    <div class="relbar-bottom">
+        
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../contents.html" title="Table Of Contents"
+             >toc</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="AnyStyleNumeric2.html" title="AnyStyleNumeric2"
+             >next</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="AnyStyleNumeric1.html" title="AnyStyleNumeric1"
+             >previous</a> &nbsp; &nbsp;</li>
+    <li><a href="../../index.html">AnyScript Reference 7.3.4 documentation</a> &#187;</li>
+
+          <li class="nav-item nav-item-1"><a href="../../index.html" >The AnyScript Reference manual!</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../class-overview.html" ><strong>Class reference</strong></a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">AnyStyleNumeric1f</a></li> 
+      </ul>
+    </div>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2021, AnyBody Technology A/S.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.5.4.
+    </div>
+    <!-- cloud_sptheme 1.4 -->
+  </body>
+</html>

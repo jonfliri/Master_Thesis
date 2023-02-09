@@ -1,0 +1,11 @@
+load "C:\Program Files\AnyBody Technology\AnyBody.7.3\AMMR\Application\Validation\EvaluateMomentArms\EvaluateMomentArms.main.any"
+operation Main.RunApplication
+run
+classoperation Main.HumanModel.EvaluateMomentArms.Right.Arm.GHAbduction.Study.Output.MomentArmCalculations.supraspinatus_1 "Dump"
+classoperation Main.HumanModel.EvaluateMomentArms.Right.Arm.GHAbduction.Study.Output.MomentArmCalculations.supraspinatus_2 "Dump"
+classoperation Main.HumanModel.EvaluateMomentArms.Right.Arm.GHAbduction.Study.Output.MomentArmCalculations.supraspinatus_3 "Dump"
+classoperation Main.HumanModel.EvaluateMomentArms.Right.Arm.GHAbduction.Study.Output.MomentArmCalculations.supraspinatus_4 "Dump"
+classoperation Main.HumanModel.EvaluateMomentArms.Right.Arm.GHAbduction.Study.Output.MomentArmCalculations.supraspinatus_5 "Dump"
+classoperation Main.HumanModel.EvaluateMomentArms.Right.Arm.GHAbduction.Study.Output.MomentArmCalculations.supraspinatus_6 "Dump"
+classoperation Main.HumanModel.EvaluateMomentArms.Right.Arm.GHAbduction.Study.Output.Abscissa.t "Dump"
+exit

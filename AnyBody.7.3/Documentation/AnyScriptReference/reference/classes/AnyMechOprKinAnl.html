@@ -1,0 +1,1884 @@
+
+
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AnyMechOprKinAnl &#8212; AnyScript Reference 7.3.4 documentation</title>
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/cloud.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/table_styling.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noticia+Text|Open+Sans|Droid+Sans+Mono" type="text/css" />
+    
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/script/filter-class-list.js"></script>
+    <script src="../../_static/fa/all.js"></script>
+
+    
+    
+     
+        <script src="../../_static/jquery.cookie.js"></script>
+    
+
+    
+     
+        <script src="../../_static/cloud.base.js"></script>
+    
+
+    
+     
+        <script src="../../_static/cloud.js"></script>
+    
+
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="AnyMechOprSubProcess" href="AnyMechOprSubProcess.html" />
+    <link rel="prev" title="AnyMechOprInvMuscleDynAnl" href="AnyMechOprInvMuscleDynAnl.html" /> 
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head><body>
+    <div class="relbar-top">
+        
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../contents.html" title="Table Of Contents"
+             accesskey="C">toc</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="AnyMechOprSubProcess.html" title="AnyMechOprSubProcess"
+             accesskey="N">next</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="AnyMechOprInvMuscleDynAnl.html" title="AnyMechOprInvMuscleDynAnl"
+             accesskey="P">previous</a> &nbsp; &nbsp;</li>
+    <li><a href="../../index.html">AnyScript Reference 7.3.4 documentation</a> &#187;</li>
+
+          <li class="nav-item nav-item-1"><a href="../../index.html" >The AnyScript Reference manual!</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../class-overview.html" accesskey="U"><strong>Class reference</strong></a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">AnyMechOprKinAnl</a></li> 
+      </ul>
+    </div>
+    </div>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="anymechoprkinanl">
+<span id="id1"></span><h1>AnyMechOprKinAnl<a class="headerlink" href="#anymechoprkinanl" title="Permalink to this headline">¶</a></h1>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>Creatable</p>
+</dd>
+<dt class="field-even">Parent class</dt>
+<dd class="field-even"><p><a class="reference internal" href="AnyMechOpr.html#anymechopr"><span class="std std-ref">AnyMechOpr</span></a></p>
+</dd>
+</dl>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>This operation-class performs kinematical analysis of a mechanical systems.
+The mechanical system is defined a mechanical study object (class AnyMechStudyBase or derived)
+and the kinematical analysis object must be member of a mechanical study.</p>
+<p>The default kinematical analysis requires the system to be kinematically determinate,
+implying that there must be enough kinemtical constraints to determine all
+degrees of freedom of the system.</p>
+<p>For such cases, the analysis assembles and solves the kinematic constraints for
+each requested time step. The position analysis solves the non-linear constraint
+equations by a Newton-Raphson like method. This means that it, to some extend, relies on the
+initial configuration of the system. In the first step of an analysis, this is the
+loading time positions of the segments, whereas in all subsequent time steps, the
+initially guess is based on the previous known values of positions,
+velocities, and accelerations of the system.</p>
+<p>The equation solver handles redundant kinematic constraints, which means that
+the system can appear to be over-determinate, but only if the excess of equations
+are dependent of the other equations the system can be accepted.</p>
+<p>The kinematical analysis can be executed in two modes controlled by the switch
+SingleStepOnOff: A single step mode, where the analysis is performed for a single time step
+of the study (by default the first step), and a multi-step mode, where it
+sequentially solves the kinematical equations for each time step defined in the study.</p>
+<p>By default, velocity and acceleration analysis are also carried out; however,
+they can be bypassed if only position information is needed from the analysis (see member ‘PosAnalysisOnlyOnOff’).</p>
+<p>The kinematical analysis has a number of solver options. From version 4.1, these options have been
+selectable by the member ‘SolverType’, of which one handles over-determinate kinematical systems, i.e.,
+a mechanical system with more constraints than rigid-body degrees of freedom of the segments.</p>
+<p>The over-determinate kinematical solver minimizes the norm of the so-called soft constraints
+subject to the so-called hard constraints. Constraints are specified as either “soft” or “hard” in the
+AnyKinEq-object that defines the constraints.
+The over-determinate solver basically only performs position analysis in the current implementation.
+It is, however, extended with a numerical approximation of velocities and accelerations,
+which is partially done using finite difference differentiation.</p>
+<p> </p>
+<table class="colwidths-given plain docutils align-default" id="id3">
+<caption><span class="caption-text">Demo examples related to AnyMechOprKinAnl</span><a class="headerlink" href="#id3" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 75%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Demo</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference download internal" download="" href="../../_downloads/e1e9659457d2e76e9a9758352ead0bcb/ClassExamples.AnyBodyStudy.MechObjectExclude.zip"><code class="xref download docutils literal notranslate"><span class="pre">ClassExamples.AnyBodyStudy.MechObjectExclude</span></code></a></p></td>
+<td><p>Excluding mechanical objects from the analysis in a mechanical studies</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference download internal" download="" href="../../_downloads/a9861bcf69066251e4d81e279093c77c/ClassExamples.AnyMechStudyBase.zip"><code class="xref download docutils literal notranslate"><span class="pre">ClassExamples.AnyMechStudyBase</span></code></a></p></td>
+<td><p>AnyMechStudyBase, the empty base class for mechnical studies.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="optional-initialization-members">
+<h2>Optional initialization members<a class="headerlink" href="#optional-initialization-members" title="Permalink to this headline">¶</a></h2>
+<!-- Hack to trick sphinx into adding member target link -->
+  <!--<div class="section" id="settings">
+<h3>Settings<a class="headerlink" href="#settings" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries odd section collapsed" >
+
+<h3 class="html-toggle-button" style=""><span class="member-title"> Settings </span><span class="member-title-equal">=</span><span class="member-title-default"> {} </span><a class="headerlink" href="#Settings" title="Permalink to this headline">¶</a>
+<span class="member-descr">General settings for the operation.</span>
+</h3><!-- Hack to trick sphinx into adding member target link -->
+<!--<div class="section" id="settings-echo">
+<span id="anymechoprkinanl-settings-echo"></span><h4>Settings.Echo<a class="headerlink" href="#settings-echo" title="Permalink to this headline">¶</a></h4>
+-->
+
+<div class="html-toggle member-entries odd section collapsed" id="Settings.Echo">
+<span id="anymechoprkinanl-settings-echo" style=""></span>
+<h4 class="html-toggle-button" style=""><span class="member-title"> &nbsp;&nbsp;.Echo </span><span class="member-title-equal">=</span><span class="member-title-default"> On </span><a class="headerlink" href="#Settings.Echo" title="Permalink to this headline">¶</a>
+<span class="member-descr">Switch for definition of operation output to the output log and views.</span>
+</h4><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnySwitchVar.html#anyswitchvar"><span class="std std-ref">AnySwitchVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">On</span></code></div>
+</div>
+<p>Switch for definition of operation output to the output log and views.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+</div><!--</div>
+<div class="section" id="settings-modelsceneupdate">
+<span id="anymechoprkinanl-settings-modelsceneupdate"></span><h4>Settings.ModelSceneUpdate<a class="headerlink" href="#settings-modelsceneupdate" title="Permalink to this headline">¶</a></h4>
+-->
+
+<div class="html-toggle member-entries even section collapsed" id="Settings.ModelSceneUpdate">
+<span id="anymechoprkinanl-settings-modelsceneupdate" style=""></span>
+<h4 class="html-toggle-button" style=""><span class="member-title"> &nbsp;&nbsp;.ModelSceneUpdate </span><span class="member-title-equal">=</span><span class="member-title-default"> On </span><a class="headerlink" href="#Settings.ModelSceneUpdate" title="Permalink to this headline">¶</a>
+<span class="member-descr">Switch for definition of operation output to the output log and views.</span>
+</h4><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnySwitchVar.html#anyswitchvar"><span class="std std-ref">AnySwitchVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">On</span></code></div>
+</div>
+<p>Switch for definition of operation output to the output log and views.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+</div><!--</div>
+<div class="section" id="settings-displaypriority">
+<span id="anymechoprkinanl-settings-displaypriority"></span><h4>Settings.DisplayPriority<a class="headerlink" href="#settings-displaypriority" title="Permalink to this headline">¶</a></h4>
+-->
+
+<div class="html-toggle member-entries odd section collapsed" id="Settings.DisplayPriority">
+<span id="anymechoprkinanl-settings-displaypriority" style=""></span>
+<h4 class="html-toggle-button" style=""><span class="member-title"> &nbsp;&nbsp;.DisplayPriority </span><span class="member-title-equal">=</span><span class="member-title-default"> PriorityNormal </span><a class="headerlink" href="#Settings.DisplayPriority" title="Permalink to this headline">¶</a>
+<span class="member-descr">Value for defining the interface display priority for the Operation.</span>
+</h4><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyDisplayPriority.html#anydisplaypriority"><span class="std std-ref">AnyDisplayPriority</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">PriorityNormal</span></code></div>
+</div>
+<p>Value for defining the interface display priority for the Operation.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+</div><!--</div>
+<div class="section" id="settings-selectonload">
+<span id="anymechoprkinanl-settings-selectonload"></span><h4>Settings.SelectOnLoad<a class="headerlink" href="#settings-selectonload" title="Permalink to this headline">¶</a></h4>
+-->
+
+<div class="html-toggle member-entries even section collapsed" id="Settings.SelectOnLoad">
+<span id="anymechoprkinanl-settings-selectonload" style=""></span>
+<h4 class="html-toggle-button" style=""><span class="member-title"> &nbsp;&nbsp;.SelectOnLoad </span><span class="member-title-equal">=</span><span class="member-title-default"> Off </span><a class="headerlink" href="#Settings.SelectOnLoad" title="Permalink to this headline">¶</a>
+<span class="member-descr">Value for defining if the Operation should be displayed as the default...</span>
+</h4><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnySwitchVar.html#anyswitchvar"><span class="std std-ref">AnySwitchVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">Off</span></code></div>
+</div>
+<p>Value for defining if the Operation should be displayed as the default Operation for the loaded model.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+ </div></div> <!--</div>
+</div>
+<div class="section" id="preoperation">
+<h3>PreOperation<a class="headerlink" href="#preoperation" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries even section collapsed" >
+
+<h3 class="html-toggle-button" style=""><span class="member-title"> PreOperation </span><span class="member-title-equal">=</span><span class="member-title-default"> {} </span><a class="headerlink" href="#PreOperation" title="Permalink to this headline">¶</a>
+<span class="member-descr">Pre-process operation.</span>
+</h3><!-- Hack to trick sphinx into adding member target link -->
+<!--<div class="section" id="preoperation-settings">
+<span id="anymechoprkinanl-preoperation-settings"></span><h4>PreOperation.Settings<a class="headerlink" href="#preoperation-settings" title="Permalink to this headline">¶</a></h4>
+-->
+
+<div class="html-toggle member-entries odd section collapsed" id="PreOperation.Settings">
+<span id="anymechoprkinanl-preoperation-settings" style=""></span>
+<h4 class="html-toggle-button" style=""><span class="member-title"> &nbsp;&nbsp;.Settings </span><span class="member-title-equal">=</span><span class="member-title-default"> {} </span><a class="headerlink" href="#PreOperation.Settings" title="Permalink to this headline">¶</a>
+<span class="member-descr">General settings for the operation.</span>
+</h4><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyOprSetUI.html#anyoprsetui"><span class="std std-ref">AnyOprSetUI</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">{}</span></code></div>
+</div>
+<p>General settings for the operation.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+</div><!--</div>
+<div class="section" id="preoperation-settings-echo">
+<span id="anymechoprkinanl-preoperation-settings-echo"></span><h4>PreOperation.Settings.Echo<a class="headerlink" href="#preoperation-settings-echo" title="Permalink to this headline">¶</a></h4>
+-->
+
+<div class="html-toggle member-entries even section collapsed" id="PreOperation.Settings.Echo">
+<span id="anymechoprkinanl-preoperation-settings-echo" style=""></span>
+<h4 class="html-toggle-button" style=""><span class="member-title"> &nbsp;&nbsp;.Settings.Echo </span><span class="member-title-equal">=</span><span class="member-title-default"> On </span><a class="headerlink" href="#PreOperation.Settings.Echo" title="Permalink to this headline">¶</a>
+<span class="member-descr">Switch for definition of operation output to the output log and views.</span>
+</h4><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnySwitchVar.html#anyswitchvar"><span class="std std-ref">AnySwitchVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">On</span></code></div>
+</div>
+<p>Switch for definition of operation output to the output log and views.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+</div><!--</div>
+<div class="section" id="preoperation-settings-modelsceneupdate">
+<span id="anymechoprkinanl-preoperation-settings-modelsceneupdate"></span><h4>PreOperation.Settings.ModelSceneUpdate<a class="headerlink" href="#preoperation-settings-modelsceneupdate" title="Permalink to this headline">¶</a></h4>
+-->
+
+<div class="html-toggle member-entries odd section collapsed" id="PreOperation.Settings.ModelSceneUpdate">
+<span id="anymechoprkinanl-preoperation-settings-modelsceneupdate" style=""></span>
+<h4 class="html-toggle-button" style=""><span class="member-title"> &nbsp;&nbsp;.Settings.ModelSceneUpdate </span><span class="member-title-equal">=</span><span class="member-title-default"> On </span><a class="headerlink" href="#PreOperation.Settings.ModelSceneUpdate" title="Permalink to this headline">¶</a>
+<span class="member-descr">Switch for definition of operation output to the output log and views.</span>
+</h4><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnySwitchVar.html#anyswitchvar"><span class="std std-ref">AnySwitchVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">On</span></code></div>
+</div>
+<p>Switch for definition of operation output to the output log and views.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+</div><!--</div>
+<div class="section" id="preoperation-settings-displaypriority">
+<span id="anymechoprkinanl-preoperation-settings-displaypriority"></span><h4>PreOperation.Settings.DisplayPriority<a class="headerlink" href="#preoperation-settings-displaypriority" title="Permalink to this headline">¶</a></h4>
+-->
+
+<div class="html-toggle member-entries even section collapsed" id="PreOperation.Settings.DisplayPriority">
+<span id="anymechoprkinanl-preoperation-settings-displaypriority" style=""></span>
+<h4 class="html-toggle-button" style=""><span class="member-title"> &nbsp;&nbsp;.Settings.DisplayPriority </span><span class="member-title-equal">=</span><span class="member-title-default"> PriorityLow </span><a class="headerlink" href="#PreOperation.Settings.DisplayPriority" title="Permalink to this headline">¶</a>
+<span class="member-descr">Value for defining the interface display priority for the Operation.</span>
+</h4><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyDisplayPriority.html#anydisplaypriority"><span class="std std-ref">AnyDisplayPriority</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">PriorityLow</span></code></div>
+</div>
+<p>Value for defining the interface display priority for the Operation.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+</div><!--</div>
+<div class="section" id="preoperation-settings-selectonload">
+<span id="anymechoprkinanl-preoperation-settings-selectonload"></span><h4>PreOperation.Settings.SelectOnLoad<a class="headerlink" href="#preoperation-settings-selectonload" title="Permalink to this headline">¶</a></h4>
+-->
+
+<div class="html-toggle member-entries odd section collapsed" id="PreOperation.Settings.SelectOnLoad">
+<span id="anymechoprkinanl-preoperation-settings-selectonload" style=""></span>
+<h4 class="html-toggle-button" style=""><span class="member-title"> &nbsp;&nbsp;.Settings.SelectOnLoad </span><span class="member-title-equal">=</span><span class="member-title-default"> Off </span><a class="headerlink" href="#PreOperation.Settings.SelectOnLoad" title="Permalink to this headline">¶</a>
+<span class="member-descr">Value for defining if the Operation should be displayed as the default...</span>
+</h4><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnySwitchVar.html#anyswitchvar"><span class="std std-ref">AnySwitchVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">Off</span></code></div>
+</div>
+<p>Value for defining if the Operation should be displayed as the default Operation for the loaded model.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+ </div></div> <!--</div>
+</div>
+<div class="section" id="postoperation">
+<h3>PostOperation<a class="headerlink" href="#postoperation" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries odd section collapsed" >
+
+<h3 class="html-toggle-button" style=""><span class="member-title"> PostOperation </span><span class="member-title-equal">=</span><span class="member-title-default"> {} </span><a class="headerlink" href="#PostOperation" title="Permalink to this headline">¶</a>
+<span class="member-descr">Post-process operation.</span>
+</h3><!-- Hack to trick sphinx into adding member target link -->
+<!--<div class="section" id="postoperation-settings">
+<span id="anymechoprkinanl-postoperation-settings"></span><h4>PostOperation.Settings<a class="headerlink" href="#postoperation-settings" title="Permalink to this headline">¶</a></h4>
+-->
+
+<div class="html-toggle member-entries odd section collapsed" id="PostOperation.Settings">
+<span id="anymechoprkinanl-postoperation-settings" style=""></span>
+<h4 class="html-toggle-button" style=""><span class="member-title"> &nbsp;&nbsp;.Settings </span><span class="member-title-equal">=</span><span class="member-title-default"> {} </span><a class="headerlink" href="#PostOperation.Settings" title="Permalink to this headline">¶</a>
+<span class="member-descr">General settings for the operation.</span>
+</h4><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyOprSetUI.html#anyoprsetui"><span class="std std-ref">AnyOprSetUI</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">{}</span></code></div>
+</div>
+<p>General settings for the operation.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+</div><!--</div>
+<div class="section" id="postoperation-settings-echo">
+<span id="anymechoprkinanl-postoperation-settings-echo"></span><h4>PostOperation.Settings.Echo<a class="headerlink" href="#postoperation-settings-echo" title="Permalink to this headline">¶</a></h4>
+-->
+
+<div class="html-toggle member-entries even section collapsed" id="PostOperation.Settings.Echo">
+<span id="anymechoprkinanl-postoperation-settings-echo" style=""></span>
+<h4 class="html-toggle-button" style=""><span class="member-title"> &nbsp;&nbsp;.Settings.Echo </span><span class="member-title-equal">=</span><span class="member-title-default"> On </span><a class="headerlink" href="#PostOperation.Settings.Echo" title="Permalink to this headline">¶</a>
+<span class="member-descr">Switch for definition of operation output to the output log and views.</span>
+</h4><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnySwitchVar.html#anyswitchvar"><span class="std std-ref">AnySwitchVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">On</span></code></div>
+</div>
+<p>Switch for definition of operation output to the output log and views.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+</div><!--</div>
+<div class="section" id="postoperation-settings-modelsceneupdate">
+<span id="anymechoprkinanl-postoperation-settings-modelsceneupdate"></span><h4>PostOperation.Settings.ModelSceneUpdate<a class="headerlink" href="#postoperation-settings-modelsceneupdate" title="Permalink to this headline">¶</a></h4>
+-->
+
+<div class="html-toggle member-entries odd section collapsed" id="PostOperation.Settings.ModelSceneUpdate">
+<span id="anymechoprkinanl-postoperation-settings-modelsceneupdate" style=""></span>
+<h4 class="html-toggle-button" style=""><span class="member-title"> &nbsp;&nbsp;.Settings.ModelSceneUpdate </span><span class="member-title-equal">=</span><span class="member-title-default"> On </span><a class="headerlink" href="#PostOperation.Settings.ModelSceneUpdate" title="Permalink to this headline">¶</a>
+<span class="member-descr">Switch for definition of operation output to the output log and views.</span>
+</h4><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnySwitchVar.html#anyswitchvar"><span class="std std-ref">AnySwitchVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">On</span></code></div>
+</div>
+<p>Switch for definition of operation output to the output log and views.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+</div><!--</div>
+<div class="section" id="postoperation-settings-displaypriority">
+<span id="anymechoprkinanl-postoperation-settings-displaypriority"></span><h4>PostOperation.Settings.DisplayPriority<a class="headerlink" href="#postoperation-settings-displaypriority" title="Permalink to this headline">¶</a></h4>
+-->
+
+<div class="html-toggle member-entries even section collapsed" id="PostOperation.Settings.DisplayPriority">
+<span id="anymechoprkinanl-postoperation-settings-displaypriority" style=""></span>
+<h4 class="html-toggle-button" style=""><span class="member-title"> &nbsp;&nbsp;.Settings.DisplayPriority </span><span class="member-title-equal">=</span><span class="member-title-default"> PriorityLow </span><a class="headerlink" href="#PostOperation.Settings.DisplayPriority" title="Permalink to this headline">¶</a>
+<span class="member-descr">Value for defining the interface display priority for the Operation.</span>
+</h4><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyDisplayPriority.html#anydisplaypriority"><span class="std std-ref">AnyDisplayPriority</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">PriorityLow</span></code></div>
+</div>
+<p>Value for defining the interface display priority for the Operation.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+</div><!--</div>
+<div class="section" id="postoperation-settings-selectonload">
+<span id="anymechoprkinanl-postoperation-settings-selectonload"></span><h4>PostOperation.Settings.SelectOnLoad<a class="headerlink" href="#postoperation-settings-selectonload" title="Permalink to this headline">¶</a></h4>
+-->
+
+<div class="html-toggle member-entries odd section collapsed" id="PostOperation.Settings.SelectOnLoad">
+<span id="anymechoprkinanl-postoperation-settings-selectonload" style=""></span>
+<h4 class="html-toggle-button" style=""><span class="member-title"> &nbsp;&nbsp;.Settings.SelectOnLoad </span><span class="member-title-equal">=</span><span class="member-title-default"> Off </span><a class="headerlink" href="#PostOperation.Settings.SelectOnLoad" title="Permalink to this headline">¶</a>
+<span class="member-descr">Value for defining if the Operation should be displayed as the default...</span>
+</h4><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnySwitchVar.html#anyswitchvar"><span class="std std-ref">AnySwitchVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">Off</span></code></div>
+</div>
+<p>Value for defining if the Operation should be displayed as the default Operation for the loaded model.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+ </div></div> <!--</div>
+</div>
+<div class="section" id="kinematictol">
+<span id="anymechoprkinanl-kinematictol"></span><h3>KinematicTol<a class="headerlink" href="#kinematictol" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries even section collapsed" id="KinematicTol">
+<span id="anymechoprkinanl-kinematictol" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title"> KinematicTol </span><span class="member-title-equal">=</span><span class="member-title-default"> 1e-06 </span><a class="headerlink" href="#KinematicTol" title="Permalink to this headline">¶</a>
+<span class="member-descr">Tolerance for the kinematic analysis.</span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyVar.html#anyvar"><span class="std std-ref">AnyVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">DesignVar</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">1e-06</span></code></div>
+</div>
+<p>Tolerance for the kinematic analysis.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+ </div> <!--</div>
+<div class="section" id="maxiteration">
+<span id="anymechoprkinanl-maxiteration"></span><h3>MaxIteration<a class="headerlink" href="#maxiteration" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries odd section collapsed" id="MaxIteration">
+<span id="anymechoprkinanl-maxiteration" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title"> MaxIteration </span><span class="member-title-equal">=</span><span class="member-title-default"> 3000 </span><a class="headerlink" href="#MaxIteration" title="Permalink to this headline">¶</a>
+<span class="member-descr">Maximal number of Newton iterations in the solution of the non-linear...</span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyIntVar.html#anyintvar"><span class="std std-ref">AnyIntVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">DesignVar</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">3000</span></code></div>
+</div>
+<p>Maximal number of Newton iterations in the solution of the non-linear equations in the kinematic position analysis.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+ </div> <!--</div>
+<div class="section" id="maxfallback">
+<span id="anymechoprkinanl-maxfallback"></span><h3>MaxFallback<a class="headerlink" href="#maxfallback" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries even section collapsed" id="MaxFallback">
+<span id="anymechoprkinanl-maxfallback" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title"> MaxFallback </span><span class="member-title-equal">=</span><span class="member-title-default"> 5 </span><a class="headerlink" href="#MaxFallback" title="Permalink to this headline">¶</a>
+<span class="member-descr">Maximal number of fallback iterations used by some solvers.</span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyIntVar.html#anyintvar"><span class="std std-ref">AnyIntVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">DesignVar</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">5</span></code></div>
+</div>
+<p>Maximal number of fallback iterations used by some solvers.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+ </div> <!--</div>
+<div class="section" id="relax">
+<span id="anymechoprkinanl-relax"></span><h3>Relax<a class="headerlink" href="#relax" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries odd section collapsed" id="Relax">
+<span id="anymechoprkinanl-relax" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title"> Relax </span><span class="member-title-equal">=</span><span class="member-title-default"> 1.0 </span><a class="headerlink" href="#Relax" title="Permalink to this headline">¶</a>
+<span class="member-descr">Initial value of relaxation coefficient for the Newton iteration.</span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyVar.html#anyvar"><span class="std std-ref">AnyVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">DesignVar</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">1.0</span></code></div>
+</div>
+<p>Initial value of relaxation coefficient for the Newton iteration.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+ </div> <!--</div>
+<div class="section" id="singlesteponoff">
+<span id="anymechoprkinanl-singlesteponoff"></span><h3>SingleStepOnOff<a class="headerlink" href="#singlesteponoff" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries even section collapsed" id="SingleStepOnOff">
+<span id="anymechoprkinanl-singlesteponoff" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title"> SingleStepOnOff </span><span class="member-title-equal">=</span><span class="member-title-default"> Off </span><a class="headerlink" href="#SingleStepOnOff" title="Permalink to this headline">¶</a>
+<span class="member-descr">Switch for the single-step analysis.</span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnySwitchVar.html#anyswitchvar"><span class="std std-ref">AnySwitchVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">DesignVar</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">Off</span></code></div>
+</div>
+<p>Switch for the single-step analysis.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+ </div> <!--</div>
+<div class="section" id="singlestepno">
+<span id="anymechoprkinanl-singlestepno"></span><h3>SingleStepNo<a class="headerlink" href="#singlestepno" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries odd section collapsed" id="SingleStepNo">
+<span id="anymechoprkinanl-singlestepno" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title"> SingleStepNo </span><span class="member-title-equal">=</span><span class="member-title-default"> 0 </span><a class="headerlink" href="#SingleStepNo" title="Permalink to this headline">¶</a>
+<span class="member-descr">Zero-based index for the time step to use in the single-step analysis.</span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyIntVar.html#anyintvar"><span class="std std-ref">AnyIntVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">DesignVar</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">0</span></code></div>
+</div>
+<p>Zero-based index for the time step to use in the single-step analysis.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+ </div> <!--</div>
+<div class="section" id="usestartguessonoff">
+<span id="anymechoprkinanl-usestartguessonoff"></span><h3>UseStartGuessOnOff<a class="headerlink" href="#usestartguessonoff" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries even section collapsed" id="UseStartGuessOnOff">
+<span id="anymechoprkinanl-usestartguessonoff" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title"> UseStartGuessOnOff </span><span class="member-title-equal">=</span><span class="member-title-default"> On </span><a class="headerlink" href="#UseStartGuessOnOff" title="Permalink to this headline">¶</a>
+<span class="member-descr">Switch for for whether to use input positions as starting guess or the...</span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnySwitchVar.html#anyswitchvar"><span class="std std-ref">AnySwitchVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">DesignVar</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">On</span></code></div>
+</div>
+<p>Switch for for whether to use input positions as starting guess or the model’s current positions.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+ </div> <!--</div>
+<div class="section" id="posanalysisonlyonoff">
+<span id="anymechoprkinanl-posanalysisonlyonoff"></span><h3>PosAnalysisOnlyOnOff<a class="headerlink" href="#posanalysisonlyonoff" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries odd section collapsed" id="PosAnalysisOnlyOnOff">
+<span id="anymechoprkinanl-posanalysisonlyonoff" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title"> PosAnalysisOnlyOnOff </span><span class="member-title-equal">=</span><span class="member-title-default"> Off </span><a class="headerlink" href="#PosAnalysisOnlyOnOff" title="Permalink to this headline">¶</a>
+<span class="member-descr">Switch for skipping velocity and acceleration analysis, i.e., running...</span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnySwitchVar.html#anyswitchvar"><span class="std std-ref">AnySwitchVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">DesignVar</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">Off</span></code></div>
+</div>
+<p>Switch for skipping velocity and acceleration analysis, i.e., running position analysis only. Velocitites and acceleration of all segments are set to zero when computations are skipped.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+ </div> <!--</div>
+<div class="section" id="approxvelaccperturb">
+<span id="anymechoprkinanl-approxvelaccperturb"></span><h3>ApproxVelAccPerturb<a class="headerlink" href="#approxvelaccperturb" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries even section collapsed" id="ApproxVelAccPerturb">
+<span id="anymechoprkinanl-approxvelaccperturb" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title"> ApproxVelAccPerturb </span><span class="member-title-equal">=</span><span class="member-title-default"> 0.01 </span><a class="headerlink" href="#ApproxVelAccPerturb" title="Permalink to this headline">¶</a>
+<span class="member-descr">Magnitude of perturbation use in finite difference differentiation.</span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyVar.html#anyvar"><span class="std std-ref">AnyVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">DesignVar</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">0.01</span></code></div>
+</div>
+<p>Magnitude of perturbation use in finite difference differentiation.</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+ </div> <!--</div>
+<div class="section" id="smallstepassumptiononoff">
+<span id="anymechoprkinanl-smallstepassumptiononoff"></span><h3>SmallStepAssumptionOnOff<a class="headerlink" href="#smallstepassumptiononoff" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries odd section collapsed" id="SmallStepAssumptionOnOff">
+<span id="anymechoprkinanl-smallstepassumptiononoff" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title"> SmallStepAssumptionOnOff </span><span class="member-title-equal">=</span><span class="member-title-default"> On </span><a class="headerlink" href="#SmallStepAssumptionOnOff" title="Permalink to this headline">¶</a>
+<span class="member-descr">Switch for assumption of small steps (position or time-steps). When 'Off'...</span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnySwitchVar.html#anyswitchvar"><span class="std std-ref">AnySwitchVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">DesignVar</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">On</span></code></div>
+</div>
+<p>Switch for assumption of small steps (position or time-steps). When ‘Off’ more robust method can be applied. (REFER TO OTHER DOCUMENTATION).</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+ </div> <!--</div>
+<div class="section" id="sparsesolverdiageps">
+<span id="anymechoprkinanl-sparsesolverdiageps"></span><h3>SparseSolverDiagEps<a class="headerlink" href="#sparsesolverdiageps" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries even section collapsed" id="SparseSolverDiagEps">
+<span id="anymechoprkinanl-sparsesolverdiageps" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title"> SparseSolverDiagEps </span><span class="member-title-equal">=</span><span class="member-title-default"> 1e-12 </span><a class="headerlink" href="#SparseSolverDiagEps" title="Permalink to this headline">¶</a>
+<span class="member-descr">Test variable: Small floating point number (Epsilon) used by some solvers to...</span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyVar.html#anyvar"><span class="std std-ref">AnyVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">DesignVar</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">1e-12</span></code></div>
+</div>
+<p>Test variable: Small floating point number (Epsilon) used by some solvers to perturb diagonal elements (DEPRECATED).</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+ </div> <!--</div>
+<div class="section" id="sparsesolvermaxiterativerefinements">
+<span id="anymechoprkinanl-sparsesolvermaxiterativerefinements"></span><h3>SparseSolverMaxIterativeRefinements<a class="headerlink" href="#sparsesolvermaxiterativerefinements" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries odd section collapsed" id="SparseSolverMaxIterativeRefinements">
+<span id="anymechoprkinanl-sparsesolvermaxiterativerefinements" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title"> SparseSolverMaxIterativeRefinements </span><span class="member-title-equal">=</span><span class="member-title-default"> 2 </span><a class="headerlink" href="#SparseSolverMaxIterativeRefinements" title="Permalink to this headline">¶</a>
+<span class="member-descr">Test variable : Maximal number of iterative refinement steps in solver (DEPRECATED).</span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyIntVar.html#anyintvar"><span class="std std-ref">AnyIntVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">DesignVar</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">2</span></code></div>
+</div>
+<p>Test variable : Maximal number of iterative refinement steps in solver (DEPRECATED).</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+ </div> <!--</div>
+<div class="section" id="sparsesolver2x2pivoting">
+<span id="anymechoprkinanl-sparsesolver2x2pivoting"></span><h3>SparseSolver2x2pivoting<a class="headerlink" href="#sparsesolver2x2pivoting" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries even section collapsed" id="SparseSolver2x2pivoting">
+<span id="anymechoprkinanl-sparsesolver2x2pivoting" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title"> SparseSolver2x2pivoting </span><span class="member-title-equal">=</span><span class="member-title-default"> Off </span><a class="headerlink" href="#SparseSolver2x2pivoting" title="Permalink to this headline">¶</a>
+<span class="member-descr">Test variable: Switch for selecting pivoting scheme for the MKL PARDISO...</span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnySwitchVar.html#anyswitchvar"><span class="std std-ref">AnySwitchVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">DesignVar</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">Off</span></code></div>
+</div>
+<p>Test variable: Switch for selecting pivoting scheme for the MKL PARDISO solver (DEPRECATED).</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+ </div> <!--</div>
+<div class="section" id="solvertype">
+<span id="anymechoprkinanl-solvertype"></span><h3>SolverType<a class="headerlink" href="#solvertype" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries odd section collapsed" id="SolverType">
+<span id="anymechoprkinanl-solvertype" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title"> SolverType </span><span class="member-title-equal">=</span><span class="member-title-default"> KinSolDeterminate </span><a class="headerlink" href="#SolverType" title="Permalink to this headline">¶</a>
+<span class="member-descr">Solver type specification.</span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyKinSolverType.html#anykinsolvertype"><span class="std std-ref">AnyKinSolverType</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">DesignVar</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">KinSolDeterminate</span></code></div>
+</div>
+<p>Solver type specification.</p>
+</div></blockquote>
+</div>
+</div>
+<div class="html-toggle section" id="denied-access-members">
+<h2>Denied-Access members<a class="headerlink" href="#denied-access-members" title="Permalink to this headline">¶</a></h2>
+<!-- Hack to trick sphinx into adding member target link -->
+<!--<div class="section" id="updconfig">
+<span id="anymechoprkinanl-updconfig"></span><h3>UpdConfig<a class="headerlink" href="#updconfig" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries odd section collapsed" id="UpdConfig">
+<span id="anymechoprkinanl-updconfig" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title">UpdConfig</span><span class="member-title-equal"></span><span class="member-title-default"></span><a class="headerlink" href="#UpdConfig" title="Permalink to this headline">¶</a>
+<span class="member-descr"></span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyIntVar.html#anyintvar"><span class="std std-ref">AnyIntVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">0</span></code></div>
+</div>
+<p>&lt;No description&gt;</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+</div><!--</div>
+<div class="section" id="upddesign">
+<span id="anymechoprkinanl-upddesign"></span><h3>UpdDesign<a class="headerlink" href="#upddesign" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries even section collapsed" id="UpdDesign">
+<span id="anymechoprkinanl-upddesign" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title">UpdDesign</span><span class="member-title-equal"></span><span class="member-title-default"></span><a class="headerlink" href="#UpdDesign" title="Permalink to this headline">¶</a>
+<span class="member-descr">Counter of updates of design variable (i.e. the DesignVar Evaluation Moment).</span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyIntVar.html#anyintvar"><span class="std std-ref">AnyIntVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">DesignVar</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">0</span></code></div>
+</div>
+<p>Counter of updates of design variable (i.e. the DesignVar Evaluation Moment).</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+</div><!--</div>
+<div class="section" id="updoutput">
+<span id="anymechoprkinanl-updoutput"></span><h3>UpdOutput<a class="headerlink" href="#updoutput" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries odd section collapsed" id="UpdOutput">
+<span id="anymechoprkinanl-updoutput" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title">UpdOutput</span><span class="member-title-equal"></span><span class="member-title-default"></span><a class="headerlink" href="#UpdOutput" title="Permalink to this headline">¶</a>
+<span class="member-descr"></span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyIntVar.html#anyintvar"><span class="std std-ref">AnyIntVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">OutputVar</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">0</span></code></div>
+</div>
+<p>&lt;No description&gt;</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+</div><!--</div>
+<div class="section" id="preoperation-updconfig">
+<span id="anymechoprkinanl-preoperation-updconfig"></span><h3>PreOperation.UpdConfig<a class="headerlink" href="#preoperation-updconfig" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries even section collapsed" id="PreOperation.UpdConfig">
+<span id="anymechoprkinanl-preoperation-updconfig" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title">PreOperation.UpdConfig</span><span class="member-title-equal"></span><span class="member-title-default"></span><a class="headerlink" href="#PreOperation.UpdConfig" title="Permalink to this headline">¶</a>
+<span class="member-descr"></span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyIntVar.html#anyintvar"><span class="std std-ref">AnyIntVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">0</span></code></div>
+</div>
+<p>&lt;No description&gt;</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+</div><!--</div>
+<div class="section" id="preoperation-upddesign">
+<span id="anymechoprkinanl-preoperation-upddesign"></span><h3>PreOperation.UpdDesign<a class="headerlink" href="#preoperation-upddesign" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries odd section collapsed" id="PreOperation.UpdDesign">
+<span id="anymechoprkinanl-preoperation-upddesign" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title">PreOperation.UpdDesign</span><span class="member-title-equal"></span><span class="member-title-default"></span><a class="headerlink" href="#PreOperation.UpdDesign" title="Permalink to this headline">¶</a>
+<span class="member-descr">Counter of updates of design variable (i.e. the DesignVar Evaluation Moment).</span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyIntVar.html#anyintvar"><span class="std std-ref">AnyIntVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">DesignVar</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">0</span></code></div>
+</div>
+<p>Counter of updates of design variable (i.e. the DesignVar Evaluation Moment).</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+</div><!--</div>
+<div class="section" id="preoperation-updoutput">
+<span id="anymechoprkinanl-preoperation-updoutput"></span><h3>PreOperation.UpdOutput<a class="headerlink" href="#preoperation-updoutput" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries even section collapsed" id="PreOperation.UpdOutput">
+<span id="anymechoprkinanl-preoperation-updoutput" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title">PreOperation.UpdOutput</span><span class="member-title-equal"></span><span class="member-title-default"></span><a class="headerlink" href="#PreOperation.UpdOutput" title="Permalink to this headline">¶</a>
+<span class="member-descr"></span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyIntVar.html#anyintvar"><span class="std std-ref">AnyIntVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">OutputVar</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">0</span></code></div>
+</div>
+<p>&lt;No description&gt;</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+</div><!--</div>
+<div class="section" id="postoperation-updconfig">
+<span id="anymechoprkinanl-postoperation-updconfig"></span><h3>PostOperation.UpdConfig<a class="headerlink" href="#postoperation-updconfig" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries odd section collapsed" id="PostOperation.UpdConfig">
+<span id="anymechoprkinanl-postoperation-updconfig" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title">PostOperation.UpdConfig</span><span class="member-title-equal"></span><span class="member-title-default"></span><a class="headerlink" href="#PostOperation.UpdConfig" title="Permalink to this headline">¶</a>
+<span class="member-descr"></span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyIntVar.html#anyintvar"><span class="std std-ref">AnyIntVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">0</span></code></div>
+</div>
+<p>&lt;No description&gt;</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+</div><!--</div>
+<div class="section" id="postoperation-upddesign">
+<span id="anymechoprkinanl-postoperation-upddesign"></span><h3>PostOperation.UpdDesign<a class="headerlink" href="#postoperation-upddesign" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries even section collapsed" id="PostOperation.UpdDesign">
+<span id="anymechoprkinanl-postoperation-upddesign" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title">PostOperation.UpdDesign</span><span class="member-title-equal"></span><span class="member-title-default"></span><a class="headerlink" href="#PostOperation.UpdDesign" title="Permalink to this headline">¶</a>
+<span class="member-descr">Counter of updates of design variable (i.e. the DesignVar Evaluation Moment).</span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyIntVar.html#anyintvar"><span class="std std-ref">AnyIntVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">DesignVar</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">0</span></code></div>
+</div>
+<p>Counter of updates of design variable (i.e. the DesignVar Evaluation Moment).</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+</div><!--</div>
+<div class="section" id="postoperation-updoutput">
+<span id="anymechoprkinanl-postoperation-updoutput"></span><h3>PostOperation.UpdOutput<a class="headerlink" href="#postoperation-updoutput" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries odd section collapsed" id="PostOperation.UpdOutput">
+<span id="anymechoprkinanl-postoperation-updoutput" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title">PostOperation.UpdOutput</span><span class="member-title-equal"></span><span class="member-title-default"></span><a class="headerlink" href="#PostOperation.UpdOutput" title="Permalink to this headline">¶</a>
+<span class="member-descr"></span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyIntVar.html#anyintvar"><span class="std std-ref">AnyIntVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">OutputVar</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">0</span></code></div>
+</div>
+<p>&lt;No description&gt;</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+</div><!--</div>
+<div class="section" id="kinematicerror">
+<span id="anymechoprkinanl-kinematicerror"></span><h3>KinematicError<a class="headerlink" href="#kinematicerror" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries even section collapsed" id="KinematicError">
+<span id="anymechoprkinanl-kinematicerror" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title">KinematicError</span><span class="member-title-equal"></span><span class="member-title-default"></span><a class="headerlink" href="#KinematicError" title="Permalink to this headline">¶</a>
+<span class="member-descr">Current value of the kinematic error.</span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyVar.html#anyvar"><span class="std std-ref">AnyVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">OutputVar</span></a></div>
+<div class="line"><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">0.0</span></code></div>
+</div>
+<p>Current value of the kinematic error.</p>
+</div></blockquote>
+</div>
+</div>
+<div class="html-toggle section" id="deprecated-members">
+<h2>Deprecated members<a class="headerlink" href="#deprecated-members" title="Permalink to this headline">¶</a></h2>
+<!-- Hack to trick sphinx into adding member target link -->
+<!--<div class="section" id="solver">
+<span id="anymechoprkinanl-solver"></span><h3>Solver<a class="headerlink" href="#solver" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries odd section collapsed" id="Solver">
+<span id="anymechoprkinanl-solver" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title">Solver</span><span class="member-title-equal"></span><span class="member-title-default"></span><a class="headerlink" href="#Solver" title="Permalink to this headline">¶</a>
+<span class="member-descr"></span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyObjectPtrVar.html#anyobjectptrvar"><span class="std std-ref">AnyObjectPtrVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+</div>
+<div class="without-title admonition danger">
+<p class="admonition-title">Danger</p>
+<p><strong>Deprecated</strong>: AnyMechOprKinAnl is being extended with new solver options that are currently
+in a beta phase and you have initialized one of these options.
+Version 6.1 is preparing this extension by hidden(deprecated) members to select
+these new options. Future versions will make these options fully function,
+current functionality avaialble with these options is in a beta state and not
+recommended for actual use.</p>
+</div>
+<p>&lt;No description&gt;</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+</div><!--</div>
+<div class="section" id="solveroptions">
+<span id="anymechoprkinanl-solveroptions"></span><h3>SolverOptions<a class="headerlink" href="#solveroptions" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries even section collapsed" id="SolverOptions">
+<span id="anymechoprkinanl-solveroptions" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title">SolverOptions</span><span class="member-title-equal"></span><span class="member-title-default"></span><a class="headerlink" href="#SolverOptions" title="Permalink to this headline">¶</a>
+<span class="member-descr"></span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyKinAnlSolverOptions.html#anykinanlsolveroptions"><span class="std std-ref">AnyKinAnlSolverOptions</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+</div>
+<div class="without-title admonition danger">
+<p class="admonition-title">Danger</p>
+<p><strong>Deprecated</strong>: AnyMechOprKinAnl is being extended with new solver options that are currently
+in a beta phase and you have initialized one of these options.
+Version 6.1 is preparing this extension by hidden(deprecated) members to select
+these new options. Future versions will make these options fully function,
+current functionality avaialble with these options is in a beta state and not
+recommended for actual use.</p>
+</div>
+<p>&lt;No description&gt;</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+</div><!--</div>
+<div class="section" id="solveroptions-newton1">
+<span id="anymechoprkinanl-solveroptions-newton1"></span><h3>SolverOptions.Newton1<a class="headerlink" href="#solveroptions-newton1" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries odd section collapsed" id="SolverOptions.Newton1">
+<span id="anymechoprkinanl-solveroptions-newton1" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title">SolverOptions.Newton1</span><span class="member-title-equal"></span><span class="member-title-default"></span><a class="headerlink" href="#SolverOptions.Newton1" title="Permalink to this headline">¶</a>
+<span class="member-descr"></span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyOprSetNLEqSolverNewton.html#anyoprsetnleqsolvernewton"><span class="std std-ref">AnyOprSetNLEqSolverNewton</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+</div>
+<div class="without-title admonition danger">
+<p class="admonition-title">Danger</p>
+<p><strong>Deprecated</strong>: AnyMechOprKinAnl is being extended with new solver options that are currently
+in a beta phase and you have initialized one of these options.
+Version 6.1 is preparing this extension by hidden(deprecated) members to select
+these new options. Future versions will make these options fully function,
+current functionality avaialble with these options is in a beta state and not
+recommended for actual use.</p>
+</div>
+<p>&lt;No description&gt;</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+</div><!--</div>
+<div class="section" id="solveroptions-newton1-maxiteration">
+<span id="anymechoprkinanl-solveroptions-newton1-maxiteration"></span><h3>SolverOptions.Newton1.MaxIteration<a class="headerlink" href="#solveroptions-newton1-maxiteration" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries even section collapsed" id="SolverOptions.Newton1.MaxIteration">
+<span id="anymechoprkinanl-solveroptions-newton1-maxiteration" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title">SolverOptions.Newton1.MaxIteration</span><span class="member-title-equal"></span><span class="member-title-default"></span><a class="headerlink" href="#SolverOptions.Newton1.MaxIteration" title="Permalink to this headline">¶</a>
+<span class="member-descr"></span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyIntVar.html#anyintvar"><span class="std std-ref">AnyIntVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+</div>
+<div class="without-title admonition danger">
+<p class="admonition-title">Danger</p>
+<p><strong>Deprecated</strong>: AnyMechOprKinAnl is being extended with new solver options that are currently
+in a beta phase and you have initialized one of these options.
+Version 6.1 is preparing this extension by hidden(deprecated) members to select
+these new options. Future versions will make these options fully function,
+current functionality avaialble with these options is in a beta state and not
+recommended for actual use.</p>
+</div>
+<p>&lt;No description&gt;</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+</div><!--</div>
+<div class="section" id="solveroptions-newton1-searchintervallength">
+<span id="anymechoprkinanl-solveroptions-newton1-searchintervallength"></span><h3>SolverOptions.Newton1.SearchIntervalLength<a class="headerlink" href="#solveroptions-newton1-searchintervallength" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries odd section collapsed" id="SolverOptions.Newton1.SearchIntervalLength">
+<span id="anymechoprkinanl-solveroptions-newton1-searchintervallength" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title">SolverOptions.Newton1.SearchIntervalLength</span><span class="member-title-equal"></span><span class="member-title-default"></span><a class="headerlink" href="#SolverOptions.Newton1.SearchIntervalLength" title="Permalink to this headline">¶</a>
+<span class="member-descr"></span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyFloatVar.html#anyfloatvar"><span class="std std-ref">AnyFloatVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+</div>
+<div class="without-title admonition danger">
+<p class="admonition-title">Danger</p>
+<p><strong>Deprecated</strong>: AnyMechOprKinAnl is being extended with new solver options that are currently
+in a beta phase and you have initialized one of these options.
+Version 6.1 is preparing this extension by hidden(deprecated) members to select
+these new options. Future versions will make these options fully function,
+current functionality avaialble with these options is in a beta state and not
+recommended for actual use.</p>
+</div>
+<p>&lt;No description&gt;</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+</div><!--</div>
+<div class="section" id="solveroptions-newton1-type">
+<span id="anymechoprkinanl-solveroptions-newton1-type"></span><h3>SolverOptions.Newton1.Type<a class="headerlink" href="#solveroptions-newton1-type" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries even section collapsed" id="SolverOptions.Newton1.Type">
+<span id="anymechoprkinanl-solveroptions-newton1-type" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title">SolverOptions.Newton1.Type</span><span class="member-title-equal"></span><span class="member-title-default"></span><a class="headerlink" href="#SolverOptions.Newton1.Type" title="Permalink to this headline">¶</a>
+<span class="member-descr"></span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyEnumNewtonSolver.html#anyenumnewtonsolver"><span class="std std-ref">AnyEnumNewtonSolver</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+</div>
+<div class="without-title admonition danger">
+<p class="admonition-title">Danger</p>
+<p><strong>Deprecated</strong>: AnyMechOprKinAnl is being extended with new solver options that are currently
+in a beta phase and you have initialized one of these options.
+Version 6.1 is preparing this extension by hidden(deprecated) members to select
+these new options. Future versions will make these options fully function,
+current functionality avaialble with these options is in a beta state and not
+recommended for actual use.</p>
+</div>
+<p>&lt;No description&gt;</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+</div><!--</div>
+<div class="section" id="solveroptions-newton1-maxlinesearchiteration">
+<span id="anymechoprkinanl-solveroptions-newton1-maxlinesearchiteration"></span><h3>SolverOptions.Newton1.MaxLineSearchIteration<a class="headerlink" href="#solveroptions-newton1-maxlinesearchiteration" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries odd section collapsed" id="SolverOptions.Newton1.MaxLineSearchIteration">
+<span id="anymechoprkinanl-solveroptions-newton1-maxlinesearchiteration" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title">SolverOptions.Newton1.MaxLineSearchIteration</span><span class="member-title-equal"></span><span class="member-title-default"></span><a class="headerlink" href="#SolverOptions.Newton1.MaxLineSearchIteration" title="Permalink to this headline">¶</a>
+<span class="member-descr"></span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyIntVar.html#anyintvar"><span class="std std-ref">AnyIntVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+</div>
+<div class="without-title admonition danger">
+<p class="admonition-title">Danger</p>
+<p><strong>Deprecated</strong>: AnyMechOprKinAnl is being extended with new solver options that are currently
+in a beta phase and you have initialized one of these options.
+Version 6.1 is preparing this extension by hidden(deprecated) members to select
+these new options. Future versions will make these options fully function,
+current functionality avaialble with these options is in a beta state and not
+recommended for actual use.</p>
+</div>
+<p>&lt;No description&gt;</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+</div><!--</div>
+<div class="section" id="solveroptions-newton2">
+<span id="anymechoprkinanl-solveroptions-newton2"></span><h3>SolverOptions.Newton2<a class="headerlink" href="#solveroptions-newton2" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries even section collapsed" id="SolverOptions.Newton2">
+<span id="anymechoprkinanl-solveroptions-newton2" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title">SolverOptions.Newton2</span><span class="member-title-equal"></span><span class="member-title-default"></span><a class="headerlink" href="#SolverOptions.Newton2" title="Permalink to this headline">¶</a>
+<span class="member-descr"></span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyOprSetNLEqSolverNewton.html#anyoprsetnleqsolvernewton"><span class="std std-ref">AnyOprSetNLEqSolverNewton</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+</div>
+<div class="without-title admonition danger">
+<p class="admonition-title">Danger</p>
+<p><strong>Deprecated</strong>: AnyMechOprKinAnl is being extended with new solver options that are currently
+in a beta phase and you have initialized one of these options.
+Version 6.1 is preparing this extension by hidden(deprecated) members to select
+these new options. Future versions will make these options fully function,
+current functionality avaialble with these options is in a beta state and not
+recommended for actual use.</p>
+</div>
+<p>&lt;No description&gt;</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+</div><!--</div>
+<div class="section" id="solveroptions-newton2-maxiteration">
+<span id="anymechoprkinanl-solveroptions-newton2-maxiteration"></span><h3>SolverOptions.Newton2.MaxIteration<a class="headerlink" href="#solveroptions-newton2-maxiteration" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries odd section collapsed" id="SolverOptions.Newton2.MaxIteration">
+<span id="anymechoprkinanl-solveroptions-newton2-maxiteration" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title">SolverOptions.Newton2.MaxIteration</span><span class="member-title-equal"></span><span class="member-title-default"></span><a class="headerlink" href="#SolverOptions.Newton2.MaxIteration" title="Permalink to this headline">¶</a>
+<span class="member-descr"></span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyIntVar.html#anyintvar"><span class="std std-ref">AnyIntVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+</div>
+<div class="without-title admonition danger">
+<p class="admonition-title">Danger</p>
+<p><strong>Deprecated</strong>: AnyMechOprKinAnl is being extended with new solver options that are currently
+in a beta phase and you have initialized one of these options.
+Version 6.1 is preparing this extension by hidden(deprecated) members to select
+these new options. Future versions will make these options fully function,
+current functionality avaialble with these options is in a beta state and not
+recommended for actual use.</p>
+</div>
+<p>&lt;No description&gt;</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+</div><!--</div>
+<div class="section" id="solveroptions-newton2-searchintervallength">
+<span id="anymechoprkinanl-solveroptions-newton2-searchintervallength"></span><h3>SolverOptions.Newton2.SearchIntervalLength<a class="headerlink" href="#solveroptions-newton2-searchintervallength" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries even section collapsed" id="SolverOptions.Newton2.SearchIntervalLength">
+<span id="anymechoprkinanl-solveroptions-newton2-searchintervallength" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title">SolverOptions.Newton2.SearchIntervalLength</span><span class="member-title-equal"></span><span class="member-title-default"></span><a class="headerlink" href="#SolverOptions.Newton2.SearchIntervalLength" title="Permalink to this headline">¶</a>
+<span class="member-descr"></span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyFloatVar.html#anyfloatvar"><span class="std std-ref">AnyFloatVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+</div>
+<div class="without-title admonition danger">
+<p class="admonition-title">Danger</p>
+<p><strong>Deprecated</strong>: AnyMechOprKinAnl is being extended with new solver options that are currently
+in a beta phase and you have initialized one of these options.
+Version 6.1 is preparing this extension by hidden(deprecated) members to select
+these new options. Future versions will make these options fully function,
+current functionality avaialble with these options is in a beta state and not
+recommended for actual use.</p>
+</div>
+<p>&lt;No description&gt;</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+</div><!--</div>
+<div class="section" id="solveroptions-newton2-type">
+<span id="anymechoprkinanl-solveroptions-newton2-type"></span><h3>SolverOptions.Newton2.Type<a class="headerlink" href="#solveroptions-newton2-type" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries odd section collapsed" id="SolverOptions.Newton2.Type">
+<span id="anymechoprkinanl-solveroptions-newton2-type" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title">SolverOptions.Newton2.Type</span><span class="member-title-equal"></span><span class="member-title-default"></span><a class="headerlink" href="#SolverOptions.Newton2.Type" title="Permalink to this headline">¶</a>
+<span class="member-descr"></span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyEnumNewtonSolver.html#anyenumnewtonsolver"><span class="std std-ref">AnyEnumNewtonSolver</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+</div>
+<div class="without-title admonition danger">
+<p class="admonition-title">Danger</p>
+<p><strong>Deprecated</strong>: AnyMechOprKinAnl is being extended with new solver options that are currently
+in a beta phase and you have initialized one of these options.
+Version 6.1 is preparing this extension by hidden(deprecated) members to select
+these new options. Future versions will make these options fully function,
+current functionality avaialble with these options is in a beta state and not
+recommended for actual use.</p>
+</div>
+<p>&lt;No description&gt;</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+</div><!--</div>
+<div class="section" id="solveroptions-newton2-maxlinesearchiteration">
+<span id="anymechoprkinanl-solveroptions-newton2-maxlinesearchiteration"></span><h3>SolverOptions.Newton2.MaxLineSearchIteration<a class="headerlink" href="#solveroptions-newton2-maxlinesearchiteration" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries even section collapsed" id="SolverOptions.Newton2.MaxLineSearchIteration">
+<span id="anymechoprkinanl-solveroptions-newton2-maxlinesearchiteration" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title">SolverOptions.Newton2.MaxLineSearchIteration</span><span class="member-title-equal"></span><span class="member-title-default"></span><a class="headerlink" href="#SolverOptions.Newton2.MaxLineSearchIteration" title="Permalink to this headline">¶</a>
+<span class="member-descr"></span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyIntVar.html#anyintvar"><span class="std std-ref">AnyIntVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+</div>
+<div class="without-title admonition danger">
+<p class="admonition-title">Danger</p>
+<p><strong>Deprecated</strong>: AnyMechOprKinAnl is being extended with new solver options that are currently
+in a beta phase and you have initialized one of these options.
+Version 6.1 is preparing this extension by hidden(deprecated) members to select
+these new options. Future versions will make these options fully function,
+current functionality avaialble with these options is in a beta state and not
+recommended for actual use.</p>
+</div>
+<p>&lt;No description&gt;</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+</div><!--</div>
+<div class="section" id="solveroptions-continuation1">
+<span id="anymechoprkinanl-solveroptions-continuation1"></span><h3>SolverOptions.Continuation1<a class="headerlink" href="#solveroptions-continuation1" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries odd section collapsed" id="SolverOptions.Continuation1">
+<span id="anymechoprkinanl-solveroptions-continuation1" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title">SolverOptions.Continuation1</span><span class="member-title-equal"></span><span class="member-title-default"></span><a class="headerlink" href="#SolverOptions.Continuation1" title="Permalink to this headline">¶</a>
+<span class="member-descr"></span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyOprSetNLEqSolverCont.html#anyoprsetnleqsolvercont"><span class="std std-ref">AnyOprSetNLEqSolverCont</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+</div>
+<div class="without-title admonition danger">
+<p class="admonition-title">Danger</p>
+<p><strong>Deprecated</strong>: AnyMechOprKinAnl is being extended with new solver options that are currently
+in a beta phase and you have initialized one of these options.
+Version 6.1 is preparing this extension by hidden(deprecated) members to select
+these new options. Future versions will make these options fully function,
+current functionality avaialble with these options is in a beta state and not
+recommended for actual use.</p>
+</div>
+<p>&lt;No description&gt;</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+</div><!--</div>
+<div class="section" id="solveroptions-continuation1-maxiteration">
+<span id="anymechoprkinanl-solveroptions-continuation1-maxiteration"></span><h3>SolverOptions.Continuation1.MaxIteration<a class="headerlink" href="#solveroptions-continuation1-maxiteration" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries even section collapsed" id="SolverOptions.Continuation1.MaxIteration">
+<span id="anymechoprkinanl-solveroptions-continuation1-maxiteration" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title">SolverOptions.Continuation1.MaxIteration</span><span class="member-title-equal"></span><span class="member-title-default"></span><a class="headerlink" href="#SolverOptions.Continuation1.MaxIteration" title="Permalink to this headline">¶</a>
+<span class="member-descr"></span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyIntVar.html#anyintvar"><span class="std std-ref">AnyIntVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+</div>
+<div class="without-title admonition danger">
+<p class="admonition-title">Danger</p>
+<p><strong>Deprecated</strong>: AnyMechOprKinAnl is being extended with new solver options that are currently
+in a beta phase and you have initialized one of these options.
+Version 6.1 is preparing this extension by hidden(deprecated) members to select
+these new options. Future versions will make these options fully function,
+current functionality avaialble with these options is in a beta state and not
+recommended for actual use.</p>
+</div>
+<p>&lt;No description&gt;</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+</div><!--</div>
+<div class="section" id="solveroptions-continuation1-searchintervallength">
+<span id="anymechoprkinanl-solveroptions-continuation1-searchintervallength"></span><h3>SolverOptions.Continuation1.SearchIntervalLength<a class="headerlink" href="#solveroptions-continuation1-searchintervallength" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries odd section collapsed" id="SolverOptions.Continuation1.SearchIntervalLength">
+<span id="anymechoprkinanl-solveroptions-continuation1-searchintervallength" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title">SolverOptions.Continuation1.SearchIntervalLength</span><span class="member-title-equal"></span><span class="member-title-default"></span><a class="headerlink" href="#SolverOptions.Continuation1.SearchIntervalLength" title="Permalink to this headline">¶</a>
+<span class="member-descr"></span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyFloatVar.html#anyfloatvar"><span class="std std-ref">AnyFloatVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+</div>
+<div class="without-title admonition danger">
+<p class="admonition-title">Danger</p>
+<p><strong>Deprecated</strong>: AnyMechOprKinAnl is being extended with new solver options that are currently
+in a beta phase and you have initialized one of these options.
+Version 6.1 is preparing this extension by hidden(deprecated) members to select
+these new options. Future versions will make these options fully function,
+current functionality avaialble with these options is in a beta state and not
+recommended for actual use.</p>
+</div>
+<p>&lt;No description&gt;</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+</div><!--</div>
+<div class="section" id="solveroptions-continuation1-type">
+<span id="anymechoprkinanl-solveroptions-continuation1-type"></span><h3>SolverOptions.Continuation1.Type<a class="headerlink" href="#solveroptions-continuation1-type" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries even section collapsed" id="SolverOptions.Continuation1.Type">
+<span id="anymechoprkinanl-solveroptions-continuation1-type" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title">SolverOptions.Continuation1.Type</span><span class="member-title-equal"></span><span class="member-title-default"></span><a class="headerlink" href="#SolverOptions.Continuation1.Type" title="Permalink to this headline">¶</a>
+<span class="member-descr"></span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyEnumNewtonSolver.html#anyenumnewtonsolver"><span class="std std-ref">AnyEnumNewtonSolver</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+</div>
+<div class="without-title admonition danger">
+<p class="admonition-title">Danger</p>
+<p><strong>Deprecated</strong>: AnyMechOprKinAnl is being extended with new solver options that are currently
+in a beta phase and you have initialized one of these options.
+Version 6.1 is preparing this extension by hidden(deprecated) members to select
+these new options. Future versions will make these options fully function,
+current functionality avaialble with these options is in a beta state and not
+recommended for actual use.</p>
+</div>
+<p>&lt;No description&gt;</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+</div><!--</div>
+<div class="section" id="solveroptions-continuation1-maxlinesearchiteration">
+<span id="anymechoprkinanl-solveroptions-continuation1-maxlinesearchiteration"></span><h3>SolverOptions.Continuation1.MaxLineSearchIteration<a class="headerlink" href="#solveroptions-continuation1-maxlinesearchiteration" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries odd section collapsed" id="SolverOptions.Continuation1.MaxLineSearchIteration">
+<span id="anymechoprkinanl-solveroptions-continuation1-maxlinesearchiteration" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title">SolverOptions.Continuation1.MaxLineSearchIteration</span><span class="member-title-equal"></span><span class="member-title-default"></span><a class="headerlink" href="#SolverOptions.Continuation1.MaxLineSearchIteration" title="Permalink to this headline">¶</a>
+<span class="member-descr"></span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyIntVar.html#anyintvar"><span class="std std-ref">AnyIntVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+</div>
+<div class="without-title admonition danger">
+<p class="admonition-title">Danger</p>
+<p><strong>Deprecated</strong>: AnyMechOprKinAnl is being extended with new solver options that are currently
+in a beta phase and you have initialized one of these options.
+Version 6.1 is preparing this extension by hidden(deprecated) members to select
+these new options. Future versions will make these options fully function,
+current functionality avaialble with these options is in a beta state and not
+recommended for actual use.</p>
+</div>
+<p>&lt;No description&gt;</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+</div><!--</div>
+<div class="section" id="solveroptions-continuation1-initstepsize">
+<span id="anymechoprkinanl-solveroptions-continuation1-initstepsize"></span><h3>SolverOptions.Continuation1.InitStepSize<a class="headerlink" href="#solveroptions-continuation1-initstepsize" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries even section collapsed" id="SolverOptions.Continuation1.InitStepSize">
+<span id="anymechoprkinanl-solveroptions-continuation1-initstepsize" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title">SolverOptions.Continuation1.InitStepSize</span><span class="member-title-equal"></span><span class="member-title-default"></span><a class="headerlink" href="#SolverOptions.Continuation1.InitStepSize" title="Permalink to this headline">¶</a>
+<span class="member-descr"></span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyFloatVar.html#anyfloatvar"><span class="std std-ref">AnyFloatVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+</div>
+<div class="without-title admonition danger">
+<p class="admonition-title">Danger</p>
+<p><strong>Deprecated</strong>: AnyMechOprKinAnl is being extended with new solver options that are currently
+in a beta phase and you have initialized one of these options.
+Version 6.1 is preparing this extension by hidden(deprecated) members to select
+these new options. Future versions will make these options fully function,
+current functionality avaialble with these options is in a beta state and not
+recommended for actual use.</p>
+</div>
+<p>&lt;No description&gt;</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+</div><!--</div>
+<div class="section" id="solveroptions-continuation1-nomangle">
+<span id="anymechoprkinanl-solveroptions-continuation1-nomangle"></span><h3>SolverOptions.Continuation1.NomAngle<a class="headerlink" href="#solveroptions-continuation1-nomangle" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries odd section collapsed" id="SolverOptions.Continuation1.NomAngle">
+<span id="anymechoprkinanl-solveroptions-continuation1-nomangle" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title">SolverOptions.Continuation1.NomAngle</span><span class="member-title-equal"></span><span class="member-title-default"></span><a class="headerlink" href="#SolverOptions.Continuation1.NomAngle" title="Permalink to this headline">¶</a>
+<span class="member-descr"></span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyFloatVar.html#anyfloatvar"><span class="std std-ref">AnyFloatVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+</div>
+<div class="without-title admonition danger">
+<p class="admonition-title">Danger</p>
+<p><strong>Deprecated</strong>: AnyMechOprKinAnl is being extended with new solver options that are currently
+in a beta phase and you have initialized one of these options.
+Version 6.1 is preparing this extension by hidden(deprecated) members to select
+these new options. Future versions will make these options fully function,
+current functionality avaialble with these options is in a beta state and not
+recommended for actual use.</p>
+</div>
+<p>&lt;No description&gt;</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+</div><!--</div>
+<div class="section" id="solveroptions-continuation1-nomcontraction">
+<span id="anymechoprkinanl-solveroptions-continuation1-nomcontraction"></span><h3>SolverOptions.Continuation1.NomContraction<a class="headerlink" href="#solveroptions-continuation1-nomcontraction" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries even section collapsed" id="SolverOptions.Continuation1.NomContraction">
+<span id="anymechoprkinanl-solveroptions-continuation1-nomcontraction" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title">SolverOptions.Continuation1.NomContraction</span><span class="member-title-equal"></span><span class="member-title-default"></span><a class="headerlink" href="#SolverOptions.Continuation1.NomContraction" title="Permalink to this headline">¶</a>
+<span class="member-descr"></span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyFloatVar.html#anyfloatvar"><span class="std std-ref">AnyFloatVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+</div>
+<div class="without-title admonition danger">
+<p class="admonition-title">Danger</p>
+<p><strong>Deprecated</strong>: AnyMechOprKinAnl is being extended with new solver options that are currently
+in a beta phase and you have initialized one of these options.
+Version 6.1 is preparing this extension by hidden(deprecated) members to select
+these new options. Future versions will make these options fully function,
+current functionality avaialble with these options is in a beta state and not
+recommended for actual use.</p>
+</div>
+<p>&lt;No description&gt;</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+</div><!--</div>
+<div class="section" id="solveroptions-continuation1-nomdistance">
+<span id="anymechoprkinanl-solveroptions-continuation1-nomdistance"></span><h3>SolverOptions.Continuation1.NomDistance<a class="headerlink" href="#solveroptions-continuation1-nomdistance" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries odd section collapsed" id="SolverOptions.Continuation1.NomDistance">
+<span id="anymechoprkinanl-solveroptions-continuation1-nomdistance" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title">SolverOptions.Continuation1.NomDistance</span><span class="member-title-equal"></span><span class="member-title-default"></span><a class="headerlink" href="#SolverOptions.Continuation1.NomDistance" title="Permalink to this headline">¶</a>
+<span class="member-descr"></span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyFloatVar.html#anyfloatvar"><span class="std std-ref">AnyFloatVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+</div>
+<div class="without-title admonition danger">
+<p class="admonition-title">Danger</p>
+<p><strong>Deprecated</strong>: AnyMechOprKinAnl is being extended with new solver options that are currently
+in a beta phase and you have initialized one of these options.
+Version 6.1 is preparing this extension by hidden(deprecated) members to select
+these new options. Future versions will make these options fully function,
+current functionality avaialble with these options is in a beta state and not
+recommended for actual use.</p>
+</div>
+<p>&lt;No description&gt;</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+</div><!--</div>
+<div class="section" id="solveroptions-kinsoldet1">
+<span id="anymechoprkinanl-solveroptions-kinsoldet1"></span><h3>SolverOptions.KinSolDet1<a class="headerlink" href="#solveroptions-kinsoldet1" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries even section collapsed" id="SolverOptions.KinSolDet1">
+<span id="anymechoprkinanl-solveroptions-kinsoldet1" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title">SolverOptions.KinSolDet1</span><span class="member-title-equal"></span><span class="member-title-default"></span><a class="headerlink" href="#SolverOptions.KinSolDet1" title="Permalink to this headline">¶</a>
+<span class="member-descr"></span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyOprSetKinematics.html#anyoprsetkinematics"><span class="std std-ref">AnyOprSetKinematics</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+</div>
+<div class="without-title admonition danger">
+<p class="admonition-title">Danger</p>
+<p><strong>Deprecated</strong>: AnyMechOprKinAnl is being extended with new solver options that are currently
+in a beta phase and you have initialized one of these options.
+Version 6.1 is preparing this extension by hidden(deprecated) members to select
+these new options. Future versions will make these options fully function,
+current functionality avaialble with these options is in a beta state and not
+recommended for actual use.</p>
+</div>
+<p>&lt;No description&gt;</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+</div><!--</div>
+<div class="section" id="solveroptions-kinsoldet1-type">
+<span id="anymechoprkinanl-solveroptions-kinsoldet1-type"></span><h3>SolverOptions.KinSolDet1.Type<a class="headerlink" href="#solveroptions-kinsoldet1-type" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries odd section collapsed" id="SolverOptions.KinSolDet1.Type">
+<span id="anymechoprkinanl-solveroptions-kinsoldet1-type" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title">SolverOptions.KinSolDet1.Type</span><span class="member-title-equal"></span><span class="member-title-default"></span><a class="headerlink" href="#SolverOptions.KinSolDet1.Type" title="Permalink to this headline">¶</a>
+<span class="member-descr"></span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyEnumKinSys.html#anyenumkinsys"><span class="std std-ref">AnyEnumKinSys</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+</div>
+<div class="without-title admonition danger">
+<p class="admonition-title">Danger</p>
+<p><strong>Deprecated</strong>: AnyMechOprKinAnl is being extended with new solver options that are currently
+in a beta phase and you have initialized one of these options.
+Version 6.1 is preparing this extension by hidden(deprecated) members to select
+these new options. Future versions will make these options fully function,
+current functionality avaialble with these options is in a beta state and not
+recommended for actual use.</p>
+</div>
+<p>&lt;No description&gt;</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+</div><!--</div>
+<div class="section" id="solveroptions-kinsoldet1-solver">
+<span id="anymechoprkinanl-solveroptions-kinsoldet1-solver"></span><h3>SolverOptions.KinSolDet1.Solver<a class="headerlink" href="#solveroptions-kinsoldet1-solver" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries even section collapsed" id="SolverOptions.KinSolDet1.Solver">
+<span id="anymechoprkinanl-solveroptions-kinsoldet1-solver" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title">SolverOptions.KinSolDet1.Solver</span><span class="member-title-equal"></span><span class="member-title-default"></span><a class="headerlink" href="#SolverOptions.KinSolDet1.Solver" title="Permalink to this headline">¶</a>
+<span class="member-descr"></span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyObjectPtrVar.html#anyobjectptrvar"><span class="std std-ref">AnyObjectPtrVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+</div>
+<div class="without-title admonition danger">
+<p class="admonition-title">Danger</p>
+<p><strong>Deprecated</strong>: AnyMechOprKinAnl is being extended with new solver options that are currently
+in a beta phase and you have initialized one of these options.
+Version 6.1 is preparing this extension by hidden(deprecated) members to select
+these new options. Future versions will make these options fully function,
+current functionality avaialble with these options is in a beta state and not
+recommended for actual use.</p>
+</div>
+<p>&lt;No description&gt;</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+</div><!--</div>
+<div class="section" id="solveroptions-kinsoldet1-fallbacksolver">
+<span id="anymechoprkinanl-solveroptions-kinsoldet1-fallbacksolver"></span><h3>SolverOptions.KinSolDet1.FallBackSolver<a class="headerlink" href="#solveroptions-kinsoldet1-fallbacksolver" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries odd section collapsed" id="SolverOptions.KinSolDet1.FallBackSolver">
+<span id="anymechoprkinanl-solveroptions-kinsoldet1-fallbacksolver" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title">SolverOptions.KinSolDet1.FallBackSolver</span><span class="member-title-equal"></span><span class="member-title-default"></span><a class="headerlink" href="#SolverOptions.KinSolDet1.FallBackSolver" title="Permalink to this headline">¶</a>
+<span class="member-descr"></span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyObjectPtrArray.html#anyobjectptrarray"><span class="std std-ref">AnyObjectPtrArray</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+</div>
+<div class="without-title admonition danger">
+<p class="admonition-title">Danger</p>
+<p><strong>Deprecated</strong>: AnyMechOprKinAnl is being extended with new solver options that are currently
+in a beta phase and you have initialized one of these options.
+Version 6.1 is preparing this extension by hidden(deprecated) members to select
+these new options. Future versions will make these options fully function,
+current functionality avaialble with these options is in a beta state and not
+recommended for actual use.</p>
+</div>
+<p>&lt;No description&gt;</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+</div><!--</div>
+<div class="section" id="solveroptions-kinsoldet2">
+<span id="anymechoprkinanl-solveroptions-kinsoldet2"></span><h3>SolverOptions.KinSolDet2<a class="headerlink" href="#solveroptions-kinsoldet2" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries even section collapsed" id="SolverOptions.KinSolDet2">
+<span id="anymechoprkinanl-solveroptions-kinsoldet2" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title">SolverOptions.KinSolDet2</span><span class="member-title-equal"></span><span class="member-title-default"></span><a class="headerlink" href="#SolverOptions.KinSolDet2" title="Permalink to this headline">¶</a>
+<span class="member-descr"></span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyOprSetKinematics.html#anyoprsetkinematics"><span class="std std-ref">AnyOprSetKinematics</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+</div>
+<div class="without-title admonition danger">
+<p class="admonition-title">Danger</p>
+<p><strong>Deprecated</strong>: AnyMechOprKinAnl is being extended with new solver options that are currently
+in a beta phase and you have initialized one of these options.
+Version 6.1 is preparing this extension by hidden(deprecated) members to select
+these new options. Future versions will make these options fully function,
+current functionality avaialble with these options is in a beta state and not
+recommended for actual use.</p>
+</div>
+<p>&lt;No description&gt;</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+</div><!--</div>
+<div class="section" id="solveroptions-kinsoldet2-type">
+<span id="anymechoprkinanl-solveroptions-kinsoldet2-type"></span><h3>SolverOptions.KinSolDet2.Type<a class="headerlink" href="#solveroptions-kinsoldet2-type" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries odd section collapsed" id="SolverOptions.KinSolDet2.Type">
+<span id="anymechoprkinanl-solveroptions-kinsoldet2-type" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title">SolverOptions.KinSolDet2.Type</span><span class="member-title-equal"></span><span class="member-title-default"></span><a class="headerlink" href="#SolverOptions.KinSolDet2.Type" title="Permalink to this headline">¶</a>
+<span class="member-descr"></span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyEnumKinSys.html#anyenumkinsys"><span class="std std-ref">AnyEnumKinSys</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+</div>
+<div class="without-title admonition danger">
+<p class="admonition-title">Danger</p>
+<p><strong>Deprecated</strong>: AnyMechOprKinAnl is being extended with new solver options that are currently
+in a beta phase and you have initialized one of these options.
+Version 6.1 is preparing this extension by hidden(deprecated) members to select
+these new options. Future versions will make these options fully function,
+current functionality avaialble with these options is in a beta state and not
+recommended for actual use.</p>
+</div>
+<p>&lt;No description&gt;</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+</div><!--</div>
+<div class="section" id="solveroptions-kinsoldet2-solver">
+<span id="anymechoprkinanl-solveroptions-kinsoldet2-solver"></span><h3>SolverOptions.KinSolDet2.Solver<a class="headerlink" href="#solveroptions-kinsoldet2-solver" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries even section collapsed" id="SolverOptions.KinSolDet2.Solver">
+<span id="anymechoprkinanl-solveroptions-kinsoldet2-solver" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title">SolverOptions.KinSolDet2.Solver</span><span class="member-title-equal"></span><span class="member-title-default"></span><a class="headerlink" href="#SolverOptions.KinSolDet2.Solver" title="Permalink to this headline">¶</a>
+<span class="member-descr"></span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyObjectPtrVar.html#anyobjectptrvar"><span class="std std-ref">AnyObjectPtrVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+</div>
+<div class="without-title admonition danger">
+<p class="admonition-title">Danger</p>
+<p><strong>Deprecated</strong>: AnyMechOprKinAnl is being extended with new solver options that are currently
+in a beta phase and you have initialized one of these options.
+Version 6.1 is preparing this extension by hidden(deprecated) members to select
+these new options. Future versions will make these options fully function,
+current functionality avaialble with these options is in a beta state and not
+recommended for actual use.</p>
+</div>
+<p>&lt;No description&gt;</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+</div><!--</div>
+<div class="section" id="solveroptions-kinsoldet2-fallbacksolver">
+<span id="anymechoprkinanl-solveroptions-kinsoldet2-fallbacksolver"></span><h3>SolverOptions.KinSolDet2.FallBackSolver<a class="headerlink" href="#solveroptions-kinsoldet2-fallbacksolver" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries odd section collapsed" id="SolverOptions.KinSolDet2.FallBackSolver">
+<span id="anymechoprkinanl-solveroptions-kinsoldet2-fallbacksolver" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title">SolverOptions.KinSolDet2.FallBackSolver</span><span class="member-title-equal"></span><span class="member-title-default"></span><a class="headerlink" href="#SolverOptions.KinSolDet2.FallBackSolver" title="Permalink to this headline">¶</a>
+<span class="member-descr"></span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyObjectPtrArray.html#anyobjectptrarray"><span class="std std-ref">AnyObjectPtrArray</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+</div>
+<div class="without-title admonition danger">
+<p class="admonition-title">Danger</p>
+<p><strong>Deprecated</strong>: AnyMechOprKinAnl is being extended with new solver options that are currently
+in a beta phase and you have initialized one of these options.
+Version 6.1 is preparing this extension by hidden(deprecated) members to select
+these new options. Future versions will make these options fully function,
+current functionality avaialble with these options is in a beta state and not
+recommended for actual use.</p>
+</div>
+<p>&lt;No description&gt;</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+</div><!--</div>
+<div class="section" id="solveroptions-kinsoloverdet1">
+<span id="anymechoprkinanl-solveroptions-kinsoloverdet1"></span><h3>SolverOptions.KinSolOverDet1<a class="headerlink" href="#solveroptions-kinsoloverdet1" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries even section collapsed" id="SolverOptions.KinSolOverDet1">
+<span id="anymechoprkinanl-solveroptions-kinsoloverdet1" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title">SolverOptions.KinSolOverDet1</span><span class="member-title-equal"></span><span class="member-title-default"></span><a class="headerlink" href="#SolverOptions.KinSolOverDet1" title="Permalink to this headline">¶</a>
+<span class="member-descr"></span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyOprSetKinematics.html#anyoprsetkinematics"><span class="std std-ref">AnyOprSetKinematics</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+</div>
+<div class="without-title admonition danger">
+<p class="admonition-title">Danger</p>
+<p><strong>Deprecated</strong>: AnyMechOprKinAnl is being extended with new solver options that are currently
+in a beta phase and you have initialized one of these options.
+Version 6.1 is preparing this extension by hidden(deprecated) members to select
+these new options. Future versions will make these options fully function,
+current functionality avaialble with these options is in a beta state and not
+recommended for actual use.</p>
+</div>
+<p>&lt;No description&gt;</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+</div><!--</div>
+<div class="section" id="solveroptions-kinsoloverdet1-type">
+<span id="anymechoprkinanl-solveroptions-kinsoloverdet1-type"></span><h3>SolverOptions.KinSolOverDet1.Type<a class="headerlink" href="#solveroptions-kinsoloverdet1-type" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries odd section collapsed" id="SolverOptions.KinSolOverDet1.Type">
+<span id="anymechoprkinanl-solveroptions-kinsoloverdet1-type" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title">SolverOptions.KinSolOverDet1.Type</span><span class="member-title-equal"></span><span class="member-title-default"></span><a class="headerlink" href="#SolverOptions.KinSolOverDet1.Type" title="Permalink to this headline">¶</a>
+<span class="member-descr"></span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyEnumKinSys.html#anyenumkinsys"><span class="std std-ref">AnyEnumKinSys</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+</div>
+<div class="without-title admonition danger">
+<p class="admonition-title">Danger</p>
+<p><strong>Deprecated</strong>: AnyMechOprKinAnl is being extended with new solver options that are currently
+in a beta phase and you have initialized one of these options.
+Version 6.1 is preparing this extension by hidden(deprecated) members to select
+these new options. Future versions will make these options fully function,
+current functionality avaialble with these options is in a beta state and not
+recommended for actual use.</p>
+</div>
+<p>&lt;No description&gt;</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+</div><!--</div>
+<div class="section" id="solveroptions-kinsoloverdet1-solver">
+<span id="anymechoprkinanl-solveroptions-kinsoloverdet1-solver"></span><h3>SolverOptions.KinSolOverDet1.Solver<a class="headerlink" href="#solveroptions-kinsoloverdet1-solver" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries even section collapsed" id="SolverOptions.KinSolOverDet1.Solver">
+<span id="anymechoprkinanl-solveroptions-kinsoloverdet1-solver" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title">SolverOptions.KinSolOverDet1.Solver</span><span class="member-title-equal"></span><span class="member-title-default"></span><a class="headerlink" href="#SolverOptions.KinSolOverDet1.Solver" title="Permalink to this headline">¶</a>
+<span class="member-descr"></span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyObjectPtrVar.html#anyobjectptrvar"><span class="std std-ref">AnyObjectPtrVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+</div>
+<div class="without-title admonition danger">
+<p class="admonition-title">Danger</p>
+<p><strong>Deprecated</strong>: AnyMechOprKinAnl is being extended with new solver options that are currently
+in a beta phase and you have initialized one of these options.
+Version 6.1 is preparing this extension by hidden(deprecated) members to select
+these new options. Future versions will make these options fully function,
+current functionality avaialble with these options is in a beta state and not
+recommended for actual use.</p>
+</div>
+<p>&lt;No description&gt;</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+</div><!--</div>
+<div class="section" id="solveroptions-kinsoloverdet1-fallbacksolver">
+<span id="anymechoprkinanl-solveroptions-kinsoloverdet1-fallbacksolver"></span><h3>SolverOptions.KinSolOverDet1.FallBackSolver<a class="headerlink" href="#solveroptions-kinsoloverdet1-fallbacksolver" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries odd section collapsed" id="SolverOptions.KinSolOverDet1.FallBackSolver">
+<span id="anymechoprkinanl-solveroptions-kinsoloverdet1-fallbacksolver" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title">SolverOptions.KinSolOverDet1.FallBackSolver</span><span class="member-title-equal"></span><span class="member-title-default"></span><a class="headerlink" href="#SolverOptions.KinSolOverDet1.FallBackSolver" title="Permalink to this headline">¶</a>
+<span class="member-descr"></span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnyObjectPtrArray.html#anyobjectptrarray"><span class="std std-ref">AnyObjectPtrArray</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+</div>
+<div class="without-title admonition danger">
+<p class="admonition-title">Danger</p>
+<p><strong>Deprecated</strong>: AnyMechOprKinAnl is being extended with new solver options that are currently
+in a beta phase and you have initialized one of these options.
+Version 6.1 is preparing this extension by hidden(deprecated) members to select
+these new options. Future versions will make these options fully function,
+current functionality avaialble with these options is in a beta state and not
+recommended for actual use.</p>
+</div>
+<p>&lt;No description&gt;</p>
+</div></blockquote>
+<!-- Hack to trick sphinx into adding member target link -->
+</div><!--</div>
+<div class="section" id="solveroptions-usenormalizedeulerparinjacobianonoff">
+<span id="anymechoprkinanl-solveroptions-usenormalizedeulerparinjacobianonoff"></span><h3>SolverOptions.UseNormalizedEulerParInJacobianOnOff<a class="headerlink" href="#solveroptions-usenormalizedeulerparinjacobianonoff" title="Permalink to this headline">¶</a></h3>
+-->
+
+<div class="html-toggle member-entries even section collapsed" id="SolverOptions.UseNormalizedEulerParInJacobianOnOff">
+<span id="anymechoprkinanl-solveroptions-usenormalizedeulerparinjacobianonoff" style=""></span>
+<h3 class="html-toggle-button" style=""><span class="member-title">SolverOptions.UseNormalizedEulerParInJacobianOnOff</span><span class="member-title-equal"></span><span class="member-title-default"></span><a class="headerlink" href="#SolverOptions.UseNormalizedEulerParInJacobianOnOff" title="Permalink to this headline">¶</a>
+<span class="member-descr"></span>
+</h3><blockquote>
+<div><div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><strong>Class type:</strong>  <a class="reference internal" href="AnySwitchVar.html#anyswitchvar"><span class="std std-ref">AnySwitchVar</span></a></div>
+<div class="line"><strong>Eval moment:</strong> <a class="reference internal" href="../../anyscript/inside-anybody.html#insideams-evalmoments"><span class="std std-ref">Const</span></a></div>
+</div>
+<div class="without-title admonition danger">
+<p class="admonition-title">Danger</p>
+<p><strong>Deprecated</strong>: AnyMechOprKinAnl is being extended with new solver options that are currently
+in a beta phase and you have initialized one of these options.
+Version 6.1 is preparing this extension by hidden(deprecated) members to select
+these new options. Future versions will make these options fully function,
+current functionality avaialble with these options is in a beta state and not
+recommended for actual use.</p>
+</div>
+<p>&lt;No description&gt;</p>
+</div></blockquote>
+</div>
+</div>
+</div>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+        <p class="logo"><a href="../../index.html" title="index">
+          <img class="logo" src="../../_static/anyscript_maual.svg" alt="Logo"/>
+        </a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+<h3><a href="../../contents.html">Reference Manual</a></h3>
+<p class="caption"><span class="caption-text">API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../class-overview.html"><strong>Class reference</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../function-overview.html"><strong>Function reference</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../globals-overview.html">Globals reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../environment.html">Environment variables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../messages/index.html">Errors, warnings and messages</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Language</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../anyscript/language.html">AnyScript™ language</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../anyscript/preprocessor.html">The preprocessor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../anyscript/inside-anybody.html">Inside the AnyBody Modeling System</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../anyscript/technical-notes.html">Technical notes</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../demos/index.html">Demo examples</a></li>
+</ul>
+<div class="sphinxprev">
+    <h4>Other resources</h4>
+    <p class="topless"><a href="../../../index.html"
+                          title="Back to all manuals">&larr; Back to all manuals</a></p>
+</div>
+        </div>
+      </div>
+    
+    
+        <div class="sidebar-toggle-group no-js">
+            
+            <button class="sidebar-toggle" id="sidebar-hide" title="Hide the sidebar menu">
+                 «
+                <span class="show-for-small">hide menu</span>
+                
+            </button>
+            <button class="sidebar-toggle" id="sidebar-show" title="Show the sidebar menu">
+                
+                <span class="show-for-small">menu</span>
+                <span class="hide-for-small">sidebar</span>
+                 »
+            </button>
+        </div>
+    
+      <div class="clearer"></div>
+    </div>
+    <div class="relbar-bottom">
+        
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../contents.html" title="Table Of Contents"
+             >toc</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="AnyMechOprSubProcess.html" title="AnyMechOprSubProcess"
+             >next</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="AnyMechOprInvMuscleDynAnl.html" title="AnyMechOprInvMuscleDynAnl"
+             >previous</a> &nbsp; &nbsp;</li>
+    <li><a href="../../index.html">AnyScript Reference 7.3.4 documentation</a> &#187;</li>
+
+          <li class="nav-item nav-item-1"><a href="../../index.html" >The AnyScript Reference manual!</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../class-overview.html" ><strong>Class reference</strong></a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">AnyMechOprKinAnl</a></li> 
+      </ul>
+    </div>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2021, AnyBody Technology A/S.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.5.4.
+    </div>
+    <!-- cloud_sptheme 1.4 -->
+  </body>
+</html>
