@@ -25,25 +25,25 @@ for j in range(len(test_var)):
 
 # Calibration Attributes
 # Input Attributes
-mus_input = 'infraspinatus' # supraspinatus, subscapularis, infraspinatus, teres_minor
+mus_input = 'supraspinatus' # supraspinatus, subscapularis, infraspinatus, teres_minor
 attribute_input = 'F0' # F0 [N], Lf0 [m], Vol0 [m^3], Lt0 [m], Gamma0 [rad], Epsilon0 [-], Fcfast [-] (0-1), Jt [-](rec = 3), Jpe [-](rec = 3), K1 [s^-1](2), K2 [s^-1](8), PEFactor [-], Lfbar [-], Gammabar [-], Epsilonbar [-]
 add_label = ' '
-input_mus_full = INFR_full_name
-mus_nbr = muscle_nbr_INFR
-list_var_in = ['K2'] # ['F0', 'Lf0', 'Lt0', 'Epsilon0', 'Fcfast', 'Jt', 'Jpe', 'K1', 'PEFactor', 'Gamma0'] Gamma0, K2, Vol0
+input_mus_full = SUPR_full_name
+mus_nbr = muscle_nbr_SUPR
+list_var_in = ['PEFactor'] # ['F0', 'Lf0', 'Lt0', 'Epsilon0', 'Fcfast', 'Jt', 'Jpe', 'K1', 'PEFactor', 'Gamma0'] Gamma0, K2, Vol0
 
 # Movement attributes
-mov = -60.0 # [°] Degrees
-mov_attribute = 'GlenohumeralExternalRotation' # GlenohumeralFlexion, GlenohumeralAbduction, GlenohumeralExternalRotation, ElbowFlexion, ElbowPronation
+mov = 120.0 # [°] Degrees
+mov_attribute = 'GlenohumeralAbduction' # GlenohumeralFlexion, GlenohumeralAbduction, GlenohumeralExternalRotation, ElbowFlexion, ElbowPronation
 
 # Output Attributes
 output_mus_attribute = ''  # Fin, Fout, Lmt, Lm, Lt, LmtDot, LmDot, Activity, CorrectedActivity, Fm, Ft, Fp, Strength, Ft0, Ft0Grad, PennationAngle, EPOTt, EPOTt, EPOTmt, Pt, Pm, Pmt, Pmet
-list_var = ['Lm', 'Lt', 'Activity', 'PennationAngle'] # ['Lm', 'Lt', 'Activity', 'PennationAngle'], ['Strength', 'Fm', 'Ft', 'Fp']
+list_var = ['Strength', 'Fm', 'Ft', 'Fp'] # ['Lm', 'Lt', 'Activity', 'PennationAngle'], ['Strength', 'Fm', 'Ft', 'Fp']
 
 # Plot Attributesss
 xlabel = 'Abduction [°]'
 ylabel = 'Strength [N]'
-list_y_label = ['Muscle length [m]', 'Tendon length [m]', 'Activity [-]', 'Pennation Angle [rad]'] # ['Muscle length [m]', 'Tendon length [m]', 'Activity [-]', 'Pennation Angle [rad]'], ['Strength [N]', 'Fm [N]', 'Ft [N]', 'Fp [N]']
+list_y_label = ['Strength [N]', 'Fm [N]', 'Ft [N]', 'Fp [N]'] # ['Muscle length [m]', 'Tendon length [m]', 'Activity [-]', 'Pennation Angle [rad]'], ['Strength [N]', 'Fm [N]', 'Ft [N]', 'Fp [N]']
 """
 x = 0
 for y in list_var_in:
@@ -107,9 +107,13 @@ for y in list_var_in:
 
     # auto_test_var = AutoExtrInput(output_var, path_input_mus, input_mus_full, list_var_in[x], mus_nbr)
 
-    auto_test_var = [[2.5, 5.0, 7.5, 10, 12.5, 15.0, 17.5], [2.5, 5.0, 7.5, 10, 12.5, 15.0, 17.5],
-                     [2.5, 5.0, 7.5, 10, 12.5, 15.0, 17.5], [2.5, 5.0, 7.5, 10, 12.5, 15.0, 17.5],
-                     [2.5, 5.0, 7.5, 10, 12.5, 15.0, 17.5], [2.5, 5.0, 7.5, 10, 12.5, 15.0, 17.5]] # K2
+    auto_test_var = [[1.25, 1.5, 1.75, 2.0, 2.25, 2.5, 2.75], [1.25, 1.5, 1.75, 2.0, 2.25, 2.5, 2.75],
+                     [1.25, 1.5, 1.75, 2.0, 2.25, 2.5, 2.75], [1.25, 1.5, 1.75, 2.0, 2.25, 2.5, 2.75],
+                     [1.25, 1.5, 1.75, 2.0, 2.25, 2.5, 2.75], [1.25, 1.5, 1.75, 2.0, 2.25, 2.5, 2.75]]
+
+    #auto_test_var = [[2.5, 5.0, 7.5, 10, 12.5, 15.0, 17.5], [2.5, 5.0, 7.5, 10, 12.5, 15.0, 17.5],
+    #                 [2.5, 5.0, 7.5, 10, 12.5, 15.0, 17.5], [2.5, 5.0, 7.5, 10, 12.5, 15.0, 17.5],
+    #                 [2.5, 5.0, 7.5, 10, 12.5, 15.0, 17.5], [2.5, 5.0, 7.5, 10, 12.5, 15.0, 17.5]] # K2
 
     # Vol0/Sup auto_test_var = [[0.00003, 0.00004, 0.00005, 0.00006, 0.00007, 0.00008, 0.00009], [0.00003, 0.00004, 0.00005, 0.00006, 0.00007, 0.00008, 0.00009],
     #                 [0.00003, 0.00004, 0.00005, 0.00006, 0.00007, 0.00008, 0.00009], [0.00003, 0.00004, 0.00005, 0.00006, 0.00007, 0.00008, 0.00009],
