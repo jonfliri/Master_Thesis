@@ -23,3 +23,4 @@ def plotSingle(xaxis, yaxis, title = 'No title', xlab = 'x-label is not defined'
     plt.grid()
     plt.savefig(title)
     plt.clf()
+

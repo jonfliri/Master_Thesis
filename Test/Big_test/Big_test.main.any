@@ -58,7 +58,7 @@ Main =
     AnyFolder &Model = .Model;  
     
     Gravity={0.0, -9.81, 0.0};
-    tEnd = 10.0;
+    //tEnd = 10.0;
     nStep = 100;
     
     // Overdeterminate solver is needed while using the 

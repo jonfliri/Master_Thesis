@@ -68,10 +68,8 @@ def Macro_opti(path_cal, path_mov, mov_attribute, mov, path_output_mus, SUPR_ful
     RMB_max = np.array([1.1, 1.1, 1.1])  # average of RMN, RMJt2 and RMJt3
 
     # serratus anterior SRA
-    SRA_Rmin = np.array(
-        [0.6, 0.6, 0.5, 0.45, 0.45, 0.5])  # average of SRAs, SRAm and SRAi startet at 0.6 and than adjusted
-    SRA_Rmax = np.array(
-        [1.1, 1.1, 1.2, 1.2, 1.2, 1.2])  # average of SRAs, SRAm and SRAi startet at 1.1 and than adjusted
+    SRA_Rmin = np.array([0.6, 0.6, 0.5, 0.45, 0.45, 0.5])  # average of SRAs, SRAm and SRAi startet at 0.6 and than adjusted
+    SRA_Rmax = np.array([1.1, 1.1, 1.2, 1.2, 1.2, 1.2])  # average of SRAs, SRAm and SRAi startet at 1.1 and than adjusted
 
     # subscapularis SBSC
     SBSC_Rmin = np.array([0.475, 0.475, 0.475, 0.475, 0.475, 0.475])
@@ -189,6 +187,15 @@ def Macro_opti(path_cal, path_mov, mov_attribute, mov, path_output_mus, SUPR_ful
         Dump(path_output_mus + SUPR_full_name + '_4.' + output_mus_attribute[1]),
         Dump(path_output_mus + SUPR_full_name + '_5.' + output_mus_attribute[1]),
         Dump(path_output_mus + SUPR_full_name + '_6.' + output_mus_attribute[1]),
+
+        # Dump Supraspinatus Tendon Force
+
+        Dump(path_output_mus + SUPR_full_name + '_1.' + 'Ft'),
+        Dump(path_output_mus + SUPR_full_name + '_2.' + 'Ft'),
+        Dump(path_output_mus + SUPR_full_name + '_3.' + 'Ft'),
+        Dump(path_output_mus + SUPR_full_name + '_4.' + 'Ft'),
+        Dump(path_output_mus + SUPR_full_name + '_5.' + 'Ft'),
+        Dump(path_output_mus + SUPR_full_name + '_6.' + 'Ft'),
     ]
 
     output = app.start_macro(macro)
@@ -196,46 +203,7 @@ def Macro_opti(path_cal, path_mov, mov_attribute, mov, path_output_mus, SUPR_ful
     return output
 
 
-## Calibration
-
-out_calib = Macro_opti(path_cal, path_mov, mov_attribute, mov, path_output_mus, SUPR_full_name, output_mus_attribute, load_var = 'Big_test.main.any', height = pat_height, weight = pat_weight)
-
-## Healthy simulation
-
-strength_calib = output_calib(out_calib, path_output_mus, SUPR_full_name, output_mus_attribute[0], muscle_nbr_SUPR, nstep)
-np.savetxt('Healthy simulation strength ', strength_calib, delimiter=',')
-
-pas_for_calib = output_calib(out_calib, path_output_mus, SUPR_full_name, output_mus_attribute[1], muscle_nbr_SUPR, nstep)
-np.savetxt('Healthy simulation passive force ', pas_for_calib, delimiter=',')
-
-Lf0_calib = output_calib_one(out_calib, output_mus_attribute[2], muscle_nbr_SUPR)
-Lt0_calib = output_calib_one(out_calib, output_mus_attribute[3], muscle_nbr_SUPR)
-Lf0_calib = Lf0_calib/6.0
-Lt0_calib = Lt0_calib/6.0
-
-time_calib = out_calib['Main.Study.Output.Abscissa.t']
-np.savetxt('Time', time_calib, delimiter=',')
-
-SUPR_strength_cal = plotSingle(time_calib[0] * 120, strength_calib[0], 'Healthy Supraspinatus  Strength', 'Abduction [°]', 'Strength [N]', 1.0)
-SUPR_pas_for_cal = plotSingle(time_calib[0] * 120, pas_for_calib[0], 'Healthy Supraspinatus Passive Force', 'Abduction [°]', 'Passive Force [N]', 1.0)
-
-## Value adaption
-
-ten_0_ratio = 0.37 #Muscle / Tendon ratio in a healty patient --> literatur research 37%
-mus_0_ratio = 1-ten_0_ratio
-
-# Patient Data Julian
-mus_org_in_len = [] # cm
-mus_1_len = [7.896, 7.984, 5.88, 9.225, 6.203, 8.193, 6.562, 8.584, 7.166, 7.894, 7.773] # cm
-ten_1_len = [2.577, 2.599, 2.731, 3.04, 2.813, 4.159, 3.512, 3.583, 3.849, 2.986, 4.124] # cm
-tear_1_len_MRI = [2.947,4.627, 4.609, 1.565, 2.534, 1.488, 1.626, 1.993, 1.805, 1.32, 1.123] # cm
-
-
-
-
-## Repair simulation
-
-def Macro_sim(path_cal, path_mov, mov_attribute, mov, path_output_mus, SUPR_full_name, output_mus_attribute, Medialization_x, Medialization_y, Medialization_z, Lf1, Lt1, load_var = 'Big_test.main.any', height = default_height, weight=default_weight, pen_angle_SUPR = SUPR_pen_ang, pen_angle_SUPR_a = SUPR_pen_ang, z = 0):
+def Macro_sim(path_cal, path_mov, mov_attribute, mov, path_output_mus, SUPR_full_name, output_mus_attribute, Medialization_x, Medialization_y, Medialization_z, Lf1, Lt1, load_var = 'Big_test.main.any', height = default_height, weight=default_weight, pen_angle_SUPR = SUPR_pen_ang, pen_angle_SUPR_a = SUPR_pen_ang, jpe = 3.0):
     # coracobrachialis CRCB
     CRCB_Rmin = np.array([0.55, 0.55, 0.55, 0.55, 0.55, 0.55])
     CRCB_Rmax = np.array([0.95, 0.95, 0.95, 0.95, 0.95, 0.95])
@@ -296,7 +264,7 @@ def Macro_sim(path_cal, path_mov, mov_attribute, mov, path_output_mus, SUPR_full
 
     ## End of initalisation of Rmin and Rmax
     macro = []
-    for j in range(len(Medialization)):
+    for j in range(len(Medialization_x)):
         macro.append([
             Load(load_var), #, defs={'N_STEP': 100}
 
@@ -352,21 +320,21 @@ def Macro_sim(path_cal, path_mov, mov_attribute, mov, path_output_mus, SUPR_full
             SetValue('Main.HumanModel.BodyModel.Right.ShoulderArm.ModelParameters.Humerus.medialization_y', Medialization_y[j]),
             SetValue('Main.HumanModel.BodyModel.Right.ShoulderArm.ModelParameters.Humerus.medialization_z', Medialization_z[j]),
 
-            SetValue('Main.HumanModel.BodyModel.Right.ShoulderArm.MusPar.supraspinatus_1.'+ output_mus_attribute[2], Lf1),
-            SetValue('Main.HumanModel.BodyModel.Right.ShoulderArm.MusPar.supraspinatus_2.'+ output_mus_attribute[2], Lf1),
-            SetValue('Main.HumanModel.BodyModel.Right.ShoulderArm.MusPar.supraspinatus_3.'+ output_mus_attribute[2], Lf1),
-            SetValue('Main.HumanModel.BodyModel.Right.ShoulderArm.MusPar.supraspinatus_4.'+ output_mus_attribute[2], Lf1),
-            SetValue('Main.HumanModel.BodyModel.Right.ShoulderArm.MusPar.supraspinatus_5.'+ output_mus_attribute[2], Lf1),
-            SetValue('Main.HumanModel.BodyModel.Right.ShoulderArm.MusPar.supraspinatus_6.'+ output_mus_attribute[2], Lf1),
+            SetValue('Main.HumanModel.BodyModel.Right.ShoulderArm.MusPar.supraspinatus_1.'+ output_mus_attribute[2], Lf1[j]),
+            SetValue('Main.HumanModel.BodyModel.Right.ShoulderArm.MusPar.supraspinatus_2.'+ output_mus_attribute[2], Lf1[j]),
+            SetValue('Main.HumanModel.BodyModel.Right.ShoulderArm.MusPar.supraspinatus_3.'+ output_mus_attribute[2], Lf1[j]),
+            SetValue('Main.HumanModel.BodyModel.Right.ShoulderArm.MusPar.supraspinatus_4.'+ output_mus_attribute[2], Lf1[j]),
+            SetValue('Main.HumanModel.BodyModel.Right.ShoulderArm.MusPar.supraspinatus_5.'+ output_mus_attribute[2], Lf1[j]),
+            SetValue('Main.HumanModel.BodyModel.Right.ShoulderArm.MusPar.supraspinatus_6.'+ output_mus_attribute[2], Lf1[j]),
 
             # Dump Tendon length
 
-            SetValue('Main.HumanModel.BodyModel.Right.ShoulderArm.MusPar.supraspinatus_1.'+ output_mus_attribute[3], Lt1),
-            SetValue('Main.HumanModel.BodyModel.Right.ShoulderArm.MusPar.supraspinatus_2.'+ output_mus_attribute[3], Lt1),
-            SetValue('Main.HumanModel.BodyModel.Right.ShoulderArm.MusPar.supraspinatus_3.'+ output_mus_attribute[3], Lt1),
-            SetValue('Main.HumanModel.BodyModel.Right.ShoulderArm.MusPar.supraspinatus_4.'+ output_mus_attribute[3], Lt1),
-            SetValue('Main.HumanModel.BodyModel.Right.ShoulderArm.MusPar.supraspinatus_5.'+ output_mus_attribute[3], Lt1),
-            SetValue('Main.HumanModel.BodyModel.Right.ShoulderArm.MusPar.supraspinatus_6.'+ output_mus_attribute[3], Lt1),
+            SetValue('Main.HumanModel.BodyModel.Right.ShoulderArm.MusPar.supraspinatus_1.'+ output_mus_attribute[3], Lt1[j]),
+            SetValue('Main.HumanModel.BodyModel.Right.ShoulderArm.MusPar.supraspinatus_2.'+ output_mus_attribute[3], Lt1[j]),
+            SetValue('Main.HumanModel.BodyModel.Right.ShoulderArm.MusPar.supraspinatus_3.'+ output_mus_attribute[3], Lt1[j]),
+            SetValue('Main.HumanModel.BodyModel.Right.ShoulderArm.MusPar.supraspinatus_4.'+ output_mus_attribute[3], Lt1[j]),
+            SetValue('Main.HumanModel.BodyModel.Right.ShoulderArm.MusPar.supraspinatus_5.'+ output_mus_attribute[3], Lt1[j]),
+            SetValue('Main.HumanModel.BodyModel.Right.ShoulderArm.MusPar.supraspinatus_6.'+ output_mus_attribute[3], Lt1[j]),
 
             SetValue('Main.HumanModel.BodyModel.Right.ShoulderArm.MusPar.supraspinatus_1.Gamma0', pen_angle_SUPR_a),
             SetValue('Main.HumanModel.BodyModel.Right.ShoulderArm.MusPar.supraspinatus_2.Gamma0', pen_angle_SUPR_a),
@@ -375,12 +343,12 @@ def Macro_sim(path_cal, path_mov, mov_attribute, mov, path_output_mus, SUPR_full
             SetValue('Main.HumanModel.BodyModel.Right.ShoulderArm.MusPar.supraspinatus_5.Gamma0', pen_angle_SUPR_a),
             SetValue('Main.HumanModel.BodyModel.Right.ShoulderArm.MusPar.supraspinatus_6.Gamma0', pen_angle_SUPR_a),
 
-            SetValue('Main.HumanModel.BodyModel.Right.ShoulderArm.MusPar.supraspinatus_1.Jpe', 6.6),
-            SetValue('Main.HumanModel.BodyModel.Right.ShoulderArm.MusPar.supraspinatus_2.Jpe', 6.6),
-            SetValue('Main.HumanModel.BodyModel.Right.ShoulderArm.MusPar.supraspinatus_3.Jpe', 6.6),
-            SetValue('Main.HumanModel.BodyModel.Right.ShoulderArm.MusPar.supraspinatus_4.Jpe', 6.6),
-            SetValue('Main.HumanModel.BodyModel.Right.ShoulderArm.MusPar.supraspinatus_5.Jpe', 6.6),
-            SetValue('Main.HumanModel.BodyModel.Right.ShoulderArm.MusPar.supraspinatus_6.Jpe', 6.6),
+            SetValue('Main.HumanModel.BodyModel.Right.ShoulderArm.MusPar.supraspinatus_1.Jpe', jpe),
+            SetValue('Main.HumanModel.BodyModel.Right.ShoulderArm.MusPar.supraspinatus_2.Jpe', jpe),
+            SetValue('Main.HumanModel.BodyModel.Right.ShoulderArm.MusPar.supraspinatus_3.Jpe', jpe),
+            SetValue('Main.HumanModel.BodyModel.Right.ShoulderArm.MusPar.supraspinatus_4.Jpe', jpe),
+            SetValue('Main.HumanModel.BodyModel.Right.ShoulderArm.MusPar.supraspinatus_5.Jpe', jpe),
+            SetValue('Main.HumanModel.BodyModel.Right.ShoulderArm.MusPar.supraspinatus_6.Jpe', jpe),
 
             SetValue(path_mov + mov_attribute, mov),
 
@@ -407,11 +375,109 @@ def Macro_sim(path_cal, path_mov, mov_attribute, mov, path_output_mus, SUPR_full
             Dump(path_output_mus + SUPR_full_name + '_4.' + output_mus_attribute[1]),
             Dump(path_output_mus + SUPR_full_name + '_5.' + output_mus_attribute[1]),
             Dump(path_output_mus + SUPR_full_name + '_6.' + output_mus_attribute[1]),
+
+            # Dump Supraspinatus Tendon Force
+
+            Dump(path_output_mus + SUPR_full_name + '_1.' + 'Ft'),
+            Dump(path_output_mus + SUPR_full_name + '_2.' + 'Ft'),
+            Dump(path_output_mus + SUPR_full_name + '_3.' + 'Ft'),
+            Dump(path_output_mus + SUPR_full_name + '_4.' + 'Ft'),
+            Dump(path_output_mus + SUPR_full_name + '_5.' + 'Ft'),
+            Dump(path_output_mus + SUPR_full_name + '_6.' + 'Ft'),
         ])
 
     output = app.start_macro(macro)
 
     return output
+
+
+def decision(sim_0, sim_5, sim_10):
+    print(sim_0)
+    print(sim_5)
+    print(sim_10)
+    pas_0 = 0
+    pas_5 = 0
+    pas_10 = 0
+
+    operation = 1
+
+    medialization = 99
+
+    print(max(sim_0))
+
+    if np.amax(sim_0) <= 216.61: # 216.61, 108.32
+        if sim_0[59] <= 90.23: #179.2
+            if sim_0[0] >= 37.35:
+                pas_0 = 1
+    if np.amax(sim_5) <= 216.61: # 216.61
+        if sim_5[59] <= 90.23: #179.2
+            if sim_5[0] >= 37.35:
+                pas_5 = 1
+    if np.amax(sim_10) <= 216.61:  # 216.61
+        if sim_10[59] <= 90.23: #179.2
+            if sim_10[0] >= 37.35:
+                pas_10 = 1
+
+    if pas_10 == 0:
+        if pas_5 == 0:
+            if pas_0 == 0:
+                operation = 0
+
+    if pas_0 == 1:
+        medialization = 0
+    else:
+        if pas_5 == 1:
+            medialization = 5
+        else:
+            if pas_10 == 1:
+                medialization = 10
+            else:
+                medialization = 99
+
+    return operation, medialization
+
+## Calibration
+
+out_calib = Macro_opti(path_cal, path_mov, mov_attribute, mov, path_output_mus, SUPR_full_name, output_mus_attribute, load_var = 'Big_test.main.any', height = pat_height, weight = pat_weight)
+
+## Healthy simulation
+
+strength_calib = output_calib(out_calib, path_output_mus, SUPR_full_name, output_mus_attribute[0], muscle_nbr_SUPR, nstep)
+np.savetxt('Healthy Simulation Strength ', strength_calib, delimiter=',')
+
+pas_for_calib = output_calib(out_calib, path_output_mus, SUPR_full_name, output_mus_attribute[1], muscle_nbr_SUPR, nstep)
+np.savetxt('Healthy Simulation Passive Force ', pas_for_calib, delimiter=',')
+
+Ft_calib = output_calib(out_calib, path_output_mus, SUPR_full_name, 'Ft', muscle_nbr_SUPR, nstep)
+np.savetxt('Healthy Simulation Tendon Force ', Ft_calib, delimiter=',')
+
+Lf0_calib = output_calib_one(out_calib, output_mus_attribute[2], muscle_nbr_SUPR)
+Lt0_calib = output_calib_one(out_calib, output_mus_attribute[3], muscle_nbr_SUPR)
+Lf0_calib = Lf0_calib/6.0
+Lt0_calib = Lt0_calib/6.0
+
+time_calib = out_calib['Main.Study.Output.Abscissa.t']
+np.savetxt('Time', time_calib, delimiter=',')
+
+SUPR_strength_cal = plotSingle(time_calib[0] * 120, strength_calib[0], 'Healthy Supraspinatus  Strength', 'Abduction [°]', 'Strength [N]', 1.0)
+SUPR_pas_for_cal = plotSingle(time_calib[0] * 120, pas_for_calib[0], 'Healthy Supraspinatus Passive Force', 'Abduction [°]', 'Passive Force [N]', 1.0)
+SUPR_Ft_cal = plotSingle(time_calib[0] * 120, Ft_calib[0], 'Healthy Supraspinatus Tendon Force', 'Abduction [°]', 'Tendon Force [N]', 1.0)
+
+## Value adaption
+
+ten_0_ratio = 0.37 #Muscle / Tendon ratio in a healty patient --> literatur research 37%
+mus_0_ratio = 1-ten_0_ratio
+
+# Patient Data Julian
+mus_org_in_len = [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]#[0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0] # cm
+mus_1_len = [7.896,	6.129, 6.475, 7.984, 5.88, 6.601, 6.541, 9.225, 6.203, 9.65, 8.193, 11.001, 6.562, 8.584, 7.166, 6.831, 7.894, 7.773]#[7.896, 7.984, 5.88, 9.225, 6.203, 8.193, 6.562, 8.584, 7.166, 7.894, 7.773] # cm 7.773(last), 7.984(second)
+ten_1_len = [2.577, 2.835, 2.362, 2.599, 2.731, 4.643, 4.414, 3.04, 2.813, 2.433, 4.159, 2.948, 3.512, 3.583, 3.849, 3.628, 2.986, 4.124]#[2.577, 2.599, 2.731, 3.04, 2.813, 4.159, 3.512, 3.583, 3.849, 2.986, 4.124] # cm 4.124(last), 2.599(second)
+tear_1_len_MRI = [2.947, 5.156, 5.243, 4.627, 4.609, 2.446, 0.985, 1.565, 2.534, 0.987, 1.488, 0.891, 1.626, 1.993, 1.805, 1.851, 1.32, 1.123]#[2.947, 4.627, 4.609, 1.565, 2.534, 1.488, 1.626, 1.993, 1.805, 1.32, 1.123] # cm 1.123(last), 4.627(second)
+
+for y in range(len(mus_1_len)):
+    mus_org_in_len[y] = mus_1_len[y] + ten_1_len[y] + tear_1_len_MRI[y]
+
+## Repair simulation
 
 ## Repair optimisation
 
@@ -422,43 +488,20 @@ Medialization_x = [ 0.008,  0.003, -0.002]
 Medialization_y = [-0.005,  0.000,  0.003]
 Medialization_z = [-0.005, -0.005, -0.005]
 
+Lf1 = np.zeros(3, dtype=float)
+Lt1 = np.zeros(3, dtype=float)
+
 z = 0
-b = ['patient_001', 'patient_005', 'patient_007', 'patient_016-L', 'patient_016_R', 'patient_020', 'patient_028_L', 'patient_028_R', 'patient_033_L', 'patient_033_R_tse', 'patient_036']
+b = ['001', '002', '003', '005', '007', '008', '012', '016-L', '016-R', '019', '020', '021', '028-L', '028-R', '033-L', '033-R_blade', '033-R_tse', '036']#['patient_001', 'patient_005', 'patient_007', 'patient_016-L', 'patient_016_R', 'patient_020', 'patient_028_L', 'patient_028_R', 'patient_033_L', 'patient_033_R_tse', 'patient_036']
+
+strength_sim_0 = np.zeros(nstep, dtype=float)
+strength_sim_1 = np.zeros(nstep, dtype=float)
+strength_sim_2 = np.zeros(nstep, dtype=float)
+pas_for_sim_0 = np.zeros(nstep, dtype=float)
+pas_for_sim_1 = np.zeros(nstep, dtype=float)
+pas_for_sim_2 = np.zeros(nstep, dtype=float)
 
 for i in range(len(mus_org_in_len)):
-
-    tendon_leng = 0.3 * tear_1_len_MRI[i] + 0.23
-    MTJ_lat_shif = 0.67 * tear_1_len_MRI[i] - 0.23
-    print(tendon_leng)
-    print(MTJ_lat_shif)
-
-    tendon_leng_ratio = (ten_1_len[i] + tendon_leng) / mus_org_in_len[i] * ten_0_ratio
-    MTJ_lat_shif_ratio = (mus_1_len[i] + MTJ_lat_shif) / mus_org_in_len[i] * mus_0_ratio
-    print(tendon_leng_ratio)
-    print(MTJ_lat_shif_ratio)
-
-    ten_tear_ratio = ten_1_len[i] / (mus_org_in_len[i] * ten_0_ratio)
-    mus_tear_ratio = mus_1_len[i] / (mus_org_in_len[i] * mus_0_ratio)
-    print(ten_tear_ratio)
-    print(mus_tear_ratio)
-
-    Lt0_ratio = ten_tear_ratio + tendon_leng_ratio  # ten_1_len[0] / (mus_org_in_len[0]*ten_0_ratio)
-    Lf0_ratio = mus_tear_ratio + MTJ_lat_shif_ratio  # Default no degeneration
-
-    if Lt0_ratio > 1:
-        Lt0_ratio = ten_1_len[0] / (mus_org_in_len[0] * ten_0_ratio)
-
-    if Lf0_ratio > 1:
-        Lf0_ratio = 1.0
-
-    print(Lt0_ratio)
-    print(Lf0_ratio)
-
-    np.savetxt('Data ' + b[i], tendon_leng, MTJ_lat_shif, tendon_leng_ratio, MTJ_lat_shif_ratio, ten_tear_ratio, mus_tear_ratio, Lt0_ratio, Lf0_ratio, delimiter=',')
-
-    # Muscle retraction
-
-    # Goutallier Stage
 
     if Goutallier_Stage == 0:
         Gt_tend = 0
@@ -473,30 +516,237 @@ for i in range(len(mus_org_in_len)):
     else:
         Gt_tend = 0
 
-    Lf1 = Lf0_calib * Lf0_ratio
-    Lt1 = Lt0_calib * Lt0_ratio
+    Lf1[0] = Lf0_calib * 1.0
+    Lf1[1] = Lf0_calib * 1.0
+    Lf1[2] = Lf0_calib * 1.0
 
-    SUPR_pen_ang_cor = 13.3
+    Lt1[0] = Lt0_calib * (ten_1_len[i]+(0.3*tear_1_len_MRI[i]+0.23))/(ten_0_ratio*(mus_1_len[i]+ten_1_len[i]+tear_1_len_MRI[i]))
+    Lt1[1] = Lt0_calib * (ten_1_len[i]+(0.3*(tear_1_len_MRI[i]-0.5)+0.23))/(ten_0_ratio*(mus_1_len[i]+ten_1_len[i]+tear_1_len_MRI[i])-0.5)
+    Lt1[2] = Lt0_calib * (ten_1_len[i]+(0.3*(tear_1_len_MRI[i]-1.0)+0.23))/(ten_0_ratio*(mus_1_len[i]+ten_1_len[i]+tear_1_len_MRI[i])-1.0)
+
+    if tear_1_len_MRI[i] < 1:
+        SUPR_pen_ang_cor = 8.32
+        SUPR_jpe = 3.0 * 1.305
+    elif tear_1_len_MRI[i] < 1 and tear_1_len_MRI[i] >= 3:
+        SUPR_pen_ang_cor = 9.9
+        SUPR_jpe = 3.0 * 2.035
+    elif tear_1_len_MRI[i] < 3 and tear_1_len_MRI[i] >= 5:
+        SUPR_pen_ang_cor = 13.3
+        SUPR_jpe = 3.0 * 2.2
+    elif tear_1_len_MRI[i] > 5:
+        SUPR_pen_ang_cor = 13.3
+        SUPR_jpe = 3.0 * 2.2
+    else:
+        SUPR_pen_ang_cor = 6.6
+        SUPR_jpe = 3.0
+
     SUPR_pen_ang_cor = SUPR_pen_ang_cor * np.pi / 180
 
-    out_sim = Macro_sim(path_cal, path_mov, mov_attribute, mov, path_output_mus, SUPR_full_name, output_mus_attribute, Medialization_x, Medialization_y, Medialization_z, Lf1[0], Lt1[0], load_var = 'Big_test.main.any', height = pat_height, weight = pat_weight, pen_angle_SUPR=SUPR_pen_ang, pen_angle_SUPR_a= SUPR_pen_ang_cor, z=z)
+    np.savetxt('Data ' + b[i], np.r_[mus_1_len[i], Lf1[0], Lf1[1], Lf1[2], ten_1_len[1], Lt1[0], Lt1[1], Lt1[2], tear_1_len_MRI[i]], delimiter=',')
+
+    out_sim = Macro_sim(path_cal, path_mov, mov_attribute, mov, path_output_mus, SUPR_full_name, output_mus_attribute, Medialization_x, Medialization_y, Medialization_z, Lf1, Lt1, load_var = 'Big_test.main.any', height = pat_height, weight = pat_weight, pen_angle_SUPR=SUPR_pen_ang, pen_angle_SUPR_a= SUPR_pen_ang_cor, jpe= SUPR_jpe)
 
     strength_sim_0, strength_sim_1, strength_sim_2 = output_sim(out_sim, path_output_mus, SUPR_full_name, output_mus_attribute[0], muscle_nbr_SUPR, nstep)
     pas_for_sim_0, pas_for_sim_1, pas_for_sim_2 = output_sim(out_sim, path_output_mus, SUPR_full_name, output_mus_attribute[1], muscle_nbr_SUPR, nstep)
+    Ft_sim_0, Ft_sim_1, Ft_sim_2 = output_sim(out_sim, path_output_mus, SUPR_full_name, 'Ft', muscle_nbr_SUPR, nstep)
+
     np.savetxt('Repair simulation strength med 0 mm pat ' + b[i], strength_sim_0, delimiter=',')
     np.savetxt('Repair simulation strength med 5 mm pat ' + b[i], strength_sim_1, delimiter=',')
     np.savetxt('Repair simulation strength med 10 mm pat ' + b[i], strength_sim_2, delimiter=',')
     np.savetxt('Repair simulation passive force med 0 mm pat ' + b[i], pas_for_sim_0, delimiter=',')
     np.savetxt('Repair simulation passive force med 5 mm pat ' + b[i], pas_for_sim_1, delimiter=',')
     np.savetxt('Repair simulation passive force med 10 mm pat ' + b[i], pas_for_sim_2, delimiter=',')
+    np.savetxt('Repair simulation Ft med 0 mm pat ' + b[i], Ft_sim_0, delimiter=',')
+    np.savetxt('Repair simulation Ft med 5 mm pat ' + b[i], Ft_sim_1, delimiter=',')
+    np.savetxt('Repair simulation Ft med 10 mm pat ' + b[i], Ft_sim_2, delimiter=',')
+
+    # Rehab
+    op, med = decision(sim_0=pas_for_sim_0[0], sim_5=pas_for_sim_1[0], sim_10=pas_for_sim_2[0])
+
+    if op == 1:
+        med_x = np.zeros(1, dtype=float)
+        med_y = np.zeros(1, dtype=float)
+        med_z = np.zeros(1, dtype=float)
+        Lf1_op = np.zeros(1, dtype=float)
+        Lt1_op = np.zeros(1, dtype=float)
+
+        if tear_1_len_MRI[i] < 1:
+            SUPR_pen_ang_cor = 8.32
+            SUPR_jpe = 3.0 * 1.305
+            SUPR_jpe = SUPR_jpe - SUPR_jpe * 0.167
+        elif tear_1_len_MRI[i] < 1 and tear_1_len_MRI[i] >= 3:
+            SUPR_pen_ang_cor = 9.9
+            SUPR_jpe = 3.0 * 2.035
+            SUPR_jpe = SUPR_jpe - SUPR_jpe * 0.167
+        elif tear_1_len_MRI[i] < 3 and tear_1_len_MRI[i] >= 5:
+            SUPR_pen_ang_cor = 13.3
+            SUPR_jpe = 3.0 * 2.2
+            SUPR_jpe = SUPR_jpe - SUPR_jpe * 0.167
+        elif tear_1_len_MRI[i] > 5:
+            SUPR_pen_ang_cor = 13.3
+            SUPR_jpe = 3.0 * 2.2
+            SUPR_jpe = SUPR_jpe - SUPR_jpe * 0.167
+        else:
+            SUPR_pen_ang_cor = 6.6
+            SUPR_jpe = 3.0
+            SUPR_jpe = SUPR_jpe - SUPR_jpe * 0.167
+
+        if med == 0:
+            med_x[0] = Medialization_x[0]
+            med_y[0] = Medialization_y[0]
+            med_z[0] = Medialization_z[0]
+            Lt1_op[0] = Lt1[0] + Lt1[0] * 0.063
+            Lf1_op[0] = Lf1[0]
+        if med == 5:
+            med_x[0] = Medialization_x[1]
+            med_y[0] = Medialization_y[1]
+            med_z[0] = Medialization_z[1]
+            Lt1_op[0] = Lt1[1] + Lt1[1] * 0.063
+            Lf1_op[0] = Lf1[1]
+        if med == 10:
+            med_x[0] = Medialization_x[2]
+            med_y[0] = Medialization_y[2]
+            med_z[0] = Medialization_z[2]
+            Lt1_op[0] = Lt1[2] + Lt1[2] * 0.063
+            Lf1_op[0] = Lf1[2]
+
+        out_reh = Macro_sim(path_cal, path_mov, mov_attribute, mov, path_output_mus, SUPR_full_name,
+                            output_mus_attribute,
+                            med_x, med_y, med_z, Lf1_op, Lt1_op, load_var='Big_test.main.any',
+                            height=pat_height, weight=pat_weight, pen_angle_SUPR=SUPR_pen_ang,
+                            pen_angle_SUPR_a=SUPR_pen_ang_cor, jpe=SUPR_jpe)
+        pas_for_sim_rehab = output_calib(out_reh, path_output_mus, SUPR_full_name, output_mus_attribute[1],
+                                              muscle_nbr_SUPR, nstep)
+        strength_sim_rehab = output_calib(out_reh, path_output_mus, SUPR_full_name, output_mus_attribute[0],
+                                               muscle_nbr_SUPR, nstep)
+        Ft_sim_rehab = output_calib(out_reh, path_output_mus, SUPR_full_name, 'Ft',
+                                          muscle_nbr_SUPR, nstep)
+
 
     SUPR_strength_sim_0 = plotSingle(time_calib[0] * 120, strength_sim_0[0], 'Supraspinatus Strength ' + b[z]+ ', Medialization 0 mm', 'Abduction [°]', 'Strength [N]', 1.0)
     SUPR_pas_for_sim_0 = plotSingle(time_calib[0] * 120, pas_for_sim_0[0], 'Supraspinatus Passive Force ' + b[z]+ ' Medialization 0 mm', 'Abduction [°]', 'Passive Force [N]', 1.0)
+    SUPR_Ft_sim_0 = plotSingle(time_calib[0] * 120, Ft_sim_0[0], 'Supraspinatus Tendon Force ' + b[z] + ' Medialization 0 mm', 'Abduction [°]', 'Tendon Force [N]', 1.0)
 
     SUPR_strength_sim_5 = plotSingle(time_calib[0] * 120, strength_sim_1[0], 'Supraspinatus Strength ' + b[z]+ ' Medialization 5 mm', 'Abduction [°]', 'Strength [N]', 1.0)
     SUPR_pas_for_sim_5 = plotSingle(time_calib[0] * 120, pas_for_sim_1[0], 'Supraspinatus Passive Force ' + b[z]+ ' Medialization 5 mm', 'Abduction [°]', 'Passive Force [N]', 1.0)
+    SUPR_Ft_sim_5 = plotSingle(time_calib[0] * 120, Ft_sim_1[0], 'Supraspinatus Tendon Force ' + b[z] + ' Medialization 5 mm', 'Abduction [°]', 'Tendon Force [N]', 1.0)
 
     SUPR_strength_sim_10 = plotSingle(time_calib[0] * 120, strength_sim_2[0], 'Supraspinatus Strength ' + b[z]+ ' Medialization 10 mm', 'Abduction [°]', 'Strength [N]', 1.0)
     SUPR_pas_for_sim_10 = plotSingle(time_calib[0] * 120, pas_for_sim_2[0], 'Supraspinatus Passive Force ' + b[z]+ ' Medialization 10 mm', 'Abduction [°]', 'Passive Force [N]', 1.0)
+    SUPR_Ft_sim_10 = plotSingle(time_calib[0] * 120, Ft_sim_2[0], 'Supraspinatus Tendon Force ' + b[z] + ' Medialization 10 mm', 'Abduction [°]', 'Tendon Force [N]', 1.0)
+
+
+    if op == 1:
+        rem_ten = 'Error'
+        if med == 0:
+            rem_ten = Lt1[0]*100
+        elif med == 5:
+            rem_ten = Lt1[1]*100
+        elif med == 10:
+            rem_ten = Lt1[2]*100
+
+        fig, axs = plt.subplots(3, 5, figsize=(20, 15))
+        fig.suptitle('Rotator cuff repairment simulation of ' + b[z] + ', Surgery recommended: Yes, Recommended medialization: %1i' % med + ' mm, Remaining tendon: %1.3f' % rem_ten + ' cm, Tear size: %1.3f' % tear_1_len_MRI[i] + ' cm')
+        axs[0, 0].plot(time_calib[0] * 120, strength_calib[0], 'b')
+        axs[1, 0].plot(time_calib[0] * 120, pas_for_calib[0], 'r')
+        axs[2, 0].plot(time_calib[0] * 120, Ft_calib[0], 'g')
+        axs[0, 0].set_title("Healthy Simulation")
+        axs[0, 0].grid()
+        axs[1, 0].grid()
+        axs[2, 0].grid()
+        axs[0, 0].set_ylabel("Supraspinatus strength [N]")
+        axs[1, 0].set_ylabel("Supraspinatus passive force [N]")
+        axs[2, 0].set_ylabel("Supraspinatus tendon force [N]")
+        axs[2, 0].set_xlabel("Abduction [°]")
+
+        axs[0, 1].plot(time_calib[0] * 120, strength_sim_0[0], 'b')
+        axs[1, 1].plot(time_calib[0] * 120, pas_for_sim_0[0], 'r')
+        axs[2, 1].plot(time_calib[0] * 120, Ft_sim_0[0], 'g')
+        axs[0, 1].set_title("RCR with 0 mm medialization")
+        axs[0, 1].grid()
+        axs[1, 1].grid()
+        axs[2, 1].grid()
+        axs[2, 1].set_xlabel("Abduction [°]")
+
+        axs[0, 2].plot(time_calib[0] * 120, strength_sim_1[0], 'b')
+        axs[1, 2].plot(time_calib[0] * 120, pas_for_sim_1[0], 'r')
+        axs[2, 2].plot(time_calib[0] * 120, Ft_sim_1[0], 'g')
+        axs[0, 2].set_title("RCR with 5 mm medialization")
+        axs[0, 2].grid()
+        axs[1, 2].grid()
+        axs[2, 2].grid()
+        axs[2, 2].set_xlabel("Abduction [°]")
+
+        axs[0, 3].plot(time_calib[0] * 120, strength_sim_2[0], 'b')
+        axs[1, 3].plot(time_calib[0] * 120, pas_for_sim_2[0], 'r')
+        axs[2, 3].plot(time_calib[0] * 120, Ft_sim_2[0], 'g')
+        axs[0, 3].set_title("RCR with 10 mm medialization")
+        axs[0, 3].grid()
+        axs[1, 3].grid()
+        axs[2, 3].grid()
+        axs[2, 3].set_xlabel("Abduction [°]")
+
+        axs[0, 4].plot(time_calib[0] * 120, strength_sim_rehab[0], 'b')
+        axs[1, 4].plot(time_calib[0] * 120, pas_for_sim_rehab[0], 'r')
+        axs[2, 4].plot(time_calib[0] * 120, Ft_sim_rehab[0], 'g')
+        axs[0, 4].set_title("Rehabilitation prediction")
+        axs[0, 4].grid()
+        axs[1, 4].grid()
+        axs[2, 4].grid()
+        axs[2, 4].set_xlabel("Abduction [°]")
+
+        fig.tight_layout()
+        fig.subplots_adjust(top=0.9)
+        fig.savefig(b[z])
+        fig.clf()
+
+
+    else:
+        rem_ten = Lt1[0]
+
+        fig, axs = plt.subplots(3, 4, figsize=(20, 15))
+        fig.suptitle('Rotator cuff repairment simulation of ' + b[z] + ', Surgery recommended: No,' + ' Remaining tendon: %1.3f' % rem_ten + ' cm,' + ' Tear size: %1.3f' % tear_1_len_MRI[i] + ' cm')
+        axs[0, 0].plot(time_calib[0] * 120, strength_calib[0], 'b')
+        axs[1, 0].plot(time_calib[0] * 120, pas_for_calib[0], 'r')
+        axs[0, 0].set_title("Healthy Simulation")
+        axs[0, 0].grid()
+        axs[1, 0].grid()
+        axs[2, 0].grid()
+        axs[0, 0].set_ylabel("Supraspinatus strength [N]")
+        axs[1, 0].set_ylabel("Supraspinatus passive force [N]")
+        axs[2, 0].set_ylabel("Supraspinatus tendon force [N]")
+        axs[2, 0].set_xlabel("Abduction [°]")
+
+        axs[0, 1].plot(time_calib[0] * 120, strength_sim_0[0], 'b')
+        axs[1, 1].plot(time_calib[0] * 120, pas_for_sim_0[0], 'r')
+        axs[2, 1].plot(time_calib[0] * 120, Ft_sim_0[0], 'g')
+        axs[0, 1].set_title("RCR with 0 mm medialization")
+        axs[0, 1].grid()
+        axs[1, 1].grid()
+        axs[2, 1].grid()
+        axs[2, 1].set_xlabel("Abduction [°]")
+
+        axs[0, 2].plot(time_calib[0] * 120, strength_sim_1[0], 'b')
+        axs[1, 2].plot(time_calib[0] * 120, pas_for_sim_1[0], 'r')
+        axs[2, 2].plot(time_calib[0] * 120, Ft_sim_1[0], 'g')
+        axs[0, 2].set_title("RCR with 5 mm medialization")
+        axs[0, 2].grid()
+        axs[1, 2].grid()
+        axs[2, 2].grid()
+        axs[2, 2].set_xlabel("Abduction [°]")
+
+        axs[0, 3].plot(time_calib[0] * 120, strength_sim_2[0], 'b')
+        axs[1, 3].plot(time_calib[0] * 120, pas_for_sim_2[0], 'r')
+        axs[2, 3].plot(time_calib[0] * 120, Ft_sim_2[0], 'g')
+        axs[0, 3].set_title("RCR with 10 mm medialization")
+        axs[0, 3].grid()
+        axs[1, 3].grid()
+        axs[2, 3].grid()
+        axs[2, 3].set_xlabel("Abduction [°]")
+
+        fig.tight_layout()
+        fig.subplots_adjust(top=0.9)
+        fig.savefig(b[z])
+        fig.clf()
 
     z = z +1

@@ -979,7 +979,3 @@ def startMacroRRParSty(test_var, path_cal, path_mov, mov_attribute, mov, path_in
     app.save_results('Muscle_' + mus_input + '_Input_' + attribute_input + '.db')
     app.save_results('Muscle_' + mus_input + '_Input_' + attribute_input + '.xlsx')
     return output
-
-
-
-

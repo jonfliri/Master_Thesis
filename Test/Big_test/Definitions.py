@@ -1,4 +1,5 @@
 import numpy as np
+from MainRotSim import *
 # Calibration Attributes
 path_cal = 'Main.HumanModel.Calibration.RightShoulderCal.ShoulderCal.'
 
@@ -38,6 +39,8 @@ TMN_short_name = 'TMN'
 muscle_nbr_TMN = 6
 
 tArray = np.linspace(0, 1, 100)
+
+
 
 # Save
 """
@@ -90,4 +93,40 @@ Lt1 = Lt0_calib * Lt0_ratio
 
 SUPR_pen_ang_cor = 13.3 # 13.3
 SUPR_pen_ang_cor = SUPR_pen_ang_cor * np.pi / 180
+
+
+
+
+save  nbr 2
+    tendon_leng = 0.3 * tear_1_len_MRI[i] + 0.23
+    MTJ_lat_shif = 0.67 * tear_1_len_MRI[i] - 0.23
+    print(tendon_leng)
+    print(MTJ_lat_shif)
+
+    tendon_leng_ratio = (ten_1_len[i] + tendon_leng) / mus_org_in_len[i] * ten_0_ratio
+    MTJ_lat_shif_ratio = (mus_1_len[i] + MTJ_lat_shif) / mus_org_in_len[i] * mus_0_ratio
+    print(tendon_leng_ratio)
+    print(MTJ_lat_shif_ratio)
+
+    ten_tear_ratio = ten_1_len[i] / (mus_org_in_len[i] * ten_0_ratio)
+    mus_tear_ratio = mus_1_len[i] / (mus_org_in_len[i] * mus_0_ratio)
+    print(ten_tear_ratio)
+    print(mus_tear_ratio)
+
+    Lt0_ratio = ten_tear_ratio + tendon_leng_ratio  # ten_1_len[0] / (mus_org_in_len[0]*ten_0_ratio)
+    Lf0_ratio = 1.0 # mus_tear_ratio + MTJ_lat_shif_ratio  # Default no degeneration
+
+    if Lt0_ratio <= 1:
+        Lt0_ratio = Lt0_ratio
+
+    if Lf0_ratio > 1:
+        Lf0_ratio = 1.0
+
+    print(Lt0_ratio)
+    print(Lf0_ratio)
+
+
+
+
+
 """
